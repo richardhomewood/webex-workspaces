@@ -2,7 +2,6 @@ const fs = require('fs');
 const path = require('path');
 const yaml = require('js-yaml');
 const NavigationPlugin = require('@11ty/eleventy-navigation');
-const ErrorOverlayPlugin = require('eleventy-plugin-error-overlay');
 
 const filters = require('./utils/filters');
 const markdown = require('./utils/markdown');
@@ -20,8 +19,6 @@ module.exports = (config) => {
 
   // Plugins
   config.addPlugin(NavigationPlugin);
-  // Shows error name, message, and fancy stacktrace
-  config.addPlugin(ErrorOverlayPlugin);
 
   // Filters
   Object.keys(filters).forEach((key) => {
