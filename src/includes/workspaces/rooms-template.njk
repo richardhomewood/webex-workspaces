@@ -1,5 +1,25 @@
 <!DOCTYPE html>
 <main>
-  {{ content | safe }}
+  <link rel="stylesheet" href="{% webpack 'main.css' %}">
+
+  <div class="ws-root-container">
+
+    <a href="#">{% icon "site-logo" %}</a>
+
+    <div class="ws-workspace-nav">
+      <ul>
+        {%- for workspace in workspaces %}
+          <li><a href="#{{ workspace.route }}">{{ workspace.name }}</a></li>
+        {%- endfor %}
+      </ul>
+    </div>
+
+    <button class="ws-about-cta">About this Workspace</button>
+
+    {# The main content template should iterate over room data to render them all here. #}
+    {{ content | safe }}
+
+  </div>
+
 </main>
 <script async defer src="{% webpack 'main.js' %}"></script>
