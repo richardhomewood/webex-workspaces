@@ -1,0 +1,48 @@
+[
+  {
+    "name": "Home Spaces",
+    "slug": "homeSpace",
+    "route": "homeSpace-homeOffice",
+    "rooms": [
+      {
+        "name": "Home Office",
+        "slug": "homeOffice"
+      },
+      {
+        "name": "Kitchen Room",
+        "slug": "kitchen"
+      }
+    ]
+  },
+  {
+    "name": "Office Spaces",
+    "slug": "officeSpace",
+    "route": "officeSpace-hotdesk",
+    "rooms": [
+      {
+        "name": "Hotdesk",
+        "slug": "hotdesk"
+      },
+      {
+        "name": "Ideation Room",
+        "slug": "ideationRoom"
+      },
+      {
+        "name": "Small Conference Room",
+        "slug": "smallConferenceRoom"
+      }
+    ]
+  },
+  {
+    "name": "Anywhere",
+    "slug": "anywhere",
+    "route": "anywhere-cafe",
+    "rooms": [
+      {
+        "name": "Cafe",
+        "slug": "cafe"
+      }
+    ]
+  }
+]
+

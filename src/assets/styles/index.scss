@@ -1,5 +1,4 @@
-$blue: darkslateblue;
-$bg-body: antiquewhite;
+$bg-body: grey;
 
 html,
 body {
@@ -8,24 +7,8 @@ body {
   font-family: 'Courier New', Courier, monospace;
 }
 
-// A general comment that should be
-// stripped out in production
 body {
-  color: $blue;
   background-color: $bg-body;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-}
-
-main {
-  display: flex;
-  flex-grow: 1;
-  align-items: center;
-
-  img {
-    width: 6rem;
-  }
 }
 
 img {
@@ -42,4 +25,14 @@ img {
   font-size: 1.5em;
   fill: currentColor;
   pointer-events: none;
+}
+
+.icon.icon--site-logo {
+  width: 215.88px;
+  height: 26.46px;
+}
+
+// This is intended as a marker class to be removed from elements as we work on them.
+.awaits-styling {
+  border: 1px dotted red;
 }
