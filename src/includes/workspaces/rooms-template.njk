@@ -2,13 +2,13 @@
 <main>
   <link rel="stylesheet" href="{% webpack 'main.css' %}">
 
-  <div class="ws-root">
+  <div class="ws-root awaits-styling">
 
-    <div class="ws-background-image">To be replaced with the background image for the current room.  And hotspots.</div>
+    <div class="ws-background-image awaits-styling">To be replaced with the background image for the current room.  And hotspots.</div>
 
     <a href="#">{% icon "site-logo" %}</a>
 
-    <div class="ws-workspace-nav">
+    <div class="ws-workspace-nav awaits-styling">
       <ul>
         {%- for workspace in workspaces %}
           <li><a href="#{{ workspace.route }}">{{ workspace.name }}</a></li>
@@ -16,10 +16,10 @@
       </ul>
     </div>
 
-    <button class="ws-about-cta">{{ common.aboutWorkspaceText }}</button>
+    <button class="ws-about-cta awaits-styling">{{ common.aboutWorkspaceText }}</button>
 
-    <div class="ws-workspaces-rooms">
-      <span class="ws-select-room-text">{{ common.selectRoomText }}</span>
+    <div class="ws-workspaces-rooms awaits-styling">
+      <span class="ws-select-room-text awaits-styling">{{ common.selectRoomText }}</span>
 
       {# The main content template should iterate over room data to render them all here. #}
       {{ content | safe }}

@@ -31,3 +31,8 @@ img {
   width: 215.88px;
   height: 26.46px;
 }
+
+// This is intended as a marker class to be removed from elements as we work on them.
+.awaits-styling {
+  border: 1px dotted red;
+}
