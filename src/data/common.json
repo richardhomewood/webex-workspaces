@@ -1,4 +1,7 @@
 {
-  "aboutWorkspaceText": "About this Workspace",
-  "selectRoomText": "Select a Room"
+  "initialViewText": "From home, to the office, to anywhere in between, get inspiration for turning any space into a productive workspace.",
+  "initialViewCtaText": "Explore",
+  "aboutWorkspaceCtaText": "About this Workspace",
+  "selectRoomText": "Select a Room",
+  "moreRoomsCtaText": "Explore More Rooms"
 }
