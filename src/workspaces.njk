@@ -1,11 +1,14 @@
 ---
 layout: workspaces/immersive-layout.njk
 ---
+{# This represents the room label and selection interface for each workspace. #}
 <div class="ws-workspaces awaits-styling">
   {%- for workspace in workspaces %}
     <div class="ws-workspace awaits-styling" id="{{ workspace.slug }}Container">
       {%- for room in workspace.rooms %}
-        <div class="ws-room awaits-styling" id="{{ workspace.slug }}-{{ room.slug }}">
+        <div class="ws-room-label">{{ room.name }}</div>
+
+        <div class="ws-room-selections awaits-styling" id="{{ workspace.slug }}-{{ room.slug }}">
           <div class="ws-room-selection awaits-styling">
             <a href="#{{ workspace.slug }}-{{ room.slug }}">
               <div class="ws-room-image">To be replaced with an image</div>
