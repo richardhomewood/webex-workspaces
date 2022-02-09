@@ -1,0 +1,39 @@
+[
+  {
+    "name": "Home Spaces",
+    "route": "homespace-homeoffice",
+    "rooms": [
+      {
+        "name": "Home Office"
+      },
+      {
+        "name": "Kitchen Room"
+      }
+    ]
+  },
+  {
+    "name": "Office Spaces",
+    "route": "officespace-hotdesk",
+    "rooms": [
+      {
+        "name": "Hotdesk"
+      },
+      {
+        "name": "Ideation Room"
+      },
+      {
+        "name": "Small Conference Room"
+      }
+    ]
+  },
+  {
+    "name": "Anywhere",
+    "route": "anywhere-cafe",
+    "rooms": [
+      {
+        "name": "Cafe"
+      }
+    ]
+  }
+]
+
