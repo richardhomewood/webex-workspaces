@@ -2,7 +2,7 @@
 <main>
   <link rel="stylesheet" href="{% webpack 'main.css' %}">
 
-  <div class="ws-root-container">
+  <div class="ws-root">
 
     <div class="ws-background-image">To be replaced with the background image for the current room.  And hotspots.</div>
 
@@ -18,10 +18,12 @@
 
     <button class="ws-about-cta">{{ common.aboutWorkspaceText }}</button>
 
-    <div class="ws-select-room">{{ common.selectRoomText }}</div>
+    <div class="ws-workspaces-rooms">
+      <span class="ws-select-room-text">{{ common.selectRoomText }}</span>
 
-    {# The main content template should iterate over room data to render them all here. #}
-    {{ content | safe }}
+      {# The main content template should iterate over room data to render them all here. #}
+      {{ content | safe }}
+    </div>
 
   </div>
 
