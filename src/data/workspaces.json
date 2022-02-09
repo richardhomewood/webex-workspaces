@@ -1,37 +1,46 @@
 [
   {
     "name": "Home Spaces",
-    "route": "homespace-homeoffice",
+    "slug": "homeSpace",
+    "route": "homeSpace-homeOffice",
     "rooms": [
       {
-        "name": "Home Office"
+        "name": "Home Office",
+        "slug": "homeOffice"
       },
       {
-        "name": "Kitchen Room"
+        "name": "Kitchen Room",
+        "slug": "kitchen"
       }
     ]
   },
   {
     "name": "Office Spaces",
-    "route": "officespace-hotdesk",
+    "slug": "officeSpace",
+    "route": "officeSpace-hotdesk",
     "rooms": [
       {
-        "name": "Hotdesk"
+        "name": "Hotdesk",
+        "slug": "hotdesk"
       },
       {
-        "name": "Ideation Room"
+        "name": "Ideation Room",
+        "slug": "ideationRoom"
       },
       {
-        "name": "Small Conference Room"
+        "name": "Small Conference Room",
+        "slug": "smallConferenceRoom"
       }
     ]
   },
   {
     "name": "Anywhere",
+    "slug": "anywhere",
     "route": "anywhere-cafe",
     "rooms": [
       {
-        "name": "Cafe"
+        "name": "Cafe",
+        "slug": "cafe"
       }
     ]
   }
