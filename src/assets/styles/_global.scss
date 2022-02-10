@@ -1,0 +1,54 @@
+.ws-XL,
+.ws-L,
+.ws-M,
+.ws-S {
+  display: none;
+}
+
+@media only screen and (min-width: 521px) {
+  .ws-S {
+    display: block;
+  }
+  .ws-XL,
+  .ws-L,
+  .ws-M,
+  .ws-XS {
+    display: none;
+  }
+}
+
+@media only screen and (min-width: 769px) {
+  .ws-M {
+    display: block;
+  }
+  .ws-XL,
+  .ws-L,
+  .ws-S,
+  .ws-XS {
+    display: none;
+  }
+}
+
+@media only screen and (min-width: 1281px) {
+  .ws-L {
+    display: block;
+  }
+  .ws-XL,
+  .ws-M,
+  .ws-S,
+  .ws-XS {
+    display: none;
+  }
+}
+
+@media only screen and (min-width: 1367px) {
+  .ws-XL {
+    display: block;
+  }
+  .ws-L,
+  .ws-M,
+  .ws-S,
+  .ws-XS {
+    display: none;
+  }
+}
