@@ -46,7 +46,18 @@
   </div>
 {% endmacro %}
 
-{% macro roomView(common, workspaces) %}
+{% macro roomSelections(workspace, room) %}
+  <div class="ws-room-selections awaits-styling" id="{{ workspace.slug }}-{{ room.slug }}">
+    <div class="ws-room-selection awaits-styling">
+      <a href="#{{ workspace.slug }}-{{ room.slug }}">
+        <div class="ws-room-image">To be replaced with an image</div>
+        <div class="ws-room-label awaits-styling">{{ room.name }}</div>
+      </a>
+    </div>
+  </div>
+{% endmacro %}
+
+{% macro roomView(common, workspaces, devicesByRoom, devices) %}
   <div class="ws-room-view">
     <div class="ws-room-background-image awaits-styling">To be replaced with the background image for the current room.  And hotspots.</div>
 
@@ -62,15 +73,11 @@
         {%- for workspace in workspaces %}
           <div class="ws-workspace awaits-styling" id="{{ workspace.slug }}Container">
             {%- for room in workspace.rooms %}
+              <div class="ws-room awaits-styling">
               <div class="ws-room-label">{{ room.name }}</div>
 
-              <div class="ws-room-selections awaits-styling" id="{{ workspace.slug }}-{{ room.slug }}">
-                <div class="ws-room-selection awaits-styling">
-                  <a href="#{{ workspace.slug }}-{{ room.slug }}">
-                    <div class="ws-room-image">To be replaced with an image</div>
-                    <div class="ws-room-label awaits-styling">{{ room.name }}</div>
-                  </a>
-                </div>
+                {{ roomSelections(workspace, room) }}
+
               </div>
             {%- endfor %}
           </div>
