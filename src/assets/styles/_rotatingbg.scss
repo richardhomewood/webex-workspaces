@@ -136,14 +136,12 @@
   }
 
   // at 3s starts to fade out
-  //30% {
   33% {
     opacity: 1;
     z-index: 1;
   }
 
   // at 4s completes fade out
-  //40% {
   44% {
     opacity: 0;
     z-index: 1;
@@ -151,44 +149,9 @@
   }
 
   //from 4s to 9s it lays dormant
-  //70% {
   100% {
     opacity: 0;
     z-index: 1;
     transform: scale(1);
   }
-
-  /*
-  //from 7s to 10s fade back in
-  100% {
-    opacity: 1;
-    z-index: 2;
-  }
-  */
 }
-
-/*
-@keyframes fadeout {
-  from {
-    opacity: 1;
-    z-index: 2;
-  }
-
-  to {
-    opacity: 0;
-    z-index: 1;
-  }
-}
-
-@keyframes fadein {
-  from {
-    opacity: 0;
-    z-index: 1;
-  }
-
-  to {
-    opacity: 1;
-    z-index: 2;
-  }
-}
-*/
