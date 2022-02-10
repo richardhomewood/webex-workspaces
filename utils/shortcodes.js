@@ -114,37 +114,8 @@ module.exports = {
   // {% image "image.jpeg", "Image alt", "Image title", "my-class" %}
   // {% image [100,100], "image.jpeg", "Image alt", "Image title", "my-class" %}
   imagesync: (...args) => {
-/*
-    const src = args[0];
-    const fullSrc = isFullUrl(src) ? src : `./src/assets/images/${src}`;
-    const alt = args[1];
-    const sizes = args[5] ?? defaultSizes;
-    const className = args[3];
 
-    let options = {
-        widths: defaultImagesSizes,
-        formats: ['jpeg'],
-      };
-    
-
-      console.log("WHY IS THIS FAILING?!");
-
-      // generate images, while this is async we don’t wait
-      Image(fullSrc, options);
-    
-      let imageAttributes = {
-        class: className,
-        alt,
-        sizes,
-        loading: "lazy",
-        decoding: "async",
-      };
-      // get metadata even the images are not fully generated
-      let metadata = Image.statsSync(fullSrc, options);
-      return Image.generateHTML(metadata, imageAttributes);
-      */
-
-      let fallbackWidth, fallbackHeight;
+    let fallbackWidth, fallbackHeight;
 
     if (Array.isArray(args[0])) {
       [fallbackWidth, fallbackHeight] = args.shift();
@@ -162,6 +133,12 @@ module.exports = {
 
     let stats;
     try {
+        Image(fullSrc, {
+            widths: defaultImagesSizes,
+            formats: extension === 'webp' ? ['webp', 'jpeg'] : ['webp', extension],
+            urlPath: '/assets/images/',
+            outputDir: '_site/assets/images/'
+          });
       stats =  Image.statsSync(fullSrc, {
         widths: defaultImagesSizes,
         formats: extension === 'webp' ? ['webp', 'jpeg'] : ['webp', extension],
