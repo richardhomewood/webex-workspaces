@@ -1,0 +1,57 @@
+{
+  "homeSpace": {
+    "kitchen": [
+      {
+        "name": "Webex Desk Mini",
+        "slug": "webex-desk-mini",
+        "link": "https://hardware.webex.com/products/desk-mini",
+        "introCopy": "Create an instant workspace with the portable video conferencing device that's designed for taking meetings with you to any room—even your kitchen.",
+        "features": [
+          "Portable design perfect for the kitchen, bedroom, or any small workspace",
+          "Background noise removal to eliminate distractions at home",
+          "Join any meeting service—including Webex, Zoom, and Microsoft—with a click of a button",
+          "Meet, call, and co-create from a single device"
+        ],
+        "specs": [
+          {
+            "icon": "15-point-6-inches",
+            "text": "Screen: 15.6-inch LCD touchscreen monitor"
+          },
+          {
+            "icon": "screen-size",
+            "text": "Resolutions: 1080p (16:9)"
+          },
+          {
+            "icon": "camera",
+            "text": "Camera: 8MP image sensors, supports up to 30fps"
+          },
+          {
+            "icon": "64-degrees",
+            "text": "Field of view: 64° horizontal field of view, 50° vertical field of view"
+          },
+          {
+            "icon": "microphone",
+            "text": "Audio: 3-element microphone system"
+          }
+        ],
+        "configGuideLink": "https://to-be-determined",
+        "pdfLink": "https://another.to-be-determined"
+      }
+    ],
+    "homeOffice": [
+      {
+        "name": "Webex Desk Pro",
+        "slug": "webex-desk-pro",
+        "link": "https://www.cisco.com/c/en/us/products/collaboration-endpoints/webex-desk-pro/datasheet-c78-743105.html"
+      }
+    ]
+  },
+  "officeSpace": {
+    "hotdesk": [],
+    "ideationRoom": [],
+    "smallConferenceRoom": []
+  },
+  "anywhere": {
+    "cafe": []
+  }
+}
