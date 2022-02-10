@@ -1,0 +1,196 @@
+@font-face {
+  font-family: 'CiscoSansTT-Regular';
+  src: local('CiscoSansTT-Regular'),
+    url(../fonts/CiscoSansTT.woff2) format('woff2');
+}
+
+@font-face {
+  font-family: 'CiscoSansTT-Medium';
+  src: local('CiscoSansTT-Medium'),
+    url(../fonts/CiscoSansTT-Medium.woff2) format('woff2');
+}
+
+@font-face {
+  font-family: 'CiscoSansTT-Bold';
+  src: local('CiscoSansTT-Bold'),
+    url(../fonts/CiscoSansTT-Bold.woff2) format('woff2');
+}
+
+@mixin ws-h1 {
+  font-family: 'CiscoSansTT-Medium';
+  font-size: 40px;
+  line-height: 44px;
+  letter-spacing: -0.04em;
+
+  @media only screen and (min-width: 1367px) {
+    font-family: 'CiscoSansTT-Medium';
+    font-size: 84px;
+    line-height: 84px;
+    letter-spacing: -0.04em;
+  }
+}
+
+@mixin ws-h2 {
+  font-family: 'CiscoSansTT-Medium';
+  font-size: 34px;
+  line-height: 38px;
+  letter-spacing: -0.03em;
+
+  @media only screen and (min-width: 1367px) {
+    font-family: 'CiscoSansTT-Medium';
+    font-size: 64px;
+    line-height: 64px;
+    letter-spacing: -0.04em;
+  }
+}
+
+@mixin ws-h3 {
+  font-family: 'CiscoSansTT-Regular';
+  font-size: 32px;
+  line-height: 36px;
+  letter-spacing: -0.03em;
+
+  @media only screen and (min-width: 1367px) {
+    font-family: 'CiscoSansTT-Regular';
+    font-size: 40px;
+    line-height: 44px;
+    letter-spacing: -0.04em;
+  }
+}
+
+@mixin ws-h4 {
+  font-family: 'CiscoSansTT-Regular';
+  font-size: 22px;
+  line-height: 28px;
+  letter-spacing: -0.03em;
+
+  @media only screen and (min-width: 1367px) {
+    font-family: 'CiscoSansTT-Regular';
+    font-size: 32px;
+    line-height: 36px;
+    letter-spacing: -0.04em;
+  }
+}
+
+@mixin ws-large-body-reg {
+  font-family: 'CiscoSansTT-Regular';
+  font-size: 16px;
+  line-height: 22px;
+
+  @media only screen and (min-width: 1367px) {
+    font-family: 'CiscoSansTT-Regular';
+    font-size: 24px;
+    line-height: 32px;
+    letter-spacing: -0.02em;
+  }
+}
+
+@mixin ws-large-body-med {
+  @include ws-large-body-reg;
+  font-family: 'CiscoSansTT-Medium';
+
+  @media only screen and (min-width: 1367px) {
+    @include ws-large-body-reg;
+    font-family: 'CiscoSansTT-Medium';
+  }
+}
+
+@mixin ws-large-body-bold {
+  @include ws-large-body-reg;
+  font-family: 'CiscoSansTT-Bold';
+
+  @media only screen and (min-width: 1367px) {
+    @include ws-large-body-reg;
+    font-family: 'CiscoSansTT-Bold';
+  }
+}
+
+@mixin ws-med-body-reg {
+  font-family: 'CiscoSansTT-Regular';
+  font-size: 16px;
+  line-height: 22px;
+
+  @media only screen and (min-width: 1367px) {
+    font-family: 'CiscoSansTT-Regular';
+    font-size: 18px;
+    line-height: 26px;
+    letter-spacing: -0.02em;
+  }
+}
+
+@mixin ws-med-body-med {
+  @include ws-med-body-reg;
+  font-family: 'CiscoSansTT-Medium';
+
+  @media only screen and (min-width: 1367px) {
+    @include ws-med-body-reg;
+    font-family: 'CiscoSansTT-Medium';
+  }
+}
+
+@mixin ws-med-body-bold {
+  @include ws-med-body-reg;
+  font-family: 'CiscoSansTT-Bold';
+
+  @media only screen and (min-width: 1367px) {
+    @include ws-med-body-reg;
+    font-family: 'CiscoSansTT-Bold';
+  }
+}
+
+@mixin ws-small-body-reg {
+  font-family: 'CiscoSansTT-Regular';
+  font-size: 14px;
+  line-height: 18px;
+  letter-spacing: -0.01em;
+
+  @media only screen and (min-width: 1367px) {
+    font-family: 'CiscoSansTT-Regular';
+    font-size: 15px;
+    line-height: 26px;
+    letter-spacing: -0.01em;
+  }
+}
+
+@mixin ws-small-body-med {
+  @include ws-small-body-reg;
+  font-family: 'CiscoSansTT-Medium';
+
+  @media only screen and (min-width: 1367px) {
+    @include ws-small-body-reg;
+    font-family: 'CiscoSansTT-Medium';
+  }
+}
+
+@mixin ws-small-body-bold {
+  @include ws-small-body-reg;
+  font-family: 'CiscoSansTT-Bold';
+
+  @media only screen and (min-width: 1367px) {
+    @include ws-small-body-reg;
+    font-family: 'CiscoSansTT-Bold';
+  }
+}
+
+@mixin ws-xsmall-body-reg {
+  font-family: 'CiscoSansTT-Regular';
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: 0;
+
+  @media only screen and (min-width: 1367px) {
+    letter-spacing: -0.01em;
+  }
+}
+
+@mixin ws-xsmall-body-med {
+  @include ws-xsmall-body-reg;
+  font-family: 'CiscoSansTT-Medium';
+  letter-spacing: -0.01em;
+}
+
+@mixin ws-xsmall-body-bold {
+  @include ws-xsmall-body-reg;
+  font-family: 'CiscoSansTT-Bold';
+  letter-spacing: -0.01em;
+}
