@@ -1,0 +1,60 @@
+{% macro commonUi(common, workspaces) %}
+  <div class="ws-common-ui">
+    <a href="#">{% icon "site-logo" %}</a>
+
+    <div class="ws-workspace-nav awaits-styling">
+      <ul>
+        {%- for workspace in workspaces %}
+          <li><a href="#{{ workspace.route }}">{{ workspace.name }}</a></li>
+        {%- endfor %}
+      </ul>
+    </div>
+
+    <button class="ws-about-cta awaits-styling">{{ common.aboutWorkspaceCtaText }}</button>
+  </div>
+{% endmacro %}
+
+{% macro initialView(common) %}
+  <div class="ws-initial-view">
+    <div class="ws-initial-rotating-background-image">To be replaced with a rotating background image</div>
+
+    <div class="ws-initial-text">{{ common.initialViewText }}</div>
+
+    <button class="ws-initial-cta">{{ common.initialViewCtaText }}</button>
+  </div>
+{% endmacro %}
+
+{% macro roomView(common, workspaces) %}
+  <div class="ws-room-view">
+    <div class="ws-room-background-image awaits-styling">To be replaced with the background image for the current room.  And hotspots.</div>
+
+    <div class="ws-more-rooms-text">
+      <button class="ws-show-more-rooms">{{ common.moreRoomsCtaText }}</button>
+    </div>
+
+    <div class="ws-workspaces-rooms awaits-styling">
+      <span class="ws-select-room-text awaits-styling">{{ common.selectRoomText }}</span>
+
+      {# This represents the room label and selection interface for each workspace. #}
+      <div class="ws-workspaces awaits-styling">
+        {%- for workspace in workspaces %}
+          <div class="ws-workspace awaits-styling" id="{{ workspace.slug }}Container">
+            {%- for room in workspace.rooms %}
+              <div class="ws-room-label">{{ room.name }}</div>
+
+              <div class="ws-room-selections awaits-styling" id="{{ workspace.slug }}-{{ room.slug }}">
+                <div class="ws-room-selection awaits-styling">
+                  <a href="#{{ workspace.slug }}-{{ room.slug }}">
+                    <div class="ws-room-image">To be replaced with an image</div>
+                    <div class="ws-room-label awaits-styling">{{ room.name }}</div>
+                  </a>
+                </div>
+              </div>
+            {%- endfor %}
+          </div>
+        {%- endfor %}
+      </div>
+
+    </div>
+  </div>
+{% endmacro %}
