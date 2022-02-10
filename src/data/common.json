@@ -3,5 +3,13 @@
   "initialViewCtaText": "Explore",
   "aboutWorkspaceCtaText": "About this Workspace",
   "selectRoomText": "Select a Room",
-  "moreRoomsCtaText": "Explore More Rooms"
+  "moreRoomsCtaText": "Explore More Rooms",
+
+  "deviceModal": {
+    "learnMoreCTAText": "Learn More",
+    "featuresHeadingText": "Features",
+    "specsHeadingText": "Tech Specs",
+    "configGuideHeadingText": "Configuration Guide",
+    "pdfCTAText": "Download PDF Version"
+  }
 }
