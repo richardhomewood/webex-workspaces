@@ -1,0 +1,17 @@
+.ws-immersive-root {
+  .ws-initial-view {
+    width: 100%;
+    .ws-initial-content {
+      position: absolute;
+      z-index: 1;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      width: calc(100vw - 80px);
+      margin: auto auto;
+      text-align: center;
+    }
+  }
+}
+
+@import 'rotatingbg';
