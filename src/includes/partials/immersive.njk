@@ -1,4 +1,4 @@
-{% import "./device-modal/device-modal.njk" as deviceModal %}
+{% import "./device-modal/index.njk" as deviceModal %}
 
 {% macro commonUi(common, workspaces) %}
   <div class="ws-common-ui">
@@ -32,7 +32,7 @@
         <div class="ws-rotating-background-image ws-rotating-background-image-2 ws-M">{% imagesync "M_02_background.png", "" %}</div>
         <div class="ws-rotating-background-image ws-rotating-background-image-3 ws-M">{% imagesync "M_03_background.png", "" %}</div>
 
-        <div class="ws-rotating-background-image ws-rotating-background-image-1 ws-S">{% imagesync "S_01_background.png", "" %}</div>  
+        <div class="ws-rotating-background-image ws-rotating-background-image-1 ws-S">{% imagesync "S_01_background.png", "" %}</div>
         <div class="ws-rotating-background-image ws-rotating-background-image-2 ws-S">{% imagesync "S_02_background.png", "" %}</div>
         <div class="ws-rotating-background-image ws-rotating-background-image-3 ws-S">{% imagesync "S_03_background.png", "" %}</div>
 
