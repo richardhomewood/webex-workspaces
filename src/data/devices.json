@@ -36,8 +36,29 @@
         "text": "Speakers: Single-channel loudspeaker system with a high quality 18mm tweeter and dual force-cancelling 80mm woofers"
       }
     ],
-    "configGuideLink": "https://to-be-determined",
-    "pdfLink": "https://another.to-be-determined"
+    "configGuide": {
+      "pdfUrl": "https://to-be-determined",
+      "imageUrl": "http://fpoimg.com/779x404?text=Configuration+Guide+image"
+    },
+    "pdfUrl": "https://another.to-be-determined",
+    "images": [
+      {
+        "url": "http://fpoimg.com/1571x887?text=image+1",
+        "alt": "image 1"
+      },
+      {
+        "url": "http://fpoimg.com/1571x887?text=image+2",
+        "alt": "image 2"
+      },
+      {
+        "url": "http://fpoimg.com/1571x887?text=image+3",
+        "alt": "image 3"
+      },
+      {
+        "url": "http://fpoimg.com/1571x887?text=image+4",
+        "alt": "image 4"
+      }
+    ]
   },
 
 

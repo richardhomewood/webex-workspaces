@@ -1,19 +1,19 @@
 {% import "partials/immersive.njk" as immersive %}
 <!DOCTYPE html>
 <main>
-  <link rel="stylesheet" href="{% webpack 'main.css' %}">
+    <link rel="stylesheet" href="{% webpack 'main.css' %}">
 
-  {# This is the root element for the "immersive experience" #}
-  <div class="ws-immersive-root awaits-styling">
+    {# This is the root element for the "immersive experience" #}
+    <div class="ws-immersive-root awaits-styling">
 
-    {{ immersive.commonUi(common, workspaces) }}
+      {{ immersive.commonUi(common, workspaces) }}
 
-    {{ immersive.initialView(common) }}
+      {{ immersive.initialView(common) }}
 
-    {{ immersive.roomView(common, workspaces) }}
+      {{ immersive.roomView(common, workspaces, devicesByRoom, devices) }}
 
-  </div>
+    </div>
 
 </main>
-<script async defer src="{% webpack 'main.js' %}"></script>
+    <script async defer src="{% webpack 'main.js' %}"></script>
 

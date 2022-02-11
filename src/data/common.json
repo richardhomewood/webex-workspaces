@@ -6,10 +6,10 @@
   "moreRoomsCtaText": "Explore More Rooms",
 
   "deviceModal": {
-    "learnMoreCTAText": "Learn More",
+    "learnMoreCtaText": "Learn More",
     "featuresHeadingText": "Features",
     "specsHeadingText": "Tech Specs",
     "configGuideHeadingText": "Configuration Guide",
-    "pdfCTAText": "Download PDF Version"
+    "pdfCtaText": "Download PDF Version"
   }
 }
