@@ -18,7 +18,7 @@
         {% set device = devices[deviceId] %}
         <div class="ws-device-name awaits-styling">{{ device.name }}</div>
 
-        <div class="ws-device-introCopy awaits-styling">{{ device.introCopy }}</div>
+        <div class="ws-device-intro-text awaits-styling">{{ device.introText }}</div>
 
         {{ downloadPdf.render(common, device.pdfUrl) }}
 

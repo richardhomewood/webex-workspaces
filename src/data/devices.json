@@ -3,7 +3,7 @@
     "name": "Webex Desk Mini",
     "slug": "webex-desk-mini",
     "link": "https://hardware.webex.com/products/desk-mini",
-    "introCopy": "Create an instant workspace with the portable video conferencing device that's designed for taking meetings with you to any room—even your kitchen.",
+    "introText": "Create an instant workspace with the portable video conferencing device that's designed for taking meetings with you to any room—even your kitchen.",
     "features": [
       "Portable design perfect for the kitchen, bedroom, or any small workspace",
       "Background noise removal to eliminate distractions at home",
