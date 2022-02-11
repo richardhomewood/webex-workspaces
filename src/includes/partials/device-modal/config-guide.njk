@@ -2,7 +2,7 @@
 
 {% macro render(common, configGuide) %}
   <div class="ws-config-guide ws-modal-section">
-    <div class="ws-modal-section-heading">{{ common.deviceModal.configGuideHeadingText }}</div>
+    <h6 class="ws-modal-section-heading">{{ common.deviceModal.configGuideHeadingText }}</h6>
     {% if configuGuide.imageUrl %}
       {% image configGuide.imageUrl %}
     {% endif %}

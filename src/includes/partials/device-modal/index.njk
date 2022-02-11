@@ -16,7 +16,7 @@
       {# Only one of these device divs should be visible at any one time.  For the clicked hotspot. #}
       <div class="ws-device awaits-styling" id="device_{{ deviceId }}">
         {% set device = devices[deviceId] %}
-        <div class="ws-device-name awaits-styling">{{ device.name }}</div>
+        <h2 class="ws-device-name awaits-styling">{{ device.name }}</h2>
 
         <div class="ws-device-intro-text awaits-styling">{{ device.introText }}</div>
 

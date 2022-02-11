@@ -9,7 +9,7 @@
 
 {% macro render(common, specs) %}
   <div class="ws-device-specs ws-modal-section awaits-styling">
-    <div class="ws-modal-section-heading awaits-styling">{{ common.deviceModal.specsHeadingText }}</div>
+    <h6 class="ws-modal-section-heading awaits-styling">{{ common.deviceModal.specsHeadingText }}</h6>
     <ul>
       {% for spec in specs %}
         {{ specification(spec) }}
