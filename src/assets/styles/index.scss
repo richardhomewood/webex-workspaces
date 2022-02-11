@@ -33,8 +33,19 @@ img {
 }
 
 // This is intended as a marker class to be removed from elements as we work on them.
+$awaitsBorderWidth: 1px;
 .awaits-styling {
-  border: 1px dotted red;
+  margin: $awaitsBorderWidth * 2;
+  border: $awaitsBorderWidth dotted red;
+  .awaits-styling {
+    border: $awaitsBorderWidth dotted lightgreen;
+    .awaits-styling {
+      border: $awaitsBorderWidth dotted cyan;
+      .awaits-styling {
+        border: $awaitsBorderWidth dotted lightsalmon;
+      }
+    }
+  }
 }
 
 @import 'global';

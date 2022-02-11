@@ -1,0 +1,11 @@
+{% import "./download-pdf.njk" as downloadPdf %}
+
+{% macro render(common, configGuide) %}
+  <div class="ws-config-guide ws-modal-section">
+    <div class="ws-modal-section-heading">{{ common.deviceModal.configGuideHeadingText }}</div>
+    {% if configuGuide.imageUrl %}
+      {% image configGuide.imageUrl %}
+    {% endif %}
+    {{ downloadPdf.render(common, configGuide.pdfUrl) }}
+  </div>
+{% endmacro %}

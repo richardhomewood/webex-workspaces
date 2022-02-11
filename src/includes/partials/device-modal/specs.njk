@@ -1,0 +1,19 @@
+{% macro specification(spec) %}
+  <li>
+    {% if spec.iconId %}
+      {% icon spec.iconId %}
+    {% endif %}
+    <span>{{ spec.text }}</span>
+  </li>
+{% endmacro %}
+
+{% macro render(common, specs) %}
+  <div class="ws-device-specs ws-modal-section awaits-styling">
+    <div class="ws-modal-section-heading awaits-styling">{{ common.deviceModal.specsHeadingText }}</div>
+    <ul>
+      {% for spec in specs %}
+        {{ specification(spec) }}
+      {% endfor %}
+    </ul>
+  </div>
+{% endmacro %}

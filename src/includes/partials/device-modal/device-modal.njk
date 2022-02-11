@@ -1,0 +1,37 @@
+{% import "./image-carousel.njk" as carousel %}
+{% import "./features.njk" as features %}
+{% import "./specs.njk" as specs %}
+{% import "./download-pdf.njk" as downloadPdf %}
+{% import "./config-guide.njk" as configGuide %}
+
+
+{% macro render(common, workspace, room, devicesByRoom, devices) %}
+  {# This div may be positioned off-screen and animated into place when a hotspot is clicked #}
+  <div class="ws-device-modal-root awaits-styling">
+    (Device Modal for {{ workspace.slug }}-{{ room.slug }})
+
+    <button class="ws-device-modal-close awaits-styling" aria-label="Close"></button>
+
+    {% for deviceId in devicesByRoom[workspace.slug][room.slug] %}
+      {# Only one of these device divs should be visible at any one time.  For the clicked hotspot. #}
+      <div class="ws-device awaits-styling" id="device_{{ deviceId }}">
+        {% set device = devices[deviceId] %}
+        <div class="ws-device-name awaits-styling">{{ device.name }}</div>
+
+        <div class="ws-device-introCopy awaits-styling">{{ device.introCopy }}</div>
+
+        {{ downloadPdf.render(common, device.pdfUrl) }}
+
+        {{ carousel.render(device.images) }}
+
+        {{ features.render(common, device.features) }}
+
+        {{ specs.render(common, device.specs) }}
+
+        {{ configGuide.render(common, device.configGuide) }}
+
+      </div>
+    {% endfor %}
+  </div>
+{% endmacro %}
+

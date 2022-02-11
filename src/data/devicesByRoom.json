@@ -1,0 +1,18 @@
+{
+  "homeSpace": {
+    "kitchen": [
+      "webex-desk-mini"
+    ],
+    "homeOffice": [
+      "webex-desk-pro"
+    ]
+  },
+  "officeSpace": {
+    "hotdesk": [],
+    "ideationRoom": [],
+    "smallConferenceRoom": []
+  },
+  "anywhere": {
+    "cafe": []
+  }
+}

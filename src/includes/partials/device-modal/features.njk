@@ -1,0 +1,14 @@
+{% macro feature(text) %}
+  <li>{{ text }}</li>
+{% endmacro %}
+
+{% macro render(common, features) %}
+  <div class="ws-device-features ws-modal-section awaits-styling">
+    <div class="ws-modal-section-heading awaits-styling">{{ common.deviceModal.featuresHeadingText }}</div>
+    <ul>
+      {% for text in features %}
+        {{ feature(text) }}
+      {% endfor %}
+    </ul>
+  </div>
+{% endmacro %}
