@@ -1,6 +1,9 @@
 {% import "partials/immersive.njk" as immersive %}
 <!DOCTYPE html>
 <main>
+
+  <!-- Content Section -->
+  <div class="workspaces-page-content">
     <link rel="stylesheet" href="{% webpack 'main.css' %}">
 
     {# This is the root element for the "immersive experience" #}
@@ -14,6 +17,9 @@
 
     </div>
 
-</main>
     <script async defer src="{% webpack 'main.js' %}"></script>
+  </div>
+  <!--/ Content Section -->
+
+</main>
 
