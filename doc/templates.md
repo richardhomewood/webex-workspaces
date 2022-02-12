@@ -51,9 +51,13 @@ Renders common room content, and all the room-specific content:
 - The "Explore More Rooms" and "Select a Room" copy
 - The currently-selected room's background image
 - All the room selection UI, using the previous macro.
-- A device modal for each room, using the [`device-modal.njk`](../src/includes/partials/device-modal/device-modal.njk) partial.
+- A device modal for each room, using the [`device-modal.njk`](../src/includes/partials/device-modal/index.njk) partial.
 
-###  [`src/includes/partials/device-modal/device-modal.njk`](../src/includes/partials/device-modal/device-modal.njk)
+###  [`src/includes/partials/common/download-pdf.njk`](../src/includes/partials/common/download-pdf.njk)
+
+Renders "Download PDF Version" links.
+
+###  [`src/includes/partials/device-modal/index.njk`](../src/includes/partials/device-modal/index.njk)
 
 Renders:
 - Root container for the modal
@@ -70,10 +74,6 @@ Renders:
 ###  [`src/includes/partials/device-modal/config-guide.njk`](../src/includes/partials/device-modal/config-guide.njk)
 
 Renders the Configuration Guide section of the device modal
-
-###  [`src/includes/partials/device-modal/download-pdf.njk`](../src/includes/partials/device-modal/download-pdf.njk)
-
-Renders "Download PDF Version" links.
 
 ###  [`src/includes/partials/device-modal/features.njk`](../src/includes/partials/device-modal/features.njk)
 
