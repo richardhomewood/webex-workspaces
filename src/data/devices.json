@@ -1,7 +1,7 @@
 {
   "webex-desk-mini": {
     "name": "Webex Desk Mini",
-    "slug": "webex-desk-mini",
+    "vendor": "webex",
     "link": "https://hardware.webex.com/products/desk-mini",
     "introText": "Create an instant workspace with the portable video conferencing device that's designed for taking meetings with you to any room—even your kitchen.",
     "features": [
@@ -61,10 +61,117 @@
     ]
   },
 
+  "cisco-headset-730": {
+    "name": "Cisco Headset 730",
+    "vendor": "webex",
+    "link": "https://www.cisco.com/c/en/us/products/collateral/collaboration-endpoints/headset-700-series/datasheet-c78-743083.html",
+    "introText": "Go anywhere with the award-winning, on-ear wireless headset designed for work and play.",
+    "features": [
+      "Portable and wireless with up to 20-hours of talk time so you can take your meetings with you wherever you go.",
+      "Boomless design for all day comfort.",
+      "Easily switch between meetings and calls to your favorite focus-work playlist.",
+      "Active noise cancellation with background noise reduction help keep audio crystal clear in any environment."
+    ],
+    "specs": [
+      {
+        "text": "Connectivity: Bluetooth® 5.0, USB-A, and 3.5 mm (audio only)"
+      },
+      {
+        "text": "Voice activated AI: Access Google Assistant or Siri"
+      },
+      {
+        "text": "On-ear buttons for easy call and music controls"
+      },
+      {
+        "text": "Companion mobile app for configuration and customization"
+      },
+      {
+        "text": "Enterprise-grade security and manageability"
+      }
+    ],
+    "configGuide": {
+      "pdfUrl": "https://to-be-determined",
+      "imageUrl": "http://fpoimg.com/779x404?text=Configuration+Guide+image"
+    },
+    "pdfUrl": "https://another.to-be-determined",
+    "images": [
+      {
+        "url": "http://fpoimg.com/1571x887?text=image+1",
+        "alt": "image 1"
+      },
+      {
+        "url": "http://fpoimg.com/1571x887?text=image+2",
+        "alt": "image 2"
+      },
+      {
+        "url": "http://fpoimg.com/1571x887?text=image+3",
+        "alt": "image 3"
+      },
+      {
+        "url": "http://fpoimg.com/1571x887?text=image+4",
+        "alt": "image 4"
+      }
+    ]
+  },
+
+  "meraki-z3c": {
+    "name": "Meraki Z3C Teleworker Gateway",
+    "vendor": "meraki",
+    "link": "https://meraki.cisco.com/product/security-sd-wan/teleworker/z3c/",
+    "introText": "Provide security, convenience, and optimized access to your home office.",
+    "features": [
+      "Always-on VPN. An office-like experience at home with Wi-Fi that’s always connected.",
+      "VOIP telephony. Plug-and-play office telephony in a home office from PoE-enabled ports.",
+      "Network visibility. Insight into how apps are performing for remote workers with powerful end-to-end analytics."
+    ],
+    "specs": [
+      {
+        "text": "Recommended use cases: Teleworker with VoIP or PoE, IoT, and M2M"
+      },
+      {
+        "text": "Recommended clients: Up to 5 devices"
+      },
+      {
+        "text": "Stateful Firewall Throughput: 100 Mbps"
+      },
+      {
+        "text": "Maximum VPN Throughput: 50 Mbps"
+      },
+      {
+        "text": "WAN Interfaces: 1 x GbE RJ45; 1 x USB (cellular failover)"
+      },
+      {
+        "text": "LAN Interfaces: 4 x GbE"
+      }
+    ],
+    "configGuide": {
+      "pdfUrl": "https://to-be-determined",
+      "imageUrl": "http://fpoimg.com/779x404?text=Configuration+Guide+image"
+    },
+    "pdfUrl": "https://another.to-be-determined",
+    "images": [
+      {
+        "url": "http://fpoimg.com/1571x887?text=image+1",
+        "alt": "image 1"
+      },
+      {
+        "url": "http://fpoimg.com/1571x887?text=image+2",
+        "alt": "image 2"
+      },
+      {
+        "url": "http://fpoimg.com/1571x887?text=image+3",
+        "alt": "image 3"
+      },
+      {
+        "url": "http://fpoimg.com/1571x887?text=image+4",
+        "alt": "image 4"
+      }
+    ]
+  },
 
   "webex-desk-pro": {
     "name": "Webex Desk Pro",
-    "slug": "webex-desk-pro",
+    "vendor": "webex",
     "link": "https://www.cisco.com/c/en/us/products/collaboration-endpoints/webex-desk-pro/datasheet-c78-743105.html"
   }
 

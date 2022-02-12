@@ -1,7 +1,9 @@
 {
   "homeSpace": {
     "kitchen": [
-      "webex-desk-mini"
+      "webex-desk-mini",
+      "cisco-headset-730",
+      "meraki-z3c"
     ],
     "homeOffice": [
       "webex-desk-pro"
