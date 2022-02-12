@@ -10,30 +10,27 @@ or [`src/includes`](../src/includes) directories.
   This is the only top-level template. It contains page-wrapping around the content that will not be copied
   by Webex at deployment time.
 
-  A root element contains links to bundled CSS and JS, and calls macros from
-  [`src/includes/partials/immersive.njk`](../src/includes/partials/immersive.njk) to render content:
+  It is a minimal wrapper around included macro content that serves to load both CSS and JavaScript.
 
-  - Common UI elements used for all workspaces and rooms
-  - Elements for the initial "onboarding" view
-  - Elements for all the individual room views.
 
 ## Partial templates
 
-Each partial template renders a section of the page.  Data for a given partial must be passed in by its caller.
+Each partial template _must_ have a single macro named `render` to be used by external callers.  A template file
+_may_ have additional macros used only from within the same template file.
 
-### [`src/includes/partials/immersive.njk`](../src/includes/partials/immersive.njk)
-  
-This partial template contains the following macros, all called directory or indirectly by the sole page template.
+### [`src/includes/partials/immersive/index.njk`](../src/includes/partials/immersive/index.njk)
 
-#### `commonUI`
+Renders the root container and calls the 3 following partials to populate its children:
+
+### [`src/includes/partials/immersive/commonUi.njk`](../src/includes/partials/immersive/commonUi.njk)
 
 Renders:
 - Container for common UI elements
   - Site logo
   - Workspace navigation
   - "About this Workspace" CTA
-  
-#### `initialView`
+
+### [`src/includes/partials/immersive/initialView.njk`](../src/includes/partials/immersive/initialView.njk)
 
 Renders:
 - Container for the initial view elements
@@ -41,17 +38,17 @@ Renders:
 - Initial-view "Explore" CTA
 - Container for the current room's rendered background image (and hotspots?)
 
-#### `roomSelections`
-
-Renders only the room-selections UI: the room image tiles and names
-
-#### `roomView`
+### [`src/includes/partials/immersive/roomView.njk`](../src/includes/partials/immersive/roomView.njk)
 
 Renders common room content, and all the room-specific content:
 - The "Explore More Rooms" and "Select a Room" copy
 - The currently-selected room's background image
 - All the room selection UI, using the previous macro.
 - A device modal for each room, using the [`device-modal.njk`](../src/includes/partials/device-modal/index.njk) partial.
+
+#### `roomSelections` macro
+
+Renders only the room-selections UI: the room image tiles and names
 
 ###  [`src/includes/partials/common/download-pdf.njk`](../src/includes/partials/common/download-pdf.njk)
 

@@ -1,0 +1,15 @@
+{% macro render(common, workspaces) %}
+  <div class="ws-common-ui">
+    <a href="#">{% icon "site-logo" %}</a>
+
+    <div class="ws-workspace-nav awaits-styling">
+      <ul>
+        {%- for workspace in workspaces %}
+          <li><a href="#{{ workspace.route }}">{{ workspace.name }}</a></li>
+        {%- endfor %}
+      </ul>
+    </div>
+
+    <button class="ws-about-cta awaits-styling">{{ common.aboutWorkspaceCtaText }}</button>
+  </div>
+{% endmacro %}
