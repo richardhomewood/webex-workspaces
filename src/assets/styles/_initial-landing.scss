@@ -1,7 +1,21 @@
+.ws-immersive-root {
+  .ws-initial-view {
+    opacity: 1;
+    &.explored {
+      animation-name: fadeoutDisplayNone;
+      animation-duration: 0.3s;
+      animation-iteration-count: 1;
+      animation-fill-mode: forwards;
+      animation-timing-function: linear;
+    }
+  }
+}
+
 @media only screen and (max-width: 520px) {
   .ws-immersive-root {
     .ws-initial-view {
       width: 100%;
+
       .ws-initial-content {
         position: absolute;
         z-index: 1;
@@ -30,6 +44,8 @@
           border-radius: 50px;
           background-color: transparent;
           margin-top: 31px;
+          text-decoration: none;
+          display: inline-block;
         }
       }
     }
@@ -67,6 +83,8 @@
           border-radius: 50px;
           background-color: transparent;
           margin-top: 38px;
+          text-decoration: none;
+          display: inline-block;
         }
       }
     }
@@ -104,6 +122,8 @@
           border-radius: 50px;
           background-color: transparent;
           margin-top: 38px;
+          text-decoration: none;
+          display: inline-block;
         }
       }
     }
@@ -141,6 +161,8 @@
           border-radius: 50px;
           background-color: transparent;
           margin-top: 30px;
+          text-decoration: none;
+          display: inline-block;
         }
       }
     }
@@ -178,6 +200,8 @@
           border-radius: 50px;
           background-color: transparent;
           margin-top: 30px;
+          text-decoration: none;
+          display: inline-block;
         }
       }
     }
@@ -215,6 +239,8 @@
           border-radius: 50px;
           background-color: transparent;
           margin-top: 55px;
+          text-decoration: none;
+          display: inline-block;
         }
       }
     }

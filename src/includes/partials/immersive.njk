@@ -43,7 +43,7 @@
       </div>
     <div class="ws-initial-content">
         <div class="ws-initial-text">{{ common.initialViewText }}</div>
-        <button class="ws-initial-cta">{{ common.initialViewCtaText }}</button>
+        <a class="ws-initial-cta" href="#homeSpace-homeOffice">{{ common.initialViewCtaText }}</a>
     </div>
   </div>
 {% endmacro %}
@@ -60,7 +60,7 @@
 {% endmacro %}
 
 {% macro roomView(common, workspaces, devicesByRoom, devices) %}
-  <div class="ws-room-view">
+  <div class="ws-room-view displayNone">
     <div class="ws-room-background-image awaits-styling">To be replaced with the background image for the current room.  And hotspots.</div>
 
     <div class="ws-more-rooms-text awaits-styling">
