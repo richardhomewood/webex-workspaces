@@ -89,3 +89,14 @@ The skeleton for this partial is still in progress.  For now, it displays the co
 
 Renders a container and a list of specification, supplied as an array of specification objects.
 Each one should supply text and an optional icon ID. 
+
+
+###  [`src/includes/partials/room-info-modal/index.njk`](../src/includes/partials/room-info-modal/index.njk)
+
+Renders:
+- Root container for the modal
+- "Close" button
+- Room name and intro text
+- "Product List" heading
+- Headings for each device vendor
+- List of devices for each device vendor
