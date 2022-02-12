@@ -1,0 +1,291 @@
+@media only screen and (max-width: 520px) {
+  .ws-immersive-root {
+    .ws-common-ui {
+      position: absolute;
+      top: 20px;
+      z-index: 3;
+
+      .icon.icon--site-logo {
+        margin-left: 20px;
+      }
+
+      .ws-workspace-nav {
+        width: 100vw;
+        padding: 0 0 0 0;
+        margin: 0 0 0 0;
+        ul {
+          box-sizing: border-box;
+          margin: 0 0 0 0;
+          padding: 20px 20px 0;
+          list-style: none;
+          width: 100vw;
+          display: flex;
+          justify-content: space-between;
+
+          li a {
+            @include ws-small-body-reg;
+            color: #fff;
+            text-decoration: none;
+          }
+        }
+      }
+
+      .ws-about-cta {
+        position: absolute;
+        top: 0px;
+        right: 20px;
+        width: 32px;
+        height: 32px;
+        border-radius: 16px;
+        border: solid 1px #fff;
+        background-color: transparent;
+        text-align: center;
+        color: #fff;
+        font-size: 15px;
+        line-height: 14px;
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 521px) and (max-width: 767px) {
+  .ws-immersive-root {
+    .ws-common-ui {
+      position: absolute;
+      top: 20px;
+      z-index: 3;
+
+      .icon.icon--site-logo {
+        margin-left: 20px;
+      }
+
+      .ws-workspace-nav {
+        width: 100vw;
+        padding: 0 0 0 0;
+        margin: 0 0 0 0;
+        ul {
+          box-sizing: border-box;
+          margin: 0 0 0 0;
+          padding: 20px 20px 0;
+          list-style: none;
+          width: 100vw;
+          display: flex;
+          justify-content: flex-start;
+
+          li {
+            margin-left: 40px;
+            &:first-child {
+              margin-left: 0px;
+            }
+
+            a {
+              @include ws-small-body-reg;
+              color: #fff;
+              text-decoration: none;
+            }
+          }
+        }
+      }
+
+      .ws-about-cta {
+        position: absolute;
+        top: 0px;
+        right: 20px;
+        width: 32px;
+        height: 32px;
+        border-radius: 16px;
+        border: solid 1px #fff;
+        background-color: transparent;
+        text-align: center;
+        color: #fff;
+        font-size: 15px;
+        line-height: 14px;
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .ws-immersive-root {
+    .ws-common-ui {
+      position: absolute;
+      top: 20px;
+      z-index: 3;
+
+      .icon.icon--site-logo {
+        margin-left: 64px;
+        margin-top: 11px;
+      }
+
+      .ws-workspace-nav {
+        width: 100vw;
+        padding: 0 0 0 0;
+        margin: 0 0 0 0;
+        ul {
+          box-sizing: border-box;
+          margin: 0 0 0 0;
+          padding: 42px 0 0 64px;
+          list-style: none;
+          width: 100vw;
+          display: flex;
+          justify-content: flex-start;
+
+          li {
+            margin-left: 40px;
+            &:first-child {
+              margin-left: 0px;
+            }
+
+            a {
+              @include ws-small-body-reg;
+              color: #fff;
+              text-decoration: none;
+            }
+          }
+        }
+      }
+
+      .ws-about-cta {
+        position: absolute;
+        top: 0px;
+        right: 64px;
+        width: auto;
+        height: 56px;
+        border-radius: 28px;
+        border: solid 1px #fff;
+        background-color: transparent;
+        text-align: center;
+        color: #fff;
+        font-size: 15px;
+        line-height: 14px;
+        padding: 0 22px;
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 1280px) {
+  .ws-immersive-root {
+    .ws-common-ui {
+      position: absolute;
+      top: 23px;
+      z-index: 3;
+      display: flex;
+      justify-content: space-between;
+      width: 100vw;
+
+      .icon.icon--site-logo {
+        margin-left: 64px;
+        margin-top: 11px;
+      }
+
+      .ws-workspace-nav {
+        width: auto;
+        padding: 0 0 0 0;
+        margin: 18px 0 0 0;
+        ul {
+          box-sizing: border-box;
+          margin: 0 0 0 0;
+          padding: 0 0 0 0;
+          list-style: none;
+          width: auto;
+          display: flex;
+          justify-content: flex-start;
+
+          li {
+            margin-left: 40px;
+            &:first-child {
+              margin-left: 0px;
+            }
+
+            a {
+              @include ws-small-body-reg;
+              color: #fff;
+              text-decoration: none;
+            }
+          }
+        }
+      }
+
+      .ws-about-cta {
+        position: relative;
+        top: auto;
+        right: auto;
+        width: auto;
+        height: 56px;
+        border-radius: 28px;
+        border: solid 1px #fff;
+        background-color: transparent;
+        text-align: center;
+        color: #fff;
+        font-size: 15px;
+        line-height: 14px;
+        padding: 0 22px;
+        margin-right: 64px;
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 1366px) {
+  .ws-immersive-root {
+    .ws-common-ui {
+      position: absolute;
+      top: 17px;
+      z-index: 3;
+      display: flex;
+      justify-content: space-between;
+      width: 100vw;
+
+      .icon.icon--site-logo {
+        margin-left: 64px;
+        margin-top: 14px;
+      }
+
+      .ws-workspace-nav {
+        width: auto;
+        padding: 0 0 0 0;
+        margin: 21px 0 0 0;
+        ul {
+          box-sizing: border-box;
+          margin: 0 0 0 0;
+          padding: 0 0 0 0;
+          list-style: none;
+          width: auto;
+          display: flex;
+          justify-content: flex-start;
+
+          li {
+            margin-left: 40px;
+            &:first-child {
+              margin-left: 0px;
+            }
+
+            a {
+              @include ws-small-body-reg;
+              color: #fff;
+              text-decoration: none;
+            }
+          }
+        }
+      }
+
+      .ws-about-cta {
+        position: relative;
+        top: auto;
+        right: auto;
+        width: auto;
+        height: 56px;
+        border-radius: 28px;
+        border: solid 1px #fff;
+        background-color: transparent;
+        text-align: center;
+        color: #fff;
+        font-size: 15px;
+        line-height: 14px;
+        padding: 0 22px;
+        margin-right: 64px;
+      }
+    }
+  }
+}
