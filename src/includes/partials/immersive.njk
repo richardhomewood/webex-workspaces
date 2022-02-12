@@ -1,4 +1,5 @@
 {% import "./device-modal/index.njk" as deviceModal %}
+{% import "./room-info-modal/index.njk" as infoModal %}
 
 {% macro commonUi(common, workspaces) %}
   <div class="ws-common-ui">
@@ -59,7 +60,7 @@
   </div>
 {% endmacro %}
 
-{% macro roomView(common, workspaces, devicesByRoom, devices) %}
+{% macro roomView(common, workspaces, devicesByRoom, vendorDevicesByRoom, devices) %}
   <div class="ws-room-view">
     <div class="ws-room-background-image awaits-styling">To be replaced with the background image for the current room.  And hotspots.</div>
 
@@ -81,6 +82,8 @@
                 {{ roomSelections(workspace, room) }}
 
                 {{ deviceModal.render(common, workspace, room, devicesByRoom, devices) }}
+
+                {{ infoModal.render(common, workspace, room, vendorDevicesByRoom, devices) }}
               </div>
             {%- endfor %}
           </div>
