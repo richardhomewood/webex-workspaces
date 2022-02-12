@@ -19,7 +19,6 @@ module.exports = {
           }
         }
       }
-      console.log("VAL:" + util.inspect(val, false, 10));
       return val;
     }
   }
