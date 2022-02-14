@@ -39,8 +39,7 @@
         bottom: -75px;
         left: 0;
         right: 0;
-        transition: bottom 0.5s, opacity 0.5s;
-        transition-timing-function: linear;
+        transition: bottom 0.5s ease-out, opacity 0.5s linear;
 
         &.slide-in {
           bottom: 35px;
@@ -57,7 +56,7 @@
           text-align: center;
           color: #fff;
           @include ws-med-body-reg;
-          transition: opacity 0.5s linear 0.5s;
+          transition: opacity 0.5s linear 0.3s;
         }
 
         .ws-workspaces {
