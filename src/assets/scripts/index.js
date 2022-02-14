@@ -7,24 +7,7 @@ router.add('frag1', () => { console.log('frag1'); })
 router.add('frag2', () => { console.log('frag2'); })
 
 router.add('homeSpace-homeOffice', () => {
-    let initview = document.getElementsByClassName("ws-initial-view")[0];
-    if (initview && !initview.classList.contains('explored') && !initview.classList.contains('ws-displayNone')) {
-
-        let listener = () => {
-            initview.classList.toggle('ws-displayNone');
-            initview.removeEventListener('animationend', listener);
-          }
-        initview.addEventListener('animationend', listener);
-        initview.classList.toggle('explored');
-    }
-
-    let spacesview = document.getElementsByClassName("ws-room-view")[0];
-    if (spacesview && spacesview.classList.contains('ws-displayNone')) {
-        spacesview.classList.toggle('ws-displayNone');
-    }
-    if (spacesview && !spacesview.classList.contains('ws-displayBlock')) {
-        spacesview.classList.toggle('ws-displayBlock');
-    }
+    fromHomeToRooms();
 })
 
 window.addEventListener('hashchange', (ev) => {
@@ -32,3 +15,46 @@ window.addEventListener('hashchange', (ev) => {
   router.route(path);
 });
 
+
+const fromHomeToRooms = function (){
+    let initview = document.getElementsByClassName("ws-initial-view")[0];
+    let spacesview = document.getElementsByClassName("ws-room-view")[0];
+    let spacescontentview = document.getElementsByClassName("ws-room-content")[0];
+    let roomSelector = document.querySelector(".ws-workspace#homeSpaceContainer");
+    let roomSelectorWrap = document.getElementsByClassName("ws-workspaces-rooms")[0];
+
+    if (roomSelector && roomSelector.classList.contains('ws-displayNone')) {
+        roomSelector.classList.remove('ws-displayNone');
+    }
+
+    if (initview && !initview.classList.contains('explored') && !initview.classList.contains('ws-displayNone')) {
+        
+        let listener = () => {
+            initview.classList.toggle('ws-displayNone');
+            initview.style['zIndex'] = 0;
+            if(spacescontentview) {
+                spacescontentview.classList.toggle('ws-displayNone');
+            }
+            
+            if (roomSelectorWrap) {
+                roomSelectorWrap.classList.add('slide-in')
+            }
+
+            initview.removeEventListener('animationend', listener);
+          }
+        
+        if(spacescontentview) {
+            spacescontentview.classList.toggle('ws-displayNone');
+        }
+
+        initview.addEventListener('animationend', listener);
+        initview.classList.toggle('explored');
+    }
+
+    
+    if (spacesview && spacesview.classList.contains('ws-displayNone')) {
+        spacesview.classList.toggle('ws-displayNone');
+        spacesview.style['zIndex'] = 0;
+        initview.style['zIndex'] = 1;
+    }
+}

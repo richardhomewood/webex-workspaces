@@ -1,31 +1,10 @@
 {% macro render(common) %}
   <div class="ws-initial-view">
     <div class="ws-initial-rotating-background-image">
-
-      <div class="ws-rotating-background-image ws-rotating-background-image-fpo ws-XL">{% imagesync "01_background.png", "" %}</div>
-      <div class="ws-rotating-background-image ws-rotating-background-image-1 ws-XL">{% imagesync "01_background.png", "" %}</div>
-      <div class="ws-rotating-background-image ws-rotating-background-image-2 ws-XL">{% imagesync "02_background.png", "" %}</div>
-      <div class="ws-rotating-background-image ws-rotating-background-image-3 ws-XL">{% imagesync "03_background.png", "" %}</div>
-
-      <div class="ws-rotating-background-image ws-rotating-background-image-fpo ws-L">{% imagesync "L_01_background.png", "" %}</div>
-      <div class="ws-rotating-background-image ws-rotating-background-image-1 ws-L">{% imagesync "L_01_background.png", "" %}</div>
-      <div class="ws-rotating-background-image ws-rotating-background-image-2 ws-L">{% imagesync "L_02_background.png", "" %}</div>
-      <div class="ws-rotating-background-image ws-rotating-background-image-3 ws-L">{% imagesync "L_03_background.png", "" %}</div>
-
-      <div class="ws-rotating-background-image ws-rotating-background-image-fpo ws-M">{% imagesync "M_01_background.png", "" %}</div>
-      <div class="ws-rotating-background-image ws-rotating-background-image-1 ws-M">{% imagesync "M_01_background.png", "" %}</div>
-      <div class="ws-rotating-background-image ws-rotating-background-image-2 ws-M">{% imagesync "M_02_background.png", "" %}</div>
-      <div class="ws-rotating-background-image ws-rotating-background-image-3 ws-M">{% imagesync "M_03_background.png", "" %}</div>
-
-      <div class="ws-rotating-background-image ws-rotating-background-image-fpo ws-S">{% imagesync "S_01_background.png", "" %}</div>
-      <div class="ws-rotating-background-image ws-rotating-background-image-1 ws-S">{% imagesync "S_01_background.png", "" %}</div>
-      <div class="ws-rotating-background-image ws-rotating-background-image-2 ws-S">{% imagesync "S_02_background.png", "" %}</div>
-      <div class="ws-rotating-background-image ws-rotating-background-image-3 ws-S">{% imagesync "S_03_background.png", "" %}</div>
-
-      <div class="ws-rotating-background-image ws-rotating-background-image-fpo ws-XS">{% imagesync "XS_01_background.png", "" %}</div>
-      <div class="ws-rotating-background-image ws-rotating-background-image-1 ws-XS">{% imagesync "XS_01_background.png", "" %}</div>
-      <div class="ws-rotating-background-image ws-rotating-background-image-2 ws-XS">{% imagesync "XS_02_background.png", "" %}</div>
-      <div class="ws-rotating-background-image ws-rotating-background-image-3 ws-XS">{% imagesync "XS_03_background.png", "" %}</div>
+      {{initialViewBGFPO("01_background.png", common.sizeClasses)}}
+      {{initialViewBG("01_background.png", common.sizeClasses, 1)}}
+      {{initialViewBG("02_background.png", common.sizeClasses, 2)}}
+      {{initialViewBG("03_background.png", common.sizeClasses, 3)}}
     </div>
     <div class="ws-initial-content">
       <div class="ws-initial-text">{{ common.initialViewText }}</div>
@@ -34,3 +13,14 @@
   </div>
 {% endmacro %}
 
+{% macro initialViewBGFPO(src, sizeClasses) %}
+  {% for size, prefix in sizeClasses %}
+    <div class="ws-rotating-background-image ws-rotating-background-image-fpo {{ size }}">{% imagesync prefix+src, "" %}</div>
+  {% endfor %}
+{% endmacro %}
+
+{% macro initialViewBG(src, sizeClasses, index) %}
+  {% for size, prefix in sizeClasses %}
+    <div class="ws-rotating-background-image ws-rotating-background-image-{{ index }} {{ size }}">{% imagesync prefix+src, "" %}</div>
+  {% endfor %}
+{% endmacro %}

@@ -1,21 +1,10 @@
 {% import "../device-modal/index.njk" as deviceModal %}
 {% import "../room-info-modal/index.njk" as infoModal %}
 
-{% macro roomSelections(workspace, room) %}
-  <div class="ws-room-selections awaits-styling" id="{{ workspace.slug }}-{{ room.slug }}">
-    <div class="ws-room-selection">
-      <a href="#{{ workspace.slug }}-{{ room.slug }}">
-        <div class="ws-room-image">To be replaced with an image</div>
-        <div class="ws-room-label">{{ room.name }}</div>
-      </a>
-    </div>
-  </div>
-{% endmacro %}
-
 {% macro render(common, workspaces, devicesByRoom, vendorDevicesByRoom, devices) %}
   <div class="ws-room-view ws-displayNone">
-    <div class="ws-room-background-image awaits-styling">To be replaced with the background image for the current room.
-      And hotspots.
+    <div class="ws-room-background-image-container">
+      {{roomViewBG("02_background.png", common.sizeClasses)}}
     </div>
     <div class="ws-room-content">
       <div class="ws-more-rooms-text awaits-styling">
@@ -28,7 +17,7 @@
         {# This represents the room label and selection interface for each workspace. #}
         <div class="ws-workspaces awaits-styling">
           {%- for workspace in workspaces %}
-            <div class="ws-workspace" id="{{ workspace.slug }}Container">
+            <div class="ws-workspace ws-displayNone" id="{{ workspace.slug }}Container">
               {%- for room in workspace.rooms %}
                 <div class="ws-room">
                   <div class="ws-room-label">{{ room.name }}</div>
@@ -37,7 +26,7 @@
 
                   {{ deviceModal.render(common, workspace, room, devicesByRoom, devices) }}
 
-                {{ infoModal.render(common, workspace, room, vendorDevicesByRoom, devices) }}
+                  {{ infoModal.render(common, workspace, room, vendorDevicesByRoom, devices) }}
                 </div>
               {%- endfor %}
             </div>
@@ -47,4 +36,21 @@
       </div>
     </div>
   </div>
+{% endmacro %}
+
+{% macro roomSelections(workspace, room) %}
+  <div class="ws-room-selections awaits-styling" id="{{ workspace.slug }}-{{ room.slug }}">
+    <div class="ws-room-selection">
+      <a href="#{{ workspace.slug }}-{{ room.slug }}">
+        <div class="ws-room-image">To be replaced with an image</div>
+        <div class="ws-room-label">{{ room.name }}</div>
+      </a>
+    </div>
+  </div>
+{% endmacro %}
+
+{% macro roomViewBG(src, sizeClasses) %}
+  {% for size, prefix in sizeClasses %}
+    <div class="ws-room-background-image {{ size }}">{% imagesync prefix+src, "" %}</div>
+  {% endfor %}
 {% endmacro %}

@@ -21,5 +21,7 @@
     ],
     "webexDevicesHeadingText": "Webex Devices",
     "merakiDevicesHeadingText": "Meraki Devices"
-  }
+  },
+
+  "sizeClasses": [["ws-XL", ""], ["ws-L", "L_"], ["ws-M", "M_"], ["ws-S", "S_"], ["ws-XS", "XS_"]]
 }
