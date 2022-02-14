@@ -7,7 +7,7 @@
 
 {% macro render(common, workspace, room, devicesByRoom, devices) %}
   {# This div may be positioned off-screen and animated into place when a hotspot is clicked #}
-  <div class="ws-device-modal-root awaits-styling">
+  <div class="ws-device-modal-root ws-displayNone awaits-styling">
     (Device Modal for {{ workspace.slug }}-{{ room.slug }})
 
     <button class="ws-device-modal-close ws-modal-close awaits-styling" aria-label="Close"></button>
