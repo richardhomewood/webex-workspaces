@@ -4,7 +4,7 @@
 
 {% macro render(common, features) %}
   <div class="ws-device-features ws-modal-section awaits-styling">
-    <div class="ws-modal-section-heading awaits-styling">{{ common.deviceModal.featuresHeadingText }}</div>
+    <h6 class="ws-modal-section-heading awaits-styling">{{ common.deviceModal.featuresHeadingText }}</h6>
     <ul>
       {% for text in features %}
         {{ feature(text) }}

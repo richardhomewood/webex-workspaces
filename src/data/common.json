@@ -11,5 +11,17 @@
     "specsHeadingText": "Tech Specs",
     "configGuideHeadingText": "Configuration Guide",
     "pdfCtaText": "Download PDF Version"
-  }
+  },
+
+  "infoModal": {
+    "productListHeadingText": "Product List",
+    "deviceVendors": [
+      "webex",
+      "meraki"
+    ],
+    "webexDevicesHeadingText": "Webex Devices",
+    "merakiDevicesHeadingText": "Meraki Devices"
+  },
+
+  "sizeClasses": [["ws-XL", ""], ["ws-L", "L_"], ["ws-M", "M_"], ["ws-S", "S_"], ["ws-XS", "XS_"]]
 }

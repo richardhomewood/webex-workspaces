@@ -1,0 +1,15 @@
+{% import "./commonUi.njk" as commonUi %}
+{% import "./initialView.njk" as initialView %}
+{% import "./roomView.njk" as roomView %}
+
+{% macro render(common, workspaces, devicesByRoom, vendorDevicesByRoom, devices) %}
+  <div class="ws-immersive-root awaits-styling">
+
+    {{ commonUi.render(common, workspaces) }}
+
+    {{ initialView.render(common) }}
+
+    {{ roomView.render(common, workspaces, devicesByRoom, vendorDevicesByRoom, devices) }}
+
+  </div>
+{% endmacro %}

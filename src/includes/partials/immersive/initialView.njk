@@ -1,0 +1,26 @@
+{% macro render(common) %}
+  <div class="ws-initial-view">
+    <div class="ws-initial-rotating-background-image">
+      {{initialViewBGFPO("01_background.png", common.sizeClasses)}}
+      {{initialViewBG("01_background.png", common.sizeClasses, 1)}}
+      {{initialViewBG("02_background.png", common.sizeClasses, 2)}}
+      {{initialViewBG("03_background.png", common.sizeClasses, 3)}}
+    </div>
+    <div class="ws-initial-content">
+      <div class="ws-initial-text">{{ common.initialViewText }}</div>
+      <a class="ws-initial-cta" href="#homeSpace-homeOffice">{{ common.initialViewCtaText }}</a>
+    </div>
+  </div>
+{% endmacro %}
+
+{% macro initialViewBGFPO(src, sizeClasses) %}
+  {% for size, prefix in sizeClasses %}
+    <div class="ws-rotating-background-image ws-rotating-background-image-fpo {{ size }}">{% imagesync prefix+src, "" %}</div>
+  {% endfor %}
+{% endmacro %}
+
+{% macro initialViewBG(src, sizeClasses, index) %}
+  {% for size, prefix in sizeClasses %}
+    <div class="ws-rotating-background-image ws-rotating-background-image-{{ index }} {{ size }}">{% imagesync prefix+src, "" %}</div>
+  {% endfor %}
+{% endmacro %}

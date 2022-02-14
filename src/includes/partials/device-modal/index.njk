@@ -1,8 +1,8 @@
 {% import "./image-carousel.njk" as carousel %}
 {% import "./features.njk" as features %}
 {% import "./specs.njk" as specs %}
-{% import "./download-pdf.njk" as downloadPdf %}
 {% import "./config-guide.njk" as configGuide %}
+{% import "../common/download-pdf.njk" as downloadPdf %}
 
 
 {% macro render(common, workspace, room, devicesByRoom, devices) %}
@@ -10,15 +10,15 @@
   <div class="ws-device-modal-root awaits-styling">
     (Device Modal for {{ workspace.slug }}-{{ room.slug }})
 
-    <button class="ws-device-modal-close awaits-styling" aria-label="Close"></button>
+    <button class="ws-device-modal-close ws-modal-close awaits-styling" aria-label="Close"></button>
 
     {% for deviceId in devicesByRoom[workspace.slug][room.slug] %}
       {# Only one of these device divs should be visible at any one time.  For the clicked hotspot. #}
       <div class="ws-device awaits-styling" id="device_{{ deviceId }}">
         {% set device = devices[deviceId] %}
-        <div class="ws-device-name awaits-styling">{{ device.name }}</div>
+        <h2 class="ws-device-name awaits-styling">{{ device.name }}</h2>
 
-        <div class="ws-device-introCopy awaits-styling">{{ device.introCopy }}</div>
+        <div class="ws-device-intro-text awaits-styling">{{ device.introText }}</div>
 
         {{ downloadPdf.render(common, device.pdfUrl) }}
 
