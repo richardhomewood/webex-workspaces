@@ -11,22 +11,24 @@
         <button class="ws-show-more-rooms">{{ common.moreRoomsCtaText }}</button>
       </div>
 
-      <div class="ws-workspaces-rooms awaits-styling">
+      <div class="ws-workspaces-rooms">
         <span class="ws-select-room-text">{{ common.selectRoomText }}</span>
 
         {# This represents the room label and selection interface for each workspace. #}
-        <div class="ws-workspaces awaits-styling">
+        <div class="ws-workspaces">
           {%- for workspace in workspaces %}
             <div class="ws-workspace ws-displayNone" id="{{ workspace.slug }}Container">
               {%- for room in workspace.rooms %}
+              
+              
                 <div class="ws-room">
-                  <div class="ws-room-label">{{ room.name }}</div>
+                  <!--<div class="ws-room-label">{{ room.name }}</div>-->
 
                   {{ roomSelections(workspace, room) }}
 
-                  {{ deviceModal.render(common, workspace, room, devicesByRoom, devices) }}
+                  <!--{{ deviceModal.render(common, workspace, room, devicesByRoom, devices) }}-->
 
-                  {{ infoModal.render(common, workspace, room, vendorDevicesByRoom, devices) }}
+                  <!--{{ infoModal.render(common, workspace, room, vendorDevicesByRoom, devices) }}-->
                 </div>
               {%- endfor %}
             </div>
@@ -39,7 +41,7 @@
 {% endmacro %}
 
 {% macro roomSelections(workspace, room) %}
-  <div class="ws-room-selections awaits-styling" id="{{ workspace.slug }}-{{ room.slug }}">
+  <div class="ws-room-selections" id="{{ workspace.slug }}-{{ room.slug }}">
     <div class="ws-room-selection">
       <a href="#{{ workspace.slug }}-{{ room.slug }}">
         <div class="ws-room-image">To be replaced with an image</div>
