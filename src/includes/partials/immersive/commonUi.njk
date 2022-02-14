@@ -2,7 +2,7 @@
   <div class="ws-common-ui">
     <a href="#">{% icon "site-logo" %}</a>
 
-    <div class="ws-workspace-nav awaits-styling">
+    <div class="ws-workspace-nav">
       <ul>
         {%- for workspace in workspaces %}
           <li><a href="#{{ workspace.route }}">{{ workspace.name }}</a></li>
@@ -10,6 +10,6 @@
       </ul>
     </div>
 
-    <button class="ws-about-cta awaits-styling">{{ common.aboutWorkspaceCtaText }}</button>
+    <button class="ws-about-cta"><span class="ws-XS">i</span><span class="ws-S ws-M ws-L ws-XL">{{ common.aboutWorkspaceCtaText }}</span></button>
   </div>
 {% endmacro %}
