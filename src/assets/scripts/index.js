@@ -8,10 +8,10 @@ router.add('frag2', () => { console.log('frag2'); })
 
 router.add('homeSpace-homeOffice', () => {
     let initview = document.getElementsByClassName("ws-initial-view")[0];
-    if (initview && !initview.classList.contains('explored') && !initview.classList.contains('displayNone')) {
+    if (initview && !initview.classList.contains('explored') && !initview.classList.contains('ws-displayNone')) {
 
         let listener = () => {
-            initview.classList.toggle('displayNone');
+            initview.classList.toggle('ws-displayNone');
             initview.removeEventListener('animationend', listener);
           }
         initview.addEventListener('animationend', listener);
@@ -19,11 +19,11 @@ router.add('homeSpace-homeOffice', () => {
     }
 
     let spacesview = document.getElementsByClassName("ws-room-view")[0];
-    if (spacesview && spacesview.classList.contains('displayNone')) {
-        spacesview.classList.toggle('displayNone');
+    if (spacesview && spacesview.classList.contains('ws-displayNone')) {
+        spacesview.classList.toggle('ws-displayNone');
     }
-    if (spacesview && !spacesview.classList.contains('displayBlock')) {
-        spacesview.classList.toggle('displayBlock');
+    if (spacesview && !spacesview.classList.contains('ws-displayBlock')) {
+        spacesview.classList.toggle('ws-displayBlock');
     }
 })
 
