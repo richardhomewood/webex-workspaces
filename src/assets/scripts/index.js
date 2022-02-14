@@ -34,11 +34,12 @@ const fromHomeToRooms = function (){
             initview.style['zIndex'] = 0;
             if(spacescontentview) {
                 spacescontentview.classList.toggle('ws-displayNone');
-            }
-            
-            if (roomSelectorWrap) {
-                roomSelectorWrap.classList.add('slide-in')
-            }
+                setTimeout(()=>{
+                    if (roomSelectorWrap) {
+                        roomSelectorWrap.classList.add('slide-in')
+                    }
+                }, 500);
+            } 
 
             initview.removeEventListener('animationend', listener);
           }
