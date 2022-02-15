@@ -33,15 +33,18 @@
     "rooms": [
       {
         "name": "Hotdesk",
-        "slug": "/hotdesk"
+        "slug": "/hotdesk",
+        "background": "02_background.png"
       },
       {
         "name": "Ideation Room",
-        "slug": "/ideationRoom"
+        "slug": "/ideationRoom",
+        "background": "01_background.png"
       },
       {
         "name": "Small Conference Room",
-        "slug": "/smallConferenceRoom"
+        "slug": "/smallConferenceRoom",
+        "background": "03_background.png"
       }
     ]
   },
@@ -53,7 +56,8 @@
     "rooms": [
       {
         "name": "Cafe",
-        "slug": "/cafe"
+        "slug": "/cafe",
+        "background": "01_background.png"
       }
     ]
   }
