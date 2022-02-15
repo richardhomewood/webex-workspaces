@@ -15,6 +15,7 @@ deploy:
   variables:
     GIT_REMOTE_URL: ssh://dokku@dokku.na.akqa.net:22/webex-workspaces-$CI_COMMIT_BRANCH
   script: 
+    - echo $CI_COMMIT_BRANCH
     - dokku-deploy
   after_script: 
     - dokku-unlock
