@@ -3,10 +3,12 @@
     "name": "Home Spaces",
     "slug": "homeSpace",
     "route": "homeSpace-homeOffice",
+    "background": "02_background.png",
     "rooms": [
       {
         "name": "Home Office",
-        "slug": "homeOffice",
+        "slug": "/homeOffice",
+        "background": "02_background.png",
         "infoModalText": [
           "For those who have a dedicated home office, it’s essential to design it in a way that lets you work as efficiently and securely as any corporate office—not to mention, more comfortably.",
           "With the luxury of a little extra space, you can outfit your home office with devices that give you the flexibility to take one meeting at your desk and another on a bigger screen."
@@ -14,7 +16,8 @@
       },
       {
         "name": "Kitchen Room",
-        "slug": "kitchen",
+        "slug": "/kitchen",
+        "background": "01_background.png",
         "infoModalText": [
           "Not everyone has the luxury of a dedicated home office. For many of us, our kitchens have become our place to work. These tight—and often temporary workspaces—also include a recipe of distractions, noise, and guest appearances.",
           "But when you mix portable collaboration devices with noise-cancelling headsets and a sprinkle of secure wireless connectivity, voila! Your kitchen becomes a productive powerhouse."
@@ -26,18 +29,19 @@
     "name": "Office Spaces",
     "slug": "officeSpace",
     "route": "officeSpace-hotdesk",
+    "background": "02_background.png",
     "rooms": [
       {
         "name": "Hotdesk",
-        "slug": "hotdesk"
+        "slug": "/hotdesk"
       },
       {
         "name": "Ideation Room",
-        "slug": "ideationRoom"
+        "slug": "/ideationRoom"
       },
       {
         "name": "Small Conference Room",
-        "slug": "smallConferenceRoom"
+        "slug": "/smallConferenceRoom"
       }
     ]
   },
@@ -45,10 +49,11 @@
     "name": "Anywhere",
     "slug": "anywhere",
     "route": "anywhere-cafe",
+    "background": "03_background.png",
     "rooms": [
       {
         "name": "Cafe",
-        "slug": "cafe"
+        "slug": "/cafe"
       }
     ]
   }

@@ -1,14 +1,16 @@
-{% macro render(common) %}
+{% macro render(common, workspaces) %}
   <div class="ws-initial-view">
     <div class="ws-initial-rotating-background-image">
-      {{initialViewBGFPO("01_background.png", common.sizeClasses)}}
-      {{initialViewBG("01_background.png", common.sizeClasses, 1)}}
-      {{initialViewBG("02_background.png", common.sizeClasses, 2)}}
-      {{initialViewBG("03_background.png", common.sizeClasses, 3)}}
+        {% for workspace in workspaces %}
+        {% if loop.index == 1 %}
+            {{initialViewBGFPO(workspace.background, common.sizeClasses)}}
+        {% endif %}
+        {{initialViewBG(workspace.background, common.sizeClasses, loop.index)}}
+       {% endfor %}
     </div>
     <div class="ws-initial-content">
       <div class="ws-initial-text">{{ common.initialViewText }}</div>
-      <a class="ws-initial-cta" href="#homeSpace-homeOffice">{{ common.initialViewCtaText }}</a>
+      <a class="ws-initial-cta" href="#/homeSpace">{{ common.initialViewCtaText }}</a>
     </div>
   </div>
 {% endmacro %}

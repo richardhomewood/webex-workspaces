@@ -6,7 +6,7 @@ router.add('home', () => { console.log('home'); })
 router.add('frag1', () => { console.log('frag1'); })
 router.add('frag2', () => { console.log('frag2'); })
 
-router.add('homeSpace-homeOffice', () => {
+router.add('/homeSpace', () => {
     fromHomeToRooms();
 })
 
@@ -34,11 +34,12 @@ const fromHomeToRooms = function (){
             initview.style['zIndex'] = 0;
             if(spacescontentview) {
                 spacescontentview.classList.toggle('ws-displayNone');
-            }
-            
-            if (roomSelectorWrap) {
-                roomSelectorWrap.classList.add('slide-in')
-            }
+                setTimeout(()=>{
+                    if (roomSelectorWrap) {
+                        roomSelectorWrap.classList.add('slide-in')
+                    }
+                }, 500);
+            } 
 
             initview.removeEventListener('animationend', listener);
           }
