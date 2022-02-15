@@ -1,5 +1,5 @@
-[
-  {
+{
+  "homeSpace": {
     "name": "Home Spaces",
     "slug": "homeSpace",
     "route": "homeSpace-homeOffice",
@@ -25,7 +25,7 @@
       }
     ]
   },
-  {
+  "officeSpace": {
     "name": "Office Spaces",
     "slug": "officeSpace",
     "route": "officeSpace-hotdesk",
@@ -45,7 +45,7 @@
       }
     ]
   },
-  {
+  "anywhere": {
     "name": "Anywhere",
     "slug": "anywhere",
     "route": "anywhere-cafe",
@@ -57,5 +57,4 @@
       }
     ]
   }
-]
-
+}

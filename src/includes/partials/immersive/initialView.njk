@@ -1,11 +1,11 @@
 {% macro render(common, workspaces) %}
   <div class="ws-initial-view">
     <div class="ws-initial-rotating-background-image">
-        {% for workspace in workspaces %}
+      {%- for workspaceId in common.orderedWorkspaceIds %}
         {% if loop.index == 1 %}
-            {{initialViewBGFPO(workspace.background, common.sizeClasses)}}
+            {{initialViewBGFPO(workspaces[workspaceId].background, common.sizeClasses)}}
         {% endif %}
-        {{initialViewBG(workspace.background, common.sizeClasses, loop.index)}}
+        {{initialViewBG(workspaces[workspaceId].background, common.sizeClasses, loop.index)}}
        {% endfor %}
     </div>
     <div class="ws-initial-content">

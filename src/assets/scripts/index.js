@@ -1,23 +1,20 @@
 import { remove } from "cheerio/lib/api/manipulation";
 import Router from "./router";
+const commonData = require('../../data/common.json');
 import Swiper from 'swiper';
 import 'swiper/scss';
-
-var workspaces = require('../../data/workspaces.json');
-
 const router = new Router();
 router.add('home', () => { console.log('home'); })
-
 router.add('/homeSpace', () => {
     fromHomeToRooms();
 })
 
 router.add('/officeSpace', () => {
-    
+
 })
 
 router.add('/anywhere', () => {
-    
+
 })
 
 window.addEventListener('hashchange', (ev) => {
@@ -53,7 +50,7 @@ const fromHomeToRooms = function (){
     }
 
     if (initview && !initview.classList.contains('explored') && !initview.classList.contains('ws-displayNone')) {
-        
+
         let listener = () => {
             initview.classList.toggle('ws-displayNone');
             initview.style['zIndex'] = 0;
@@ -64,11 +61,11 @@ const fromHomeToRooms = function (){
                         roomSelectorWrap.classList.add('slide-in')
                     }
                 }, 500);
-            } 
+            }
 
             initview.removeEventListener('animationend', listener);
           }
-        
+
         if(spacescontentview) {
             spacescontentview.classList.toggle('ws-displayNone');
         }
@@ -77,7 +74,7 @@ const fromHomeToRooms = function (){
         initview.classList.add('explored');
     }
 
-    
+
     if (spacesview && spacesview.classList.contains('ws-displayNone')) {
         spacesview.classList.remove('ws-displayNone');
         spacesview.style['zIndex'] = 0;
@@ -98,9 +95,9 @@ const updateNav = function (path) {
     let navSelector = document.getElementById("ws-nav-underline");
 
     let selectedIndex = -1;
-    
-    workspaces.forEach((element, index) => {
-        if (element.slug == mypath) {
+
+    commonData.orderedWorkspaceIds.forEach((workspaceId, index) => {
+        if (workspaceId === mypath) {
             selectedIndex = index;
         }
     });
@@ -124,7 +121,7 @@ const updateNav = function (path) {
         navSelector.style.left = left + "px";
         navSelector.style.width = width + "px";
     }, 1)
-    
+
 }
 
 let swipingRoomSelector;

@@ -4,8 +4,8 @@
 
     <div class="ws-workspace-nav">
       <ul>
-        {%- for workspace in workspaces %}
-          <li><a href="#/{{ workspace.slug }}">{{ workspace.name }}</a></li>
+        {%- for workspaceId in common.orderedWorkspaceIds %}
+          <li><a href="#/{{ workspaceId }}">{{ workspaces[workspaceId].name }}</a></li>
         {%- endfor %}
       </ul>
       <div id="ws-nav-underline" class="ws-displayNone"></div>

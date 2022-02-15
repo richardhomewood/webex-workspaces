@@ -23,5 +23,6 @@
     "merakiDevicesHeadingText": "Meraki Devices"
   },
 
-  "sizeClasses": [["ws-XL", ""], ["ws-L", "L_"], ["ws-M", "M_"], ["ws-S", "S_"], ["ws-XS", "XS_"]]
+  "sizeClasses": [["ws-XL", ""], ["ws-L", "L_"], ["ws-M", "M_"], ["ws-S", "S_"], ["ws-XS", "XS_"]],
+  "orderedWorkspaceIds": ["homeSpace", "officeSpace", "anywhere"]
 }
