@@ -1,4 +1,8 @@
+import { remove } from "cheerio/lib/api/manipulation";
 import Router from "./router";
+import Swiper from 'swiper';
+import 'swiper/scss';
+
 var workspaces = require('../../data/workspaces.json');
 
 const router = new Router();
@@ -18,21 +22,24 @@ router.add('/anywhere', () => {
     
 })
 
-
-
 window.addEventListener('hashchange', (ev) => {
   let path = location.hash === '' ? 'home' : location.hash.substring(1);
   router.route(path);
   updateNav(path);
+  updateRoomsSelector(path);
 });
 
 window.addEventListener('resize', () => {
     updateNav(location.hash.substring(1));
+    updateRoomsSelector(location.hash.substring(1));
 });
 
 document.addEventListener("DOMContentLoaded", function() {
+    let path = location.hash === '' ? 'home' : location.hash.substring(1);
+    router.route(path);
     setTimeout(()=>{
         updateNav(location.hash.substring(1));
+        updateRoomsSelector(location.hash.substring(1));
     }, 300)
 });
 
@@ -69,12 +76,12 @@ const fromHomeToRooms = function (){
         }
 
         initview.addEventListener('animationend', listener);
-        initview.classList.toggle('explored');
+        initview.classList.add('explored');
     }
 
     
     if (spacesview && spacesview.classList.contains('ws-displayNone')) {
-        spacesview.classList.toggle('ws-displayNone');
+        spacesview.classList.remove('ws-displayNone');
         spacesview.style['zIndex'] = 0;
         initview.style['zIndex'] = 1;
     }
@@ -100,10 +107,11 @@ const updateNav = function (path) {
         }
     });
 
-    console.log(selectedIndex);
-
-    if (selectedIndex === -1 && !navSelector.classList.contains("ws-displayNone")) {
-        navSelector.classList.add("ws-displayNone");
+    if (selectedIndex === -1) {
+        if (!navSelector.classList.contains("ws-displayNone")) {
+            navSelector.classList.add("ws-displayNone");
+        }
+        
         navSelector.style.left = "50%";
         navSelector.style.width = "0px";
         return
@@ -113,6 +121,7 @@ const updateNav = function (path) {
 
     let left = navLinks[selectedIndex].offsetLeft;
     let width = navLinks[selectedIndex].offsetWidth;
+
     setTimeout(()=>{
         navSelector.style.left = left + "px";
         navSelector.style.width = width + "px";
@@ -120,6 +129,34 @@ const updateNav = function (path) {
     
 }
 
-const updateRoomsSelector = function (path){
 
+let swipingRoomSelector;
+
+const updateRoomsSelector = function (path){
+    let spacesview = document.getElementsByClassName("ws-room-view")[0];
+    if (spacesview.classList.contains('ws-displayNone')) {
+        return;
+    }
+
+    let mypath = path;
+    if (path.indexOf("/") > -1) {
+        let paths = path.split("/");
+        paths = paths.filter(word => word.length > 0);
+        mypath = paths[0];
+    }
+
+    if (swipingRoomSelector) {
+        swipingRoomSelector.destroy();
+    }
+
+    swipingRoomSelector = new Swiper("#" + mypath + " .swiper", {
+        speed: 400,
+        slidesPerView: "auto",
+        spaceBetween: 10,
+        centeredSlides: true,
+        centeredSlidesBounds: true,
+        grabCursor: true,   
+        slideToClickedSlide: true,
+        centerInsufficientSlides: true,
+    });
 }
