@@ -60,29 +60,11 @@
         }
 
         .ws-workspaces {
-          overflow-x: scroll;
-
-          &::-webkit-scrollbar {
-            display: none;
-          }
-          & {
-            -ms-overflow-style: none;
-            scrollbar-width: none;
-          }
-
           .ws-workspace:not(.ws-displayNone) {
-            display: inline-flex;
-            flex-direction: row;
-            flex-wrap: nowrap;
+            display: block;
             padding: 0 50px;
 
             .ws-room {
-              margin-right: 10px;
-
-              &:last-child {
-                margin-right: 0;
-              }
-
               .ws-room-image {
                 margin: 33px auto 16px;
                 width: 283px;
@@ -170,8 +152,6 @@
           }
 
           .ws-workspaces {
-            overflow-x: scroll;
-
             &::-webkit-scrollbar {
               display: none;
             }
@@ -181,19 +161,10 @@
             }
 
             .ws-workspace:not(.ws-displayNone) {
-              display: inline-flex;
-              flex-direction: row;
-              flex-wrap: nowrap;
               padding: 0 50px;
 
               .ws-room {
-                margin-right: 10px;
-                width: 293px;
-
-                &:last-child {
-                  margin-right: 0;
-                  width: 283px;
-                }
+                width: 283px;
 
                 .ws-room-image {
                   margin: 33px auto 16px;
