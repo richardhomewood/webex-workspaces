@@ -66,6 +66,7 @@ module.exports = {
     const sizes = args[5] ?? defaultSizes;
 
     const extension = path.extname(src).slice(1).toLowerCase();
+    console.log('>>>>', src, isFullUrl(src));
     const fullSrc = isFullUrl(src) ? src : `./src/assets/images/${src}`;
 
     let stats;
@@ -129,6 +130,7 @@ module.exports = {
     const sizes = args[5] ?? defaultSizes;
 
     const extension = path.extname(src).slice(1).toLowerCase();
+    console.log('!!!!', src, isFullUrl(src));
     const fullSrc = isFullUrl(src) ? src : `./src/assets/images/${src}`;
 
     let stats;
