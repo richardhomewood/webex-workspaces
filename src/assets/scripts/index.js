@@ -7,8 +7,6 @@ var workspaces = require('../../data/workspaces.json');
 
 const router = new Router();
 router.add('home', () => { console.log('home'); })
-router.add('frag1', () => { console.log('frag1'); })
-router.add('frag2', () => { console.log('frag2'); })
 
 router.add('/homeSpace', () => {
     fromHomeToRooms();
@@ -34,7 +32,7 @@ window.addEventListener('resize', () => {
     updateRoomsSelector(location.hash.substring(1));
 });
 
-document.addEventListener("DOMContentLoaded", function() {
+window.addEventListener('load', function() {
     let path = location.hash === '' ? 'home' : location.hash.substring(1);
     router.route(path);
     setTimeout(()=>{
@@ -129,10 +127,14 @@ const updateNav = function (path) {
     
 }
 
-
 let swipingRoomSelector;
 
 const updateRoomsSelector = function (path){
+
+    if (swipingRoomSelector) {
+        swipingRoomSelector.destroy();
+    }
+
     let spacesview = document.getElementsByClassName("ws-room-view")[0];
     if (spacesview.classList.contains('ws-displayNone')) {
         return;
@@ -145,18 +147,29 @@ const updateRoomsSelector = function (path){
         mypath = paths[0];
     }
 
-    if (swipingRoomSelector) {
-        swipingRoomSelector.destroy();
-    }
+    setTimeout(()=>{
+        let slides = Array.from(document.querySelectorAll("#" + mypath + "Container .swiper .swiper-slide.ws-room"));
+        let slideCount = slides.length;
+        let slideWidth = slides[0].offsetWidth;
 
-    swipingRoomSelector = new Swiper("#" + mypath + " .swiper", {
-        speed: 400,
-        slidesPerView: "auto",
-        spaceBetween: 10,
-        centeredSlides: true,
-        centeredSlidesBounds: true,
-        grabCursor: true,   
-        slideToClickedSlide: true,
-        centerInsufficientSlides: true,
-    });
+        let totalSlideWidth = (slideWidth * slideCount) + (10 * (slideCount - 1));
+
+        let options = {
+            speed: 400,
+            slidesPerView: "auto",
+            spaceBetween: 10,
+            centeredSlides: true,
+            centeredSlidesBounds: true,
+            grabCursor: true,   
+            slideToClickedSlide: true,
+            centerInsufficientSlides: true,
+        }
+
+        if (totalSlideWidth < (window.innerWidth - 98) ) {
+            options = {...options, ...{enabled: false}}
+        }
+
+        swipingRoomSelector = new Swiper("#" + mypath + "Container .swiper", options);
+        
+    }, 500)
 }
