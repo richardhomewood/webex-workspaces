@@ -1,3 +1,27 @@
+.ws-immersive-root {
+  .ws-common-ui {
+    .ws-workspace-nav {
+      position: relative;
+
+      ul {
+        position: relative;
+      }
+
+      #ws-nav-underline {
+        position: relative;
+        display: block;
+        top: 3px;
+        left: 50%;
+        width: 0;
+        height: 1px;
+        min-height: 1px;
+        background-color: #fff;
+        transition: left 0.3s linear 0s, width 0.3s linear 0s;
+      }
+    }
+  }
+}
+
 @media only screen and (max-width: 767px) {
   .ws-immersive-root {
     .ws-common-ui {
@@ -11,7 +35,7 @@
 
       .ws-workspace-nav {
         width: 100vw;
-        padding: 0 0 0 0;
+        padding: 0 0 4px 0;
         margin: 0 0 0 0;
         ul {
           box-sizing: border-box;
@@ -61,7 +85,7 @@
 
       .ws-workspace-nav {
         width: 100vw;
-        padding: 0 0 0 0;
+        padding: 0 0 4px 0;
         margin: 0 0 0 0;
         ul {
           box-sizing: border-box;
@@ -120,7 +144,7 @@
 
       .ws-workspace-nav {
         width: 100vw;
-        padding: 0 0 0 0;
+        padding: 0 0 4px 0;
         margin: 0 0 0 0;
         ul {
           box-sizing: border-box;
@@ -166,7 +190,7 @@
 
       .ws-workspace-nav {
         width: auto;
-        padding: 0 0 0 0;
+        padding: 0 0 4px 0;
         margin: 18px 0 0 0;
         ul {
           box-sizing: border-box;
@@ -229,7 +253,7 @@
 
       .ws-workspace-nav {
         width: auto;
-        padding: 0 0 0 0;
+        padding: 0 0 6px 0;
         margin: 21px 0 0 0;
         ul {
           box-sizing: border-box;
