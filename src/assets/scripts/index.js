@@ -4,7 +4,11 @@ const commonData = require('../../data/common.json');
 import Swiper from 'swiper';
 import 'swiper/scss';
 const router = new Router();
-router.add('home', () => { console.log('home'); })
+
+router.add('home', () => { 
+    backToHome();
+})
+
 router.add('/homeSpace', () => {
     fromHomeToRooms();
 })
@@ -38,6 +42,33 @@ window.addEventListener('load', function() {
     }, 300)
 });
 
+
+const backToHome = function () {
+    let initview = document.getElementsByClassName("ws-initial-view")[0];
+    let spacesview = document.getElementsByClassName("ws-room-view")[0];
+    let spacescontentview = document.getElementsByClassName("ws-room-content")[0];
+    let roomSelector = document.querySelector(".ws-workspace#homeSpaceContainer");
+    let roomSelectorWrap = document.getElementsByClassName("ws-workspaces-rooms")[0];
+
+    if (roomSelectorWrap && roomSelectorWrap.classList.contains('slide-in')) {
+        roomSelectorWrap.classList.remove('slide-in');
+    }
+
+    initview.style['zIndex'] = 1;
+    initview.classList.remove('ws-displayNone');
+
+    let listener = () => {
+        initview.classList.remove('explored');
+        initview.classList.remove('reversed');
+        spacesview.classList.add('ws-displayNone');
+        initview.style['zIndex'] = 0;
+        initview.removeEventListener('animationend', listener);
+    }
+
+    initview.addEventListener('animationend', listener);
+    initview.classList.add('reversed');
+}
+
 const fromHomeToRooms = function (){
     let initview = document.getElementsByClassName("ws-initial-view")[0];
     let spacesview = document.getElementsByClassName("ws-room-view")[0];
@@ -52,10 +83,10 @@ const fromHomeToRooms = function (){
     if (initview && !initview.classList.contains('explored') && !initview.classList.contains('ws-displayNone')) {
 
         let listener = () => {
-            initview.classList.toggle('ws-displayNone');
+            initview.classList.add('ws-displayNone');
             initview.style['zIndex'] = 0;
             if(spacescontentview) {
-                spacescontentview.classList.toggle('ws-displayNone');
+                spacescontentview.classList.remove('ws-displayNone');
                 setTimeout(()=>{
                     if (roomSelectorWrap) {
                         roomSelectorWrap.classList.add('slide-in')
@@ -67,7 +98,7 @@ const fromHomeToRooms = function (){
           }
 
         if(spacescontentview) {
-            spacescontentview.classList.toggle('ws-displayNone');
+            spacescontentview.classList.add('ws-displayNone');
         }
 
         initview.addEventListener('animationend', listener);
@@ -147,6 +178,10 @@ const updateRoomsSelector = function (path){
     setTimeout(()=>{
         let slides = Array.from(document.querySelectorAll("#" + mypath + "Container .swiper .swiper-slide.ws-room"));
         let slideCount = slides.length;
+
+        if (slideCount === 0) {
+            return
+        }
         let slideWidth = slides[0].offsetWidth;
 
         let totalSlideWidth = (slideWidth * slideCount) + (10 * (slideCount - 1));
