@@ -5,7 +5,7 @@
     <div class="ws-workspace-nav">
       <ul>
         {%- for workspace in workspaces %}
-          <li><a href="#{{ workspace.route }}">{{ workspace.name }}</a></li>
+          <li><a href="#/{{ workspace.slug }}">{{ workspace.name }}</a></li>
         {%- endfor %}
       </ul>
     </div>

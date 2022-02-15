@@ -7,7 +7,7 @@
     "rooms": [
       {
         "name": "Home Office",
-        "slug": "homeOffice",
+        "slug": "/homeOffice",
         "background": "02_background.png",
         "infoModalText": [
           "For those who have a dedicated home office, it’s essential to design it in a way that lets you work as efficiently and securely as any corporate office—not to mention, more comfortably.",
@@ -16,7 +16,7 @@
       },
       {
         "name": "Kitchen Room",
-        "slug": "kitchen",
+        "slug": "/kitchen",
         "background": "01_background.png",
         "infoModalText": [
           "Not everyone has the luxury of a dedicated home office. For many of us, our kitchens have become our place to work. These tight—and often temporary workspaces—also include a recipe of distractions, noise, and guest appearances.",
@@ -33,15 +33,15 @@
     "rooms": [
       {
         "name": "Hotdesk",
-        "slug": "hotdesk"
+        "slug": "/hotdesk"
       },
       {
         "name": "Ideation Room",
-        "slug": "ideationRoom"
+        "slug": "/ideationRoom"
       },
       {
         "name": "Small Conference Room",
-        "slug": "smallConferenceRoom"
+        "slug": "/smallConferenceRoom"
       }
     ]
   },
@@ -53,7 +53,7 @@
     "rooms": [
       {
         "name": "Cafe",
-        "slug": "cafe"
+        "slug": "/cafe"
       }
     ]
   }
