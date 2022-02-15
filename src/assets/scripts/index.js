@@ -91,8 +91,8 @@ const updateNav = function (path) {
 
     let selectedIndex = -1;
 
-    commonData.orderedWorkspaces.forEach((element, index) => {
-        if (element === mypath) {
+    commonData.orderedWorkspaceIds.forEach((workspaceId, index) => {
+        if (workspaceId === mypath) {
             selectedIndex = index;
         }
     });
