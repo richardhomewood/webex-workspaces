@@ -16,19 +16,19 @@
 
         {# This represents the room label and selection interface for each workspace. #}
         <div class="ws-workspaces">
-          {%- for workspace in workspaces %}
-            <div class="ws-workspace ws-displayNone" id="{{ workspace.slug }}Container">
-              {%- for room in workspace.rooms %}
-              
-              
+          {%- for workspaceId in common.orderedWorkspaceIds %}
+            <div class="ws-workspace ws-displayNone" id="{{ workspaceId }}Container">
+              {%- for room in workspaces[workspaceId].rooms %}
+
+
                 <div class="ws-room">
                   <!--<div class="ws-room-label">{{ room.name }}</div>-->
 
-                  {{ roomSelections(workspace, room) }}
+                  {{ roomSelections(workspaces[workspaceId], room) }}
 
-                  <!--{{ deviceModal.render(common, workspace, room, devicesByRoom, devices) }}-->
+                  <!--{{ deviceModal.render(common, workspaces[workspaceId], room, devicesByRoom, devices) }}-->
 
-                  <!--{{ infoModal.render(common, workspace, room, vendorDevicesByRoom, devices) }}-->
+                  <!--{{ infoModal.render(common, workspaces[workspaceId], room, vendorDevicesByRoom, devices) }}-->
                 </div>
               {%- endfor %}
             </div>
