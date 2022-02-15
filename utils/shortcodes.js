@@ -66,8 +66,7 @@ module.exports = {
     const sizes = args[5] ?? defaultSizes;
 
     const extension = path.extname(src).slice(1).toLowerCase();
-    console.log('>>>>', src, isFullUrl(src), path.resolve(__dirname));
-    const fullSrc = isFullUrl(src) ? src : path.resolve(`./src/assets/images/${src}`);
+    const fullSrc = isFullUrl(src) ? src : `./src/assets/images/${src}`;
 
     let stats;
     try {
@@ -130,8 +129,8 @@ module.exports = {
     const sizes = args[5] ?? defaultSizes;
 
     const extension = path.extname(src).slice(1).toLowerCase();
-    console.log('!!!!', src, isFullUrl(src), path.resolve(__dirname));
-    const fullSrc = isFullUrl(src) ? src : path.resolve(`./src/assets/images/${src}`);
+    console.log('!!!!', src, isFullUrl(src), path.resolve(__dirname), fs.readdirSync(path.resolve(`./`)));
+    const fullSrc = isFullUrl(src) ? src : `./src/assets/images/${src}`;
 
     let stats;
     try {
