@@ -29,7 +29,7 @@
     "name": "Office Spaces",
     "slug": "officeSpace",
     "route": "officeSpace-hotdesk",
-    "background": "02_background.png",
+    "background": "01_background.png",
     "rooms": [
       {
         "name": "Hotdesk",
