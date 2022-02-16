@@ -1,24 +1,25 @@
 import { remove } from "cheerio/lib/api/manipulation";
 import Router from "./router";
 const commonData = require('../../data/common.json');
+const workspaces = require('../../data/workspaces.json');
 import Swiper from 'swiper';
 import 'swiper/scss';
 const router = new Router();
 
+commonData.orderedWorkspaceIds.forEach((workspaceId) => {
+    router.add('/' + workspaceId, () => {
+        toSelectedWorkSpace('/' + workspaceId);
+    })
+
+    workspaces[workspaceId].rooms.forEach((room)=>{
+        router.add('/' + workspaceId + '/' + room.slug, () => {
+            toSelectedWorkSpace('/' + workspaceId + '/' + room.slug);
+        })
+    })
+});
+
 router.add('home', () => { 
     backToHome();
-})
-
-router.add('/homeSpace', () => {
-    fromHomeToRooms();
-})
-
-router.add('/officeSpace', () => {
-
-})
-
-router.add('/anywhere', () => {
-
 })
 
 window.addEventListener('hashchange', (ev) => {
@@ -44,10 +45,16 @@ window.addEventListener('load', function() {
 
 
 const backToHome = function () {
+
     let initview = document.getElementsByClassName("ws-initial-view")[0];
     let spacesview = document.getElementsByClassName("ws-room-view")[0];
-    let spacescontentview = document.getElementsByClassName("ws-room-content")[0];
-    let roomSelector = document.querySelector(".ws-workspace#homeSpaceContainer");
+
+    if (!initview.classList.contains('ws-displayNone')) {
+        return;
+    }
+
+    //let spacescontentview = document.getElementsByClassName("ws-room-content")[0];
+    //let roomSelector = document.querySelector(".ws-workspace#homeSpaceContainer");
     let roomSelectorWrap = document.getElementsByClassName("ws-workspaces-rooms")[0];
 
     if (roomSelectorWrap && roomSelectorWrap.classList.contains('slide-in')) {
@@ -67,50 +74,6 @@ const backToHome = function () {
 
     initview.addEventListener('animationend', listener);
     initview.classList.add('reversed');
-}
-
-const fromHomeToRooms = function (){
-    let initview = document.getElementsByClassName("ws-initial-view")[0];
-    let spacesview = document.getElementsByClassName("ws-room-view")[0];
-    let spacescontentview = document.getElementsByClassName("ws-room-content")[0];
-    let roomSelector = document.querySelector(".ws-workspace#homeSpaceContainer");
-    let roomSelectorWrap = document.getElementsByClassName("ws-workspaces-rooms")[0];
-
-    if (roomSelector && roomSelector.classList.contains('ws-displayNone')) {
-        roomSelector.classList.remove('ws-displayNone');
-    }
-
-    if (initview && !initview.classList.contains('explored') && !initview.classList.contains('ws-displayNone')) {
-
-        let listener = () => {
-            initview.classList.add('ws-displayNone');
-            initview.style['zIndex'] = 0;
-            if(spacescontentview) {
-                spacescontentview.classList.remove('ws-displayNone');
-                setTimeout(()=>{
-                    if (roomSelectorWrap) {
-                        roomSelectorWrap.classList.add('slide-in')
-                    }
-                }, 500);
-            }
-
-            initview.removeEventListener('animationend', listener);
-          }
-
-        if(spacescontentview) {
-            spacescontentview.classList.add('ws-displayNone');
-        }
-
-        initview.addEventListener('animationend', listener);
-        initview.classList.add('explored');
-    }
-
-
-    if (spacesview && spacesview.classList.contains('ws-displayNone')) {
-        spacesview.classList.remove('ws-displayNone');
-        spacesview.style['zIndex'] = 0;
-        initview.style['zIndex'] = 1;
-    }
 }
 
 const updateNav = function (path) {
@@ -155,24 +118,144 @@ const updateNav = function (path) {
 
 }
 
+const toSelectedWorkSpace = function(path) {
+
+    let splitPath = path.split("/");
+    splitPath =  splitPath.filter((element) => {
+        return element.length > 0 
+    })
+
+    let space = splitPath[0];
+    let room = splitPath[1] ?? null;
+
+    let initview = document.getElementsByClassName("ws-initial-view")[0];
+    let spacesview = document.getElementsByClassName("ws-room-view")[0];
+    let spacescontentview = document.getElementsByClassName("ws-room-content")[0];
+    let roomSelector = document.querySelector(".ws-workspace#" + space + "Container");
+    let otherRoomSelectors = Array.from(document.querySelectorAll(".ws-workspace:not(#" + space + "Container):not(.ws-displayNone)"));
+    let roomSelectorWrap = document.getElementsByClassName("ws-workspaces-rooms")[0];
+
+    let bgToDisplayCSSSelector =  room ? ".ws-room-bg." + space + "-" + room + "-room-bg" : ".ws-default-room-bg." + space + "-room-bg";
+    let bgsToDisplay = Array.from(document.querySelectorAll(bgToDisplayCSSSelector));
+    let bgToHideCSSSelector = ".ws-room-bg:not(.ws-displayNone), .ws-default-room-bg:not(.ws-displayNone)"
+    let bgsToHide = Array.from(document.querySelectorAll(bgToHideCSSSelector));
+
+    //let selectedRoom = room ? document.querySelector("#" + space + "-" + room + " .ws-room-image") : document.querySelector(".ws-workspace#" + space + "Container .ws-room-image");
+    
+    let allRooms = Array.from(document.querySelectorAll(".ws-workspace#" + space + "Container .ws-room-image"));
+    allRooms.forEach((element) => {
+        if (element.classList.contains("selected")){
+            element.classList.remove("selected")
+        }
+    })
+/*
+    if (selectedRoom && !selectedRoom.classList.contains("selected")) {
+        selectedRoom.classList.add("selected")
+    }
+*/
+    if (roomSelector && roomSelector.classList.contains('ws-displayNone') && otherRoomSelectors.length === 0) {
+        roomSelector.classList.remove('ws-displayNone');
+    }
+
+    if (initview && !initview.classList.contains('explored') && !initview.classList.contains('ws-displayNone')) {
+
+        let listener = () => {
+            initview.classList.add('ws-displayNone');
+            initview.style['zIndex'] = 0;
+            if(spacescontentview) {
+                spacescontentview.classList.remove('ws-displayNone');
+
+                setTimeout(()=>{
+                    if (roomSelectorWrap) {
+                        roomSelectorWrap.classList.add('slide-in');
+                    }
+                }, 500);
+            }
+
+            initview.removeEventListener('animationend', listener);
+          }
+
+        if(spacescontentview) {
+            spacescontentview.classList.add('ws-displayNone');
+        }
+
+        initview.addEventListener('animationend', listener);
+        initview.classList.add('explored');
+    }
+
+    if(otherRoomSelectors.length > 0) {
+
+        if (roomSelectorWrap) {
+            let roomSelectorWrapListener = ()=>{
+                console.log("roomSelectorWrapListener")
+                otherRoomSelectors.forEach((element) => {
+                    element.classList.add("ws-displayNone");
+                });
+                roomSelector.classList.remove('ws-displayNone');
+                roomSelectorWrap.removeEventListener('animationend', roomSelectorWrapListener);
+                roomSelectorWrap.classList.remove('fadeOut');
+                roomSelectorWrap.classList.remove('slide-in');
+                setTimeout(()=>{
+                    console.log("adding slide-in class to SelectorWrap")
+                    roomSelectorWrap.classList.add('slide-in');
+                }, 500);
+            }
+
+            console.log("roomSelectorWrap.addEventListener");
+            roomSelectorWrap.addEventListener('animationend', roomSelectorWrapListener);
+            roomSelectorWrap.classList.add('fadeOut');
+        }
+    }
+
+    if (spacesview && spacesview.classList.contains('ws-displayNone')) {
+        spacesview.classList.remove('ws-displayNone');
+        
+        spacesview.style['zIndex'] = 0;
+        initview.style['zIndex'] = 1;
+    }
+
+    bgsToHide.forEach((element) => {
+        element.style['zIndex'] = 1;
+        let listener = () => {
+            element.removeEventListener("animationend", listener);
+            element.classList.add("ws-displayNone");
+            element.classList.remove("fadeOut");
+        }
+
+        element.addEventListener("animationend", listener);
+        element.classList.add("fadeOut");
+    })
+
+    bgsToDisplay.forEach((element) => {
+        element.style['zIndex'] = 0;
+        element.classList.remove("fadeOut");
+        element.classList.remove("ws-displayNone");
+    })
+}
+
+
 let swipingRoomSelector;
 
 const updateRoomsSelector = function (path){
-
-    if (swipingRoomSelector) {
-        swipingRoomSelector.destroy();
-    }
-
-    let spacesview = document.getElementsByClassName("ws-room-view")[0];
-    if (spacesview.classList.contains('ws-displayNone')) {
-        return;
-    }
 
     let mypath = path;
     if (path.indexOf("/") > -1) {
         let paths = path.split("/");
         paths = paths.filter(word => word.length > 0);
         mypath = paths[0];
+    }
+
+    if (swipingRoomSelector && swipingRoomSelector.el && swipingRoomSelector.el.parentNode && swipingRoomSelector.el.parentNode.getAttribute("id") == mypath + "Container") {
+        console.log('swiper already exists for ' + mypath + 'Container')
+        return;
+    } else if (swipingRoomSelector) {
+        swipingRoomSelector.destroy();
+    }
+
+    let spacesview = document.getElementsByClassName("ws-room-view")[0];
+    if (spacesview.classList.contains('ws-displayNone')) {
+        console.log("spacesview.classList.contains('ws-displayNone')" , spacesview.classList.contains('ws-displayNone'))
+        return;
     }
 
     setTimeout(()=>{
@@ -189,7 +272,6 @@ const updateRoomsSelector = function (path){
         let options = {
             speed: 400,
             slidesPerView: "auto",
-            spaceBetween: 10,
             centeredSlides: true,
             centeredSlidesBounds: true,
             grabCursor: true,   

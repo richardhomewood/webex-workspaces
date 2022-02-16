@@ -4,7 +4,12 @@
 {% macro render(common, workspaces, devicesByRoom, vendorDevicesByRoom, devices) %}
   <div class="ws-room-view ws-displayNone">
     <div class="ws-room-background-image-container">
-      {{roomViewBG("02_background.png", common.sizeClasses)}}
+        {%- for workspaceId in common.orderedWorkspaceIds %}
+        {{roomViewBG(workspaces[workspaceId].background, common.sizeClasses, "ws-default-room-bg " + workspaceId + "-room-bg")}}
+            {%- for room in workspaces[workspaceId].rooms %}
+                {{roomViewBG(room.background, common.sizeClasses, "ws-room-bg " + workspaceId + "-" + room.slug + "-room-bg")}}
+            {%- endfor %}
+        {%- endfor %}
     </div>
     <div class="ws-room-content">
       <div class="ws-more-rooms-text awaits-styling">
@@ -25,7 +30,7 @@
                 <div class="ws-room swiper-slide">
                   <!--<div class="ws-room-label">{{ room.name }}</div>-->
 
-                  {{ roomSelections(workspaces[workspaceId], room) }}
+                  {{ roomSelections(workspaces[workspaceId], room, common) }}
 
                   <!--{{ deviceModal.render(common, workspaces[workspaceId], room, devicesByRoom, devices) }}-->
 
@@ -43,19 +48,25 @@
   </div>
 {% endmacro %}
 
-{% macro roomSelections(workspace, room) %}
+{% macro roomViewBG(src, sizeClasses, class, id) %}
+  {% for size, prefix in sizeClasses %}
+    <div class="ws-room-background-image {{ size }} {{class}} ws-displayNone">{% imagesync prefix+src, "" %}</div>
+  {% endfor %}
+{% endmacro %}
+
+{% macro roomOptionBG(src, sizeClasses) %}
+  {% for size, prefix in sizeClasses %}
+    {% imagesync prefix+src, "", "", "ws-room-option-image {{ size }}" %}
+  {% endfor %}
+{% endmacro %}
+
+{% macro roomSelections(workspace, room, common) %}
   <div class="ws-room-selections" id="{{ workspace.slug }}-{{ room.slug }}">
     <div class="ws-room-selection">
-      <a href="#/{{ workspace.slug }}{{ room.slug }}">
-        <div class="ws-room-image">To be replaced with an image</div>
+      <a href="#/{{ workspace.slug }}/{{ room.slug }}">
+        <div class="ws-room-image">{{ roomOptionBG(room.background, common.sizeClasses) }}</div>
         <div class="ws-room-label">{{ room.name }}</div>
       </a>
     </div>
   </div>
-{% endmacro %}
-
-{% macro roomViewBG(src, sizeClasses) %}
-  {% for size, prefix in sizeClasses %}
-    <div class="ws-room-background-image {{ size }}">{% imagesync prefix+src, "" %}</div>
-  {% endfor %}
 {% endmacro %}
