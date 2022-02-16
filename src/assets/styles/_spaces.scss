@@ -12,14 +12,27 @@
       top: 0;
       bottom: 0;
       left: 0;
+      right: 0;
       height: 100%;
       overflow: hidden;
       z-index: 0;
 
       .ws-room-background-image {
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        bottom: 0px;
         width: 100vw;
         height: auto;
         min-width: 100%;
+
+        img {
+          border: solid 1px red;
+        }
+
+        &.fadeOut {
+          @include fadeOut();
+        }
       }
     }
 
@@ -50,6 +63,10 @@
           }
         }
 
+        &.fadeOut {
+          @include fadeOut();
+        }
+
         .ws-select-room-text {
           opacity: 0;
           display: block;
@@ -64,6 +81,10 @@
             display: block;
             padding: 0 0 0 0;
 
+            &.fadeOut {
+              @include fadeOut();
+            }
+
             .swiper {
               margin-left: 49px;
               margin-right: 49px;
@@ -72,13 +93,33 @@
 
             .ws-room {
               width: 283px;
+
+              &.swiper-slide {
+                margin-right: 10px;
+
+                &:last-child {
+                  margin-right: 0px;
+                }
+              }
+
               .ws-room-image {
                 margin: 33px auto 16px;
                 width: 283px;
                 height: 154px;
                 box-sizing: border-box;
-                border: solid 1px #fff;
                 border-radius: 16px;
+                overflow: hidden;
+
+                &.selected {
+                  border: solid 1px #fff;
+                }
+
+                .ws-room-option-image {
+                  width: 100%;
+                  height: auto;
+                  margin: 0 0 0 0;
+                  padding: 0 0 0 0;
+                }
               }
 
               .ws-room-label {
@@ -178,8 +219,10 @@
                   width: 283px;
                   height: 154px;
                   box-sizing: border-box;
-                  border: solid 1px #fff;
                   border-radius: 16px;
+                  &.selected {
+                    border: solid 1px #fff;
+                  }
                 }
 
                 .ws-room-label {
