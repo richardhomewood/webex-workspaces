@@ -2,11 +2,15 @@
   .ws-initial-view {
     opacity: 1;
     &.explored {
-      animation-name: fadeoutDisplayNone;
+      animation-name: fadeout;
       animation-duration: 0.3s;
       animation-iteration-count: 1;
       animation-fill-mode: forwards;
       animation-timing-function: linear;
+
+      &.reversed {
+        animation-direction: reverse;
+      }
     }
   }
 }

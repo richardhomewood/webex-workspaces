@@ -59,6 +59,7 @@
     "webpack-manifest-plugin": "4.1.1"
   },
   "dependencies": {
+    "swiper": "^8.0.6",
     "terser-webpack-plugin": "^5.3.1"
   }
 }

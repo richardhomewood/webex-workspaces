@@ -18,10 +18,11 @@
         <div class="ws-workspaces">
           {%- for workspaceId in common.orderedWorkspaceIds %}
             <div class="ws-workspace ws-displayNone" id="{{ workspaceId }}Container">
+                <div class="swiper">
+                    <div class="swiper-wrapper">
               {%- for room in workspaces[workspaceId].rooms %}
 
-
-                <div class="ws-room">
+                <div class="ws-room swiper-slide">
                   <!--<div class="ws-room-label">{{ room.name }}</div>-->
 
                   {{ roomSelections(workspaces[workspaceId], room) }}
@@ -31,6 +32,8 @@
                   <!--{{ infoModal.render(common, workspaces[workspaceId], room, vendorDevicesByRoom, devices) }}-->
                 </div>
               {%- endfor %}
+                    </div>
+                </div>
             </div>
           {%- endfor %}
         </div>
@@ -43,7 +46,7 @@
 {% macro roomSelections(workspace, room) %}
   <div class="ws-room-selections" id="{{ workspace.slug }}-{{ room.slug }}">
     <div class="ws-room-selection">
-      <a href="#/{{ workspace.slug }}-{{ room.slug }}">
+      <a href="#/{{ workspace.slug }}{{ room.slug }}">
         <div class="ws-room-image">To be replaced with an image</div>
         <div class="ws-room-label">{{ room.name }}</div>
       </a>
