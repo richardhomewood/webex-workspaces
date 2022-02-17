@@ -18,11 +18,11 @@
         {% set device = devices[deviceId] %}
         <h2 class="ws-device-name awaits-styling">{{ device.name }}</h2>
 
-        <div class="ws-device-intro-text awaits-styling">{{ device.introText }}</div>
+        <div class="ws-device-intro-text awaits-styling">{{ device.description }}</div>
 
         {{ downloadPdf.render(common, device.pdfUrl) }}
 
-        {{ carousel.render(device.images) }}
+        {{ carousel.render(device.carouselItems) }}
 
         {{ features.render(common, device.features) }}
 
