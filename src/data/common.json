@@ -24,5 +24,7 @@
   },
 
   "sizeClasses": [["ws-XL", ""], ["ws-L", "L_"], ["ws-M", "M_"], ["ws-S", "S_"], ["ws-XS", "XS_"]],
-  "orderedWorkspaceIds": ["homeSpace", "officeSpace", "anywhere"]
+  "orderedWorkspaceIds": ["homeSpace", "officeSpace", "anywhere"],
+
+  "contactUrl": "https://www.webex.com/contact-sales.html?locale=US"
 }
