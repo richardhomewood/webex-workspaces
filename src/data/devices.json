@@ -68,7 +68,6 @@
       "alt": "Category Page Image"
     }
   },
-
   "cisco-headset-730": {
     "name": "Cisco Headset 730",
     "vendor": "webex",
@@ -125,7 +124,6 @@
       }
     ]
   },
-
   "meraki-z3c": {
     "name": "Meraki Z3C Teleworker Gateway",
     "vendor": "meraki",
@@ -184,11 +182,317 @@
       }
     ]
   },
-
   "webex-desk-pro": {
     "name": "Webex Desk Pro",
     "vendor": "webex",
-    "url": "https://www.cisco.com/c/en/us/products/collaboration-endpoints/webex-desk-pro/datasheet-c78-743105.html"
+    "url": "https://www.cisco.com/c/en/us/products/collaboration-endpoints/webex-desk-pro/datasheet-c78-743105.html",
+    "description": "Upgrade your office with the most advanced all-in-one collaboration device.",
+    "features": [
+      "Collaborate, co-create, and annotate with a single, intelligent device.",
+      "Virtual backgrounds so you always appear professional no matter your environment.",
+      "Background noise removal to eliminate distractions at home.",
+      "Join any meeting service—including Webex, Zoom, and Microsoft—with a click of a button."
+    ],
+    "specs": [
+      {
+        "text": "Screen: 27-inch LCD touchscreen display"
+      },
+      {
+        "text": "Resolutions: 4k (3840x2160) (16:9)"
+      },
+      {
+        "text": "Camera: 4k, supports up to 30 fps"
+      },
+      {
+        "text": "Field of view: 71° horizontal field of view, 59° vertical field of view"
+      },
+      {
+        "text": "Audio: 8-element microphone array"
+      },
+      {
+        "text": "Speakers: 3 directional speakers and a subwoofer"
+      }
+    ]
+  },
+  "webex-room-kit-mini": {
+    "name": "Webex Room Kit Mini",
+    "vendor": "webex",
+    "url": "https://www.cisco.com/c/en/us/products/collateral/collaboration-endpoints/webex-room-series/datasheet-c78-741523.html",
+    "description": "See every detail with the intelligent video collaboration bar that attaches to any 4K display in your home.",
+    "features": [
+      "Combines everything you need including codec, camera, microphones, and speakers into a single device that integrates with a 4K display.",
+      "Intelligent views and wide-angle field of view allows you to move around your home office while in a meeting.",
+      "Automatic noise suppression removes unwanted sounds from your meetings.",
+      "Easily control your meeting experience from a distance with the Webex Room Navigator or use Webex Assistant for a zero-touch experience.",
+      "Join any meeting service—including Webex, Zoom, and Microsoft—with a click of a button."
+    ],
+    "specs": [
+      {
+        "text": "Screen: Attaches to 4k displays via HDMI"
+      },
+      {
+        "text": "Resolution: Supports up to 1080p live video resolution"
+      },
+      {
+        "text": "Camera: 4k Ultra HD, supports up to 60 fps"
+      },
+      {
+        "text": "Field of view: 120° horizontal field of view"
+      },
+      {
+        "text": "Audio: 4-element microphone array"
+      },
+      {
+        "text": "Speakers: Full range speaker and two woofers"
+      }
+    ]
+  },
+  "webex-room-navigator": {
+    "name": "Webex Room Navigator",
+    "vendor": "webex",
+    "url": "https://www.cisco.com/c/en/us/products/collateral/collaboration-endpoints/webex-room-series/datasheet-c78-744227.html",
+    "description": "Control every aspect of your meeting with the intuitive touch panel equipped with built-in sensors and powerful APIs.",
+    "features": [
+      "Start and end a video or audio conference, share content, and view contact lists and directories all from a single device.",
+      "Choose the right angle for you with two display orientation, including a 180 degrees rotation of the user interface when the device is tilted.",
+      "Stay informed on room humidity, air quality, temperature, and noise level with intelligent sensors that help maintain a safe workspace.",
+      "Display custom content, such as stock price and industry news on the display when it's not being used so you can stay informed while you work from home."
+    ],
+    "specs": [
+      {
+        "text": "Screen: 10.1-inch LCD touchscreen"
+      },
+      {
+        "text": "Resolution: 1920x1200"
+      }
+    ]
+  },
+  "bo-cisco-980": {
+    "name": "Bang & Olufsen Cisco 980",
+    "vendor": "webex",
+    "url": "https://hardware.webex.com/products/cisco-headset-980",
+    "description": "Find your focus with the new over-ear wireless headset that's designed for life and perfected for business.",
+    "features": [
+      "Experience immersive sound during your meetings or while listening to music.",
+      "Portable and wireless with up to 24-hours of battery life so you can take your meetings with you wherever you go.",
+      "Boomless design for all day comfort.",
+      "Adaptive Active Noise Cancellation with background noise reduction helps keep audio crystal clear in any environment."
+    ],
+    "specs": [
+      {
+        "text": "Connectivity: Bluetooth® 5.1, USB, and 3.5 mm"
+      },
+      {
+        "text": "High end audio experience with advanced codecs"
+      },
+      {
+        "text": "On-ear buttons for easy call, music, and noise cancellation controls"
+      },
+      {
+        "text": "Companion mobile app for a customized, signature experience"
+      },
+      {
+        "text": "Enterprise-grade security and manageability"
+      }
+    ]
+  },
+  "mr46": {
+    "name": "MR46",
+    "vendor": "meraki",
+    "url": "https://meraki.cisco.com/product/wi-fi/indoor-access-points/mr46/",
+    "description": "Performance and efficiency for indoor environments with a dedicated security radio.",
+    "features": [
+      "RF Optimization. Dual-concurrent radios with MU-MIMO support.",
+      "Layer 7 traffic shaping. Prioritize productivity apps.",
+      "Cloud management. Network-wide visibility and control.",
+      "Enterprise security. Intrusion detection and prevention system (WIDS/WIPS)."
+    ],
+    "specs": [
+      {
+        "text": "Four radios: 2.4 GHz, 5 Ghz, dual-band embedded WIDS/WIPS, and Bluetooth® Low Energy"
+      },
+      {
+        "text": "4-stream UL/DL MU-MIMO 802.11ax"
+      },
+      {
+        "text": "One 2.5 Gbps multigigabit Ethernet port"
+      },
+      {
+        "text": "PoE: 802.3at"
+      }
+    ]
+  },
+  "mx67c": {
+    "name": "MX67C for SD-WAN",
+    "vendor": "meraki",
+    "url": "https://meraki.cisco.com/product/security-sd-wan/small-branch/mx67c/",
+    "description": "A building block for SASE in a sleek desktop form factor with integrated LTE.",
+    "features": [
+      "Unified threat management. Next-generation layer 7 firewall and content filtering.",
+      "Connectivity. Extension of SD-WAN fabric to hybrid clouds and Cisco Umbrella.",
+      "Advanced analytics with machine-learning. At-a-glance performance of apps across the LAN, WAN, and app server."
+    ],
+    "specs": [
+      {
+        "text": "WAN: 2 GbE (one WAN/LAN use); one Cat 6 modem; one USB (cellular failover)"
+      },
+      {
+        "text": "LAN: 4 GbE (one for WAN or LAN use)"
+      },
+      {
+        "text": "450 Mbps firewall throughput"
+      },
+      {
+        "text": "200 Mbps site-to-site VPN throughput"
+      },
+      {
+        "text": "Supports up to 50 users"
+      }
+    ]
+  },
+  "ms120-8-fp": {
+    "name": "MS120-8 FP",
+    "vendor": "meraki",
+    "url": "https://meraki.cisco.com/product/switches/access-switches/ms120-8/",
+    "description": "Support a rich networking service in your home, with an access switch that helps you prioritize the traffic coming from data, voice, and video.",
+    "features": [
+      "Layer 2 access switching ideal for small branch deployments.",
+      "Easy management and configuration through an intuitive cloud interface.",
+      "Granular network visibility and detailed event logs to help you keep track of every configuration change in your network."
+    ],
+    "specs": [
+      {
+        "text": "Layer 2, 802.1X authentication"
+      },
+      {
+        "text": "DHCP relay; DHCP snooping"
+      },
+      {
+        "text": "STP enhancements; voice and video QoS"
+      },
+      {
+        "text": "IPv4 and IPv6 ACLs"
+      }
+    ]
+  },
+  "webex-desk-hub": {
+    "name": "Webex Desk Hub",
+    "vendor": "webex",
+    "url": "https://hardware.webex.com/products/cisco-webex-desk-hub",
+    "description": "Make any space your own with the personalized hotdesking solution.",
+    "features": [
+      "Walk up to any open space in the office and authenticate in seconds with wireless pairing.",
+      "Easily reserve your space for a specific time or the entire day.",
+      "See your full calendar and contact directory.",
+      "Join meetings, make calls, and charge your devices from one dedicated hotdesk device.",
+      "Charge your smartphone, headset, and laptop while you work."
+    ],
+    "specs": [
+      {
+        "text": "Screen: 6-inch touchscreen display"
+      },
+      {
+        "text": "Resolution: 1920x1080"
+      },
+      {
+        "text": "Camera: Pair with the Webex Desk Camera for a full video conferencing solution"
+      },
+      {
+        "text": "Audio: Internal directional microphone"
+      }
+    ]
+  },
+  "webex-desk-camera": {
+    "name": "Webex Desk Camera",
+    "vendor": "webex",
+    "url": "https://www.cisco.com/c/en/us/products/collateral/collaboration/webex-desk-camera-ds.html",
+    "description": "Meet the picture-perfect webcam powering video conferencing at the hotdesk.",
+    "features": [
+      "Excellent video quality in all lighting conditions so you look great even when working late.",
+      "Background nosie reduction so you can be clearly heard when office is at its busiest.",
+      "Built-in privacy shutter ensures privacy as needed."
+    ],
+    "specs": [
+      {
+        "text": "Screen: Attaches to a laptop or monitor with USB C-to-A and USB C-to-C  cables"
+      },
+      {
+        "text": "Resolution: Supports up to 1080p live video resolution"
+      },
+      {
+        "text": "Camera: 4k Ultra HD, supports up to 60 fps"
+      },
+      {
+        "text": "Field of view: 81° diagonal field of view"
+      },
+      {
+        "text": "Audio: 2 omni-directional microphones"
+      }
+    ]
+  },
+  "webex-board-pro-75": {
+    "name": "Webex Board Pro 75",
+    "vendor": "webex",
+    "url": "https://hardware.webex.com/products/webex-board-pro",
+    "description": "Bring ideas to life with the all-in-one device designed for hybrid teamwork.",
+    "features": [
+      "Bring local and hybrid teams together to ideate and co-create with digital whiteboarding and content annotation.",
+      "Present to your audience with wireless sharing and touch-based pinch and zoom.",
+      "Pick up where you left off with whiteboards that capture and save every idea.",
+      "Experience the best of both worlds with high-quality video conferencing and powerful ideation tools.",
+      "Provide digital signage and intelligent alerts to keep the workplace safe."
+    ],
+    "specs": [
+      {
+        "text": "Screen: 75-inch LCD touchscreen display"
+      },
+      {
+        "text": "Resolution: 4k Ultra HD (3840x2160) (16:9)"
+      },
+      {
+        "text": "Camera: Dual 4k, supports up to 60 fps"
+      },
+      {
+        "text": "Field of view: Wide-lense camera offers 120° horizontal field of view while the main camera supports 85° horizontal field of view"
+      },
+      {
+        "text": "Audio: 12-element beamforming microphone array and option for microphone extension"
+      },
+      {
+        "text": "Speakers: Multi-channel loudspeaker system with high-quality full-range driver and separate force-cancelling woofers"
+      }
+    ]
+  },
+  "webex-board-pro-55": {
+    "name": "Webex Board Pro 55",
+    "vendor": "webex",
+    "url": "https://hardware.webex.com/products/webex-board-pro",
+    "description": "Power hybrid teams with the all-in-one device designed for huddle spaces and small rooms.",
+    "features": [
+      "Experience the best of both worlds with high-quality video conferencing and powerful ideation tools.",
+      "Get to know everyone in the room with people focus which provides a clear view of each person in the meeting.",
+      "Bring local and hybrid teams together to ideate and co-create with digital whiteboarding, content annotation, and web applications.",
+      "Help reassure everyone in the room about their safety with people count which monitors and alerts on room capacity."
+    ],
+    "specs": [
+      {
+        "text": "Screen: 55-inch LCD touchscreen display"
+      },
+      {
+        "text": "Resolution: 4k Ultra HD (3840x2160) (16:9)"
+      },
+      {
+        "text": "Camera: Dual 4k, supports up to 60 fps"
+      },
+      {
+        "text": "Field of view: Wide-lense camera offers 120° horizontal field of view while the main camera supports 85° horizontal field of view"
+      },
+      {
+        "text": "Audio: 12-element beamforming microphone array and option for microphone extension"
+      },
+      {
+        "text": "Speakers: Multi-channel loudspeaker system with high-quality full-range driver and separate force-cancelling woofers"
+      }
+    ]
   }
-
 }
