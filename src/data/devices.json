@@ -2,8 +2,8 @@
   "webex-desk-mini": {
     "name": "Webex Desk Mini",
     "vendor": "webex",
-    "link": "https://hardware.webex.com/products/desk-mini",
-    "introText": "Create an instant workspace with the portable video conferencing device that's designed for taking meetings with you to any room—even your kitchen.",
+    "url": "https://hardware.webex.com/products/desk-mini",
+    "description": "Create an instant workspace with the portable video conferencing device that's designed for taking meetings with you to any room—even your kitchen.",
     "features": [
       "Portable design perfect for the kitchen, bedroom, or any small workspace",
       "Background noise removal to eliminate distractions at home",
@@ -41,31 +41,39 @@
       "imageUrl": "http://fpoimg.com/779x404?text=Configuration+Guide+image"
     },
     "pdfUrl": "https://another.to-be-determined",
-    "images": [
+    "carouselItems": [
       {
+        "kind": "image",
         "url": "http://fpoimg.com/1571x887?text=image+1",
         "alt": "image 1"
       },
       {
+        "kind": "image",
         "url": "http://fpoimg.com/1571x887?text=image+2",
         "alt": "image 2"
       },
       {
+        "kind": "image",
         "url": "http://fpoimg.com/1571x887?text=image+3",
         "alt": "image 3"
       },
       {
+        "kind": "image",
         "url": "http://fpoimg.com/1571x887?text=image+4",
         "alt": "image 4"
       }
-    ]
+    ],
+    "categoryPageImage": {
+      "url": "http://fpoimg.com/759x770?text=Category+Page+Image",
+      "alt": "Category Page Image"
+    }
   },
 
   "cisco-headset-730": {
     "name": "Cisco Headset 730",
     "vendor": "webex",
-    "link": "https://www.cisco.com/c/en/us/products/collateral/collaboration-endpoints/headset-700-series/datasheet-c78-743083.html",
-    "introText": "Go anywhere with the award-winning, on-ear wireless headset designed for work and play.",
+    "url": "https://www.cisco.com/c/en/us/products/collateral/collaboration-endpoints/headset-700-series/datasheet-c78-743083.html",
+    "description": "Go anywhere with the award-winning, on-ear wireless headset designed for work and play.",
     "features": [
       "Portable and wireless with up to 20-hours of talk time so you can take your meetings with you wherever you go.",
       "Boomless design for all day comfort.",
@@ -94,20 +102,24 @@
       "imageUrl": "http://fpoimg.com/779x404?text=Configuration+Guide+image"
     },
     "pdfUrl": "https://another.to-be-determined",
-    "images": [
+    "carouselItems": [
       {
+        "kind": "image",
         "url": "http://fpoimg.com/1571x887?text=image+1",
         "alt": "image 1"
       },
       {
+        "kind": "image",
         "url": "http://fpoimg.com/1571x887?text=image+2",
         "alt": "image 2"
       },
       {
+        "kind": "image",
         "url": "http://fpoimg.com/1571x887?text=image+3",
         "alt": "image 3"
       },
       {
+        "kind": "image",
         "url": "http://fpoimg.com/1571x887?text=image+4",
         "alt": "image 4"
       }
@@ -117,8 +129,8 @@
   "meraki-z3c": {
     "name": "Meraki Z3C Teleworker Gateway",
     "vendor": "meraki",
-    "link": "https://meraki.cisco.com/product/security-sd-wan/teleworker/z3c/",
-    "introText": "Provide security, convenience, and optimized access to your home office.",
+    "url": "https://meraki.cisco.com/product/security-sd-wan/teleworker/z3c/",
+    "description": "Provide security, convenience, and optimized access to your home office.",
     "features": [
       "Always-on VPN. An office-like experience at home with Wi-Fi that’s always connected.",
       "VOIP telephony. Plug-and-play office telephony in a home office from PoE-enabled ports.",
@@ -149,20 +161,24 @@
       "imageUrl": "http://fpoimg.com/779x404?text=Configuration+Guide+image"
     },
     "pdfUrl": "https://another.to-be-determined",
-    "images": [
+    "carouselItems": [
       {
+        "kind": "image",
         "url": "http://fpoimg.com/1571x887?text=image+1",
         "alt": "image 1"
       },
       {
+        "kind": "image",
         "url": "http://fpoimg.com/1571x887?text=image+2",
         "alt": "image 2"
       },
       {
+        "kind": "image",
         "url": "http://fpoimg.com/1571x887?text=image+3",
         "alt": "image 3"
       },
       {
+        "kind": "image",
         "url": "http://fpoimg.com/1571x887?text=image+4",
         "alt": "image 4"
       }
@@ -172,7 +188,7 @@
   "webex-desk-pro": {
     "name": "Webex Desk Pro",
     "vendor": "webex",
-    "link": "https://www.cisco.com/c/en/us/products/collaboration-endpoints/webex-desk-pro/datasheet-c78-743105.html"
+    "url": "https://www.cisco.com/c/en/us/products/collaboration-endpoints/webex-desk-pro/datasheet-c78-743105.html"
   }
 
 }

@@ -1,0 +1,19 @@
+{% macro render(common, workspaceId, workspaces) %}
+  <div class="ws-navigation-section awaits-styling">
+
+    {{ backgroundImage(commom.navigationSection.background, common.sizeClasses) }}
+
+    <h2>{{ common.categoryPage.navigationSection.heading }}</h2>
+
+    <div class="ws-navigation-section-text">{{ common.categoryPage.navigationSection.text }}</div>
+
+    <a href="../">{{ common.categoryPage.navigationSection.cta }}</a>
+
+  </div>
+{% endmacro %}
+
+{% macro backgroundImage(src, sizeClasses) %}
+  {% for size, prefix in sizeClasses %}
+    <div class="ws-navigation-section-background-image {{ size }}">{% imagesync prefix+src, "" %}</div>
+  {% endfor %}
+{% endmacro %}

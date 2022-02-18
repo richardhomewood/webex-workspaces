@@ -4,9 +4,14 @@
   "aboutWorkspaceCtaText": "About this Workspace",
   "selectRoomText": "Select a Room",
   "moreRoomsCtaText": "Explore More Rooms",
+  "learnMoreCtaText": "Learn More",
+  "contactCtaText": "Contact",
+
+  "sizeClasses": [["ws-XL", ""], ["ws-L", "L_"], ["ws-M", "M_"], ["ws-S", "S_"], ["ws-XS", "XS_"]],
+  "orderedWorkspaceIds": ["homeSpace", "officeSpace", "anywhere"],
+  "contactUrl": "https://www.webex.com/contact-sales.html?locale=US",
 
   "deviceModal": {
-    "learnMoreCtaText": "Learn More",
     "featuresHeadingText": "Features",
     "specsHeadingText": "Tech Specs",
     "configGuideHeadingText": "Configuration Guide",
@@ -23,6 +28,14 @@
     "merakiDevicesHeadingText": "Meraki Devices"
   },
 
-  "sizeClasses": [["ws-XL", ""], ["ws-L", "L_"], ["ws-M", "M_"], ["ws-S", "S_"], ["ws-XS", "XS_"]],
-  "orderedWorkspaceIds": ["homeSpace", "officeSpace", "anywhere"]
+  "categoryPage": {
+    "softwareHeadingText": "Webex Software & Features",
+    "navigationSection": {
+      "background": "01_background.png",
+      "heading": "Workspace",
+      "text": "From home, to the office, to anywhere in between, get inspiration for turning any space into a productive workspace.",
+      "cta": "Explore"
+    }
+  }
+
 }

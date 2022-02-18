@@ -1,0 +1,22 @@
+{
+  "homeSpace": {
+    "kitchen": [
+      "webex-suite"
+    ],
+    "homeOffice": [
+      "webex-suite"
+    ]
+  },
+  "officeSpace": {
+    "hotdesk": [],
+    "ideationRoom": [],
+    "smallConferenceRoom": [
+      "webex-assistant"
+    ]
+  },
+  "anywhere": {
+    "cafe": [
+      "webex-go"
+    ]
+  }
+}
