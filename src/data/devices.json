@@ -62,7 +62,11 @@
         "url": "http://fpoimg.com/1571x887?text=image+4",
         "alt": "image 4"
       }
-    ]
+    ],
+    "categoryPageImage": {
+      "url": "http://fpoimg.com/759x770?text=Category+Page+Image",
+      "alt": "Category Page Image"
+    }
   },
 
   "cisco-headset-730": {
