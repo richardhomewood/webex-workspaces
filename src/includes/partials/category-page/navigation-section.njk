@@ -14,6 +14,8 @@
 
 {% macro backgroundImage(src, sizeClasses) %}
   {% for size, prefix in sizeClasses %}
-    <div class="ws-navigation-section-background-image {{ size }}">{% imagesync prefix+src, "" %}</div>
+    <div class="ws-navigation-section-background-image {{ size }}">
+{#      {% imagesync prefix+src, "" %}#}
+    </div>
   {% endfor %}
 {% endmacro %}
