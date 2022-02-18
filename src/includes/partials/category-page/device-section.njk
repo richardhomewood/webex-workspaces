@@ -25,6 +25,8 @@
 
 {% macro categoryPageImage(image, sizeClasses) %}
   {% for size, prefix in sizeClasses %}
-    <div class="ws-category-page-image {{ size }}">{% imagesync prefix+image.url, image.alt %}</div>
+    <div class="ws-category-page-image {{ size }}">
+{#      {% imagesync prefix+image.url, image.alt %}#}
+    </div>
   {% endfor %}
 {% endmacro %}

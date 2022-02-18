@@ -26,6 +26,8 @@
 
 {% macro softwareImage(image, sizeClasses) %}
   {% for size, prefix in sizeClasses %}
-    <div class="ws-software-image {{ size }}">{% imagesync prefix+image.url, image.alt %}</div>
+    <div class="ws-software-image {{ size }}">
+{#      {% imagesync prefix+image.url, image.alt %}#}
+    </div>
   {% endfor %}
 {% endmacro %}
