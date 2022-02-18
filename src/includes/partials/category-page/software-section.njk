@@ -1,0 +1,31 @@
+{% macro render(common, workspaceId, roomId, softwareByRoom, software) %}
+  <div class="ws-software-section awaits-styling">
+    <h2>{{ common.categoryPage.softwareHeadingText }}</h2>
+    <div class="swiper">
+      {% for softwareId in softwareByRoom[workspaceId][roomId] %}
+        <div class="swiper-slide awaits-styling">
+          <h4>{{ software[softwareId].name }}</h4>
+
+          {{ softwareImage(software[softwareId].image,  common.sizeClasses) }}
+
+          <div class="ws-software-description">{{ software[softwareId].description }}</div>
+
+          <ul class="ws-software-features">
+            {% for feature in  software[softwareId].features %}
+              <li class="ws-software-feature">{{ feature }}</li>
+            {% endfor %}
+          </ul>
+
+          <a class="ws-learn-more-cta" href="{{ software[softwareId].url }}">{{ common.learnMoreCtaText }}</a>
+          <a class="ws-contact-cta" target="_blank" href="{{ common.contactUrl }}" >{{ common.contactCtaText }}</a>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+{% endmacro %}
+
+{% macro softwareImage(image, sizeClasses) %}
+  {% for size, prefix in sizeClasses %}
+    <div class="ws-software-image {{ size }}">{% imagesync prefix+image.url, image.alt %}</div>
+  {% endfor %}
+{% endmacro %}

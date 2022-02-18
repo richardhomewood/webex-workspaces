@@ -1,0 +1,20 @@
+{% import "./device-section.njk" as devicesSection %}
+{% import "./software-section.njk" as softwareSection %}
+{% import "./navigation-section.njk" as navigationSection %}
+
+{% macro render(common, workspaceId, workspaces, devicesByRoom, devices, softwareByRoom, software) %}
+
+  <div class="ws-category-page-rooms">
+    {%- for room in workspaces[workspaceId].rooms %}
+      <div class="ws-category-page-room awaits-styling">
+        {{ devicesSection.render(common, workspaceId, room.slug, devicesByRoom, devices) }}
+
+        {{ softwareSection.render(common, workspaceId, room.slug, softwareByRoom, software) }}
+
+        {{ navigationSection.render(common, workspaceId, workspaces) }}
+      </div>
+    {%- endfor %}
+  </div>
+
+
+{% endmacro %}

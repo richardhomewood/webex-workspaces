@@ -1,0 +1,14 @@
+{% macro render(common, workspaceId, workspaces) %}
+
+  <div class="swiper awaits-styling">
+    <div class="swiper-wrapper">
+      {%- for room in workspaces[workspaceId].rooms %}
+
+        <div class="ws-room swiper-slide">
+          <div class="ws-room-tab"><a href="#/{{ room.slug }}">{{ room.name }}</a></div>
+        </div>
+      {%- endfor %}
+    </div>
+  </div>
+
+{% endmacro %}
