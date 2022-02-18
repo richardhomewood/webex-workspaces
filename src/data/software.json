@@ -1,0 +1,48 @@
+{
+  "webex-suite": {
+    "name": "Webex Suite",
+    "url": "https://www.webex.com/collaboration-suite.html",
+    "description": "The first purpose-built solution for hybrid work, with everything you need to collaborate—all in one economical offer.",
+    "features": [
+      "Engaging video meetings with up to 1,000 participants.",
+      "A powerful cloud phone system and PSTN business phone number.",
+      "Team messaging, secure file sharing, and bi-directional whiteboarding.",
+      "Interactive audience engagement with polling, quizzes, Q&A, and more.",
+      "Virtual events with up to 5,000 attendees, or multi-session events with live streaming and peer networking.",
+      "Asynchronous video messaging for recording and sharing videos."
+    ],
+    "image": {
+      "url": "",
+      "alt": ""
+    }
+  },
+  "webex-assistant": {
+    "name": "Webex Assistant",
+    "url": "https://www.webex.com/webex-assistant.html",
+    "description": "Meet your personal virtual assistant that helps keep everyone on time and on track.",
+    "features": [
+      "Start your meeting, book a room, and more using simple voice commands.",
+      "Capture action items and get detailed transcripts and notes for every meeting.",
+      "Control room amenities such as lighting and temperature."
+    ],
+    "image": {
+      "url": "",
+      "alt": ""
+    }
+  },
+  "webex-go": {
+    "name": "Webex Go",
+    "url": "https://www.webex.com/products/webex-go.html",
+    "description": "Eliminate the need to carry around multiple mobile devices by using your personal phone to make and receive calls with your business phone number.",
+    "features": [
+      "Access powerful calling features on your business line through your personal mobile device.",
+      "Route calls over the mobile network for more reliable voice quality.",
+      "Make personal mobile devices secure and compliant endpoints for your business.",
+      "Centrally manage mobile devices in the same place as the rest of your collaboration solutions."
+    ],
+    "image": {
+      "url": "",
+      "alt": ""
+    }
+  }
+}
