@@ -12,11 +12,11 @@
     ],
     "specs": [
       {
-        "icon": "15-point-6-inches",
+        "icon": "15-inches",
         "text": "Screen: 15.6-inch LCD touchscreen monitor"
       },
       {
-        "icon": "screen-size",
+        "icon": "resolution",
         "text": "Resolutions: 1080p (16:9)"
       },
       {
@@ -28,11 +28,11 @@
         "text": "Field of view: 64° horizontal field of view, 50° vertical field of view"
       },
       {
-        "icon": "microphone",
+        "icon": "join-audio",
         "text": "Audio: 3-element microphone system"
       },
       {
-        "icon": "speaker",
+        "icon": "active-speaker",
         "text": "Speakers: Single-channel loudspeaker system with a high quality 18mm tweeter and dual force-cancelling 80mm woofers"
       }
     ],
@@ -81,18 +81,23 @@
     ],
     "specs": [
       {
+        "icon": "bluetooth",
         "text": "Connectivity: Bluetooth® 5.0, USB-A, and 3.5 mm (audio only)"
       },
       {
+        "icon": "active-speaker",
         "text": "Voice activated AI: Access Google Assistant or Siri"
       },
       {
+        "icon": "headset-private",
         "text": "On-ear buttons for easy call and music controls"
       },
       {
+        "icon": "move-call-in-out-iph",
         "text": "Companion mobile app for configuration and customization"
       },
       {
+        "icon": "secure",
         "text": "Enterprise-grade security and manageability"
       }
     ],
@@ -136,21 +141,27 @@
     ],
     "specs": [
       {
+        "icon": "audio-call",
         "text": "Recommended use cases: Teleworker with VoIP or PoE, IoT, and M2M"
       },
       {
+        "icon": "computer",
         "text": "Recommended clients: Up to 5 devices"
       },
       {
+        "icon": "100",
         "text": "Stateful Firewall Throughput: 100 Mbps"
       },
       {
+        "icon": "50",
         "text": "Maximum VPN Throughput: 50 Mbps"
       },
       {
+        "icon": "1x",
         "text": "WAN Interfaces: 1 x GbE RJ45; 1 x USB (cellular failover)"
       },
       {
+        "icon": "4x",
         "text": "LAN Interfaces: 4 x GbE"
       }
     ],
@@ -195,21 +206,27 @@
     ],
     "specs": [
       {
+        "icon": "resolution",
         "text": "Screen: 27-inch LCD touchscreen display"
       },
       {
+        "icon": "4k",
         "text": "Resolutions: 4k (3840x2160) (16:9)"
       },
       {
+        "icon": "camera",
         "text": "Camera: 4k, supports up to 30 fps"
       },
       {
+        "icon": "120-degrees",
         "text": "Field of view: 71° horizontal field of view, 59° vertical field of view"
       },
       {
+        "icon": "join-audio",
         "text": "Audio: 8-element microphone array"
       },
       {
+        "icon": "active-speaker",
         "text": "Speakers: 3 directional speakers and a subwoofer"
       }
     ]
@@ -228,21 +245,27 @@
     ],
     "specs": [
       {
+        "icon": "4k",
         "text": "Screen: Attaches to 4k displays via HDMI"
       },
       {
+        "icon": "1080p",
         "text": "Resolution: Supports up to 1080p live video resolution"
       },
       {
+        "icon": "camera",
         "text": "Camera: 4k Ultra HD, supports up to 60 fps"
       },
       {
+        "icon": "120-degrees",
         "text": "Field of view: 120° horizontal field of view"
       },
       {
+        "icon": "join-audio",
         "text": "Audio: 4-element microphone array"
       },
       {
+        "icon": "active-speaker",
         "text": "Speakers: Full range speaker and two woofers"
       }
     ]
@@ -260,9 +283,11 @@
     ],
     "specs": [
       {
+        "icon": "resolution",
         "text": "Screen: 10.1-inch LCD touchscreen"
       },
       {
+        "icon": "back-to-fullscreen",
         "text": "Resolution: 1920x1200"
       }
     ]
@@ -280,18 +305,23 @@
     ],
     "specs": [
       {
+        "icon": "bluetooth",
         "text": "Connectivity: Bluetooth® 5.1, USB, and 3.5 mm"
       },
       {
+        "icon": "active-speaker",
         "text": "High end audio experience with advanced codecs"
       },
       {
+        "icon": "headset-private",
         "text": "On-ear buttons for easy call, music, and noise cancellation controls"
       },
       {
+        "icon": "move-call-in-out-iph",
         "text": "Companion mobile app for a customized, signature experience"
       },
       {
+        "icon": "secure",
         "text": "Enterprise-grade security and manageability"
       }
     ]
@@ -309,15 +339,19 @@
     ],
     "specs": [
       {
+        "icon": "device-connection",
         "text": "Four radios: 2.4 GHz, 5 Ghz, dual-band embedded WIDS/WIPS, and Bluetooth® Low Energy"
       },
       {
+        "icon": "04",
         "text": "4-stream UL/DL MU-MIMO 802.11ax"
       },
       {
+        "icon": "2-point-5",
         "text": "One 2.5 Gbps multigigabit Ethernet port"
       },
       {
+        "icon": "802-point-3",
         "text": "PoE: 802.3at"
       }
     ]
@@ -337,15 +371,19 @@
         "text": "WAN: 2 GbE (one WAN/LAN use); one Cat 6 modem; one USB (cellular failover)"
       },
       {
+        "icon": "sources-and-media-usb",
         "text": "LAN: 4 GbE (one for WAN or LAN use)"
       },
       {
+        "icon": "450",
         "text": "450 Mbps firewall throughput"
       },
       {
+        "icon": "200",
         "text": "200 Mbps site-to-site VPN throughput"
       },
       {
+        "icon": "50",
         "text": "Supports up to 50 users"
       }
     ]
@@ -362,15 +400,19 @@
     ],
     "specs": [
       {
+        "icon": "802-point-1x",
         "text": "Layer 2, 802.1X authentication"
       },
       {
+        "icon": "dhcp",
         "text": "DHCP relay; DHCP snooping"
       },
       {
+        "icon": "stp",
         "text": "STP enhancements; voice and video QoS"
       },
       {
+        "icon": "ipv4-ipv6",
         "text": "IPv4 and IPv6 ACLs"
       }
     ]
@@ -389,15 +431,19 @@
     ],
     "specs": [
       {
+        "icon": "video-layout-single",
         "text": "Screen: 6-inch touchscreen display"
       },
       {
+        "icon": "resolution",
         "text": "Resolution: 1920x1080"
       },
       {
+        "icon": "webex-desk-camera",
         "text": "Camera: Pair with the Webex Desk Camera for a full video conferencing solution"
       },
       {
+        "icon": "adjust-microphone",
         "text": "Audio: Internal directional microphone"
       }
     ]
@@ -414,18 +460,23 @@
     ],
     "specs": [
       {
+        "icon": "sources-and-media-usb",
         "text": "Screen: Attaches to a laptop or monitor with USB C-to-A and USB C-to-C  cables"
       },
       {
+        "icon": "1080p",
         "text": "Resolution: Supports up to 1080p live video resolution"
       },
       {
+        "icon": "4k",
         "text": "Camera: 4k Ultra HD, supports up to 60 fps"
       },
       {
+        "icon": "81-degrees",
         "text": "Field of view: 81° diagonal field of view"
       },
       {
+        "icon": "adjust-microphone",
         "text": "Audio: 2 omni-directional microphones"
       }
     ]
@@ -444,21 +495,27 @@
     ],
     "specs": [
       {
+        "icon": "resolution",
         "text": "Screen: 75-inch LCD touchscreen display"
       },
       {
+        "icon": "4k",
         "text": "Resolution: 4k Ultra HD (3840x2160) (16:9)"
       },
       {
+        "icon": "camera",
         "text": "Camera: Dual 4k, supports up to 60 fps"
       },
       {
+        "icon": "120-degrees",
         "text": "Field of view: Wide-lense camera offers 120° horizontal field of view while the main camera supports 85° horizontal field of view"
       },
       {
+        "icon": "join-audio",
         "text": "Audio: 12-element beamforming microphone array and option for microphone extension"
       },
       {
+        "icon": "active-speaker",
         "text": "Speakers: Multi-channel loudspeaker system with high-quality full-range driver and separate force-cancelling woofers"
       }
     ]
@@ -476,21 +533,27 @@
     ],
     "specs": [
       {
+        "icon": "resolution",
         "text": "Screen: 55-inch LCD touchscreen display"
       },
       {
+        "icon": "4k",
         "text": "Resolution: 4k Ultra HD (3840x2160) (16:9)"
       },
       {
+        "icon": "camera",
         "text": "Camera: Dual 4k, supports up to 60 fps"
       },
       {
+        "icon": "120-degrees",
         "text": "Field of view: Wide-lense camera offers 120° horizontal field of view while the main camera supports 85° horizontal field of view"
       },
       {
+        "icon": "join-audio",
         "text": "Audio: 12-element beamforming microphone array and option for microphone extension"
       },
       {
+        "icon": "active-speaker",
         "text": "Speakers: Multi-channel loudspeaker system with high-quality full-range driver and separate force-cancelling woofers"
       }
     ]
