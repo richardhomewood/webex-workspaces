@@ -12,7 +12,6 @@ class Router {
   }
 
   route(path) {
-    console.log(`route to: ${path}`);
     (this.routes[path])();
   }
 }
