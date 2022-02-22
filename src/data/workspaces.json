@@ -45,7 +45,7 @@
       },
       {
         "name": "Small Conference Room",
-        "slug": "/smallConferenceRoom",
+        "slug": "smallConferenceRoom",
         "background": "03_background.png"
       }
     ]
