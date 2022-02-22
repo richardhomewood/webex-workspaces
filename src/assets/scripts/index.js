@@ -1,46 +1,47 @@
-import { remove } from "cheerio/lib/api/manipulation";
-import Router from "./router";
-const commonData = require('../../data/common.json');
-const workspaces = require('../../data/workspaces.json');
 import Swiper from 'swiper';
 import 'swiper/scss';
+import Router from './router';
+import {homePath, canonicalPath, splitPath} from './util';
+import commonData from '../../data/common.json';
+import workspaces from '../../data/workspaces.json';
+
 const router = new Router();
 
-commonData.orderedWorkspaceIds.forEach((workspaceId) => {
-    router.add('/' + workspaceId, () => {
-        toSelectedWorkSpace('/' + workspaceId);
-    })
+const updateUi = (location, delay = 300) => {
+  setTimeout(()=>{
+    updateNav(location.hash.substring(1));
+    updateRoomsSelector(location.hash.substring(1));
+  }, delay)
+}
 
-    workspaces[workspaceId].rooms.forEach((room)=>{
-        router.add('/' + workspaceId + '/' + room.slug, () => {
-            toSelectedWorkSpace('/' + workspaceId + '/' + room.slug);
-        })
+commonData.orderedWorkspaceIds.forEach((workspaceId) => {
+  router.add('/' + workspaceId, () => {
+    toSelectedWorkSpace(workspaceId);
+    updateUi(window.location);
+  })
+
+  workspaces[workspaceId].rooms.forEach((room) => {
+    router.add('/' + workspaceId + '/' + room.slug, () => {
+      toSelectedWorkSpace(workspaceId, room.slug);
+      updateUi(window.location)
     })
+  })
 });
 
-router.add('home', () => { 
+router.add(homePath, () => {
     backToHome();
 })
 
 window.addEventListener('hashchange', (ev) => {
-  let path = location.hash === '' ? 'home' : location.hash.substring(1);
-  router.route(path);
-  updateNav(path);
-  updateRoomsSelector(path);
+  router.route(canonicalPath(window.location));
 });
 
 window.addEventListener('resize', () => {
-    updateNav(location.hash.substring(1));
-    updateRoomsSelector(location.hash.substring(1));
+  updateUi(window.location);
 });
 
 window.addEventListener('load', function() {
-    let path = location.hash === '' ? 'home' : location.hash.substring(1);
-    router.route(path);
-    setTimeout(()=>{
-        updateNav(location.hash.substring(1));
-        updateRoomsSelector(location.hash.substring(1));
-    }, 300)
+  router.route(canonicalPath(window.location));
 });
 
 
@@ -77,13 +78,8 @@ const backToHome = function () {
 }
 
 const updateNav = function (path) {
-
-    let mypath = path;
-    if (path.indexOf("/") > -1) {
-        let paths = path.split("/");
-        paths = paths.filter(word => word.length > 0);
-        mypath = paths[0];
-    }
+    const splitPaths = splitPath(path);
+    const mypath = splitPaths !== null ? splitPaths[0] : path;
 
     let navLinks = document.querySelectorAll(".ws-workspace-nav a");
     let navSelector = document.getElementById("ws-nav-underline");
@@ -100,7 +96,7 @@ const updateNav = function (path) {
         if (!navSelector.classList.contains("ws-displayNone")) {
             navSelector.classList.add("ws-displayNone");
         }
-        
+
         navSelector.style.left = "50%";
         navSelector.style.width = "0px";
         return
@@ -118,16 +114,8 @@ const updateNav = function (path) {
 
 }
 
-const toSelectedWorkSpace = function(path) {
-
-    let splitPath = path.split("/");
-    splitPath =  splitPath.filter((element) => {
-        return element.length > 0 
-    })
-
-    let space = splitPath[0];
-    let room = splitPath[1] ?? null;
-
+const toSelectedWorkSpace = function(space, room) {
+  console.log(space, room);
     let initview = document.getElementsByClassName("ws-initial-view")[0];
     let spacesview = document.getElementsByClassName("ws-room-view")[0];
     let spacescontentview = document.getElementsByClassName("ws-room-content")[0];
@@ -141,7 +129,7 @@ const toSelectedWorkSpace = function(path) {
     let bgsToHide = Array.from(document.querySelectorAll(bgToHideCSSSelector));
 
     //let selectedRoom = room ? document.querySelector("#" + space + "-" + room + " .ws-room-image") : document.querySelector(".ws-workspace#" + space + "Container .ws-room-image");
-    
+
     let allRooms = Array.from(document.querySelectorAll(".ws-workspace#" + space + "Container .ws-room-image"));
     allRooms.forEach((element) => {
         if (element.classList.contains("selected")){
@@ -209,7 +197,7 @@ const toSelectedWorkSpace = function(path) {
 
     if (spacesview && spacesview.classList.contains('ws-displayNone')) {
         spacesview.classList.remove('ws-displayNone');
-        
+
         spacesview.style['zIndex'] = 0;
         initview.style['zIndex'] = 1;
     }
@@ -237,15 +225,10 @@ const toSelectedWorkSpace = function(path) {
 let swipingRoomSelector;
 
 const updateRoomsSelector = function (path){
+    const splitPaths = splitPath(path);
+    const mypath = splitPaths !== null ? splitPaths[0] : path;
 
-    let mypath = path;
-    if (path.indexOf("/") > -1) {
-        let paths = path.split("/");
-        paths = paths.filter(word => word.length > 0);
-        mypath = paths[0];
-    }
-
-    if (swipingRoomSelector && swipingRoomSelector.el && swipingRoomSelector.el.parentNode && swipingRoomSelector.el.parentNode.getAttribute("id") == mypath + "Container") {
+    if (swipingRoomSelector && swipingRoomSelector.el && swipingRoomSelector.el.parentNode && swipingRoomSelector.el.parentNode.getAttribute("id") === mypath + "Container") {
         console.log('swiper already exists for ' + mypath + 'Container')
         return;
     } else if (swipingRoomSelector) {
@@ -274,7 +257,7 @@ const updateRoomsSelector = function (path){
             slidesPerView: "auto",
             centeredSlides: true,
             centeredSlidesBounds: true,
-            grabCursor: true,   
+            grabCursor: true,
             slideToClickedSlide: true,
             centerInsufficientSlides: true,
         }
@@ -284,6 +267,6 @@ const updateRoomsSelector = function (path){
         }
 
         swipingRoomSelector = new Swiper("#" + mypath + "Container .swiper", options);
-        
+
     }, 500)
 }
