@@ -91,7 +91,7 @@
               overflow: visible;
             }
 
-            .ws-room {
+            .ws-room-slide {
               width: 283px;
 
               &.swiper-slide {
@@ -130,6 +130,25 @@
                 color: #fff;
               }
             }
+
+            .ws-device-modal-root:not(.ws-displayNone) {
+              display: block;
+              background-color: white;
+
+              position: fixed;
+              top: 0;
+              left: 10%;
+              right: 0;
+              bottom: 0;
+
+              a.ws-modal-close {
+                display: block;
+                background-color: white;
+                position: absolute;
+                right: 0;
+              }
+            }
+
           }
         }
       }
@@ -203,6 +222,7 @@
             &::-webkit-scrollbar {
               display: none;
             }
+
             & {
               -ms-overflow-style: none;
               scrollbar-width: none;
@@ -211,7 +231,7 @@
             .ws-workspace:not(.ws-displayNone) {
               padding: 0 50px;
 
-              .ws-room {
+              .ws-room-slide {
                 width: 283px;
 
                 .ws-room-image {
@@ -220,6 +240,7 @@
                   height: 154px;
                   box-sizing: border-box;
                   border-radius: 16px;
+
                   &.selected {
                     border: solid 1px #fff;
                   }
