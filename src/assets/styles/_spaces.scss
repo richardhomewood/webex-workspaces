@@ -175,6 +175,12 @@
                 }
               }
 
+              &.swiper-slide-active {
+                .ws-room-image {
+                  border: solid 1px #fff;
+                }
+              }
+
               .ws-room-image {
                 margin: 33px auto 16px;
                 width: 283px;
