@@ -40,11 +40,12 @@ commonData.orderedWorkspaceIds.forEach((workspaceId) => {
 
         const devicesForRoom = devicesByRoom[workspaceId][room.slug]
         devicesForRoom.forEach(deviceId => {
-            router.add(makePath([workspaceId, room.slug, devicePath, deviceId]), () => {
+            const devicePath = makePath([workspaceId, room.slug, devicePath, deviceId]);
+            router.add(devicePath, () => {
                 toSelectedWorkSpace(workspaceId);
                 updateUi(window.location);
-                if (isDevicePath(path)) {
-                    deviceModal.showDevice(path);
+                if (isDevicePath(devicePath)) {
+                    deviceModal.showDevice(devicePath);
                 }
             })
         })
