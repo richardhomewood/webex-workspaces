@@ -91,7 +91,7 @@
               overflow: visible;
             }
 
-            .ws-room {
+            .ws-room-slide {
               width: 283px;
 
               &.swiper-slide {
@@ -211,7 +211,7 @@
             .ws-workspace:not(.ws-displayNone) {
               padding: 0 50px;
 
-              .ws-room {
+              .ws-room-slide {
                 width: 283px;
 
                 .ws-room-image {

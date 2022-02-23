@@ -2,87 +2,100 @@ import Swiper from 'swiper';
 import 'swiper/scss';
 import Router from './router';
 import {canonicalPath, devicePath, homePath, isDevicePath, makePath, splitPath} from './paths';
+import classnames from './classnames';
 import commonData from '../../data/common.json';
 import workspaces from '../../data/workspaces.json';
+import devicesByRoom from '../../data/devicesByRoom.json';
 
 const router = new Router();
 
 const updateUi = (location, delay = 300) => {
-  setTimeout(()=>{
-    updateNav(location.hash.substring(1));
-    updateRoomsSelector(location.hash.substring(1));
-  }, delay)
+    const path = location.hash.substring(1);
+    setTimeout(() => {
+        updateNav(path);
+        updateRoomsSelector(path);
+    }, delay)
 }
 
-commonData.orderedWorkspaceIds.forEach((workspaceId) => {
-  router.add('/' + workspaceId, () => {
-    toSelectedWorkSpace(workspaceId);
-    updateUi(window.location);
-  })
-
-  workspaces[workspaceId].rooms.forEach((room) => {
-    router.add('/' + workspaceId + '/' + room.slug, () => {
-      toSelectedWorkSpace(workspaceId, room.slug);
-      updateUi(window.location)
-    })
-  })
-});
-
+// Routing for the initial view
 router.add(homePath, () => {
     backToHome();
 })
 
+// Handle workspace and workspace/room routing
+commonData.orderedWorkspaceIds.forEach((workspaceId) => {
+    router.add(makePath([workspaceId]), () => {
+        toSelectedWorkSpace(workspaceId);
+        updateUi(window.location);
+    })
+
+    workspaces[workspaceId].rooms.forEach((room) => {
+        router.add(makePath([workspaceId, room.slug]), () => {
+            toSelectedWorkSpace(workspaceId, room.slug);
+            updateUi(window.location)
+        });
+
+        const devicesForRoom = devicesByRoom[workspaceId][room.slug]
+        devicesForRoom.forEach(deviceId => {
+            router.add(makePath([workspaceId, room.slug, devicePath, deviceId]), () => {
+                toSelectedWorkSpace(workspaceId);
+                updateUi(window.location);
+            })
+        })
+    })
+});
+
 window.addEventListener('hashchange', (ev) => {
-  router.route(canonicalPath(window.location));
+    router.route(canonicalPath(window.location));
 });
 
 window.addEventListener('resize', () => {
-  updateUi(window.location);
+    updateUi(window.location);
 });
 
-window.addEventListener('load', function() {
-  router.route(canonicalPath(window.location));
+window.addEventListener('load', function () {
+    router.route(canonicalPath(window.location));
 });
 
 
 const backToHome = function () {
 
-    let initview = document.getElementsByClassName("ws-initial-view")[0];
-    let spacesview = document.getElementsByClassName("ws-room-view")[0];
+    const initview = document.getElementsByClassName(classnames.initialView)[0];
+    const spacesview = document.getElementsByClassName(classnames.roomView)[0];
 
-    if (!initview.classList.contains('ws-displayNone')) {
+    if (!initview.classList.contains(classnames.hidden)) {
         return;
     }
 
-    //let spacescontentview = document.getElementsByClassName("ws-room-content")[0];
-    //let roomSelector = document.querySelector(".ws-workspace#homeSpaceContainer");
-    let roomSelectorWrap = document.getElementsByClassName("ws-workspaces-rooms")[0];
+    //const spacescontentview = document.getElementsByClassName(classnames.roomContentView)[0];
+    //const roomSelector = document.querySelector(`.${classnames.workspaceContainer}#homeSpaceContainer`);
+    const roomSelectorWrap = document.getElementsByClassName(classnames.selectorWrapper)[0];
 
-    if (roomSelectorWrap && roomSelectorWrap.classList.contains('slide-in')) {
-        roomSelectorWrap.classList.remove('slide-in');
+    if (roomSelectorWrap && roomSelectorWrap.classList.contains(classnames.slideIn)) {
+        roomSelectorWrap.classList.remove(classnames.slideIn);
     }
 
     initview.style['zIndex'] = 1;
-    initview.classList.remove('ws-displayNone');
+    initview.classList.remove(classnames.hidden);
 
-    let listener = () => {
-        initview.classList.remove('explored');
-        initview.classList.remove('reversed');
-        spacesview.classList.add('ws-displayNone');
+    const listener = () => {
+        initview.classList.remove(classnames.explored);
+        initview.classList.remove(classnames.reversed);
+        spacesview.classList.add(classnames.hidden);
         initview.style['zIndex'] = 0;
         initview.removeEventListener('animationend', listener);
     }
 
     initview.addEventListener('animationend', listener);
-    initview.classList.add('reversed');
+    initview.classList.add(classnames.reversed);
 }
 
 const updateNav = function (path) {
     const splitPaths = splitPath(path);
     const mypath = splitPaths !== null ? splitPaths[0] : path;
 
-    let navLinks = document.querySelectorAll(".ws-workspace-nav a");
-    let navSelector = document.getElementById("ws-nav-underline");
+    const navLinks = document.querySelectorAll(`.${classnames.workspaceNavigation} a`);
+    const navSelector = document.getElementById("ws-nav-underline");
 
     let selectedIndex = -1;
 
@@ -93,110 +106,108 @@ const updateNav = function (path) {
     });
 
     if (selectedIndex === -1) {
-        if (!navSelector.classList.contains("ws-displayNone")) {
-            navSelector.classList.add("ws-displayNone");
+        if (!navSelector.classList.contains(classnames.hidden)) {
+            navSelector.classList.add(classnames.hidden);
         }
 
         navSelector.style.left = "50%";
         navSelector.style.width = "0px";
         return
     } else {
-        navSelector.classList.remove("ws-displayNone");
+        navSelector.classList.remove(classnames.hidden);
     }
 
-    let left = navLinks[selectedIndex].offsetLeft;
-    let width = navLinks[selectedIndex].offsetWidth;
+    const left = navLinks[selectedIndex].offsetLeft;
+    const width = navLinks[selectedIndex].offsetWidth;
 
-    setTimeout(()=>{
-        navSelector.style.left = left + "px";
-        navSelector.style.width = width + "px";
+    setTimeout(() => {
+        navSelector.style.left = `${left}px`;
+        navSelector.style.width = `${width}px`;
     }, 1)
 
 }
 
-const toSelectedWorkSpace = function(space, room) {
-  console.log(space, room);
-    let initview = document.getElementsByClassName("ws-initial-view")[0];
-    let spacesview = document.getElementsByClassName("ws-room-view")[0];
-    let spacescontentview = document.getElementsByClassName("ws-room-content")[0];
-    let roomSelector = document.querySelector(".ws-workspace#" + space + "Container");
-    let otherRoomSelectors = Array.from(document.querySelectorAll(".ws-workspace:not(#" + space + "Container):not(.ws-displayNone)"));
-    let roomSelectorWrap = document.getElementsByClassName("ws-workspaces-rooms")[0];
+const toSelectedWorkSpace = function (space, room) {
+    console.log(space, room);
+    const initview = document.getElementsByClassName(classnames.initialView)[0];
+    const spacesview = document.getElementsByClassName(classnames.roomView)[0];
+    const spacescontentview = document.getElementsByClassName(classnames.roomContentView)[0];
+    const roomSelector = document.querySelector(`.${classnames.workspaceContainer}#${space}Container`);
+    const otherRoomSelectors = Array.from(document.querySelectorAll(`.${classnames.workspaceContainer}:not(#${space}Container):not(.${classnames.hidden})`));
+    const roomSelectorWrap = document.getElementsByClassName(classnames.selectorWrapper)[0];
 
-    let bgToDisplayCSSSelector =  room ? ".ws-room-bg." + space + "-" + room + "-room-bg" : ".ws-default-room-bg." + space + "-room-bg";
-    let bgsToDisplay = Array.from(document.querySelectorAll(bgToDisplayCSSSelector));
-    let bgToHideCSSSelector = ".ws-room-bg:not(.ws-displayNone), .ws-default-room-bg:not(.ws-displayNone)"
-    let bgsToHide = Array.from(document.querySelectorAll(bgToHideCSSSelector));
+    const bgToDisplayCSSSelector = room ? `.${classnames.roomBackground}.${space}-${room}${classnames.roomBackgroundSuffix}` : `.${classnames.defaultRoomBackground}.${space}${classnames.roomBackgroundSuffix}`;
+    const bgsToDisplay = Array.from(document.querySelectorAll(bgToDisplayCSSSelector));
+    const bgToHideCSSSelector = `.${classnames.roomBackground}:not(.${classnames.hidden}), .${classnames.defaultRoomBackground}:not(.${classnames.hidden})`
+    const bgsToHide = Array.from(document.querySelectorAll(bgToHideCSSSelector));
 
-    //let selectedRoom = room ? document.querySelector("#" + space + "-" + room + " .ws-room-image") : document.querySelector(".ws-workspace#" + space + "Container .ws-room-image");
-
-    let allRooms = Array.from(document.querySelectorAll(".ws-workspace#" + space + "Container .ws-room-image"));
+    const allRooms = Array.from(document.querySelectorAll(`.${classnames.workspaceContainer}#${space}Container .${classnames.roomImage}`));
     allRooms.forEach((element) => {
-        if (element.classList.contains("selected")){
-            element.classList.remove("selected")
+        if (element.classList.contains(classnames.selected)) {
+            element.classList.remove(classnames.selected)
         }
     })
-/*
-    if (selectedRoom && !selectedRoom.classList.contains("selected")) {
-        selectedRoom.classList.add("selected")
-    }
-*/
-    if (roomSelector && roomSelector.classList.contains('ws-displayNone') && otherRoomSelectors.length === 0) {
-        roomSelector.classList.remove('ws-displayNone');
+    /*
+        if (selectedRoom && !selectedRoom.classList.contains(classnames.selected)) {
+            selectedRoom.classList.add(classnames.selected)
+        }
+    */
+    if (roomSelector && roomSelector.classList.contains(classnames.hidden) && otherRoomSelectors.length === 0) {
+        roomSelector.classList.remove(classnames.hidden);
     }
 
-    if (initview && !initview.classList.contains('explored') && !initview.classList.contains('ws-displayNone')) {
+    if (initview && !initview.classList.contains(classnames.explored) && !initview.classList.contains(classnames.hidden)) {
 
-        let listener = () => {
-            initview.classList.add('ws-displayNone');
+        const listener = () => {
+            initview.classList.add(classnames.hidden);
             initview.style['zIndex'] = 0;
-            if(spacescontentview) {
-                spacescontentview.classList.remove('ws-displayNone');
+            if (spacescontentview) {
+                spacescontentview.classList.remove(classnames.hidden);
 
-                setTimeout(()=>{
+                setTimeout(() => {
                     if (roomSelectorWrap) {
-                        roomSelectorWrap.classList.add('slide-in');
+                        roomSelectorWrap.classList.add(classnames.slideIn);
                     }
                 }, 500);
             }
 
             initview.removeEventListener('animationend', listener);
-          }
+        }
 
-        if(spacescontentview) {
-            spacescontentview.classList.add('ws-displayNone');
+        if (spacescontentview) {
+            spacescontentview.classList.add(classnames.hidden);
         }
 
         initview.addEventListener('animationend', listener);
-        initview.classList.add('explored');
+        initview.classList.add(classnames.explored);
     }
 
-    if(otherRoomSelectors.length > 0) {
+    if (otherRoomSelectors.length > 0) {
 
         if (roomSelectorWrap) {
-            let roomSelectorWrapListener = ()=>{
+            const roomSelectorWrapListener = () => {
                 console.log("roomSelectorWrapListener")
                 otherRoomSelectors.forEach((element) => {
-                    element.classList.add("ws-displayNone");
+                    element.classList.add(classnames.hidden);
                 });
-                roomSelector.classList.remove('ws-displayNone');
+                roomSelector.classList.remove(classnames.hidden);
                 roomSelectorWrap.removeEventListener('animationend', roomSelectorWrapListener);
-                roomSelectorWrap.classList.remove('fadeOut');
-                roomSelectorWrap.classList.remove('slide-in');
-                setTimeout(()=>{
+                roomSelectorWrap.classList.remove(classnames.fadeOut);
+                roomSelectorWrap.classList.remove(classnames.slideIn);
+                setTimeout(() => {
                     console.log("adding slide-in class to SelectorWrap")
-                    roomSelectorWrap.classList.add('slide-in');
+                    roomSelectorWrap.classList.add(classnames.slideIn);
                 }, 500);
             }
 
             console.log("roomSelectorWrap.addEventListener");
             roomSelectorWrap.addEventListener('animationend', roomSelectorWrapListener);
-            roomSelectorWrap.classList.add('fadeOut');
+            roomSelectorWrap.classList.add(classnames.fadeOut);
         }
     }
 
-    if (spacesview && spacesview.classList.contains('ws-displayNone')) {
-        spacesview.classList.remove('ws-displayNone');
+    if (spacesview && spacesview.classList.contains(classnames.hidden)) {
+        spacesview.classList.remove(classnames.hidden);
 
         spacesview.style['zIndex'] = 0;
         initview.style['zIndex'] = 1;
@@ -204,53 +215,56 @@ const toSelectedWorkSpace = function(space, room) {
 
     bgsToHide.forEach((element) => {
         element.style['zIndex'] = 1;
-        let listener = () => {
+        const listener = () => {
             element.removeEventListener("animationend", listener);
-            element.classList.add("ws-displayNone");
-            element.classList.remove("fadeOut");
+            element.classList.add(classnames.hidden);
+            element.classList.remove(classnames.fadeOut);
         }
 
         element.addEventListener("animationend", listener);
-        element.classList.add("fadeOut");
+        element.classList.add(classnames.fadeOut);
     })
 
     bgsToDisplay.forEach((element) => {
         element.style['zIndex'] = 0;
-        element.classList.remove("fadeOut");
-        element.classList.remove("ws-displayNone");
+        element.classList.remove(classnames.fadeOut);
+        element.classList.remove(classnames.hidden);
     })
+
+    // Hide the device-modal
+    document.getElementsByClassName(classnames.deviceModalRoot)
 }
 
 
 let swipingRoomSelector;
 
-const updateRoomsSelector = function (path){
+const updateRoomsSelector = function (path) {
     const splitPaths = splitPath(path);
     const mypath = splitPaths !== null ? splitPaths[0] : path;
 
-    if (swipingRoomSelector && swipingRoomSelector.el && swipingRoomSelector.el.parentNode && swipingRoomSelector.el.parentNode.getAttribute("id") === mypath + "Container") {
-        console.log('swiper already exists for ' + mypath + 'Container')
+    if (swipingRoomSelector && swipingRoomSelector.el && swipingRoomSelector.el.parentNode && swipingRoomSelector.el.parentNode.getAttribute("id") === `${mypath}Container`) {
+        console.log(`swiper already exists for ${mypath}Container`)
         return;
     } else if (swipingRoomSelector) {
         swipingRoomSelector.destroy();
     }
 
-    let spacesview = document.getElementsByClassName("ws-room-view")[0];
-    if (spacesview.classList.contains('ws-displayNone')) {
-        console.log("spacesview.classList.contains('ws-displayNone')" , spacesview.classList.contains('ws-displayNone'))
+    const spacesview = document.getElementsByClassName(classnames.roomView)[0];
+    if (spacesview.classList.contains(classnames.hidden)) {
+        console.log(`spacesview.classList.contains(${classnames.hidden})`, spacesview.classList.contains(classnames.hidden))
         return;
     }
 
-    setTimeout(()=>{
-        let slides = Array.from(document.querySelectorAll("#" + mypath + "Container .swiper .swiper-slide.ws-room"));
-        let slideCount = slides.length;
+    setTimeout(() => {
+        const slides = Array.from(document.querySelectorAll(`#${mypath}Container .swiper .swiper-slide.${classnames.roomSlide}`));
+        const slideCount = slides.length;
 
         if (slideCount === 0) {
             return
         }
-        let slideWidth = slides[0].offsetWidth;
+        const slideWidth = slides[0].offsetWidth;
 
-        let totalSlideWidth = (slideWidth * slideCount) + (10 * (slideCount - 1));
+        const totalSlideWidth = (slideWidth * slideCount) + (10 * (slideCount - 1));
 
         let options = {
             speed: 400,
@@ -262,11 +276,11 @@ const updateRoomsSelector = function (path){
             centerInsufficientSlides: true,
         }
 
-        if (totalSlideWidth < (window.innerWidth - 98) ) {
+        if (totalSlideWidth < (window.innerWidth - 98)) {
             options = {...options, ...{enabled: false}}
         }
 
-        swipingRoomSelector = new Swiper("#" + mypath + "Container .swiper", options);
+        swipingRoomSelector = new Swiper(`#${mypath}Container .swiper`, options);
 
     }, 500)
 }
