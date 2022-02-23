@@ -21,6 +21,7 @@ const updateUi = (location, delay = 300) => {
 // Routing for the initial view
 router.add(homePath, () => {
     backToHome();
+    updateUi(window.location);
 })
 
 // Handle workspace and workspace/room routing
@@ -35,7 +36,7 @@ commonData.orderedWorkspaceIds.forEach((workspaceId) => {
         router.add(makePath([workspaceId, room.slug]), () => {
             deviceModal.hideAll();
             toSelectedWorkSpace(workspaceId, room.slug);
-            updateUi(window.location)
+            updateUi(window.location);
         });
 
         const devicesForRoom = devicesByRoom[workspaceId][room.slug]
@@ -74,8 +75,6 @@ const backToHome = function () {
         return;
     }
 
-    //const spacescontentview = document.getElementsByClassName(classnames.roomContentView)[0];
-    //const roomSelector = document.querySelector(`.${classnames.workspaceContainer}#homeSpaceContainer`);
     const roomSelectorWrap = document.getElementsByClassName(classnames.selectorWrapper)[0];
 
     if (roomSelectorWrap && roomSelectorWrap.classList.contains(classnames.slideIn)) {
@@ -135,7 +134,7 @@ const updateNav = function (path) {
 }
 
 const toSelectedWorkSpace = function (space, room) {
-    console.log(space, room);
+    
     const initview = document.getElementsByClassName(classnames.initialView)[0];
     const spacesview = document.getElementsByClassName(classnames.roomView)[0];
     const spacescontentview = document.getElementsByClassName(classnames.roomContentView)[0];
@@ -148,21 +147,20 @@ const toSelectedWorkSpace = function (space, room) {
     const bgToHideCSSSelector = `.${classnames.roomBackground}:not(.${classnames.hidden}), .${classnames.defaultRoomBackground}:not(.${classnames.hidden})`
     const bgsToHide = Array.from(document.querySelectorAll(bgToHideCSSSelector));
 
+    // Deselect all rooms
     const allRooms = Array.from(document.querySelectorAll(`.${classnames.workspaceContainer}#${space}Container .${classnames.roomImage}`));
     allRooms.forEach((element) => {
         if (element.classList.contains(classnames.selected)) {
-            element.classList.remove(classnames.selected)
+            element.classList.remove(classnames.selected);
         }
     })
-    /*
-        if (selectedRoom && !selectedRoom.classList.contains(classnames.selected)) {
-            selectedRoom.classList.add(classnames.selected)
-        }
-    */
+   
+    //if there are no roomlelectors to hide then show the relevant room selector
     if (roomSelector && roomSelector.classList.contains(classnames.hidden) && otherRoomSelectors.length === 0) {
         roomSelector.classList.remove(classnames.hidden);
     }
 
+    // if transitioning away from home view
     if (initview && !initview.classList.contains(classnames.explored) && !initview.classList.contains(classnames.hidden)) {
 
         const listener = () => {
@@ -172,7 +170,7 @@ const toSelectedWorkSpace = function (space, room) {
                 spacescontentview.classList.remove(classnames.hidden);
 
                 setTimeout(() => {
-                    if (roomSelectorWrap) {
+                    if (roomSelectorWrap && !room) {
                         roomSelectorWrap.classList.add(classnames.slideIn);
                     }
                 }, 500);
@@ -189,11 +187,11 @@ const toSelectedWorkSpace = function (space, room) {
         initview.classList.add(classnames.explored);
     }
 
+    // if there are room selectors to hide, hide them and animate in relevant room selector
     if (otherRoomSelectors.length > 0) {
 
         if (roomSelectorWrap) {
             const roomSelectorWrapListener = () => {
-                console.log("roomSelectorWrapListener")
                 otherRoomSelectors.forEach((element) => {
                     element.classList.add(classnames.hidden);
                 });
@@ -201,25 +199,25 @@ const toSelectedWorkSpace = function (space, room) {
                 roomSelectorWrap.removeEventListener('animationend', roomSelectorWrapListener);
                 roomSelectorWrap.classList.remove(classnames.fadeOut);
                 roomSelectorWrap.classList.remove(classnames.slideIn);
+                
                 setTimeout(() => {
-                    console.log("adding slide-in class to SelectorWrap")
                     roomSelectorWrap.classList.add(classnames.slideIn);
                 }, 500);
             }
 
-            console.log("roomSelectorWrap.addEventListener");
             roomSelectorWrap.addEventListener('animationend', roomSelectorWrapListener);
             roomSelectorWrap.classList.add(classnames.fadeOut);
         }
     }
 
+    //if transitioning away from home view then move home view in front of spaces view and show home view
     if (spacesview && spacesview.classList.contains(classnames.hidden)) {
         spacesview.classList.remove(classnames.hidden);
-
         spacesview.style['zIndex'] = 0;
         initview.style['zIndex'] = 1;
     }
 
+    //fade out backgrounds that are going away
     bgsToHide.forEach((element) => {
         element.style['zIndex'] = 1;
         const listener = () => {
@@ -232,16 +230,63 @@ const toSelectedWorkSpace = function (space, room) {
         element.classList.add(classnames.fadeOut);
     })
 
+    //show backgrounnds that are coming in
     bgsToDisplay.forEach((element) => {
         element.style['zIndex'] = 0;
         element.classList.remove(classnames.fadeOut);
         element.classList.remove(classnames.hidden);
     })
 
+    //if moving from workspace landing to selected room
+    let roomContent = document.querySelector('.ws-more-rooms-text')
+    if (room) {
+
+        //hide all room labels
+        let roomLabels = Array.from(document.getElementsByClassName(classnames.selectedRoomLabel))
+        roomLabels.forEach((element) => {
+            element.classList.add(classnames.hidden);
+        });
+
+        //hide all show more rooms elements
+        let showMoreRoomsElements = Array.from(document.querySelectorAll("." + classnames.showMoreRoomsText + ", " + "." + classnames.showMoreRoomsBtn));
+        showMoreRoomsElements.forEach((element) => {
+            element.classList.add(classnames.hidden);
+        });
+
+        //show relevant show more rooms elements
+        let relevantShowMoreElements = Array.from(document.querySelectorAll("." + classnames.showMoreRoomsText + "#" + classnames.showMoreRoomsText + "-" + space + ", ." + classnames.showMoreRoomsBtn + "#" + classnames.showMoreRoomsBtn + "-" + space));
+        relevantShowMoreElements.forEach((element) => {
+            element.classList.remove(classnames.hidden);
+        })
+
+        //show relevant label
+        let roomlabel = document.querySelector('.ws-room-label#' + space + "-" + room + "-label");
+        roomlabel.classList.remove(classnames.hidden);
+
+        // hide room selector
+        if (roomSelectorWrap) {
+            roomSelectorWrap.classList.remove(classnames.slideIn);
+        }
+        
+        // show selected room content
+
+        setTimeout(()=>{
+            roomContent.classList.add(classnames.slideIn);
+        }, 750);
+
+    } else {
+        // if there is no room
+        roomContent.classList.remove(classnames.slideIn)
+        setTimeout(()=>{
+            if (roomSelectorWrap && !roomSelectorWrap.classList.contains(classnames.slideIn)) {
+                roomSelectorWrap.classList.add(classnames.slideIn);
+            }
+        }, 750);
+    }
+
     // Hide the device-modal
     document.getElementsByClassName(classnames.deviceModalRoot)
 }
-
 
 let swipingRoomSelector;
 
@@ -250,7 +295,6 @@ const updateRoomsSelector = function (path) {
     const mypath = splitPaths !== null ? splitPaths[0] : path;
 
     if (swipingRoomSelector && swipingRoomSelector.el && swipingRoomSelector.el.parentNode && swipingRoomSelector.el.parentNode.getAttribute("id") === `${mypath}Container`) {
-        console.log(`swiper already exists for ${mypath}Container`)
         return;
     } else if (swipingRoomSelector) {
         swipingRoomSelector.destroy();
@@ -258,7 +302,6 @@ const updateRoomsSelector = function (path) {
 
     const spacesview = document.getElementsByClassName(classnames.roomView)[0];
     if (spacesview.classList.contains(classnames.hidden)) {
-        console.log(`spacesview.classList.contains(${classnames.hidden})`, spacesview.classList.contains(classnames.hidden))
         return;
     }
 

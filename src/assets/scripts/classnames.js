@@ -22,6 +22,10 @@ module.exports = {
     roomSlide: 'ws-room-slide',
     roomView: 'ws-room-view',
     roomContentView: 'ws-room-content',
+    selectedRoomContent: 'ws-more-rooms-text',
+    selectedRoomLabel: 'ws-room-label',
+    showMoreRoomsText: 'ws-show-more-rooms-txt',
+    showMoreRoomsBtn: 'ws-show-more-rooms-btn',
     workspaceContainer: 'ws-workspace',
     workspaceNavigation: 'ws-workspace-nav',
 
