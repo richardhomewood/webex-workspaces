@@ -1,7 +1,7 @@
 import Swiper from 'swiper';
 import 'swiper/scss';
 import Router from './router';
-import {homePath, canonicalPath, splitPath} from './util';
+import {canonicalPath, devicePath, homePath, isDevicePath, makePath, splitPath} from './paths';
 import commonData from '../../data/common.json';
 import workspaces from '../../data/workspaces.json';
 
