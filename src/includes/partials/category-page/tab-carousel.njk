@@ -4,8 +4,8 @@
     <div class="swiper-wrapper">
       {%- for room in workspaces[workspaceId].rooms %}
 
-        <div class="ws-room swiper-slide">
-          <div class="ws-room-tab"><a href="#/{{ room.slug }}">{{ room.name }}</a></div>
+        <div class="ws-room-slide swiper-slide">
+          <a href="#/{{ room.slug }}">{{ room.name }}</a>
         </div>
       {%- endfor %}
     </div>
