@@ -3,6 +3,7 @@ import 'swiper/scss';
 import Router from './router';
 import {canonicalPath, devicePath, homePath, isDevicePath, makePath, splitPath} from './paths';
 import classnames from './classnames';
+import deviceModal from './device-modal'
 import commonData from '../../data/common.json';
 import workspaces from '../../data/workspaces.json';
 import devicesByRoom from '../../data/devicesByRoom.json';
@@ -25,12 +26,14 @@ router.add(homePath, () => {
 // Handle workspace and workspace/room routing
 commonData.orderedWorkspaceIds.forEach((workspaceId) => {
     router.add(makePath([workspaceId]), () => {
+        deviceModal.hideAll();
         toSelectedWorkSpace(workspaceId);
         updateUi(window.location);
     })
 
     workspaces[workspaceId].rooms.forEach((room) => {
         router.add(makePath([workspaceId, room.slug]), () => {
+            deviceModal.hideAll();
             toSelectedWorkSpace(workspaceId, room.slug);
             updateUi(window.location)
         });
@@ -40,6 +43,9 @@ commonData.orderedWorkspaceIds.forEach((workspaceId) => {
             router.add(makePath([workspaceId, room.slug, devicePath, deviceId]), () => {
                 toSelectedWorkSpace(workspaceId);
                 updateUi(window.location);
+                if (isDevicePath(path)) {
+                    deviceModal.showDevice(path);
+                }
             })
         })
     })
