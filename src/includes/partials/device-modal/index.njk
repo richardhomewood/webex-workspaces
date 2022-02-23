@@ -10,11 +10,14 @@
   <div class="ws-device-modal-root ws-displayNone awaits-styling">
     (Device Modal for {{ workspace.slug }}-{{ room.slug }})
 
-    <button class="ws-device-modal-close ws-modal-close awaits-styling" aria-label="Close"></button>
+    <a class="ws-device-modal-close ws-modal-close awaits-styling" aria-label="Close" href="#/{{ workspace.slug }}/{{ room.slug }}">{% icon "close-x" %}</a>
 
     {% for deviceId in devicesByRoom[workspace.slug][room.slug] %}
-      {# Only one of these device divs should be visible at any one time.  For the clicked hotspot. #}
-      <div class="ws-device awaits-styling" id="device_{{ deviceId }}">
+      {# Only one of these device divs should be visible at any one time.  For the clicked hotspot.
+         We can't use the device ID in an actual id attribute, because there may be more than one instance of the same device.
+         It has to be a classname.
+      #}
+      <div class="ws-device awaits-styling ws-device-{{ deviceId }} ws-displayNone">
         {% set device = devices[deviceId] %}
         <h2 class="ws-device-name awaits-styling">{{ device.name }}</h2>
 

@@ -19,10 +19,10 @@
       <div class="ws-workspaces-rooms">
         <span class="ws-select-room-text">{{ common.selectRoomText }}</span>
 
-        {# This represents the room label and selection interface for each workspace. #}
         <div class="ws-workspaces">
           {%- for workspaceId in common.orderedWorkspaceIds %}
             <div class="ws-workspace ws-displayNone" id="{{ workspaceId }}Container">
+              {# This represents the room label and selection interface for each workspace. #}
               <div class="swiper">
                 <div class="swiper-wrapper">
                   {%- for room in workspaces[workspaceId].rooms %}
@@ -35,9 +35,10 @@
               </div>
 
               {%- for room in workspaces[workspaceId].rooms %}
-                <!--{{ deviceModal.render(common, workspaces[workspaceId], room, devicesByRoom, devices) }}-->
-
-                <!--{{ infoModal.render(common, workspaces[workspaceId], room, vendorDevicesByRoom, devices) }}-->
+                <div class="ws-room-modals-container ws-displayNone" id="{{ workspaceId }}-{{ room.slug }}-modals">
+                  {{ deviceModal.render(common, workspaces[workspaceId], room, devicesByRoom, devices) }}
+                  <!--{{ infoModal.render(common, workspaces[workspaceId], room, vendorDevicesByRoom, devices) }}-->
+                </div>
               {%- endfor %}
             </div>
           {%- endfor %}
@@ -61,7 +62,7 @@
 {% endmacro %}
 
 {% macro roomSelections(workspace, room, common) %}
-  <div class="ws-room-selections" id="{{ workspace.slug }}-{{ room.slug }}">
+  <div class="ws-room-selections" id="{{ workspace.slug }}-{{ room.slug }}-selections">
     <div class="ws-room-selection">
       <a href="#/{{ workspace.slug }}/{{ room.slug }}">
         <div class="ws-room-image">{{ roomOptionBG(room.background, common.sizeClasses) }}</div>

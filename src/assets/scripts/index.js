@@ -1,7 +1,7 @@
 import Swiper from 'swiper';
 import 'swiper/scss';
 import Router from './router';
-import {canonicalPath, devicePath, homePath, isDevicePath, makePath, splitPath} from './paths';
+import {canonicalPath, devicePathPart, homePath, isDevicePath, makePath, splitPath} from './paths';
 import classnames from './classnames';
 import deviceModal from './device-modal'
 import commonData from '../../data/common.json';
@@ -40,7 +40,7 @@ commonData.orderedWorkspaceIds.forEach((workspaceId) => {
 
         const devicesForRoom = devicesByRoom[workspaceId][room.slug]
         devicesForRoom.forEach(deviceId => {
-            const devicePath = makePath([workspaceId, room.slug, devicePath, deviceId]);
+            const devicePath = makePath([workspaceId, room.slug, devicePathPart, deviceId]);
             router.add(devicePath, () => {
                 toSelectedWorkSpace(workspaceId);
                 updateUi(window.location);
