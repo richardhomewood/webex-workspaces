@@ -1,15 +1,18 @@
 {% import "./commonUi.njk" as commonUi %}
 {% import "./initialView.njk" as initialView %}
 {% import "./roomView.njk" as roomView %}
+{% import "./modal-layer.njk" as modalLayer %}
 
 {% macro render(common, workspaces, devicesByRoom, vendorDevicesByRoom, devices) %}
-  <div class="ws-immersive-root awaits-styling">
+  <div class="ws-immersive-root">
+
+    {{ modalLayer.render(common, workspaces, devicesByRoom, vendorDevicesByRoom, devices) }}
 
     {{ commonUi.render(common, workspaces) }}
 
     {{ initialView.render(common, workspaces) }}
 
-    {{ roomView.render(common, workspaces, devicesByRoom, vendorDevicesByRoom, devices) }}
+    {{ roomView.render(common, workspaces) }}
 
   </div>
 {% endmacro %}
