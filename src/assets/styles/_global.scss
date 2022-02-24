@@ -70,6 +70,9 @@
 .ws-download-pdf {
   a {
     text-decoration: none;
+    &:active, &:visited {
+      color: black;
+    }
 
     .ws-download-icon {
       width: 32px;
