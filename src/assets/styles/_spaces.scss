@@ -130,25 +130,6 @@
                 color: #fff;
               }
             }
-
-            .ws-device-modal-root:not(.ws-displayNone) {
-              display: block;
-              background-color: white;
-
-              position: fixed;
-              top: 0;
-              left: 10%;
-              right: 0;
-              bottom: 0;
-
-              a.ws-modal-close {
-                display: block;
-                background-color: white;
-                position: absolute;
-                right: 0;
-              }
-            }
-
           }
         }
       }
