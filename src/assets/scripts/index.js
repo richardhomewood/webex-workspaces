@@ -10,6 +10,18 @@ import devicesByRoom from '../../data/devicesByRoom.json';
 
 const router = new Router();
 
+window.addEventListener('hashchange', (ev) => {
+    router.route(canonicalPath(window.location));
+});
+
+window.addEventListener('resize', () => {
+    updateUi(window.location);
+});
+
+window.addEventListener('load', function () {
+    router.route(canonicalPath(window.location));
+});
+
 const updateUi = (location, delay = 300) => {
     const path = location.hash.substring(1);
     setTimeout(() => {
@@ -30,7 +42,28 @@ const updateBGSizes = () => {
             if (bgImg) {
                 let backgroundPos = room.backgroundPosition[sizeClass];
                 let imgWidth = bgImg.clientWidth;
-                bgImg.style["transform"] = 'translate(calc(-50% + ' + (imgWidth * backgroundPos.left) + 'px), 0)';
+                let imgHeight = bgImg.clientHeight;
+                let windowWidth = window.innerWidth
+                var initialOffset = (imgWidth * backgroundPos.left)
+
+                if (imgWidth != 0) {
+                    console.log("backgroundPos.left", backgroundPos.left)
+                    console.log("imgWidth" , imgWidth);
+                    console.log("initialOffset", initialOffset)
+                    console.log("imgWidth + (initialOffest * 2)", imgWidth + (initialOffset * 2))
+                    console.log("windowWidth" , windowWidth)
+                    console.log("----------------------------------------------")
+                }
+                
+
+                if ((imgWidth > 0) && imgWidth + (initialOffset * 2) < windowWidth) {
+                    let newImageHeight = (windowWidth * imgHeight) / imgWidth;
+                    bgImg.style["height"] = newImageHeight + "px";
+                } else {
+                    //bgImg.style["height"] = "";
+                }
+
+                bgImg.style["transform"] = 'translate(calc(-50% + ' + initialOffset + 'px), -50%)';
             }
         })
     })
@@ -82,19 +115,6 @@ commonData.orderedWorkspaceIds.forEach((workspaceId) => {
         })
     })
 });
-
-window.addEventListener('hashchange', (ev) => {
-    router.route(canonicalPath(window.location));
-});
-
-window.addEventListener('resize', () => {
-    updateUi(window.location);
-});
-
-window.addEventListener('load', function () {
-    router.route(canonicalPath(window.location));
-});
-
 
 const backToHome = function () {
 
