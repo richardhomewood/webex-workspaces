@@ -18,6 +18,7 @@ $list-items-border-color: #c4c4c4;
 
   .ws-device-modal-root:not(.ws-displayNone) {
     display: block;
+    position: relative;
     background-color: white;
     padding: $modal-padding;
 
