@@ -1,4 +1,5 @@
 $modal-padding: 21px;
+$list-items-border-color: #c4c4c4;
 
 // All recursive children of the #ws-modal-layer
 #ws-modal-layer:before,
@@ -71,7 +72,7 @@ $modal-padding: 21px;
 
       a.ws-learn-more-cta {
         display: block;
-        margin: 0 auto;
+        margin: 0 auto 37px;
         border: 1px solid #000000;
         border-radius: 50px;
         padding: 21px;
@@ -83,8 +84,39 @@ $modal-padding: 21px;
           color: black;
         }
       }
+
+      .ws-image-carousel {
+        height: 310px;  // Placeholder
+
+      }
+
+      .ws-modal-sections {
+        display: flex;
+        flex-wrap: wrap;
+
+        .ws-modal-section {
+          margin-top: 40px;
+          flex: 0 0 100%;
+        }
+      }
+
+      .ws-device-features.ws-modal-section {
+        ul {
+          border: 1px solid $list-items-border-color;
+          border-radius: 16px;
+          padding: 0;
+
+          li {
+            @include ws-features-list-items;
+            list-style: none;
+            margin: 40px 29px;
+            &:not(:last-child) {
+              padding-bottom: 40px;
+              border-bottom: 1px solid $list-items-border-color;
+            }
+          }
+        }
+      }
     }
   }
-
-
 }
