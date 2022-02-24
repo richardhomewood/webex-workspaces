@@ -99,6 +99,12 @@ $list-items-border-color: #c4c4c4;
         .ws-modal-section {
           margin-top: 40px;
           flex: 0 0 100%;
+          h6.ws-modal-section-heading {
+            margin: 0 0 40px;
+          }
+          ul {
+            margin-bottom: 0;
+          }
         }
       }
 
