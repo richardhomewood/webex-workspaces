@@ -9,12 +9,9 @@ module.exports = {
     slideIn: 'slide-in',
     reversed: 'reversed',
 
-    // Containers
+    // Immersive view containers
     initialView: 'ws-initial-view',
     defaultRoomBackground: 'ws-default-room-bg',
-    deviceModalRoot: 'ws-device-modal-root',
-    deviceContainer: 'ws-device',
-    deviceIdPrefix: 'ws-device-',
     selectorWrapper: 'ws-workspaces-rooms',
     roomBackground: 'ws-room-bg',
     roomImage: 'ws-room-image',
@@ -24,6 +21,12 @@ module.exports = {
     roomContentView: 'ws-room-content',
     workspaceContainer: 'ws-workspace',
     workspaceNavigation: 'ws-workspace-nav',
+
+    // Modal view containers
+    deviceModalRoot: 'ws-device-modal-root',
+    deviceContainer: 'ws-device',
+    deviceIdPrefix: 'ws-device-',
+    downloadPdfContainer: 'ws-download-pdf',
 
     // Suffixes
     roomBackgroundSuffix: '-room-bg'
