@@ -9,7 +9,34 @@
       {
         "name": "Home Office",
         "slug": "homeOffice",
-        "background": "02_background.png",
+        "background": "homeoffice.png",
+        "backgroundPosition": {
+            "ws-XS" : {
+                "left": 0.0103,
+                "top": 0,
+                "height": 100
+            },
+            "ws-S": {
+                "left": 0.00751,
+                "top": 0,
+                "height": 100
+            },
+            "ws-M": {
+                "left": 0.0336,
+                "top": 0,
+                "height": 100
+            },
+            "ws-L": {
+                "left": 0.0028,
+                "top": 0,
+                "height": 100
+            },
+            "ws-XL": {
+                "left": 0,
+                "top": 0,
+                "height": 100
+            }
+        },
         "roomDescription": [
           "For those who have a dedicated home office, it’s essential to design it in a way that lets you work as efficiently and securely as any corporate office—not to mention, more comfortably.",
           "With the luxury of a little extra space, you can outfit your home office with devices that give you the flexibility to take one meeting at your desk and another on a bigger screen."
@@ -18,7 +45,34 @@
       {
         "name": "Kitchen Room",
         "slug": "kitchen",
-        "background": "01_background.png",
+        "background": "kitchen.png",
+        "backgroundPosition": {
+            "ws-XS" : {
+                "left": 0.139,
+                "top": 0,
+                "height": 100
+            },
+            "ws-S": {
+                "left": 0.05355,
+                "top": 0,
+                "height": 100
+            },
+            "ws-M": {
+                "left": 0.1161,
+                "top": 0,
+                "height": 100
+            },
+            "ws-L": {
+                "left": 0,
+                "top": 0,
+                "height": 100
+            },
+            "ws-XL": {
+                "left": 0,
+                "top": 0,
+                "height": 100
+            }
+        },
         "roomDescription": [
           "Not everyone has the luxury of a dedicated home office. For many of us, our kitchens have become our place to work. These tight—and often temporary workspaces—also include a recipe of distractions, noise, and guest appearances.",
           "But when you mix portable collaboration devices with noise-cancelling headsets and a sprinkle of secure wireless connectivity, voila! Your kitchen becomes a productive powerhouse."
@@ -36,17 +90,98 @@
       {
         "name": "Hotdesk",
         "slug": "hotdesk",
-        "background": "02_background.png"
+        "background": "hotdesk.png",
+        "backgroundPosition": {
+            "ws-XS" : {
+                "left": 0.02935,
+                "top": 0,
+                "height": 100
+            },
+            "ws-S": {
+                "left": 0.0148,
+                "top": 0,
+                "height": 100
+            },
+            "ws-M": {
+                "left": 0.0778,
+                "top": 0,
+                "height": 100
+            },
+            "ws-L": {
+                "left": 0.0028,
+                "top": 0,
+                "height": 100
+            },
+            "ws-XL": {
+                "left": 0,
+                "top": 0,
+                "height": 100
+            }
+        }
       },
       {
         "name": "Ideation Room",
         "slug": "ideationRoom",
-        "background": "01_background.png"
+        "background": "ideation.png",
+        "backgroundPosition": {
+            "ws-XS" : {
+                "left": 0.2046,
+                "top": 0,
+                "height": 100
+            },
+            "ws-S": {
+                "left": 0.115,
+                "top": 0,
+                "height": 100
+            },
+            "ws-M": {
+                "left": 0.0509,
+                "top": 0,
+                "height": 100
+            },
+            "ws-L": {
+                "left": 0.0028,
+                "top": 0,
+                "height": 100
+            },
+            "ws-XL": {
+                "left": 0,
+                "top": 0,
+                "height": 100
+            }
+        }
       },
       {
         "name": "Small Conference Room",
         "slug": "smallConferenceRoom",
-        "background": "03_background.png"
+        "background": "smallmeeting.png",
+        "backgroundPosition": {
+            "ws-XS" : {
+                "left": 0.0207,
+                "top": 0,
+                "height": 100
+            },
+            "ws-S": {
+                "left": 0.03366,
+                "top": 0,
+                "height": 100
+            },
+            "ws-M": {
+                "left": 0.0134,
+                "top": 0,
+                "height": 100
+            },
+            "ws-L": {
+                "left": 0.0028,
+                "top": 0,
+                "height": 100
+            },
+            "ws-XL": {
+                "left": 0,
+                "top": 0,
+                "height": 100
+            }
+        }
       }
     ]
   },
@@ -60,7 +195,34 @@
       {
         "name": "Cafe",
         "slug": "cafe",
-        "background": "01_background.png"
+        "background": "coffee.png",
+        "backgroundPosition": {
+            "ws-XS" : {
+                "left": -0.0451,
+                "top": 0,
+                "height": 100
+            },
+            "ws-S": {
+                "left": 0.05654,
+                "top": 0,
+                "height": 100
+            },
+            "ws-M": {
+                "left": 0.13,
+                "top": 0,
+                "height": 100
+            },
+            "ws-L": {
+                "left": -0.00627,
+                "top": 0,
+                "height": 100
+            },
+            "ws-XL": {
+                "left": 0,
+                "top": 0,
+                "height": 100
+            }
+        }
       }
     ]
   }
