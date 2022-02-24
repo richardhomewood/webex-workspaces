@@ -178,6 +178,13 @@ $list-items-border-color: #c4c4c4;
         }
       }
 
+      .ws-config-guide {
+        img {
+          border: 1px solid rgba(34, 34, 34, 0.1);
+          border-radius: 26px;
+          margin: 0 auto 38px;
+        }
+      }
     }
   }
 }
