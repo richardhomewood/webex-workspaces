@@ -38,7 +38,7 @@
     ],
     "configGuide": {
       "pdfUrl": "https://to-be-determined",
-      "imageUrl": "http://fpoimg.com/779x404?text=Configuration+Guide+image"
+      "image": "webex-desk-mini-fpo.png"
     },
     "pdfUrl": "https://another.to-be-determined",
     "carouselItems": [
@@ -481,7 +481,11 @@
         "icon": "adjust-microphone",
         "text": "Audio: 2 omni-directional microphones"
       }
-    ]
+    ],
+    "configGuide": {
+      "pdfUrl": "https://to-be-determined",
+      "image": "webex-desk-camera-fpo.png"
+    }
   },
   "webex-board-pro-75": {
     "name": "Webex Board Pro 75",
