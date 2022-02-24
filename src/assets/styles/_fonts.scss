@@ -55,11 +55,15 @@ h2 {
   letter-spacing: -0.03em;
 
   @media only screen and (min-width: 1367px) {
-    font-family: 'CiscoSansTT-Regular';
-    font-size: 40px;
-    line-height: 44px;
-    letter-spacing: -0.04em;
+    @include ws-h3-desktop;
   }
+}
+
+@mixin ws-h3-desktop {
+  font-family: 'CiscoSansTT-Regular';
+  font-size: 40px;
+  line-height: 44px;
+  letter-spacing: -0.04em;
 }
 
 @mixin ws-h4 {
