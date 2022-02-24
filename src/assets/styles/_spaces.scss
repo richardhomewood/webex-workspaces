@@ -23,11 +23,18 @@
         left: 0px;
         bottom: 0px;
         width: 100vw;
-        height: auto;
+        height: 100vh;
         min-width: 100%;
+        min-height: 100vh;
+        overflow: hidden;
 
         img {
-          border: solid 1px red;
+          position: relative;
+          height: 100vh;
+          width: auto;
+          max-width: initial;
+          left: 50%;
+          transform: translate(-50%, 0);
         }
 
         &.fadeOut {

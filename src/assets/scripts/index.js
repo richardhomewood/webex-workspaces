@@ -15,8 +15,48 @@ const updateUi = (location, delay = 300) => {
     setTimeout(() => {
         updateNav(path);
         updateRoomsSelector(path);
+        updateBGSizes();
+
     }, delay)
 }
+
+const updateBGSizes = () => {
+    let sizeClass = currentSizeClass();
+
+    commonData.orderedWorkspaceIds.forEach((workspaceId) => {
+        let rooms = workspaces[workspaceId].rooms;
+        rooms.forEach((room) => {
+            let bgClass = "." + workspaceId + "-" + room.slug + "-room-bg img";
+            let bgImg = document.querySelector(bgClass);
+            if (bgImg) {
+                let backgroundPos = room.backgroundPosition[sizeClass];
+                let imgWidth = bgImg.clientWidth;
+                console.log("imgWidth", imgWidth);
+                bgImg.style["transform"] = 'translate(calc(-50% + ' + (imgWidth * backgroundPos.left) + 'px), 0)';
+                
+            } else{
+                console.log("bg img not found")
+            }
+            
+
+        })
+        
+    })
+
+    //
+}
+
+const currentSizeClass = () => {
+    let width = window.innerWidth
+    let aSizeClass = ""
+    commonData.sizeClasses.forEach((sizeClass) => {
+        if (width <= sizeClass[2]) {
+            aSizeClass = sizeClass[0]
+        }
+    })
+    return aSizeClass; 
+}
+
 
 // Routing for the initial view
 router.add(homePath, () => {
@@ -62,6 +102,7 @@ window.addEventListener('resize', () => {
 });
 
 window.addEventListener('load', function () {
+    updateBGSizes();
     router.route(canonicalPath(window.location));
 });
 
