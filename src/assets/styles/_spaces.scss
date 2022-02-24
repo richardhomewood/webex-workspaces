@@ -43,7 +43,79 @@
       overflow: hidden;
 
       .ws-more-rooms-text {
-        display: none;
+        position: absolute;
+        opacity: 0;
+        bottom: 0px;
+        left: 0;
+        right: 0;
+        transition: bottom 0.5s ease-out, opacity 0.5s linear;
+        z-index: 0;
+
+        &.slide-in {
+          bottom: 40px;
+          opacity: 1;
+          z-index: 1;
+        }
+
+        .ws-room-label-info-btn-container {
+          display: flex;
+          justify-content: center;
+          margin-bottom: 11px;
+
+          .ws-room-label {
+            @include ws-h2;
+            text-align: center;
+            color: #fff;
+          }
+
+          .ws-room-info-btn {
+            width: 32px;
+            height: 32px;
+            border-radius: 16px;
+            border: solid 1px #fff;
+            text-align: center;
+            color: #fff;
+            font-size: 18px;
+            margin-left: 20px;
+            line-height: 32px;
+            text-decoration: none;
+          }
+        }
+
+        .ws-show-more-rooms-txt:not(.ws-displayNone) {
+          @include ws-small-body-reg;
+          text-align: center;
+          text-decoration: none;
+          display: block;
+          color: #fff;
+          margin-bottom: 38px;
+          display: block;
+        }
+
+        .ws-show-more-rooms-btn:not(.ws-displayNone) {
+          display: block;
+          background-color: #fff;
+          width: 56px;
+          height: 56px;
+          border-radius: 28px;
+          margin: 0 auto;
+          text-decoration: none;
+
+          &::before {
+            border-style: solid;
+            border-width: 1.5px 1.5px 0 0;
+            border-color: #000;
+            content: '';
+            display: inline-block;
+            height: 0.45em;
+            position: relative;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%) rotate(135deg);
+            vertical-align: top;
+            width: 0.45em;
+          }
+        }
       }
 
       .ws-workspaces-rooms {
@@ -53,11 +125,12 @@
         left: 0;
         right: 0;
         transition: bottom 0.5s ease-out, opacity 0.5s linear;
+        z-index: 0;
 
         &.slide-in {
           bottom: 35px;
           opacity: 1;
-
+          z-index: 1;
           .ws-select-room-text {
             opacity: 1;
           }
@@ -102,6 +175,12 @@
                 }
               }
 
+              &.swiper-slide-active {
+                .ws-room-image {
+                  border: solid 1px #fff;
+                }
+              }
+
               .ws-room-image {
                 margin: 33px auto 16px;
                 width: 283px;
@@ -130,25 +209,6 @@
                 color: #fff;
               }
             }
-
-            .ws-device-modal-root:not(.ws-displayNone) {
-              display: block;
-              background-color: white;
-
-              position: fixed;
-              top: 0;
-              left: 10%;
-              right: 0;
-              bottom: 0;
-
-              a.ws-modal-close {
-                display: block;
-                background-color: white;
-                position: absolute;
-                right: 0;
-              }
-            }
-
           }
         }
       }
@@ -156,7 +216,7 @@
   }
 }
 
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 1280px) {
   .ws-immersive-root {
     .ws-room-view {
       position: absolute;
@@ -189,7 +249,20 @@
         overflow: hidden;
 
         .ws-more-rooms-text {
-          display: none;
+          .ws-room-label-info-btn-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 11px;
+
+            .ws-room-label {
+              @include ws-h3-desktop;
+            }
+          }
+
+          .ws-show-more-rooms-txt:not(.ws-displayNone) {
+            margin-bottom: 28px;
+          }
         }
 
         .ws-workspaces-rooms {
@@ -255,6 +328,32 @@
                 }
               }
             }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 1366px) {
+  .ws-immersive-root {
+    .ws-room-view {
+      .ws-room-content {
+        .ws-more-rooms-text {
+          .ws-room-label-info-btn-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 15px;
+
+            .ws-room-label {
+              @include ws-h3-desktop;
+            }
+          }
+
+          .ws-show-more-rooms-txt:not(.ws-displayNone) {
+            margin-bottom: 20px;
+            @include ws-med-body-reg;
           }
         }
       }

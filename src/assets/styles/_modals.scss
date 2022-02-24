@@ -1,0 +1,81 @@
+$modal-padding: 21px;
+
+#ws-modal-layer {
+  position: relative;
+  z-index: 4;
+  width: 100%;
+
+  .ws-device-modal-root:not(.ws-displayNone) {
+    display: block;
+    background-color: white;
+    padding: $modal-padding;
+
+    // Initially positioned off-screen
+    top: 100vh;
+    &.slide-in {
+      transition: top 0.4s ease-out;
+      top: 0;
+    }
+
+    .ws-download-pdf {
+      display: inline-block;
+    }
+
+    a.ws-modal-close {
+      background-color: white;
+      display: block;
+      width: 16.64px;
+      height: 16.64px;
+      float: right;
+      position: relative;
+      top: 2px;
+
+      .ws-close-x {
+        width: 16.64px;
+        height: 16.64px;
+      }
+    }
+
+    .ws-top-rule {
+      clear: both;
+      width: 100vw;
+      height: 0;
+      margin: 15px 0-$modal-padding;
+      border: 1px solid #c4c4c4;
+    }
+
+    .ws-device {
+      top: 81px;
+
+      h2.ws-device-name {
+        margin: 40px auto 0;
+        text-align: center;
+      }
+
+      .ws-device-intro-text {
+        margin: 31px auto;
+        text-align: center;
+        color: #545454;
+        @include ws-med-body-reg;
+      }
+
+      a.ws-learn-more-cta {
+        display: block;
+        margin: 0 auto;
+        border: 1px solid #000000;
+        box-sizing: border-box;
+        border-radius: 50px;
+        padding: 21px;
+        text-align: center;
+        width: 130px;
+        height: 62px;
+        text-decoration: none;
+        &:active, &:visited {
+          color: black;
+        }
+      }
+    }
+  }
+
+
+}

@@ -7,23 +7,23 @@
 
 {% macro render(common, workspace, room, devicesByRoom, devices) %}
   {# This div may be positioned off-screen and animated into place when a hotspot is clicked #}
-  <div class="ws-device-modal-root ws-displayNone awaits-styling">
-    (Device Modal for {{ workspace.slug }}-{{ room.slug }})
-
-    <a class="ws-device-modal-close ws-modal-close awaits-styling" aria-label="Close" href="#/{{ workspace.slug }}/{{ room.slug }}">{% icon "close-x" %}</a>
+  <div class="ws-device-modal-root ws-displayNone">
+    {{ downloadPdf.render(common, device.pdfUrl) }}
+    <a class="ws-device-modal-close ws-modal-close" aria-label="Close" href="#/{{ workspace.slug }}/{{ room.slug }}">{% icon "close-x", "ws-close-x" %}</a>
+    <div class="ws-top-rule"></div>
 
     {% for deviceId in devicesByRoom[workspace.slug][room.slug] %}
       {# Only one of these device divs should be visible at any one time.  For the clicked hotspot.
          We can't use the device ID in an actual id attribute, because there may be more than one instance of the same device.
          It has to be a classname.
       #}
-      <div class="ws-device awaits-styling ws-device-{{ deviceId }} ws-displayNone">
+      <div class="ws-device ws-device-{{ deviceId }} ws-displayNone">
         {% set device = devices[deviceId] %}
-        <h2 class="ws-device-name awaits-styling">{{ device.name }}</h2>
+        <h2 class="ws-device-name">{{ device.name }}</h2>
 
-        <div class="ws-device-intro-text awaits-styling">{{ device.description }}</div>
+        <div class="ws-device-intro-text">{{ device.description }}</div>
 
-        {{ downloadPdf.render(common, device.pdfUrl) }}
+        <a class="ws-learn-more-cta" href="" target="_blank">{{ common.learnMoreCtaText }}</a>
 
         {{ carousel.render(device.carouselItems) }}
 

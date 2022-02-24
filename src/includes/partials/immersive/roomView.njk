@@ -1,7 +1,4 @@
-{% import "../device-modal/index.njk" as deviceModal %}
-{% import "../room-info-modal/index.njk" as infoModal %}
-
-{% macro render(common, workspaces, devicesByRoom, vendorDevicesByRoom, devices) %}
+{% macro render(common, workspaces) %}
   <div class="ws-room-view ws-displayNone">
     <div class="ws-room-background-image-container">
       {%- for workspaceId in common.orderedWorkspaceIds %}
@@ -13,7 +10,20 @@
     </div>
     <div class="ws-room-content">
       <div class="ws-more-rooms-text awaits-styling">
-        <button class="ws-show-more-rooms">{{ common.moreRoomsCtaText }}</button>
+        <div class="ws-room-label-info-btn-container"> 
+            <div>
+            {%- for workspaceId in common.orderedWorkspaceIds %}
+                {%- for room in workspaces[workspaceId].rooms %}
+                <div class="ws-room-label" id="{{workspaceId}}-{{room.slug}}-label">{{ room.name }}</div>
+                {%- endfor %}
+            {%- endfor %}
+            </div>
+            <a href="#" class="ws-room-info-btn">i</a>
+        </div>
+        {%- for workspaceId in common.orderedWorkspaceIds %}
+            <a href="#/{{workspaceId}}" class="ws-show-more-rooms-txt" id="ws-show-more-rooms-txt-{{workspaceId}}">{{ common.moreRoomsCtaText }}</a>
+            <a href="#/{{workspaceId}}" class="ws-show-more-rooms-btn" id="ws-show-more-rooms-btn-{{workspaceId}}"></a>
+        {%- endfor %}
       </div>
 
       <div class="ws-workspaces-rooms">
@@ -26,20 +36,13 @@
               <div class="swiper">
                 <div class="swiper-wrapper">
                   {%- for room in workspaces[workspaceId].rooms %}
-                    <!--<div class="ws-room-label">{{ room.name }}</div>-->
+                    
                     <div class="ws-room-slide swiper-slide">
                       {{ roomSelections(workspaces[workspaceId], room, common) }}
                     </div>
                   {%- endfor %}
                 </div>
               </div>
-
-              {%- for room in workspaces[workspaceId].rooms %}
-                <div class="ws-room-modals-container ws-displayNone" id="{{ workspaceId }}-{{ room.slug }}-modals">
-                  {{ deviceModal.render(common, workspaces[workspaceId], room, devicesByRoom, devices) }}
-                  <!--{{ infoModal.render(common, workspaces[workspaceId], room, vendorDevicesByRoom, devices) }}-->
-                </div>
-              {%- endfor %}
             </div>
           {%- endfor %}
         </div>
