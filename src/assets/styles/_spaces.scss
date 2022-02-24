@@ -35,6 +35,7 @@
           max-width: initial;
           left: 50%;
           transform: translate(-50%, 0);
+          transition: transform 0.5s ease-out 0s;
         }
 
         &.fadeOut {

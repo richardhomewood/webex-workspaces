@@ -16,7 +16,6 @@ const updateUi = (location, delay = 300) => {
         updateNav(path);
         updateRoomsSelector(path);
         updateBGSizes();
-
     }, delay)
 }
 
@@ -31,19 +30,10 @@ const updateBGSizes = () => {
             if (bgImg) {
                 let backgroundPos = room.backgroundPosition[sizeClass];
                 let imgWidth = bgImg.clientWidth;
-                console.log("imgWidth", imgWidth);
                 bgImg.style["transform"] = 'translate(calc(-50% + ' + (imgWidth * backgroundPos.left) + 'px), 0)';
-                
-            } else{
-                console.log("bg img not found")
             }
-            
-
         })
-        
     })
-
-    //
 }
 
 const currentSizeClass = () => {
@@ -102,7 +92,6 @@ window.addEventListener('resize', () => {
 });
 
 window.addEventListener('load', function () {
-    updateBGSizes();
     router.route(canonicalPath(window.location));
 });
 
