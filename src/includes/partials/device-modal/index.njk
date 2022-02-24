@@ -32,7 +32,9 @@
 
           {{ specs.render(common, device.specs) }}
 
-          {{ configGuide.render(common, device.configGuide) }}
+          {% if device.configGuide %}
+            {{ configGuide.render(common, deviceId, device.configGuide) }}
+          {% endif %}
         </div>
 
       </div>
