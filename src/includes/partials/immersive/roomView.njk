@@ -54,13 +54,15 @@
 
 {% macro roomViewBG(src, sizeClasses, class, id) %}
   {% for size, prefix in sizeClasses %}
-    <div class="ws-room-background-image {{ size }} {{ class }} ws-displayNone">{% imagesync prefix+src, "" %}</div>
+    <div class="ws-room-background-image {{ size }} {{ class }} ws-displayNone">
+      {% imagesync "room-backgrounds/"+prefix+src, "" %}
+    </div>
   {% endfor %}
 {% endmacro %}
 
 {% macro roomOptionBG(src, sizeClasses) %}
   {% for size, prefix in sizeClasses %}
-    {% imagesync prefix+src, "", "", "ws-room-option-image {{ size }}" %}
+    {% imagesync "room-backgrounds/"+prefix+src, "", "", "ws-room-option-image {{ size }}" %}
   {% endfor %}
 {% endmacro %}
 

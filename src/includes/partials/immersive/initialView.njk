@@ -17,12 +17,16 @@
 
 {% macro initialViewBGFPO(src, sizeClasses) %}
   {% for size, prefix in sizeClasses %}
-    <div class="ws-rotating-background-image ws-rotating-background-image-fpo {{ size }}">{% imagesync prefix+src, "" %}</div>
+    <div class="ws-rotating-background-image ws-rotating-background-image-fpo {{ size }}">
+      {% imagesync "room-backgrounds/"+prefix+src, "" %}
+    </div>
   {% endfor %}
 {% endmacro %}
 
 {% macro initialViewBG(src, sizeClasses, index) %}
   {% for size, prefix in sizeClasses %}
-    <div class="ws-rotating-background-image ws-rotating-background-image-{{ index }} {{ size }}">{% imagesync prefix+src, "" %}</div>
+    <div class="ws-rotating-background-image ws-rotating-background-image-{{ index }} {{ size }}">
+      {% imagesync "room-backgrounds/"+prefix+src, "" %}
+    </div>
   {% endfor %}
 {% endmacro %}
