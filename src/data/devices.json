@@ -465,6 +465,7 @@
       },
       {
         "icon": "1080p",
+        "iconSize": ["64", "32"],
         "text": "Resolution: Supports up to 1080p live video resolution"
       },
       {
@@ -473,6 +474,7 @@
       },
       {
         "icon": "81-degrees",
+        "iconSize": ["40", "28"],
         "text": "Field of view: 81° diagonal field of view"
       },
       {
