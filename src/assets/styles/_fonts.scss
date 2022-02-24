@@ -246,3 +246,16 @@ h6 {
     line-height: 27px;
   }
 }
+
+@mixin ws-specs-list-items {
+  font-family: 'CiscoSansTT-Regular', sans-serif;
+  font-size: 14px;
+  line-height: 18px;
+  letter-spacing: -0.01em;
+  color: #545454;
+
+  @media only screen and (min-width: 1920px) {
+    line-height: 19px;
+    letter-spacing: -0.02em;
+  }
+}

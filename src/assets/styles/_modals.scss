@@ -81,13 +81,14 @@ $list-items-border-color: #c4c4c4;
         width: 130px;
         height: 62px;
         text-decoration: none;
+
         &:active, &:visited {
           color: black;
         }
       }
 
       .ws-image-carousel {
-        height: 310px;  // Placeholder
+        height: 310px; // Placeholder
 
       }
 
@@ -111,6 +112,7 @@ $list-items-border-color: #c4c4c4;
             @include ws-features-list-items;
             list-style: none;
             margin: 40px 29px;
+
             &:not(:last-child) {
               padding-bottom: 40px;
               border-bottom: 1px solid $list-items-border-color;
@@ -118,6 +120,58 @@ $list-items-border-color: #c4c4c4;
           }
         }
       }
+
+      .ws-device-specs.ws-modal-section {
+        ul {
+          display: flex;
+          flex-wrap: wrap;
+          padding: 0;
+
+          li {
+            list-style: none;
+            border: 1px solid $list-items-border-color;
+            border-radius: 16px;
+            min-height: 196px;
+
+            // Set bottom margin on all, then remove from last row
+            margin-bottom: 21px;
+            // Select the last-child if it is also odd
+            &:last-child:nth-child(odd) {
+              margin-bottom: unset;
+            }
+
+            // Select the second-to-last child if it is also odd
+            &:nth-last-child(2):nth-child(odd),
+            // Select the last-child if it is also even
+            &:last-child:nth-child(even) {
+              margin-bottom: unset;
+            }
+
+            // These values are likely to be different at every breakpoint.
+            flex: 0 0 calc(50% - 7px);
+            &:nth-child(odd) {
+              margin-right: 14px;
+            }
+
+            svg.icon {
+              display: block;
+              margin: 52px auto 20px;
+
+              // The dimensions are set in specs.njk
+              width: unset;
+              height: unset;
+            }
+
+            span {
+              display: block;
+              margin: 6px;
+              text-align: center;
+              @include ws-specs-list-items;
+            }
+          }
+        }
+      }
+
     }
   }
 }
