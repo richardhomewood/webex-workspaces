@@ -182,6 +182,12 @@
                 }
               }
 
+              &.swiper-slide-active {
+                .ws-room-image {
+                  border: solid 1px #fff;
+                }
+              }
+
               .ws-room-image {
                 margin: 33px auto 16px;
                 width: 283px;
@@ -208,24 +214,6 @@
                 text-align: center;
                 @include ws-small-body-reg;
                 color: #fff;
-              }
-            }
-
-            .ws-device-modal-root:not(.ws-displayNone) {
-              display: block;
-              background-color: white;
-
-              position: fixed;
-              top: 0;
-              left: 10%;
-              right: 0;
-              bottom: 0;
-
-              a.ws-modal-close {
-                display: block;
-                background-color: white;
-                position: absolute;
-                right: 0;
               }
             }
           }

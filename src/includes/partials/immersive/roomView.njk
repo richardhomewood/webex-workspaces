@@ -1,7 +1,4 @@
-{% import "../device-modal/index.njk" as deviceModal %}
-{% import "../room-info-modal/index.njk" as infoModal %}
-
-{% macro render(common, workspaces, devicesByRoom, vendorDevicesByRoom, devices) %}
+{% macro render(common, workspaces) %}
   <div class="ws-room-view ws-displayNone">
     <div class="ws-room-background-image-container">
       {%- for workspaceId in common.orderedWorkspaceIds %}
@@ -46,13 +43,6 @@
                   {%- endfor %}
                 </div>
               </div>
-
-              {%- for room in workspaces[workspaceId].rooms %}
-                <div class="ws-room-modals-container ws-displayNone" id="{{ workspaceId }}-{{ room.slug }}-modals">
-                  {{ deviceModal.render(common, workspaces[workspaceId], room, devicesByRoom, devices) }}
-                  <!--{{ infoModal.render(common, workspaces[workspaceId], room, vendorDevicesByRoom, devices) }}-->
-                </div>
-              {%- endfor %}
             </div>
           {%- endfor %}
         </div>
@@ -63,11 +53,11 @@
 {% endmacro %}
 
 {% macro roomViewBG(src, sizeClasses, class, id) %}
-    <div class="ws-room-background-image {{ class }} ws-displayNone">{% imagesync src, "" %}</div>
+    <div class="ws-room-background-image {{ class }} ws-displayNone">{% imagesync "room-backgrounds/" + src, "" %}</div>
 {% endmacro %}
 
 {% macro roomOptionBG(src, sizeClasses) %}
-  {% imagesync src, "", "", "ws-room-option-image" %}
+  {% imagesync "room-backgrounds/"+src, "", "", "ws-room-option-image {{ size }}" %}
 {% endmacro %}
 
 {% macro roomSelections(workspace, room, common) %}

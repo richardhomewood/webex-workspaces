@@ -44,6 +44,10 @@
   }
 }
 
+h2 {
+  @include ws-h2;
+}
+
 @mixin ws-h3 {
   font-family: 'CiscoSansTT-Regular';
   font-size: 32px;
