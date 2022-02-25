@@ -11,11 +11,18 @@ const hideAll = () => {
     const deviceModalRoots = document.getElementsByClassName(classnames.deviceModalRoot);
     const deviceContainers = document.getElementsByClassName(classnames.deviceContainer);
 
+    // Hide all the things
     [roomModalsContainers, deviceModalRoots, deviceContainers].forEach(elementCollection => {
         Array.from(elementCollection).forEach(element => {
             element.classList.add(classnames.hidden);
         });
     });
+
+    // Remove any "slide-in" classes from device-modal roots
+    Array.from(deviceModalRoots).forEach(element => {
+        element.classList.remove(classnames.slideIn);
+    });
+
 };
 
 const showDevice = path => {

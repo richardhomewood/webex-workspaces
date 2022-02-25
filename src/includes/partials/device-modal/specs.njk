@@ -1,15 +1,19 @@
 {% macro specification(spec) %}
   <li>
-    {% if spec.iconId %}
-      {% icon spec.iconId %}
+    {% if spec.icon %}
+      {% set iconSize = [28, 28] %}
+      {% if spec.iconSize %}
+        {% set iconSize = spec.iconSize %}
+      {% endif %}
+      {% icon spec.icon, '', iconSize %}
     {% endif %}
     <span>{{ spec.text }}</span>
   </li>
 {% endmacro %}
 
 {% macro render(common, specs) %}
-  <div class="ws-device-specs ws-modal-section awaits-styling">
-    <h6 class="ws-modal-section-heading awaits-styling">{{ common.deviceModal.specsHeadingText }}</h6>
+  <div class="ws-device-specs ws-modal-section">
+    <h6 class="ws-modal-section-heading">{{ common.deviceModal.specsHeadingText }}</h6>
     <ul>
       {% for spec in specs %}
         {{ specification(spec) }}

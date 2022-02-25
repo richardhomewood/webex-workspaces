@@ -1,14 +1,25 @@
-$modal-padding: 21px;
+$list-items-border-color: #c4c4c4;
+
+// All recursive children of the #ws-modal-layer
+#ws-modal-layer:before,
+#ws-modal-layer:after,
+#ws-modal-layer *,
+#ws-modal-layer *:before,
+#ws-modal-layer *:after {
+  box-sizing: inherit;
+}
 
 #ws-modal-layer {
+  box-sizing: border-box;
   position: relative;
   z-index: 4;
   width: 100%;
 
   .ws-device-modal-root:not(.ws-displayNone) {
     display: block;
+    position: relative;
     background-color: white;
-    padding: $modal-padding;
+    padding: 21px;
 
     // Initially positioned off-screen
     top: 100vh;
@@ -24,8 +35,8 @@ $modal-padding: 21px;
     a.ws-modal-close {
       background-color: white;
       display: block;
-      width: 16.64px;
-      height: 16.64px;
+      width: 17px;
+      height: 17px;
       float: right;
       position: relative;
       top: 2px;
@@ -40,14 +51,14 @@ $modal-padding: 21px;
       clear: both;
       width: 100vw;
       height: 0;
-      margin: 15px 0-$modal-padding;
+      margin: 15px -21px;
       border: 1px solid #c4c4c4;
     }
 
     .ws-device {
       top: 81px;
 
-      h2.ws-device-name {
+      .ws-device-name {
         margin: 40px auto 0;
         text-align: center;
       }
@@ -61,21 +72,191 @@ $modal-padding: 21px;
 
       a.ws-learn-more-cta {
         display: block;
-        margin: 0 auto;
+        margin: 0 auto 37px;
         border: 1px solid #000000;
-        box-sizing: border-box;
         border-radius: 50px;
         padding: 21px;
         text-align: center;
         width: 130px;
         height: 62px;
         text-decoration: none;
+
         &:active, &:visited {
           color: black;
         }
       }
+
+      .ws-image-carousel {
+        height: 310px; // Placeholder
+
+      }
+
+      .ws-modal-sections {
+        display: flex;
+        flex-wrap: wrap;
+
+        .ws-modal-section {
+          margin-top: 40px;
+          flex: 0 0 100%;
+          h6.ws-modal-section-heading {
+            margin: 0 0 40px;
+          }
+          ul {
+            margin-bottom: 0;
+          }
+        }
+      }
+
+      .ws-device-features.ws-modal-section {
+        ul {
+          border: 1px solid $list-items-border-color;
+          border-radius: 16px;
+          padding: 0;
+
+          li {
+            @include ws-features-list-items;
+            list-style: none;
+            margin: 40px 29px;
+
+            &:not(:last-child) {
+              padding-bottom: 40px;
+              border-bottom: 1px solid $list-items-border-color;
+            }
+          }
+        }
+      }
+
+      .ws-device-specs.ws-modal-section {
+        ul {
+          display: flex;
+          flex-wrap: wrap;
+          padding: 0;
+
+          li {
+            list-style: none;
+            border: 1px solid $list-items-border-color;
+            border-radius: 16px;
+            min-height: 196px;
+            max-width: 170px;
+
+            svg.icon {
+              display: block;
+              margin: 52px auto 20px;
+
+              // The dimensions are set in specs.njk
+              width: unset;
+              height: unset;
+            }
+
+            span {
+              display: block;
+              margin: 6px;
+              text-align: center;
+              @include ws-specs-list-items;
+            }
+          }
+        }
+      }
+
+      .ws-config-guide {
+        img {
+          border: 1px solid rgba(34, 34, 34, 0.1);
+          border-radius: 26px;
+          margin: 0 auto 38px;
+        }
+      }
     }
   }
+}
 
+@media only screen and (max-width: 767px) {
+  #ws-modal-layer {
+    .ws-device-modal-root:not(.ws-displayNone) {
+      .ws-device {
+        .ws-device-specs.ws-modal-section {
+          ul {
+            li {
+              // Set bottom margin on all, then remove from last row
+              margin-bottom: 21px;
+              // Select the last-child if it is also odd
+              &:last-child:nth-child(odd) {
+                margin-bottom: unset;
+              }
+
+              // Select the second-to-last child if it is also odd
+              &:nth-last-child(2):nth-child(odd),
+                // Select the last-child if it is also even
+              &:last-child:nth-child(even) {
+                margin-bottom: unset;
+              }
+
+              // Select the left column only
+              &:nth-child(odd) {
+                margin-right: 14px;
+              }
+
+              // Flex to 50% minus half the margin-right value just above
+              flex: 0 0 calc(50% - 7px);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1279px) {
+  #ws-modal-layer {
+    .ws-device-modal-root:not(.ws-displayNone) {
+      padding: 32px;
+
+      .ws-top-rule {
+        margin: 30px -32px;
+      }
+
+      .ws-device {
+
+        .ws-device-name {
+          margin-top: 80px;
+        }
+
+        .ws-device-features.ws-modal-section {
+          ul {
+             li {
+               margin-left: 40px;
+               margin-right: 40px;
+               padding-left: 20px;
+               padding-right: 20px;
+             }
+          }
+        }
+        .ws-device-specs.ws-modal-section {
+          ul {
+            // Make sure we only have room for 3 per row.
+            max-width: calc((170px * 3) +  (20px * 2));
+            li {
+              // At this breakpoint, there can only be up to 2 rows of up to 3 <li> each
+              // Set bottom margin on the first row
+              &:nth-child(-n+3) {
+                margin-bottom: 21px;
+              }
+
+              &:nth-child(odd) {
+                //margin-right: 14px;
+              }
+
+              // Select every 3rd child, starting at the first
+              // Select every 3rd child, starting at the second
+              &:nth-child(3n+1), &:nth-child(3n+2) {
+                margin-right: 20px;
+              }
+
+              flex: 0 0 calc(33%);
+            }
+          }
+        }
+      }
+    }
+  }
 
 }
