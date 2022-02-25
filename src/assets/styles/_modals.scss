@@ -1,4 +1,3 @@
-$modal-padding: 21px;
 $list-items-border-color: #c4c4c4;
 
 // All recursive children of the #ws-modal-layer
@@ -20,7 +19,7 @@ $list-items-border-color: #c4c4c4;
     display: block;
     position: relative;
     background-color: white;
-    padding: $modal-padding;
+    padding: 21px;
 
     // Initially positioned off-screen
     top: 100vh;
@@ -52,14 +51,14 @@ $list-items-border-color: #c4c4c4;
       clear: both;
       width: 100vw;
       height: 0;
-      margin: 15px 0-$modal-padding;
+      margin: 15px -21px;
       border: 1px solid #c4c4c4;
     }
 
     .ws-device {
       top: 81px;
 
-      h2.ws-device-name {
+      .ws-device-name {
         margin: 40px auto 0;
         text-align: center;
       }
@@ -138,26 +137,7 @@ $list-items-border-color: #c4c4c4;
             border: 1px solid $list-items-border-color;
             border-radius: 16px;
             min-height: 196px;
-
-            // Set bottom margin on all, then remove from last row
-            margin-bottom: 21px;
-            // Select the last-child if it is also odd
-            &:last-child:nth-child(odd) {
-              margin-bottom: unset;
-            }
-
-            // Select the second-to-last child if it is also odd
-            &:nth-last-child(2):nth-child(odd),
-            // Select the last-child if it is also even
-            &:last-child:nth-child(even) {
-              margin-bottom: unset;
-            }
-
-            // These values are likely to be different at every breakpoint.
-            flex: 0 0 calc(50% - 7px);
-            &:nth-child(odd) {
-              margin-right: 14px;
-            }
+            max-width: 170px;
 
             svg.icon {
               display: block;
@@ -187,4 +167,96 @@ $list-items-border-color: #c4c4c4;
       }
     }
   }
+}
+
+@media only screen and (max-width: 767px) {
+  #ws-modal-layer {
+    .ws-device-modal-root:not(.ws-displayNone) {
+      .ws-device {
+        .ws-device-specs.ws-modal-section {
+          ul {
+            li {
+              // Set bottom margin on all, then remove from last row
+              margin-bottom: 21px;
+              // Select the last-child if it is also odd
+              &:last-child:nth-child(odd) {
+                margin-bottom: unset;
+              }
+
+              // Select the second-to-last child if it is also odd
+              &:nth-last-child(2):nth-child(odd),
+                // Select the last-child if it is also even
+              &:last-child:nth-child(even) {
+                margin-bottom: unset;
+              }
+
+              // Select the left column only
+              &:nth-child(odd) {
+                margin-right: 14px;
+              }
+
+              // Flex to 50% minus half the margin-right value just above
+              flex: 0 0 calc(50% - 7px);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1279px) {
+  #ws-modal-layer {
+    .ws-device-modal-root:not(.ws-displayNone) {
+      padding: 32px;
+
+      .ws-top-rule {
+        margin: 30px -32px;
+      }
+
+      .ws-device {
+
+        .ws-device-name {
+          margin-top: 80px;
+        }
+
+        .ws-device-features.ws-modal-section {
+          ul {
+             li {
+               margin-left: 40px;
+               margin-right: 40px;
+               padding-left: 20px;
+               padding-right: 20px;
+             }
+          }
+        }
+        .ws-device-specs.ws-modal-section {
+          ul {
+            // Make sure we only have room for 3 per row.
+            max-width: calc((170px * 3) +  (20px * 2));
+            li {
+              // At this breakpoint, there can only be up to 2 rows of up to 3 <li> each
+              // Set bottom margin on the first row
+              &:nth-child(-n+3) {
+                margin-bottom: 21px;
+              }
+
+              &:nth-child(odd) {
+                //margin-right: 14px;
+              }
+
+              // Select every 3rd child, starting at the first
+              // Select every 3rd child, starting at the second
+              &:nth-child(3n+1), &:nth-child(3n+2) {
+                margin-right: 20px;
+              }
+
+              flex: 0 0 calc(33%);
+            }
+          }
+        }
+      }
+    }
+  }
+
 }
