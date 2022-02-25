@@ -39,7 +39,8 @@ const updateBGSizes = () => {
     commonData.orderedWorkspaceIds.forEach((workspaceId) => {
         let rooms = workspaces[workspaceId].rooms;
         rooms.forEach((room) => {
-            let bgClass = "." + workspaceId + "-" + room.slug + "-room-bg img";
+            let bgContainerClass = "." + workspaceId + "-" + room.slug + "-room-bg";
+            let bgClass = bgContainerClass + " img";
             let bgImg = document.querySelector(bgClass);
             if (bgImg) {
                 let backgroundPos = room.backgroundPosition[sizeClass];
@@ -49,19 +50,40 @@ const updateBGSizes = () => {
                 let windowWidth = window.innerWidth;
                 let windowHeight = window.innerHeight;
                 let projectedImgWidth = (windowHeight * 108) / 192;
-                var initialOffset = (imgWidth * backgroundPos.left)
+                var initialOffset = (imgWidth * backgroundPos.x)
                 
                 if (projectedImgWidth + (initialOffset * 2) < windowWidth) {
                     let newImageHeight = (windowWidth * imgHeight) / imgWidth;
+                    newImageHeight = newImageHeight < windowHeight ? windowHeight : newImageHeight;
                     bgImg.style["height"] = newImageHeight + "px";
                 } else{
                     bgImg.style["height"] = ""
                 }
 
                 bgImg.style["transform"] = 'translate(calc(-50% + ' + initialOffset + 'px), -50%)';
+
+                placeHotSpots(initialOffset, bgImg, room, bgContainerClass);
             }
         })
     })
+}
+
+const placeHotSpots = (initialOffset, bgImg, room, bgContainerClass) => {
+    let imgWidth = bgImg.clientWidth;
+    let imgHeight = bgImg.clientHeight;
+
+    let hotspotsQuery = bgContainerClass + " .ws-hotSpot"
+    let hotspots = Array.from(document.querySelectorAll(hotspotsQuery));
+    
+    room.hotSpots.forEach((element, index)=>{
+        let hotspot = hotspots[index];
+        let hOffset = imgWidth * element.x;
+        let yOffset = imgHeight * element.y;
+        hotspot.style["transform"] = 'translate(calc(-50% + ' + (initialOffset + hOffset) + 'px), calc(-50% + ' + yOffset + 'px))';
+    })
+
+
+    let offset = imgWidth 
 }
 
 const currentSizeClass = () => {
