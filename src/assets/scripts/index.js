@@ -1,7 +1,7 @@
 import Swiper from 'swiper';
 import 'swiper/scss';
 import Router from './router';
-import {canonicalPath, devicePathPart, homePath, isDevicePath, makePath, splitPath} from './paths';
+import {canonicalPath, hardwarePathPart, homePath, isDevicePath, makePath, splitPath} from './paths';
 import classnames from './classnames';
 import deviceModal from './device-modal'
 import commonData from '../../data/common.json';
@@ -121,7 +121,7 @@ commonData.orderedWorkspaceIds.forEach((workspaceId) => {
 
         const devicesForRoom = devicesByRoom[workspaceId][room.slug]
         devicesForRoom.forEach(deviceId => {
-            const devicePath = makePath([workspaceId, room.slug, devicePathPart, deviceId]);
+            const devicePath = makePath([workspaceId, room.slug, hardwarePathPart, deviceId]);
             router.add(devicePath, () => {
                 toSelectedWorkSpace(workspaceId);
                 updateUi(window.location);
@@ -201,7 +201,7 @@ const updateNav = function (path) {
 }
 
 const toSelectedWorkSpace = function (space, room) {
-    
+
     const initview = document.getElementsByClassName(classnames.initialView)[0];
     const spacesview = document.getElementsByClassName(classnames.roomView)[0];
     const spacescontentview = document.getElementsByClassName(classnames.roomContentView)[0];
@@ -221,7 +221,7 @@ const toSelectedWorkSpace = function (space, room) {
             element.classList.remove(classnames.selected);
         }
     })
-   
+
     //if there are no roomlelectors to hide then show the relevant room selector
     if (roomSelector && roomSelector.classList.contains(classnames.hidden) && otherRoomSelectors.length === 0) {
         roomSelector.classList.remove(classnames.hidden);
@@ -266,7 +266,7 @@ const toSelectedWorkSpace = function (space, room) {
                 roomSelectorWrap.removeEventListener('animationend', roomSelectorWrapListener);
                 roomSelectorWrap.classList.remove(classnames.fadeOut);
                 roomSelectorWrap.classList.remove(classnames.slideIn);
-                
+
                 setTimeout(() => {
                     roomSelectorWrap.classList.add(classnames.slideIn);
                 }, 500);
@@ -334,7 +334,7 @@ const toSelectedWorkSpace = function (space, room) {
         if (roomSelectorWrap) {
             roomSelectorWrap.classList.remove(classnames.slideIn);
         }
-        
+
         // show selected room content
 
         setTimeout(()=>{

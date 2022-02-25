@@ -1,10 +1,11 @@
 {% import "../common/download-pdf.njk" as downloadPdf %}
 
-{% macro render(common, configGuide) %}
+{% macro render(common, deviceId, configGuide) %}
   <div class="ws-config-guide ws-modal-section">
     <h6 class="ws-modal-section-heading">{{ common.deviceModal.configGuideHeadingText }}</h6>
-    {% if configuGuide.imageUrl %}
-      {% image configGuide.imageUrl %}
+    {% if configGuide.image %}
+      {% set imagePath = "devices/" + deviceId + "/configuration-guide/" + configGuide.image %}
+      {% imagesync imagePath %}
     {% endif %}
     {{ downloadPdf.render(common, configGuide.pdfUrl) }}
   </div>

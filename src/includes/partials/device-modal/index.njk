@@ -27,11 +27,15 @@
 
         {{ carousel.render(device.carouselItems) }}
 
-        {{ features.render(common, device.features) }}
+        <div class="ws-modal-sections">
+          {{ features.render(common, device.features) }}
 
-        {{ specs.render(common, device.specs) }}
+          {{ specs.render(common, device.specs) }}
 
-        {{ configGuide.render(common, device.configGuide) }}
+          {% if device.configGuide %}
+            {{ configGuide.render(common, deviceId, device.configGuide) }}
+          {% endif %}
+        </div>
 
       </div>
     {% endfor %}

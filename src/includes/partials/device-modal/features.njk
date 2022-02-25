@@ -3,8 +3,8 @@
 {% endmacro %}
 
 {% macro render(common, features) %}
-  <div class="ws-device-features ws-modal-section awaits-styling">
-    <h6 class="ws-modal-section-heading awaits-styling">{{ common.deviceModal.featuresHeadingText }}</h6>
+  <div class="ws-device-features ws-modal-section">
+    <h6 class="ws-modal-section-heading">{{ common.deviceModal.featuresHeadingText }}</h6>
     <ul>
       {% for text in features %}
         {{ feature(text) }}
