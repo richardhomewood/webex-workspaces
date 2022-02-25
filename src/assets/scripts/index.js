@@ -7,10 +7,23 @@ import deviceModal from './device-modal'
 import commonData from '../../data/common.json';
 import workspaces from '../../data/workspaces.json';
 import devicesByRoom from '../../data/devicesByRoom.json';
+import { setTimeout } from 'core-js';
 
 const router = new Router();
 
-const updateUi = (location, delay = 300) => {
+window.addEventListener('hashchange', (ev) => {
+    router.route(canonicalPath(window.location));
+});
+
+window.addEventListener('resize', () => {
+    updateUi(window.location);
+});
+
+window.addEventListener('load', function () {
+    router.route(canonicalPath(window.location));
+});
+
+const updateUi = (location, delay = 200) => {
     const path = location.hash.substring(1);
     setTimeout(() => {
         updateNav(path);
@@ -21,6 +34,7 @@ const updateUi = (location, delay = 300) => {
 
 const updateBGSizes = () => {
     let sizeClass = currentSizeClass();
+    let aspectRation = 192/108
 
     commonData.orderedWorkspaceIds.forEach((workspaceId) => {
         let rooms = workspaces[workspaceId].rooms;
@@ -29,8 +43,22 @@ const updateBGSizes = () => {
             let bgImg = document.querySelector(bgClass);
             if (bgImg) {
                 let backgroundPos = room.backgroundPosition[sizeClass];
+            
                 let imgWidth = bgImg.clientWidth;
-                bgImg.style["transform"] = 'translate(calc(-50% + ' + (imgWidth * backgroundPos.left) + 'px), 0)';
+                let imgHeight = bgImg.clientHeight;
+                let windowWidth = window.innerWidth;
+                let windowHeight = window.innerHeight;
+                let projectedImgWidth = (windowHeight * 108) / 192;
+                var initialOffset = (imgWidth * backgroundPos.left)
+                
+                if (projectedImgWidth + (initialOffset * 2) < windowWidth) {
+                    let newImageHeight = (windowWidth * imgHeight) / imgWidth;
+                    bgImg.style["height"] = newImageHeight + "px";
+                } else{
+                    bgImg.style["height"] = ""
+                }
+
+                bgImg.style["transform"] = 'translate(calc(-50% + ' + initialOffset + 'px), -50%)';
             }
         })
     })
@@ -82,19 +110,6 @@ commonData.orderedWorkspaceIds.forEach((workspaceId) => {
         })
     })
 });
-
-window.addEventListener('hashchange', (ev) => {
-    router.route(canonicalPath(window.location));
-});
-
-window.addEventListener('resize', () => {
-    updateUi(window.location);
-});
-
-window.addEventListener('load', function () {
-    router.route(canonicalPath(window.location));
-});
-
 
 const backToHome = function () {
 
