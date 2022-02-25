@@ -11,7 +11,8 @@ $list-items-border-color: #c4c4c4;
 
 #ws-modal-layer {
   box-sizing: border-box;
-  position: relative;
+  position: absolute;
+  right: 0;
   z-index: 4;
   width: 100%;
 
@@ -28,7 +29,7 @@ $list-items-border-color: #c4c4c4;
       top: 0;
     }
 
-    .ws-download-pdf {
+    .ws-download-pdf.ws-header-item {
       display: inline-block;
     }
 
@@ -158,7 +159,7 @@ $list-items-border-color: #c4c4c4;
         }
       }
 
-      .ws-config-guide {
+      .ws-config-guide.ws-modal-section {
         img {
           border: 1px solid rgba(34, 34, 34, 0.1);
           border-radius: 26px;
@@ -175,6 +176,8 @@ $list-items-border-color: #c4c4c4;
       .ws-device {
         .ws-device-specs.ws-modal-section {
           ul {
+            // Make sure we only have room for 2 per row.
+            max-width: calc((170px * 2) +  14px);
             li {
               // Set bottom margin on all, then remove from last row
               margin-bottom: 21px;
@@ -241,10 +244,6 @@ $list-items-border-color: #c4c4c4;
                 margin-bottom: 21px;
               }
 
-              &:nth-child(odd) {
-                //margin-right: 14px;
-              }
-
               // Select every 3rd child, starting at the first
               // Select every 3rd child, starting at the second
               &:nth-child(3n+1), &:nth-child(3n+2) {
@@ -258,5 +257,185 @@ $list-items-border-color: #c4c4c4;
       }
     }
   }
+}
 
+@media only screen and (min-width: 1280px) {
+  #ws-modal-layer {
+    width: 90%;
+
+    h2 {
+      @include ws-h2;
+      @media only screen and (min-width: 1280px) {
+        font-family: 'CiscoSansTT-Medium', sans-serif;
+        font-size: 64px;
+        line-height: 64px;
+        letter-spacing: -0.04em;
+      }
+
+    }
+
+    .ws-device-modal-root:not(.ws-displayNone) {
+      padding: 32px 64px;
+
+      .ws-top-rule {
+        margin: 32px -64px;
+      }
+
+      .ws-device {
+
+        .ws-device-name {
+          margin-top: 69px;
+        }
+
+        .ws-device-intro-text {
+          margin-top: 11px;
+        }
+
+        .ws-modal-sections {
+          .ws-modal-section {
+            margin-top: 80px;
+            flex: 0 0 calc(50% - 30px);
+            h6.ws-modal-section-heading {
+              margin: 0 0 40px;
+            }
+            ul {
+              margin-bottom: 0;
+            }
+          }
+        }
+
+        .ws-device-features.ws-modal-section {
+          flex: 0 0 100%;
+          ul {
+            li {
+              margin-left: 71px;
+              margin-right: 71px;
+              padding-left: 0;
+              padding-right: 0;
+            }
+          }
+        }
+        .ws-device-specs.ws-modal-section {
+          ul {
+            // Make sure we only have room for 2 per row.
+            max-width: calc((230px * 2) +  30px);
+            li {
+              width: 230px;
+              max-width: 230px;
+              // Set bottom margin on all, then remove from last row
+              margin-bottom: 21px;
+              // Select the last-child if it is also odd
+              &:last-child:nth-child(odd) {
+                margin-bottom: unset;
+              }
+
+              // Select the second-to-last child if it is also odd
+              &:nth-last-child(2):nth-child(odd),
+                // Select the last-child if it is also even
+              &:last-child:nth-child(even) {
+                margin-bottom: unset;
+              }
+
+              // Select the left column only
+              &:nth-child(odd) {
+                margin-right: 30px;
+              }
+
+              // Flex to 50% minus half the margin-right value just above
+              flex: 0 0 calc(50% - 15px);
+
+              span {
+                margin-left: 24px;
+                margin-right: 24px;
+              }
+            }
+          }
+        }
+
+        .ws-config-guide.ws-modal-section {
+          margin-left: 60px;
+          img {
+            margin-bottom: 29px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 1366px) {
+  #ws-modal-layer {
+    .ws-device-modal-root:not(.ws-displayNone) {
+
+      .ws-device {
+        .ws-device-features.ws-modal-section {
+          ul {
+            li {
+              margin-left: 101px;
+              margin-right: 101px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 1920px) {
+  #ws-modal-layer {
+    .ws-device-modal-root:not(.ws-displayNone) {
+      padding: 32px 72px;
+
+      .ws-top-rule {
+        margin: 32px -72px;
+      }
+
+      .ws-device {
+
+        .ws-modal-sections {
+          .ws-modal-section {
+            flex: 0 0 calc(50% - 53px);
+          }
+        }
+
+        .ws-device-features.ws-modal-section {
+          flex: 0 0 100%;
+
+          ul {
+            li {
+              margin-left: 132px;
+              margin-right: 132px;
+            }
+          }
+        }
+
+        .ws-device-specs.ws-modal-section {
+          ul{
+            // Make sure we only have room for 3 per row.
+            max-width: calc((230px * 3) +  (30px * 2));
+            li {
+              // Override the higher-precedence nth-child rules at the lower breakpoint.
+              margin-bottom: 21px !important;
+
+              // Select every 3rd child, starting at the first
+              // Select every 3rd child, starting at the second
+              &:nth-child(3n+1), &:nth-child(3n+2) {
+                margin-right: 30px;
+              }
+
+              flex: 0 0 calc(33% - (30px));
+            }
+          }
+        }
+
+        .ws-config-guide.ws-modal-section {
+          margin-left: 106px;
+          img {
+            margin-bottom: 29px;
+          }
+        }
+
+      }
+    }
+  }
 }
