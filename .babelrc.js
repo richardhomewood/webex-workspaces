@@ -1,6 +1,7 @@
 module.exports = (api) =>
   api.env('production')
     ? {
+        sourceType: 'unambiguous',
         presets: [
           [
             // Only add polyfill in production since
