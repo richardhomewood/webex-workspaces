@@ -28,7 +28,7 @@
         min-height: 100vh;
         overflow: hidden;
 
-        img {
+        &:not(.ws-default-room-bg) img {
           position: relative;
           height: 100vh;
           width: auto;
@@ -41,6 +41,31 @@
 
         &.fadeOut {
           @include fadeOut();
+        }
+
+        .ws-hotSpot {
+          box-sizing: border-box;
+          position: absolute;
+          left: 50%;
+          top: 50%;
+          transform: translate(-50%, -50%);
+          width: 32px;
+          height: 32px;
+          border-radius: 16px;
+          border: solid 1px #fff;
+          transition: transform 0.5s ease-out 0s;
+
+          .ws-hotSpot-inner {
+            box-sizing: border-box;
+            position: relative;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            width: 12px;
+            height: 12px;
+            border-radius: 6px;
+            background-color: #fff;
+          }
         }
       }
     }
