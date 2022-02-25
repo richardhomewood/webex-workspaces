@@ -78,10 +78,8 @@ const placeHotSpots = (initialOffset, bgImg, room, bgContainerClass) => {
     room.hotSpots.forEach((element, index)=>{
         let hotspot = hotspots[index];
         let hOffset = imgWidth * element.x;
-        let yOffset = imgHeight * element.y
-
-        hotspot.style["transform"] = 'translate(calc(-50% + ' + (initialOffset + hOffset) + 'px), calc(-50% + ' + yOffset + 'px))';        
-    
+        let yOffset = imgHeight * element.y;
+        hotspot.style["transform"] = 'translate(calc(-50% + ' + (initialOffset + hOffset) + 'px), calc(-50% + ' + yOffset + 'px))';
     })
 
 
