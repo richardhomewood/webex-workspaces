@@ -1,5 +1,5 @@
-{% macro render(common, pdfUrl) %}
-  <div class="ws-download-pdf">
+{% macro render(common, pdfUrl, classnames) %}
+  <div class="ws-download-pdf {{ classnames }}">
     <a href="{{ pdfUrl }}"><span>{{ common.deviceModal.pdfCtaText }}</span>{% icon "download", "ws-download-icon" %}</a>
   </div>
 {% endmacro %}
