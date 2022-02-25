@@ -12,31 +12,58 @@
         "background": "homeoffice.png",
         "backgroundPosition": {
             "ws-XS" : {
-                "left": 0.0103,
-                "top": 0,
-                "height": 100
+                "x": 0.0103
             },
             "ws-S": {
-                "left": 0.00751,
-                "top": 0,
-                "height": 100
+                "x": 0.00751
             },
             "ws-M": {
-                "left": 0.0336,
-                "top": 0,
-                "height": 100
+                "x": 0.0336
             },
             "ws-L": {
-                "left": 0.0028,
-                "top": 0,
-                "height": 100
+                "x": 0.0028
             },
             "ws-XL": {
-                "left": 0,
-                "top": 0,
-                "height": 100
+                "x": 0
             }
         },
+        "hotSpots": [
+            {
+                "slug":"",
+                "x": -0.3198,
+                "y": -0.0898
+            },
+            {
+                "slug":"",
+                "x": -0.2224,
+                "y": -0.2
+            },
+            {
+                "slug":"",
+                "x": -0.1635,
+                "y": -0.2065
+            },
+            {
+                "slug":"",
+                "x": -0.1146,
+                "y": -0.2435
+            },
+            {
+                "slug":"",
+                "x": -0.0276,
+                "y": 0.0139
+            },
+            {
+                "slug":"",
+                "x": 0.1297,
+                "y": 0.0139
+            },
+            {
+                "slug":"",
+                "x": 0.1297,
+                "y": 0.1519
+            }
+        ],
         "roomDescription": [
           "For those who have a dedicated home office, it’s essential to design it in a way that lets you work as efficiently and securely as any corporate office—not to mention, more comfortably.",
           "With the luxury of a little extra space, you can outfit your home office with devices that give you the flexibility to take one meeting at your desk and another on a bigger screen."
@@ -48,31 +75,39 @@
         "background": "kitchen.png",
         "backgroundPosition": {
             "ws-XS" : {
-                "left": 0.139,
-                "top": 0,
-                "height": 100
+                "x": 0.139
             },
             "ws-S": {
-                "left": 0.05355,
-                "top": 0,
-                "height": 100
+                "x": 0.05355
             },
             "ws-M": {
-                "left": 0.1161,
-                "top": 0,
-                "height": 100
+                "x": 0.1161
             },
             "ws-L": {
-                "left": 0,
-                "top": 0,
-                "height": 100
+                "x": 0
             },
             "ws-XL": {
-                "left": 0,
-                "top": 0,
-                "height": 100
+                "x": 0
             }
         },
+        "hotSpots": [
+            {
+                "slug":"",
+                "x": -0.2630,
+                "y": -0.0916
+            },
+            {
+                "slug":"",
+                "x": -0.1135,
+                "y": -0.05
+            },
+            {
+                "slug":"",
+                "x": -0.0198,
+                "y": 0.076
+            }
+            
+        ],
         "roomDescription": [
           "Not everyone has the luxury of a dedicated home office. For many of us, our kitchens have become our place to work. These tight—and often temporary workspaces—also include a recipe of distractions, noise, and guest appearances.",
           "But when you mix portable collaboration devices with noise-cancelling headsets and a sprinkle of secure wireless connectivity, voila! Your kitchen becomes a productive powerhouse."
@@ -93,31 +128,38 @@
         "background": "hotdesk.png",
         "backgroundPosition": {
             "ws-XS" : {
-                "left": 0.02935,
-                "top": 0,
-                "height": 100
+                "x": 0.02935
             },
             "ws-S": {
-                "left": 0.0148,
-                "top": 0,
-                "height": 100
+                "x": 0.0148
             },
             "ws-M": {
-                "left": 0.0778,
-                "top": 0,
-                "height": 100
+                "x": 0.0778
             },
             "ws-L": {
-                "left": 0.0028,
-                "top": 0,
-                "height": 100
+                "x": 0.0028
             },
             "ws-XL": {
-                "left": 0,
-                "top": 0,
-                "height": 100
+                "x": 0
             }
-        }
+        },
+        "hotSpots": [
+            {
+                "slug":"",
+                "x": -0.188,
+                "y": -0.125
+            },
+            {
+                "slug":"",
+                "x": -0.0932,
+                "y": -0.00926
+            },
+            {
+                "slug":"",
+                "x": -0.04795,
+                "y": -0.0556
+            }
+        ]
       },
       {
         "name": "Ideation Room",
@@ -125,31 +167,28 @@
         "background": "ideation.png",
         "backgroundPosition": {
             "ws-XS" : {
-                "left": 0.2046,
-                "top": 0,
-                "height": 100
+                "x": 0.2046
             },
             "ws-S": {
-                "left": 0.115,
-                "top": 0,
-                "height": 100
+                "x": 0.115
             },
             "ws-M": {
-                "left": 0.0509,
-                "top": 0,
-                "height": 100
+                "x": 0.0509
             },
             "ws-L": {
-                "left": 0.0028,
-                "top": 0,
-                "height": 100
+                "x": 0.0028
             },
             "ws-XL": {
-                "left": 0,
-                "top": 0,
-                "height": 100
+                "x": 0
             }
-        }
+        },
+        "hotSpots": [
+            {
+                "slug":"",
+                "x": -0.2927,
+                "y": -0.2167
+            }
+        ]
       },
       {
         "name": "Small Conference Room",
@@ -157,31 +196,33 @@
         "background": "smallmeeting.png",
         "backgroundPosition": {
             "ws-XS" : {
-                "left": 0.0207,
-                "top": 0,
-                "height": 100
+                "x": 0.0207
             },
             "ws-S": {
-                "left": 0.03366,
-                "top": 0,
-                "height": 100
+                "x": 0.03366
             },
             "ws-M": {
-                "left": 0.0134,
-                "top": 0,
-                "height": 100
+                "x": 0.0134
             },
             "ws-L": {
-                "left": 0.0028,
-                "top": 0,
-                "height": 100
+                "x": 0.0028
             },
             "ws-XL": {
-                "left": 0,
-                "top": 0,
-                "height": 100
+                "x": 0
             }
-        }
+        },
+        "hotSpots": [
+            {
+                "slug":"",
+                "x": -0.2578,
+                "y": 0.1223
+            },
+            {
+                "slug":"",
+                "x": -0.03021,
+                "y": -0.025
+            }
+        ]
       }
     ]
   },
@@ -198,31 +239,28 @@
         "background": "coffee.png",
         "backgroundPosition": {
             "ws-XS" : {
-                "left": -0.0451,
-                "top": 0,
-                "height": 100
+                "x": -0.0451
             },
             "ws-S": {
-                "left": 0.05654,
-                "top": 0,
-                "height": 100
+                "x": 0.05654
             },
             "ws-M": {
-                "left": 0.13,
-                "top": 0,
-                "height": 100
+                "x": 0.13
             },
             "ws-L": {
-                "left": -0.00627,
-                "top": 0,
-                "height": 100
+                "x": -0.00627
             },
             "ws-XL": {
-                "left": 0,
-                "top": 0,
-                "height": 100
+                "x": 0
             }
-        }
+        },
+        "hotSpots": [
+            {
+                "slug":"",
+                "x": -0.1442,
+                "y": 0.175
+            }
+        ]
       }
     ]
   }
