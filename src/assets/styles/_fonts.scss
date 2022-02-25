@@ -44,10 +44,6 @@
   }
 }
 
-h2 {
-  @include ws-h2;
-}
-
 @mixin ws-h3 {
   font-family: 'CiscoSansTT-Regular';
   font-size: 32px;
@@ -86,7 +82,7 @@ h2 {
   line-height: 22px;
   color: #545454;
 
-  @media only screen and (min-width: 1216px) {
+  @media only screen and (min-width: 1280px) {
     font-family: 'CiscoSansTT-Regular';
     font-size: 18px;
     line-height: 26px;
