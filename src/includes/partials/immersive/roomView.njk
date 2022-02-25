@@ -2,9 +2,16 @@
   <div class="ws-room-view ws-displayNone">
     <div class="ws-room-background-image-container">
       {%- for workspaceId in common.orderedWorkspaceIds %}
-        {{ roomViewBG(workspaces[workspaceId].background, common.sizeClasses, "ws-default-room-bg " + workspaceId + "-room-bg") }}
+        <div class="ws-room-background-image ws-default-room-bg {{ workspaceId }}-room-bg ws-displayNone">
+            {{ roomViewBG(workspaces[workspaceId].background) }}
+        </div>
         {%- for room in workspaces[workspaceId].rooms %}
-          {{ roomViewBG(room.background, common.sizeClasses, "ws-room-bg " + workspaceId + "-" + room.slug + "-room-bg") }}
+            <div class="ws-room-background-image ws-room-bg {{ workspaceId }}-{{room.slug}}-room-bg ws-displayNone">
+                {{ roomViewBG(room.background) }}
+                {%- for hotSpot in room.hotSpots %}
+                    {{ hotspot() }}
+                {%- endfor %}
+            </div>
         {%- endfor %}
       {%- endfor %}
     </div>
@@ -52,19 +59,23 @@
   </div>
 {% endmacro %}
 
-{% macro roomViewBG(src, sizeClasses, class, id) %}
-    <div class="ws-room-background-image {{ class }} ws-displayNone">{% imagesync "room-backgrounds/" + src, "" %}</div>
+{% macro roomViewBG(src) %}
+    {% imagesync "room-backgrounds/" + src, "" %}
 {% endmacro %}
 
-{% macro roomOptionBG(src, sizeClasses) %}
-  {% imagesync "room-backgrounds/"+src, "", "", "ws-room-option-image {{ size }}" %}
+{% macro roomOptionBG(src) %}
+  {% imagesync "room-backgrounds/"+src, "", "", "ws-room-option-image" %}
+{% endmacro %}
+
+{% macro hotspot() %}
+  <div class="ws-hotSpot"><div class="ws-hotSpot-inner"></div></div>
 {% endmacro %}
 
 {% macro roomSelections(workspace, room, common) %}
   <div class="ws-room-selections" id="{{ workspace.slug }}-{{ room.slug }}-selections">
     <div class="ws-room-selection">
       <a href="#/{{ workspace.slug }}/{{ room.slug }}">
-        <div class="ws-room-image">{{ roomOptionBG(room.background, common.sizeClasses) }}</div>
+        <div class="ws-room-image">{{ roomOptionBG(room.background) }}</div>
         <div class="ws-room-label">{{ room.name }}</div>
       </a>
     </div>
