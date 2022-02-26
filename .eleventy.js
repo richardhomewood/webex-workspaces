@@ -42,6 +42,10 @@ module.exports = (config) => {
   // Everything inside static is copied verbatim to `_site`
   config.addPassthroughCopy('src/assets/static');
 
+  // Ignore placeholder files for otherwise-empty directories.
+  config.ignores.add('**/delete-me.md');
+  config.ignores.add('**/.gitkeep');
+
   // BrowserSync Overrides
   config.setBrowserSyncConfig({
     ...config.browserSyncConfig,
