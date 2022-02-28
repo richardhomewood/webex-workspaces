@@ -34,7 +34,6 @@ const updateUi = (location, delay = 200) => {
 
 const updateBGSizes = () => {
     let sizeClass = currentSizeClass();
-    let aspectRation = 192/108
 
     commonData.orderedWorkspaceIds.forEach((workspaceId) => {
         let rooms = workspaces[workspaceId].rooms;
@@ -211,8 +210,14 @@ const toSelectedWorkSpace = function (space, room) {
 
     const bgToDisplayCSSSelector = room ? `.${classnames.roomBackground}.${space}-${room}${classnames.roomBackgroundSuffix}` : `.${classnames.defaultRoomBackground}.${space}${classnames.roomBackgroundSuffix}`;
     const bgsToDisplay = Array.from(document.querySelectorAll(bgToDisplayCSSSelector));
-    const bgToHideCSSSelector = `.${classnames.roomBackground}:not(.${classnames.hidden}), .${classnames.defaultRoomBackground}:not(.${classnames.hidden})`
+    const bgToHideCSSSelector = `.${classnames.roomBackground}:not(.${classnames.hidden}), .${classnames.defaultRoomBackground}:not(.${classnames.hidden})`;
     const bgsToHide = Array.from(document.querySelectorAll(bgToHideCSSSelector));
+
+    const hotSpotsToHideCSSSelector = `.${classnames.roomBackground}:not(.${classnames.hidden}) .ws-hotSpot, .${classnames.defaultRoomBackground}:not(.${classnames.hidden}) .ws-hotSpot`;
+    const hotSpotsToHide = Array.from(document.querySelectorAll(hotSpotsToHideCSSSelector));
+
+    const hotSpotsToShowCSSSelector = room ? `.${classnames.roomBackground}.${space}-${room}${classnames.roomBackgroundSuffix} .ws-hotSpot` : ``;
+    const hotSpotsToShow = room ? Array.from(document.querySelectorAll(hotSpotsToShowCSSSelector)) : [];
 
     // Deselect all rooms
     const allRooms = Array.from(document.querySelectorAll(`.${classnames.workspaceContainer}#${space}Container .${classnames.roomImage}`));
@@ -291,17 +296,31 @@ const toSelectedWorkSpace = function (space, room) {
             element.removeEventListener("animationend", listener);
             element.classList.add(classnames.hidden);
             element.classList.remove(classnames.fadeOut);
+
+            //hide hotspots
+            hotSpotsToHide.forEach((element)=>{
+                element.classList.remove('animate-in')
+            })
         }
 
         element.addEventListener("animationend", listener);
         element.classList.add(classnames.fadeOut);
-    })
+    });
 
     //show backgrounnds that are coming in
     bgsToDisplay.forEach((element) => {
         element.style['zIndex'] = 0;
         element.classList.remove(classnames.fadeOut);
         element.classList.remove(classnames.hidden);
+
+        //animate in hotspots
+        setTimeout(()=>{
+            hotSpotsToShow.forEach((element, index) => {
+                setTimeout(()=>{
+                    element.classList.add('animate-in');
+                }, 300 * index);
+            })
+        }, 300);
     })
 
     //if moving from workspace landing to selected room
