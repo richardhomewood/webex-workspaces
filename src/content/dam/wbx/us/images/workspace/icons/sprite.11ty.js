@@ -11,13 +11,13 @@ const SVGSpriter = require('svg-sprite');
 module.exports = class {
   async data() {
     return {
-      permalink: `/assets/images/sprite.svg`,
+      permalink: `/content/dam/wbx/us/images/workspace/images/sprite.svg`,
       eleventyExcludeFromCollections: true
     };
   }
 
   async compile() {
-    const cwd = path.resolve('src/assets/icons');
+    const cwd = path.resolve('src/content/dam/wbx/us/images/workspace/icons');
     const config = {
       mode: {
         inline: true,

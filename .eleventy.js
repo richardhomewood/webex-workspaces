@@ -9,7 +9,7 @@ const shortcodes = require('./utils/shortcodes');
 const transforms = require('./utils/transforms');
 
 module.exports = (config) => {
-  const manifestPath = path.resolve(__dirname, '_site/assets/manifest.json');
+  const manifestPath = path.resolve(__dirname, '_site/content/dam/wbx/us/images/workspace/manifest.json');
 
   // Allow for customizing the built in markdown parser.
   config.setLibrary('md', markdown);
@@ -40,7 +40,7 @@ module.exports = (config) => {
   // Pass-through files
   config.addPassthroughCopy('src/favicon.ico');
   // Everything inside static is copied verbatim to `_site`
-  config.addPassthroughCopy('src/assets/static');
+  config.addPassthroughCopy('src/content/dam/wbx/us/images/workspace/static');
 
   // Ignore placeholder files for otherwise-empty directories.
   config.ignores.add('**/delete-me.md');
