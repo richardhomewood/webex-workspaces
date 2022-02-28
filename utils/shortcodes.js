@@ -16,7 +16,7 @@ const isFullUrl = (url) => {
   }
 };
 
-const manifestPath = path.resolve(__dirname, '../_site/assets/manifest.json');
+const manifestPath = path.resolve(__dirname, '../_site/content/dam/wbx/us/images/workspace/manifest.json');
 
 module.exports = {
   // Allow embedding markdown in `.njk` files
