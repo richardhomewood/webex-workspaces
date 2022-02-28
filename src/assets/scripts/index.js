@@ -48,6 +48,7 @@ const updateBGSizes = () => {
                 let imgHeight = bgImg.clientHeight;
                 let windowWidth = window.innerWidth;
                 let windowHeight = window.innerHeight;
+
                 let projectedImgWidth = (windowHeight * 108) / 192;
                 var initialOffset = (imgWidth * backgroundPos.x)
                 
@@ -95,7 +96,6 @@ const currentSizeClass = () => {
     })
     return aSizeClass; 
 }
-
 
 // Routing for the initial view
 router.add(homePath, () => {
@@ -399,7 +399,6 @@ const updateRoomsSelector = function (path) {
             return
         }
         const slideWidth = slides[0].offsetWidth;
-
         const totalSlideWidth = (slideWidth * slideCount) + (10 * (slideCount - 1));
 
         let options = {
@@ -412,7 +411,8 @@ const updateRoomsSelector = function (path) {
             centerInsufficientSlides: true,
         }
 
-        if (totalSlideWidth < (window.innerWidth - 98)) {
+        let windowWidth = window.innerWidth;
+        if (totalSlideWidth < (windowWidth - 98)) {
             options = {...options, ...{enabled: false}}
         }
 
