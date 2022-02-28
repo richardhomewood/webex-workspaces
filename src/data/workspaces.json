@@ -146,7 +146,7 @@
         "hotSpots": [
             {
                 "slug":"",
-                "x": -0.188,
+                "x": -0.173,
                 "y": -0.125
             },
             {
@@ -196,7 +196,7 @@
         "background": "smallmeeting.png",
         "backgroundPosition": {
             "ws-XS" : {
-                "x": 0.0207
+                "x": 0.1207
             },
             "ws-S": {
                 "x": 0.03366
@@ -239,7 +239,7 @@
         "background": "coffee.png",
         "backgroundPosition": {
             "ws-XS" : {
-                "x": -0.0451
+                "x": 0.04604
             },
             "ws-S": {
                 "x": 0.05654
