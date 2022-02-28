@@ -69,6 +69,7 @@ $list-items-border-color: #c4c4c4;
       .ws-device-name {
         margin: 40px auto 0;
         text-align: center;
+        @include ws-h2;
       }
 
       .ws-device-intro-text {
@@ -270,17 +271,6 @@ $list-items-border-color: #c4c4c4;
   #ws-modal-layer {
     width: 90%;
 
-    h2 {
-      @include ws-h2;
-      @media only screen and (min-width: 1280px) {
-        font-family: 'CiscoSansTT-Medium', sans-serif;
-        font-size: 64px;
-        line-height: 64px;
-        letter-spacing: -0.04em;
-      }
-
-    }
-
     .ws-device-modal-root:not(.ws-displayNone) {
       padding: 32px 64px;
 
@@ -292,6 +282,10 @@ $list-items-border-color: #c4c4c4;
 
         .ws-device-name {
           margin-top: 69px;
+          font-family: 'CiscoSansTT-Medium', sans-serif;
+          font-size: 64px;
+          line-height: 64px;
+          letter-spacing: -0.04em;
         }
 
         .ws-device-intro-text {
