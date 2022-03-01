@@ -44,6 +44,37 @@ const updateUi = (location, delay = 200) => {
 const updateBGSizes = () => {
     let sizeClass = currentSizeClass();
 
+    let windowWidth = window.innerWidth;
+    let windowHeight = window.innerHeight;
+
+    const initview = document.getElementsByClassName(classnames.initialView)[0];
+    if (!initview.classList.contains(classnames.hidden)) {
+        //update animating imgs on initial view
+        let rotatingImgsClass = ".ws-initial-rotating-background-image .ws-rotating-background-image img";
+        let rotatingImgs = Array.from(document.querySelectorAll(rotatingImgsClass));
+        let rImgWidth = rotatingImgs[0].clientWidth;
+        let rImgHeight = rotatingImgs[0].clientHeight;
+        let projectedRImgWidth = (windowHeight * 108) / 192;
+
+        console.log(rotatingImgs)
+        console.log("rImgWidth", rImgWidth)
+        console.log("rImgHeight", rImgHeight)
+
+        if (projectedRImgWidth < windowWidth) {
+            let newImageHeight = (windowWidth * rImgHeight) / rImgWidth;
+            newImageHeight = newImageHeight < windowHeight ? windowHeight : newImageHeight;
+            rotatingImgs.forEach((element) => {
+                element.style["height"] = newImageHeight + "px";
+            })
+            
+        } else{
+            rotatingImgs.forEach((element) => {
+                element.style["height"] = "";
+            })
+        }
+    }
+
+    //updating selected room bgs
     commonData.orderedWorkspaceIds.forEach((workspaceId) => {
         let rooms = workspaces[workspaceId].rooms;
         rooms.forEach((room) => {
@@ -55,8 +86,6 @@ const updateBGSizes = () => {
             
                 let imgWidth = bgImg.clientWidth;
                 let imgHeight = bgImg.clientHeight;
-                let windowWidth = window.innerWidth;
-                let windowHeight = window.innerHeight;
 
                 let projectedImgWidth = (windowHeight * 108) / 192;
                 var initialOffset = (imgWidth * backgroundPos.x)
@@ -75,6 +104,34 @@ const updateBGSizes = () => {
             }
         })
     })
+
+    //updating default room bgs
+    let defaultBgsClass = ".ws-room-background-image.ws-default-room-bg img";
+    let defaultBgImgs = Array.from(document.querySelectorAll(defaultBgsClass));
+    let dImgWidth = defaultBgImgs[0].clientWidth;
+    let dImgHeight = defaultBgImgs[0].clientHeight;
+
+    defaultBgImgs.forEach((element) => {
+        if(element.clientWidth > 0 && element.clientHeight > 0){
+            dImgWidth = element.clientWidth;
+            dImgHeight = element.clientHeight;
+        }
+    })
+
+    let projectedDImgWidth = (windowHeight * 108) / 192;
+
+    if (projectedDImgWidth < windowWidth) {
+        let newImageHeight = (windowWidth * dImgHeight) / dImgWidth;
+        newImageHeight = newImageHeight < windowHeight ? windowHeight : newImageHeight;
+        defaultBgImgs.forEach((element) => {
+            element.style["height"] = newImageHeight + "px";
+        })
+        
+    } else{
+        defaultBgImgs.forEach((element) => {
+            element.style["height"] = "";
+        })
+    }
 }
 
 const placeHotSpots = (initialOffset, bgImg, room, bgContainerClass) => {
@@ -90,9 +147,6 @@ const placeHotSpots = (initialOffset, bgImg, room, bgContainerClass) => {
         let yOffset = imgHeight * element.y;
         hotspot.style["transform"] = 'translate(calc(-50% + ' + (initialOffset + hOffset) + 'px), calc(-50% + ' + yOffset + 'px))';
     })
-
-
-    let offset = imgWidth 
 }
 
 const currentSizeClass = () => {
