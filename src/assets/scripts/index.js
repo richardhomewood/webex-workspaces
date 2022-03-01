@@ -1,4 +1,5 @@
 import Swiper from 'swiper';
+import Hammer from 'hammerjs';
 import 'swiper/scss';
 import Router from './router';
 import {canonicalPath, hardwarePathPart, homePath, isDevicePath, makePath, splitPath} from './paths';
@@ -10,6 +11,7 @@ import devicesByRoom from '../../data/devicesByRoom.json';
 import { setTimeout } from 'core-js';
 
 const router = new Router();
+var hammertime;
 
 window.addEventListener('hashchange', (ev) => {
     router.route(canonicalPath(window.location));
@@ -20,6 +22,13 @@ window.addEventListener('resize', () => {
 });
 
 window.addEventListener('load', function () {
+    const bgContainer = document.querySelector(".homeSpace-homeOffice-room-bg img");
+    hammertime = new Hammer(bgContainer);
+    hammertime.get('pan').set({ direction: Hammer.DIRECTION_ALL });
+    hammertime.on("panleft panright panup pandown tap press", function(ev) {
+        console.log(ev);
+    });
+
     router.route(canonicalPath(window.location));
 });
 
