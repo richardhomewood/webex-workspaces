@@ -141,10 +141,24 @@ const placeHotSpots = (initialOffset, bgImg, room, bgContainerClass) => {
     let hotspotsQuery = bgContainerClass + " .ws-hotSpot"
     let hotspots = Array.from(document.querySelectorAll(hotspotsQuery));
 
+    let imgBaseWidth = 1920;
+    let imgHalfWidth = 960;
+    let imgBaseHeight = 1080;
+    let imgHalfHeight = 540;
+
     room.hotSpots.forEach((element, index)=>{
+
+        let fullDeltaX = imgHalfWidth - (element.x + 16);
+        let xDelta = (fullDeltaX / imgBaseWidth) * -1;
+
+        let fullDeltaY = imgHalfHeight - (element.y + 16);
+        let yDelta = (fullDeltaY / imgBaseHeight) * -1;
+        console.log("yDelta",yDelta);
+        console.log("oldY",element.oldY);
+
         let hotspot = hotspots[index];
-        let hOffset = imgWidth * element.x;
-        let yOffset = imgHeight * element.y;
+        let hOffset = imgWidth * xDelta;
+        let yOffset = imgHeight * yDelta;
         hotspot.style["transform"] = 'translate(calc(-50% + ' + (initialOffset + hOffset) + 'px), calc(-50% + ' + yOffset + 'px))';
     })
 }
