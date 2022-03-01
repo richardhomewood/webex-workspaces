@@ -16,7 +16,7 @@ const isFullUrl = (url) => {
   }
 };
 
-const manifestPath = path.resolve(__dirname, '../_site/assets/manifest.json');
+const manifestPath = path.resolve(__dirname, '../_site/content/dam/wbx/us/images/workspace/manifest.json');
 
 module.exports = {
   // Allow embedding markdown in `.njk` files
@@ -30,7 +30,7 @@ module.exports = {
   webpack: async (name) =>
     new Promise((resolve) => {
       fs.readFile(manifestPath, { encoding: 'utf8' }, (err, data) =>
-        resolve(err ? `/assets/${name}` : JSON.parse(data)[name])
+        resolve(err ? `/content/dam/wbx/us/images/workspace/${name}` : JSON.parse(data)[name])
       );
     }),
 
@@ -44,7 +44,7 @@ module.exports = {
     }" role="img" aria-hidden="true" width="${size[0]}" height="${
       size[1] || size[0]
     }">
-      <use xlink:href="/assets/images/sprite.svg#${name}"></use>
+      <use xlink:href="/content/dam/wbx/us/images/workspace/images/sprite.svg#${name}"></use>
     </svg>`;
   },
 
@@ -66,15 +66,15 @@ module.exports = {
     const sizes = args[5] ?? defaultSizes;
 
     const extension = path.extname(src).slice(1).toLowerCase();
-    const fullSrc = isFullUrl(src) ? src : `./src/assets/images/${src}`;
+    const fullSrc = isFullUrl(src) ? src : `./src/content/dam/wbx/us/images/workspace/images/${src}`;
 
     let stats;
     try {
       stats = await Image(fullSrc, {
         widths: defaultImagesSizes,
         formats: extension === 'webp' ? ['webp', 'jpeg'] : ['webp', extension],
-        urlPath: '/assets/images/',
-        outputDir: '_site/assets/images/'
+        urlPath: '/content/dam/wbx/us/images/workspace/images/',
+        outputDir: '_site/content/dam/wbx/us/images/workspace/images/'
       });
     } catch (e) {
       console.log('\n\x1b[31mERROR\x1b[0m creating image:');
@@ -129,21 +129,21 @@ module.exports = {
     const sizes = args[5] ?? defaultSizes;
 
     const extension = path.extname(src).slice(1).toLowerCase();
-    const fullSrc = isFullUrl(src) ? src : `./src/assets/images/${src}`;
+    const fullSrc = isFullUrl(src) ? src : `./src/content/dam/wbx/us/images/workspace/images/${src}`;
 
     let stats;
     try {
         Image(fullSrc, {
             widths: defaultImagesSizes,
             formats: extension === 'webp' ? ['webp', 'jpeg'] : ['webp', extension],
-            urlPath: '/assets/images/',
-            outputDir: '_site/assets/images/'
+            urlPath: '/content/dam/wbx/us/images/workspace/images/',
+            outputDir: '_site/content/dam/wbx/us/images/workspace/images/'
           });
       stats =  Image.statsSync(fullSrc, {
         widths: defaultImagesSizes,
         formats: extension === 'webp' ? ['webp', 'jpeg'] : ['webp', extension],
-        urlPath: '/assets/images/',
-        outputDir: '_site/assets/images/'
+        urlPath: '/content/dam/wbx/us/images/workspace/images/',
+        outputDir: '_site/content/dam/wbx/us/images/workspace/images/'
       });
     } catch (e) {
       console.log('\n\x1b[31mERROR\x1b[0m creating image:');

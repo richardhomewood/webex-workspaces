@@ -62,7 +62,7 @@ All shortcodes can be used inside `.md` or `.njk` files.
 <summary><strong><code>icon</code></strong></summary>
 <br>
 
-Any SVG added to `src/assets/icons` is bundled into a symbol sprite file and made available through this shortcode.
+Any SVG added to `src/content/dam/wbx/us/images/workspace/icons` is bundled into a symbol sprite file and made available through this shortcode.
 ```html
 <!-- Assuming `src/assets/icons/github.svg` exist -->
 {% icon "github" %} Github icon
