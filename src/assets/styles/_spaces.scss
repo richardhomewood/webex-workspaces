@@ -1,4 +1,6 @@
 .ws-immersive-root {
+  height: 100vh;
+  min-height: 100%;
   .ws-room-view {
     position: absolute;
     top: 0;
@@ -117,6 +119,7 @@
       z-index: 0;
       height: 100%;
       overflow: hidden;
+      pointer-events: none;
 
       .ws-more-rooms-text {
         position: absolute;
