@@ -3,9 +3,9 @@
     <div class="ws-initial-rotating-background-image">
       {%- for workspaceId in common.orderedWorkspaceIds %}
         {% if loop.index == 1 %}
-            {{initialViewBGFPO(workspaces[workspaceId].background, common.sizeClasses)}}
+            {{initialViewBGFPO(workspaces[workspaceId].background)}}
         {% endif %}
-        {{initialViewBG(workspaces[workspaceId].background, common.sizeClasses, loop.index)}}
+        {{initialViewBG(workspaces[workspaceId].background, loop.index)}}
        {% endfor %}
     </div>
     <div class="ws-initial-content">
@@ -15,18 +15,14 @@
   </div>
 {% endmacro %}
 
-{% macro initialViewBGFPO(src, sizeClasses) %}
-  {% for size, prefix in sizeClasses %}
-    <div class="ws-rotating-background-image ws-rotating-background-image-fpo {{ size }}">
-      {% imagesync "room-backgrounds/"+prefix+src, "" %}
+{% macro initialViewBGFPO(src) %}
+    <div class="ws-rotating-background-image ws-rotating-background-image-fpo">
+      {% imagesync "room-backgrounds/"+src, "" %}
     </div>
-  {% endfor %}
 {% endmacro %}
 
-{% macro initialViewBG(src, sizeClasses, index) %}
-  {% for size, prefix in sizeClasses %}
-    <div class="ws-rotating-background-image ws-rotating-background-image-{{ index }} {{ size }}">
-      {% imagesync "room-backgrounds/"+prefix+src, "" %}
+{% macro initialViewBG(src, index) %}
+    <div class="ws-rotating-background-image ws-rotating-background-image-{{ index }}">
+      {% imagesync "room-backgrounds/"+src, "" %}
     </div>
-  {% endfor %}
 {% endmacro %}
