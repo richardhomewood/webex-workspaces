@@ -1,0 +1,87 @@
+@media only screen and (max-width: 767px) {
+  .ws-XS {
+    display: block;
+  }
+
+  .ws-XL:not(.ws-XS),
+  .ws-L:not(.ws-XS),
+  .ws-M:not(.ws-XS),
+  .ws-S:not(.ws-XS) {
+    display: none;
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1279px) {
+  .ws-S {
+    display: block;
+  }
+  .ws-XL:not(.ws-S),
+  .ws-L:not(.ws-S),
+  .ws-M:not(.ws-S),
+  .ws-XS:not(.ws-S) {
+    display: none;
+  }
+}
+
+@media only screen and (min-width: 1280px) and (max-width: 1365px) {
+  .ws-M {
+    display: block;
+  }
+  .ws-XL:not(.ws-M),
+  .ws-L:not(.ws-M),
+  .ws-S:not(.ws-M),
+  .ws-XS:not(.ws-M) {
+    display: none;
+  }
+}
+
+@media only screen and (min-width: 1366px) and (max-width: 1919px) {
+  .ws-L {
+    display: block;
+  }
+  .ws-XL:not(.ws-L),
+  .ws-M:not(.ws-L),
+  .ws-S:not(.ws-L),
+  .ws-XS:not(.ws-L) {
+    display: none;
+  }
+}
+
+@media only screen and (min-width: 1920px) {
+  .ws-XL {
+    display: block;
+  }
+  .ws-L:not(.ws-XL),
+  .ws-M:not(.ws-XL),
+  .ws-S:not(.ws-XL),
+  .ws-XS:not(.ws-XL) {
+    display: none;
+  }
+}
+
+.ws-displayNone {
+  display: none;
+}
+
+.ws-displayBlock {
+  display: block;
+}
+
+.ws-download-pdf {
+  a {
+    text-decoration: none;
+    color: black;
+    &:active, &:visited {
+      color: black;
+    }
+
+    .ws-download-icon {
+      width: 32px;
+      height: 32px;
+      position: relative;
+      top: -1.5px;
+    }
+  }
+}
+
+@import 'fonts';
