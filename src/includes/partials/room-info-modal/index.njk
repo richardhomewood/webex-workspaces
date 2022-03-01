@@ -2,12 +2,12 @@
 
 {% macro render(common, workspace, room, vendorDevicesByRoom, devices) %}
   {# This div may be positioned off-screen and animated into place when the "info" CTA is clicked #}
-  <div class="ws-room-info-modal-root awaits-styling">
-    (Room Info Modal for {{ workspace.slug }}-{{ room.slug }})
+  <div class="ws-room-info-modal-root ws-modal-root ws-displayNone">
+    {{ downloadPdf.render(common, room.pdfUrl, "ws-header-item") }}
+    <a class="ws-room-info-modal-close ws-modal-close" aria-label="Close" href="#/{{ workspace.slug }}/{{ room.slug }}">{% icon "close-x", "ws-close-x" %}</a>
+    <div class="ws-top-rule"></div>
 
-    <button class="ws-info-modal-close ws-modal-close awaits-styling" aria-label="Close"></button>
-
-    <h2 class="ws-info-modal-room-name">{{ room.name }}</h2>
+    <h1 class="ws-info-modal-room-name">{{ room.name }}</h1>
 
     <div class="ws-info-modal-text">
       {% for paragraph in room.roomDescription %}
@@ -17,13 +17,14 @@
 
     <h5 class="ws-info-modal-section-heading">{{ common.infoModal.productListHeadingText }}</h5>
 
+    <div class="ws-info-modal-vendors">
     {# Loop over the list of all vendor IDs  #}
     {% for vendorId in common.infoModal.deviceVendors %}
       {# If there is a list of devices for the given vendor, display them.  Otherwise, nothing. #}
       {% if vendorDevicesByRoom[workspace.slug][room.slug][vendorId] %}
 
         {% set vendorHeadingKey = vendorId + "DevicesHeadingText" %}
-        <div class="ws-info-modal-vendor awaits-styling">
+        <div class="ws-info-modal-vendor">
           <div class="ws-info-modal-vendor-name">{{ common.infoModal[vendorHeadingKey] }}</div>
           <ul class="ws-vendor-device-list">
             {# Loop over the vendor's device IDs #}
@@ -35,6 +36,8 @@
 
       {% endif %}
     {% endfor %}
+    </div>
+
   </div>
 {% endmacro %}
 

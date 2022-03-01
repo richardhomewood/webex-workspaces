@@ -15,6 +15,7 @@ module.exports = {
     selectorWrapper: 'ws-workspaces-rooms',
     roomBackground: 'ws-room-bg',
     roomImage: 'ws-room-image',
+    roomInfoButton: 'ws-room-info-btn',
     roomModalsContainer: 'ws-room-modals-container',
     roomSlide: 'ws-room-slide',
     roomView: 'ws-room-view',
@@ -31,7 +32,11 @@ module.exports = {
     deviceContainer: 'ws-device',
     deviceIdPrefix: 'ws-device-',
     downloadPdfContainer: 'ws-download-pdf',
+    roomInfoModalRoot: 'ws-room-info-modal-root',
 
     // Suffixes
-    roomBackgroundSuffix: '-room-bg'
+    roomBackgroundSuffix: '-room-bg',
+
+    // Identifiers (technically, not classnames...)
+    modalLayerId: 'ws-modal-layer'
 }

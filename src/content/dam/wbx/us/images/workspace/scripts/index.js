@@ -1,9 +1,9 @@
 import Swiper from 'swiper';
 import 'swiper/scss';
 import Router from './router';
-import {canonicalPath, hardwarePathPart, homePath, isDevicePath, makePath, splitPath} from './paths';
+import {canonicalPath, hardwarePathPart, homePath, infoPathPart, makePath, splitPath} from './paths';
 import classnames from './classnames';
-import deviceModal from './device-modal'
+import modals from './modals'
 import commonData from '../../../../../../../data/common.json';
 import workspaces from '../../../../../../../data/workspaces.json';
 import devicesByRoom from '../../../../../../../data/devicesByRoom.json';
@@ -106,16 +106,24 @@ router.add(homePath, () => {
 // Handle workspace and workspace/room routing
 commonData.orderedWorkspaceIds.forEach((workspaceId) => {
     router.add(makePath([workspaceId]), () => {
-        deviceModal.hideAll();
+        modals.hideAll();
         toSelectedWorkSpace(workspaceId);
         updateUi(window.location);
     })
 
     workspaces[workspaceId].rooms.forEach((room) => {
         router.add(makePath([workspaceId, room.slug]), () => {
-            deviceModal.hideAll();
+            modals.hideAll();
             toSelectedWorkSpace(workspaceId, room.slug);
             updateUi(window.location);
+        });
+
+        const roomInfoPath = makePath([workspaceId, room.slug, infoPathPart]);
+        router.add(roomInfoPath, () => {
+            modals.hideAll();
+            toSelectedWorkSpace(workspaceId, room.slug);
+            updateUi(window.location);
+            modals.showRoomInfo(roomInfoPath);
         });
 
         const devicesForRoom = devicesByRoom[workspaceId][room.slug]
@@ -124,9 +132,7 @@ commonData.orderedWorkspaceIds.forEach((workspaceId) => {
             router.add(devicePath, () => {
                 toSelectedWorkSpace(workspaceId);
                 updateUi(window.location);
-                if (isDevicePath(devicePath)) {
-                    deviceModal.showDevice(devicePath);
-                }
+                modals.showDevice(devicePath);
             })
         })
     })
@@ -348,6 +354,10 @@ const toSelectedWorkSpace = function (space, room) {
         //show relevant label
         let roomlabel = document.querySelector('.ws-room-label#' + space + "-" + room + "-label");
         roomlabel.classList.remove(classnames.hidden);
+
+        // Set room-info button link
+        const roomInfoButton = document.querySelector(`.${classnames.roomInfoButton}`)
+        roomInfoButton.href = `#/${space}/${room}/info`;
 
         // hide room selector
         if (roomSelectorWrap) {
