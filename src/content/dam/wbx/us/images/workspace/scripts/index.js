@@ -5,9 +5,9 @@ import Router from './router';
 import {canonicalPath, hardwarePathPart, homePath, isDevicePath, makePath, splitPath} from './paths';
 import classnames from './classnames';
 import deviceModal from './device-modal'
-import commonData from '../../data/common.json';
-import workspaces from '../../data/workspaces.json';
-import devicesByRoom from '../../data/devicesByRoom.json';
+import commonData from '../../../../../../../data/common.json';
+import workspaces from '../../../../../../../data/workspaces.json';
+import devicesByRoom from '../../../../../../../data/devicesByRoom.json';
 import { setTimeout } from 'core-js';
 
 const router = new Router();
@@ -83,13 +83,13 @@ const updateBGSizes = () => {
             let bgImg = document.querySelector(bgClass);
             if (bgImg) {
                 let backgroundPos = room.backgroundPosition[sizeClass];
-            
+
                 let imgWidth = bgImg.clientWidth;
                 let imgHeight = bgImg.clientHeight;
 
                 let projectedImgWidth = (windowHeight * 108) / 192;
                 var initialOffset = (imgWidth * backgroundPos.x)
-                
+
                 if (projectedImgWidth + (initialOffset * 2) < windowWidth) {
                     let newImageHeight = (windowWidth * imgHeight) / imgWidth;
                     newImageHeight = newImageHeight < windowHeight ? windowHeight : newImageHeight;
@@ -140,7 +140,7 @@ const placeHotSpots = (initialOffset, bgImg, room, bgContainerClass) => {
 
     let hotspotsQuery = bgContainerClass + " .ws-hotSpot"
     let hotspots = Array.from(document.querySelectorAll(hotspotsQuery));
-    
+
     room.hotSpots.forEach((element, index)=>{
         let hotspot = hotspots[index];
         let hOffset = imgWidth * element.x;
@@ -157,7 +157,7 @@ const currentSizeClass = () => {
             aSizeClass = sizeClass[0]
         }
     })
-    return aSizeClass; 
+    return aSizeClass;
 }
 
 // Routing for the initial view

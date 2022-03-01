@@ -20,19 +20,19 @@ module.exports = {
   devtool: isDev ? 'cheap-module-source-map' : 'source-map',
   entry: {
     main: [
-      path.resolve(__dirname, 'src/assets/scripts/index.js'),
-      path.resolve(__dirname, 'src/assets/styles/index.scss')
+      path.resolve(__dirname, 'src/content/dam/wbx/us/images/workspace/scripts/index.js'),
+      path.resolve(__dirname, 'src/content/dam/wbx/us/images/workspace/styles/index.scss')
     ],
     "category-page": [
-      path.resolve(__dirname, 'src/assets/scripts/category-page.js'),
-      path.resolve(__dirname, 'src/assets/styles/category-page.scss')
+      path.resolve(__dirname, 'src/content/dam/wbx/us/images/workspace/scripts/category-page.js'),
+      path.resolve(__dirname, 'src/content/dam/wbx/us/images/workspace/styles/category-page.scss')
 
     ]
   },
   output: {
     filename: isDev ? '[name].js' : '[name].[contenthash].js',
-    path: path.resolve(__dirname, '_site/assets'),
-    publicPath: '/assets/'
+    path: path.resolve(__dirname, '_site/content/dam/wbx/us/images/workspace'),
+    publicPath: '/content/dam/wbx/us/images/workspace/'
   },
   plugins: [
     new WebpackManifestPlugin(),
@@ -86,7 +86,7 @@ module.exports = {
   resolve: {
     alias: {
       // Helpful alias for importing assets
-      assets: path.resolve(__dirname, 'src/assets')
+      assets: path.resolve(__dirname, 'src/content/dam/wbx/us/images/workspace')
     }
   }
 };
