@@ -3,7 +3,7 @@
 {% macro render(common, workspace, room, vendorDevicesByRoom, devices) %}
   {# This div may be positioned off-screen and animated into place when the "info" CTA is clicked #}
   <div class="ws-room-info-modal-root ws-modal-root ws-displayNone">
-    {{ downloadPdf.render(common, room.pdfUrl, "ws-header-item") }}
+    {{ downloadPdf.render(common, "rooms/"+room.pdfFilename, "ws-header-item") }}
     <a class="ws-room-info-modal-close ws-modal-close" aria-label="Close" href="#/{{ workspace.slug }}/{{ room.slug }}">{% icon "close-x", "ws-close-x" %}</a>
     <div class="ws-top-rule"></div>
 
