@@ -269,6 +269,10 @@ export function toSelectedWorkSpace(space, room) {
         const roomlabel = document.querySelector('.' + classnames.selectedRoomLabel + '#' + space + "-" + room + "-label");
         roomlabel.classList.remove(classnames.hidden);
 
+        // Set room-info button link
+        const roomInfoButton = document.querySelector(`.${classnames.roomInfoButton}`)
+        roomInfoButton.href = `#/${space}/${room}/info`;
+
         // hide room selector
         if (roomSelectorWrap) {
             roomSelectorWrap.classList.remove(classnames.slideIn);
