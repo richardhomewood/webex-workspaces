@@ -30,6 +30,24 @@ $list-items-border-color: #c4c4c4;
     padding: 21px;
     overflow-x: hidden;
 
+    .ws-top-rule {
+      clear: both;
+      width: 100vw;
+      height: 0;
+      margin: 15px -21px;
+      border: 1px solid #c4c4c4;
+    }
+  }
+
+  .ws-room-info-modal-root:not(.ws-displayNone) {
+    min-height: 100vh;
+    left: 100vw;
+
+    &.slide-in {
+      transition: left 0.4s ease-out;
+      left: 0;
+    }
+
     .ws-download-pdf.ws-header-item {
       display: inline-block;
     }
@@ -47,24 +65,6 @@ $list-items-border-color: #c4c4c4;
         width: 16.64px;
         height: 16.64px;
       }
-    }
-
-    .ws-top-rule {
-      clear: both;
-      width: 100vw;
-      height: 0;
-      margin: 15px -21px;
-      border: 1px solid #c4c4c4;
-    }
-  }
-
-  .ws-room-info-modal-root:not(.ws-displayNone) {
-    min-height: 100vh;
-    left: 100vw;
-
-    &.slide-in {
-      transition: left 0.4s ease-out;
-      left: 0;
     }
 
     .ws-info-modal-room-name {
@@ -126,8 +126,23 @@ $list-items-border-color: #c4c4c4;
       top: 0;
     }
 
-    .ws-device {
+    a.ws-modal-close {
+      background-color: white;
+      display: block;
+      width: 17px;
+      height: 17px;
+      float: right;
+      position: relative;
+      top: -11px;
 
+      .ws-close-x {
+        width: 16.64px;
+        height: 16.64px;
+      }
+    }
+
+
+    .ws-device {
       .ws-device-name {
         margin: 40px auto 0;
         text-align: center;
