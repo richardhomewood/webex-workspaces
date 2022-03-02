@@ -34,6 +34,13 @@
         transition: left 0.3s linear 0s, width 0.3s linear 0s;
       }
     }
+
+    .ws-about-cta {
+      text-decoration: none;
+      span {
+        margin: 22px auto;
+      }
+    }
   }
 }
 
@@ -71,7 +78,7 @@
 
       .ws-about-cta {
         position: absolute;
-        top: 0px;
+        top: 0;
         right: 20px;
         width: 32px;
         height: 32px;
@@ -82,6 +89,10 @@
         color: #fff;
         font-size: 15px;
         line-height: 14px;
+
+        span {
+          margin: 10px auto;
+        }
       }
     }
   }

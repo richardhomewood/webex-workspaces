@@ -11,6 +11,7 @@ module.exports = {
     animateIn: 'animate-in',
 
     // Immersive view containers
+    aboutWorkspaceCta: "ws-about-cta",
     spacesBgContainer: ".ws-room-background-image-container",
     hotSpot:".ws-hotSpot",
     defaultRoomBg:".ws-room-background-image.ws-default-room-bg",
@@ -32,6 +33,7 @@ module.exports = {
     showMoreRoomsBtn: 'ws-show-more-rooms-btn',
     workspaceContainer: 'ws-workspace',
     workspaceNavigation: 'ws-workspace-nav',
+
 
     // Modal view containers
     deviceModalRoot: 'ws-device-modal-root',

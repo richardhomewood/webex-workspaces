@@ -24,6 +24,7 @@ let hammertime;
 export function updateUi(location, delay = 200) {
     const path = location.hash.substring(1);
     setTimeout(() => {
+        updateWorkspaceCta(path);
         updateNav(path);
         updateRoomsSelector(path);
         updateBGSizes();
@@ -141,7 +142,7 @@ export function toSelectedWorkSpace(space, room) {
         }
     })
 
-    //if there are no roomlelectors to hide then show the relevant room selector
+    //if there are no roomSelectors to hide then show the relevant room selector
     if (roomSelector && roomSelector.classList.contains(classnames.hidden) && otherRoomSelectors.length === 0) {
         roomSelector.classList.remove(classnames.hidden);
     }
@@ -338,8 +339,18 @@ const updateNav = function (path) {
         navSelector.style.left = `${left}px`;
         navSelector.style.width = `${width}px`;
     }, 1)
-
 }
+
+const updateWorkspaceCta = function (path) {
+    const [workspaceId, roomId] = splitPath(path);
+    let href = `./workspaces/${workspaceId}.html`;
+    if (roomId !== undefined) {
+        href = `${href}#/${roomId}`;
+    }
+
+    const aboutCtaElements = document.getElementsByClassName(classnames.aboutWorkspaceCta);
+    Array.from(aboutCtaElements).forEach(anchor => anchor.href = href);
+};
 
 let swipingRoomSelector;
 
