@@ -1,5 +1,5 @@
 {
-  "homeSpace": {
+  "home": {
     "kitchen": [
       "webex-desk-mini",
       "cisco-headset-730",
@@ -15,7 +15,7 @@
       "ms120-8-fp"
     ]
   },
-  "officeSpace": {
+  "office": {
     "hotdesk": [
       "webex-desk-hub",
       "webex-desk-camera"

@@ -18,7 +18,7 @@
     "build:webpack": "webpack",
     "build:eleventy": "eleventy",
     "package": "cross-env NODE_ENV=production npm-run-all -l clean build:* package:zip",
-    "package:zip": "(cd _site; zip -9 -r ../webex-workspaces-site.zip content/ workspaces/)",
+    "package:zip": "(cd _site; zip -9 -r ../webex-workspaces-site.zip content/ workspaces/ workspaces.html)",
     "analyze": "npm-run-all build analyze:*",
     "analyze:js": "source-map-explorer _site/**/*.js _site/**/*.js.map"
   },
