@@ -8,8 +8,14 @@ module.exports = {
     fadeOut: 'fadeOut',
     slideIn: 'slide-in',
     reversed: 'reversed',
+    animateIn: 'animate-in',
 
     // Immersive view containers
+    spacesBgContainer: ".ws-room-background-image-container",
+    hotSpot:".ws-hotSpot",
+    defaultRoomBg:".ws-room-background-image.ws-default-room-bg",
+    defaultRoomBgImg:".ws-room-background-image.ws-default-room-bg img",
+    rotatingImgs:".ws-initial-rotating-background-image .ws-rotating-background-image img",
     initialView: 'ws-initial-view',
     defaultRoomBackground: 'ws-default-room-bg',
     selectorWrapper: 'ws-workspaces-rooms',
