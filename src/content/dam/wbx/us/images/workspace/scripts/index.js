@@ -55,8 +55,7 @@ const updateBGSizes = () => {
     const initview = document.getElementsByClassName(classnames.initialView)[0];
     if (!initview.classList.contains(classnames.hidden)) {
         //update animating imgs on initial view
-        let rotatingImgsClass = ".ws-initial-rotating-background-image .ws-rotating-background-image img";
-        let rotatingImgs = Array.from(document.querySelectorAll(rotatingImgsClass));
+        let rotatingImgs = Array.from(document.querySelectorAll(classnames.rotatingImgs));
         let rImgWidth = rotatingImgs[0].clientWidth;
         let rImgHeight = rotatingImgs[0].clientHeight;
         let projectedRImgWidth = (windowHeight * 108) / 192;
@@ -79,6 +78,9 @@ const updateBGSizes = () => {
     commonData.orderedWorkspaceIds.forEach((workspaceId) => {
         let rooms = workspaces[workspaceId].rooms;
         rooms.forEach((room) => {
+
+            let defaultBgImgClass = classnames.defaultRoomBg + "." + workspaceId + "-room-bg img";
+            let defaultBgImg = document.querySelector(defaultBgImgClass);
             let bgContainerClass = "." + workspaceId + "-" + room.slug + "-room-bg:not(.ws-displayNone)";
             let bgClass = bgContainerClass + " img";
             let bgImg = document.querySelector(bgClass);
@@ -110,8 +112,10 @@ const updateBGSizes = () => {
                 maxYPanOffset = (-(setImageHeight - windowHeight) / 2);
                 minYPanOffset = ((setImageHeight - windowHeight) / 2);
 
-                let panOffsetX = panOffset.x > maxXPanOffset ? maxXPanOffset : panOffset.x < minXPanOffset ? minXPanOffset : panOffset.x ;
-                let panOffsetY = panOffset.y == 0 ? 0 : panOffset.y > maxYPanOffset ? maxYPanOffset : panOffset.y < minYPanOffset ? minYPanOffset : panOffset.y ;
+                let scaledPanOffsetX = (panOffset.x * setImageWidth)/windowWidth;
+                let panOffsetX = scaledPanOffsetX > maxXPanOffset ? maxXPanOffset : scaledPanOffsetX < minXPanOffset ? minXPanOffset : scaledPanOffsetX;
+                let scaledPanOffsetY = (panOffset.y * setImageHeight)/windowHeight;
+                let panOffsetY = panOffset.y == 0 ? 0 : scaledPanOffsetY > maxYPanOffset ? maxYPanOffset : scaledPanOffsetY < minYPanOffset ? minYPanOffset : scaledPanOffsetY ;
 
                 var xOffset = Math.abs(initialOffset) === 0 ? initialOffset : initialOffset + panOffsetX;
                 var yOffset = panOffsetY;
@@ -119,7 +123,8 @@ const updateBGSizes = () => {
                 let newTransform = 'translate(calc(-50% + ' + xOffset + 'px), calc(-50% + ' + yOffset + 'px))';
 
                 bgImg.style["transform"] = newTransform;
-                
+                defaultBgImg.style["transform"] = newTransform;
+
                 setTimeout(() => {
                     placeHotSpots({clientWidth: setImageWidth, clientHeight: setImageHeight}, room, bgContainerClass, {x: xOffset, y: yOffset});
                     hasUpdatedBGs = true
@@ -129,8 +134,7 @@ const updateBGSizes = () => {
     })
 
     //updating default room bgs
-    let defaultBgsClass = ".ws-room-background-image.ws-default-room-bg img";
-    let defaultBgImgs = Array.from(document.querySelectorAll(defaultBgsClass));
+    let defaultBgImgs = Array.from(document.querySelectorAll(classnames.defaultRoomBgImg));
     let dImgWidth = defaultBgImgs[0].clientWidth;
     let dImgHeight = defaultBgImgs[0].clientHeight;
 
@@ -161,7 +165,7 @@ const placeHotSpots = (bgImg, room, bgContainerClass, offset) => {
     let imgWidth = bgImg.clientWidth;
     let imgHeight = bgImg.clientHeight;
 
-    let hotspotsQuery = bgContainerClass + " .ws-hotSpot"
+    let hotspotsQuery = bgContainerClass + classnames.hotSpot;
     let hotspots = Array.from(document.querySelectorAll(hotspotsQuery));
 
     let imgBaseWidth = 1920;
@@ -250,6 +254,9 @@ const backToHome = function () {
 
     if (roomSelectorWrap && roomSelectorWrap.classList.contains(classnames.slideIn)) {
         roomSelectorWrap.classList.remove(classnames.slideIn);
+        setTimeout(()=>{
+            roomSelectorWrap.classList.add(classnames.hidden);
+        }, 500)
     }
 
     initview.style['zIndex'] = 1;
@@ -328,10 +335,9 @@ const toSelectedWorkSpace = function (space, room) {
     }
 
     if (room) {
-        const bgToHammer = document.querySelector(".ws-room-background-image-container");//document.querySelector(".homeSpace-homeOffice-room-bg img");
+        const bgToHammer = document.querySelector(classnames.spacesBgContainer);
         hammertime = new Hammer(bgToHammer);
         hammertime.get('pan').set({ direction: Hammer.DIRECTION_ALL });
-        //hammertime.on("panleft panright panup pandown panend", function(ev) {
         hammertime.on("panleft panright panup pandown panend panstart", function(ev) {
 
             let tempxOffset = panOffset.previousX + ev.deltaX;
@@ -364,10 +370,10 @@ const toSelectedWorkSpace = function (space, room) {
     const bgToHideCSSSelector = `.${classnames.roomBackground}:not(.${classnames.hidden}), .${classnames.defaultRoomBackground}:not(.${classnames.hidden})`;
     const bgsToHide = Array.from(document.querySelectorAll(bgToHideCSSSelector));
 
-    const hotSpotsToHideCSSSelector = `.${classnames.roomBackground}:not(.${classnames.hidden}) .ws-hotSpot, .${classnames.defaultRoomBackground}:not(.${classnames.hidden}) .ws-hotSpot`;
+    const hotSpotsToHideCSSSelector = `.${classnames.roomBackground}:not(.${classnames.hidden}) ` + classnames.hotSpot + `, .${classnames.defaultRoomBackground}:not(.${classnames.hidden}) ` + classnames.hotSpot;
     const hotSpotsToHide = Array.from(document.querySelectorAll(hotSpotsToHideCSSSelector));
 
-    const hotSpotsToShowCSSSelector = room ? `.${classnames.roomBackground}.${space}-${room}${classnames.roomBackgroundSuffix} .ws-hotSpot` : ``;
+    const hotSpotsToShowCSSSelector = room ? `.${classnames.roomBackground}.${space}-${room}${classnames.roomBackgroundSuffix} ` + classnames.hotSpot : ``;
     const hotSpotsToShow = room ? Array.from(document.querySelectorAll(hotSpotsToShowCSSSelector)) : [];
 
     // Deselect all rooms
@@ -394,6 +400,7 @@ const toSelectedWorkSpace = function (space, room) {
 
                 setTimeout(() => {
                     if (roomSelectorWrap && !room) {
+                        roomSelectorWrap.classList.remove(classnames.hidden);
                         roomSelectorWrap.classList.add(classnames.slideIn);
                     }
                 }, 500);
@@ -468,14 +475,14 @@ const toSelectedWorkSpace = function (space, room) {
         setTimeout(()=>{
             hotSpotsToShow.forEach((element, index) => {
                 setTimeout(()=>{
-                    element.classList.add('animate-in');
+                    element.classList.add(classnames.animateIn);
                 }, 300 * index);
             })
         }, 300);
     })
 
     //if moving from workspace landing to selected room
-    let roomContent = document.querySelector('.ws-more-rooms-text')
+    let roomContent = document.querySelector('.' + classnames.selectedRoomContent)
     if (room) {
         panOffset = {
             x:0, 
@@ -502,12 +509,15 @@ const toSelectedWorkSpace = function (space, room) {
         })
 
         //show relevant label
-        let roomlabel = document.querySelector('.ws-room-label#' + space + "-" + room + "-label");
+        let roomlabel = document.querySelector('.' + classnames.selectedRoomLabel + '#' + space + "-" + room + "-label");
         roomlabel.classList.remove(classnames.hidden);
 
         // hide room selector
         if (roomSelectorWrap) {
             roomSelectorWrap.classList.remove(classnames.slideIn);
+            setTimeout(()=>{
+                roomSelectorWrap.classList.add(classnames.hidden);
+            },500)
         }
 
         // show selected room content
@@ -521,7 +531,10 @@ const toSelectedWorkSpace = function (space, room) {
         roomContent.classList.remove(classnames.slideIn)
         setTimeout(()=>{
             if (roomSelectorWrap && !roomSelectorWrap.classList.contains(classnames.slideIn)) {
-                roomSelectorWrap.classList.add(classnames.slideIn);
+                roomSelectorWrap.classList.remove(classnames.hidden);
+                setTimeout(()=>{
+                    roomSelectorWrap.classList.add(classnames.slideIn);
+                }, 100);
             }
         }, 750);
     }
