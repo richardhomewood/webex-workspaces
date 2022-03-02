@@ -165,7 +165,7 @@ const placeHotSpots = (bgImg, room, bgContainerClass, offset) => {
     let imgWidth = bgImg.clientWidth;
     let imgHeight = bgImg.clientHeight;
 
-    let hotspotsQuery = bgContainerClass + classnames.hotSpot;
+    let hotspotsQuery = bgContainerClass + " " + classnames.hotSpot;
     let hotspots = Array.from(document.querySelectorAll(hotspotsQuery));
 
     let imgBaseWidth = 1920;
