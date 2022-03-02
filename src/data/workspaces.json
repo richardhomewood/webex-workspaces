@@ -9,6 +9,7 @@
       {
         "name": "Home Office",
         "slug": "homeOffice",
+        "pdfFilename": "HybridWorkExperiences_EBook_2021_HomeOffice.pdf",
         "background": "homeoffice.png",
         "backgroundPosition": {
             "ws-XS" : {
@@ -72,6 +73,7 @@
       {
         "name": "Kitchen Room",
         "slug": "kitchen",
+        "pdfFilename": "HybridWorkExperiences_EBook_2021_Kitchen.pdf",
         "background": "kitchen.png",
         "backgroundPosition": {
             "ws-XS" : {
@@ -106,7 +108,7 @@
                 "x": 922,
                 "y": 622
             }
-            
+
         ],
         "roomDescription": [
           "Not everyone has the luxury of a dedicated home office. For many of us, our kitchens have become our place to work. These tight—and often temporary workspaces—also include a recipe of distractions, noise, and guest appearances.",
@@ -125,6 +127,7 @@
       {
         "name": "Hotdesk",
         "slug": "hotdesk",
+        "pdfFilename": "HybridWorkExperiences_EBook_2021_Hotdesk.pdf",
         "background": "hotdesk.png",
         "backgroundPosition": {
             "ws-XS" : {
@@ -164,6 +167,7 @@
       {
         "name": "Ideation Space",
         "slug": "ideationSpace",
+        "pdfFilename": "HybridWorkExperiences_EBook_2021_IdeationSpace.pdf",
         "background": "ideation.png",
         "backgroundPosition": {
             "ws-XS" : {
@@ -193,6 +197,7 @@
       {
         "name": "Small Conference Room",
         "slug": "smallConferenceRoom",
+        "pdfFilename": "HybridWorkExperiences_EBook_2021_SmallConferenceRoom.pdf",
         "background": "smallmeeting.png",
         "backgroundPosition": {
             "ws-XS" : {
@@ -236,6 +241,7 @@
       {
         "name": "Cafe",
         "slug": "cafe",
+        "pdfFilename": "HybridWorkExperiences_EBook_2021_Cafe.pdf",
         "background": "coffee.png",
         "backgroundPosition": {
             "ws-XS" : {
