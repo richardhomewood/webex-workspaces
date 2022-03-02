@@ -8,7 +8,7 @@
   "contactCtaText": "Contact",
 
   "sizeClasses": [["ws-XL", "", 10000], ["ws-L", "L_", 1919], ["ws-M", "M_", 1365], ["ws-S", "S_", 1279], ["ws-XS", "XS_", 767]],
-  "orderedWorkspaceIds": ["homeSpace", "officeSpace", "anywhere"],
+  "orderedWorkspaceIds": ["home", "office", "anywhere"],
   "contactUrl": "https://www.webex.com/contact-sales.html?locale=US",
 
   "deviceModal": {

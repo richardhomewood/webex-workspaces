@@ -1,5 +1,5 @@
 {
-  "homeSpace": {
+  "home": {
     "kitchen": [
       "webex-suite"
     ],
@@ -7,7 +7,7 @@
       "webex-suite"
     ]
   },
-  "officeSpace": {
+  "office": {
     "hotdesk": [],
     "ideationSpace": [],
     "smallConferenceRoom": [

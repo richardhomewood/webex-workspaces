@@ -1,8 +1,7 @@
 {
-  "homeSpace": {
+  "home": {
     "name": "Home Spaces",
-    "slug": "homeSpace",
-    "route": "homeSpace-homeOffice",
+    "slug": "home",
     "background": "homeoffice.png",
     "categoryPageText": "Today, our homes have become an extension of the office with 68% of people now splitting time between the two. While the sudden shift to remote work had people scrambling to put together makeshift workspaces, the time has come to design your home space to work harder for you—while keeping distractions at bay.",
     "rooms": [
@@ -117,10 +116,9 @@
       }
     ]
   },
-  "officeSpace": {
+  "office": {
     "name": "Office Spaces",
-    "slug": "officeSpace",
-    "route": "officeSpace-hotdesk",
+    "slug": "office",
     "background": "hotdesk.png",
     "categoryPageText":"Gone are the days where the office was a permanent destination for all employees. With people now constantly coming and going, each room needs to be designed to serve a specific purpose. In addition, 97% want changes to make the office safer before they return, which only adds another layer of complexity to your office transformation.",
     "rooms": [
@@ -234,7 +232,6 @@
   "anywhere": {
     "name": "Anywhere",
     "slug": "anywhere",
-    "route": "anywhere-cafe",
     "background": "coffee.png",
     "categoryPageText": "Work happens anywhere, even on the go—whether that’s traveling, enjoying a cup of coffee at your favorite café, or in the field on the frontlines. You need the right solutions that will keep you connected, focused, and secure so your work keeps on moving right alongside you.",
     "rooms": [
