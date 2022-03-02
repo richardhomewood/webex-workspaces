@@ -109,7 +109,24 @@
             height: 12px;
             border-radius: 6px;
             background-color: #fff;
-            transition: opacity 0.2s ease-out 0s;
+            transition: opacity 0.2s ease-out 0s, width 0.2s ease-out 0s,
+              height 0.2s ease-out 0s, border-radius 0.2s ease-out 0s;
+          }
+
+          &:hover {
+            .ws-hotSpot-inner {
+              width: 20px;
+              height: 20px;
+              border-radius: 10px;
+            }
+          }
+
+          &:active {
+            .ws-hotSpot-inner {
+              width: 12px;
+              height: 12px;
+              border-radius: 6px;
+            }
           }
 
           &.animate-in {
