@@ -23,19 +23,12 @@ $list-items-border-color: #c4c4c4;
     overflow: auto;
   }
 
-  .ws-device-modal-root:not(.ws-displayNone) {
+  .ws-modal-root:not(.ws-displayNone) {
     display: block;
     position: relative;
     background-color: white;
     padding: 21px;
     overflow-x: hidden;
-
-    // Initially positioned off-screen
-    top: 100vh;
-    &.slide-in {
-      transition: top 0.4s ease-out;
-      top: 0;
-    }
 
     .ws-download-pdf.ws-header-item {
       display: inline-block;
@@ -63,12 +56,82 @@ $list-items-border-color: #c4c4c4;
       margin: 15px -21px;
       border: 1px solid #c4c4c4;
     }
+  }
+
+  .ws-room-info-modal-root:not(.ws-displayNone) {
+    min-height: 100vh;
+    left: 100vw;
+
+    &.slide-in {
+      transition: left 0.4s ease-out;
+      left: 0;
+    }
+
+    .ws-info-modal-room-name {
+      @include ws-h1;
+    }
+
+    .ws-info-modal-text {
+      color: #545454;
+      @include ws-med-body-reg;
+    }
+
+    .ws-info-modal-section-heading {
+      @include ws-large-body-med;
+    }
+
+    .ws-info-modal-vendors {
+      .ws-info-modal-vendor {
+        @include ws-large-body-med;
+
+        .ws-info-modal-vendor-name {
+          color: #979797;
+
+          // Top padding and border for between vendors at mobile and tablet breakpoints
+          padding-top: 16px;
+          border-top: 1px solid #c4c4c4;
+        }
+
+        &:first-child {
+          .ws-info-modal-vendor-name {
+            // Remove the top padding and border only for the first vendor
+            padding-top: 0;
+            border-top: none;
+          }
+        }
+
+        ul.ws-vendor-device-list {
+          color: black;
+          padding: 0;
+          margin-bottom: 0;
+
+          li {
+            list-style: none;
+            padding: 16px 0;
+            border-top: 1px solid #c4c4c4;
+          }
+        }
+      }
+
+    }
+  }
+
+  .ws-device-modal-root:not(.ws-displayNone) {
+
+    // Initially positioned off-screen
+    top: 100vh;
+
+    &.slide-in {
+      transition: top 0.4s ease-out;
+      top: 0;
+    }
 
     .ws-device {
 
       .ws-device-name {
         margin: 40px auto 0;
         text-align: center;
+        @include ws-h2;
       }
 
       .ws-device-intro-text {
@@ -106,9 +169,12 @@ $list-items-border-color: #c4c4c4;
         .ws-modal-section {
           margin-top: 40px;
           flex: 0 0 100%;
+
           h6.ws-modal-section-heading {
+            @include ws-h6;
             margin: 0 0 40px;
           }
+
           ul {
             margin-bottom: 0;
           }
@@ -184,7 +250,8 @@ $list-items-border-color: #c4c4c4;
         .ws-device-specs.ws-modal-section {
           ul {
             // Make sure we only have room for 2 per row.
-            max-width: calc((170px * 2) +  14px);
+            max-width: calc((170px * 2) + 14px);
+
             li {
               // Set bottom margin on all, then remove from last row
               margin-bottom: 21px;
@@ -217,12 +284,32 @@ $list-items-border-color: #c4c4c4;
 
 @media only screen and (min-width: 768px) and (max-width: 1279px) {
   #ws-modal-layer {
-    .ws-device-modal-root:not(.ws-displayNone) {
+    .ws-modal-root:not(.ws-displayNone) {
       padding: 32px;
-
       .ws-top-rule {
         margin: 30px -32px;
       }
+    }
+
+    .ws-room-info-modal-root:not(.ws-displayNone) {
+      .ws-info-modal-text {
+        width: 90%;
+        font-size: 18px;
+        line-height: 26px;
+        letter-spacing: -0.02em;
+      }
+      .ws-info-modal-section-heading {
+        font-size: 24px;
+        line-height: 32px;
+        letter-spacing: -0.02em;
+        margin-top: 100px;
+      }
+      .ws-info-modal-vendors {
+        width: 85%;
+      }
+    }
+
+    .ws-device-modal-root:not(.ws-displayNone) {
 
       .ws-device {
 
@@ -232,18 +319,20 @@ $list-items-border-color: #c4c4c4;
 
         .ws-device-features.ws-modal-section {
           ul {
-             li {
-               margin-left: 40px;
-               margin-right: 40px;
-               padding-left: 20px;
-               padding-right: 20px;
-             }
+            li {
+              margin-left: 40px;
+              margin-right: 40px;
+              padding-left: 20px;
+              padding-right: 20px;
+            }
           }
         }
+
         .ws-device-specs.ws-modal-section {
           ul {
             // Make sure we only have room for 3 per row.
-            max-width: calc((170px * 3) +  (20px * 2));
+            max-width: calc((170px * 3) + (20px * 2));
+
             li {
               // At this breakpoint, there can only be up to 2 rows of up to 3 <li> each
               // Set bottom margin on the first row
@@ -270,28 +359,83 @@ $list-items-border-color: #c4c4c4;
   #ws-modal-layer {
     width: 90%;
 
-    h2 {
-      @include ws-h2;
-      @media only screen and (min-width: 1280px) {
-        font-family: 'CiscoSansTT-Medium', sans-serif;
-        font-size: 64px;
-        line-height: 64px;
-        letter-spacing: -0.04em;
-      }
-
-    }
-
-    .ws-device-modal-root:not(.ws-displayNone) {
+    .ws-modal-root:not(.ws-displayNone) {
       padding: 32px 64px;
-
       .ws-top-rule {
         margin: 32px -64px;
       }
+    }
+
+    .ws-room-info-modal-root:not(.ws-displayNone) {
+      .ws-info-modal-room-name {
+        font-size: 64px;
+        line-height: 64px;
+        letter-spacing: -0.04em;
+        margin-bottom: 24px;
+      }
+      .ws-info-modal-text {
+        width: 75%;
+        font-size: 18px;
+        line-height: 26px;
+        letter-spacing: -0.02em;
+      }
+      .ws-info-modal-section-heading {
+        font-size: 24px;
+        line-height: 32px;
+        letter-spacing: -0.02em;
+        margin-top: 79px;
+      }
+      .ws-info-modal-vendors {
+        display: flex;
+
+        .ws-info-modal-vendor {
+          // Note: 50% minus the nth-child margin width
+          flex: 0 0 calc(50% - 60px);
+          &:nth-child(odd) {
+            margin-right: 60px;
+          }
+          &:nth-child(even) {
+            margin-left: 60px;
+          }
+
+
+          @include ws-large-body-med;
+
+          .ws-info-modal-vendor-name {
+            color: #979797;
+
+            // No top padding and border for between vendors; they are not stacked
+            padding-top: 0;
+            border-top: none;
+            margin-bottom: 38px;
+          }
+
+
+          ul.ws-vendor-device-list {
+            color: black;
+            padding: 0;
+            margin-bottom: 0;
+
+            li {
+              list-style: none;
+              padding: 16px 0;
+              border-top: 1px solid #c4c4c4;
+            }
+          }
+        }
+
+      }
+    }
+
+    .ws-device-modal-root:not(.ws-displayNone) {
 
       .ws-device {
-
         .ws-device-name {
           margin-top: 69px;
+          font-family: 'CiscoSansTT-Medium', sans-serif;
+          font-size: 64px;
+          line-height: 64px;
+          letter-spacing: -0.04em;
         }
 
         .ws-device-intro-text {
@@ -302,9 +446,11 @@ $list-items-border-color: #c4c4c4;
           .ws-modal-section {
             margin-top: 80px;
             flex: 0 0 calc(50% - 30px);
+
             h6.ws-modal-section-heading {
               margin: 0 0 40px;
             }
+
             ul {
               margin-bottom: 0;
             }
@@ -313,6 +459,7 @@ $list-items-border-color: #c4c4c4;
 
         .ws-device-features.ws-modal-section {
           flex: 0 0 100%;
+
           ul {
             li {
               margin-left: 71px;
@@ -322,10 +469,12 @@ $list-items-border-color: #c4c4c4;
             }
           }
         }
+
         .ws-device-specs.ws-modal-section {
           ul {
             // Make sure we only have room for 2 per row.
-            max-width: calc((230px * 2) +  30px);
+            max-width: calc((230px * 2) + 30px);
+
             li {
               width: 230px;
               max-width: 230px;
@@ -361,6 +510,7 @@ $list-items-border-color: #c4c4c4;
 
         .ws-config-guide.ws-modal-section {
           margin-left: 60px;
+
           img {
             margin-bottom: 29px;
           }
@@ -390,15 +540,17 @@ $list-items-border-color: #c4c4c4;
 
 @media only screen and (min-width: 1920px) {
   #ws-modal-layer {
-    .ws-device-modal-root:not(.ws-displayNone) {
-      padding: 32px 72px;
 
+    .ws-modal-root:not(.ws-displayNone) {
+      padding: 32px 72px;
       .ws-top-rule {
         margin: 32px -72px;
       }
+    }
+
+    .ws-device-modal-root:not(.ws-displayNone) {
 
       .ws-device {
-
         .ws-modal-sections {
           .ws-modal-section {
             flex: 0 0 calc(50% - 53px);
@@ -417,9 +569,10 @@ $list-items-border-color: #c4c4c4;
         }
 
         .ws-device-specs.ws-modal-section {
-          ul{
+          ul {
             // Make sure we only have room for 3 per row.
-            max-width: calc((230px * 3) +  (30px * 2));
+            max-width: calc((230px * 3) + (30px * 2));
+
             li {
               // Override the higher-precedence nth-child rules at the lower breakpoint.
               margin-bottom: 21px !important;
@@ -437,6 +590,7 @@ $list-items-border-color: #c4c4c4;
 
         .ws-config-guide.ws-modal-section {
           margin-left: 106px;
+
           img {
             margin-bottom: 29px;
           }
