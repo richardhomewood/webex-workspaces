@@ -227,6 +227,7 @@ $list-items-border-color: #c4c4c4;
             border-radius: 16px;
             min-height: 196px;
             max-width: 170px;
+            margin-bottom: 21px;
 
             svg.icon {
               display: block;
@@ -260,20 +261,6 @@ $list-items-border-color: #c4c4c4;
             max-width: calc((170px * 2) + 14px);
 
             li {
-              // Set bottom margin on all, then remove from last row
-              margin-bottom: 21px;
-              // Select the last-child if it is also odd
-              &:last-child:nth-child(odd) {
-                margin-bottom: unset;
-              }
-
-              // Select the second-to-last child if it is also odd
-              &:nth-last-child(2):nth-child(odd),
-                // Select the last-child if it is also even
-              &:last-child:nth-child(even) {
-                margin-bottom: unset;
-              }
-
               // Select the left column only
               &:nth-child(odd) {
                 margin-right: 14px;
@@ -319,7 +306,6 @@ $list-items-border-color: #c4c4c4;
     .ws-device-modal-root:not(.ws-displayNone) {
 
       .ws-device {
-
         .ws-device-name {
           margin-top: 80px;
         }
@@ -342,18 +328,12 @@ $list-items-border-color: #c4c4c4;
 
             li {
               // At this breakpoint, there can only be up to 2 rows of up to 3 <li> each
-              // Set bottom margin on the first row
-              &:nth-child(-n+3) {
-                margin-bottom: 21px;
-              }
-
+              flex: 0 0 33%;
               // Select every 3rd child, starting at the first
               // Select every 3rd child, starting at the second
               &:nth-child(3n+1), &:nth-child(3n+2) {
                 margin-right: 20px;
               }
-
-              flex: 0 0 calc(33%);
             }
           }
         }
@@ -396,16 +376,6 @@ $list-items-border-color: #c4c4c4;
         display: flex;
 
         .ws-info-modal-vendor {
-          // Note: 50% minus the nth-child margin width
-          flex: 0 0 calc(50% - 60px);
-          &:nth-child(odd) {
-            margin-right: 60px;
-          }
-          &:nth-child(even) {
-            margin-left: 60px;
-          }
-
-
           @include ws-large-body-med;
 
           .ws-info-modal-vendor-name {
@@ -452,7 +422,6 @@ $list-items-border-color: #c4c4c4;
         .ws-modal-sections {
           .ws-modal-section {
             margin-top: 80px;
-            flex: 0 0 calc(50% - 30px);
 
             h6.ws-modal-section-heading {
               margin: 0 0 40px;
@@ -465,8 +434,6 @@ $list-items-border-color: #c4c4c4;
         }
 
         .ws-device-features.ws-modal-section {
-          flex: 0 0 100%;
-
           ul {
             li {
               margin-left: 71px;
@@ -479,33 +446,17 @@ $list-items-border-color: #c4c4c4;
 
         .ws-device-specs.ws-modal-section {
           ul {
-            // Make sure we only have room for 2 per row.
-            max-width: calc((230px * 2) + 30px);
+            // Make sure we only have room for 4 per row (plus 3 gutters).
+            max-width: calc((230px * 4) + (30px * 3));
 
             li {
-              width: 230px;
+              flex: 0 0 25%;
               max-width: 230px;
-              // Set bottom margin on all, then remove from last row
-              margin-bottom: 21px;
-              // Select the last-child if it is also odd
-              &:last-child:nth-child(odd) {
-                margin-bottom: unset;
+              // Set right margin on all, then remove from selected
+              margin-right: 30px;
+              &:nth-child(4n+4) {
+                margin-right: 0;
               }
-
-              // Select the second-to-last child if it is also odd
-              &:nth-last-child(2):nth-child(odd),
-                // Select the last-child if it is also even
-              &:last-child:nth-child(even) {
-                margin-bottom: unset;
-              }
-
-              // Select the left column only
-              &:nth-child(odd) {
-                margin-right: 30px;
-              }
-
-              // Flex to 50% minus half the margin-right value just above
-              flex: 0 0 calc(50% - 15px);
 
               span {
                 margin-left: 24px;
@@ -550,15 +501,7 @@ $list-items-border-color: #c4c4c4;
     .ws-device-modal-root:not(.ws-displayNone) {
 
       .ws-device {
-        .ws-modal-sections {
-          .ws-modal-section {
-            flex: 0 0 calc(50% - 53px);
-          }
-        }
-
         .ws-device-features.ws-modal-section {
-          flex: 0 0 100%;
-
           ul {
             li {
               margin-left: 132px;
@@ -569,20 +512,17 @@ $list-items-border-color: #c4c4c4;
 
         .ws-device-specs.ws-modal-section {
           ul {
-            // Make sure we only have room for 3 per row.
-            max-width: calc((230px * 3) + (30px * 2));
+            // Make sure we only have room for 6 per row (plus 5 gutters).
+            max-width: calc((230px * 6) + (30px * 5));
 
             li {
-              // Override the higher-precedence nth-child rules at the lower breakpoint.
-              margin-bottom: 21px !important;
-
-              // Select every 3rd child, starting at the first
-              // Select every 3rd child, starting at the second
-              &:nth-child(3n+1), &:nth-child(3n+2) {
-                margin-right: 30px;
+              flex: 0 0 calc(100%/6);
+              // Use important to reset nth-child stuff at lower breakpoints
+              margin-right: 30px !important;
+              &:nth-child(6n+6) {
+                margin-right: 0 !important;
+                border-color: green;
               }
-
-              flex: 0 0 calc(33% - (30px));
             }
           }
         }
