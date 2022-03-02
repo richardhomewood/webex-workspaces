@@ -35,32 +35,32 @@
                 "y": 443
             },
             {
-                "slug":"webex-room-kit-mini",
+                "slug":"ms120-8-fp",
                 "x": 533,
                 "y": 324
             },
             {
-                "slug":"webex-room-navigator",
+                "slug":"mx67c",
                 "x": 646,
                 "y": 317
             },
             {
-                "slug":"bo-cisco-980",
+                "slug":"mr46",
                 "x": 740,
                 "y": 277
             },
             {
-                "slug":"mr46",
+                "slug":"webex-room-navigator",
                 "x": 907,
                 "y": 555
             },
             {
-                "slug":"mx67c",
+                "slug":"webex-room-kit-mini",
                 "x": 1209,
                 "y": 555
             },
             {
-                "slug":"ms120-8-fp",
+                "slug":"bo-cisco-980",
                 "x": 1209,
                 "y": 704
             }
@@ -223,7 +223,7 @@
                 "y": 672
             },
             {
-                "slug":"",
+                "slug":"webex-room-navigator",
                 "x": 902,
                 "y": 513
             }
