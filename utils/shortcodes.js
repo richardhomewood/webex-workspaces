@@ -7,6 +7,7 @@ const markdown = require('./markdown');
 const iconDefaultSize = 24;
 const defaultSizes = '90vw';
 const defaultImagesSizes = [1920, 1280, 640, 320];
+const assetsDir = 'content/dam/wbx/us/images/workspace';
 
 const isFullUrl = (url) => {
   try {
@@ -16,7 +17,7 @@ const isFullUrl = (url) => {
   }
 };
 
-const manifestPath = path.resolve(__dirname, '../_site/content/dam/wbx/us/images/workspace/manifest.json');
+const manifestPath = path.resolve(__dirname, `../_site/${assetsDir}/manifest.json`);
 
 module.exports = {
   // Allow embedding markdown in `.njk` files
@@ -30,7 +31,7 @@ module.exports = {
   webpack: async (name) =>
     new Promise((resolve) => {
       fs.readFile(manifestPath, { encoding: 'utf8' }, (err, data) =>
-        resolve(err ? `/content/dam/wbx/us/images/workspace/${name}` : JSON.parse(data)[name])
+        resolve(err ? `/${assetsDir}/${name}` : JSON.parse(data)[name])
       );
     }),
 
@@ -44,7 +45,7 @@ module.exports = {
     }" role="img" aria-hidden="true" width="${size[0]}" height="${
       size[1] || size[0]
     }">
-      <use xlink:href="/content/dam/wbx/us/images/workspace/images/sprite.svg#${name}"></use>
+      <use xlink:href="/${assetsDir}/images/sprite.svg#${name}"></use>
     </svg>`;
   },
 
@@ -66,15 +67,15 @@ module.exports = {
     const sizes = args[5] ?? defaultSizes;
 
     const extension = path.extname(src).slice(1).toLowerCase();
-    const fullSrc = isFullUrl(src) ? src : `./src/content/dam/wbx/us/images/workspace/images/${src}`;
+    const fullSrc = isFullUrl(src) ? src : `./src/${assetsDir}/images/${src}`;
 
     let stats;
     try {
       stats = await Image(fullSrc, {
         widths: defaultImagesSizes,
         formats: extension === 'webp' ? ['webp', 'jpeg'] : ['webp', extension],
-        urlPath: '/content/dam/wbx/us/images/workspace/images/',
-        outputDir: '_site/content/dam/wbx/us/images/workspace/images/'
+        urlPath: `/${assetsDir}/images/`,
+        outputDir: `_site/${assetsDir}/images/`
       });
     } catch (e) {
       console.log('\n\x1b[31mERROR\x1b[0m creating image:');
@@ -129,21 +130,21 @@ module.exports = {
     const sizes = args[5] ?? defaultSizes;
 
     const extension = path.extname(src).slice(1).toLowerCase();
-    const fullSrc = isFullUrl(src) ? src : `./src/content/dam/wbx/us/images/workspace/images/${src}`;
+    const fullSrc = isFullUrl(src) ? src : `./src/${assetsDir}/images/${src}`;
 
     let stats;
     try {
         Image(fullSrc, {
             widths: defaultImagesSizes,
             formats: extension === 'webp' ? ['webp', 'jpeg'] : ['webp', extension],
-            urlPath: '/content/dam/wbx/us/images/workspace/images/',
-            outputDir: '_site/content/dam/wbx/us/images/workspace/images/'
+            urlPath: `/${assetsDir}/images/`,
+            outputDir: `_site/${assetsDir}/images/`
           });
       stats =  Image.statsSync(fullSrc, {
         widths: defaultImagesSizes,
         formats: extension === 'webp' ? ['webp', 'jpeg'] : ['webp', extension],
-        urlPath: '/content/dam/wbx/us/images/workspace/images/',
-        outputDir: '_site/content/dam/wbx/us/images/workspace/images/'
+        urlPath: `/${assetsDir}/images/`,
+        outputDir: `_site/${assetsDir}/images/`
       });
     } catch (e) {
       console.log('\n\x1b[31mERROR\x1b[0m creating image:');
@@ -177,5 +178,6 @@ module.exports = {
         <figcaption>${markdown.renderInline(title)}</figcaption>
       </figure>`
       : picture;
-  }
+  },
+  assetPath: (name) => `/${assetsDir}/${name}`
 };

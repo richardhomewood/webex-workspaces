@@ -1,14 +1,14 @@
 import Router from './router';
-import {canonicalPath, hardwarePathPart, homePath, isDevicePath, makePath, splitPath} from './paths';
 import {updateUi, toSelectedWorkSpace, backToHome} from './spaces';
-import deviceModal from './device-modal';
+import {canonicalPath, hardwarePathPart, homePath, infoPathPart, makePath} from './paths';
+import modals from './modals'
 import commonData from '../../../../../../../data/common.json';
 import workspaces from '../../../../../../../data/workspaces.json';
 import devicesByRoom from '../../../../../../../data/devicesByRoom.json';
 
 const router = new Router();
 
-window.addEventListener('hashchange', (ev) => {
+window.addEventListener('hashchange', () => {
     router.route(canonicalPath(window.location));
 });
 
@@ -29,16 +29,25 @@ router.add(homePath, () => {
 // Handle workspace and workspace/room routing
 commonData.orderedWorkspaceIds.forEach((workspaceId) => {
     router.add(makePath([workspaceId]), () => {
-        deviceModal.hideAll();
+        modals.hideAll();
         toSelectedWorkSpace(workspaceId);
         updateUi(window.location);
     })
 
-    workspaces[workspaceId].rooms.forEach((room) => {
+    const {rooms} = workspaces[workspaceId];
+    rooms.forEach((room) => {
         router.add(makePath([workspaceId, room.slug]), () => {
-            deviceModal.hideAll();
+            modals.hideAll();
             toSelectedWorkSpace(workspaceId, room.slug);
             updateUi(window.location);
+        });
+
+        const roomInfoPath = makePath([workspaceId, room.slug, infoPathPart]);
+        router.add(roomInfoPath, () => {
+            modals.hideAll();
+            toSelectedWorkSpace(workspaceId, room.slug);
+            updateUi(window.location);
+            modals.showRoomInfo(roomInfoPath);
         });
 
         const devicesForRoom = devicesByRoom[workspaceId][room.slug]
@@ -47,10 +56,8 @@ commonData.orderedWorkspaceIds.forEach((workspaceId) => {
             router.add(devicePath, () => {
                 toSelectedWorkSpace(workspaceId, room.slug);
                 updateUi(window.location);
-                if (isDevicePath(devicePath)) {
-                    deviceModal.showDevice(devicePath);
-                }
+                modals.showDevice(devicePath);
             })
         })
-    })
+    });
 });
