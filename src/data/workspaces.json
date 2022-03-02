@@ -162,8 +162,8 @@
         ]
       },
       {
-        "name": "Ideation Room",
-        "slug": "ideationRoom",
+        "name": "Ideation Space",
+        "slug": "ideationSpace",
         "background": "ideation.png",
         "backgroundPosition": {
             "ws-XS" : {
