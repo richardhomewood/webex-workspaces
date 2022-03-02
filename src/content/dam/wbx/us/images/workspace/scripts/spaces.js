@@ -417,9 +417,9 @@ const updateBGSizes = () => {
         let rooms = workspaces[workspaceId].rooms;
         rooms.forEach((room) => {
 
-            let defaultBgImgClass = classnames.defaultRoomBg + "." + workspaceId + "-room-bg img";
+            let defaultBgImgClass = classnames.defaultRoomBg + "." + workspaceId + classnames.roomBackgroundSuffix + " img";
             let defaultBgImg = document.querySelector(defaultBgImgClass);
-            let bgContainerClass = "." + workspaceId + "-" + room.slug + "-room-bg:not(.ws-displayNone)";
+            let bgContainerClass = "." + workspaceId + "-" + room.slug + classnames.roomBackgroundSuffix + ":not(.ws-displayNone)";
             let bgClass = bgContainerClass + " img";
             let bgImg = document.querySelector(bgClass);
             if (bgImg) {
