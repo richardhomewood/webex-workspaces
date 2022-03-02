@@ -1,10 +1,25 @@
 .ws-immersive-root {
   .ws-common-ui {
+    pointer-events: none;
+
+    a {
+      pointer-events: all;
+    }
+
     .ws-workspace-nav {
       position: relative;
+      pointer-events: none;
 
       ul {
         position: relative;
+        pointer-events: none;
+        li {
+          pointer-events: none;
+
+          a {
+            pointer-events: all;
+          }
+        }
       }
 
       #ws-nav-underline {
