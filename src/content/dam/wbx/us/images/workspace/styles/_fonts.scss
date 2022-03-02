@@ -1,11 +1,11 @@
 @font-face {
-  font-family: 'CiscoSansTT-Regular';
+  font-family: 'CiscoSansTT-Regular', sans-serif;
   src: local('CiscoSansTT-Regular'),
     url(../fonts/CiscoSansTT.woff2) format('woff2');
 }
 
 @font-face {
-  font-family: 'CiscoSansTT-Medium';
+  font-family: 'CiscoSansTT-Medium', sans-serif;
   src: local('CiscoSansTT-Medium'),
     url(../fonts/CiscoSansTT-Medium.woff2) format('woff2');
 }
@@ -17,13 +17,13 @@
 }
 
 @mixin ws-h1 {
-  font-family: 'CiscoSansTT-Medium';
+  font-family: 'CiscoSansTT-Medium', sans-serif;
   font-size: 40px;
   line-height: 44px;
   letter-spacing: -0.04em;
 
   @media only screen and (min-width: 1367px) {
-    font-family: 'CiscoSansTT-Medium';
+    font-family: 'CiscoSansTT-Medium', sans-serif;
     font-size: 84px;
     line-height: 84px;
     letter-spacing: -0.04em;
@@ -31,13 +31,13 @@
 }
 
 @mixin ws-h2 {
-  font-family: 'CiscoSansTT-Medium';
+  font-family: 'CiscoSansTT-Medium', sans-serif;
   font-size: 34px;
   line-height: 38px;
   letter-spacing: -0.03em;
 
   @media only screen and (min-width: 1367px) {
-    font-family: 'CiscoSansTT-Medium';
+    font-family: 'CiscoSansTT-Medium', sans-serif;
     font-size: 64px;
     line-height: 64px;
     letter-spacing: -0.04em;
@@ -45,7 +45,7 @@
 }
 
 @mixin ws-h3 {
-  font-family: 'CiscoSansTT-Regular';
+  font-family: 'CiscoSansTT-Regular', sans-serif;
   font-size: 32px;
   line-height: 36px;
   letter-spacing: -0.03em;
@@ -56,58 +56,59 @@
 }
 
 @mixin ws-h3-desktop {
-  font-family: 'CiscoSansTT-Regular';
+  font-family: 'CiscoSansTT-Regular', sans-serif;
   font-size: 40px;
   line-height: 44px;
   letter-spacing: -0.04em;
 }
 
 @mixin ws-h4 {
-  font-family: 'CiscoSansTT-Regular';
+  font-family: 'CiscoSansTT-Regular', sans-serif;
   font-size: 22px;
   line-height: 28px;
   letter-spacing: -0.03em;
 
   @media only screen and (min-width: 1367px) {
-    font-family: 'CiscoSansTT-Regular';
+    font-family: 'CiscoSansTT-Regular', sans-serif;
     font-size: 32px;
     line-height: 36px;
     letter-spacing: -0.04em;
   }
 }
 
+@mixin ws-h5 {
+  font-family: 'CiscoSansTT-Regular', sans-serif;
+  font-size: 16px;
+  line-height: 22px;
+  color: black;
+}
+
 @mixin ws-h6 {
-  font-family: 'CiscoSansTT-Regular';
+  font-family: 'CiscoSansTT-Regular', sans-serif;
   font-size: 16px;
   line-height: 22px;
   color: #545454;
 
   @media only screen and (min-width: 1280px) {
-    font-family: 'CiscoSansTT-Regular';
     font-size: 18px;
     line-height: 26px;
     letter-spacing: -0.02em;
   }
 
   @media only screen and (min-width: 1920px) {
-    font-family: 'CiscoSansTT-Regular';
     font-size: 20px;
     line-height: 24px;
     letter-spacing: -0.02em;
   }
 }
 
-h6 {
-  @include ws-h6;
-}
-
 @mixin ws-large-body-reg {
-  font-family: 'CiscoSansTT-Regular';
+  font-family: 'CiscoSansTT-Regular', sans-serif;
   font-size: 16px;
   line-height: 22px;
 
   @media only screen and (min-width: 1367px) {
-    font-family: 'CiscoSansTT-Regular';
+    font-family: 'CiscoSansTT-Regular', sans-serif;
     font-size: 24px;
     line-height: 32px;
     letter-spacing: -0.02em;
@@ -116,31 +117,31 @@ h6 {
 
 @mixin ws-large-body-med {
   @include ws-large-body-reg;
-  font-family: 'CiscoSansTT-Medium';
+  font-family: 'CiscoSansTT-Medium', sans-serif;
 
   @media only screen and (min-width: 1367px) {
     @include ws-large-body-reg;
-    font-family: 'CiscoSansTT-Medium';
+    font-family: 'CiscoSansTT-Medium', sans-serif;
   }
 }
 
 @mixin ws-large-body-bold {
   @include ws-large-body-reg;
-  font-family: 'CiscoSansTT-Bold';
+  font-family: 'CiscoSansTT-Bold', sans-serif;
 
   @media only screen and (min-width: 1367px) {
     @include ws-large-body-reg;
-    font-family: 'CiscoSansTT-Bold';
+    font-family: 'CiscoSansTT-Bold', sans-serif;;
   }
 }
 
 @mixin ws-med-body-reg {
-  font-family: 'CiscoSansTT-Regular';
+  font-family: 'CiscoSansTT-Regular', sans-serif;
   font-size: 16px;
   line-height: 22px;
 
   @media only screen and (min-width: 1367px) {
-    font-family: 'CiscoSansTT-Regular';
+    font-family: 'CiscoSansTT-Regular', sans-serif;
     font-size: 18px;
     line-height: 26px;
     letter-spacing: -0.02em;
@@ -149,32 +150,32 @@ h6 {
 
 @mixin ws-med-body-med {
   @include ws-med-body-reg;
-  font-family: 'CiscoSansTT-Medium';
+  font-family: 'CiscoSansTT-Medium', sans-serif;
 
   @media only screen and (min-width: 1367px) {
     @include ws-med-body-reg;
-    font-family: 'CiscoSansTT-Medium';
+    font-family: 'CiscoSansTT-Medium', sans-serif;
   }
 }
 
 @mixin ws-med-body-bold {
   @include ws-med-body-reg;
-  font-family: 'CiscoSansTT-Bold';
+  font-family: 'CiscoSansTT-Bold', sans-serif;;
 
   @media only screen and (min-width: 1367px) {
     @include ws-med-body-reg;
-    font-family: 'CiscoSansTT-Bold';
+    font-family: 'CiscoSansTT-Bold', sans-serif;;
   }
 }
 
 @mixin ws-small-body-reg {
-  font-family: 'CiscoSansTT-Regular';
+  font-family: 'CiscoSansTT-Regular', sans-serif;
   font-size: 14px;
   line-height: 18px;
   letter-spacing: -0.01em;
 
   @media only screen and (min-width: 1367px) {
-    font-family: 'CiscoSansTT-Regular';
+    font-family: 'CiscoSansTT-Regular', sans-serif;
     font-size: 15px;
     line-height: 26px;
     letter-spacing: -0.01em;
@@ -183,26 +184,26 @@ h6 {
 
 @mixin ws-small-body-med {
   @include ws-small-body-reg;
-  font-family: 'CiscoSansTT-Medium';
+  font-family: 'CiscoSansTT-Medium', sans-serif;
 
   @media only screen and (min-width: 1367px) {
     @include ws-small-body-reg;
-    font-family: 'CiscoSansTT-Medium';
+    font-family: 'CiscoSansTT-Medium', sans-serif;
   }
 }
 
 @mixin ws-small-body-bold {
   @include ws-small-body-reg;
-  font-family: 'CiscoSansTT-Bold';
+  font-family: 'CiscoSansTT-Bold', sans-serif;;
 
   @media only screen and (min-width: 1367px) {
     @include ws-small-body-reg;
-    font-family: 'CiscoSansTT-Bold';
+    font-family: 'CiscoSansTT-Bold', sans-serif;
   }
 }
 
 @mixin ws-xsmall-body-reg {
-  font-family: 'CiscoSansTT-Regular';
+  font-family: 'CiscoSansTT-Regular', sans-serif;
   font-size: 12px;
   line-height: 16px;
   letter-spacing: 0;
@@ -214,13 +215,13 @@ h6 {
 
 @mixin ws-xsmall-body-med {
   @include ws-xsmall-body-reg;
-  font-family: 'CiscoSansTT-Medium';
+  font-family: 'CiscoSansTT-Medium', sans-serif;
   letter-spacing: -0.01em;
 }
 
 @mixin ws-xsmall-body-bold {
   @include ws-xsmall-body-reg;
-  font-family: 'CiscoSansTT-Bold';
+  font-family: 'CiscoSansTT-Bold', sans-serif;
   letter-spacing: -0.01em;
 }
 

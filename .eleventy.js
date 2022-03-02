@@ -36,6 +36,7 @@ module.exports = (config) => {
   config.addNunjucksAsyncShortcode('image', shortcodes.image);
   config.addShortcode('imagesync', shortcodes.imagesync);
   config.addNunjucksAsyncShortcode('webpack', shortcodes.webpack);
+  config.addShortcode('assetPath', shortcodes.assetPath);
 
   // Pass-through files
   config.addPassthroughCopy('src/favicon.ico');

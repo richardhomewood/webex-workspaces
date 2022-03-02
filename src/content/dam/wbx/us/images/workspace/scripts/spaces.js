@@ -1,4 +1,4 @@
-import {canonicalPath, hardwarePathPart, homePath, isDevicePath, makePath, splitPath} from './paths';
+import {splitPath} from './paths';
 import classnames from './classnames';
 import commonData from '../../../../../../../data/common.json';
 import workspaces from '../../../../../../../data/workspaces.json';
@@ -13,13 +13,13 @@ let minXPanOffset = 0
 let maxYPanOffset = 0
 let minYPanOffset = 0
 
-var panOffset = {
-    x:0, 
+let panOffset = {
+    x:0,
     previousX:0,
     y:0,
     previousY:0
 }
-var hammertime;
+let hammertime;
 
 export function updateUi(location, delay = 200) {
     const path = location.hash.substring(1);
@@ -79,12 +79,12 @@ export function toSelectedWorkSpace(space, room) {
 
     const bgToDisplayCSSSelector = room ? `.${classnames.roomBackground}.${space}-${room}${classnames.roomBackgroundSuffix}` : `.${classnames.defaultRoomBackground}.${space}${classnames.roomBackgroundSuffix}`;
     const bgsToDisplay = Array.from(document.querySelectorAll(bgToDisplayCSSSelector));
-    
+
     if (hammertime){
         hammertime.destroy();
         hammertime = null;
         panOffset = {
-            x:0, 
+            x:0,
             previousX:0,
             y:0,
             previousY:0
@@ -98,7 +98,7 @@ export function toSelectedWorkSpace(space, room) {
         hammertime.on("panleft panright panup pandown panend panstart", function(ev) {
 
             let tempxOffset = panOffset.previousX + ev.deltaX;
-            
+
             if (tempxOffset > maxXPanOffset){
                 tempxOffset = maxXPanOffset
             } else if(tempxOffset < minXPanOffset){
@@ -106,24 +106,24 @@ export function toSelectedWorkSpace(space, room) {
             }
 
             let tempyOffset = panOffset.previousY + ev.deltaY;
-            
+
             if (tempyOffset > maxYPanOffset){
                 tempyOffset = maxYPanOffset
             } else if(tempyOffset < minYPanOffset){
                 tempyOffset = minYPanOffset
             }
 
-            if (ev.type == "panend") {
+            if (ev.type === "panend") {
                 panOffset.previousX = tempxOffset;
                 panOffset.previousY = tempyOffset;
             }
-            
+
             panOffset.x = tempxOffset;
             panOffset.y = tempyOffset;
             updateBGSizes();
         });
     }
-    
+
     const bgToHideCSSSelector = `.${classnames.roomBackground}:not(.${classnames.hidden}), .${classnames.defaultRoomBackground}:not(.${classnames.hidden})`;
     const bgsToHide = Array.from(document.querySelectorAll(bgToHideCSSSelector));
 
@@ -239,34 +239,34 @@ export function toSelectedWorkSpace(space, room) {
     })
 
     //if moving from workspace landing to selected room
-    let roomContent = document.querySelector('.' + classnames.selectedRoomContent)
+    const roomContent = document.querySelector('.' + classnames.selectedRoomContent)
     if (room) {
         panOffset = {
-            x:0, 
+            x:0,
             previousX:0,
             y:0,
             previousY:0
         };
         //hide all room labels
-        let roomLabels = Array.from(document.getElementsByClassName(classnames.selectedRoomLabel))
+        const roomLabels = Array.from(document.getElementsByClassName(classnames.selectedRoomLabel))
         roomLabels.forEach((element) => {
             element.classList.add(classnames.hidden);
         });
 
         //hide all show more rooms elements
-        let showMoreRoomsElements = Array.from(document.querySelectorAll("." + classnames.showMoreRoomsText + ", " + "." + classnames.showMoreRoomsBtn));
+        const showMoreRoomsElements = Array.from(document.querySelectorAll("." + classnames.showMoreRoomsText + ", " + "." + classnames.showMoreRoomsBtn));
         showMoreRoomsElements.forEach((element) => {
             element.classList.add(classnames.hidden);
         });
 
         //show relevant show more rooms elements
-        let relevantShowMoreElements = Array.from(document.querySelectorAll("." + classnames.showMoreRoomsText + "#" + classnames.showMoreRoomsText + "-" + space + ", ." + classnames.showMoreRoomsBtn + "#" + classnames.showMoreRoomsBtn + "-" + space));
+        const relevantShowMoreElements = Array.from(document.querySelectorAll("." + classnames.showMoreRoomsText + "#" + classnames.showMoreRoomsText + "-" + space + ", ." + classnames.showMoreRoomsBtn + "#" + classnames.showMoreRoomsBtn + "-" + space));
         relevantShowMoreElements.forEach((element) => {
             element.classList.remove(classnames.hidden);
         })
 
         //show relevant label
-        let roomlabel = document.querySelector('.' + classnames.selectedRoomLabel + '#' + space + "-" + room + "-label");
+        const roomlabel = document.querySelector('.' + classnames.selectedRoomLabel + '#' + space + "-" + room + "-label");
         roomlabel.classList.remove(classnames.hidden);
 
         // hide room selector
@@ -364,7 +364,7 @@ const updateRoomsSelector = function (path) {
         const slideWidth = slides[0].offsetWidth;
         const totalSlideWidth = (slideWidth * slideCount) + (10 * (slideCount - 1));
 
-        let options = {
+        const options = {
             speed: 400,
             slidesPerView: "auto",
             centeredSlides: true,
@@ -372,11 +372,7 @@ const updateRoomsSelector = function (path) {
             grabCursor: true,
             slideToClickedSlide: true,
             centerInsufficientSlides: true,
-        }
-
-        let windowWidth = window.innerWidth;
-        if (totalSlideWidth < (windowWidth - 98)) {
-            options = {...options, ...{enabled: false}}
+            enabled: totalSlideWidth >= (window.innerWidth - 98)
         }
 
         swipingRoomSelector = new Swiper(`#${mypath}Container .swiper`, options);
@@ -385,18 +381,18 @@ const updateRoomsSelector = function (path) {
 }
 
 const updateBGSizes = () => {
-    let sizeClass = currentSizeClass();
+    const sizeClass = currentSizeClass();
 
-    let windowWidth = window.innerWidth;
-    let windowHeight = window.innerHeight;
+    const windowWidth = window.innerWidth;
+    const windowHeight = window.innerHeight;
 
     const initview = document.getElementsByClassName(classnames.initialView)[0];
     if (!initview.classList.contains(classnames.hidden)) {
         //update animating imgs on initial view
-        let rotatingImgs = Array.from(document.querySelectorAll(classnames.rotatingImgs));
-        let rImgWidth = rotatingImgs[0].clientWidth;
-        let rImgHeight = rotatingImgs[0].clientHeight;
-        let projectedRImgWidth = (windowHeight * 108) / 192;
+        const rotatingImgs = Array.from(document.querySelectorAll(classnames.rotatingImgs));
+        const rImgWidth = rotatingImgs[0].clientWidth;
+        const rImgHeight = rotatingImgs[0].clientHeight;
+        const projectedRImgWidth = (windowHeight * 108) / 192;
 
         if (projectedRImgWidth < windowWidth) {
             let newImageHeight = (windowWidth * rImgHeight) / rImgWidth;
@@ -404,7 +400,7 @@ const updateBGSizes = () => {
             rotatingImgs.forEach((element) => {
                 element.style["height"] = newImageHeight + "px";
             })
-            
+
         } else{
             rotatingImgs.forEach((element) => {
                 element.style["height"] = "";
@@ -414,22 +410,22 @@ const updateBGSizes = () => {
 
     //updating selected room bgs
     commonData.orderedWorkspaceIds.forEach((workspaceId) => {
-        let rooms = workspaces[workspaceId].rooms;
+        const {rooms} = workspaces[workspaceId];
         rooms.forEach((room) => {
 
-            let defaultBgImgClass = classnames.defaultRoomBg + "." + workspaceId + classnames.roomBackgroundSuffix + " img";
-            let defaultBgImg = document.querySelector(defaultBgImgClass);
-            let bgContainerClass = "." + workspaceId + "-" + room.slug + classnames.roomBackgroundSuffix + ":not(.ws-displayNone)";
-            let bgClass = bgContainerClass + " img";
-            let bgImg = document.querySelector(bgClass);
+            const defaultBgImgClass = classnames.defaultRoomBg + "." + workspaceId + classnames.roomBackgroundSuffix + " img";
+            const defaultBgImg = document.querySelector(defaultBgImgClass);
+            const bgContainerClass = "." + workspaceId + "-" + room.slug + classnames.roomBackgroundSuffix + ":not(.ws-displayNone)";
+            const bgClass = bgContainerClass + " img";
+            const bgImg = document.querySelector(bgClass);
             if (bgImg) {
-                let backgroundPos = room.backgroundPosition[sizeClass];
-                let imgWidth = bgImg.clientWidth;
-                let imgHeight = bgImg.clientHeight;
+                const backgroundPos = room.backgroundPosition[sizeClass];
+                const imgWidth = bgImg.clientWidth;
+                const imgHeight = bgImg.clientHeight;
 
-                let projectedImgWidth = (windowHeight * 192) / 108;
-                var initialOffset = (imgWidth * backgroundPos.x);
-                
+                const projectedImgWidth = (windowHeight * 192) / 108;
+                const initialOffset = (imgWidth * backgroundPos.x);
+
                 let setImageHeight, setImageWidth;
 
                 if (projectedImgWidth + (initialOffset * 2) < windowWidth) {
@@ -450,15 +446,15 @@ const updateBGSizes = () => {
                 maxYPanOffset = (-(setImageHeight - windowHeight) / 2);
                 minYPanOffset = ((setImageHeight - windowHeight) / 2);
 
-                let scaledPanOffsetX = (panOffset.x * setImageWidth)/windowWidth;
-                let panOffsetX = scaledPanOffsetX > maxXPanOffset ? maxXPanOffset : scaledPanOffsetX < minXPanOffset ? minXPanOffset : scaledPanOffsetX;
-                let scaledPanOffsetY = (panOffset.y * setImageHeight)/windowHeight;
-                let panOffsetY = panOffset.y == 0 ? 0 : scaledPanOffsetY > maxYPanOffset ? maxYPanOffset : scaledPanOffsetY < minYPanOffset ? minYPanOffset : scaledPanOffsetY ;
+                const scaledPanOffsetX = (panOffset.x * setImageWidth)/windowWidth;
+                const panOffsetX = scaledPanOffsetX > maxXPanOffset ? maxXPanOffset : scaledPanOffsetX < minXPanOffset ? minXPanOffset : scaledPanOffsetX;
+                const scaledPanOffsetY = (panOffset.y * setImageHeight)/windowHeight;
+                const panOffsetY = panOffset.y === 0 ? 0 : scaledPanOffsetY > maxYPanOffset ? maxYPanOffset : scaledPanOffsetY < minYPanOffset ? minYPanOffset : scaledPanOffsetY ;
 
-                var xOffset = Math.abs(initialOffset) === 0 ? initialOffset : initialOffset + panOffsetX;
-                var yOffset = panOffsetY;
+                const xOffset = Math.abs(initialOffset) === 0 ? initialOffset : initialOffset + panOffsetX;
+                const yOffset = panOffsetY;
 
-                let newTransform = 'translate(calc(-50% + ' + xOffset + 'px), calc(-50% + ' + yOffset + 'px))';
+                const newTransform = 'translate(calc(-50% + ' + xOffset + 'px), calc(-50% + ' + yOffset + 'px))';
 
                 bgImg.style["transform"] = newTransform;
                 defaultBgImg.style["transform"] = newTransform;
@@ -472,7 +468,7 @@ const updateBGSizes = () => {
     })
 
     //updating default room bgs
-    let defaultBgImgs = Array.from(document.querySelectorAll(classnames.defaultRoomBgImg));
+    const defaultBgImgs = Array.from(document.querySelectorAll(classnames.defaultRoomBgImg));
     let dImgWidth = defaultBgImgs[0].clientWidth;
     let dImgHeight = defaultBgImgs[0].clientHeight;
 
@@ -483,7 +479,7 @@ const updateBGSizes = () => {
         }
     })
 
-    let projectedDImgWidth = (windowHeight * 108) / 192;
+    const projectedDImgWidth = (windowHeight * 108) / 192;
 
     if (projectedDImgWidth < windowWidth) {
         let newImageHeight = (windowWidth * dImgHeight) / dImgWidth;
@@ -491,7 +487,7 @@ const updateBGSizes = () => {
         defaultBgImgs.forEach((element) => {
             element.style["height"] = newImageHeight + "px";
         })
-        
+
     } else{
         defaultBgImgs.forEach((element) => {
             element.style["height"] = "";
@@ -500,28 +496,28 @@ const updateBGSizes = () => {
 }
 
 const placeHotSpots = (bgImg, room, bgContainerClass, offset) => {
-    let imgWidth = bgImg.clientWidth;
-    let imgHeight = bgImg.clientHeight;
+    const imgWidth = bgImg.clientWidth;
+    const imgHeight = bgImg.clientHeight;
 
-    let hotspotsQuery = bgContainerClass + " " + classnames.hotSpot;
-    let hotspots = Array.from(document.querySelectorAll(hotspotsQuery));
+    const hotspotsQuery = bgContainerClass + " " + classnames.hotSpot;
+    const hotspots = Array.from(document.querySelectorAll(hotspotsQuery));
 
-    let imgBaseWidth = 1920;
-    let imgHalfWidth = 960;
-    let imgBaseHeight = 1080;
-    let imgHalfHeight = 540;
+    const imgBaseWidth = 1920;
+    const imgHalfWidth = 960;
+    const imgBaseHeight = 1080;
+    const imgHalfHeight = 540;
 
     room.hotSpots.forEach((element, index)=>{
 
-        let fullDeltaX = imgHalfWidth - (element.x + 16);
-        let xDelta = (fullDeltaX / imgBaseWidth) * -1;
+        const fullDeltaX = imgHalfWidth - (element.x + 16);
+        const xDelta = (fullDeltaX / imgBaseWidth) * -1;
 
-        let fullDeltaY = imgHalfHeight - (element.y + 16);
-        let yDelta = (fullDeltaY / imgBaseHeight) * -1;
+        const fullDeltaY = imgHalfHeight - (element.y + 16);
+        const yDelta = (fullDeltaY / imgBaseHeight) * -1;
 
-        let hotspot = hotspots[index];
-        let hOffset = imgWidth * xDelta;
-        let yOffset = imgHeight * yDelta;
+        const hotspot = hotspots[index];
+        const hOffset = imgWidth * xDelta;
+        const yOffset = imgHeight * yDelta;
 
         hotspot.style["opacity"] = 1;
         hotspot.style["transform"] = 'translate(calc(-50% + ' + (hOffset + offset.x) + 'px), calc(-50% + ' + (yOffset + offset.y) + 'px))';
@@ -529,7 +525,7 @@ const placeHotSpots = (bgImg, room, bgContainerClass, offset) => {
 }
 
 const currentSizeClass = () => {
-    let width = window.innerWidth
+    const width = window.innerWidth
     let aSizeClass = ""
     commonData.sizeClasses.forEach((sizeClass) => {
         if (width <= sizeClass[2]) {

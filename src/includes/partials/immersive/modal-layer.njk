@@ -7,7 +7,7 @@
       {%- for room in workspaces[workspaceId].rooms %}
         <div class="ws-room-modals-container ws-displayNone" id="{{ workspaceId }}-{{ room.slug }}-modals">
           {{ deviceModal.render(common, workspaces[workspaceId], room, devicesByRoom, devices) }}
-          <!--{{ infoModal.render(common, workspaces[workspaceId], room, vendorDevicesByRoom, devices) }}-->
+          {{ infoModal.render(common, workspaces[workspaceId], room, vendorDevicesByRoom, devices) }}
         </div>
       {%- endfor %}
     {%- endfor %}
