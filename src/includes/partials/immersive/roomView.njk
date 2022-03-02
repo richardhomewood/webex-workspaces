@@ -9,7 +9,7 @@
             <div class="ws-room-background-image ws-room-bg {{ workspaceId }}-{{room.slug}}-room-bg ws-displayNone">
                 {{ roomViewBG(room.background) }}
                 {%- for hotSpot in room.hotSpots %}
-                    {{ hotspot() }}
+                    {{ hotspot(workspaceId, room.slug, hotSpot.slug) }}
                 {%- endfor %}
             </div>
         {%- endfor %}
@@ -67,8 +67,8 @@
   {% imagesync "room-backgrounds/"+src, "", "", "ws-room-option-image" %}
 {% endmacro %}
 
-{% macro hotspot() %}
-  <div class="ws-hotSpot" onclick="alert('click');"><div class="ws-hotSpot-outer"></div><div class="ws-hotSpot-inner"></div></div>
+{% macro hotspot(workspaceId, roomSlug, hotSpotSlug) %}
+  <a class="ws-hotSpot" href="#/{{workspaceId}}/{{roomSlug}}/hardware/{{hotSpotSlug}}"><div class="ws-hotSpot-outer"></div><div class="ws-hotSpot-inner"></div></a>
 {% endmacro %}
 
 {% macro roomSelections(workspace, room, common) %}

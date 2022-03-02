@@ -45,7 +45,7 @@ commonData.orderedWorkspaceIds.forEach((workspaceId) => {
         devicesForRoom.forEach(deviceId => {
             const devicePath = makePath([workspaceId, room.slug, hardwarePathPart, deviceId]);
             router.add(devicePath, () => {
-                toSelectedWorkSpace(workspaceId);
+                toSelectedWorkSpace(workspaceId, room.slug);
                 updateUi(window.location);
                 if (isDevicePath(devicePath)) {
                     deviceModal.showDevice(devicePath);

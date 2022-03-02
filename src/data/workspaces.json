@@ -29,37 +29,37 @@
         },
         "hotSpots": [
             {
-                "slug":"",
+                "slug":"webex-desk-pro",
                 "x": 346,
                 "y": 443
             },
             {
-                "slug":"",
+                "slug":"webex-room-kit-mini",
                 "x": 533,
                 "y": 324
             },
             {
-                "slug":"",
+                "slug":"webex-room-navigator",
                 "x": 646,
                 "y": 317
             },
             {
-                "slug":"",
+                "slug":"bo-cisco-980",
                 "x": 740,
                 "y": 277
             },
             {
-                "slug":"",
+                "slug":"mr46",
                 "x": 907,
                 "y": 555
             },
             {
-                "slug":"",
+                "slug":"mx67c",
                 "x": 1209,
                 "y": 555
             },
             {
-                "slug":"",
+                "slug":"ms120-8-fp",
                 "x": 1209,
                 "y": 704
             }
@@ -92,17 +92,17 @@
         },
         "hotSpots": [
             {
-                "slug":"",
+                "slug":"meraki-z3c",
                 "x": 455,
                 "y": 441
             },
             {
-                "slug":"",
+                "slug":"webex-desk-mini",
                 "x": 742,
                 "y": 486
             },
             {
-                "slug":"",
+                "slug":"cisco-headset-730",
                 "x": 922,
                 "y": 622
             }
@@ -145,17 +145,17 @@
         },
         "hotSpots": [
             {
-                "slug":"",
+                "slug":"webex-desk-camera",
                 "x": 583,
                 "y": 405
             },
             {
-                "slug":"",
+                "slug":"webex-desk-hub",
                 "x": 797,
                 "y": 530
             },
             {
-                "slug":"",
+                "slug":"cisco-headset-730",
                 "x": 852,
                 "y": 480
             }
@@ -184,7 +184,7 @@
         },
         "hotSpots": [
             {
-                "slug":"",
+                "slug":"webex-board-pro-75",
                 "x": 398,
                 "y": 306
             }
@@ -213,7 +213,7 @@
         },
         "hotSpots": [
             {
-                "slug":"",
+                "slug":"webex-board-pro-55",
                 "x": 465,
                 "y": 672
             },
@@ -256,7 +256,7 @@
         },
         "hotSpots": [
             {
-                "slug":"",
+                "slug":"bo-cisco-980",
                 "x": 668,
                 "y": 712
             }
