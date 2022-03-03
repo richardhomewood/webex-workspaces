@@ -1,14 +1,12 @@
 {% import "./image-carousel.njk" as carousel %}
 {% import "./features.njk" as features %}
 {% import "./specs.njk" as specs %}
-{% import "./config-guide.njk" as configGuide %}
 {% import "../common/download-pdf.njk" as downloadPdf %}
 
 
 {% macro render(common, workspace, room, devicesByRoom, devices) %}
   {# This div may be positioned off-screen and animated into place when a hotspot is clicked #}
   <div class="ws-device-modal-root ws-modal-root ws-displayNone">
-    {{ downloadPdf.render(common, device.pdfUrl, "ws-header-item") }}
     <a class="ws-device-modal-close ws-modal-close" aria-label="Close" href="#/{{ workspace.slug }}/{{ room.slug }}">{% icon "close-x", "ws-close-x" %}</a>
     <div class="ws-top-rule"></div>
 
@@ -31,10 +29,6 @@
           {{ features.render(common, device.features) }}
 
           {{ specs.render(common, device.specs) }}
-
-          {% if device.configGuide %}
-            {{ configGuide.render(common, deviceId, device.configGuide) }}
-          {% endif %}
         </div>
 
       </div>

@@ -65,12 +65,6 @@ Renders:
   - Image carousel
   - Features section
   - Tech Specs section
-  - Configuration Guide section
-  - "Download PDF Version" link
-
-###  [`src/includes/partials/device-modal/config-guide.njk`](../src/includes/partials/device-modal/config-guide.njk)
-
-Renders the Configuration Guide section of the device modal
 
 ###  [`src/includes/partials/device-modal/features.njk`](../src/includes/partials/device-modal/features.njk)
 

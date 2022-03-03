@@ -36,10 +36,6 @@
         "text": "Speakers: Single-channel loudspeaker system with a high quality 18mm tweeter and dual force-cancelling 80mm woofers"
       }
     ],
-    "configGuide": {
-      "pdfUrl": "https://to-be-determined",
-      "image": "webex-desk-mini-fpo.png"
-    },
     "pdfUrl": "https://another.to-be-determined",
     "carouselItems": [
       {
@@ -101,10 +97,6 @@
         "text": "Enterprise-grade security and manageability"
       }
     ],
-    "configGuide": {
-      "pdfUrl": "https://to-be-determined",
-      "imageUrl": "http://fpoimg.com/779x404?text=Configuration+Guide+image"
-    },
     "pdfUrl": "https://another.to-be-determined",
     "carouselItems": [
       {
@@ -165,10 +157,6 @@
         "text": "LAN Interfaces: 4 x GbE"
       }
     ],
-    "configGuide": {
-      "pdfUrl": "https://to-be-determined",
-      "imageUrl": "http://fpoimg.com/779x404?text=Configuration+Guide+image"
-    },
     "pdfUrl": "https://another.to-be-determined",
     "carouselItems": [
       {
@@ -481,11 +469,7 @@
         "icon": "adjust-microphone",
         "text": "Audio: 2 omni-directional microphones"
       }
-    ],
-    "configGuide": {
-      "pdfUrl": "https://to-be-determined",
-      "image": "webex-desk-camera-fpo.png"
-    }
+    ]
   },
   "webex-board-pro-75": {
     "name": "Webex Board Pro 75",
