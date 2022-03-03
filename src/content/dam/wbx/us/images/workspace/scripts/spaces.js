@@ -249,7 +249,8 @@ export function toSelectedWorkSpace(space, room) {
             previousY:0
         };
         //hide all room labels
-        const roomLabels = Array.from(document.getElementsByClassName(classnames.selectedRoomLabel))
+        
+        const roomLabels = Array.from(document.querySelectorAll("." + classnames.selectedRoomLabel + ":not(.ws-room-selector-label)"))
         roomLabels.forEach((element) => {
             element.classList.add(classnames.hidden);
         });
