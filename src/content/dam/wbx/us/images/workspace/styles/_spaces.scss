@@ -82,6 +82,20 @@
           overflow: visible;
           opacity: 0;
 
+          &::before {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            width: 36px;
+            height: 36px;
+            border-radius: 18px;
+            content: ' ';
+            background-color: #000;
+            opacity: 0;
+            transition: opacity 0.2s ease-in-out 0s;
+          }
+
           .ws-hotSpot-outer {
             box-sizing: border-box;
             position: absolute;
@@ -137,6 +151,10 @@
 
             .ws-hotSpot-inner {
               opacity: 1;
+            }
+
+            &::before {
+              opacity: 0.1;
             }
           }
         }
