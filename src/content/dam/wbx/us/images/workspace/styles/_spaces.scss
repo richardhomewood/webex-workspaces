@@ -123,9 +123,6 @@
 
           &:active {
             .ws-hotSpot-inner {
-              //width: 12px;
-              //height: 12px;
-              //border-radius: 6px;
               @include hotSpotTap;
             }
           }
@@ -296,6 +293,10 @@
                 .ws-room-image {
                   border: solid 1px #fff;
                 }
+              }
+
+              a {
+                text-decoration: none;
               }
 
               .ws-room-image {
