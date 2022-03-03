@@ -129,7 +129,11 @@ module.exports = {
     const lazy = args[4] ?? true;
     const sizes = args[5] ?? defaultSizes;
 
-    const extension = path.extname(src).slice(1).toLowerCase();
+    let extension = path.extname(src).slice(1).toLowerCase();
+    if (extension === 'jpg') {
+      extension = 'jpeg';
+    }
+
     const fullSrc = isFullUrl(src) ? src : `./src/${assetsDir}/images/${src}`;
 
     let stats;
