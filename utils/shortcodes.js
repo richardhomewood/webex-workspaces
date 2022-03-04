@@ -6,7 +6,7 @@ const markdown = require('./markdown');
 
 const iconDefaultSize = 24;
 const defaultSizes = '90vw';
-const defaultImagesSizes = [1920, 1280, 640, 320];
+const defaultImagesSizes = [1920, 768];
 const assetsDir = 'content/dam/wbx/us/images/workspace';
 
 const isFullUrl = (url) => {
