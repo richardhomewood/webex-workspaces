@@ -2,14 +2,14 @@
   "home": {
     "name": "Home Spaces",
     "slug": "home",
-    "background": "homeoffice.png",
+    "background": "homeoffice.jpg",
     "categoryPageText": "Today, our homes have become an extension of the office with 68% of people now splitting time between the two. While the sudden shift to remote work had people scrambling to put together makeshift workspaces, the time has come to design your home space to work harder for you—while keeping distractions at bay.",
     "rooms": [
       {
         "name": "Home Office",
         "slug": "homeOffice",
         "pdfFilename": "HybridWorkExperiences_EBook_2021_HomeOffice.pdf",
-        "background": "homeoffice.png",
+        "background": "homeoffice.jpg",
         "backgroundPosition": {
             "ws-XS" : {
                 "x": 0.0103
@@ -73,7 +73,7 @@
         "name": "Kitchen",
         "slug": "kitchen",
         "pdfFilename": "HybridWorkExperiences_EBook_2021_Kitchen.pdf",
-        "background": "kitchen.png",
+        "background": "kitchen.jpg",
         "backgroundPosition": {
             "ws-XS" : {
                 "x": 0.139
@@ -119,14 +119,14 @@
   "office": {
     "name": "Office Spaces",
     "slug": "office",
-    "background": "hotdesk.png",
+    "background": "hotdesk.jpg",
     "categoryPageText":"Gone are the days where the office was a permanent destination for all employees. With people now constantly coming and going, each room needs to be designed to serve a specific purpose. In addition, 97% want changes to make the office safer before they return, which only adds another layer of complexity to your office transformation.",
     "rooms": [
       {
         "name": "Hotdesk",
         "slug": "hotdesk",
         "pdfFilename": "HybridWorkExperiences_EBook_2021_Hotdesk.pdf",
-        "background": "hotdesk.png",
+        "background": "hotdesk.jpg",
         "backgroundPosition": {
             "ws-XS" : {
                 "x": 0.02935
@@ -166,7 +166,7 @@
         "name": "Ideation Space",
         "slug": "ideationSpace",
         "pdfFilename": "HybridWorkExperiences_EBook_2021_IdeationSpace.pdf",
-        "background": "ideation.png",
+        "background": "ideation.jpg",
         "backgroundPosition": {
             "ws-XS" : {
                 "x": 0.2046
@@ -196,7 +196,7 @@
         "name": "Small Conference Room",
         "slug": "smallConferenceRoom",
         "pdfFilename": "HybridWorkExperiences_EBook_2021_SmallConferenceRoom.pdf",
-        "background": "smallmeeting.png",
+        "background": "smallmeeting.jpg",
         "backgroundPosition": {
             "ws-XS" : {
                 "x": 0.1207
@@ -232,14 +232,14 @@
   "anywhere": {
     "name": "Anywhere",
     "slug": "anywhere",
-    "background": "coffee.png",
+    "background": "coffee.jpg",
     "categoryPageText": "Work happens anywhere, even on the go—whether that’s traveling, enjoying a cup of coffee at your favorite café, or in the field on the frontlines. You need the right solutions that will keep you connected, focused, and secure so your work keeps on moving right alongside you.",
     "rooms": [
       {
         "name": "Cafe",
         "slug": "cafe",
         "pdfFilename": "HybridWorkExperiences_EBook_2021_Cafe.pdf",
-        "background": "coffee.png",
+        "background": "coffee.jpg",
         "backgroundPosition": {
             "ws-XS" : {
                 "x": 0.04604
