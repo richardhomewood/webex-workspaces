@@ -30,6 +30,7 @@
         opacity: 0.1;
         content: ' ';
         z-index: 1;
+        pointer-events: none;
       }
 
       .ws-room-background-image {
