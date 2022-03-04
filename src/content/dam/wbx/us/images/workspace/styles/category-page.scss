@@ -77,6 +77,14 @@ body {
               .ws-software-description {
                 @include ws-large-body-reg;
               }
+
+              h4.ws-device-features-title {
+                @include ws-large-body-med;
+              }
+
+              ul li {
+                @include ws-small-body-reg;
+              }
             }
           }
         }

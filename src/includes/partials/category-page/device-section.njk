@@ -8,11 +8,17 @@
 
         <div class="ws-software-description">{{ devices[deviceId].description }}</div>
 
-        <ul class="ws-software-features">
-          {% for feature in devices[deviceId].features %}
+        {% for feature in devices[deviceId].features %}
+            {% if loop.first %}
+                <h4 class="ws-device-features-title">{{devices[deviceId].featuresTitle}}</h4>
+                <ul class="ws-software-features">
+            {% endif %}
+          
             <li class="ws-device-feature">{{ feature }}</li>
-          {% endfor %}
-        </ul>
+          
+          {% if loop.last %}</ul>{% endif %}
+        
+        {% endfor %}
 
         <a class="ws-learn-more-cta" href="{{ devices[deviceId].url }}">{{ common.learnMoreCtaText }}</a>
         <a class="ws-contact-cta" target="_blank" href="{{ common.contactUrl }}" >{{ common.contactCtaText }}</a>
