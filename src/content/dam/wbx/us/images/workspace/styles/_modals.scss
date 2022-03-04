@@ -376,6 +376,15 @@ $list-items-border-color: #c4c4c4;
         display: flex;
 
         .ws-info-modal-vendor {
+          // Note: 50% minus the nth-child margin width
+          flex: 0 0 calc(50% - 60px);
+          &:nth-child(odd) {
+            margin-right: 60px;
+          }
+          &:nth-child(even) {
+            margin-left: 60px;
+          }
+
           @include ws-large-body-med;
 
           .ws-info-modal-vendor-name {
