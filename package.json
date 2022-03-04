@@ -6,7 +6,7 @@
     "url": "https://github.com/clenemt/eleventy-webpack"
   },
   "engines": {
-    "node": "14"
+    "node": "16.x"
   },
   "scripts": {
     "clean": "rimraf _site webex-workspaces-site.zip",
