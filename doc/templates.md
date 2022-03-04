@@ -22,7 +22,7 @@ _may_ have additional macros used only from within the same template file.
 
 Renders the root container and calls the 3 following partials to populate its children:
 
-### [`src/includes/partials/immersive/commonUi.njk`](../src/includes/partials/immersive/commonUi.njk)
+### [`src/includes/partials/common/commonUi.njk`](../src/includes/partials/common/commonUi.njk)
 
 Renders:
 - Container for common UI elements

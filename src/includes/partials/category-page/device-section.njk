@@ -2,7 +2,7 @@
   <div class="ws-device-section awaits-styling">
     {% for deviceId in devicesByRoom[workspaceId][roomId] %}
       <div class="awaits-styling">
-        <h4>{{ devices[deviceId].name }}</h4>
+        <h3>{{ devices[deviceId].name }}</h3>
 
         {{ categoryPageImage(devices[deviceId].categoryPageImage,  common.sizeClasses) }}
 

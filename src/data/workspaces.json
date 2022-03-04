@@ -160,7 +160,8 @@
                 "x": 852,
                 "y": 480
             }
-        ]
+        ],
+        "roomDescription": "With most employees splitting time between the home and office, hotdesking has never been more in-demand. The key is to equip these spaces for maximum productivity, so the rotating cast of employees and visitors never skips a beat.</p><p>That means arming this room with devices that lets them be instantly productive, while giving them the ability to just as instantly pack up and leave."
       },
       {
         "name": "Ideation Space",
@@ -190,7 +191,8 @@
                 "x": 398,
                 "y": 306
             }
-        ]
+        ],
+        "roomDescription": "Ideas can spark from anywhere, at any time. Having a dedicated space in your office for people to connect, co-create, share ideas, and solve problems makes sure none of that brilliance gets lost.</p><p>Devices purpose-built for this type of creativity are key to bringing everyone together, whether they are remote or sitting in the same room. "
       },
       {
         "name": "Small Conference Room",
@@ -225,7 +227,8 @@
                 "x": 902,
                 "y": 513
             }
-        ]
+        ],
+        "roomDescription": "The majority of meetings today will include remote participants, making it essential to rethink traditional conference rooms. Often the staple of an office, these spaces need to create an inclusive experience for all participants—whether in-office or remote—at the same time ensuring the people in the room feel safe in an enclosed area."
       }
     ]
   },
@@ -263,7 +266,8 @@
                 "x": 668,
                 "y": 712
             }
-        ]
+        ],
+        "roomDescription": "Busy, noisy spaces like coffee shops used to be off limits for collaborating. Not only is it loud and distracting, but it can make it too hard to be heard during important calls. And to stay connected on the go, there’s often additional devices—both work and personal—you need to carry with you.</p><p>Not anymore. Webex makes it easy to stay focused, be heard, and travel light when you’re working away from your desk."
       }
     ]
   }
