@@ -23,7 +23,7 @@
 
         <a class="ws-learn-more-cta" href="" target="_blank">{{ common.learnMoreCtaText }}</a>
 
-        {{ carousel.render(deviceId, device.carouselItems) }}
+        {{ carousel.render(room.slug, deviceId, device.carouselItems) }}
 
         <div class="ws-modal-sections">
           {{ features.render(common, device.features) }}

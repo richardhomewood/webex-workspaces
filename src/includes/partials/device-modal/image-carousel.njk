@@ -1,8 +1,8 @@
-{% macro render(deviceId, items)%}
-  <div class="ws-image-carousel">
+{% macro render(roomId, deviceId, items)%}
+  <div id="swiper-{{ roomId }}-{{ deviceId }}-carousel" class="ws-image-carousel">
 
     <!-- Slider main container -->
-    <div id="swiper-{{ deviceId }}-carousel" class="swiper">
+    <div class="swiper">
       <!-- Additional required wrapper -->
       <div class="swiper-wrapper">
         <!-- Slides -->
@@ -12,11 +12,13 @@
         {% endfor %}
       </div>
 
-      <!-- If we need navigation buttons -->
-      <div class="swiper-button-prev"></div>
-      <div class="swiper-button-next"></div>
+      <div class="ws-carousel-nav">
+        <span class="ws-carousel-slide-numbers"><span class="ws-carousel-active-slide">1</span> of {{ items.length }}</span>
+        <!-- If we need navigation buttons -->
+        <div class="ws-carousel-button-prev">{% icon "prev-button", "", [34] %}</div>
+        <div class="ws-carousel-button-next">{% icon "next-button", "", [34] %}</div>
+      </div>
 
     </div>
-
   </div>
 {% endmacro %}

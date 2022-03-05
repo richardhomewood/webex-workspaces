@@ -174,19 +174,49 @@ $list-items-border-color: #c4c4c4;
 
       .ws-image-carousel {
         width: 100%;
-        aspect-ratio: 1.20 / 1;
 
         .swiper {
-          height: 100%;
-          .swiper-slide {
-            text-align: center;
-            img {
-              object-fit: contain;
-              max-height: 100%;
+          aspect-ratio: 1 / 1.2;
+          .swiper-wrapper {
+            .swiper-slide {
+              text-align: center;
+              img {
+                object-fit: contain;
+                max-height: 100%;
+              }
             }
           }
         }
 
+      }
+
+      .ws-carousel-nav {
+        z-index: 1;
+        position: absolute;
+        right: 20px;
+        bottom: 12px;
+
+        .ws-carousel-slide-numbers {
+          display: inline-block;
+          width: 50px;
+          font-size: 12px;
+        }
+
+        .ws-carousel-button-next, .ws-carousel-button-prev {
+          display: inline-block;
+          width: 34px;
+          height: 34px;
+          cursor: pointer;
+          &.swiper-button-disabled {
+            opacity: 0.35;
+            cursor: auto;
+            pointer-events: none;
+          }
+          .icon {
+            width: 34px;
+            height: 34px;
+          }
+        }
       }
 
       .ws-modal-sections {
@@ -322,6 +352,13 @@ $list-items-border-color: #c4c4c4;
           margin-top: 80px;
         }
 
+        .ws-image-carousel {
+          .swiper {
+            aspect-ratio: 1.2 / 1;
+          }
+        }
+
+
         .ws-device-features.ws-modal-section {
           ul {
             li {
@@ -441,7 +478,9 @@ $list-items-border-color: #c4c4c4;
         }
 
         .ws-image-carousel {
-          aspect-ratio: 1.77 / 1;
+          .swiper {
+            aspect-ratio: 1.77 / 1;
+          }
         }
 
         .ws-modal-sections {
