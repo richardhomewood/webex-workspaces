@@ -1,11 +1,11 @@
-{% import "./image-carousel.njk" as carousel %}
+{% import "./media-carousel.njk" as carousel %}
 {% import "./features.njk" as features %}
 {% import "./specs.njk" as specs %}
 {% import "../common/download-pdf.njk" as downloadPdf %}
 
 
 {% macro render(common, workspace, room, devicesByRoom, devices) %}
-  {# This div may be positioned off-screen and animated into place when a hotspot is clicked #}
+  {# This div is positioned off-screen and animated into place when a hotspot is clicked #}
   <div class="ws-device-modal-root ws-modal-root ws-displayNone">
     <a class="ws-device-modal-close ws-modal-close" aria-label="Close" href="#/{{ workspace.slug }}/{{ room.slug }}">{% icon "close-x", "ws-close-x" %}</a>
     <div class="ws-top-rule"></div>

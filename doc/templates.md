@@ -70,11 +70,9 @@ Renders:
 
 Renders a container and a list of features, supplied as an array of strings. 
 
-###  [`src/includes/partials/device-modal/image-carousel.njk`](../src/includes/partials/device-modal/image-carousel.njk)
+###  [`src/includes/partials/device-modal/media-carousel.njk`](../src/includes/partials/device-modal/media-carousel.njk)
 
-Renders a container for the carousel.  Expects an array of images.
-
-The skeleton for this partial is still in progress.  For now, it displays the count of images passed in via the array.
+Renders a container for the carousel.  Expects an array of image or video filenames.
 
 ###  [`src/includes/partials/device-modal/specs.njk`](../src/includes/partials/device-modal/specs.njk)
 

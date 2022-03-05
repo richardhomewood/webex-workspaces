@@ -37,11 +37,14 @@ module.exports = (config) => {
   config.addShortcode('imagesync', shortcodes.imagesync);
   config.addNunjucksAsyncShortcode('webpack', shortcodes.webpack);
   config.addShortcode('assetPath', shortcodes.assetPath);
+  config.addShortcode('video', shortcodes.video);
 
   // Pass-through files
   config.addPassthroughCopy('src/favicon.ico');
   // Everything inside static is copied verbatim to `_site`
   config.addPassthroughCopy('src/content/dam/wbx/us/images/workspace/static');
+  // Same with 'videos' directory.
+  config.addPassthroughCopy('src/content/dam/wbx/us/images/workspace/videos');
 
   // Ignore placeholder files for otherwise-empty directories.
   config.ignores.add('**/delete-me.md');
