@@ -1,5 +1,22 @@
-{% macro render(images)%}
-  <div class="ws-image-carousel awaits-styling">
-    Carousel for {{ images.length }} images
+{% macro render(deviceId, items)%}
+  <div class="ws-image-carousel">
+
+    <!-- Slider main container -->
+    <div id="swiper-{{ deviceId }}-carousel" class="swiper">
+      <!-- Additional required wrapper -->
+      <div class="swiper-wrapper">
+        <!-- Slides -->
+        {% for item in items %}
+          {% set itemPath = "devices/" + deviceId + "/carousel/" + item %}
+          <div class="swiper-slide">{% imagesync itemPath %}</div>
+        {% endfor %}
+      </div>
+
+      <!-- If we need navigation buttons -->
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div>
+
+    </div>
+
   </div>
 {% endmacro %}

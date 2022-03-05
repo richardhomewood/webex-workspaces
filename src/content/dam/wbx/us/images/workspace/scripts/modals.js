@@ -1,7 +1,12 @@
+import Swiper, {Navigation} from 'swiper';
+import 'swiper/scss';
+import 'swiper/scss/navigation';
 import classnames from './classnames';
 import {splitPath} from './paths';
 
 const slideInDelayMillis = 300;
+
+let carouselSwiper;
 
 const hideAll = () => {
 
@@ -25,6 +30,10 @@ const hideAll = () => {
             element.classList.remove(classnames.slideIn);
         });
     });
+
+    if (carouselSwiper) {
+        carouselSwiper.destroy();
+    }
 };
 
 const showModalContainerForRoom = (workspaceId, roomId) => {
@@ -51,8 +60,17 @@ const showDevice = path => {
 
     // Show the single device container. Always only one match per device-modal root.
     const deviceContainer = deviceModalRoot.getElementsByClassName(`${classnames.deviceContainer} ${classnames.deviceIdPrefix}${deviceId}`)[0]
-    console.log(deviceContainer);
     deviceContainer.classList.remove(classnames.hidden);
+
+    // Initialize the Swiper container
+    carouselSwiper = new Swiper(`#swiper-${deviceId}-carousel`, {
+        modules: [Navigation],
+        speed: 500,
+        navigation: {
+            nextEl: `#swiper-${deviceId}-carousel .swiper-button-next`,
+            prevEl: `#swiper-${deviceId}-carousel .swiper-button-prev`,
+        },
+    });
 
     // Finally, slide in the device-modal root
     setTimeout(() => {
