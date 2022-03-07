@@ -593,7 +593,7 @@ const placeHotSpots = (bgImg, room, bgContainerClass, offset) => {
     })
 }
 
-const currentSizeClass = () => {
+export function currentSizeClass() {
     const width = window.innerWidth
     let aSizeClass = ""
     commonData.sizeClasses.forEach((sizeClass) => {

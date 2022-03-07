@@ -4,7 +4,16 @@
         {%- for room in workspaces[workspaceId].rooms %}
 
             <div class="ws-room-slide swiper-slide{% if loop.first %} selected {% endif %}">
-            <a href="#/{{ room.slug }}">{{ room.name }}</a>
+            <span>{{ room.name }}</span>
+            </div>
+        {%- endfor %}
+        </div>
+    </div>
+    <div class="shadowSwiper swiper">
+        <div class="swiper-wrapper">
+        {%- for room in workspaces[workspaceId].rooms %}
+            <div class="ws-room-slide swiper-slide">
+                <span>{{ room.name }}</span>
             </div>
         {%- endfor %}
         </div>

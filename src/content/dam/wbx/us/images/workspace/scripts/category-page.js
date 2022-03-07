@@ -1,56 +1,147 @@
 import Swiper from 'swiper';
 import 'swiper/scss';
+import {currentSizeClass} from "./spaces";
 
 let swiper;
-window.addEventListener('load', function () {
+
+window.addEventListener('resize', () => {
+    updateSwiper();
+});
+
+window.addEventListener('load', async function () {
 
     const slides = Array.from(document.querySelectorAll(`.ws-category-content-root .swiper.room-swiper .swiper-slide`));
-    const slideCount = slides.length;
 
-    if (slideCount === 0) {
+    if (slides.length === 0) {
         return
+    } else {
+        slides.forEach((element) => {
+            element.onclick = (e)=>{slideClick(e)};
+        })
     }
 
-    if (slideCount == 2) {
+    let wouldBeSwiper = this.document.querySelector(".ws-category-content-root .swiper");
+    const options = await getSwiperOptions();
+    swiper = new Swiper(wouldBeSwiper, options);
+
+    let deviceSections = Array.from(document.querySelectorAll('.ws-device-section'));
+    
+    deviceSections.forEach(deviceSection => {
+        
+        let childNodes = Array.from(deviceSection.childNodes);
+        childNodes = childNodes.filter((node)=> {
+            return node.nodeName != "#text"
+        })
+        let childCount = childNodes.length;
+        let lastNode = childNodes.lastItem;
+        
+        if (childCount % 2 != 0){
+            lastNode.classList.add("oddEnd")
+        }else if(lastNode.classList.contains("oddEnd")){
+            lastNode.classList.remove("oddEnd")
+        }
+    });
+
+});
+
+const timeout = (ms) => {
+    return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+const getSwiperOptions = async ()=>{
+    const slides = Array.from(document.querySelectorAll(`.ws-category-content-root .swiper.room-swiper .swiper-slide`));
+    const shadowSlides = Array.from(document.querySelectorAll(`.ws-category-content-root .swiper.shadowSwiper .swiper-slide`));
+    let totalSlideWidth = 0;
+
+    let options;
+    await timeout(100)
+    
+    shadowSlides.forEach((element)=>{
+        totalSlideWidth += element.offsetWidth;
+    })
+
+    let enabled = totalSlideWidth > (window.innerWidth - padding())
+
+    if (!enabled) {
         slides.forEach((element)=>{
-            if (!element.classList.contains("fiftyfifty")){
-                element.classList.add("fiftyfifty");
-            }
-        });
+            element.style["min-width"] = "calc(100% / " + slides.length + ")";
+        })
     } else {
         slides.forEach((element)=>{
-            if (element.classList.contains("fiftyfifty")){
-                element.classList.remove("fiftyfifty");
-            }
-        });
+            element.style["min-width"] = "initial";
+        })
     }
 
-    this.setTimeout(()=>{
-        //const slideWidth = slides[0].offsetWidth;
-        let totalSlideWidth = 0;
+    options = {
+        speed: 400,
+        slidesPerView: "auto",
+        centeredSlides: true,
+        centeredSlidesBounds: true,
+        grabCursor: true,
+        slideToClickedSlide: true,
+        centerInsufficientSlides: true,
+        enabled: enabled
+    }
 
-        slides.forEach((element)=>{
-            console.log("element.offsetWidth", element.offsetWidth)
-            totalSlideWidth += element.offsetWidth;
-        })
+    return options
+}
 
-        console.log("totalSlideWidth", totalSlideWidth)
-        console.log("window.innerWidth", window.innerWidth)
-        console.log("window.innerWidth - 38", window.innerWidth - 36)
-        console.log("totalSlideWidth > (window.innerWidth - 36)", totalSlideWidth > (window.innerWidth - 36))
+const padding = () => {
+    let sizeClass = currentSizeClass();
+    if (sizeClass == "ws-XS" || sizeClass == "ws-S") {
+        return 36
+    } 
 
-        let wouldBeSwiper = this.document.querySelector(".ws-category-content-root .swiper");
-        const options = {
-            speed: 400,
-            slidesPerView: "auto",
-            centeredSlides: true,
-            centeredSlidesBounds: true,
-            grabCursor: true,
-            slideToClickedSlide: true,
-            centerInsufficientSlides: true,
-            enabled: false//totalSlideWidth > (window.innerWidth - 36)
+    return 124;
+}
+
+const slideClick = (e)=>{
+
+    const target = e.target.classList.contains("swiper-slide") ? e.target : e.target.parentNode
+    const slides = Array.from(document.querySelectorAll(`.ws-category-content-root .swiper.room-swiper .swiper-slide`));
+    const clickedIndex = slides.indexOf(target);
+
+    const rooms = Array.from(document.querySelectorAll(".ws-category-content-root .ws-category-page-rooms .ws-category-page-room"))
+    rooms.forEach((element, index) => {
+        if (index == clickedIndex) {
+            element.style["display"] = "block";
+            element.style["opacity"] = 1 
+            if(!slides[index].classList.contains("selected")){
+                slides[index].classList.add("selected")
+            }
+        } else {
+            element.style["opacity"] = 0 
+            setTimeout(()=>{
+                element.style["display"] = "none";
+            },300)
+            if(slides[index].classList.contains("selected")){
+                slides[index].classList.remove("selected")
+            }
         }
-        swiper = new Swiper(wouldBeSwiper, options)
-    }, 300)
-    
-});
+    })
+}
+
+
+const updateSwiper = (delay = 500) => {
+    setTimeout(async () => {
+        if (swiper) {
+            const previosOptions = swiper.params;
+            const {enabled : isEnabled  } = previosOptions;
+            const options = await getSwiperOptions();
+            const {enabled} = options;
+            if (enabled && !isEnabled ) {
+                swiper.enable();
+                
+            } else if(!enabled && isEnabled) {
+                swiper.disable();
+            }
+            swiper.setProgress(0, 0);
+            setTimeout(() => {
+                swiper.setProgress(0, 0);
+                setTimeout(() => {
+                    swiper.setProgress(0, 0);
+                }, 1000)
+            }, 200)
+        }
+    }, delay)
+}

@@ -10,6 +10,7 @@
       "front grey.jpg",
       "full grey.jpg"
     ],
+    "featuresTitle": "Features",
     "features": [
       "Experience immersive sound during your meetings or while listening to music.",
       "Portable and wireless with up to 24-hours of battery life so you can take your meetings with you wherever you go.",
@@ -50,6 +51,7 @@
       "Webex_Headset730_White_Base_RGB_smp.jpg",
       "Webex_Headset730_White_Front_RGB_smp.jpg"
     ],
+    "featuresTitle": "Features",
     "features": [
       "Portable and wireless with up to 20-hours of talk time so you can take your meetings with you wherever you go.",
       "Boomless design for all day comfort.",
@@ -84,6 +86,7 @@
     "vendor": "meraki",
     "url": "https://meraki.cisco.com/product/security-sd-wan/teleworker/z3c/",
     "description": "Provide security, convenience, and optimized access to your home office.",
+    "featuresTitle": "Features",
     "features": [
       "Always-on VPN. An office-like experience at home with Wi-Fi that’s always connected.",
       "VOIP telephony. Plug-and-play office telephony in a home office from PoE-enabled ports.",
@@ -143,6 +146,7 @@
       "mr46-product-image-right.jpg",
       "mr46-product-image-top.jpg"
     ],
+    "featuresTitle": "Features",
     "features": [
       "RF Optimization. Dual-concurrent radios with MU-MIMO support.",
       "Layer 7 traffic shaping. Prioritize productivity apps.",
@@ -184,6 +188,7 @@
       "ms120-8-product-image-right.jpg",
       "ms120-8-product-image-top.jpg"
     ],
+    "featuresTitle": "Features",
     "features": [
       "Layer 2 access switching ideal for small branch deployments.",
       "Easy management and configuration through an intuitive cloud interface.",
@@ -224,6 +229,7 @@
       "mx67c-product-image-right.jpg",
       "mx67c-product-image-top.jpg"
     ],
+    "featuresTitle": "Features",
     "features": [
       "Unified threat management. Next-generation layer 7 firewall and content filtering.",
       "Connectivity. Extension of SD-WAN fabric to hybrid clouds and Cisco Umbrella.",
@@ -260,6 +266,7 @@
       "55 front persp.jpg",
       "55- back.jpg"
     ],
+    "featuresTitle": "Features",
     "features": [
       "Experience the best of both worlds with high-quality video conferencing and powerful ideation tools.",
       "Get to know everyone in the room with people focus which provides a clear view of each person in the meeting.",
@@ -304,6 +311,7 @@
       "ST01_BoardPro_back.jpg",
       "ST01_BoardPro_mid.jpg"
     ],
+    "featuresTitle": "Features",
     "features": [
       "Bring local and hybrid teams together to ideate and co-create with digital whiteboarding and content annotation.",
       "Present to your audience with wireless sharing and touch-based pinch and zoom.",
@@ -350,6 +358,7 @@
       "ST01_Desk_Camera_extra.jpg",
       "ST01_Desk_Camera_mid.jpg"
     ],
+    "featuresTitle": "Features",
     "features": [
       "Excellent video quality in all lighting conditions so you look great even when working late.",
       "Background noise reduction so you can be clearly heard when office is at its busiest.",
@@ -391,6 +400,7 @@
       "DeskHub_Back_RGB_smp.jpg",
       "DeskHub_Front_RGB_smp.jpg"
     ],
+    "featuresTitle": "Features",
     "features": [
       "Walk up to any open space in the office and authenticate in seconds with wireless pairing.",
       "Easily reserve your space for a specific time or the entire day.",
@@ -428,6 +438,7 @@
       "ST01_Desk_Mini_mid.jpg",
       "ST01_Desk_Mini_side.jpg"
     ],
+    "featuresTitle": "Features",
     "features": [
       "Portable design perfect for the kitchen, bedroom, or any small workspace",
       "Background noise removal to eliminate distractions at home",
@@ -475,6 +486,7 @@
       "DeskPro_Front_RGB_smp.jpg",
       "Webex_DeskPro_Back_RGB_smp.jpg"
     ],
+    "featuresTitle": "Features",
     "features": [
       "Collaborate, co-create, and annotate with a single, intelligent device.",
       "Virtual backgrounds so you always appear professional no matter your environment.",
@@ -518,6 +530,7 @@
       "RoomKit_Mini_Back_RGB_smp.jpg",
       "RoomKit_Mini_Front_RGB_smp.jpg"
     ],
+    "featuresTitle": "Features",
     "features": [
       "Combines everything you need including codec, camera, microphones, and speakers into a single device that integrates with a 4K display.",
       "Intelligent views and wide-angle field of view allows you to move around your home office while in a meeting.",
@@ -562,6 +575,7 @@
       "Navigator_Wall_3qtrRight_RGB_smp.jpg",
       "Navigator_Wall_Back_RGB_smp.jpg"
     ],
+    "featuresTitle": "Features",
     "features": [
       "Start and end a video or audio conference, share content, and view contact lists and directories all from a single device.",
       "Choose the right angle for you with two display orientation, including a 180 degrees rotation of the user interface when the device is tilted.",
