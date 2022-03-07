@@ -1,7 +1,12 @@
+import Swiper, {Navigation} from 'swiper';
+import 'swiper/scss';
+import 'swiper/scss/navigation';
 import classnames from './classnames';
 import {splitPath} from './paths';
 
 const slideInDelayMillis = 300;
+
+let carouselSwiper;
 
 const hideAll = () => {
 
@@ -25,6 +30,10 @@ const hideAll = () => {
             element.classList.remove(classnames.slideIn);
         });
     });
+
+    if (carouselSwiper) {
+        carouselSwiper.destroy();
+    }
 };
 
 const showModalContainerForRoom = (workspaceId, roomId) => {
@@ -51,8 +60,24 @@ const showDevice = path => {
 
     // Show the single device container. Always only one match per device-modal root.
     const deviceContainer = deviceModalRoot.getElementsByClassName(`${classnames.deviceContainer} ${classnames.deviceIdPrefix}${deviceId}`)[0]
-    console.log(deviceContainer);
     deviceContainer.classList.remove(classnames.hidden);
+
+    // Find the active slide number element for updating
+    const activeSlideNumber = deviceContainer.querySelector(`#swiper-${roomId}-${deviceId}-carousel .ws-carousel-active-slide`);
+
+    // Initialize the Swiper container
+    carouselSwiper = new Swiper(`#swiper-${roomId}-${deviceId}-carousel .swiper`, {
+        modules: [Navigation],
+        speed: 500,
+        navigation: {
+            nextEl: `#swiper-${roomId}-${deviceId}-carousel .ws-carousel-button-next`,
+            prevEl: `#swiper-${roomId}-${deviceId}-carousel .ws-carousel-button-prev`,
+        },
+    });
+    carouselSwiper.on('slideChange', function () {
+        activeSlideNumber.innerHTML = String(this.activeIndex + 1);
+    });
+
 
     // Finally, slide in the device-modal root
     setTimeout(() => {
