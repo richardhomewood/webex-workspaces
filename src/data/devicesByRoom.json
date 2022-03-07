@@ -17,6 +17,7 @@
   },
   "office": {
     "hotdesk": [
+      "cisco-headset-730",
       "webex-desk-hub",
       "webex-desk-camera"
     ],
@@ -24,7 +25,8 @@
       "webex-board-pro-75"
     ],
     "smallConferenceRoom": [
-      "webex-board-pro-55"
+      "webex-board-pro-55",
+      "webex-room-navigator"
     ]
   },
   "anywhere": {
