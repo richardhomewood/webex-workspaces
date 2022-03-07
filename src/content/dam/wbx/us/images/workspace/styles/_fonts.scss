@@ -131,7 +131,7 @@
 
   @media only screen and (min-width: 1367px) {
     @include ws-large-body-reg;
-    font-family: 'CiscoSansTT-Bold', sans-serif;;
+    font-family: 'CiscoSansTT-Bold', sans-serif;
   }
 }
 
@@ -160,11 +160,11 @@
 
 @mixin ws-med-body-bold {
   @include ws-med-body-reg;
-  font-family: 'CiscoSansTT-Bold', sans-serif;;
+  font-family: 'CiscoSansTT-Bold', sans-serif;
 
   @media only screen and (min-width: 1367px) {
     @include ws-med-body-reg;
-    font-family: 'CiscoSansTT-Bold', sans-serif;;
+    font-family: 'CiscoSansTT-Bold', sans-serif;
   }
 }
 
@@ -194,7 +194,7 @@
 
 @mixin ws-small-body-bold {
   @include ws-small-body-reg;
-  font-family: 'CiscoSansTT-Bold', sans-serif;;
+  font-family: 'CiscoSansTT-Bold', sans-serif;
 
   @media only screen and (min-width: 1367px) {
     @include ws-small-body-reg;
@@ -255,4 +255,11 @@
     line-height: 19px;
     letter-spacing: -0.02em;
   }
+}
+
+@mixin ws-button-text {
+  font-size: 15px;
+  line-height: 14px;
+  font-family: 'CiscoSansTT-Medium', sans-serif;
+  letter-spacing: -0.02em;
 }

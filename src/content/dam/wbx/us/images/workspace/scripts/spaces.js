@@ -444,7 +444,7 @@ const updateRoomsSelector = function (path) {
                 },
             }
         }
-        console.log("initializing swipingRoomSelector")
+        
         swipingRoomSelector = new Swiper(`#${mypath}Container .swiper`, options);
     }, 500)
 }
@@ -593,7 +593,7 @@ const placeHotSpots = (bgImg, room, bgContainerClass, offset) => {
     })
 }
 
-const currentSizeClass = () => {
+export function currentSizeClass() {
     const width = window.innerWidth
     let aSizeClass = ""
     commonData.sizeClasses.forEach((sizeClass) => {
