@@ -444,7 +444,7 @@ const updateRoomsSelector = function (path) {
                 },
             }
         }
-        console.log("initializing swipingRoomSelector")
+        
         swipingRoomSelector = new Swiper(`#${mypath}Container .swiper`, options);
     }, 500)
 }

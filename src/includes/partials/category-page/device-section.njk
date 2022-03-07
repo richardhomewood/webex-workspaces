@@ -1,7 +1,7 @@
 {% macro render(common, workspaceId, roomId, devicesByRoom, devices) %}
-  <div class="ws-device-section awaits-styling">
+  <div class="ws-device-section">
     {% for deviceId in devicesByRoom[workspaceId][roomId] %}
-      <div class="awaits-styling">
+      <div>
         <h3>{{ devices[deviceId].name }}</h3>
 
         {{ categoryPageImage(devices[deviceId].categoryPageImage,  common.sizeClasses) }}

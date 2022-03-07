@@ -1,9 +1,9 @@
 {% macro render(common, workspaceId, roomId, softwareByRoom, software) %}
-  <div class="ws-software-section awaits-styling">
+  <div class="ws-software-section">
     <h2>{{ common.categoryPage.softwareHeadingText }}</h2>
     <div class="swiper">
       {% for softwareId in softwareByRoom[workspaceId][roomId] %}
-        <div class="swiper-slide awaits-styling">
+        <div class="swiper-slide">
           <h4>{{ software[softwareId].name }}</h4>
 
           {{ softwareImage(software[softwareId].image,  common.sizeClasses) }}

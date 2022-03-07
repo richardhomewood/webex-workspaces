@@ -33,12 +33,10 @@
         }
 
         .ws-initial-cta {
-          font-size: 15px;
-          line-height: 14px;
+          @include ws-button-text;
           text-align: center;
           color: #ffffff;
           padding: 21px 22px;
-          font-family: 'CiscoSansTT-Medium', sans-serif;
           border: 1px solid #ffffff;
           box-sizing: border-box;
           border-radius: 50px;
@@ -72,12 +70,10 @@
         }
 
         .ws-initial-cta {
-          font-size: 15px;
-          line-height: 14px;
+          @include ws-button-text;
           text-align: center;
           color: #ffffff;
           padding: 21px 22px;
-          font-family: 'CiscoSansTT-Medium', sans-serif;
           border: 1px solid #ffffff;
           box-sizing: border-box;
           border-radius: 50px;
@@ -111,12 +107,10 @@
         }
 
         .ws-initial-cta {
-          font-size: 15px;
-          line-height: 14px;
+          @include ws-button-text;
           text-align: center;
           color: #ffffff;
           padding: 21px 22px;
-          font-family: 'CiscoSansTT-Medium', sans-serif;
           border: 1px solid #ffffff;
           box-sizing: border-box;
           border-radius: 50px;
@@ -150,12 +144,10 @@
         }
 
         .ws-initial-cta {
-          font-size: 15px;
-          line-height: 14px;
+          @include ws-button-text;
           text-align: center;
           color: #ffffff;
           padding: 21px 22px;
-          font-family: 'CiscoSansTT-Medium', sans-serif;
           border: 1px solid #ffffff;
           box-sizing: border-box;
           border-radius: 50px;
@@ -189,12 +181,10 @@
         }
 
         .ws-initial-cta {
-          font-size: 15px;
-          line-height: 14px;
+          @include ws-button-text;
           text-align: center;
           color: #ffffff;
           padding: 21px 22px;
-          font-family: 'CiscoSansTT-Medium', sans-serif;
           border: 1px solid #ffffff;
           box-sizing: border-box;
           border-radius: 50px;
@@ -228,12 +218,10 @@
         }
 
         .ws-initial-cta {
-          font-size: 15px;
-          line-height: 14px;
+          @include ws-button-text;
           text-align: center;
           color: #ffffff;
           padding: 21px 22px;
-          font-family: 'CiscoSansTT-Medium', sans-serif;
           border: 1px solid #ffffff;
           box-sizing: border-box;
           border-radius: 50px;
