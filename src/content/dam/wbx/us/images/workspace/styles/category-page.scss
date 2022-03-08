@@ -62,17 +62,53 @@ body {
     top: 0;
 
     .ws-modal-close {
+      z-index: 5;
       cursor: pointer;
       width: 17px;
       height: 17px;
-      position: absolute;
+      float: right;
+      position: relative;
       right: 23px;
-      top: 26px;
-    }
-    ul, .ws-contact-cta {
-      display: none;
+      top: 7px;
     }
 
+    .ws-menu-items {
+      text-align: center;
+      margin-top: 125px;
+      ul {
+        list-style: none;
+        text-align: center;
+        padding: 0;
+        margin-bottom: 55px;
+        li {
+          font-size: 40px;
+          line-height: 58px;
+          letter-spacing: -0.04em;
+        }
+      }
+
+      a {
+        text-decoration: none;
+        &:visited, &:active {
+          color: black;
+        }
+      }
+
+      a.ws-contact-cta {
+        display: inline-block;
+        border: 1px solid #181818;
+        border-radius: 30px;
+        height: 56px;
+        padding: 0 21px;
+        span {
+          display: block;
+          margin: 22px auto;
+          color: #181818;
+          font-size: 14px;
+          line-height: 14px;
+        }
+      }
+    }
   }
 
   .ws-category-page-content {
