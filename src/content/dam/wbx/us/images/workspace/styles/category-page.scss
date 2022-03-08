@@ -37,6 +37,11 @@
         &:first-child {
           margin-bottom: 8px;
         }
+    .ws-contact-cta {
+      border: 1px solid #000000;
+      color: black;
+      span {
+        display: block;
       }
     }
   }
