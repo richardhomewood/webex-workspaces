@@ -1,6 +1,6 @@
 import Swiper from 'swiper';
 import 'swiper/scss';
-import {currentSizeClass} from "./spaces";
+import {currentSizeClass, timeout} from "./utils";
 import classnames, {hamburgerMenu} from './classnames';
 
 let swiper;

@@ -6,6 +6,7 @@ import { setTimeout } from 'core-js';
 import Swiper from 'swiper';
 import Hammer from 'hammerjs';
 import 'swiper/scss';
+import {currentSizeClass, timeout} from './utils';
 
 let hasUpdatedBGs = false
 let maxXPanOffset = 0
