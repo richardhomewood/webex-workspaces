@@ -1,4 +1,3 @@
 {
-  "root": "_site/",
-  "basic_auth": true
+  "root": "_site/"
 }
