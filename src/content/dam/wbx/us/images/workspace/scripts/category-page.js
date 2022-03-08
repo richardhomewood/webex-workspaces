@@ -1,6 +1,6 @@
 import Swiper from 'swiper';
 import 'swiper/scss';
-import {currentSizeClass} from "./spaces";
+import {currentSizeClass, timeout} from "./utils";
 import classnames, {hamburgerMenu} from './classnames';
 
 let swiper;
@@ -34,7 +34,7 @@ window.addEventListener('load', async function () {
             return node.nodeName != "#text"
         })
         let childCount = childNodes.length;
-        let lastNode = childNodes.lastItem;
+        let lastNode = childNodes[childCount - 1];
 
         if (childCount % 2 != 0){
             lastNode.classList.add("oddEnd")
@@ -49,10 +49,6 @@ window.addEventListener('load', async function () {
     const hamburgerCloseWidget = document.querySelector(`.${classnames.hamburgerMenu} .${classnames.modalCloseWidget}`);
     hamburgerCloseWidget.onclick = () => hideHamburgerMenu();
 });
-
-const timeout = (ms) => {
-    return new Promise(resolve => setTimeout(resolve, ms));
-}
 
 const getSwiperOptions = async ()=>{
     const slides = Array.from(document.querySelectorAll(`.ws-category-content-root .swiper.room-swiper .swiper-slide`));
@@ -126,7 +122,6 @@ const slideClick = (e)=>{
         }
     })
 }
-
 
 const updateSwiper = (delay = 500) => {
     setTimeout(async () => {

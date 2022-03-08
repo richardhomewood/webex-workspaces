@@ -6,6 +6,7 @@ import { setTimeout } from 'core-js';
 import Swiper from 'swiper';
 import Hammer from 'hammerjs';
 import 'swiper/scss';
+import {currentSizeClass, timeout} from './utils';
 
 let hasUpdatedBGs = false
 let maxXPanOffset = 0
@@ -256,6 +257,7 @@ export function toSelectedWorkSpace(space, room) {
     if (bgsToHide.length == 0) {
         hotSpotsToHide.forEach((element)=>{
             element.classList.remove('animate-in')
+            element.classList.add('animated-out')
         })
     }
 
@@ -269,8 +271,16 @@ export function toSelectedWorkSpace(space, room) {
         setTimeout(()=>{
             hotSpotsToShow.forEach((element, index) => {
                 setTimeout(()=>{
-                    element.classList.add(classnames.animateIn);
+                    if (!element.classList.contains('animated-out')) {
+                        element.classList.add(classnames.animateIn);
+                    }
                 }, 300 * index);
+
+                if (index == hotSpotsToShow.length - 1){
+                    hotSpotsToHide.forEach((element)=> {
+                        element.classList.remove('animated-out')
+                    })
+                }
             })
         }, 300);
     })
@@ -400,11 +410,47 @@ const updateWorkspaceCta = function (path) {
 
 let swipingRoomSelector;
 
-const updateRoomsSelector = function (path) {
+const updateRoomsSelector = async function (path) {
     const splitPaths = splitPath(path);
     const mypath = splitPaths !== null ? splitPaths[0] : path;
 
     if (swipingRoomSelector && swipingRoomSelector.el && swipingRoomSelector.el.parentNode && swipingRoomSelector.el.parentNode.getAttribute("id") === `${mypath}Container`) {
+        
+        const previosOptions = swipingRoomSelector.params;
+        const {enabled : isEnabled  } = previosOptions;
+        const {enabled} = await getRoomSelectorOptions(mypath);
+        let updateProgress = (enabled && !isEnabled) || (!enabled && isEnabled);
+        const slides = Array.from(document.querySelectorAll(`#${mypath}Container .swiper .swiper-slide.${classnames.roomSlide}`));
+        let clickedIndex = -1;
+
+        slides.forEach((element, index) => {
+            if (element.classList.contains("selected")) {
+                clickedIndex = index;
+            }
+        })
+
+        let progress = 0
+        if (clickedIndex >= 0) {
+            progress = clickedIndex == clickedIndex == 0 ? 0 : slides.length - 1 ? 1 : (clickedIndex / slides.length) + ((1 / (slides.length * 2)) * clickedIndex)
+        }
+
+        if (updateProgress) {
+            setTimeout(async () => {
+                if (enabled && !isEnabled) {
+                    swipingRoomSelector.enable();
+                } else if (!enabled && isEnabled) {
+                    swipingRoomSelector.disable();
+                }
+
+                swipingRoomSelector.setProgress(progress, 0);
+                setTimeout(() => {
+                    swipingRoomSelector.setProgress(progress, 0);
+                    setTimeout(() => {
+                        swipingRoomSelector.setProgress(progress, 0);
+                    }, 1000)
+                }, 200)
+            }, 500);
+        }
         return;
     } else if (swipingRoomSelector) {
         swipingRoomSelector.destroy();
@@ -416,37 +462,77 @@ const updateRoomsSelector = function (path) {
         return;
     }
 
-    setTimeout(() => {
-        const slides = Array.from(document.querySelectorAll(`#${mypath}Container .swiper .swiper-slide.${classnames.roomSlide}`));
-        const slideCount = slides.length;
-
-        if (slideCount === 0) {
-            return
-        }
-        const slideWidth = slides[0].offsetWidth;
-        const totalSlideWidth = (slideWidth * slideCount) + (10 * (slideCount - 1));
-
-        const options = {
-            speed: 400,
-            slidesPerView: "auto",
-            centeredSlides: true,
-            centeredSlidesBounds: true,
-            grabCursor: true,
-            slideToClickedSlide: true,
-            centerInsufficientSlides: true,
-            enabled: totalSlideWidth >= (window.innerWidth - 98),
-            on:{
-                afterInit: function(){
-                    let wouldBeSwiper = document.querySelector(`#${mypath}Container .swiper`)
-                    setTimeout(function(){
-                        wouldBeSwiper.style["opacity"] = 1
-                    },300)
-                },
-            }
-        }
-        
+    setTimeout(async () => {
+        const options = await getRoomSelectorOptions(mypath);
         swipingRoomSelector = new Swiper(`#${mypath}Container .swiper`, options);
     }, 500)
+}
+
+const slideClick = (e) => {
+
+    const path = location.hash.substring(1);
+    const splitPaths = splitPath(path);
+    const mypath = splitPaths !== null ? splitPaths[0] : path;
+
+    const target = e.target.classList.contains("swiper-slide") ? e.target : e.target.closest(".swiper-slide")
+    const slides = Array.from(document.querySelectorAll(`#${mypath}Container .swiper .swiper-slide.${classnames.roomSlide}`));
+    const clickedIndex = slides.indexOf(target);
+
+    slides.forEach((element, index)=>{
+        if (index == clickedIndex) {
+            if(!element.classList.contains("selected")){
+                element.classList.add("selected")
+            }
+        } else {
+            if(element.classList.contains("selected")){
+                element.classList.remove("selected")
+            }
+        }
+    })
+}
+
+const getRoomSelectorOptions = async (mypath) => {
+
+    const slides = Array.from(document.querySelectorAll(`#${mypath}Container .swiper .swiper-slide.${classnames.roomSlide}`));
+    const slideCount = slides.length;
+
+    if (slideCount === 0) {
+        return
+    }
+
+    if (slides.length === 0) {
+        return
+    } else {
+        slides.forEach((element) => {
+            element.onclick = (e)=>{slideClick(e)};
+        })
+    }
+
+    await timeout(100);
+
+    const slideWidth = slides[0].offsetWidth;
+    const totalSlideWidth = (slideWidth * slideCount) + (10 * (slideCount - 1));
+    const enabled = totalSlideWidth >= (window.innerWidth - 98);
+    const options = {
+        speed: 400,
+        slidesPerView: "auto",
+        centeredSlides: true,
+        centeredSlidesBounds: true,
+        grabCursor: true,
+        slideToClickedSlide: true,
+        centerInsufficientSlides: true,
+        enabled: enabled,
+        on:{
+            afterInit: function(){
+                let wouldBeSwiper = document.querySelector(`#${mypath}Container .swiper`)
+                setTimeout(function(){
+                    wouldBeSwiper.style["opacity"] = 1
+                },300)
+            }
+        }
+    }
+
+    return options;
 }
 
 const updateBGSizes = () => {
@@ -591,15 +677,4 @@ const placeHotSpots = (bgImg, room, bgContainerClass, offset) => {
         hotspot.style["opacity"] = 1;
         hotspot.style["transform"] = 'translate(calc(-50% + ' + (hOffset + offset.x) + 'px), calc(-50% + ' + (yOffset + offset.y) + 'px))';
     })
-}
-
-export function currentSizeClass() {
-    const width = window.innerWidth
-    let aSizeClass = ""
-    commonData.sizeClasses.forEach((sizeClass) => {
-        if (width <= sizeClass[2]) {
-            aSizeClass = sizeClass[0]
-        }
-    })
-    return aSizeClass;
 }
