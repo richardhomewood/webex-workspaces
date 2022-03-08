@@ -83,8 +83,8 @@ export function toSelectedWorkSpace(space, room) {
     const roomSelectorWrap = document.getElementsByClassName(classnames.selectorWrapper)[0];
 
     let roomSlug = !room ? workspaces[space].rooms[(workspaces[space].rooms.length < selectedRoomIndex + 1 ? 0 : selectedRoomIndex)].slug : "";
-    
-    const bgToDisplayCSSSelector = room ? 
+
+    const bgToDisplayCSSSelector = room ?
     `.${space}-${room}${classnames.roomBackgroundSuffix}` :
     `.${space}-${roomSlug}${classnames.roomBackgroundSuffix}`;
 
@@ -295,7 +295,7 @@ export function toSelectedWorkSpace(space, room) {
             previousY:0
         };
         //hide all room labels
-        
+
         const roomLabels = Array.from(document.querySelectorAll("." + classnames.selectedRoomLabel + ":not(.ws-room-selector-label)"))
         roomLabels.forEach((element) => {
             element.classList.add(classnames.hidden);
@@ -395,7 +395,7 @@ const updateWorkspaceCta = function (path) {
     const aboutCtaElements = document.getElementsByClassName(classnames.aboutWorkspaceCta);
     if (path){
         const [workspaceId, roomId] = splitPath(path);
-        let href = `./workspaces/${workspaceId}.html`;
+        let href = `./${workspaceId}.html`;
         if (roomId !== undefined) {
             href = `${href}#/${roomId}`;
         }
@@ -405,7 +405,7 @@ const updateWorkspaceCta = function (path) {
     } else {
         Array.from(aboutCtaElements).forEach(anchor => anchor.enabled = false);
     }
-    
+
 };
 
 let swipingRoomSelector;
@@ -415,7 +415,7 @@ const updateRoomsSelector = async function (path) {
     const mypath = splitPaths !== null ? splitPaths[0] : path;
 
     if (swipingRoomSelector && swipingRoomSelector.el && swipingRoomSelector.el.parentNode && swipingRoomSelector.el.parentNode.getAttribute("id") === `${mypath}Container`) {
-        
+
         const previosOptions = swipingRoomSelector.params;
         const {enabled : isEnabled  } = previosOptions;
         const {enabled} = await getRoomSelectorOptions(mypath);
