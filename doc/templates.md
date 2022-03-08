@@ -5,13 +5,25 @@ or [`src/includes`](../src/includes) directories.
 
 ## Page templates
 
-###[`src/workspaces.njk`](../src/workspaces.njk)
+###[`src/workspaces/explore.njk`](../src/workspaces/explore.njk)
 
-  This is the only top-level template. It contains page-wrapping around the content that will not be copied
+  This is the landing-page template. It contains page-wrapping around the content that will not be copied
   by Webex at deployment time.
 
   It is a minimal wrapper around included macro content that serves to load both CSS and JavaScript.
 
+###[`src/workspaces/home.njk`](../src/workspaces/home.njk)
+###[`src/workspaces/office.njk`](../src/workspaces/office.njk)
+###[`src/workspaces/anywhere.njk`](../src/workspaces/anywhere.njk)
+
+These 3 page templates contain only front matter, and only serve to define the HTML page to be generated.  All page
+content is in the Category layout below.
+
+## Layouts
+
+###[`src/includes/layouts/category.njk`](../src/includes/layouts/category.njk)
+
+This layout is used by the 3 Category page templates above.  It contains all the Category page content.
 
 ## Partial templates
 
