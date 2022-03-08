@@ -4,9 +4,11 @@
       {%- for workspaceId in common.orderedWorkspaceIds %}
         {% if loop.index === 1 %}
             {{initialViewBGFPO(workspaces[workspaceId].background)}}
+            <span>
         {% endif %}
         {{initialViewBG(workspaces[workspaceId].background, loop.index)}}
        {% endfor %}
+        </span>
     </div>
     <div class="ws-initial-content">
       <div class="ws-initial-text">{{ common.initialViewText }}</div>
