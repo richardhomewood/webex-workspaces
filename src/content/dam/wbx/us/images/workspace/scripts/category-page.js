@@ -34,7 +34,7 @@ window.addEventListener('load', async function () {
             return node.nodeName != "#text"
         })
         let childCount = childNodes.length;
-        let lastNode = childNodes.lastItem;
+        let lastNode = childNodes[childCount - 1];
 
         if (childCount % 2 != 0){
             lastNode.classList.add("oddEnd")
@@ -122,7 +122,6 @@ const slideClick = (e)=>{
         }
     })
 }
-
 
 const updateSwiper = (delay = 500) => {
     setTimeout(async () => {
