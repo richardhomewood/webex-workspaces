@@ -30,37 +30,37 @@
         "hotSpots": [
           {
             "slug": "webex-desk-pro",
-            "x": 346,
-            "y": 443
+            "x": 410,
+            "y": 473
           },
           {
             "slug": "ms120-8-fp",
-            "x": 533,
-            "y": 324
+            "x": 575,
+            "y": 356
           },
           {
             "slug": "mx67c",
-            "x": 646,
-            "y": 317
+            "x": 678,
+            "y": 356
           },
           {
             "slug": "mr46",
-            "x": 740,
-            "y": 277
+            "x": 764,
+            "y": 309
           },
           {
             "slug": "webex-room-navigator",
-            "x": 907,
+            "x": 919,
             "y": 555
           },
           {
             "slug": "webex-room-kit-mini",
-            "x": 1209,
-            "y": 555
+            "x": 1193,
+            "y": 587
           },
           {
             "slug": "bo-cisco-980",
-            "x": 1209,
+            "x": 1193,
             "y": 704
           }
         ],
@@ -94,18 +94,18 @@
         "hotSpots": [
           {
             "slug": "meraki-z3c",
-            "x": 455,
-            "y": 441
+            "x": 404,
+            "y": 418
           },
           {
             "slug": "webex-desk-mini",
-            "x": 742,
-            "y": 486
+            "x": 686,
+            "y": 471
           },
           {
             "slug": "cisco-headset-730",
-            "x": 922,
-            "y": 622
+            "x": 870,
+            "y": 580
           }
         ],
         "roomDescription": [
@@ -147,17 +147,17 @@
           {
             "slug": "webex-desk-camera",
             "x": 583,
-            "y": 405
+            "y": 396
           },
           {
             "slug": "webex-desk-hub",
-            "x": 797,
-            "y": 530
+            "x": 791,
+            "y": 544
           },
           {
             "slug": "cisco-headset-730",
-            "x": 852,
-            "y": 480
+            "x": 842,
+            "y": 490
           }
         ],
         "roomDescription": [
@@ -190,8 +190,8 @@
         "hotSpots": [
           {
             "slug": "webex-board-pro-75",
-            "x": 398,
-            "y": 306
+            "x": 408,
+            "y": 294
           }
         ],
         "roomDescription": [
@@ -224,13 +224,13 @@
         "hotSpots": [
           {
             "slug": "webex-board-pro-55",
-            "x": 465,
-            "y": 672
+            "x": 428,
+            "y": 614
           },
           {
             "slug": "webex-room-navigator",
-            "x": 902,
-            "y": 513
+            "x": 880,
+            "y": 529
           }
         ],
         "roomDescription": [
@@ -270,8 +270,8 @@
         "hotSpots": [
           {
             "slug": "bo-cisco-980",
-            "x": 668,
-            "y": 712
+            "x": 722,
+            "y": 560
           }
         ],
         "roomDescription": [
