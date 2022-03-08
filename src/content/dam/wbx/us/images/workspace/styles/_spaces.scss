@@ -1,6 +1,19 @@
+$bg-body: grey;
+
 .ws-immersive-root {
   height: 100vh;
   min-height: 100%;
+
+  margin: 0;
+  font-family: 'CiscoSansTT-Regular', sans-serif;
+  overflow-x: hidden;
+  background-color: $bg-body;
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+
   .ws-room-view {
     position: absolute;
     top: 0;
