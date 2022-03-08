@@ -6,7 +6,13 @@
 
   <div class="ws-category-page-rooms">
     {%- for room in workspaces[workspaceId].rooms %}
-      <div class="ws-category-page-room awaits-styling">
+      <div class="ws-category-page-room">
+        <div class="ws-room-description">
+          {% for paragraph in room.roomDescription %}
+            <p>{{ paragraph | safe }}</p>
+          {% endfor %}
+        </div>
+
         {{ devicesSection.render(common, workspaceId, room.slug, devicesByRoom, devices) }}
 
         {{ softwareSection.render(common, workspaceId, room.slug, softwareByRoom, software) }}

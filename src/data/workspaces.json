@@ -2,67 +2,67 @@
   "home": {
     "name": "Home Spaces",
     "slug": "home",
-    "background": "homeoffice.png",
+    "background": "homeoffice.jpg",
     "categoryPageText": "Today, our homes have become an extension of the office with 68% of people now splitting time between the two. While the sudden shift to remote work had people scrambling to put together makeshift workspaces, the time has come to design your home space to work harder for you—while keeping distractions at bay.",
     "rooms": [
       {
         "name": "Home Office",
         "slug": "homeOffice",
         "pdfFilename": "HybridWorkExperiences_EBook_2021_HomeOffice.pdf",
-        "background": "homeoffice.png",
+        "background": "homeoffice.jpg",
         "backgroundPosition": {
-            "ws-XS" : {
-                "x": 0.0103
-            },
-            "ws-S": {
-                "x": 0.00751
-            },
-            "ws-M": {
-                "x": 0.0336
-            },
-            "ws-L": {
-                "x": 0.0028
-            },
-            "ws-XL": {
-                "x": 0
-            }
+          "ws-XS": {
+            "x": 0.0103
+          },
+          "ws-S": {
+            "x": 0.00751
+          },
+          "ws-M": {
+            "x": 0.0336
+          },
+          "ws-L": {
+            "x": 0.0028
+          },
+          "ws-XL": {
+            "x": 0
+          }
         },
         "hotSpots": [
-            {
-                "slug":"webex-desk-pro",
-                "x": 346,
-                "y": 443
-            },
-            {
-                "slug":"ms120-8-fp",
-                "x": 533,
-                "y": 324
-            },
-            {
-                "slug":"mx67c",
-                "x": 646,
-                "y": 317
-            },
-            {
-                "slug":"mr46",
-                "x": 740,
-                "y": 277
-            },
-            {
-                "slug":"webex-room-navigator",
-                "x": 907,
-                "y": 555
-            },
-            {
-                "slug":"webex-room-kit-mini",
-                "x": 1209,
-                "y": 555
-            },
-            {
-                "slug":"bo-cisco-980",
-                "x": 1209,
-                "y": 704
-            }
+          {
+            "slug": "webex-desk-pro",
+            "x": 410,
+            "y": 473
+          },
+          {
+            "slug": "ms120-8-fp",
+            "x": 575,
+            "y": 356
+          },
+          {
+            "slug": "mx67c",
+            "x": 678,
+            "y": 356
+          },
+          {
+            "slug": "mr46",
+            "x": 764,
+            "y": 309
+          },
+          {
+            "slug": "webex-room-navigator",
+            "x": 919,
+            "y": 555
+          },
+          {
+            "slug": "webex-room-kit-mini",
+            "x": 1193,
+            "y": 587
+          },
+          {
+            "slug": "bo-cisco-980",
+            "x": 1193,
+            "y": 704
+          }
         ],
         "roomDescription": [
           "For those who have a dedicated home office, it’s essential to design it in a way that lets you work as efficiently and securely as any corporate office—not to mention, more comfortably.",
@@ -70,44 +70,43 @@
         ]
       },
       {
-        "name": "Kitchen Room",
+        "name": "Kitchen",
         "slug": "kitchen",
         "pdfFilename": "HybridWorkExperiences_EBook_2021_Kitchen.pdf",
-        "background": "kitchen.png",
+        "background": "kitchen.jpg",
         "backgroundPosition": {
-            "ws-XS" : {
-                "x": 0.139
-            },
-            "ws-S": {
-                "x": 0.05355
-            },
-            "ws-M": {
-                "x": 0.1161
-            },
-            "ws-L": {
-                "x": 0
-            },
-            "ws-XL": {
-                "x": 0
-            }
+          "ws-XS": {
+            "x": 0.139
+          },
+          "ws-S": {
+            "x": 0.05355
+          },
+          "ws-M": {
+            "x": 0.1161
+          },
+          "ws-L": {
+            "x": 0
+          },
+          "ws-XL": {
+            "x": 0
+          }
         },
         "hotSpots": [
-            {
-                "slug":"meraki-z3c",
-                "x": 455,
-                "y": 441
-            },
-            {
-                "slug":"webex-desk-mini",
-                "x": 742,
-                "y": 486
-            },
-            {
-                "slug":"cisco-headset-730",
-                "x": 922,
-                "y": 622
-            }
-
+          {
+            "slug": "meraki-z3c",
+            "x": 404,
+            "y": 418
+          },
+          {
+            "slug": "webex-desk-mini",
+            "x": 686,
+            "y": 471
+          },
+          {
+            "slug": "cisco-headset-730",
+            "x": 870,
+            "y": 580
+          }
         ],
         "roomDescription": [
           "Not everyone has the luxury of a dedicated home office. For many of us, our kitchens have become our place to work. These tight—and often temporary workspaces—also include a recipe of distractions, noise, and guest appearances.",
@@ -119,112 +118,123 @@
   "office": {
     "name": "Office Spaces",
     "slug": "office",
-    "background": "hotdesk.png",
-    "categoryPageText":"Gone are the days where the office was a permanent destination for all employees. With people now constantly coming and going, each room needs to be designed to serve a specific purpose. In addition, 97% want changes to make the office safer before they return, which only adds another layer of complexity to your office transformation.",
+    "background": "hotdesk.jpg",
+    "categoryPageText": "Gone are the days where the office was a permanent destination for all employees. With people now constantly coming and going, each room needs to be designed to serve a specific purpose. In addition, 97% want changes to make the office safer before they return, which only adds another layer of complexity to your office transformation.",
     "rooms": [
       {
         "name": "Hotdesk",
         "slug": "hotdesk",
         "pdfFilename": "HybridWorkExperiences_EBook_2021_Hotdesk.pdf",
-        "background": "hotdesk.png",
+        "background": "hotdesk.jpg",
         "backgroundPosition": {
-            "ws-XS" : {
-                "x": 0.02935
-            },
-            "ws-S": {
-                "x": 0.0148
-            },
-            "ws-M": {
-                "x": 0.0778
-            },
-            "ws-L": {
-                "x": 0.0028
-            },
-            "ws-XL": {
-                "x": 0
-            }
+          "ws-XS": {
+            "x": 0.02935
+          },
+          "ws-S": {
+            "x": 0.0148
+          },
+          "ws-M": {
+            "x": 0.0778
+          },
+          "ws-L": {
+            "x": 0.0028
+          },
+          "ws-XL": {
+            "x": 0
+          }
         },
         "hotSpots": [
-            {
-                "slug":"webex-desk-camera",
-                "x": 583,
-                "y": 405
-            },
-            {
-                "slug":"webex-desk-hub",
-                "x": 797,
-                "y": 530
-            },
-            {
-                "slug":"cisco-headset-730",
-                "x": 852,
-                "y": 480
-            }
+          {
+            "slug": "webex-desk-camera",
+            "x": 583,
+            "y": 396
+          },
+          {
+            "slug": "webex-desk-hub",
+            "x": 791,
+            "y": 544
+          },
+          {
+            "slug": "cisco-headset-730",
+            "x": 842,
+            "y": 490
+          }
+        ],
+        "roomDescription": [
+          "With most employees splitting time between the home and office, hotdesking has never been more in-demand. The key is to equip these spaces for maximum productivity, so the rotating cast of employees and visitors never skips a beat.",
+          "That means arming this room with devices that lets them be instantly productive, while giving them the ability to just as instantly pack up and leave."
         ]
       },
       {
         "name": "Ideation Space",
         "slug": "ideationSpace",
         "pdfFilename": "HybridWorkExperiences_EBook_2021_IdeationSpace.pdf",
-        "background": "ideation.png",
+        "background": "ideation.jpg",
         "backgroundPosition": {
-            "ws-XS" : {
-                "x": 0.2046
-            },
-            "ws-S": {
-                "x": 0.115
-            },
-            "ws-M": {
-                "x": 0.0509
-            },
-            "ws-L": {
-                "x": 0.0028
-            },
-            "ws-XL": {
-                "x": 0
-            }
+          "ws-XS": {
+            "x": 0.2046
+          },
+          "ws-S": {
+            "x": 0.115
+          },
+          "ws-M": {
+            "x": 0.0509
+          },
+          "ws-L": {
+            "x": 0.0028
+          },
+          "ws-XL": {
+            "x": 0
+          }
         },
         "hotSpots": [
-            {
-                "slug":"webex-board-pro-75",
-                "x": 398,
-                "y": 306
-            }
+          {
+            "slug": "webex-board-pro-75",
+            "x": 408,
+            "y": 294
+          }
+        ],
+        "roomDescription": [
+          "Ideas can spark from anywhere, at any time. Having a dedicated space in your office for people to connect, co-create, share ideas, and solve problems makes sure none of that brilliance gets lost.",
+          "Devices purpose-built for this type of creativity are key to bringing everyone together, whether they are remote or sitting in the same room. "
         ]
       },
       {
         "name": "Small Conference Room",
         "slug": "smallConferenceRoom",
         "pdfFilename": "HybridWorkExperiences_EBook_2021_SmallConferenceRoom.pdf",
-        "background": "smallmeeting.png",
+        "background": "smallmeeting.jpg",
         "backgroundPosition": {
-            "ws-XS" : {
-                "x": 0.1207
-            },
-            "ws-S": {
-                "x": 0.03366
-            },
-            "ws-M": {
-                "x": 0.0134
-            },
-            "ws-L": {
-                "x": 0.0028
-            },
-            "ws-XL": {
-                "x": 0
-            }
+          "ws-XS": {
+            "x": 0.1207
+          },
+          "ws-S": {
+            "x": 0.03366
+          },
+          "ws-M": {
+            "x": 0.0134
+          },
+          "ws-L": {
+            "x": 0.0028
+          },
+          "ws-XL": {
+            "x": 0
+          }
         },
         "hotSpots": [
-            {
-                "slug":"webex-board-pro-55",
-                "x": 465,
-                "y": 672
-            },
-            {
-                "slug":"webex-room-navigator",
-                "x": 902,
-                "y": 513
-            }
+          {
+            "slug": "webex-board-pro-55",
+            "x": 428,
+            "y": 614
+          },
+          {
+            "slug": "webex-room-navigator",
+            "x": 880,
+            "y": 529
+          }
+        ],
+        "roomDescription": [
+          "The majority of meetings today will include remote participants, making it essential to rethink traditional conference rooms. Often the staple of an office, these spaces need to create an inclusive experience for all participants—whether in-office or remote—at the same time ensuring the people in the room feel safe in an enclosed area."
         ]
       }
     ]
@@ -232,37 +242,41 @@
   "anywhere": {
     "name": "Anywhere",
     "slug": "anywhere",
-    "background": "coffee.png",
+    "background": "coffee.jpg",
     "categoryPageText": "Work happens anywhere, even on the go—whether that’s traveling, enjoying a cup of coffee at your favorite café, or in the field on the frontlines. You need the right solutions that will keep you connected, focused, and secure so your work keeps on moving right alongside you.",
     "rooms": [
       {
         "name": "Cafe",
         "slug": "cafe",
         "pdfFilename": "HybridWorkExperiences_EBook_2021_Cafe.pdf",
-        "background": "coffee.png",
+        "background": "coffee.jpg",
         "backgroundPosition": {
-            "ws-XS" : {
-                "x": 0.04604
-            },
-            "ws-S": {
-                "x": 0.05654
-            },
-            "ws-M": {
-                "x": 0.13
-            },
-            "ws-L": {
-                "x": -0.00627
-            },
-            "ws-XL": {
-                "x": 0
-            }
+          "ws-XS": {
+            "x": 0.04604
+          },
+          "ws-S": {
+            "x": 0.05654
+          },
+          "ws-M": {
+            "x": 0.13
+          },
+          "ws-L": {
+            "x": 0
+          },
+          "ws-XL": {
+            "x": 0
+          }
         },
         "hotSpots": [
-            {
-                "slug":"bo-cisco-980",
-                "x": 668,
-                "y": 712
-            }
+          {
+            "slug": "bo-cisco-980",
+            "x": 722,
+            "y": 560
+          }
+        ],
+        "roomDescription": [
+          "Busy, noisy spaces like coffee shops used to be off limits for collaborating. Not only is it loud and distracting, but it can make it too hard to be heard during important calls. And to stay connected on the go, there’s often additional devices—both work and personal—you need to carry with you.",
+          "Not anymore. Webex makes it easy to stay focused, be heard, and travel light when you’re working away from your desk."
         ]
       }
     ]

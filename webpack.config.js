@@ -64,6 +64,7 @@ module.exports = {
             loader: 'postcss-loader',
             options: {postcssOptions: {plugins: [PostCSSPresetEnv]}}
           },
+          'resolve-url-loader',
           'sass-loader'
         ]
       },

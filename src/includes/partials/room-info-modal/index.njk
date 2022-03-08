@@ -11,7 +11,7 @@
 
     <div class="ws-info-modal-text">
       {% for paragraph in room.roomDescription %}
-        <p>{{ paragraph }}</p>
+        <p>{{ paragraph | safe }}</p>
       {% endfor %}
     </div>
 

@@ -6,6 +6,7 @@
   "moreRoomsCtaText": "Explore More Rooms",
   "learnMoreCtaText": "Learn More",
   "contactCtaText": "Contact",
+  "contactSalesCtaText": "Contact Sales",
 
   "sizeClasses": [["ws-XL", "", 10000], ["ws-L", "L_", 1919], ["ws-M", "M_", 1365], ["ws-S", "S_", 1279], ["ws-XS", "XS_", 767]],
   "orderedWorkspaceIds": ["home", "office", "anywhere"],
@@ -30,7 +31,6 @@
   "categoryPage": {
     "softwareHeadingText": "Webex Software & Features",
     "navigationSection": {
-      "background": "01_background.png",
       "heading": "Workspace",
       "text": "From home, to the office, to anywhere in between, get inspiration for turning any space into a productive workspace.",
       "cta": "Explore"

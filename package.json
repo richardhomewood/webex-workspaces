@@ -6,7 +6,7 @@
     "url": "https://github.com/clenemt/eleventy-webpack"
   },
   "engines": {
-    "node": "14"
+    "node": "16.x"
   },
   "scripts": {
     "clean": "rimraf _site webex-workspaces-site.zip",
@@ -49,6 +49,7 @@
     "postcss-loader": "6.2.1",
     "postcss-preset-env": "7.3.1",
     "prettier": "2.5.1",
+    "resolve-url-loader": "5.0.0",
     "rimraf": "3.0.2",
     "sass": "1.49.7",
     "sass-loader": "12.4.0",

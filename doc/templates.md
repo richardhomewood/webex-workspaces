@@ -22,7 +22,7 @@ _may_ have additional macros used only from within the same template file.
 
 Renders the root container and calls the 3 following partials to populate its children:
 
-### [`src/includes/partials/immersive/commonUi.njk`](../src/includes/partials/immersive/commonUi.njk)
+### [`src/includes/partials/common/commonUi.njk`](../src/includes/partials/common/commonUi.njk)
 
 Renders:
 - Container for common UI elements
@@ -70,11 +70,9 @@ Renders:
 
 Renders a container and a list of features, supplied as an array of strings. 
 
-###  [`src/includes/partials/device-modal/image-carousel.njk`](../src/includes/partials/device-modal/image-carousel.njk)
+###  [`src/includes/partials/device-modal/media-carousel.njk`](../src/includes/partials/device-modal/media-carousel.njk)
 
-Renders a container for the carousel.  Expects an array of images.
-
-The skeleton for this partial is still in progress.  For now, it displays the count of images passed in via the array.
+Renders a container for the carousel.  Expects an array of image or video filenames.
 
 ###  [`src/includes/partials/device-modal/specs.njk`](../src/includes/partials/device-modal/specs.njk)
 

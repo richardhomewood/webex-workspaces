@@ -1,14 +1,22 @@
 {% macro render(common, workspaceId, workspaces) %}
+    <div class="swiper room-swiper">
+        <div class="swiper-wrapper">
+        {%- for room in workspaces[workspaceId].rooms %}
 
-  <div class="swiper awaits-styling">
-    <div class="swiper-wrapper">
-      {%- for room in workspaces[workspaceId].rooms %}
-
-        <div class="ws-room-slide swiper-slide">
-          <a href="#/{{ room.slug }}">{{ room.name }}</a>
+            <div class="ws-room-slide swiper-slide{% if loop.first %} selected {% endif %}">
+            <span>{{ room.name }}</span>
+            </div>
+        {%- endfor %}
         </div>
-      {%- endfor %}
     </div>
-  </div>
+    <div class="shadowSwiper swiper">
+        <div class="swiper-wrapper">
+        {%- for room in workspaces[workspaceId].rooms %}
+            <div class="ws-room-slide swiper-slide">
+                <span>{{ room.name }}</span>
+            </div>
+        {%- endfor %}
+        </div>
+    </div>
 
 {% endmacro %}

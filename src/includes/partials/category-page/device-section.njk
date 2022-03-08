@@ -1,22 +1,11 @@
 {% macro render(common, workspaceId, roomId, devicesByRoom, devices) %}
-  <div class="ws-device-section awaits-styling">
+  <div class="ws-device-section">
     {% for deviceId in devicesByRoom[workspaceId][roomId] %}
-      <div class="awaits-styling">
-        <h4>{{ devices[deviceId].name }}</h4>
-
-        {{ categoryPageImage(devices[deviceId].categoryPageImage,  common.sizeClasses) }}
-
-        <div class="ws-software-description">{{ devices[deviceId].description }}</div>
-
-        <ul class="ws-software-features">
-          {% for feature in devices[deviceId].features %}
-            <li class="ws-device-feature">{{ feature }}</li>
-          {% endfor %}
-        </ul>
-
-        <a class="ws-learn-more-cta" href="{{ devices[deviceId].url }}">{{ common.learnMoreCtaText }}</a>
-        <a class="ws-contact-cta" target="_blank" href="{{ common.contactUrl }}" >{{ common.contactCtaText }}</a>
-      </div>
+        {% if devicesByRoom[workspaceId][roomId].length % 2 != 0 and loop.last %}
+            {{device(devices[deviceId], common, true)}}
+        {% else %}
+            {{device(devices[deviceId], common)}}
+        {% endif %}
     {% endfor %}
 
 
@@ -29,4 +18,50 @@
 {#      {% imagesync prefix+image.url, image.alt %}#}
     </div>
   {% endfor %}
+{% endmacro %}
+
+
+{% macro device(device, common, isOddEnd = false) %}
+     <div class="ws-device{% if isOddEnd %} oddEnd{% endif %}">
+        {% if isOddEnd %}
+            {{ categoryPageImage(device.categoryPageImage,  common.sizeClasses) }}
+            <div class="ws-oddEndWrapper">
+                <div>
+                    <h3>{{ device.name }}</h3>
+                    <div class="ws-software-description">{{ device.description }}</div>
+                </div>
+                <div>
+                    {{features(device.features, device.featuresTitle)}}
+                    {{ deviceCTAs(device.url, common)}}
+                </div>
+            </div>
+        {% else %}
+            {{ categoryPageImage(device.categoryPageImage,  common.sizeClasses) }}
+            <h3>{{ device.name }}</h3>
+            <div class="ws-software-description">{{ device.description }}</div>
+
+            {{features(device.features, device.featuresTitle)}}
+            {{ deviceCTAs(device.url, common)}}
+            
+        {% endif %}
+     </div>
+{% endmacro %}
+
+{% macro features(features, title) %}
+    {% for feature in features %}
+        {% if loop.first %}
+            <h4 class="ws-device-features-title">{{title}}</h4>
+            <ul class="ws-software-features">
+        {% endif %}
+    
+        <li class="ws-device-feature">{{ feature }}</li>
+    
+    {% if loop.last %}</ul>{% endif %}
+    
+    {% endfor %}
+{% endmacro %}
+
+{% macro deviceCTAs(url, common) %}
+    <a class="ws-learn-more-cta" href="{{ url }}">{{ common.learnMoreCtaText }}</a>
+    <a class="ws-contact-cta" target="_blank" href="{{ common.contactUrl }}" >{{ common.contactCtaText }}</a>
 {% endmacro %}

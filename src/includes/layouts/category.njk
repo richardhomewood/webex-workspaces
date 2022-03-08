@@ -1,12 +1,23 @@
 {% import "../partials/category-page/index.njk" as tabbedRooms %}
+{% import "../partials/common/commonUi.njk" as commonUi %}
+
 <!DOCTYPE html>
-<main>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% webpack 'category-page.css' %}">
+</head>
+<body>
+
+<main class="ws-category-root">
+
+    {{commonUi.renderForCategory(common, workspaces, workspaceId)}}
 
   <!-- Content Section -->
-  <div class="ws-category-page-content awaits-styling">
-    <link rel="stylesheet" href="{% webpack 'category-page.css' %}">
+  <div class="ws-category-page-content">
+    
 
-    <div class="ws-category-root">
+    <div class="ws-category-content-root">
 
       <h2 class="ws-category-name">{{ workspaces[workspaceId].name }}</h2>
 
@@ -21,3 +32,5 @@
   <!--/ Content Section -->
 
 </main>
+</body>
+</html>

@@ -1,12 +1,12 @@
 const fs = require('fs');
 const path = require('path');
-const { outdent } = require('outdent');
+const {outdent} = require('outdent');
 const Image = require('@11ty/eleventy-img');
 const markdown = require('./markdown');
 
 const iconDefaultSize = 24;
 const defaultSizes = '90vw';
-const defaultImagesSizes = [1920, 1280, 640, 320];
+const defaultImagesSizes = [1920, 768];
 const assetsDir = 'content/dam/wbx/us/images/workspace';
 
 const isFullUrl = (url) => {
@@ -30,7 +30,7 @@ module.exports = {
   // {% webpack "main.css" %}
   webpack: async (name) =>
     new Promise((resolve) => {
-      fs.readFile(manifestPath, { encoding: 'utf8' }, (err, data) =>
+      fs.readFile(manifestPath, {encoding: 'utf8'}, (err, data) =>
         resolve(err ? `/${assetsDir}/${name}` : JSON.parse(data)[name])
       );
     }),
@@ -39,7 +39,7 @@ module.exports = {
   // {% icon "github.svg", "my-class", [24, 24] %}
   icon: (name, className, size = iconDefaultSize) => {
     if (!Array.isArray(size)) size = [size];
-    return outdent({ newline: '' })`
+    return outdent({newline: ''})`
     <svg class="icon icon--${name} ${
       className || ''
     }" role="img" aria-hidden="true" width="${size[0]}" height="${
@@ -85,16 +85,16 @@ module.exports = {
     }
 
     const fallback = stats[extension].reverse()[0];
-    const picture = outdent({ newline: '' })`
+    const picture = outdent({newline: ''})`
     <picture>
       ${Object.values(stats)
-        .map(
-          (image) =>
-            `<source type="image/${image[0].format}" srcset="${image
-              .map((entry) => `${entry.url} ${entry.width}w`)
-              .join(', ')}" sizes="${sizes}">`
-        )
-        .join('')}
+      .map(
+        (image) =>
+          `<source type="image/${image[0].format}" srcset="${image
+            .map((entry) => `${entry.url} ${entry.width}w`)
+            .join(', ')}" sizes="${sizes}">`
+      )
+      .join('')}
       <img
         class="${className ? `img-${className}` : ''}"
         loading="${lazy ? 'lazy' : 'eager'}"
@@ -103,7 +103,7 @@ module.exports = {
         height="${fallbackHeight ?? fallback.height}" alt="${alt}">
     </picture>`;
     return title
-      ? outdent({ newline: '' })`
+      ? outdent({newline: ''})`
       <figure class="${className ? `fig-${className}` : ''}">
         ${picture}
         <figcaption>${markdown.renderInline(title)}</figcaption>
@@ -129,18 +129,22 @@ module.exports = {
     const lazy = args[4] ?? true;
     const sizes = args[5] ?? defaultSizes;
 
-    const extension = path.extname(src).slice(1).toLowerCase();
+    let extension = path.extname(src).slice(1).toLowerCase();
+    if (extension === 'jpg') {
+      extension = 'jpeg';
+    }
+
     const fullSrc = isFullUrl(src) ? src : `./src/${assetsDir}/images/${src}`;
 
     let stats;
     try {
-        Image(fullSrc, {
-            widths: defaultImagesSizes,
-            formats: extension === 'webp' ? ['webp', 'jpeg'] : ['webp', extension],
-            urlPath: `/${assetsDir}/images/`,
-            outputDir: `_site/${assetsDir}/images/`
-          });
-      stats =  Image.statsSync(fullSrc, {
+      Image(fullSrc, {
+        widths: defaultImagesSizes,
+        formats: extension === 'webp' ? ['webp', 'jpeg'] : ['webp', extension],
+        urlPath: `/${assetsDir}/images/`,
+        outputDir: `_site/${assetsDir}/images/`
+      });
+      stats = Image.statsSync(fullSrc, {
         widths: defaultImagesSizes,
         formats: extension === 'webp' ? ['webp', 'jpeg'] : ['webp', extension],
         urlPath: `/${assetsDir}/images/`,
@@ -154,16 +158,16 @@ module.exports = {
     }
 
     const fallback = stats[extension].reverse()[0];
-    const picture = outdent({ newline: '' })`
+    const picture = outdent({newline: ''})`
     <picture>
       ${Object.values(stats)
-        .map(
-          (image) =>
-            `<source type="image/${image[0].format}" srcset="${image
-              .map((entry) => `${entry.url} ${entry.width}w`)
-              .join(', ')}" sizes="${sizes}">`
-        )
-        .join('')}
+      .map(
+        (image) =>
+          `<source type="image/${image[0].format}" srcset="${image
+            .map((entry) => `${entry.url} ${entry.width}w`)
+            .join(', ')}" sizes="${sizes}">`
+      )
+      .join('')}
       <img
         class="${className ? `img-${className}` : ''}"
         loading="${lazy ? 'lazy' : 'eager'}"
@@ -172,12 +176,20 @@ module.exports = {
         height="${fallbackHeight ?? fallback.height}" alt="${alt}">
     </picture>`;
     return title
-      ? outdent({ newline: '' })`
+      ? outdent({newline: ''})`
       <figure class="${className ? `fig-${className}` : ''}">
         ${picture}
         <figcaption>${markdown.renderInline(title)}</figcaption>
       </figure>`
       : picture;
   },
-  assetPath: (name) => `/${assetsDir}/${name}`
+  assetPath: (name) => `/${assetsDir}/${name}`,
+  video: (filename) => {
+    return outdent({newline: ''})`
+    <video autoplay loop playsinline muted>
+        <source src="/${assetsDir}/videos/${filename}">
+        <p>Your browser doesn't support HTML5 video. Here is a <a href="/${assetsDir}/videos/${filename}">link to the video</a> instead.</p>
+    </video>
+    `;
+  }
 };
