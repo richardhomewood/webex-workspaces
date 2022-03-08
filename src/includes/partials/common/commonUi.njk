@@ -25,9 +25,23 @@
           <li {% if selectedWorkspaceId == workspaceId %} class="ws-selected"{% endif %}><a href="{{ workspaceId }}.html">{{ workspaces[workspaceId].name }}</a></li>
         {%- endfor %}
       </ul>
-      <div id="ws-nav-underline" class="ws-displayNone"></div>
     </div>
 
-    <a class="ws-about-cta"><span class="ws-XS"><div class="ws-hamburger-icon"><div></div><div></div></div></span><span class="ws-S ws-M ws-L ws-XL">{{ common.aboutWorkspaceCtaText }}</span></a>
+    <div class="ws-hamburger ws-XS">{% icon "hamburger-menu", "", [22, 10] %}</div>
+    <a class="ws-contact-cta ws-S ws-M ws-L ws-XL" href="{{ common.contactUrl }}"><span>{{ common.contactSalesCtaText }}</span></a>
+  </div>
+  <div class="ws-hamburger-menu ws-XS ws-displayNone">
+    <div class="ws-common-ui">
+      <a href="#">{% icon "site-logo" %}</a>
+      <a class="ws-modal-close" aria-label="Close" >{% icon "close-x", "ws-close-x", [17, 17] %}</a>
+    </div>
+    <div class="ws-menu-items">
+      <ul>
+        {%- for workspaceId in common.orderedWorkspaceIds %}
+          <li {% if selectedWorkspaceId == workspaceId %} class="ws-selected"{% endif %}><a href="{{ workspaceId }}.html">{{ workspaces[workspaceId].name }}</a></li>
+        {%- endfor %}
+      </ul>
+      <a class="ws-contact-cta" href="{{ common.contactUrl }}"><span>{{ common.contactSalesCtaText }}</span></a>
+    </div>
   </div>
 {% endmacro %}

@@ -36,7 +36,7 @@
       }
     }
 
-    .ws-about-cta {
+    .ws-about-cta, .ws-contact-cta {
       text-decoration: none;
       span {
         margin: 22px auto;
@@ -78,7 +78,7 @@
         }
       }
 
-      .ws-about-cta {
+      .ws-about-cta, .ws-contact-cta {
         position: absolute;
         top: 0;
         right: 20px;
@@ -140,7 +140,7 @@
         }
       }
 
-      .ws-about-cta {
+      .ws-about-cta, .ws-contact-cta {
         position: absolute;
         top: 0px;
         right: 64px;
@@ -247,7 +247,7 @@
         }
       }
 
-      .ws-about-cta {
+      .ws-about-cta, .ws-contact-cta {
         position: relative;
         top: auto;
         right: auto;
@@ -309,23 +309,6 @@
             }
           }
         }
-      }
-
-      .ws-about-cta {
-        position: relative;
-        top: auto;
-        right: auto;
-        width: auto;
-        height: 56px;
-        border-radius: 28px;
-        border: solid 1px #fff;
-        background-color: transparent;
-        text-align: center;
-        color: #fff;
-        font-size: 15px;
-        line-height: 14px;
-        padding: 0 22px;
-        margin-right: 64px;
       }
     }
   }

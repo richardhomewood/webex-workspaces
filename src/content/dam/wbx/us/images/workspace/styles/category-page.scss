@@ -2,15 +2,20 @@
 @import 'global';
 @import 'common';
 
-html,
 body {
+  // If the following is not true because of the page template into which our HTML is copied,
+  // we may need to adjust our root container margins to compensate.  But we should be safe:
+  // the webex.com homepage defines `margin: 0` for the body element.
+  margin: 0;
+}
+
+.ws-category-root {
+  font-family: 'CiscoSansTT-Regular', sans-serif;
   margin: 0;
   overflow-x: hidden;
   height: 100vh;
   min-height: 100vh;
-}
 
-.ws-category-root {
   .ws-common-ui {
     position: relative;
     top: 0;
@@ -26,19 +31,81 @@ body {
       filter: brightness(0) saturate(100%) invert(0%) sepia(90%) saturate(7500%)
         hue-rotate(190deg) brightness(87%) contrast(111%);
     }
-    .ws-hamburger-icon {
-      display: block;
+    .ws-hamburger {
       width: 22px;
-      height: 12px;
-
-      div {
+      height: 10px;
+      float: right;
+      position: relative;
+      right: 21px;
+      top: 5px;
+      .icon {
+        cursor: pointer;
+        pointer-events: all;
+      }
+    }
+    .ws-contact-cta {
+      border: 1px solid #000000;
+      color: black;
+      span {
         display: block;
-        background-color: #000;
-        width: 22px;
-        height: 2px;
+      }
+    }
+  }
 
-        &:first-child {
-          margin-bottom: 8px;
+  .ws-hamburger-menu {
+    z-index: 4;
+    background-color: white;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+
+    .ws-modal-close {
+      z-index: 5;
+      cursor: pointer;
+      width: 17px;
+      height: 17px;
+      float: right;
+      position: relative;
+      right: 23px;
+      top: 7px;
+    }
+
+    .ws-menu-items {
+      text-align: center;
+      margin-top: 125px;
+      ul {
+        list-style: none;
+        text-align: center;
+        padding: 0;
+        margin-bottom: 55px;
+        li {
+          font-size: 40px;
+          line-height: 58px;
+          letter-spacing: -0.04em;
+        }
+      }
+
+      a {
+        text-decoration: none;
+        &:visited, &:active {
+          color: black;
+        }
+      }
+
+      a.ws-contact-cta {
+        display: inline-block;
+        border: 1px solid #181818;
+        border-radius: 30px;
+        height: 56px;
+        padding: 0 21px;
+        span {
+          display: block;
+          margin: 22px auto;
+          color: #181818;
+          font-size: 14px;
+          line-height: 14px;
         }
       }
     }

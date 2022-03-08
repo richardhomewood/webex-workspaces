@@ -1,20 +1,11 @@
-$bg-body: grey;
-
 html,
 body {
   height: 100%;
+
+  // If the following is not true because of the page template into which our HTML is copied,
+  // we may need to adjust our root container margins to compensate.  But we should be safe:
+  // the webex.com homepage defines `margin: 0` for the body element.
   margin: 0;
-  font-family: 'CiscoSansTT-Regular', sans-serif;
-  overflow-x: hidden;
-}
-
-body {
-  background-color: $bg-body;
-}
-
-img {
-  max-width: 100%;
-  height: auto;
 }
 
 .icon {

@@ -1,6 +1,7 @@
 import Swiper from 'swiper';
 import 'swiper/scss';
 import {currentSizeClass} from "./spaces";
+import classnames, {hamburgerMenu} from './classnames';
 
 let swiper;
 
@@ -25,16 +26,16 @@ window.addEventListener('load', async function () {
     swiper = new Swiper(wouldBeSwiper, options);
 
     let deviceSections = Array.from(document.querySelectorAll('.ws-device-section'));
-    
+
     deviceSections.forEach(deviceSection => {
-        
+
         let childNodes = Array.from(deviceSection.childNodes);
         childNodes = childNodes.filter((node)=> {
             return node.nodeName != "#text"
         })
         let childCount = childNodes.length;
         let lastNode = childNodes.lastItem;
-        
+
         if (childCount % 2 != 0){
             lastNode.classList.add("oddEnd")
         }else if(lastNode.classList.contains("oddEnd")){
@@ -42,6 +43,11 @@ window.addEventListener('load', async function () {
         }
     });
 
+    const hamburgerWidget = document.querySelector(`.${classnames.hamburgerWidget}`);
+    hamburgerWidget.onclick = () => showHamburgerMenu();
+
+    const hamburgerCloseWidget = document.querySelector(`.${classnames.hamburgerMenu} .${classnames.modalCloseWidget}`);
+    hamburgerCloseWidget.onclick = () => hideHamburgerMenu();
 });
 
 const timeout = (ms) => {
@@ -55,7 +61,7 @@ const getSwiperOptions = async ()=>{
 
     let options;
     await timeout(100)
-    
+
     shadowSlides.forEach((element)=>{
         totalSlideWidth += element.offsetWidth;
     })
@@ -90,7 +96,7 @@ const padding = () => {
     let sizeClass = currentSizeClass();
     if (sizeClass == "ws-XS" || sizeClass == "ws-S") {
         return 36
-    } 
+    }
 
     return 124;
 }
@@ -105,12 +111,12 @@ const slideClick = (e)=>{
     rooms.forEach((element, index) => {
         if (index == clickedIndex) {
             element.style["display"] = "block";
-            element.style["opacity"] = 1 
+            element.style["opacity"] = 1
             if(!slides[index].classList.contains("selected")){
                 slides[index].classList.add("selected")
             }
         } else {
-            element.style["opacity"] = 0 
+            element.style["opacity"] = 0
             setTimeout(()=>{
                 element.style["display"] = "none";
             },300)
@@ -131,7 +137,7 @@ const updateSwiper = (delay = 500) => {
             const {enabled} = options;
             if (enabled && !isEnabled ) {
                 swiper.enable();
-                
+
             } else if(!enabled && isEnabled) {
                 swiper.disable();
             }
@@ -145,3 +151,14 @@ const updateSwiper = (delay = 500) => {
         }
     }, delay)
 }
+
+
+const showHamburgerMenu = (event) => {
+    const menu = document.querySelector(`.${classnames.hamburgerMenu}`);
+    menu.classList.remove(classnames.hidden);
+};
+
+const hideHamburgerMenu = () => {
+    const menu = document.querySelector(`.${classnames.hamburgerMenu}`);
+    menu.classList.add(classnames.hidden);
+};
