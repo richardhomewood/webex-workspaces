@@ -1,3 +1,7 @@
+$workspaceCount: 3;
+$individualAnimationDuration: 5s;
+$animationDuration: $workspaceCount * $individualAnimationDuration;
+
 .ws-immersive-root {
   .ws-initial-view {
     position: absolute;
@@ -42,42 +46,34 @@
           position: relative;
           height: 100%;
           width: auto;
-          min-width: 100%;
           max-width: initial;
           left: 50%;
           top: 50%;
           transform: translate(-50%, -50%);
         }
 
-        animation-duration: 9s;
+        animation-duration: $animationDuration;
         animation-iteration-count: infinite;
         animation-fill-mode: forwards;
         animation-timing-function: linear;
 
         &.ws-rotating-background-image-fpo {
           animation-name: fpoFadeOut;
-          animation-duration: 4s;
+          animation-duration: ($individualAnimationDuration + 1);
           animation-iteration-count: 1;
           animation-fill-mode: forwards;
           z-index: 3;
         }
 
-        &.ws-rotating-background-image-1 {
-          animation-name: slidecycle;
-          animation-delay: 0s;
+        &:not(.ws-rotating-background-image-fpo) {
           opacity: 0;
-        }
+          animation-name: slidecycle;
 
-        &.ws-rotating-background-image-2 {
-          animation-name: slidecycle;
-          animation-delay: 3s;
-          opacity: 0;
-        }
-
-        &.ws-rotating-background-image-3 {
-          animation-delay: 6s;
-          animation-name: slidecycle;
-          opacity: 0;
+          @for $i from 0 to $workspaceCount {
+            &:nth-child(#{$i + 1}) {
+              animation-delay: $i * $individualAnimationDuration;
+            }
+          }
         }
       }
     }
