@@ -50,10 +50,6 @@ window.addEventListener('load', async function () {
     hamburgerCloseWidget.onclick = () => hideHamburgerMenu();
 });
 
-const timeout = (ms) => {
-    return new Promise(resolve => setTimeout(resolve, ms));
-}
-
 const getSwiperOptions = async ()=>{
     const slides = Array.from(document.querySelectorAll(`.ws-category-content-root .swiper.room-swiper .swiper-slide`));
     const shadowSlides = Array.from(document.querySelectorAll(`.ws-category-content-root .swiper.shadowSwiper .swiper-slide`));
