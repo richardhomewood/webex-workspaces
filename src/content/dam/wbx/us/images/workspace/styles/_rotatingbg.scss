@@ -59,7 +59,7 @@ $animationDuration: $workspaceCount * $individualAnimationDuration;
 
         &.ws-rotating-background-image-fpo {
           animation-name: fpoFadeOut;
-          animation-duration: ($individualAnimationDuration + 1);
+          animation-duration: ($animationDuration * 0.44);
           animation-iteration-count: 1;
           animation-fill-mode: forwards;
           z-index: 3;
