@@ -34,13 +34,17 @@ module.exports = {
     workspaceContainer: 'ws-workspace',
     workspaceNavigation: 'ws-workspace-nav',
 
-
     // Modal view containers
     deviceModalRoot: 'ws-device-modal-root',
     deviceContainer: 'ws-device',
     deviceIdPrefix: 'ws-device-',
     downloadPdfContainer: 'ws-download-pdf',
     roomInfoModalRoot: 'ws-room-info-modal-root',
+    modalCloseWidget: 'ws-modal-close',
+
+    // Category page containers
+    hamburgerWidget: "ws-hamburger",
+    hamburgerMenu: "ws-hamburger-menu",
 
     // Suffixes
     roomBackgroundSuffix: '-room-bg',

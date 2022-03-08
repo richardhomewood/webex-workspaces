@@ -31,7 +31,7 @@ body {
       filter: brightness(0) saturate(100%) invert(0%) sepia(90%) saturate(7500%)
         hue-rotate(190deg) brightness(87%) contrast(111%);
     }
-    .ws-hamburger-menu {
+    .ws-hamburger {
       width: 22px;
       height: 10px;
       float: right;
@@ -50,6 +50,29 @@ body {
         display: block;
       }
     }
+  }
+
+  .ws-hamburger-menu {
+    z-index: 4;
+    background-color: white;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+
+    .ws-modal-close {
+      cursor: pointer;
+      width: 17px;
+      height: 17px;
+      position: absolute;
+      right: 23px;
+      top: 26px;
+    }
+    ul, .ws-contact-cta {
+      display: none;
+    }
+
   }
 
   .ws-category-page-content {
