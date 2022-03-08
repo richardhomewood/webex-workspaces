@@ -24,20 +24,18 @@
       filter: brightness(0) saturate(100%) invert(0%) sepia(90%) saturate(7500%)
         hue-rotate(190deg) brightness(87%) contrast(111%);
     }
-    .ws-hamburger-icon {
-      display: block;
+    .ws-hamburger-menu {
       width: 22px;
-      height: 12px;
-
-      div {
-        display: block;
-        background-color: #000;
-        width: 22px;
-        height: 2px;
-
-        &:first-child {
-          margin-bottom: 8px;
-        }
+      height: 10px;
+      float: right;
+      position: relative;
+      right: 21px;
+      top: 5px;
+      .icon {
+        cursor: pointer;
+        pointer-events: all;
+      }
+    }
     .ws-contact-cta {
       border: 1px solid #000000;
       color: black;
