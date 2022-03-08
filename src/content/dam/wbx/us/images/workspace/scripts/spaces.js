@@ -602,14 +602,3 @@ const placeHotSpots = (bgImg, room, bgContainerClass, offset) => {
         hotspot.style["transform"] = 'translate(calc(-50% + ' + (hOffset + offset.x) + 'px), calc(-50% + ' + (yOffset + offset.y) + 'px))';
     })
 }
-
-export function currentSizeClass() {
-    const width = window.innerWidth
-    let aSizeClass = ""
-    commonData.sizeClasses.forEach((sizeClass) => {
-        if (width <= sizeClass[2]) {
-            aSizeClass = sizeClass[0]
-        }
-    })
-    return aSizeClass;
-}
