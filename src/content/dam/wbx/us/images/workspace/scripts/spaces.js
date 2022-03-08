@@ -257,6 +257,7 @@ export function toSelectedWorkSpace(space, room) {
     if (bgsToHide.length == 0) {
         hotSpotsToHide.forEach((element)=>{
             element.classList.remove('animate-in')
+            element.classList.add('animated-out')
         })
     }
 
@@ -270,8 +271,16 @@ export function toSelectedWorkSpace(space, room) {
         setTimeout(()=>{
             hotSpotsToShow.forEach((element, index) => {
                 setTimeout(()=>{
-                    element.classList.add(classnames.animateIn);
+                    if (!element.classList.contains('animated-out')) {
+                        element.classList.add(classnames.animateIn);
+                    }
                 }, 300 * index);
+
+                if (index == hotSpotsToShow.length - 1){
+                    hotSpotsToHide.forEach((element)=> {
+                        element.classList.remove('animated-out')
+                    })
+                }
             })
         }, 300);
     })
