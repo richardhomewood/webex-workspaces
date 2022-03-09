@@ -488,15 +488,24 @@ const updateNav = function (path) {
     });
 
     if (selectedIndex === -1) {
+        
         if (!navSelector.classList.contains(classnames.hidden)) {
             navSelector.classList.add(classnames.hidden);
         }
 
         navSelector.style.left = "50%";
         navSelector.style.width = "0px";
+
+        navLinks.forEach((element) => {
+            element.classList.add("ws-disabled")
+        })
+
         return
     } else {
         navSelector.classList.remove(classnames.hidden);
+        navLinks.forEach((element) => {
+            element.classList.remove("ws-disabled")
+        })
     }
 
     const left = navLinks[selectedIndex].offsetLeft;
@@ -517,10 +526,18 @@ const updateWorkspaceCta = function (path) {
             href = `${href}#/${roomId}`;
         }
 
-        Array.from(aboutCtaElements).forEach(anchor => anchor.href = href);
-        Array.from(aboutCtaElements).forEach(anchor => anchor.enabled = true);
+        Array.from(aboutCtaElements).forEach((anchor) => {
+            anchor.href = href
+            anchor.enabled = true
+            anchor.style["opacity"] = 1
+        });
+        
     } else {
-        Array.from(aboutCtaElements).forEach(anchor => anchor.enabled = false);
+        Array.from(aboutCtaElements).forEach((anchor) => {
+            anchor.enabled = false
+            anchor.style["opacity"] = 0
+        });
+        
     }
 
 };
