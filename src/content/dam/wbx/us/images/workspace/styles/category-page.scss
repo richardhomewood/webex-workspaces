@@ -141,15 +141,16 @@ body {
           width: auto !important;
           transition: width 0.3s ease-out 0s;
 
-          span {
+          a {
             @include ws-large-body-reg;
             display: block;
             text-align: center;
             color: #00000050;
+            text-decoration: none;
           }
 
           &.selected {
-            span {
+            a {
               color: #000000;
             }
 

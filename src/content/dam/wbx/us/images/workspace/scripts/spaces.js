@@ -514,7 +514,7 @@ const updateWorkspaceCta = function (path) {
         const [workspaceId, roomId] = splitPath(path);
         let href = `./${workspaceId}.html`;
         if (roomId !== undefined) {
-            href = `${href}#/${roomId}`;
+            href = `${href}#${roomId}`;
         }
 
         Array.from(aboutCtaElements).forEach(anchor => anchor.href = href);
