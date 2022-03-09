@@ -40,7 +40,7 @@ module.exports = {
   icon: (name, className, size = iconDefaultSize) => {
     if (!Array.isArray(size)) size = [size];
     return outdent({newline: ''})`
-    <svg class="icon icon--${name} ${
+    <svg class="ws-icon ws-icon--${name} ${
       className || ''
     }" role="img" aria-hidden="true" width="${size[0]}" height="${
       size[1] || size[0]
