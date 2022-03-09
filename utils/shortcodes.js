@@ -4,7 +4,7 @@ const {outdent} = require('outdent');
 const Image = require('@11ty/eleventy-img');
 const markdown = require('./markdown');
 
-const iconDefaultSize = 24;
+const iconDefaultSize = 32;
 const defaultSizes = '90vw';
 const defaultImagesSizes = [1920, 768];
 const assetsDir = 'content/dam/wbx/us/images/workspace';
