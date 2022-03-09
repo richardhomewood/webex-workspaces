@@ -2,11 +2,40 @@ import Swiper, {Navigation} from 'swiper';
 import 'swiper/scss';
 import 'swiper/scss/navigation';
 import classnames from './classnames';
-import {splitPath} from './paths';
+import {removeModalPaths, splitPath} from './paths';
 
 const slideInDelayMillis = 300;
+const deviceModalSubstring = '/hardware/';
+const roomInfoModalSuffix = '/info';
 
 let carouselSwiper;
+
+const closeIfClickedOutsideOpenModal = event => {
+    const openModal = document.querySelector(`.${classnames.anyModalRoot}:not(.${classnames.hidden})`);
+    if (openModal) {
+        if (!openModal.contains(event.target)) {
+            if (document.URL.indexOf(deviceModalSubstring) >= 0 || document.URL.endsWith(roomInfoModalSuffix)) {
+                const roomPath = removeModalPaths(location.hash);
+                history.pushState({}, '', roomPath);
+            }
+            hideAll();
+        }
+    }
+};
+
+const enableCloseButtons = () => {
+    const deviceModalCloseButtons = document.getElementsByClassName(classnames.deviceModalClose);
+    const roomInfoModalCloseButtons = document.getElementsByClassName(classnames.roomInfoModalClose);
+    [deviceModalCloseButtons, roomInfoModalCloseButtons].forEach(collection => {
+        Array.from(collection).forEach(element => {
+            element.onclick = (event) => {
+                event.preventDefault();
+                history.pushState({}, '', event.target.hash);
+                hideAll();
+            }
+        });
+    });
+};
 
 const hideAll = () => {
 
@@ -103,6 +132,8 @@ const showRoomInfo = path => {
 };
 
 export default {
+    closeIfClickedOutsideOpenModal: closeIfClickedOutsideOpenModal,
+    enableCloseButtons: enableCloseButtons,
     hideAll: hideAll,
     showDevice: showDevice,
     showRoomInfo: showRoomInfo

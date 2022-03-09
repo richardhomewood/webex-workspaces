@@ -17,11 +17,15 @@ const canonicalPath = location => {
 
 const makePath = pathParts => separator + pathParts.join(separator);
 
+// Limit the result to 3 parts: '#', the workspace ID, and the room ID
+const removeModalPaths = pathString => pathString.split('/', 3).join('/');
+
 module.exports = {
     canonicalPath: canonicalPath,
     hardwarePathPart: hardwarePathPart,
     homePath: homePath,
     infoPathPart: infoPathPart,
     makePath: makePath,
+    removeModalPaths: removeModalPaths,
     splitPath: splitPath
 };
