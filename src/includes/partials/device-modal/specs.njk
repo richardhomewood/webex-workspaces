@@ -1,11 +1,13 @@
 {% macro specification(spec) %}
   <li>
     {% if spec.icon %}
-      {% set iconSize = [28, 28] %}
+      {% set iconSize = [32, 32] %}
       {% if spec.iconSize %}
         {% set iconSize = spec.iconSize %}
       {% endif %}
       {% icon spec.icon, '', iconSize %}
+    {% else %}
+      <div class="ws-missing-icon"></div>
     {% endif %}
     <span>{{ spec.text }}</span>
   </li>

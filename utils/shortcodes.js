@@ -4,7 +4,7 @@ const {outdent} = require('outdent');
 const Image = require('@11ty/eleventy-img');
 const markdown = require('./markdown');
 
-const iconDefaultSize = 24;
+const iconDefaultSize = 32;
 const defaultSizes = '90vw';
 const defaultImagesSizes = [1920, 768];
 const assetsDir = 'content/dam/wbx/us/images/workspace';
@@ -40,7 +40,7 @@ module.exports = {
   icon: (name, className, size = iconDefaultSize) => {
     if (!Array.isArray(size)) size = [size];
     return outdent({newline: ''})`
-    <svg class="icon icon--${name} ${
+    <svg class="ws-icon ws-icon--${name} ${
       className || ''
     }" role="img" aria-hidden="true" width="${size[0]}" height="${
       size[1] || size[0]
