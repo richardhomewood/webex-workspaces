@@ -20,6 +20,12 @@ window.addEventListener('load', function () {
     router.route(canonicalPath(window.location));
 });
 
+window.addEventListener('click', event => {
+    modals.closeIfClickedOutsideOpenModal(event);
+});
+
+modals.enableCloseButtons();
+
 // Routing for the initial view
 router.add(homePath, () => {
     backToHome();
