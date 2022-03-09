@@ -1,6 +1,6 @@
 {% macro render(common, workspaces) %}
   <div class="ws-common-ui">
-    <a href="#">{% icon "site-logo" %}</a>
+    <a href="/workspaces/explore.html">{% icon "site-logo" %}</a>
 
     <div class="ws-workspace-nav">
       <ul>
@@ -11,13 +11,13 @@
       <div id="ws-nav-underline" class="ws-displayNone"></div>
     </div>
 
-    <a class="ws-about-cta"><span class="ws-XS">i</span><span class="ws-S ws-M ws-L ws-XL">{{ common.aboutWorkspaceCtaText }}</span></a>
+    <a class="ws-about-cta"><span class="ws-XS">{{ common.aboutWorkspaceCtaShortText }}</span><span class="ws-S ws-M ws-L ws-XL">{{ common.aboutWorkspaceCtaText }}</span></a>
   </div>
 {% endmacro %}
 
 {% macro renderForCategory(common, workspaces, selectedWorkspaceId) %}
   <div class="ws-common-ui">
-    <a href="#">{% icon "site-logo" %}</a>
+    <a href="/workspaces/explore.html#">{% icon "site-logo" %}</a>
 
     <div class="ws-workspace-nav ws-S ws-M ws-L ws-XL">
       <ul>
@@ -32,7 +32,7 @@
   </div>
   <div class="ws-hamburger-menu ws-XS ws-displayNone">
     <div class="ws-common-ui">
-      <a href="#">{% icon "site-logo" %}</a>
+      <a href="/workspaces/explore.html#">{% icon "site-logo" %}</a>
       <a class="ws-modal-close" aria-label="Close" >{% icon "close-x", "ws-close-x", [17, 17] %}</a>
     </div>
     <div class="ws-menu-items">

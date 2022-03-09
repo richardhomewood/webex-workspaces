@@ -35,12 +35,15 @@ module.exports = {
     workspaceNavigation: 'ws-workspace-nav',
 
     // Modal view containers
+    deviceModalClose: 'ws-device-modal-close',
     deviceModalRoot: 'ws-device-modal-root',
     deviceContainer: 'ws-device',
     deviceIdPrefix: 'ws-device-',
     downloadPdfContainer: 'ws-download-pdf',
+    roomInfoModalClose: 'ws-room-info-modal-close',
     roomInfoModalRoot: 'ws-room-info-modal-root',
     modalCloseWidget: 'ws-modal-close',
+    anyModalRoot: 'ws-modal-root',
 
     // Category page containers
     hamburgerWidget: "ws-hamburger",

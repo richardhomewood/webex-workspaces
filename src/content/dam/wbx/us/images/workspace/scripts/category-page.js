@@ -1,28 +1,29 @@
 import Swiper from 'swiper';
 import 'swiper/scss';
-import {currentSizeClass} from "./spaces";
-import classnames, {hamburgerMenu} from './classnames';
-
+import {currentSizeClass, timeout} from "./utils";
+import classnames from './classnames';
+import {getHash} from './paths';
 let swiper;
 
 window.addEventListener('resize', () => {
     updateSwiper();
 });
 
-window.addEventListener('load', async function () {
+window.addEventListener('hashchange', () => {
+    handleHash(getHash(window.location));
+});
 
+window.addEventListener('load', async function () {
+    let hash = getHash(window.location)
+    
     const slides = Array.from(document.querySelectorAll(`.ws-category-content-root .swiper.room-swiper .swiper-slide`));
 
     if (slides.length === 0) {
         return
-    } else {
-        slides.forEach((element) => {
-            element.onclick = (e)=>{slideClick(e)};
-        })
     }
 
     let wouldBeSwiper = this.document.querySelector(".ws-category-content-root .swiper");
-    const options = await getSwiperOptions();
+    const options = await getSwiperOptions(hash);
     swiper = new Swiper(wouldBeSwiper, options);
 
     let deviceSections = Array.from(document.querySelectorAll('.ws-device-section'));
@@ -34,7 +35,7 @@ window.addEventListener('load', async function () {
             return node.nodeName != "#text"
         })
         let childCount = childNodes.length;
-        let lastNode = childNodes.lastItem;
+        let lastNode = childNodes[childCount - 1];
 
         if (childCount % 2 != 0){
             lastNode.classList.add("oddEnd")
@@ -50,11 +51,7 @@ window.addEventListener('load', async function () {
     hamburgerCloseWidget.onclick = () => hideHamburgerMenu();
 });
 
-const timeout = (ms) => {
-    return new Promise(resolve => setTimeout(resolve, ms));
-}
-
-const getSwiperOptions = async ()=>{
+const getSwiperOptions = async (hash)=>{
     const slides = Array.from(document.querySelectorAll(`.ws-category-content-root .swiper.room-swiper .swiper-slide`));
     const shadowSlides = Array.from(document.querySelectorAll(`.ws-category-content-root .swiper.shadowSwiper .swiper-slide`));
     let totalSlideWidth = 0;
@@ -86,10 +83,29 @@ const getSwiperOptions = async ()=>{
         grabCursor: true,
         slideToClickedSlide: true,
         centerInsufficientSlides: true,
-        enabled: enabled
+        enabled: enabled,
+        on: {
+            afterInit: ()=>{
+                handleHash(hash);
+            }
+        }
     }
 
     return options
+}
+
+const handleHash = (hash) => {
+    if (hash) {
+        let selectedSlide = document.getElementById(`${hash}-slide`)
+        if (selectedSlide) {
+            slideClick({target:selectedSlide})
+        }
+    } else {
+        let selectedSlide = document.querySelector(".ws-room-slide.swiper-slide")
+        if (selectedSlide) {
+            slideClick({target:selectedSlide})
+        }
+    }
 }
 
 const padding = () => {
@@ -125,8 +141,21 @@ const slideClick = (e)=>{
             }
         }
     })
-}
 
+    let progress = 0
+    if (clickedIndex >= 0) {
+        progress = clickedIndex == clickedIndex == 0 ? 0 : slides.length - 1 ? 1 : (clickedIndex / slides.length) + ((1 / (slides.length * 2)) * clickedIndex)
+        setTimeout(async () => {
+            swiper.setProgress(progress, 0);
+            setTimeout(() => {
+                swiper.setProgress(progress, 0);
+                setTimeout(() => {
+                    swiper.setProgress(progress, 0);
+                }, 1000)
+            }, 200)
+        }, 500);
+    }
+}
 
 const updateSwiper = (delay = 500) => {
     setTimeout(async () => {

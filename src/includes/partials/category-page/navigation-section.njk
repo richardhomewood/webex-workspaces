@@ -1,13 +1,13 @@
 {% macro render(common, workspaceId, workspaces) %}
   <div class="ws-navigation-section">
 
-    {{ backgroundImage(commom.navigationSection.background, common.sizeClasses) }}
-
     <h2>{{ common.categoryPage.navigationSection.heading }}</h2>
 
     <div class="ws-navigation-section-text">{{ common.categoryPage.navigationSection.text }}</div>
 
-    <a href="../">{{ common.categoryPage.navigationSection.cta }}</a>
+    <a href="/workspaces/explore.html">{{ common.categoryPage.navigationSection.cta }}</a>
+
+    {{ backgroundImage(common.categoryPage.navigationSection.background, common.sizeClasses) }}
 
   </div>
 {% endmacro %}

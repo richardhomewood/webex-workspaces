@@ -19,6 +19,12 @@
 
           a {
             pointer-events: all;
+            transition: opacity 0.1s linear 0s;
+            &.ws-disabled {
+              pointer-events: none;
+              cursor: default;
+              opacity: 0.4;
+            }
           }
         }
       }
@@ -36,7 +42,10 @@
       }
     }
 
-    .ws-about-cta, .ws-contact-cta {
+    .ws-about-cta,
+    .ws-contact-cta {
+      transition: opacity 0.2s linear 0s;
+
       text-decoration: none;
       span {
         margin: 22px auto;
@@ -53,7 +62,7 @@
       top: 20px;
       z-index: 3;
 
-      .icon.icon--site-logo {
+      .ws-icon.ws-icon--site-logo {
         margin-left: 20px;
       }
 
@@ -78,11 +87,12 @@
         }
       }
 
-      .ws-about-cta, .ws-contact-cta {
+      .ws-about-cta,
+      .ws-contact-cta {
         position: absolute;
         top: 0;
         right: 20px;
-        width: 32px;
+        width: auto;
         height: 32px;
         border-radius: 16px;
         border: solid 1px #fff;
@@ -91,6 +101,7 @@
         color: #fff;
         font-size: 15px;
         line-height: 14px;
+        padding: 0 21px;
 
         span {
           margin: 10px auto;
@@ -108,7 +119,7 @@
       top: 20px;
       z-index: 3;
 
-      .icon.icon--site-logo {
+      .ws-icon.ws-icon--site-logo {
         margin-left: 20px;
       }
 
@@ -140,7 +151,8 @@
         }
       }
 
-      .ws-about-cta, .ws-contact-cta {
+      .ws-about-cta,
+      .ws-contact-cta {
         position: absolute;
         top: 0px;
         right: 64px;
@@ -167,7 +179,7 @@
       top: 20px;
       z-index: 3;
 
-      .icon.icon--site-logo {
+      .ws-icon.ws-icon--site-logo {
         margin-left: 64px;
         margin-top: 11px;
       }
@@ -214,7 +226,7 @@
       justify-content: space-between;
       width: 100vw;
 
-      .icon.icon--site-logo {
+      .ws-icon.ws-icon--site-logo {
         margin-left: 64px;
         margin-top: 11px;
       }
@@ -247,7 +259,8 @@
         }
       }
 
-      .ws-about-cta, .ws-contact-cta {
+      .ws-about-cta,
+      .ws-contact-cta {
         position: relative;
         top: auto;
         right: auto;
@@ -278,7 +291,7 @@
       justify-content: space-between;
       width: 100vw;
 
-      .icon.icon--site-logo {
+      .ws-icon.ws-icon--site-logo {
         margin-left: 64px;
         margin-top: 14px;
       }

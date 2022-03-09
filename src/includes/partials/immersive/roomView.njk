@@ -17,7 +17,7 @@
     </div>
     <div class="ws-room-content">
       <div class="ws-more-rooms-text">
-        <div class="ws-room-label-info-btn-container"> 
+        <div class="ws-room-label-info-btn-container">
             <div>
             {%- for workspaceId in common.orderedWorkspaceIds %}
                 {%- for room in workspaces[workspaceId].rooms %}
@@ -25,6 +25,7 @@
                 {%- endfor %}
             {%- endfor %}
             </div>
+            {# The following href is updated by JavaScript code. #}
             <a href="#" class="ws-room-info-btn">i</a>
         </div>
         {%- for workspaceId in common.orderedWorkspaceIds %}
@@ -43,8 +44,8 @@
               <div class="swiper">
                 <div class="swiper-wrapper">
                   {%- for room in workspaces[workspaceId].rooms %}
-                    
-                    <div class="ws-room-slide swiper-slide">
+
+                    <div class="ws-room-slide swiper-slide{% if loop.first %} selected{% endif %}">
                       {{ roomSelections(workspaces[workspaceId], room, common) }}
                     </div>
                   {%- endfor %}

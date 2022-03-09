@@ -166,6 +166,7 @@ $list-items-border-color: #c4c4c4;
         width: 130px;
         height: 62px;
         text-decoration: none;
+        color: black;
 
         &:active, &:visited {
           color: black;
@@ -216,7 +217,7 @@ $list-items-border-color: #c4c4c4;
             cursor: auto;
             pointer-events: none;
           }
-          .icon {
+          .ws-icon {
             width: 34px;
             height: 34px;
           }
@@ -275,7 +276,14 @@ $list-items-border-color: #c4c4c4;
             max-width: 170px;
             margin-bottom: 21px;
 
-            svg.icon {
+            .ws-missing-icon {
+              display: block;
+              margin: 52px auto 20px;
+              width: 32px;
+              height: 32px;
+            }
+
+            svg.ws-icon {
               display: block;
               margin: 52px auto 20px;
 

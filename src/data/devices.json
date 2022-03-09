@@ -103,18 +103,22 @@
       },
       {
         "icon": "100",
+        "iconSize": [61, 28],
         "text": "Stateful Firewall Throughput: 100 Mbps"
       },
       {
         "icon": "50",
+        "iconSize": [43, 28],
         "text": "Maximum VPN Throughput: 50 Mbps"
       },
       {
         "icon": "1x",
+        "iconSize": [38, 28],
         "text": "WAN Interfaces: 1 x GbE RJ45; 1 x USB (cellular failover)"
       },
       {
         "icon": "4x",
+        "iconSize": [42, 28],
         "text": "LAN Interfaces: 4 x GbE"
       }
     ],
@@ -160,14 +164,17 @@
       },
       {
         "icon": "04",
+        "iconSize": [44, 28],
         "text": "4-stream UL/DL MU-MIMO 802.11ax"
       },
       {
         "icon": "2-point-5",
+        "iconSize": [52, 28],
         "text": "One 2.5 Gbps multigigabit Ethernet port"
       },
       {
         "icon": "802-point-3",
+        "iconSize": [96, 28],
         "text": "PoE: 802.3at"
       }
     ]
@@ -197,18 +204,22 @@
     "specs": [
       {
         "icon": "802-point-1x",
+        "iconSize": [115, 28],
         "text": "Layer 2, 802.1X authentication"
       },
       {
         "icon": "dhcp",
+        "iconSize": [101, 28],
         "text": "DHCP relay; DHCP snooping"
       },
       {
         "icon": "stp",
+        "iconSize": [69, 28],
         "text": "STP enhancements; voice and video QoS"
       },
       {
         "icon": "ipv4-ipv6",
+        "iconSize": [150, 28],
         "text": "IPv4 and IPv6 ACLs"
       }
     ]
@@ -245,14 +256,17 @@
       },
       {
         "icon": "450",
+        "iconSize": [65, 28],
         "text": "450 Mbps firewall throughput"
       },
       {
         "icon": "200",
+        "iconSize": [65, 28],
         "text": "200 Mbps site-to-site VPN throughput"
       },
       {
         "icon": "50",
+        "iconSize": [43, 28],
         "text": "Supports up to 50 users"
       }
     ]
@@ -280,6 +294,7 @@
       },
       {
         "icon": "4k",
+        "iconSize": [43, 28],
         "text": "Resolution: 4k Ultra HD (3840x2160) (16:9)"
       },
       {
@@ -288,6 +303,7 @@
       },
       {
         "icon": "120-degrees",
+        "iconSize": [77, 28],
         "text": "Field of view: Wide-lense camera offers 120° horizontal field of view while the main camera supports 85° horizontal field of view"
       },
       {
@@ -326,6 +342,7 @@
       },
       {
         "icon": "4k",
+        "iconSize": [43, 28],
         "text": "Resolution: 4k Ultra HD (3840x2160) (16:9)"
       },
       {
@@ -334,6 +351,7 @@
       },
       {
         "icon": "120-degrees",
+        "iconSize": [77, 28],
         "text": "Field of view: Wide-lense camera offers 120° horizontal field of view while the main camera supports 85° horizontal field of view"
       },
       {
@@ -371,16 +389,17 @@
       },
       {
         "icon": "1080p",
-        "iconSize": ["64", "32"],
+        "iconSize": [105, 33],
         "text": "Resolution: Supports up to 1080p live video resolution"
       },
       {
         "icon": "4k",
+        "iconSize": [43, 28],
         "text": "Camera: 4k Ultra HD, supports up to 60 fps"
       },
       {
         "icon": "81-degrees",
-        "iconSize": ["40", "28"],
+        "iconSize": [59, 28],
         "text": "Field of view: 81° diagonal field of view"
       },
       {
@@ -448,6 +467,7 @@
     "specs": [
       {
         "icon": "15-inches",
+        "iconSize": [55, 28],
         "text": "Screen: 15.6-inch LCD touchscreen monitor"
       },
       {
@@ -460,6 +480,7 @@
       },
       {
         "icon": "64-degrees",
+        "iconSize": [63, 28],
         "text": "Field of view: 64° horizontal field of view, 50° vertical field of view"
       },
       {
@@ -500,6 +521,7 @@
       },
       {
         "icon": "4k",
+        "iconSize": [43, 28],
         "text": "Resolutions: 4k (3840x2160) (16:9)"
       },
       {
@@ -508,6 +530,7 @@
       },
       {
         "icon": "120-degrees",
+        "iconSize": [77, 28],
         "text": "Field of view: 71° horizontal field of view, 59° vertical field of view"
       },
       {
@@ -541,10 +564,12 @@
     "specs": [
       {
         "icon": "4k",
+        "iconSize": [43, 28],
         "text": "Screen: Attaches to 4k displays via HDMI"
       },
       {
         "icon": "1080p",
+        "iconSize": [105, 33],
         "text": "Resolution: Supports up to 1080p live video resolution"
       },
       {
@@ -553,6 +578,7 @@
       },
       {
         "icon": "120-degrees",
+        "iconSize": [77, 28],
         "text": "Field of view: 120° horizontal field of view"
       },
       {

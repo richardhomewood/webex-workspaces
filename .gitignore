@@ -1,7 +1,7 @@
 # Build results
 _site/
 .cache/
-webex-workspaces-site.zip
+webex-workspaces-site*.zip
 
 # Visual Studio
 .vscode/
