@@ -6,6 +6,8 @@
         {% set iconSize = spec.iconSize %}
       {% endif %}
       {% icon spec.icon, '', iconSize %}
+    {% else %}
+      <div class="ws-missing-icon"></div>
     {% endif %}
     <span>{{ spec.text }}</span>
   </li>
