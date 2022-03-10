@@ -617,6 +617,10 @@
     "description": "Create an instant workspace with the portable video conferencing device that's designed for taking meetings with you to any room—even your kitchen.",
     "carouselItems": [
       {
+        "filename": "Cisco_DeskMini_White_Turnaround.mp4",
+        "alt": "The Webex Desk Mini."
+      },
+      {
         "filename": "ST01_Desk_Mini_front.jpg",
         "alt": "The Webex Desk Mini."
       },
