@@ -216,15 +216,17 @@ $bg-body: grey;
         .ws-room-label-info-btn-container {
           display: flex;
           justify-content: center;
-          margin-bottom: 11px;
+          margin: 0 20px 11px;
 
           .ws-room-label {
             @include ws-h2;
             text-align: center;
             color: #fff;
+            padding-left: 40px;
           }
 
           .ws-room-info-btn {
+            flex-shrink: 0;
             width: 32px;
             height: 32px;
             border-radius: 16px;
@@ -232,7 +234,7 @@ $bg-body: grey;
             text-align: center;
             color: #fff;
             font-size: 18px;
-            margin-left: 20px;
+            margin-left: 8px;
             line-height: 32px;
             text-decoration: none;
             pointer-events: all;
@@ -424,6 +426,10 @@ $bg-body: grey;
             .ws-room-label {
               @include ws-h3-desktop;
             }
+
+            .ws-room-info-btn {
+              margin-left: 20px;
+            }
           }
 
           .ws-show-more-rooms-txt:not(.ws-displayNone) {
@@ -519,6 +525,10 @@ $bg-body: grey;
 
             .ws-room-label {
               @include ws-h3-desktop;
+            }
+
+            .ws-room-info-btn {
+              margin-left: 20px;
             }
           }
 
