@@ -11,6 +11,10 @@ import {currentSizeClass, timeout} from './utils';
 let hasUpdatedBGs = false
 let selectedRoomIndex = 0
 
+window.addEventListener('scroll', (e) => {
+    window.scrollTo(0, 0)
+});
+
 // Getters
 
 let initialView;
