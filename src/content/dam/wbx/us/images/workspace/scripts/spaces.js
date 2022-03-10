@@ -91,6 +91,7 @@ const getHotSpotsToShow = (space, room ) =>{
     return room ? Array.from(document.querySelectorAll(hotSpotsToShowCSSSelector)) : [];
 }
 
+let storedSliderWidth = 0;
 const getRoomSelectorOptions = async (mypath) => {
 
     const slides = Array.from(document.querySelectorAll(`#${mypath}Container .swiper .swiper-slide.${classnames.roomSlide}`));
@@ -110,9 +111,15 @@ const getRoomSelectorOptions = async (mypath) => {
 
     await timeout(100);
 
-    const slideWidth = slides[0].offsetWidth;
+    storedSliderWidth = Math.max(storedSliderWidth, slides[0].offsetWidth);
+    const slideWidth = storedSliderWidth;
     const totalSlideWidth = (slideWidth * slideCount) + (10 * (slideCount - 1));
     const enabled = totalSlideWidth >= (window.innerWidth - 98);
+
+    console.log("totalSlideWidth", totalSlideWidth)
+    console.log("window.innerWidth - 98" , window.innerWidth - 98)
+    console.log("totalSlideWidth >= (window.innerWidth - 98)", totalSlideWidth >= (window.innerWidth - 98))
+
     const options = {
         speed: 400,
         slidesPerView: "auto",
@@ -552,9 +559,10 @@ const updateRoomsSelector = async function (path) {
 
     if (swipingRoomSelector && swipingRoomSelector.el && swipingRoomSelector.el.parentNode && swipingRoomSelector.el.parentNode.getAttribute("id") === `${mypath}Container`) {
 
-        const previosOptions = swipingRoomSelector.params;
-        const {enabled : isEnabled  } = previosOptions;
+        const previousOptions = swipingRoomSelector.params;
+        const {enabled : isEnabled  } = previousOptions;
         const {enabled} = await getRoomSelectorOptions(mypath);
+        console.log("updateRoomsSelector" , enabled)
         let updateProgress = (enabled && !isEnabled) || (!enabled && isEnabled);
         const slides = Array.from(document.querySelectorAll(`${wouldBeSwiperSelector} .swiper-slide.${classnames.roomSlide}`));
         let clickedIndex = -1;
