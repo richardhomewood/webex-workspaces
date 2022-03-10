@@ -184,11 +184,12 @@ module.exports = {
       : picture;
   },
   assetPath: (name) => `/${assetsDir}/${name}`,
-  video: (filename) => {
+  video: (filename, altText) => {
+    const formattedAltText = altText ? `: "${altText}"` : '';
     return outdent({newline: ''})`
     <video autoplay loop playsinline muted>
         <source src="/${assetsDir}/videos/${filename}">
-        <p>Your browser doesn't support HTML5 video. Here is a <a href="/${assetsDir}/videos/${filename}">link to the video</a> instead.</p>
+        <p>Your browser doesn't support HTML5 video. Here is a <a href="/${assetsDir}/videos/${filename}">link to the video${formattedAltText}</a>.</p>
     </video>
     `;
   }

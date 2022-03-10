@@ -42,6 +42,10 @@
       }
     }
 
+    .ws-icon.ws-icon--site-logo {
+      pointer-events: all !important;
+    }
+
     .ws-about-cta,
     .ws-contact-cta {
       transition: opacity 0.2s linear 0s;
@@ -50,6 +54,10 @@
       span {
         margin: 22px auto;
       }
+    }
+
+    .ws-about-cta {
+      opacity: 0;
     }
   }
 }

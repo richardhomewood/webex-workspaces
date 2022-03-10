@@ -18,6 +18,7 @@ window.addEventListener('resize', () => {
 
 window.addEventListener('load', function () {
     router.route(canonicalPath(window.location));
+    window.scrollTo(0, 0);
 });
 
 window.addEventListener('click', event => {
