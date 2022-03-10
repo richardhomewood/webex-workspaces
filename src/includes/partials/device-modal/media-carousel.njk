@@ -7,12 +7,24 @@
       <div class="swiper-wrapper">
         <!-- Slides -->
         {% for item in items %}
-          {% set isVideo = item.endsWith('.mp4') %}
-          {% if isVideo %}
-            <div class="swiper-slide">{% video item %}</div>
+          {# The following is truthy for Strings.#}
+          {% set isItemPathOnly = item.substring %}
+          {% if isItemPathOnly %}
+            {% set isVideo = item.endsWith('.mp4') %}
+            {% if isVideo %}
+              <div class="swiper-slide">{% video item %}</div>
+            {% else %}
+              {% set imagePath = "devices/" + deviceId + "/carousel/" + item %}
+              <div class="swiper-slide">{% imagesync imagePath, "" %}</div>
+            {% endif %}
           {% else %}
-            {% set imagePath = "devices/" + deviceId + "/carousel/" + item %}
-            <div class="swiper-slide">{% imagesync imagePath %}</div>
+            {% set isVideo = item.filename.endsWith('.mp4') %}
+            {% if isVideo %}
+              <div class="swiper-slide">{% video item.filename, item.alt %}</div>
+            {% else %}
+              {% set imagePath = "devices/" + deviceId + "/carousel/" + item.filename %}
+              <div class="swiper-slide">{% imagesync imagePath, item.alt %}</div>
+            {% endif %}
           {% endif %}
         {% endfor %}
       </div>
