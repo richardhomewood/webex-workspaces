@@ -155,10 +155,6 @@
     ],
     "specs": [
       {
-        "icon": "audio-call",
-        "text": "Recommended use cases: Teleworker with VoIP or PoE, IoT, and M2M"
-      },
-      {
         "icon": "computer",
         "text": "Recommended clients: Up to 5 devices"
       },
@@ -181,6 +177,10 @@
         "icon": "4x",
         "iconSize": [42, 28],
         "text": "LAN Interfaces: 4 x GbE"
+      },
+      {
+        "icon": "poe",
+        "text": "PoE: 1 x PoE enabled port (802.3af, 15.5W)"
       }
     ]
   },
