@@ -245,7 +245,7 @@ const transitionBGsHotSpots = (space, room) => {
     const bgsToDisplay = getBgsToDisplay(space, room);
     const bgsToHide = getBgsToHide(space, room);
     const hotSpotsToHide = getHotSpotsToHide()
-    
+
     //fade out backgrounds that are going away
     bgsToHide.forEach((element) => {
         element.style['zIndex'] = 1;
@@ -404,7 +404,7 @@ const transitionAwayFromHomeView = (initview, room) => {
 }
 
 const transitionRoomSelectors = (otherRoomSelectors, roomSelectorWrap, roomSelector, space)=>{
-    
+
     if (otherRoomSelectors.length > 0) {
 
         if (roomSelectorWrap) {
@@ -496,7 +496,12 @@ const setupHammer = () => {
 
 const updateNav = function (path) {
     const splitPaths = splitPath(path);
-    const mypath = splitPaths !== null ? splitPaths[0] : path;
+    const currentWorkspaceId = splitPaths !== null ? splitPaths[0] : path;
+
+    const navContainer = document.querySelector(`.${classnames.workspaceNavigation}`);
+    if (currentWorkspaceId) {
+        navContainer.style["opacity"] = 1;
+    }
 
     const navLinks = document.querySelectorAll(`.${classnames.workspaceNavigation} a`);
     const navSelector = document.getElementById("ws-nav-underline");
@@ -504,13 +509,13 @@ const updateNav = function (path) {
     let selectedIndex = -1;
 
     commonData.orderedWorkspaceIds.forEach((workspaceId, index) => {
-        if (workspaceId === mypath) {
+        if (workspaceId === currentWorkspaceId) {
             selectedIndex = index;
         }
     });
 
     if (selectedIndex === -1) {
-        
+
         if (!navSelector.classList.contains(classnames.hidden)) {
             navSelector.classList.add(classnames.hidden);
         }
@@ -553,13 +558,13 @@ const updateWorkspaceCta = function (path) {
             anchor.enabled = true
             anchor.style["opacity"] = 1
         });
-        
+
     } else {
         Array.from(aboutCtaElements).forEach((anchor) => {
             anchor.enabled = false
             anchor.style["opacity"] = 0
         });
-        
+
     }
 
 };
@@ -723,7 +728,7 @@ const updateBGSizes = () => {
                         const swiperAnimationView = document.getElementById('ws-swiper-indicator-animation');
                         swiperAnimationView.classList.remove(classnames.hidden)
                         swiperAnimationView.onclick = ()=>{
-                            
+
                             swiperAnimationView.classList.add(classnames.hidden)
                             setSwiperAnimationViewed();
                             animateInHotSpots(workspaceId, roomId)
@@ -732,7 +737,7 @@ const updateBGSizes = () => {
                         animateInHotSpots(workspaceId, roomId)
                     }
                 }
-                 
+
 
                 maxXPanOffset = (-(windowWidth - setImageWidth) / 2) - Math.abs(initialOffset);
                 minXPanOffset = ((windowWidth - setImageWidth) / 2) - Math.abs(initialOffset);

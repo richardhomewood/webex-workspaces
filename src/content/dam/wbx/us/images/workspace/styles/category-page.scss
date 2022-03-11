@@ -84,6 +84,14 @@ body {
           font-size: 40px;
           line-height: 58px;
           letter-spacing: -0.04em;
+          margin-bottom: 2px;
+
+          &.ws-selected {
+            span {
+              border-bottom: 2px solid black;
+              pointer-events: none;
+            }
+          }
         }
       }
 

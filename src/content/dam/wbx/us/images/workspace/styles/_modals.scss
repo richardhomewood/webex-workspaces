@@ -35,7 +35,6 @@ $list-items-border-color: #c4c4c4;
       width: 100vw;
       height: 0;
       margin: 15px -21px;
-      border: 1px solid #c4c4c4;
     }
   }
 
@@ -65,6 +64,10 @@ $list-items-border-color: #c4c4c4;
         width: 16.64px;
         height: 16.64px;
       }
+    }
+
+    .ws-top-rule {
+      border-bottom: 1px solid #c4c4c4;
     }
 
     .ws-info-modal-room-name {
@@ -267,6 +270,8 @@ $list-items-border-color: #c4c4c4;
           display: flex;
           flex-wrap: wrap;
           padding: 0;
+          margin: 0 auto;
+          justify-content: center;
 
           li {
             list-style: none;
@@ -275,6 +280,10 @@ $list-items-border-color: #c4c4c4;
             min-height: 196px;
             max-width: 170px;
             margin-bottom: 21px;
+            &:last-child {
+              margin-right: 0;
+            }
+
 
             .ws-missing-icon {
               display: block;
@@ -317,7 +326,10 @@ $list-items-border-color: #c4c4c4;
             li {
               // Select the left column only
               &:nth-child(odd) {
-                margin-right: 14px;
+                // But not if they are the last child.
+                &:not(:last-child) {
+                  margin-right: 14px;
+                }
               }
 
               // Flex to 50% minus half the margin-right value just above
@@ -392,8 +404,12 @@ $list-items-border-color: #c4c4c4;
               flex: 0 0 33%;
               // Select every 3rd child, starting at the first
               // Select every 3rd child, starting at the second
+
               &:nth-child(3n+1), &:nth-child(3n+2) {
-                margin-right: 20px;
+                // But not if they are the last child.
+                &:not(:last-child) {
+                  margin-right: 20px;
+                }
               }
             }
           }
