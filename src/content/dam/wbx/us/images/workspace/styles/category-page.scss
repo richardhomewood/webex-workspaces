@@ -262,6 +262,12 @@ body {
               background-color: #fff;
             }
           }
+
+          .ws-navigation-section {
+            .ws-cta-right-arrow {
+              display: none;
+            }
+          }
         }
       }
     }
@@ -548,12 +554,11 @@ body {
               a {
                 box-sizing: border-box;
                 width: auto;
-                padding: 0 30px;
+                padding: 0 20px;
                 margin: 283px auto;
                 display: inline-block;
                 height: 52px;
                 background-color: #fff;
-                border: solid 1px #000;
                 border-radius: 26px;
                 text-align: center;
                 @include ws-button-text;
@@ -564,6 +569,13 @@ body {
                 left: 50%;
                 transform: translate(-50%, 0);
                 z-index: 1;
+
+                .ws-cta-right-arrow {
+                  display: unset; // Reverts to inline
+                  position: relative;
+                  top: 2px;
+                }
+
               }
 
               .ws-navigation-section-background-image {
