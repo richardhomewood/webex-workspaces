@@ -11,7 +11,7 @@
 <main>
 
   <!-- Content Section -->
-  <div class="ws-category-root">
+  <div class="ws-category-root" style="opacity: 0">
     <link rel="stylesheet" href="{% webpack 'category-page.css' %}">
 
     {{commonUi.renderForCategory(common, workspaces, workspaceId)}}
@@ -30,7 +30,14 @@
 
     </div>
 
+    {# The following line forces the parser to block until the stryles load. #}
+    <script>/**/</script>
     <script async defer src="{% webpack 'category-page.js' %}"></script>
+    <style>
+      .ws-category-root {
+        opacity: 1 !important;
+      }
+    </style>
   </div>
   <!--/ Content Section -->
 
