@@ -72,6 +72,7 @@ const showModalContainerForRoom = (workspaceId, roomId) => {
     // Show modals-container for room
     const modalsContainer = document.getElementById(`${workspaceId}-${roomId}-modals`);
     modalsContainer.classList.remove(classnames.hidden);
+    modalsContainer.scrollTop = 0;
 
     return modalsContainer;
 };
