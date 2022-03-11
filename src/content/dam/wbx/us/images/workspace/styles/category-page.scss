@@ -21,6 +21,10 @@ body {
     top: 0;
     margin-top: 20px;
 
+    .ws-common-ui-flank {
+      display: inline;
+    }
+
     .ws-workspace-nav ul li a {
       color: #000;
     }
@@ -46,8 +50,9 @@ body {
     .ws-contact-cta {
       border: 1px solid #000000;
       color: black;
+      display: inline-block;
       span {
-        display: block;
+        display: inline-block;
       }
     }
   }
@@ -449,6 +454,16 @@ body {
 
 @media only screen and (min-width: 1366px) and (max-width: 10000px) {
   .ws-category-root {
+    .ws-common-ui {
+      .ws-common-ui-flank {
+        min-width: 30%;
+        max-width: 30%;
+        &:last-child {
+          text-align: right;
+        }
+      }
+    }
+
     .ws-category-page-content {
       margin: 0 64px;
       .ws-category-content-root {
