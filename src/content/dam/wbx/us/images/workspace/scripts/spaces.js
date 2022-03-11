@@ -670,20 +670,24 @@ const updateBGSizes = () => {
     if (!initview.classList.contains(classnames.hidden)) {
         //update animating imgs on initial view
         const rotatingImgs = Array.from(document.querySelectorAll(classnames.rotatingImgs));
-        const rImgWidth = rotatingImgs[0].clientWidth;
-        const rImgHeight = rotatingImgs[0].clientHeight;
         const projectedRImgWidth = (windowHeight * 108) / 192;
 
+        console.log("projectedRImgWidth", projectedRImgWidth)
+        console.log("windowWidth", windowWidth)
         if (projectedRImgWidth < windowWidth) {
-            let newImageHeight = (windowWidth * rImgHeight) / rImgWidth;
+            let newImageHeight = (windowWidth * 108) / 192;
             newImageHeight = newImageHeight < windowHeight ? windowHeight : newImageHeight;
             rotatingImgs.forEach((element) => {
                 element.style["height"] = newImageHeight + "px";
+                element.style["width"] = (newImageHeight * 192) / 108 + "px";
+                element.classList.add('ws-sized');
             })
 
         } else{
             rotatingImgs.forEach((element) => {
                 element.style["height"] = "";
+                element.style["width"] = projectedRImgWidth + "px";
+                element.classList.add('ws-sized');
             })
         }
     }
@@ -719,6 +723,8 @@ const updateBGSizes = () => {
                     setImageHeight = windowHeight;
                     setImageWidth = projectedImgWidth;
                 }
+
+                bgImg.classList.add("ws-sized")
 
                 const path = location.hash.substring(1);
                 const [workspaceId, roomId] = splitPath(path);
