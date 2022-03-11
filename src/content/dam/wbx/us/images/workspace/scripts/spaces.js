@@ -725,6 +725,12 @@ const updateBGSizes = () => {
 
                 if (roomId){
                     if(!getSwiperAnimationViewed() && (setImageWidth > windowWidth || setImageHeight > windowHeight)){
+                        
+                        console.log("setImageWidth", setImageWidth)
+                        console.log("windowWidth", windowWidth)
+                        console.log("setImageHeight", setImageHeight)
+                        console.log("windowHeight", windowHeight)
+
                         const swiperAnimationView = document.getElementById('ws-swiper-indicator-animation');
                         swiperAnimationView.classList.remove(classnames.hidden)
                         swiperAnimationView.onclick = ()=>{
@@ -741,16 +747,19 @@ const updateBGSizes = () => {
 
                 maxXPanOffset = (-(windowWidth - setImageWidth) / 2) - Math.abs(initialOffset);
                 minXPanOffset = ((windowWidth - setImageWidth) / 2) - Math.abs(initialOffset);
+                console.log("maxXPanOffset", maxXPanOffset)
+                console.log("minXPanOffset", minXPanOffset)
 
                 maxYPanOffset = (-(setImageHeight - windowHeight) / 2);
                 minYPanOffset = ((setImageHeight - windowHeight) / 2);
 
                 const scaledPanOffsetX = (panOffset.x * setImageWidth)/windowWidth;
                 const panOffsetX = scaledPanOffsetX > maxXPanOffset ? maxXPanOffset : scaledPanOffsetX < minXPanOffset ? minXPanOffset : scaledPanOffsetX;
+                
                 const scaledPanOffsetY = (panOffset.y * setImageHeight)/windowHeight;
                 const panOffsetY = panOffset.y === 0 ? 0 : scaledPanOffsetY > maxYPanOffset ? maxYPanOffset : scaledPanOffsetY < minYPanOffset ? minYPanOffset : scaledPanOffsetY ;
 
-                const xOffset = Math.abs(initialOffset) === 0 ? initialOffset : initialOffset + panOffsetX;
+                const xOffset = initialOffset + panOffsetX;
                 const yOffset = panOffsetY;
 
                 const newTransform = 'translate(calc(-50% + ' + xOffset + 'px), calc(-50% + ' + yOffset + 'px))';
