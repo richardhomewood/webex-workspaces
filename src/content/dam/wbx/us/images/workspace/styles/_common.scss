@@ -81,12 +81,20 @@
           list-style: none;
           width: 100vw;
           display: flex;
-          justify-content: space-between;
+          justify-content: center;
 
-          li a {
-            @include ws-small-body-reg;
-            color: #fff;
-            text-decoration: none;
+          li {
+            margin-right: 34px;
+
+            &:last-child {
+              margin-right: 0;
+            }
+
+            a {
+              @include ws-small-body-reg;
+              color: #fff;
+              text-decoration: none;
+            }
           }
         }
       }
@@ -141,7 +149,8 @@
           justify-content: flex-start;
 
           li {
-            margin-left: 40px;
+            margin-left: 38px;
+
             &:first-child {
               margin-left: 0px;
             }
@@ -202,7 +211,7 @@
           justify-content: flex-start;
 
           li {
-            margin-left: 40px;
+            margin-left: 38px;
             &:first-child {
               margin-left: 0px;
             }
