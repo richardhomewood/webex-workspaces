@@ -9,13 +9,20 @@ permalink: workspaces/explore.html
 <main>
 
   <!-- Content Section -->
-  <div class="workspaces-page-content">
+  <div class="ws-workspaces-page-content" style="opacity: 0">
     <link rel="stylesheet" href="{% webpack 'main.css' %}">
 
     {# This is the root element for the "immersive experience" #}
     {{ immersive.render(common, workspaces, devicesByRoom, vendorDevicesByRoom, devices) }}
 
+    {# The following line forces the parser to block until the stryles load. #}
+    <script>/**/</script>
     <script async defer src="{% webpack 'main.js' %}"></script>
+    <style>
+      .ws-workspaces-page-content {
+        opacity: 1 !important;
+      }
+    </style>
   </div>
   <!--/ Content Section -->
 
