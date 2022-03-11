@@ -477,20 +477,24 @@ body {
 
               .ws-device,
               .ws-software {
+                box-sizing: border-box;
                 display: block;
-                max-width: calc(50vw - 74.5px);
-                min-width: calc(50vw - 74.5px);
+                max-width: calc(50% - 11px);
+                min-width: calc(50% - 11px);
 
                 .ws-software-description {
+                  box-sizing: border-box;
                   padding-right: calc(100vw * 250 / 1682);
                 }
 
                 .ws-category-page-image {
+                  box-sizing: border-box;
                   margin-bottom: 53px;
                   border-radius: 26px;
                 }
 
                 .ws-software-features {
+                  box-sizing: border-box;
                   margin-bottom: 40px;
                   padding: 0 calc(100vw * 160 / 1682) 0 20px !important;
                 }
@@ -575,7 +579,6 @@ body {
                   position: relative;
                   top: 2px;
                 }
-
               }
 
               .ws-navigation-section-background-image {
