@@ -26,6 +26,7 @@ $animationDuration: $workspaceCount * $individualAnimationDuration;
         top: 0;
         bottom: 0;
         left: 0;
+        right: 0;
         height: 100%;
         min-width: 100%;
 
@@ -45,11 +46,16 @@ $animationDuration: $workspaceCount * $individualAnimationDuration;
         img {
           position: relative;
           height: 100%;
-          width: auto;
-          max-width: initial;
+          width: 100%;
+          max-width: 100%;
           left: 50%;
           top: 50%;
           transform: translate(-50%, -50%);
+          transition: width 0.2s linear 0s, height 0.2s linear 0s;
+          &.ws-sized {
+            width: auto;
+            max-width: initial;
+          }
         }
 
         animation-duration: $animationDuration;
