@@ -1,5 +1,49 @@
 $bg-body: grey;
 
+#ws-swiper-indicator-animation {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #00000070;
+
+  .ws-swiper-indicator-container {
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+
+    div:not(.ws-swiper-indicator-arrow) {
+      @include ws-button-text;
+      color: #fff;
+      padding: 0 16px;
+    }
+
+    .ws-swiper-indicator-arrow {
+      box-sizing: border-box;
+      background-size: 14px 14px;
+      background-repeat: no-repeat;
+      width: 50px;
+      min-width: 50px;
+      content: ' ';
+      &#ws-swiper-indicator-left-arrow {
+        background-position: center right;
+        background-image: url(../images/swipe-animation/overflow-left-bold.png);
+        @include swiperAnimationLeftArr;
+      }
+
+      &#ws-swiper-indicator-right-arrow {
+        background-position: center left;
+        background-image: url(../images/swipe-animation/overflow-right-bold.png);
+        @include swiperAnimationRightArr;
+      }
+    }
+  }
+}
+
 .ws-immersive-root {
   height: 100%;
   min-height: 100%;
