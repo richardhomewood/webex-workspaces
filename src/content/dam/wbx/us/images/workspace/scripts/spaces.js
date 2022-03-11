@@ -13,6 +13,17 @@ let selectedRoomIndex = 0
 
 // Getters
 
+const getSwiperAnimationViewed = () => {
+    const sessionStorage = window.sessionStorage
+    let hasViewedAnimation = sessionStorage.getItem('hasViewedSwiperAnimation') ?? "0"
+    return hasViewedAnimation == "1"
+}
+
+const setSwiperAnimationViewed = () => {
+    const sessionStorage = window.sessionStorage
+    sessionStorage.setItem('hasViewedSwiperAnimation', '1')
+}
+
 let initialView;
 const getInitView = () => {
     if (!initialView){
@@ -115,10 +126,6 @@ const getRoomSelectorOptions = async (mypath) => {
     const slideWidth = storedSliderWidth;
     const totalSlideWidth = (slideWidth * slideCount) + (10 * (slideCount - 1));
     const enabled = totalSlideWidth >= (window.innerWidth - 98);
-
-    console.log("totalSlideWidth", totalSlideWidth)
-    console.log("window.innerWidth - 98" , window.innerWidth - 98)
-    console.log("totalSlideWidth >= (window.innerWidth - 98)", totalSlideWidth >= (window.innerWidth - 98))
 
     const options = {
         speed: 400,
@@ -238,8 +245,7 @@ const transitionBGsHotSpots = (space, room) => {
     const bgsToDisplay = getBgsToDisplay(space, room);
     const bgsToHide = getBgsToHide(space, room);
     const hotSpotsToHide = getHotSpotsToHide()
-    const hotSpotsToShow = getHotSpotsToShow(space, room)
-    
+
     //fade out backgrounds that are going away
     bgsToHide.forEach((element) => {
         element.style['zIndex'] = 1;
@@ -271,22 +277,31 @@ const transitionBGsHotSpots = (space, room) => {
         element.classList.remove(classnames.hidden);
 
         //animate in hotspots
-        setTimeout(()=>{
-            hotSpotsToShow.forEach((element, index) => {
-                setTimeout(()=>{
-                    if (!element.classList.contains('animated-out')) {
-                        element.classList.add(classnames.animateIn);
-                    }
-                }, 300 * index);
-
-                if (index == hotSpotsToShow.length - 1){
-                    hotSpotsToHide.forEach((element)=> {
-                        element.classList.remove('animated-out')
-                    })
-                }
-            })
-        }, 300);
+        if(getSwiperAnimationViewed()){
+            animateInHotSpots(space, room)
+        }
     })
+}
+
+const animateInHotSpots = (space, room) => {
+    const hotSpotsToHide = getHotSpotsToHide()
+    const hotSpotsToShow = getHotSpotsToShow(space, room)
+
+    setTimeout(()=>{
+        hotSpotsToShow.forEach((element, index) => {
+            setTimeout(()=>{
+                if (!element.classList.contains('animated-out')) {
+                    element.classList.add(classnames.animateIn);
+                }
+            }, 300 * index);
+
+            if (index == hotSpotsToShow.length - 1){
+                hotSpotsToHide.forEach((element)=> {
+                    element.classList.remove('animated-out')
+                })
+            }
+        })
+    }, 300);
 }
 
 const transitionRooms = (space, room, roomSelectorWrap)=> {
@@ -389,7 +404,7 @@ const transitionAwayFromHomeView = (initview, room) => {
 }
 
 const transitionRoomSelectors = (otherRoomSelectors, roomSelectorWrap, roomSelector, space)=>{
-    
+
     if (otherRoomSelectors.length > 0) {
 
         if (roomSelectorWrap) {
@@ -481,7 +496,12 @@ const setupHammer = () => {
 
 const updateNav = function (path) {
     const splitPaths = splitPath(path);
-    const mypath = splitPaths !== null ? splitPaths[0] : path;
+    const currentWorkspaceId = splitPaths !== null ? splitPaths[0] : path;
+
+    const navContainer = document.querySelector(`.${classnames.workspaceNavigation}`);
+    if (currentWorkspaceId) {
+        navContainer.style["opacity"] = 1;
+    }
 
     const navLinks = document.querySelectorAll(`.${classnames.workspaceNavigation} a`);
     const navSelector = document.getElementById("ws-nav-underline");
@@ -489,13 +509,13 @@ const updateNav = function (path) {
     let selectedIndex = -1;
 
     commonData.orderedWorkspaceIds.forEach((workspaceId, index) => {
-        if (workspaceId === mypath) {
+        if (workspaceId === currentWorkspaceId) {
             selectedIndex = index;
         }
     });
 
     if (selectedIndex === -1) {
-        
+
         if (!navSelector.classList.contains(classnames.hidden)) {
             navSelector.classList.add(classnames.hidden);
         }
@@ -538,13 +558,13 @@ const updateWorkspaceCta = function (path) {
             anchor.enabled = true
             anchor.style["opacity"] = 1
         });
-        
+
     } else {
         Array.from(aboutCtaElements).forEach((anchor) => {
             anchor.enabled = false
             anchor.style["opacity"] = 0
         });
-        
+
     }
 
 };
@@ -699,6 +719,25 @@ const updateBGSizes = () => {
                     setImageHeight = windowHeight;
                     setImageWidth = projectedImgWidth;
                 }
+
+                const path = location.hash.substring(1);
+                const [workspaceId, roomId] = splitPath(path);
+
+                if (roomId){
+                    if(!getSwiperAnimationViewed() && (setImageWidth > windowWidth || setImageHeight > windowHeight)){
+                        const swiperAnimationView = document.getElementById('ws-swiper-indicator-animation');
+                        swiperAnimationView.classList.remove(classnames.hidden)
+                        swiperAnimationView.onclick = ()=>{
+
+                            swiperAnimationView.classList.add(classnames.hidden)
+                            setSwiperAnimationViewed();
+                            animateInHotSpots(workspaceId, roomId)
+                        }
+                    } else{
+                        animateInHotSpots(workspaceId, roomId)
+                    }
+                }
+
 
                 maxXPanOffset = (-(windowWidth - setImageWidth) / 2) - Math.abs(initialOffset);
                 minXPanOffset = ((windowWidth - setImageWidth) / 2) - Math.abs(initialOffset);

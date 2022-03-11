@@ -1,17 +1,17 @@
 {% macro render(common, workspaces) %}
   <div class="ws-common-ui">
-    <a href="/workspaces/explore.html">{% icon "site-logo" %}</a>
+    <a href="/workspaces/explore.html#">{% icon "site-logo" %}</a>
 
-    <div class="ws-workspace-nav">
+    <div class="ws-workspace-nav" style="opacity: 0">
       <ul>
         {%- for workspaceId in common.orderedWorkspaceIds %}
-          <li><a href="#/{{ workspaceId }}">{{ workspaces[workspaceId].name }}</a></li>
+          <li><a href="#/{{ workspaceId }}" class="ws-disabled">{{ workspaces[workspaceId].name }}</a></li>
         {%- endfor %}
       </ul>
       <div id="ws-nav-underline" class="ws-displayNone"></div>
     </div>
 
-    <a class="ws-about-cta"><span class="ws-XS">{{ common.aboutWorkspaceCtaShortText }}</span><span class="ws-S ws-M ws-L ws-XL">{{ common.aboutWorkspaceCtaText }}</span></a>
+    <a class="ws-about-cta" style="opacity: 0"><span class="ws-XS">{{ common.aboutWorkspaceCtaShortText }}</span><span class="ws-S ws-M ws-L ws-XL">{{ common.aboutWorkspaceCtaText }}</span></a>
   </div>
 {% endmacro %}
 
@@ -38,7 +38,13 @@
     <div class="ws-menu-items">
       <ul>
         {%- for workspaceId in common.orderedWorkspaceIds %}
-          <li {% if selectedWorkspaceId == workspaceId %} class="ws-selected"{% endif %}><a href="{{ workspaceId }}.html">{{ workspaces[workspaceId].name }}</a></li>
+          {% if selectedWorkspaceId == workspaceId %}
+            <li  class="ws-selected"><span>{{ workspaces[workspaceId].name }}</span></li>
+          {% else %}
+            <li><a href="{{ workspaceId }}.html">{{ workspaces[workspaceId].name }}</a></li>
+          {% endif %}
+
+
         {%- endfor %}
       </ul>
       <a class="ws-contact-cta" href="{{ common.contactUrl }}"><span>{{ common.contactSalesCtaText }}</span></a>
