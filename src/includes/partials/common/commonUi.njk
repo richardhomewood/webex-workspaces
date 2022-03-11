@@ -38,7 +38,13 @@
     <div class="ws-menu-items">
       <ul>
         {%- for workspaceId in common.orderedWorkspaceIds %}
-          <li {% if selectedWorkspaceId == workspaceId %} class="ws-selected"{% endif %}><a href="{{ workspaceId }}.html">{{ workspaces[workspaceId].name }}</a></li>
+          {% if selectedWorkspaceId == workspaceId %}
+            <li  class="ws-selected"><span>{{ workspaces[workspaceId].name }}</span></li>
+          {% else %}
+            <li><a href="{{ workspaceId }}.html">{{ workspaces[workspaceId].name }}</a></li>
+          {% endif %}
+
+
         {%- endfor %}
       </ul>
       <a class="ws-contact-cta" href="{{ common.contactUrl }}"><span>{{ common.contactSalesCtaText }}</span></a>
