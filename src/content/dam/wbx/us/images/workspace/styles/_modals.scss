@@ -35,7 +35,6 @@ $list-items-border-color: #c4c4c4;
       width: 100vw;
       height: 0;
       margin: 15px -21px;
-      border: 1px solid #c4c4c4;
     }
   }
 
@@ -65,6 +64,10 @@ $list-items-border-color: #c4c4c4;
         width: 16.64px;
         height: 16.64px;
       }
+    }
+
+    .ws-top-rule {
+      border-bottom: 1px solid #c4c4c4;
     }
 
     .ws-info-modal-room-name {
