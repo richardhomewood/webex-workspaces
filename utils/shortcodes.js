@@ -5,9 +5,13 @@ const Image = require('@11ty/eleventy-img');
 const markdown = require('./markdown');
 
 const iconDefaultSize = 32;
-const defaultSizes = '90vw';
-const defaultImagesSizes = [1920, 768];
+const defaultSizes = '100vw';
 const assetsDir = 'content/dam/wbx/us/images/workspace';
+
+// Comment out the longer list of default image sizes during local development!
+// And uncomment the shorter one.  Builds will be much faster.
+// const defaultImagesSizes = [1920, 768];
+const defaultImagesSizes = [5760, 4098, 3840, 2560, 1920, 1366, 1280, 768, 375];
 
 const isFullUrl = (url) => {
   try {
