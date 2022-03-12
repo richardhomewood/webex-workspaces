@@ -162,18 +162,8 @@ $list-items-border-color: #c4c4c4;
       a.ws-learn-more-cta {
         display: block;
         margin: 0 auto 37px;
-        border: 1px solid #000000;
-        border-radius: 50px;
         padding: 21px;
-        text-align: center;
         width: 130px;
-        height: 62px;
-        text-decoration: none;
-        color: black;
-
-        &:active, &:visited {
-          color: black;
-        }
       }
 
       .ws-image-carousel {
@@ -214,7 +204,16 @@ $list-items-border-color: #c4c4c4;
           display: inline-block;
           width: 34px;
           height: 34px;
+          border: 0.5px solid black;
+          border-radius: 16px;
           cursor: pointer;
+          &:hover, &:focus {
+            background-color: black;
+            svg {
+              filter: invert(100%);
+            }
+          }
+
           &.swiper-button-disabled {
             opacity: 0.35;
             cursor: auto;
@@ -223,7 +222,9 @@ $list-items-border-color: #c4c4c4;
           .ws-icon {
             width: 34px;
             height: 34px;
-          }
+            position: relative;
+            top: -1px;
+            left: -1px;          }
         }
       }
 

@@ -32,7 +32,7 @@
 {% macro softwareItem(software, common, isOddEnd = false) %}
      <div class="ws-software{% if isOddEnd %} oddEnd{% endif %}">
         {% if isOddEnd %}
-        
+
             {{ softwareImage(software.image,  common.sizeClasses) }}
             <div class="ws-oddEndWrapper">
                 <div>
@@ -51,7 +51,7 @@
 
             {{features(software.features, software.featuresTitle)}}
             {{ softwareCTAs(software.url, common)}}
-            
+
         {% endif %}
      </div>
 {% endmacro %}
@@ -62,15 +62,15 @@
             <h4 class="ws-software-features-title">{{title}}</h4>
             <ul class="ws-software-features">
         {% endif %}
-    
+
         <li class="ws-software-feature">{{ feature }}</li>
-    
+
     {% if loop.last %}</ul>{% endif %}
-    
+
     {% endfor %}
 {% endmacro %}
 
 {% macro softwareCTAs(url, common) %}
-    <a class="ws-learn-more-cta" href="{{ url }}">{{ common.learnMoreCtaText }}</a>
-    <a class="ws-contact-cta" target="_blank" href="{{ common.contactUrl }}" >{{ common.contactCtaText }}</a>
+    <a class="ws-learn-more-cta ws-cta ws-transparent-cta ws-on-dark-background" href="{{ url }}"><span>{{ common.learnMoreCtaText }}</span></a>
+    <a class="ws-contact-cta ws-cta ws-white-cta ws-on-dark-background" target="_blank" href="{{ common.contactUrl }}" ><span>{{ common.contactCtaText }}</span></a>
 {% endmacro %}

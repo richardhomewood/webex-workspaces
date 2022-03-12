@@ -11,7 +11,7 @@
       <div id="ws-nav-underline" class="ws-displayNone"></div>
     </div>
 
-    <a class="ws-about-cta" style="opacity: 0"><span class="ws-XS">{{ common.aboutWorkspaceCtaShortText }}</span><span class="ws-S ws-M ws-L ws-XL">{{ common.aboutWorkspaceCtaText }}</span></a>
+    <a class="ws-about-cta ws-cta ws-transparent-cta" style="opacity: 0"><span class="ws-XS">{{ common.aboutWorkspaceCtaShortText }}</span><span class="ws-S ws-M ws-L ws-XL">{{ common.aboutWorkspaceCtaText }}</span></a>
   </div>
 {% endmacro %}
 
@@ -29,7 +29,7 @@
     </div>
     <div class="ws-common-ui-flank">
         <div class="ws-hamburger ws-XS">{% icon "hamburger-menu", "", [22, 10] %}</div>
-        <span class="ws-S ws-M ws-L ws-XL"><a class="ws-contact-cta" href="{{ common.contactUrl }}"><span>{{ common.contactSalesCtaText }}</span></a></span>
+        <span class="ws-S ws-M ws-L ws-XL"><a class="ws-contact-cta ws-cta ws-white-cta" href="{{ common.contactUrl }}"><span>{{ common.contactSalesCtaText }}</span></a></span>
     </div>
   </div>
   <div class="ws-hamburger-menu ws-XS ws-displayNone">
@@ -49,7 +49,7 @@
 
         {%- endfor %}
       </ul>
-      <a class="ws-contact-cta" href="{{ common.contactUrl }}"><span>{{ common.contactSalesCtaText }}</span></a>
+      <a class="ws-contact-cta ws-cta ws-white-cta" href="{{ common.contactUrl }}"><span>{{ common.contactSalesCtaText }}</span></a>
     </div>
   </div>
 {% endmacro %}
