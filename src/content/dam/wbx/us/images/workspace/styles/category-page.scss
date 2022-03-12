@@ -204,9 +204,18 @@ body {
 
             .ws-category-page-image {
               width: 100%;
-              height: 0;
               padding-top: 100%;
               background-color: #ff000030;
+              position: relative;
+              overflow: hidden;
+              img {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                height: 100%;
+                width: 100%;
+              }
             }
 
             .ws-software-description {
@@ -269,6 +278,20 @@ body {
           }
 
           .ws-navigation-section {
+
+            .ws-navigation-section-background-image {
+              width: 100%;
+              background-color: #ff000030;
+              margin-top: 32px;
+              overflow: hidden;
+              img {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+              }
+            }
+
             .ws-cta-right-arrow {
               display: none;
             }
@@ -350,6 +373,12 @@ body {
               .ws-device,
               .ws-software {
                 margin-bottom: 67px;
+
+                &.oddEnd {
+                  .ws-wide {
+                    display: none;
+                  }
+                }
 
                 &:last-child {
                   margin-bottom: 0;
@@ -438,11 +467,11 @@ body {
               }
 
               .ws-navigation-section-background-image {
-                width: 100%;
                 padding-top: 100%;
-                background-color: #ff000030;
+                position: relative;
+                width: 100%;
                 border-radius: 50%;
-                margin-top: 32px;
+                z-index: 0;
               }
             }
           }
@@ -497,6 +526,23 @@ body {
                 max-width: calc(50% - 11px);
                 min-width: calc(50% - 11px);
 
+                &.oddEnd {
+                  min-width: 100%;
+                  max-width: 100%;
+
+                  .ws-square {
+                    display: none;
+                  }
+
+                  .ws-category-page-image {
+                    padding-top: calc(100% * (762 / 1545));
+                  }
+
+                  .ws-oddEndWrapper {
+                    display: flex;
+                  }
+                }
+
                 .ws-software-description {
                   box-sizing: border-box;
                   padding-right: calc(100vw * 250 / 1682);
@@ -530,19 +576,6 @@ body {
 
                 .ws-learn-more-cta {
                   margin-right: 22px;
-                }
-
-                &.oddEnd {
-                  min-width: 100%;
-                  max-width: 100%;
-
-                  .ws-category-page-image {
-                    padding-top: calc(100% * (762 / 1545));
-                  }
-
-                  .ws-oddEndWrapper {
-                    display: flex;
-                  }
                 }
               }
             }
@@ -599,11 +632,8 @@ body {
               .ws-navigation-section-background-image {
                 position: absolute;
                 bottom: 70px;
-                width: 100%;
                 height: 622px;
-                background-color: #ff000030;
                 border-radius: 311px;
-                margin-top: 32px;
                 z-index: 0;
               }
             }
