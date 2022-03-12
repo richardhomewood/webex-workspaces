@@ -289,8 +289,6 @@ body {
                 top: 50%;
                 left: 50%;
                 transform: translate(-50%, -50%);
-                height: 100%;
-                width: 100%;
               }
             }
 
@@ -474,6 +472,10 @@ body {
                 width: 100%;
                 border-radius: 50%;
                 z-index: 0;
+                img {
+                  height: 100%;
+                  width: 100%;
+                }
               }
             }
           }
@@ -637,6 +639,10 @@ body {
                 height: 622px;
                 border-radius: 311px;
                 z-index: 0;
+                img {
+                  max-width: 100%;
+                  height: auto;
+                }
               }
             }
           }
