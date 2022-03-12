@@ -14,9 +14,9 @@
 
 {% macro backgroundImage(background) %}
   <div class="ws-navigation-section-background-image ws-XS ws-S ws-M">
-    {% imagesync background.square, "" %}
+    {% imagesync background.square, "", "", "", true, "100vw" %}
   </div>
   <div class="ws-navigation-section-background-image ws-L ws-XL">
-    {% imagesync background.wide, "" %}
+    {% imagesync background.wide, "", "", "", true, "100vw" %}
   </div>
 {% endmacro %}

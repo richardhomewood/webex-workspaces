@@ -23,8 +23,13 @@
 {% macro categoryPageImage(softwareId, altText, shape) %}
   {% set imagePath = "category-page/" + softwareId + "-" + shape + ".jpg" %}
   {% set classname = "ws-" + shape %}
+  {%  if shape === "wide" %}
+    {% set sizes = "100vw" %}
+  {% else %}
+    {% set sizes = "(max-width: 1365px) 100vw, 50vw" %}
+  {% endif %}
   <div class="ws-category-page-image {{ classname }}">
-    {% imagesync imagePath, altText %}
+    {% imagesync imagePath, altText, "", "", true, sizes %}
   </div>
 {% endmacro %}
 

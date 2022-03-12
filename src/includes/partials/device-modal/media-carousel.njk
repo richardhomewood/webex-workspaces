@@ -15,7 +15,7 @@
               <div class="swiper-slide">{% video item %}</div>
             {% else %}
               {% set imagePath = "devices/" + deviceId + "/carousel/" + item %}
-              <div class="swiper-slide">{% imagesync imagePath, "" %}</div>
+              <div class="swiper-slide">{% imagesync imagePath, "", "", "", true, "100vw" %}</div>
             {% endif %}
           {% else %}
             {% set isVideo = item.filename.endsWith('.mp4') %}
@@ -23,7 +23,7 @@
               <div class="swiper-slide">{% video item.filename, item.alt %}</div>
             {% else %}
               {% set imagePath = "devices/" + deviceId + "/carousel/" + item.filename %}
-              <div class="swiper-slide">{% imagesync imagePath, item.alt %}</div>
+              <div class="swiper-slide">{% imagesync imagePath, item.alt, "", "", true, "100vw" %}</div>
             {% endif %}
           {% endif %}
         {% endfor %}
