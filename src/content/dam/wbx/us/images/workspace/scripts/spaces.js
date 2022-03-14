@@ -582,7 +582,6 @@ const updateRoomsSelector = async function (path) {
         const previousOptions = swipingRoomSelector.params;
         const {enabled : isEnabled  } = previousOptions;
         const {enabled} = await getRoomSelectorOptions(mypath);
-        console.log("updateRoomsSelector" , enabled)
         let updateProgress = (enabled && !isEnabled) || (!enabled && isEnabled);
         const slides = Array.from(document.querySelectorAll(`${wouldBeSwiperSelector} .swiper-slide.${classnames.roomSlide}`));
         let clickedIndex = -1;
@@ -729,12 +728,6 @@ const updateBGSizes = () => {
 
                 if (roomId){
                     if(!getSwiperAnimationViewed() && (setImageWidth > windowWidth || setImageHeight > windowHeight)){
-                        
-                        console.log("setImageWidth", setImageWidth)
-                        console.log("windowWidth", windowWidth)
-                        console.log("setImageHeight", setImageHeight)
-                        console.log("windowHeight", windowHeight)
-
                         const swiperAnimationView = document.getElementById('ws-swiper-indicator-animation');
                         swiperAnimationView.classList.remove(classnames.hidden)
                         swiperAnimationView.onclick = ()=>{
