@@ -672,8 +672,6 @@ const updateBGSizes = () => {
         const rotatingImgs = Array.from(document.querySelectorAll(classnames.rotatingImgs));
         const projectedRImgWidth = (windowHeight * 108) / 192;
 
-        console.log("projectedRImgWidth", projectedRImgWidth)
-        console.log("windowWidth", windowWidth)
         if (projectedRImgWidth < windowWidth) {
             let newImageHeight = (windowWidth * 108) / 192;
             newImageHeight = newImageHeight < windowHeight ? windowHeight : newImageHeight;
@@ -753,8 +751,6 @@ const updateBGSizes = () => {
 
                 maxXPanOffset = (-(windowWidth - setImageWidth) / 2) - Math.abs(initialOffset);
                 minXPanOffset = ((windowWidth - setImageWidth) / 2) - Math.abs(initialOffset);
-                console.log("maxXPanOffset", maxXPanOffset)
-                console.log("minXPanOffset", minXPanOffset)
 
                 maxYPanOffset = (-(setImageHeight - windowHeight) / 2);
                 minYPanOffset = ((setImageHeight - windowHeight) / 2);
@@ -846,6 +842,27 @@ const placeHotSpots = (bgImg, room, bgContainerClass, offset) => {
         hotspot.style["transform"] = 'translate(calc(-50% + ' + (hOffset + offset.x) + 'px), calc(-50% + ' + (yOffset + offset.y) + 'px))';
     })
 }
+
+export function closeIfClickedOutsideRoomSelector(event) {
+    const isRoomSelectorOpen = document.querySelector(`.${classnames.selectorWrapper}:not(.${classnames.hidden})`);
+    if (isRoomSelectorOpen) {
+
+        const path = window.location.hash.substring(1);
+        const splitpath = splitPath(path);
+        if (!splitpath || splitpath.length == 0) {
+            return
+        }
+        const workspaceId = splitpath[0]
+        const roomOptions = Array.from(document.querySelectorAll(`.ws-workspace#${workspaceId}Container .swiper-slide`));
+
+        if (roomOptions.indexOf(event.target) == -1) {
+            const selectedRoom = document.querySelector(`.ws-workspace#${workspaceId}Container .swiper-slide.selected`) ?? document.querySelector(`.ws-workspace#${workspaceId}Container .swiper-slide`);
+            const roomIndex = roomOptions.indexOf(selectedRoom);
+            const room = workspaces[workspaceId].rooms[roomIndex].slug;
+            window.location.href = `${window.location.pathname}#/${workspaceId}/${room}`;
+        }
+    }
+};
 
 
 
