@@ -2,6 +2,7 @@ const fs = require('fs');
 const path = require('path');
 const yaml = require('js-yaml');
 const NavigationPlugin = require('@11ty/eleventy-navigation');
+const directoryOutputPlugin = require("@11ty/eleventy-plugin-directory-output");
 
 const filters = require('./utils/filters');
 const markdown = require('./utils/markdown');
@@ -70,6 +71,18 @@ module.exports = (config) => {
     ui: false,
     ghostMode: false
   });
+
+    config.setQuietMode(true);
+    config.addPlugin(directoryOutputPlugin, {
+        // Customize columns
+        columns: {
+            filesize: true, // Use `false` to disable
+            benchmark: true, // Use `false` to disable
+        },
+
+        // Will show in yellow if greater than this number of bytes
+        warningFileSize: 400 * 1000,
+    });
 
   return {
     dir: { input: 'src', output: '_site', includes: 'includes', data: 'data' },

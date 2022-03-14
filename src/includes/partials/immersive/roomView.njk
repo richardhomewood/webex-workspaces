@@ -64,11 +64,11 @@
 {% endmacro %}
 
 {% macro roomViewBG(src) %}
-    {% imagesync "room-backgrounds/" + src, "" %}
+    {% imagesync "room-backgrounds/" + src, "", "", "", true, "100vw" %}
 {% endmacro %}
 
 {% macro roomOptionBG(src) %}
-  {% imagesync "room-backgrounds/"+src, "", "", "ws-room-option-image" %}
+  {% imagesync [283, 159], "room-backgrounds/"+src, "", "", "ws-room-option-image", true, "283px" %}
 {% endmacro %}
 
 {% macro hotspot(workspaceId, roomSlug, hotSpotSlug) %}

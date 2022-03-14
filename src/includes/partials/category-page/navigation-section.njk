@@ -7,15 +7,16 @@
 
     <a class="ws-cta ws-white-cta" href="/workspaces/explore.html"><span>{{ common.categoryPage.navigationSection.cta }}</span><span class="ws-cta-right-arrow">&nbsp;{% icon "cta-right-arrow", "", 14 %}</span></a>
 
-    {{ backgroundImage(common.categoryPage.navigationSection.background, common.sizeClasses) }}
+    {{ backgroundImage(common.categoryPage.navigationSection.background) }}
 
   </div>
 {% endmacro %}
 
-{% macro backgroundImage(src, sizeClasses) %}
-  {% for size, prefix in sizeClasses %}
-    <div class="ws-navigation-section-background-image {{ size }}">
-{#      {% imagesync prefix+src, "" %}#}
-    </div>
-  {% endfor %}
+{% macro backgroundImage(background) %}
+  <div class="ws-navigation-section-background-image ws-XS ws-S ws-M">
+    {% imagesync background.square, "", "", "", true, "100vw" %}
+  </div>
+  <div class="ws-navigation-section-background-image ws-L ws-XL">
+    {% imagesync background.wide, "", "", "", true, "100vw" %}
+  </div>
 {% endmacro %}

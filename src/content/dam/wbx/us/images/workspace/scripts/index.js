@@ -1,5 +1,5 @@
 import Router from './router';
-import {updateUi, toSelectedWorkSpace, backToHome} from './spaces';
+import {updateUi, toSelectedWorkSpace, backToHome, closeIfClickedOutsideRoomSelector} from './spaces';
 import {canonicalPath, hardwarePathPart, homePath, infoPathPart, makePath} from './paths';
 import modals from './modals'
 import commonData from '../../../../../../../data/common.json';
@@ -9,6 +9,7 @@ import devicesByRoom from '../../../../../../../data/devicesByRoom.json';
 const router = new Router();
 
 window.addEventListener('hashchange', () => {
+    console.log("hashchange")
     router.route(canonicalPath(window.location));
 });
 
@@ -23,6 +24,7 @@ window.addEventListener('load', function () {
 
 window.addEventListener('click', event => {
     modals.closeIfClickedOutsideOpenModal(event);
+    closeIfClickedOutsideRoomSelector(event);
 });
 
 modals.enableCloseButtons();
