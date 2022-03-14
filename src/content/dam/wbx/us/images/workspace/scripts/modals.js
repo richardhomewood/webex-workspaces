@@ -16,6 +16,7 @@ const closeIfClickedOutsideOpenModal = event => {
         if (!openModal.contains(event.target)) {
             if (document.URL.indexOf(deviceModalSubstring) >= 0 || document.URL.endsWith(roomInfoModalSuffix)) {
                 const roomPath = removeModalPaths(location.hash);
+                console.log("roomPath", roomPath)
                 history.pushState({}, '', roomPath);
             }
             hideAll();
