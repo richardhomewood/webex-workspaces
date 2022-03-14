@@ -51,12 +51,13 @@
             </div>
         {% else %}
             {{ categoryPageImage(software.id, software.categoryPage.altText, "square") }}
-            <h3>{{ software.name }}</h3>
-            <div class="ws-software-description">{{ software.description }}</div>
+            <div class="ws-software-content">
+                <h3>{{ software.name }}</h3>
+                <div class="ws-software-description">{{ software.description }}</div>
 
-            {{features(software.features, software.featuresTitle)}}
-            {{ softwareCTAs(software.url, common)}}
-
+                {{features(software.features, software.featuresTitle)}}
+                {{ softwareCTAs(software.url, common)}}
+            </div>
         {% endif %}
      </div>
 {% endmacro %}
