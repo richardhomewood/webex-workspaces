@@ -868,7 +868,7 @@
       }
     ],
     "categoryPage": {
-      "altText" : "Webex Room Navigator. Screen shows time, room capacity, the words \"Room available until 10:00,\" and a Book Now button."
+      "altText" : "Webex Room Navigator. Screen shows time, room capacity, the words &quot;Room available until 10:00,&quot; and a Book Now button."
     }
   }
 }
