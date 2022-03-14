@@ -26,7 +26,7 @@
             {%- endfor %}
             </div>
             {# The following href is updated by JavaScript code. #}
-            <a href="#" class="ws-room-info-btn">i</a>
+            <a href="#" class="ws-room-info-btn ws-cta ws-transparent-cta">i</a>
         </div>
         {%- for workspaceId in common.orderedWorkspaceIds %}
             <a href="#/{{workspaceId}}" class="ws-show-more-rooms-txt" id="ws-show-more-rooms-txt-{{workspaceId}}">{{ common.moreRoomsCtaText }}</a>
@@ -64,11 +64,11 @@
 {% endmacro %}
 
 {% macro roomViewBG(src) %}
-    {% imagesync "room-backgrounds/" + src, "" %}
+    {% imagesync "room-backgrounds/" + src, "", "", "", true, "100vw" %}
 {% endmacro %}
 
 {% macro roomOptionBG(src) %}
-  {% imagesync "room-backgrounds/"+src, "", "", "ws-room-option-image" %}
+  {% imagesync [283, 159], "room-backgrounds/"+src, "", "", "ws-room-option-image", true, "283px" %}
 {% endmacro %}
 
 {% macro hotspot(workspaceId, roomSlug, hotSpotSlug) %}

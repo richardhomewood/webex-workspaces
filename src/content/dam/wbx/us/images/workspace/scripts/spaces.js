@@ -573,7 +573,15 @@ const updateWorkspaceCta = function (path) {
 let swipingRoomSelector;
 const updateRoomsSelector = async function (path) {
     const splitPaths = splitPath(path);
-    const mypath = splitPaths !== null ? splitPaths[0] : path;
+    let mypath = splitPaths !== null ? splitPaths[0] : path;
+    if (!mypath) {
+        return
+    }
+
+    if (mypath.indexOf('/') == 0){
+        mypath = mypath.split("/")[1]
+    }
+
     const wouldBeSwiperSelector = `#${mypath}Container .swiper`;
     const wouldBeSwiper = document.querySelector(wouldBeSwiperSelector)
 
@@ -582,7 +590,6 @@ const updateRoomsSelector = async function (path) {
         const previousOptions = swipingRoomSelector.params;
         const {enabled : isEnabled  } = previousOptions;
         const {enabled} = await getRoomSelectorOptions(mypath);
-        console.log("updateRoomsSelector" , enabled)
         let updateProgress = (enabled && !isEnabled) || (!enabled && isEnabled);
         const slides = Array.from(document.querySelectorAll(`${wouldBeSwiperSelector} .swiper-slide.${classnames.roomSlide}`));
         let clickedIndex = -1;
@@ -670,20 +677,22 @@ const updateBGSizes = () => {
     if (!initview.classList.contains(classnames.hidden)) {
         //update animating imgs on initial view
         const rotatingImgs = Array.from(document.querySelectorAll(classnames.rotatingImgs));
-        const rImgWidth = rotatingImgs[0].clientWidth;
-        const rImgHeight = rotatingImgs[0].clientHeight;
         const projectedRImgWidth = (windowHeight * 108) / 192;
 
         if (projectedRImgWidth < windowWidth) {
-            let newImageHeight = (windowWidth * rImgHeight) / rImgWidth;
+            let newImageHeight = (windowWidth * 108) / 192;
             newImageHeight = newImageHeight < windowHeight ? windowHeight : newImageHeight;
             rotatingImgs.forEach((element) => {
                 element.style["height"] = newImageHeight + "px";
+                element.style["width"] = (newImageHeight * 192) / 108 + "px";
+                element.classList.add('ws-sized');
             })
 
         } else{
             rotatingImgs.forEach((element) => {
                 element.style["height"] = "";
+                element.style["width"] = projectedRImgWidth + "px";
+                element.classList.add('ws-sized');
             })
         }
     }
@@ -720,7 +729,12 @@ const updateBGSizes = () => {
                     setImageWidth = projectedImgWidth;
                 }
 
+                bgImg.classList.add("ws-sized")
+
                 const path = location.hash.substring(1);
+                if (!path || path.length == 0){
+                    return
+                }
                 const [workspaceId, roomId] = splitPath(path);
 
                 if (roomId){
@@ -747,10 +761,11 @@ const updateBGSizes = () => {
 
                 const scaledPanOffsetX = (panOffset.x * setImageWidth)/windowWidth;
                 const panOffsetX = scaledPanOffsetX > maxXPanOffset ? maxXPanOffset : scaledPanOffsetX < minXPanOffset ? minXPanOffset : scaledPanOffsetX;
+                
                 const scaledPanOffsetY = (panOffset.y * setImageHeight)/windowHeight;
                 const panOffsetY = panOffset.y === 0 ? 0 : scaledPanOffsetY > maxYPanOffset ? maxYPanOffset : scaledPanOffsetY < minYPanOffset ? minYPanOffset : scaledPanOffsetY ;
 
-                const xOffset = Math.abs(initialOffset) === 0 ? initialOffset : initialOffset + panOffsetX;
+                const xOffset = initialOffset + panOffsetX;
                 const yOffset = panOffsetY;
 
                 const newTransform = 'translate(calc(-50% + ' + xOffset + 'px), calc(-50% + ' + yOffset + 'px))';
@@ -831,6 +846,27 @@ const placeHotSpots = (bgImg, room, bgContainerClass, offset) => {
         hotspot.style["transform"] = 'translate(calc(-50% + ' + (hOffset + offset.x) + 'px), calc(-50% + ' + (yOffset + offset.y) + 'px))';
     })
 }
+
+export function closeIfClickedOutsideRoomSelector(event) {
+    const isRoomSelectorOpen = document.querySelector(`.${classnames.selectorWrapper}:not(.${classnames.hidden})`);
+    if (isRoomSelectorOpen) {
+
+        const path = window.location.hash.substring(1);
+        const splitpath = splitPath(path);
+        if (!splitpath || splitpath.length == 0) {
+            return
+        }
+        const workspaceId = splitpath[0]
+        const roomOptions = Array.from(document.querySelectorAll(`.ws-workspace#${workspaceId}Container .swiper-slide`));
+
+        if (roomOptions.indexOf(event.target) == -1) {
+            const selectedRoom = document.querySelector(`.ws-workspace#${workspaceId}Container .swiper-slide.selected`) ?? document.querySelector(`.ws-workspace#${workspaceId}Container .swiper-slide`);
+            const roomIndex = roomOptions.indexOf(selectedRoom);
+            const room = workspaces[workspaceId].rooms[roomIndex].slug;
+            window.location.href = `${window.location.pathname}#/${workspaceId}/${room}`;
+        }
+    }
+};
 
 
 

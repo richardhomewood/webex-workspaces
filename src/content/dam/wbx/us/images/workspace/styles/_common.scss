@@ -46,14 +46,8 @@
       pointer-events: all !important;
     }
 
-    .ws-about-cta,
-    .ws-contact-cta {
+    .ws-about-cta {
       transition: opacity 0.2s linear 0s;
-
-      text-decoration: none;
-      span {
-        margin: 22px auto;
-      }
     }
   }
 }
@@ -81,12 +75,20 @@
           list-style: none;
           width: 100vw;
           display: flex;
-          justify-content: space-between;
+          justify-content: center;
 
-          li a {
-            @include ws-small-body-reg;
-            color: #fff;
-            text-decoration: none;
+          li {
+            margin-right: 34px;
+
+            &:last-child {
+              margin-right: 0;
+            }
+
+            a {
+              @include ws-small-body-reg;
+              color: #fff;
+              text-decoration: none;
+            }
           }
         }
       }
@@ -98,17 +100,9 @@
         right: 20px;
         width: auto;
         height: 32px;
-        border-radius: 16px;
-        border: solid 1px #fff;
-        background-color: transparent;
-        text-align: center;
-        color: #fff;
-        font-size: 15px;
-        line-height: 14px;
-        padding: 0 21px;
 
         span {
-          margin: 10px auto;
+          margin: 8px auto;
         }
       }
     }
@@ -141,7 +135,8 @@
           justify-content: flex-start;
 
           li {
-            margin-left: 40px;
+            margin-left: 38px;
+
             &:first-child {
               margin-left: 0px;
             }
@@ -162,14 +157,6 @@
         right: 64px;
         width: auto;
         height: 56px;
-        border-radius: 28px;
-        border: solid 1px #fff;
-        background-color: transparent;
-        text-align: center;
-        color: #fff;
-        font-size: 15px;
-        line-height: 14px;
-        padding: 0 21px;
       }
     }
   }
@@ -202,7 +189,7 @@
           justify-content: flex-start;
 
           li {
-            margin-left: 40px;
+            margin-left: 38px;
             &:first-child {
               margin-left: 0px;
             }
@@ -270,14 +257,6 @@
         right: auto;
         width: auto;
         height: 56px;
-        border-radius: 28px;
-        border: solid 1px #fff;
-        background-color: transparent;
-        text-align: center;
-        color: #fff;
-        font-size: 15px;
-        line-height: 14px;
-        padding: 0 22px;
         margin-right: 64px;
       }
     }
