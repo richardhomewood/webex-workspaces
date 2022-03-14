@@ -536,6 +536,14 @@ body {
                   }
                 }
 
+                &:not(.oddEnd) {
+                  .ws-software-content,
+                  .ws-device-content {
+                    box-sizing: border-box;
+                    padding-right: 160px;
+                  }
+                }
+
                 .ws-software-description {
                   box-sizing: border-box;
                   padding-right: calc(100vw * 250 / 1682);
