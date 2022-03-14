@@ -400,6 +400,8 @@
     ],
     "specs": [
       {
+        "icon": "wan",
+        "iconSize": [88, 28],
         "text": "WAN: 2 GbE (one WAN/LAN use); one Cat 6 modem; one USB (cellular failover)"
       },
       {
