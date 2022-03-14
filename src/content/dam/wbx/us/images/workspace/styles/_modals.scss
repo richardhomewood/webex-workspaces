@@ -180,12 +180,13 @@ $list-items-border-color: #c4c4c4;
         width: 100%;
 
         .swiper {
-          aspect-ratio: 1 / 1.2;
+          aspect-ratio: 1.2 / 1;
           .swiper-wrapper {
             .swiper-slide {
               text-align: center;
               img {
                 object-fit: contain;
+                max-width: 100%;
                 max-height: 100%;
               }
               video {
@@ -375,13 +376,6 @@ $list-items-border-color: #c4c4c4;
         .ws-device-name {
           margin-top: 80px;
         }
-
-        .ws-image-carousel {
-          .swiper {
-            aspect-ratio: 1.2 / 1;
-          }
-        }
-
 
         .ws-device-features.ws-modal-section {
           ul {
