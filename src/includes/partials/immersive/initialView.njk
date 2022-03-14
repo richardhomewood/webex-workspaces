@@ -19,12 +19,12 @@
 
 {% macro initialViewBGFPO(src) %}
     <div class="ws-rotating-background-image ws-rotating-background-image-fpo">
-      {% imagesync "room-backgrounds/"+src, "" %}
+      {% imagesync "room-backgrounds/"+src, "", "", "", true, "100vw" %}
     </div>
 {% endmacro %}
 
 {% macro initialViewBG(src, index) %}
     <div class="ws-rotating-background-image ws-rotating-background-image-{{ index }}">
-      {% imagesync "room-backgrounds/"+src, "" %}
+      {% imagesync "room-backgrounds/"+src, "", "", "", true, "100vw" %}
     </div>
 {% endmacro %}

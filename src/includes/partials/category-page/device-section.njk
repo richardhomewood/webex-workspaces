@@ -12,19 +12,25 @@
   </div>
 {% endmacro %}
 
-{% macro categoryPageImage(image, sizeClasses) %}
-  {% for size, prefix in sizeClasses %}
-    <div class="ws-category-page-image {{ size }}">
-{#      {% imagesync prefix+image.url, image.alt %}#}
-    </div>
-  {% endfor %}
+{% macro categoryPageImage(deviceId, altText, shape) %}
+  {% set imagePath = "category-page/" + deviceId + "-" + shape + ".jpg" %}
+  {% set classname = "ws-" + shape %}
+  {%  if shape === "wide" %}
+    {% set sizes = "100vw" %}
+  {% else %}
+    {% set sizes = "(max-width: 1365px) 100vw, 50vw" %}
+  {% endif %}
+  <div class="ws-category-page-image {{ classname }}">
+    {% imagesync imagePath, altText, "", "", true, sizes %}
+  </div>
 {% endmacro %}
-
 
 {% macro device(device, common, isOddEnd = false) %}
      <div class="ws-device{% if isOddEnd %} oddEnd{% endif %}">
         {% if isOddEnd %}
-            {{ categoryPageImage(device.categoryPageImage,  common.sizeClasses) }}
+            {# Square is hidden at large breakpoints, wide is hidden at smnall, ones. #}
+            {{ categoryPageImage(device.id, device.categoryPage.altText, "square") }}
+            {{ categoryPageImage(device.id, device.categoryPage.altText, "wide") }}
             <div class="ws-oddEndWrapper">
                 <div>
                     <h3>{{ device.name }}</h3>
@@ -36,13 +42,13 @@
                 </div>
             </div>
         {% else %}
-            {{ categoryPageImage(device.categoryPageImage,  common.sizeClasses) }}
+            {{ categoryPageImage(device.id, device.categoryPage.altText, "square") }}
             <h3>{{ device.name }}</h3>
             <div class="ws-software-description">{{ device.description }}</div>
 
             {{features(device.features, device.featuresTitle)}}
             {{ deviceCTAs(device.url, common)}}
-            
+
         {% endif %}
      </div>
 {% endmacro %}
@@ -53,11 +59,11 @@
             <h4 class="ws-device-features-title">{{title}}</h4>
             <ul class="ws-software-features">
         {% endif %}
-    
+
         <li class="ws-device-feature">{{ feature }}</li>
-    
+
     {% if loop.last %}</ul>{% endif %}
-    
+
     {% endfor %}
 {% endmacro %}
 

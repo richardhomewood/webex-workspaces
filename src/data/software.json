@@ -1,5 +1,6 @@
 {
   "webex-suite": {
+    "id": "webex-suite",
     "name": "Webex Suite",
     "url": "https://www.webex.com/collaboration-suite.html",
     "description": "The first purpose-built solution for hybrid work, with everything you need to collaborate—all in one economical offer.",
@@ -12,12 +13,12 @@
       "Virtual events with up to 5,000 attendees, or multi-session events with live streaming and peer networking.",
       "Asynchronous video messaging for recording and sharing videos."
     ],
-    "image": {
-      "url": "",
-      "alt": ""
+    "categoryPage": {
+      "altText" : "A professional in a headset sits outside, collaborating remotely via Webex on a mobile phone."
     }
   },
   "webex-assistant": {
+    "id": "webex-assistant",
     "name": "Webex Assistant",
     "url": "https://www.webex.com/webex-assistant.html",
     "description": "Meet your personal virtual assistant that helps keep everyone on time and on track.",
@@ -27,12 +28,12 @@
       "Capture action items and get detailed transcripts and notes for every meeting.",
       "Control room amenities such as lighting and temperature."
     ],
-    "image": {
-      "url": "",
-      "alt": ""
+    "categoryPage": {
+      "altText" : ""
     }
   },
   "webex-go": {
+    "id": "webex-go",
     "name": "Webex Go",
     "url": "https://www.webex.com/products/webex-go.html",
     "description": "Eliminate the need to carry around multiple mobile devices by using your personal phone to make and receive calls with your business phone number.",
@@ -43,9 +44,8 @@
       "Make personal mobile devices secure and compliant endpoints for your business.",
       "Centrally manage mobile devices in the same place as the rest of your collaboration solutions."
     ],
-    "image": {
-      "url": "",
-      "alt": ""
+    "categoryPage": {
+      "altText" : ""
     }
   }
 }
