@@ -355,7 +355,7 @@ body {
                 color: #767676;
 
                 &:last-child {
-                    margin-bottom: 0;
+                  margin-bottom: 0;
                 }
               }
             }
@@ -403,10 +403,7 @@ body {
                   padding: 0 0 0 20px;
                   li {
                     @include ws-small-body-reg;
-                    margin-bottom: 1.5em;
-                    &:last-child {
-                      margin-bottom: 0;
-                    }
+                    margin-bottom: 0;
                   }
                   margin-bottom: 40px;
                 }
@@ -550,10 +547,14 @@ body {
                   border-radius: 26px;
                 }
 
-                .ws-software-features {
+                ul.ws-software-features {
                   box-sizing: border-box;
                   margin-bottom: 40px;
                   padding: 0 calc(100vw * 160 / 1682) 0 20px !important;
+
+                  li {
+                    margin-bottom: 0;
+                  }
                 }
 
                 .ws-learn-more-cta,
