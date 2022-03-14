@@ -34,7 +34,7 @@
             <div class="ws-oddEndWrapper">
                 <div>
                     <h3>{{ device.name }}</h3>
-                    <div class="ws-software-description">{{ device.description }}</div>
+                    <div class="ws-device-description">{{ device.description }}</div>
                 </div>
                 <div>
                     {{features(device.features, device.featuresTitle)}}
@@ -44,7 +44,7 @@
         {% else %}
             {{ categoryPageImage(device.id, device.categoryPage.altText, "square") }}
             <h3>{{ device.name }}</h3>
-            <div class="ws-software-description">{{ device.description }}</div>
+            <div class="ws-device-description">{{ device.description }}</div>
 
             {{features(device.features, device.featuresTitle)}}
             {{ deviceCTAs(device.url, common)}}
