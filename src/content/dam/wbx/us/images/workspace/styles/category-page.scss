@@ -351,11 +351,11 @@ body {
             .ws-room-description {
               margin-bottom: 75px;
               p {
-                @include ws-large-body-med;
+                @include ws-med-body-reg;
                 color: #767676;
 
                 &:last-child {
-                  margin-bottom: 0;
+                    margin-bottom: 0;
                 }
               }
             }
