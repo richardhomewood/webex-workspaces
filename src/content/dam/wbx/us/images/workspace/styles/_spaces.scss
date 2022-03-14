@@ -272,15 +272,11 @@ $bg-body: grey;
             flex-shrink: 0;
             width: 32px;
             height: 32px;
+            padding: unset;
             border-radius: 16px;
-            border: solid 1px #fff;
-            text-align: center;
-            color: #fff;
             font-size: 18px;
             margin-left: 8px;
             line-height: 32px;
-            text-decoration: none;
-            pointer-events: all;
           }
         }
 
@@ -291,7 +287,6 @@ $bg-body: grey;
           display: block;
           color: #fff;
           margin-bottom: 38px;
-          display: block;
           pointer-events: all;
         }
 

@@ -1,0 +1,83 @@
+@import "fonts";
+$contact-cta-hover-color: #078855;
+
+// Common button CTA styles
+// Ideally, only *positioning* of buttons happens elsewhere.
+
+a.ws-cta {
+  @include ws-button-text;
+  box-sizing: border-box;
+  pointer-events: all;
+  text-decoration: none;
+  border-radius: 32px;
+  text-align: center;
+  padding: 0 21px;
+  span {
+    display: inline-block;
+    margin: 20px auto;
+  }
+}
+
+.ws-transparent-cta {
+  border: solid 1px white;
+  background-color: transparent;
+  color: white;
+  &:active, &:visited {
+    color: white;
+  }
+  &:hover {
+    background-color: white;
+    color: black;
+  }
+}
+
+.ws-white-cta {
+  border: solid 1px black;
+  background-color: white;
+  color: black;
+
+  &.ws-on-dark-background {
+    border-color: white;
+    &:hover {
+      background-color: transparent;
+    }
+  }
+
+  &:active, &:visited {
+    color: black;
+  }
+  &:hover {
+    background-color: black;
+    color: white;
+  }
+}
+
+.ws-black-cta {
+  border: solid 1px black;
+  background-color: black;
+  color: white;
+
+  &.ws-on-dark-background {
+    border-color: white;
+  }
+
+  &:active, &:visited {
+    color: white;
+  }
+  &:hover:not(.ws-contact-cta) {
+    background-color: white;
+    color: black;
+  }
+}
+
+a.ws-contact-cta:hover{
+  background-color: $contact-cta-hover-color !important;
+  border-color: $contact-cta-hover-color !important;
+  color: white !important;
+}
+
+@media only screen and (min-width: 768px) {
+  a.ws-cta {
+    border-radius: 28px;
+  }
+}

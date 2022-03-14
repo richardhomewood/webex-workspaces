@@ -28,7 +28,7 @@
 {% macro device(device, common, isOddEnd = false) %}
      <div class="ws-device{% if isOddEnd %} oddEnd{% endif %}">
         {% if isOddEnd %}
-            {# Square is hidden at large breakpoints, wide is hidden at smnall, ones. #}
+            {# Square is hidden at large breakpoints, wide is hidden at small, ones. #}
             {{ categoryPageImage(device.id, device.categoryPage.altText, "square") }}
             {{ categoryPageImage(device.id, device.categoryPage.altText, "wide") }}
             <div class="ws-oddEndWrapper">
@@ -68,6 +68,6 @@
 {% endmacro %}
 
 {% macro deviceCTAs(url, common) %}
-    <a class="ws-learn-more-cta" href="{{ url }}">{{ common.learnMoreCtaText }}</a>
-    <a class="ws-contact-cta" target="_blank" href="{{ common.contactUrl }}" >{{ common.contactCtaText }}</a>
+    <a class="ws-learn-more-cta ws-cta ws-white-cta" href="{{ url }}"><span>{{ common.learnMoreCtaText }}</span></a>
+    <a class="ws-contact-cta ws-cta ws-black-cta" target="_blank" href="{{ common.contactUrl }}" ><span>{{ common.contactCtaText }}</span></a>
 {% endmacro %}
