@@ -573,7 +573,15 @@ const updateWorkspaceCta = function (path) {
 let swipingRoomSelector;
 const updateRoomsSelector = async function (path) {
     const splitPaths = splitPath(path);
-    const mypath = splitPaths !== null ? splitPaths[0] : path;
+    let mypath = splitPaths !== null ? splitPaths[0] : path;
+    if (!mypath) {
+        return
+    }
+
+    if (mypath.indexOf('/') == 0){
+        mypath = mypath.split("/")[1]
+    }
+
     const wouldBeSwiperSelector = `#${mypath}Container .swiper`;
     const wouldBeSwiper = document.querySelector(wouldBeSwiperSelector)
 
@@ -724,6 +732,9 @@ const updateBGSizes = () => {
                 bgImg.classList.add("ws-sized")
 
                 const path = location.hash.substring(1);
+                if (!path || path.length == 0){
+                    return
+                }
                 const [workspaceId, roomId] = splitPath(path);
 
                 if (roomId){
