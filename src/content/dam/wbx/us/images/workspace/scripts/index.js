@@ -9,7 +9,6 @@ import devicesByRoom from '../../../../../../../data/devicesByRoom.json';
 const router = new Router();
 
 window.addEventListener('hashchange', () => {
-    console.log("hashchange")
     router.route(canonicalPath(window.location));
 });
 

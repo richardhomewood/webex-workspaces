@@ -573,7 +573,15 @@ const updateWorkspaceCta = function (path) {
 let swipingRoomSelector;
 const updateRoomsSelector = async function (path) {
     const splitPaths = splitPath(path);
-    const mypath = splitPaths !== null ? splitPaths[0] : path;
+    let mypath = splitPaths !== null ? splitPaths[0] : path;
+    if (!mypath) {
+        return
+    }
+
+    if (mypath.indexOf('/') == 0){
+        mypath = mypath.split("/")[1]
+    }
+
     const wouldBeSwiperSelector = `#${mypath}Container .swiper`;
     const wouldBeSwiper = document.querySelector(wouldBeSwiperSelector)
 
@@ -582,7 +590,6 @@ const updateRoomsSelector = async function (path) {
         const previousOptions = swipingRoomSelector.params;
         const {enabled : isEnabled  } = previousOptions;
         const {enabled} = await getRoomSelectorOptions(mypath);
-        console.log("updateRoomsSelector" , enabled)
         let updateProgress = (enabled && !isEnabled) || (!enabled && isEnabled);
         const slides = Array.from(document.querySelectorAll(`${wouldBeSwiperSelector} .swiper-slide.${classnames.roomSlide}`));
         let clickedIndex = -1;
@@ -725,16 +732,13 @@ const updateBGSizes = () => {
                 bgImg.classList.add("ws-sized")
 
                 const path = location.hash.substring(1);
+                if (!path || path.length == 0){
+                    return
+                }
                 const [workspaceId, roomId] = splitPath(path);
 
                 if (roomId){
                     if(!getSwiperAnimationViewed() && (setImageWidth > windowWidth || setImageHeight > windowHeight)){
-                        
-                        console.log("setImageWidth", setImageWidth)
-                        console.log("windowWidth", windowWidth)
-                        console.log("setImageHeight", setImageHeight)
-                        console.log("windowHeight", windowHeight)
-
                         const swiperAnimationView = document.getElementById('ws-swiper-indicator-animation');
                         swiperAnimationView.classList.remove(classnames.hidden)
                         swiperAnimationView.onclick = ()=>{
