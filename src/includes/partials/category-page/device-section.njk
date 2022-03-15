@@ -32,23 +32,24 @@
             {{ categoryPageImage(device.id, device.categoryPage.altText, "square") }}
             {{ categoryPageImage(device.id, device.categoryPage.altText, "wide") }}
             <div class="ws-oddEndWrapper">
-                <div>
+                <div class="ws-oddEndWrapper-column">
                     <h3>{{ device.name }}</h3>
                     <div class="ws-device-description">{{ device.description }}</div>
                 </div>
-                <div>
+                <div class="ws-oddEndWrapper-column">
                     {{features(device.features, device.featuresTitle)}}
                     {{ deviceCTAs(device.url, common)}}
                 </div>
             </div>
         {% else %}
             {{ categoryPageImage(device.id, device.categoryPage.altText, "square") }}
-            <h3>{{ device.name }}</h3>
-            <div class="ws-device-description">{{ device.description }}</div>
+            <div class="ws-device-content">
+                <h3>{{ device.name }}</h3>
+                <div class="ws-device-description">{{ device.description }}</div>
 
-            {{features(device.features, device.featuresTitle)}}
-            {{ deviceCTAs(device.url, common)}}
-
+                {{features(device.features, device.featuresTitle)}}
+                {{ deviceCTAs(device.url, common)}}
+            </div>
         {% endif %}
      </div>
 {% endmacro %}

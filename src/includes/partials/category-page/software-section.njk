@@ -40,23 +40,24 @@
             {{ categoryPageImage(software.id, software.categoryPage.altText, "square") }}
             {{ categoryPageImage(software.id, software.categoryPage.altText, "wide") }}
             <div class="ws-oddEndWrapper">
-                <div>
+                <div class="ws-oddEndWrapper-column">
                     <h3>{{ software.name }}</h3>
                     <div class="ws-software-description">{{ software.description }}</div>
                 </div>
-                <div>
+                <div class="ws-oddEndWrapper-column">
                     {{features(software.features, software.featuresTitle)}}
                     {{ softwareCTAs(software.url, common)}}
                 </div>
             </div>
         {% else %}
             {{ categoryPageImage(software.id, software.categoryPage.altText, "square") }}
-            <h3>{{ software.name }}</h3>
-            <div class="ws-software-description">{{ software.description }}</div>
+            <div class="ws-software-content">
+                <h3>{{ software.name }}</h3>
+                <div class="ws-software-description">{{ software.description }}</div>
 
-            {{features(software.features, software.featuresTitle)}}
-            {{ softwareCTAs(software.url, common)}}
-
+                {{features(software.features, software.featuresTitle)}}
+                {{ softwareCTAs(software.url, common)}}
+            </div>
         {% endif %}
      </div>
 {% endmacro %}

@@ -1,7 +1,7 @@
 @import 'for-dev-only';
 @import 'global';
 @import 'common';
-@import "buttons";
+@import 'buttons';
 
 body {
   // If the following is not true because of the page template into which our HTML is copied,
@@ -183,9 +183,14 @@ body {
           }
 
           .ws-room-description {
+            margin-bottom: 75px;
             p {
               @include ws-large-body-med;
               color: #767676;
+
+              &:last-child {
+                margin-bottom: 0;
+              }
             }
           }
 
@@ -250,7 +255,6 @@ body {
             .ws-learn-more-cta {
               margin-bottom: 12px;
             }
-
           }
 
           .ws-software-section {
@@ -259,10 +263,9 @@ body {
             color: #fff;
             margin: 0 -20px;
             padding: 74px 20px 80px;
-           }
+          }
 
           .ws-navigation-section {
-
             .ws-navigation-section-background-image {
               width: 100%;
               background-color: #ff000030;
@@ -346,8 +349,14 @@ body {
             }
 
             .ws-room-description {
+              margin-bottom: 75px;
               p {
-                @include ws-large-body-med;
+                @include ws-med-body-reg;
+                color: #767676;
+
+                &:last-child {
+                  margin-bottom: 0;
+                }
               }
             }
 
@@ -394,10 +403,7 @@ body {
                   padding: 0 0 0 20px;
                   li {
                     @include ws-small-body-reg;
-                    margin-bottom: 1.5em;
-                    &:last-child {
-                      margin-bottom: 0;
-                    }
+                    margin-bottom: 0;
                   }
                   margin-bottom: 40px;
                 }
@@ -468,6 +474,8 @@ body {
     .ws-category-page-content {
       margin: 0 64px;
       .ws-category-content-root {
+        margin: 0 auto;
+        max-width: 1792px;
         .ws-category-name {
           margin-top: 75px;
         }
@@ -481,15 +489,24 @@ body {
         .ws-category-page-rooms {
           .ws-category-page-room {
             .ws-room-description {
+              margin-bottom: 75px;
               margin-top: 80px;
               width: 65%;
+              p {
+                @include ws-large-body-med;
+                color: #767676;
+
+                &:last-child {
+                  margin-bottom: 0;
+                }
+              }
             }
 
             .ws-device-section,
             .ws-software-section {
               display: flex;
               flex-wrap: wrap;
-              gap: 21px;
+              column-gap: 21px;
 
               .ws-device,
               .ws-software {
@@ -497,6 +514,7 @@ body {
                 display: block;
                 max-width: calc(50% - 11px);
                 min-width: calc(50% - 11px);
+                margin-bottom: 67px;
 
                 &.oddEnd {
                   min-width: 100%;
@@ -512,6 +530,19 @@ body {
 
                   .ws-oddEndWrapper {
                     display: flex;
+                    column-gap: 21px;
+                    .ws-oddEndWrapper-column {
+                      max-width: calc(50% - 11px);
+                      min-width: calc(50% - 11px);
+                    }
+                  }
+                }
+
+                &:not(.oddEnd) {
+                  .ws-software-content,
+                  .ws-device-content {
+                    box-sizing: border-box;
+                    padding-right: 160px;
                   }
                 }
 
@@ -526,10 +557,14 @@ body {
                   border-radius: 26px;
                 }
 
-                .ws-software-features {
+                ul.ws-software-features {
                   box-sizing: border-box;
                   margin-bottom: 40px;
                   padding: 0 calc(100vw * 160 / 1682) 0 20px !important;
+
+                  li {
+                    margin-bottom: 0;
+                  }
                 }
 
                 .ws-learn-more-cta,

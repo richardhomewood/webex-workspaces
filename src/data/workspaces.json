@@ -146,17 +146,17 @@
         "hotSpots": [
           {
             "slug": "webex-desk-camera",
-            "x": 583,
+            "x": 595,
             "y": 396
           },
           {
             "slug": "webex-desk-hub",
-            "x": 791,
+            "x": 803,
             "y": 544
           },
           {
             "slug": "cisco-headset-730",
-            "x": 842,
+            "x": 854,
             "y": 490
           }
         ],
