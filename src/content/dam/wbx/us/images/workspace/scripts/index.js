@@ -31,7 +31,7 @@ modals.enableCloseButtons();
 // Routing for the initial view
 router.add(homePath, () => {
     backToHome();
-    updateUi(window.location);
+    updateUi();
 })
 
 // Handle workspace and workspace/room routing
@@ -39,7 +39,7 @@ commonData.orderedWorkspaceIds.forEach((workspaceId) => {
     router.add(makePath([workspaceId]), () => {
         modals.hideAll();
         toSelectedWorkSpace(workspaceId);
-        updateUi(window.location);
+        updateUi();
     })
 
     const {rooms} = workspaces[workspaceId];
@@ -47,14 +47,14 @@ commonData.orderedWorkspaceIds.forEach((workspaceId) => {
         router.add(makePath([workspaceId, room.slug]), () => {
             modals.hideAll();
             toSelectedWorkSpace(workspaceId, room.slug);
-            updateUi(window.location);
+            updateUi();
         });
 
         const roomInfoPath = makePath([workspaceId, room.slug, infoPathPart]);
         router.add(roomInfoPath, () => {
             modals.hideAll();
             toSelectedWorkSpace(workspaceId, room.slug);
-            updateUi(window.location);
+            updateUi();
             modals.showRoomInfo(roomInfoPath);
         });
 
@@ -63,7 +63,7 @@ commonData.orderedWorkspaceIds.forEach((workspaceId) => {
             const devicePath = makePath([workspaceId, room.slug, hardwarePathPart, deviceId]);
             router.add(devicePath, () => {
                 toSelectedWorkSpace(workspaceId, room.slug);
-                updateUi(window.location);
+                updateUi();
                 modals.showDevice(devicePath);
             })
         })
