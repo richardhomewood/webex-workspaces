@@ -1,6 +1,6 @@
 {% macro render(common, pdfFilename, classnames) %}
   <div class="ws-download-pdf {{ classnames }}">
-    <a href="{% assetPath "static/pdfs/"+pdfFilename %}"><span>{{ common.deviceModal.pdfCtaText }}</span>{% icon "download", "ws-download-icon" %}</a>
+    <a href="{% assetPath "static/pdfs/"+pdfFilename %}" target="_blank"><span>{{ common.deviceModal.pdfCtaText }}</span>{% icon "download", "ws-download-icon" %}</a>
   </div>
 {% endmacro %}
 
