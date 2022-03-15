@@ -125,7 +125,7 @@ body {
       .ws-category-name {
         color: #000;
         text-align: center;
-        @include ws-h1;
+        @include ws-category-name-text;
       }
 
       .ws-category-text {
@@ -676,20 +676,6 @@ body {
               }
             }
           }
-        }
-      }
-    }
-  }
-}
-
-@media only screen and (min-width: 768px) {
-  .ws-category-root {
-    .ws-category-page-content {
-      .ws-category-content-root {
-        .ws-category-name {
-          color: #000;
-          text-align: center;
-          @include ws-h2;
         }
       }
     }
