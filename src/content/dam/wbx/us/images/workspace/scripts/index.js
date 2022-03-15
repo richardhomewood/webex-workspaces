@@ -1,5 +1,5 @@
 import Router from './router';
-import {updateUi, toSelectedWorkSpace, backToHome, closeIfClickedOutsideRoomSelector} from './spaces';
+import {updateUi, toSelectedWorkSpace, backToHome} from './spaces';
 import {canonicalPath, hardwarePathPart, homePath, infoPathPart, makePath} from './paths';
 import modals from './modals'
 import commonData from '../../../../../../../data/common.json';
@@ -23,7 +23,6 @@ window.addEventListener('load', function () {
 
 window.addEventListener('click', event => {
     modals.closeIfClickedOutsideOpenModal(event);
-    closeIfClickedOutsideRoomSelector(event);
 });
 
 modals.enableCloseButtons();

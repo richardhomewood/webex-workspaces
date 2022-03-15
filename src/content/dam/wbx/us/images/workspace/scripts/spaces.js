@@ -838,23 +838,3 @@ const placeHotSpots = (bgImg, room, bgContainerClass, offset) => {
         hotspot.style["transform"] = `translate(calc(-50% + ${(hOffset + offset.x)}px), calc(-50% + ${(yOffset + offset.y)}px))`;
     })
 }
-
-export function closeIfClickedOutsideRoomSelector(event) {
-
-    if (selectedWorkspaceId.length == 0){
-        return
-    }
-
-    const isRoomSelectorOpen = document.querySelector(`.${classnames.selectorWrapper}:not(.${classnames.hidden})`);
-    if (isRoomSelectorOpen) {
-        const roomOptions = Array.from(document.querySelectorAll(`.ws-workspace#${selectedWorkspaceId}Container .swiper-slide`));
-
-        if (roomOptions.indexOf(event.target) == -1) {
-            const roomId = workspaces[selectedWorkspaceId].rooms[getSelectedRoomIndex()].slug;
-            window.location.href = `${window.location.pathname}#/${selectedWorkspaceId}/${roomId}`;
-        }
-    }
-};
-
-
-
