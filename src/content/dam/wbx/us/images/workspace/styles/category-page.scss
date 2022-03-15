@@ -125,10 +125,7 @@ body {
       .ws-category-name {
         color: #000;
         text-align: center;
-        font-family: 'CiscoSansTT-Regular', sans-serif;
-        font-size: 40px;
-        line-height: 44px;
-        letter-spacing: -0.04em;
+        @include ws-category-name-text;
       }
 
       .ws-category-text {
@@ -484,10 +481,6 @@ body {
         max-width: 1792px;
         .ws-category-name {
           margin-top: 75px;
-          font-family: 'CiscoSansTT-Regular', sans-serif;
-          font-size: 64px;
-          line-height: 64px;
-          letter-spacing: -0.04em;
         }
 
         .ws-category-text {
