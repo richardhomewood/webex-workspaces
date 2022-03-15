@@ -3,6 +3,8 @@
 @import 'common';
 @import 'buttons';
 
+$maxContentWidth: 83.333333%;
+
 body {
   // If the following is not true because of the page template into which our HTML is copied,
   // we may need to adjust our root container margins to compensate.  But we should be safe:
@@ -228,7 +230,8 @@ body {
               color: #767676;
             }
 
-            h4.ws-device-features-title {
+            h4.ws-device-features-title,
+            h4.ws-software-features-title {
               @include ws-large-body-med;
             }
 
@@ -487,7 +490,7 @@ body {
         }
 
         .swiper {
-          max-width: 83.333333%;
+          max-width: $maxContentWidth;
           margin: 0px auto;
           overflow: visible;
           &.shadowSwiper {
@@ -500,7 +503,7 @@ body {
         .ws-category-page-rooms {
           .ws-category-page-room {
             .ws-room-description-wrapper {
-              max-width: 83.333333%;
+              max-width: $maxContentWidth;
               margin: 0 auto;
 
               .ws-room-description {
@@ -521,7 +524,7 @@ body {
             .ws-device-section,
             .ws-software-section {
               margin: 0 auto;
-              max-width: 83.333333%;
+              max-width: $maxContentWidth;
               display: flex;
               flex-wrap: wrap;
               column-gap: 1.3888888vw;
@@ -601,6 +604,14 @@ body {
             .ws-software-section {
               margin: 0 -64px;
               padding: 121px 64px 120px;
+              width: 100vw;
+              max-width: 100vw;
+
+              .ws-software.oddEnd {
+                min-width: $maxContentWidth;
+                max-width: $maxContentWidth;
+                margin: 0 auto;
+              }
             }
 
             .ws-navigation-section {
