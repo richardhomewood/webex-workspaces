@@ -123,7 +123,10 @@ body {
       .ws-category-name {
         color: #000;
         text-align: center;
-        @include ws-h1;
+        font-family: 'CiscoSansTT-Regular', sans-serif;
+        font-size: 40px;
+        line-height: 44px;
+        letter-spacing: -0.04em;
       }
 
       .ws-category-text {
@@ -478,6 +481,10 @@ body {
         max-width: 1792px;
         .ws-category-name {
           margin-top: 75px;
+          font-family: 'CiscoSansTT-Regular', sans-serif;
+          font-size: 64px;
+          line-height: 64px;
+          letter-spacing: -0.04em;
         }
 
         .ws-category-text {
@@ -647,20 +654,6 @@ body {
               }
             }
           }
-        }
-      }
-    }
-  }
-}
-
-@media only screen and (min-width: 768px) {
-  .ws-category-root {
-    .ws-category-page-content {
-      .ws-category-content-root {
-        .ws-category-name {
-          color: #000;
-          text-align: center;
-          @include ws-h2;
         }
       }
     }
