@@ -677,7 +677,7 @@ const updateBGSizes = () => {
     if (!initview.classList.contains(classnames.hidden)) {
         //update animating imgs on initial view
         const rotatingImgs = Array.from(document.querySelectorAll(classnames.rotatingImgs));
-        const projectedRImgWidth = (windowHeight * 108) / 192;
+        const projectedRImgWidth = (windowHeight * 192) / 108;
 
         if (projectedRImgWidth < windowWidth) {
             let newImageHeight = (windowWidth * 108) / 192;
@@ -691,6 +691,7 @@ const updateBGSizes = () => {
         } else{
             rotatingImgs.forEach((element) => {
                 element.style["height"] = "";
+                console.log(projectedRImgWidth)
                 element.style["width"] = projectedRImgWidth + "px";
                 element.classList.add('ws-sized');
             })
