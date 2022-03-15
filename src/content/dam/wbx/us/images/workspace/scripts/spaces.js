@@ -1,4 +1,3 @@
-import {splitPath} from './paths';
 import classnames from './classnames';
 import commonData from '../../../../../../../data/common.json';
 import workspaces from '../../../../../../../data/workspaces.json';
@@ -151,12 +150,11 @@ const getRoomSelectorOptions = async () => {
     return options;
 }
 
-export function updateUi(location, delay = 200) {
-    const path = location.hash.substring(1);
+export function updateUi(delay = 200) {
     setTimeout(() => {
-        updateWorkspaceCta(path);
-        updateNav(path);
-        updateRoomsSelector(path);
+        updateWorkspaceCta();
+        updateNav();
+        updateRoomsSelector();
         updateBGSizes();
     }, delay)
 }
@@ -182,10 +180,6 @@ export function backToHome() {
         setTimeout(()=>{
             roomSelectorWrap.style["opacity"] = 0;
             roomSelectorWrap.classList.add(classnames.hidden);
-            /* if(swipingRoomSelector){
-                swipingRoomSelector.destroy();
-                swipingRoomSelector = null;
-            } */
         }, 500)
     }
 
@@ -509,12 +503,10 @@ const setupHammer = () => {
         });
 }
 
-const updateNav = function (path) {
-    const splitPaths = splitPath(path);
-    const currentWorkspaceId = splitPaths !== null ? splitPaths[0] : path;
-
+const updateNav = function () {
+    
     const navContainer = document.querySelector(`.${classnames.workspaceNavigation}`);
-    if (currentWorkspaceId) {
+    if (selectedWorkspaceId.length > 0) {
         navContainer.style["opacity"] = 1;
     }
 
@@ -524,7 +516,7 @@ const updateNav = function (path) {
     let selectedIndex = -1;
 
     commonData.orderedWorkspaceIds.forEach((workspaceId, index) => {
-        if (workspaceId === currentWorkspaceId) {
+        if (workspaceId === selectedWorkspaceId) {
             selectedIndex = index;
         }
     });
@@ -559,13 +551,13 @@ const updateNav = function (path) {
     }, 1)
 }
 
-const updateWorkspaceCta = function (path) {
+const updateWorkspaceCta = function () {
     const aboutCtaElements = document.getElementsByClassName(classnames.aboutWorkspaceCta);
-    if (path){
-        const [workspaceId, roomId] = splitPath(path);
-        let href = `./${workspaceId}.html`;
-        if (roomId !== undefined) {
-            href = `${href}#${roomId}`;
+    
+    if (selectedWorkspaceId.length > 0){
+        let href = `./${selectedWorkspaceId}.html`;
+        if (selectedRoomId) {
+            href = `${href}#${selectedRoomId}`;
         }
 
         Array.from(aboutCtaElements).forEach((anchor) => {
@@ -584,7 +576,7 @@ const updateWorkspaceCta = function (path) {
 
 
 let swipingRoomSelector;
-const updateRoomsSelector = async function (path) {
+const updateRoomsSelector = async function () {
 
     const wouldBeSwiperSelector = `#${selectedWorkspaceId}Container .swiper`;
     const wouldBeSwiper = document.querySelector(wouldBeSwiperSelector)
@@ -656,10 +648,7 @@ const slideClick = (e) => {
 }
 
 const getRelevantSlides = () => {
-    const path = location.hash.substring(1);
-    const splitPaths = splitPath(path);
-    const mypath = splitPaths !== null ? splitPaths[0] : path;
-    return Array.from(document.querySelectorAll(`#${mypath}Container .swiper .swiper-slide.${classnames.roomSlide}`));
+    return Array.from(document.querySelectorAll(`#${selectedWorkspaceId}Container .swiper .swiper-slide.${classnames.roomSlide}`));
 }
 
 const updateSelectedSlideClasses = (selectedIndex, slides) => {
@@ -828,11 +817,6 @@ const placeHotSpots = (bgImg, room, bgContainerClass, offset) => {
         return
     }
 
-    console.log("----------------------------------")
-    console.log("bgContainerClass", bgContainerClass)
-    console.log("hotspots", hotspots)
-    console.log("room.hotSpots", room.hotSpots)
-
     const imgBaseWidth = 1920;
     const imgHalfWidth = 960;
     const imgBaseHeight = 1080;
@@ -856,22 +840,18 @@ const placeHotSpots = (bgImg, room, bgContainerClass, offset) => {
 }
 
 export function closeIfClickedOutsideRoomSelector(event) {
+
+    if (selectedWorkspaceId.length == 0){
+        return
+    }
+
     const isRoomSelectorOpen = document.querySelector(`.${classnames.selectorWrapper}:not(.${classnames.hidden})`);
     if (isRoomSelectorOpen) {
-
-        const path = window.location.hash.substring(1);
-        const splitpath = splitPath(path);
-        if (!splitpath || splitpath.length == 0) {
-            return
-        }
-        const workspaceId = splitpath[0]
-        const roomOptions = Array.from(document.querySelectorAll(`.ws-workspace#${workspaceId}Container .swiper-slide`));
+        const roomOptions = Array.from(document.querySelectorAll(`.ws-workspace#${selectedWorkspaceId}Container .swiper-slide`));
 
         if (roomOptions.indexOf(event.target) == -1) {
-            const selectedRoom = document.querySelector(`.ws-workspace#${workspaceId}Container .swiper-slide.selected`) ?? document.querySelector(`.ws-workspace#${workspaceId}Container .swiper-slide`);
-            const roomIndex = roomOptions.indexOf(selectedRoom);
-            const room = workspaces[workspaceId].rooms[roomIndex].slug;
-            window.location.href = `${window.location.pathname}#/${workspaceId}/${room}`;
+            const roomId = workspaces[selectedWorkspaceId].rooms[getSelectedRoomIndex()].slug;
+            window.location.href = `${window.location.pathname}#/${selectedWorkspaceId}/${roomId}`;
         }
     }
 };
