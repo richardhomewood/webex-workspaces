@@ -486,34 +486,52 @@ body {
           @include ws-large-body-med;
         }
 
+        .swiper {
+          max-width: 83.333333%;
+          margin: 0px auto;
+          overflow: visible;
+          &.shadowSwiper {
+            opacity: 0;
+            position: absolute;
+            left: -3000px;
+          }
+        }
+
         .ws-category-page-rooms {
           .ws-category-page-room {
-            .ws-room-description {
-              margin-bottom: 75px;
-              margin-top: 80px;
-              width: 65%;
-              p {
-                @include ws-large-body-med;
-                color: #767676;
+            .ws-room-description-wrapper {
+              max-width: 83.333333%;
+              margin: 0 auto;
 
-                &:last-child {
-                  margin-bottom: 0;
+              .ws-room-description {
+                margin: 80px 0 75px;
+
+                width: 65%;
+                p {
+                  @include ws-large-body-med;
+                  color: #767676;
+
+                  &:last-child {
+                    margin-bottom: 0;
+                  }
                 }
               }
             }
 
             .ws-device-section,
             .ws-software-section {
+              margin: 0 auto;
+              max-width: 83.333333%;
               display: flex;
               flex-wrap: wrap;
-              column-gap: 21px;
+              column-gap: 1.3888888vw;
 
               .ws-device,
               .ws-software {
                 box-sizing: border-box;
                 display: block;
-                max-width: calc(50% - 11px);
-                min-width: calc(50% - 11px);
+                max-width: calc(50% - 1.3888888vw);
+                min-width: calc(50% - 1.3888888vw);
                 margin-bottom: 67px;
 
                 &.oddEnd {
@@ -542,13 +560,13 @@ body {
                   .ws-software-content,
                   .ws-device-content {
                     box-sizing: border-box;
-                    padding-right: 160px;
+                    padding-right: calc(100vw * (150 / 1682));
                   }
                 }
 
                 .ws-software-description {
                   box-sizing: border-box;
-                  padding-right: calc(100vw * 250 / 1682);
+                  padding-right: calc(100vw * 150 / 1682);
                 }
 
                 .ws-category-page-image {
@@ -560,7 +578,7 @@ body {
                 ul.ws-software-features {
                   box-sizing: border-box;
                   margin-bottom: 40px;
-                  padding: 0 calc(100vw * 160 / 1682) 0 20px !important;
+                  padding: 0 0 0 20px !important;
 
                   li {
                     margin-bottom: 0;
