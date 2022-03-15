@@ -474,6 +474,8 @@ body {
     .ws-category-page-content {
       margin: 0 64px;
       .ws-category-content-root {
+        margin: 0 auto;
+        max-width: 1792px;
         .ws-category-name {
           margin-top: 75px;
         }
