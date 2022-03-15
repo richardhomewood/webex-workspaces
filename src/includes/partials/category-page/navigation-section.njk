@@ -1,7 +1,7 @@
 {% macro render(common, workspaceId, workspaces) %}
   <div class="ws-navigation-section">
 
-    <h2>{{ common.categoryPage.navigationSection.heading }}</h2>
+    <h2>{{ common.categoryPage.navigationSection.heading | safe }}</h2>
 
     <div class="ws-navigation-section-text">{{ common.categoryPage.navigationSection.text }}</div>
 
