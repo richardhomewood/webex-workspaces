@@ -1,7 +1,12 @@
 {% macro render(common, workspaceId, workspaces) %}
   <div class="ws-navigation-section">
-
-    <h2>{{ common.categoryPage.navigationSection.heading | safe }}</h2>
+    {% set isHeadingMultiline = common.categoryPage.navigationSection.heading.join %}
+    {% if isHeadingMultiline %}
+      {% set heading = common.categoryPage.navigationSection.heading.join('<br/>') %}
+    {% else %}
+      {% set heading = common.categoryPage.navigationSection.heading %}
+    {% endif %}
+    <h2>{{ heading | safe }}</h2>
 
     <div class="ws-navigation-section-text">{{ common.categoryPage.navigationSection.text }}</div>
 

@@ -36,7 +36,9 @@
         "square": "category-page/kitchen-square.jpg",
         "wide": "room-backgrounds/kitchen.jpg"
       },
-      "heading": "Reimagine your<br/>workspace.",
+      "heading": [
+        "Reimagine your",
+        "workspace."],
       "text": "From home, to the office, to anywhere in between, get inspiration for turning any space into a productive workspace.",
       "cta": "Explore Workspaces"
     }
