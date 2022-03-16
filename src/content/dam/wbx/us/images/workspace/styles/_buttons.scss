@@ -36,6 +36,14 @@ a.ws-cta {
   background-color: white;
   color: black;
 
+  &.ws-on-image-background {
+    border-color: white;
+    &:hover {
+      border-color: black;
+      background-color: black;
+    }
+  }
+
   &.ws-on-dark-background {
     border-color: white;
     &:hover {
