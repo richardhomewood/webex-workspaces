@@ -51,10 +51,18 @@ $animationDuration: $workspaceCount * $individualAnimationDuration;
           left: 50%;
           top: 50%;
           transform: translate(-50%, -50%);
-          transition: width 0.2s linear 0s, height 0.2s linear 0s;
+          opacity: 0;
+          transition: opacity 0.15s ease-out 0s;
+
           &.ws-sized {
             width: auto;
             max-width: initial;
+            display: block;
+            opacity: 1;
+
+            &.ws-with-transition {
+              transition: width 0.2s linear 0s, height 0.2s linear 0s;
+            }
           }
         }
 

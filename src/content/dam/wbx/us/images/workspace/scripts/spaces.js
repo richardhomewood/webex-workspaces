@@ -149,14 +149,15 @@ const getRoomSelectorOptions = async () => {
 
     return options;
 }
-
+let firstRun = true;
 export function updateUi(delay = 200) {
     setTimeout(() => {
         updateWorkspaceCta();
         updateNav();
         updateRoomsSelector();
         updateBGSizes();
-    }, delay)
+        firstRun = false
+    }, firstRun ? 0 : delay)
 }
 
 export function backToHome() {
@@ -686,6 +687,9 @@ const updateBGSizes = () => {
                 element.style["height"] = `${newImageHeight}px`;
                 element.style["width"] = `${(newImageHeight * 192) / 108}px`;
                 element.classList.add('ws-sized');
+                setTimeout(()=>{
+                    element.classList.add('ws-with-transition');
+                }, 100)
             })
 
         } else{
@@ -693,6 +697,9 @@ const updateBGSizes = () => {
                 element.style["height"] = "";
                 element.style["width"] = `${projectedRImgWidth}px`;
                 element.classList.add('ws-sized');
+                setTimeout(()=>{
+                    element.classList.add('ws-with-transition');
+                }, 100)
             })
         }
     }
