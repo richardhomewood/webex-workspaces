@@ -105,6 +105,43 @@ $bg-body: grey;
         }
 
         &:not(.ws-default-room-bg) {
+          &::after {
+            position: absolute;
+            z-index: 2;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 50%;
+            background: linear-gradient(
+              180deg,
+              rgba(0, 0, 0, 0.3) 26.13%,
+              rgba(0, 0, 0, 0) 82.4%
+            );
+            content: ' ';
+            z-index: 1;
+            pointer-events: none;
+            transition: opacity 0.3s ease-in-out 0s;
+          }
+
+          &::before {
+            position: absolute;
+            z-index: 2;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 50%;
+            background: linear-gradient(
+              180deg,
+              rgba(0, 0, 0, 0.3) 10.05%,
+              rgba(0, 0, 0, 0) 91.34%
+            );
+            content: ' ';
+            z-index: 1;
+            pointer-events: none;
+            transition: opacity 0.3s ease-in-out 0s;
+            transform: rotate(-180deg);
+          }
+
           &.ws-room-selector-mode {
             picture {
               &::after {
