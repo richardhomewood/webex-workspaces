@@ -683,6 +683,9 @@ const updateBGSizes = () => {
                 element.style["height"] = `${newImageHeight}px`;
                 element.style["width"] = `${(newImageHeight * 192) / 108}px`;
                 element.classList.add('ws-sized');
+                setTimeout(()=>{
+                    element.classList.add('ws-with-transition');
+                }, 100)
             })
 
         } else{
@@ -690,6 +693,9 @@ const updateBGSizes = () => {
                 element.style["height"] = "";
                 element.style["width"] = `${projectedRImgWidth}px`;
                 element.classList.add('ws-sized');
+                setTimeout(()=>{
+                    element.classList.add('ws-with-transition');
+                }, 100)
             })
         }
     }
