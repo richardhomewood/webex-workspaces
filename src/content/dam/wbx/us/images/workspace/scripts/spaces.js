@@ -149,14 +149,15 @@ const getRoomSelectorOptions = async () => {
 
     return options;
 }
-
+let firstRun = true;
 export function updateUi(delay = 200) {
     setTimeout(() => {
         updateWorkspaceCta();
         updateNav();
         updateRoomsSelector();
         updateBGSizes();
-    }, delay)
+        firstRun = false
+    }, firstRun ? 0 : delay)
 }
 
 export function backToHome() {
@@ -211,6 +212,7 @@ export function toSelectedWorkSpace(space, room) {
 
     destroyHammer();
 
+    let roombgs = Array.from(document.querySelectorAll(`.${classnames.roomBackground}`));
     if (room) {
         selectedRoomId = room;
         if (swipingRoomSelector) {
@@ -218,8 +220,16 @@ export function toSelectedWorkSpace(space, room) {
         }
 
         setupHammer();
+
+        roombgs.forEach((element)=>{
+            element.classList.remove("ws-room-selector-mode")
+        })
     } else {
         selectedRoomId = null;
+
+        roombgs.forEach((element)=>{
+            element.classList.add("ws-room-selector-mode")
+        })
     }
  
     // Deselect all rooms
@@ -364,7 +374,7 @@ const transitionRooms = (roomSelectorWrap)=> {
         }, 750);
 
     } else {
-        // if there is no room
+        // if there is no room selected
         roomContent.classList.remove(classnames.slideIn)
         setTimeout(()=>{
             if (roomSelectorWrap && !roomSelectorWrap.classList.contains(classnames.slideIn)) {
@@ -379,7 +389,7 @@ const transitionRooms = (roomSelectorWrap)=> {
     }
 }
 
-const transitionAwayFromHomeView = (initview, room) => {
+const transitionAwayFromHomeView = (initview) => {
     if (initview && !initview.classList.contains(classnames.explored) && !initview.classList.contains(classnames.hidden)) {
 
         const spacescontentview = document.querySelector(`.${classnames.roomContentView}`)[0];
@@ -411,7 +421,6 @@ const transitionAwayFromHomeView = (initview, room) => {
 }
 
 const transitionRoomSelectors = (otherRoomSelectors, roomSelectorWrap, roomSelector)=>{
-
     let space = selectedWorkspaceId;
 
     if (otherRoomSelectors.length > 0) {
@@ -622,10 +631,6 @@ const updateRoomsSelector = async function () {
         if (wouldBeSwiper){
             wouldBeSwiper.style["opacity"] = 0;
         }
-        //swipingRoomSelector.destroy();
-        //swipingRoomSelector = null;
-
-        //selectedRoomIndex = 0
     }
 
     const spacesview = getSpacesView();
@@ -682,6 +687,9 @@ const updateBGSizes = () => {
                 element.style["height"] = `${newImageHeight}px`;
                 element.style["width"] = `${(newImageHeight * 192) / 108}px`;
                 element.classList.add('ws-sized');
+                setTimeout(()=>{
+                    element.classList.add('ws-with-transition');
+                }, 100)
             })
 
         } else{
@@ -689,6 +697,9 @@ const updateBGSizes = () => {
                 element.style["height"] = "";
                 element.style["width"] = `${projectedRImgWidth}px`;
                 element.classList.add('ws-sized');
+                setTimeout(()=>{
+                    element.classList.add('ws-with-transition');
+                }, 100)
             })
         }
     }

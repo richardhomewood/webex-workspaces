@@ -1,5 +1,5 @@
 $workspaceCount: 3;
-$individualAnimationDuration: 5s;
+$individualAnimationDuration: 6s;
 $animationDuration: $workspaceCount * $individualAnimationDuration;
 
 .ws-immersive-root {
@@ -38,7 +38,7 @@ $animationDuration: $workspaceCount * $individualAnimationDuration;
           right: 0;
           height: 100%;
           background-color: #000;
-          opacity: 0.15;
+          opacity: 0.3;
           content: ' ';
           z-index: 1;
         }
@@ -51,10 +51,18 @@ $animationDuration: $workspaceCount * $individualAnimationDuration;
           left: 50%;
           top: 50%;
           transform: translate(-50%, -50%);
-          transition: width 0.2s linear 0s, height 0.2s linear 0s;
+          opacity: 0;
+          transition: opacity 0.15s ease-out 0s;
+
           &.ws-sized {
             width: auto;
             max-width: initial;
+            display: block;
+            opacity: 1;
+
+            &.ws-with-transition {
+              transition: width 0.2s linear 0s, height 0.2s linear 0s;
+            }
           }
         }
 
