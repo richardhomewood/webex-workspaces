@@ -149,14 +149,15 @@ const getRoomSelectorOptions = async () => {
 
     return options;
 }
-
+let firstRun = true;
 export function updateUi(delay = 200) {
     setTimeout(() => {
         updateWorkspaceCta();
         updateNav();
         updateRoomsSelector();
         updateBGSizes();
-    }, delay)
+        firstRun = false
+    }, firstRun ? 0 : delay)
 }
 
 export function backToHome() {
