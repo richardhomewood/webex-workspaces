@@ -45,7 +45,7 @@
                 <div class="swiper-wrapper">
                   {%- for room in workspaces[workspaceId].rooms %}
 
-                    <div class="ws-room-slide swiper-slide{% if loop.first %} selected{% endif %}">
+                    <div class="ws-room-slide swiper-slide">
                       {{ roomSelections(workspaces[workspaceId], room, common) }}
                     </div>
                   {%- endfor %}

@@ -426,7 +426,8 @@ $bg-body: grey;
                 }
               }
 
-              &.selected {
+              &.selected,
+              &:hover {
                 .ws-room-image {
                   border: solid 1px #fff;
                 }
@@ -443,22 +444,13 @@ $bg-body: grey;
                 box-sizing: border-box;
                 border-radius: 16px;
                 overflow: hidden;
-
-                &.selected {
-                  border: solid 3px #fff;
-                }
+                border: solid 1px transparent;
 
                 .img-ws-room-option-image {
                   width: 100%;
                   height: auto;
                   margin: 0 0 0 0;
                   padding: 0 0 0 0;
-                }
-              }
-
-              &:hover {
-                .ws-room-label {
-                  text-decoration: underline;
                 }
               }
 
@@ -584,8 +576,15 @@ $bg-body: grey;
                   height: 154px;
                   box-sizing: border-box;
                   border-radius: 16px;
+                  border: solid 3px transparent;
 
                   &.selected {
+                    border: solid 3px #fff;
+                  }
+                }
+
+                &:hover {
+                  .ws-room-image {
                     border: solid 3px #fff;
                   }
                 }
