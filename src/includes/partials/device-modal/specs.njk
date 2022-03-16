@@ -5,9 +5,9 @@
       {% if spec.iconSize %}
         {% set iconSize = spec.iconSize %}
       {% endif %}
-      {% icon spec.icon, '', iconSize %}
+      <div class="ws-icon-holder">{% icon spec.icon, '', iconSize %}</div>
     {% else %}
-      <div class="ws-missing-icon"></div>
+      <div class="ws-icon-holder"></div>
     {% endif %}
     <span>{{ spec.text }}</span>
   </li>

@@ -295,17 +295,15 @@ $list-items-border-color: #c4c4c4;
             }
 
 
-            .ws-missing-icon {
+            .ws-icon-holder {
               display: block;
               margin: 52px auto 20px;
-              width: 32px;
-              height: 32px;
+              height: 33px;
             }
 
             svg.ws-icon {
               display: block;
-              margin: 52px auto 20px;
-
+              margin: 0 auto;
               // The dimensions are set in specs.njk
               width: unset;
               height: unset;
