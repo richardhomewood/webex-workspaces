@@ -847,3 +847,24 @@ const placeHotSpots = (bgImg, room, bgContainerClass, offset) => {
         hotspot.style["transform"] = `translate(calc(-50% + ${(hOffset + offset.x)}px), calc(-50% + ${(yOffset + offset.y)}px))`;
     })
 }
+
+export function closeIfClickedOutsideRoomSelector(event) {
+
+    if (selectedWorkspaceId.length == 0){
+        return
+    }
+
+    const isRoomSelectorOpen = document.querySelector(`.${classnames.selectorWrapper}:not(.${classnames.hidden})`);
+    if (isRoomSelectorOpen) {
+        const roomOptions = Array.from(document.querySelectorAll(`.ws-workspace#${selectedWorkspaceId}Container .swiper-slide`));
+        const target = event.target
+        console.log(target)
+        if (roomOptions.indexOf(target) == -1
+            && !target.classList.contains("ws-common-ui") 
+            && target.closest(".ws-common-ui") == null
+        ) {
+            const roomId = workspaces[selectedWorkspaceId].rooms[getSelectedRoomIndex()].slug;
+            window.location.href = `${window.location.pathname}#/${selectedWorkspaceId}/${roomId}`;
+        }
+    }
+};
