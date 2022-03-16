@@ -60,7 +60,7 @@
     "id": "cisco-headset-730",
     "name": "Cisco Headset 730",
     "vendor": "webex",
-    "url": "https://www.cisco.com/c/en/us/products/collateral/collaboration-endpoints/headset-700-series/datasheet-c78-743083.html",
+    "url": "https://hardware.webex.com/products/cisco-headset-730",
     "description": "Go anywhere with the award-winning, on-ear wireless headset designed for work and play.",
     "carouselItems": [
       {
@@ -539,7 +539,7 @@
     "id": "webex-desk-camera",
     "name": "Webex Desk Camera",
     "vendor": "webex",
-    "url": "https://www.cisco.com/c/en/us/products/collateral/collaboration/webex-desk-camera-ds.html",
+    "url": "https://hardware.webex.com/products/cisco-webex-desk-camera",
     "description": "Meet the picture-perfect webcam powering video conferencing at the hotdesk.",
     "carouselItems": [
       {
@@ -723,7 +723,7 @@
     "id": "webex-desk-pro",
     "name": "Webex Desk Pro",
     "vendor": "webex",
-    "url": "https://www.cisco.com/c/en/us/products/collaboration-endpoints/webex-desk-pro/datasheet-c78-743105.html",
+    "url": "https://hardware.webex.com/products/cisco-webex-desk-pro",
     "description": "Upgrade your office with the most advanced all-in-one collaboration device.",
     "carouselItems": [
       {"filename": "DeskPro_3qtrRight_RGB_smp.jpg", "alt": "The front of the Webex Desk Pro. The screen shows the time of 9:54 and the date August 9, plus icons to call, whiteboard, share, and join a Webex meeting."},
@@ -773,7 +773,7 @@
     "id": "webex-room-kit-mini",
     "name": "Webex Room Kit Mini",
     "vendor": "webex",
-    "url": "https://www.cisco.com/c/en/us/products/collateral/collaboration-endpoints/webex-room-series/datasheet-c78-741523.html",
+    "url": "https://hardware.webex.com/products/cisco-webex-room-kit-mini",
     "description": "See every detail with the intelligent video collaboration bar that attaches to any 4K display in your home.",
     "carouselItems": [
       {
@@ -834,7 +834,7 @@
     "id": "webex-room-navigator",
     "name": "Webex Room Navigator",
     "vendor": "webex",
-    "url": "https://www.cisco.com/c/en/us/products/collateral/collaboration-endpoints/webex-room-series/datasheet-c78-744227.html",
+    "url": "https://hardware.webex.com/products/cisco-webex-navigator-table-version",
     "description": "Control every aspect of your meeting with the intuitive touch panel equipped with built-in sensors and powerful APIs.",
     "carouselItems": [
       {

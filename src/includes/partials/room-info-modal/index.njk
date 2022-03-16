@@ -29,7 +29,7 @@
           <ul class="ws-vendor-device-list">
             {# Loop over the vendor's device IDs #}
             {% for deviceId in vendorDevicesByRoom[workspace.slug][room.slug][vendorId] %}
-              <li>{{ devices[deviceId].name }}</li>
+              <li><a href="{{ devices[deviceId].url }}">{{ devices[deviceId].name }}</a></li>
             {% endfor %}
           </ul>
         </div>

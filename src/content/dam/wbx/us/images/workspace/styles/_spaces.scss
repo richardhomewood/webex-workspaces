@@ -266,7 +266,6 @@ $bg-body: grey;
             @include ws-h2;
             text-align: center;
             color: #fff;
-            padding-left: 40px;
           }
 
           .ws-room-info-btn {
@@ -293,13 +292,15 @@ $bg-body: grey;
 
         .ws-show-more-rooms-btn:not(.ws-displayNone) {
           display: block;
-          background-color: #fff;
           width: 40px;
           height: 40px;
           border-radius: 28px;
           margin: 0 auto;
           text-decoration: none;
           pointer-events: all;
+          &:hover::before {
+            border-color: white;
+          }
 
           &::before {
             border-style: solid;
