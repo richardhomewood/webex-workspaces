@@ -16,6 +16,7 @@
   },
   "anywhere": {
     "cafe": [
+      "webex-suite",
       "webex-go"
     ]
   }
