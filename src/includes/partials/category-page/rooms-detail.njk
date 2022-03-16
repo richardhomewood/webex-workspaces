@@ -7,10 +7,12 @@
   <div class="ws-category-page-rooms">
     {%- for room in workspaces[workspaceId].rooms %}
       <div class="ws-category-page-room">
-        <div class="ws-room-description">
-          {% for paragraph in room.roomDescription %}
-            <p>{{ paragraph | safe }}</p>
-          {% endfor %}
+        <div class="ws-room-description-wrapper">
+            <div class="ws-room-description">
+            {% for paragraph in room.roomDescription %}
+                <p>{{ paragraph | safe }}</p>
+            {% endfor %}
+            </div>
         </div>
 
         {{ devicesSection.render(common, workspaceId, room.slug, devicesByRoom, devices) }}

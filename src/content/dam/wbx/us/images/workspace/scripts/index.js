@@ -1,5 +1,5 @@
 import Router from './router';
-import {updateUi, toSelectedWorkSpace, backToHome, closeIfClickedOutsideRoomSelector} from './spaces';
+import {updateUi, toSelectedWorkSpace, backToHome} from './spaces';
 import {canonicalPath, hardwarePathPart, homePath, infoPathPart, makePath} from './paths';
 import modals from './modals'
 import commonData from '../../../../../../../data/common.json';
@@ -23,7 +23,6 @@ window.addEventListener('load', function () {
 
 window.addEventListener('click', event => {
     modals.closeIfClickedOutsideOpenModal(event);
-    closeIfClickedOutsideRoomSelector(event);
 });
 
 modals.enableCloseButtons();
@@ -31,7 +30,7 @@ modals.enableCloseButtons();
 // Routing for the initial view
 router.add(homePath, () => {
     backToHome();
-    updateUi(window.location);
+    updateUi();
 })
 
 // Handle workspace and workspace/room routing
@@ -39,7 +38,7 @@ commonData.orderedWorkspaceIds.forEach((workspaceId) => {
     router.add(makePath([workspaceId]), () => {
         modals.hideAll();
         toSelectedWorkSpace(workspaceId);
-        updateUi(window.location);
+        updateUi();
     })
 
     const {rooms} = workspaces[workspaceId];
@@ -47,14 +46,14 @@ commonData.orderedWorkspaceIds.forEach((workspaceId) => {
         router.add(makePath([workspaceId, room.slug]), () => {
             modals.hideAll();
             toSelectedWorkSpace(workspaceId, room.slug);
-            updateUi(window.location);
+            updateUi();
         });
 
         const roomInfoPath = makePath([workspaceId, room.slug, infoPathPart]);
         router.add(roomInfoPath, () => {
             modals.hideAll();
             toSelectedWorkSpace(workspaceId, room.slug);
-            updateUi(window.location);
+            updateUi();
             modals.showRoomInfo(roomInfoPath);
         });
 
@@ -63,7 +62,7 @@ commonData.orderedWorkspaceIds.forEach((workspaceId) => {
             const devicePath = makePath([workspaceId, room.slug, hardwarePathPart, deviceId]);
             router.add(devicePath, () => {
                 toSelectedWorkSpace(workspaceId, room.slug);
-                updateUi(window.location);
+                updateUi();
                 modals.showDevice(devicePath);
             })
         })
