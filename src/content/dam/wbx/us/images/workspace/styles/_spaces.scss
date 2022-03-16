@@ -104,36 +104,47 @@ $bg-body: grey;
           transform: translate(-50%, -50%);
         }
 
-        &:not(.ws-default-room-bg) picture {
-          position: absolute;
-          top: 0;
-          left: 0;
-          bottom: 0;
-          right: 0;
-
-          &::after {
-            position: absolute;
-            top: 0;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            height: 100%;
-            background-color: #000;
-            opacity: 0.15;
-            content: ' ';
-            z-index: 1;
-            pointer-events: none;
+        &:not(.ws-default-room-bg) {
+          &.ws-room-selector-mode {
+            picture {
+              &::after {
+                opacity: 0.4;
+              }
+            }
           }
 
-          img {
-            position: relative;
-            height: 100%;
-            width: auto;
-            max-width: initial;
-            left: 50%;
-            top: 50%;
-            transform: translate(-50%, -50%);
-            transition: transform 0.5s ease-out 0s, height 0.5s ease-out 0s;
+          picture {
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+
+            &::after {
+              position: absolute;
+              top: 0;
+              bottom: 0;
+              left: 0;
+              right: 0;
+              height: 100%;
+              background-color: #000;
+              opacity: 0.15;
+              content: ' ';
+              z-index: 1;
+              pointer-events: none;
+              transition: opacity 0.3s ease-in-out 0s;
+            }
+
+            img {
+              position: relative;
+              height: 100%;
+              width: auto;
+              max-width: initial;
+              left: 50%;
+              top: 50%;
+              transform: translate(-50%, -50%);
+              transition: transform 0.5s ease-out 0s, height 0.5s ease-out 0s;
+            }
           }
         }
 
@@ -397,7 +408,7 @@ $bg-body: grey;
                 overflow: hidden;
 
                 &.selected {
-                  border: solid 1px #fff;
+                  border: solid 3px #fff;
                 }
 
                 .img-ws-room-option-image {
@@ -405,6 +416,12 @@ $bg-body: grey;
                   height: auto;
                   margin: 0 0 0 0;
                   padding: 0 0 0 0;
+                }
+              }
+
+              &:hover {
+                .ws-room-label {
+                  text-decoration: underline;
                 }
               }
 
@@ -532,7 +549,7 @@ $bg-body: grey;
                   border-radius: 16px;
 
                   &.selected {
-                    border: solid 1px #fff;
+                    border: solid 3px #fff;
                   }
                 }
 
@@ -556,6 +573,20 @@ $bg-body: grey;
   .ws-immersive-root {
     .ws-room-view {
       .ws-room-content {
+        .ws-workspaces-rooms {
+          .ws-workspaces {
+            .ws-workspace:not(.ws-displayNone) {
+              .ws-room-slide {
+                &.selected {
+                  .ws-room-image {
+                    border: solid 3px #fff;
+                  }
+                }
+              }
+            }
+          }
+        }
+
         .ws-more-rooms-text {
           .ws-room-label-info-btn-container {
             display: flex;
