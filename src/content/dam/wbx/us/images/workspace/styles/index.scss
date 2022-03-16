@@ -1,6 +1,9 @@
 html,
 body {
   height: 100%;
+  & * {
+    -webkit-font-smoothing: subpixel-antialiased;
+  }
 
   // If the following is not true because of the page template into which our HTML is copied,
   // we may need to adjust our root container margins to compensate.  But we should be safe:
@@ -29,7 +32,7 @@ body {
 @import 'common';
 @import 'initial-landing';
 @import 'spaces';
-@import "modals";
-@import "buttons";
+@import 'modals';
+@import 'buttons';
 
 @import 'for-dev-only';
