@@ -1,5 +1,5 @@
 $workspaceCount: 3;
-$individualAnimationDuration: 5s;
+$individualAnimationDuration: 6s;
 $animationDuration: $workspaceCount * $individualAnimationDuration;
 
 .ws-immersive-root {
@@ -38,7 +38,7 @@ $animationDuration: $workspaceCount * $individualAnimationDuration;
           right: 0;
           height: 100%;
           background-color: #000;
-          opacity: 0.15;
+          opacity: 0.3;
           content: ' ';
           z-index: 1;
         }
