@@ -11,7 +11,8 @@
         </span>
     </div>
     <div class="ws-initial-content">
-      <div class="ws-initial-text">{{ common.initialViewText }}</div>
+      {% set initialText = common.initialViewText.join('<br/>') %}
+      <div class="ws-initial-text">{{ initialText | safe }}</div>
       <a class="ws-initial-cta ws-cta ws-white-cta ws-on-dark-background" href="#/home">{{ common.initialViewCtaText }}</a>
     </div>
   </div>

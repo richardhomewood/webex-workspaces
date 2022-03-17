@@ -838,16 +838,8 @@
     "description": "Control every aspect of your meeting with the intuitive touch panel equipped with built-in sensors and powerful APIs.",
     "carouselItems": [
       {
-        "filename": "Navigator_Wall_Front_RGB_smp.jpg",
-        "alt": "Webex Room Navigator. Screen shows info including room name, a capacity limit of 5, a notification that the room is free until 10, and a Book Now button."
-      },
-      {
-        "filename": "Navigator_Wall_3qtrRight_RGB_smp.jpg",
-        "alt": "Three-quarters view of the Webex Room Navigator. Screen shows info including room name, a capacity limit of 5, a notification that the room is free until 10, and a Book Now button."
-      },
-      {
-        "filename": "Navigator_Wall_Back_RGB_smp.jpg",
-        "alt": "Back view of the Webex Room Navigator."
+        "filename": "Table_Navigator_angled_small.jpg",
+        "alt": "Webex Room Navigator"
       }
     ],
     "featuresTitle": "Features",

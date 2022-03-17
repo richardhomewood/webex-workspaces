@@ -1,4 +1,4 @@
-{% macro render(common, workspaces) %}
+{% macro render(common, workspaces, devices) %}
   <div class="ws-room-view ws-displayNone">
     <div class="ws-room-background-image-container">
       {%- for workspaceId in common.orderedWorkspaceIds %}
@@ -9,7 +9,7 @@
             <div class="ws-room-background-image ws-room-bg {{ workspaceId }}-{{room.slug}}-room-bg ws-displayNone">
                 {{ roomViewBG(room.background) }}
                 {%- for hotSpot in room.hotSpots %}
-                    {{ hotspot(workspaceId, room.slug, hotSpot.slug) }}
+                    {{ hotspot(workspaceId, room.slug, hotSpot.slug, devices[hotSpot.slug].name) }}
                 {%- endfor %}
             </div>
         {%- endfor %}
@@ -18,19 +18,17 @@
     <div class="ws-room-content">
       <div class="ws-more-rooms-text">
         <div class="ws-room-label-info-btn-container">
-            <div>
-            {%- for workspaceId in common.orderedWorkspaceIds %}
-                {%- for room in workspaces[workspaceId].rooms %}
-                <div class="ws-room-label" id="{{workspaceId}}-{{room.slug}}-label">{{ room.name }}</div>
-                {%- endfor %}
-            {%- endfor %}
-            </div>
-            {# The following href is updated by JavaScript code. #}
-            <a href="#" class="ws-room-info-btn ws-cta ws-transparent-cta">i</a>
+          {%- for workspaceId in common.orderedWorkspaceIds %}
+              {%- for room in workspaces[workspaceId].rooms %}
+              <div class="ws-room-label" id="{{workspaceId}}-{{room.slug}}-label">{{ room.name }}
+                <a href="#/{{workspaceId}}/{{room.slug}}/info" class="ws-room-info-btn ws-cta ws-transparent-cta" id="{{workspaceId}}-{{room.slug}}-info-button" tabindex="-1">i</a>
+              </div>
+              {%- endfor %}
+          {%- endfor %}
         </div>
         {%- for workspaceId in common.orderedWorkspaceIds %}
-            <a href="#/{{workspaceId}}" class="ws-show-more-rooms-txt" id="ws-show-more-rooms-txt-{{workspaceId}}">{{ common.moreRoomsCtaText }}</a>
-            <a href="#/{{workspaceId}}" class="ws-show-more-rooms-btn ws-white-cta ws-on-image-background" id="ws-show-more-rooms-btn-{{workspaceId}}"></a>
+            <a href="#/{{workspaceId}}" class="ws-show-more-rooms-txt" id="ws-show-more-rooms-txt-{{workspaceId}}" tabindex="-1">{{ common.moreRoomsCtaText }}</a>
+            <a href="#/{{workspaceId}}" class="ws-show-more-rooms-btn ws-white-cta ws-on-image-background" id="ws-show-more-rooms-btn-{{workspaceId}}" tabindex="-1"></a>
         {%- endfor %}
       </div>
 
@@ -71,8 +69,8 @@
   {% imagesync [283, 159], "room-backgrounds/"+src, "", "", "ws-room-option-image", true, "283px" %}
 {% endmacro %}
 
-{% macro hotspot(workspaceId, roomSlug, hotSpotSlug) %}
-  <a class="ws-hotSpot" href="#/{{workspaceId}}/{{roomSlug}}/hardware/{{hotSpotSlug}}"><div class="ws-hotSpot-outer"></div><div class="ws-hotSpot-inner"></div></a>
+{% macro hotspot(workspaceId, roomSlug, hotSpotSlug, deviceName) %}
+  <a class="ws-hotSpot ws-hotSpot-{{workspaceId}}-{{roomSlug}}" href="#/{{workspaceId}}/{{roomSlug}}/hardware/{{hotSpotSlug}}" aria-label="{{ deviceName }}" tabindex="-1"><div class="ws-hotSpot-outer"></div><div class="ws-hotSpot-inner"></div></a>
 {% endmacro %}
 
 {% macro roomSelections(workspace, room, common) %}

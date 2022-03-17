@@ -7,6 +7,7 @@ import {removeModalPaths, splitPath} from './paths';
 const slideInDelayMillis = 300;
 const deviceModalSubstring = '/hardware/';
 const roomInfoModalSuffix = '/info';
+const mainModalLayer = document.getElementById(classnames.modalLayerId)
 
 let carouselSwiper;
 
@@ -39,58 +40,98 @@ const enableCloseButtons = () => {
 
 const hideAll = () => {
 
-    document.getElementById(classnames.modalLayerId).classList.add(classnames.hidden);
+    if(!mainModalLayer.classList.contains("incoming")){
+        setTimeout(() => {
+            mainModalLayer.classList.add(classnames.fadeOut);
+        }, 300);
+        
+        setTimeout(()=>{
+            mainModalLayer.classList.add(classnames.hidden);
+            mainModalLayer.classList.remove(classnames.fadeOut);
+            mainModalLayer.classList.remove(classnames.fadeIn);
+        }, 650)
 
-    const roomModalsContainers = document.getElementsByClassName(classnames.roomModalsContainer);
+        inactiveModalsContainers = Array.from(document.querySelectorAll(`.${classnames.roomInfoModalRoot}, .${classnames.deviceModalRoot}`));
+
+    } else{
+        mainModalLayer.classList.remove("incoming");
+    }
+
+    const roomModalsContainers = inactiveModalsContainers;
+    const modalRoots = inactiveModalRoots;
     const roomInfoModalRoots = document.getElementsByClassName(classnames.roomInfoModalRoot);
     const deviceModalRoots = document.getElementsByClassName(classnames.deviceModalRoot);
     const deviceContainers = document.getElementsByClassName(classnames.deviceContainer);
 
     // Hide all the things
-    [roomModalsContainers, roomInfoModalRoots, deviceModalRoots, deviceContainers].forEach(elementCollection => {
-        Array.from(elementCollection).forEach(element => {
-            element.classList.add(classnames.hidden);
-        });
+    
+    [roomModalsContainers, modalRoots, deviceContainers].forEach(elementCollection => {
+        setTimeout(()=>{
+            Array.from(elementCollection).forEach(element => {
+                if(!element.classList.contains("incoming")){
+                    element.classList.add(classnames.hidden);
+                } else {
+                    element.classList.remove("incoming")
+                }
+            });
+        }, 350)
     });
 
     // Remove any "slide-in" classes from room-info-modal or device-modal roots
     [roomInfoModalRoots, deviceModalRoots].forEach(elementCollection => {
         Array.from(elementCollection).forEach(element => {
-            element.classList.remove(classnames.slideIn);
+            if(!element.classList.contains("incoming")){
+                element.classList.remove(classnames.slideIn);
+            } else {
+                element.classList.remove("incoming")
+            }
         });
     });
-
+    
     if (carouselSwiper) {
         carouselSwiper.destroy();
     }
 };
 
+
+let inactiveModalRoots = Array.from(document.querySelectorAll(`.${classnames.roomInfoModalRoot}, .${classnames.deviceModalRoot}`)); 
+let inactiveModalsContainers = Array.from(document.getElementsByClassName(classnames.roomModalsContainer));
+
 const showModalContainerForRoom = (workspaceId, roomId) => {
     // Show modals layer
-    document.getElementById(classnames.modalLayerId).classList.remove(classnames.hidden);
+    mainModalLayer.classList.remove(classnames.hidden);
+    mainModalLayer.classList.add("incoming");
+    mainModalLayer.classList.add(classnames.fadeIn);
 
     // Show modals-container for room
-    const modalsContainer = document.getElementById(`${workspaceId}-${roomId}-modals`);
-    modalsContainer.classList.remove(classnames.hidden);
-    modalsContainer.scrollTop = 0;
+    const containerId = `${workspaceId}-${roomId}-modals`
+    let activeModalsContainer = document.getElementById(containerId);
+    activeModalsContainer.classList.remove(classnames.hidden);
+    activeModalsContainer.scrollTop = 0;
+    inactiveModalsContainers = Array.from(document.querySelectorAll(`.${classnames.roomModalsContainer}:not(#${containerId})`))
 
-    return modalsContainer;
+    return activeModalsContainer;
 };
 
 const showDevice = path => {
-    hideAll();
-
+    
     const [workspaceId, roomId, , deviceId] = splitPath(path);
 
     const modalsContainer = showModalContainerForRoom(workspaceId, roomId);
 
     // Show device-modal root in container.  Always one per room.
-    const deviceModalRoot = modalsContainer.getElementsByClassName(classnames.deviceModalRoot)[0];
-    deviceModalRoot.classList.remove(classnames.hidden);
+    let activeModalRoot = modalsContainer.getElementsByClassName(classnames.deviceModalRoot)[0];
+    activeModalRoot.classList.remove(classnames.hidden);
+    activeModalRoot.classList.add("incoming");
+
+    inactiveModalRoots = Array.from(document.querySelectorAll(`.${classnames.roomInfoModalRoot}, .${classnames.deviceModalRoot}`)).filter((node)=> {
+        return node != activeModalRoot
+    }); 
 
     // Show the single device container. Always only one match per device-modal root.
-    const deviceContainer = deviceModalRoot.getElementsByClassName(`${classnames.deviceContainer} ${classnames.deviceIdPrefix}${deviceId}`)[0]
+    const deviceContainer = activeModalRoot.getElementsByClassName(`${classnames.deviceContainer} ${classnames.deviceIdPrefix}${deviceId}`)[0]
     deviceContainer.classList.remove(classnames.hidden);
+    deviceContainer.classList.add("incoming");
 
     // Find the active slide number element for updating
     const activeSlideNumber = deviceContainer.querySelector(`#swiper-${roomId}-${deviceId}-carousel .ws-carousel-active-slide`);
@@ -108,27 +149,34 @@ const showDevice = path => {
         activeSlideNumber.innerHTML = String(this.activeIndex + 1);
     });
 
+    hideAll();
 
     // Finally, slide in the device-modal root
     setTimeout(() => {
-        deviceModalRoot.classList.add(classnames.slideIn);
+        activeModalRoot.classList.add(classnames.slideIn);
     }, slideInDelayMillis);
 };
 
 const showRoomInfo = path => {
-    hideAll();
-
+    
     const [workspaceId, roomId,] = splitPath(path);
 
     const modalsContainer = showModalContainerForRoom(workspaceId, roomId);
 
     // Show room-info-modal root in container.  Always one per room.
-    const roomInfoModalRoot = modalsContainer.getElementsByClassName(classnames.roomInfoModalRoot)[0];
-    roomInfoModalRoot.classList.remove(classnames.hidden);
+    let activeModalRoot = modalsContainer.getElementsByClassName(classnames.roomInfoModalRoot)[0];
+    activeModalRoot.classList.remove(classnames.hidden);
+    activeModalRoot.classList.add("incoming");
+
+    inactiveModalRoots = Array.from(document.querySelectorAll(`.${classnames.roomInfoModalRoot}, .${classnames.deviceModalRoot}`)).filter((node)=> {
+        return node != activeModalRoot
+    }); 
+
+    hideAll();
 
     // And slide it in
     setTimeout(() => {
-        roomInfoModalRoot.classList.add(classnames.slideIn);
+        activeModalRoot.classList.add(classnames.slideIn);
     }, slideInDelayMillis);
 };
 
