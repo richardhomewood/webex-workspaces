@@ -306,18 +306,17 @@ $bg-body: grey;
         }
 
         .ws-room-label-info-btn-container {
-          display: flex;
-          justify-content: center;
-          margin: 0 20px 11px;
+          margin: 0 auto 11px;
+          text-align: center;
 
-          .ws-room-label {
+          .ws-room-label:not(.ws-displayNone) {
             @include ws-h2;
             text-align: center;
             color: #fff;
           }
 
-          .ws-room-info-btn {
-            flex-shrink: 0;
+          .ws-room-info-btn:not(.ws-displayNone) {
+            display: inline-block;
             width: 32px;
             height: 32px;
             padding: unset;
@@ -325,6 +324,8 @@ $bg-body: grey;
             font-size: 18px;
             margin-left: 8px;
             line-height: 32px;
+            position: relative;
+            top: -4px;
           }
         }
 

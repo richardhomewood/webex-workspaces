@@ -18,15 +18,13 @@
     <div class="ws-room-content">
       <div class="ws-more-rooms-text">
         <div class="ws-room-label-info-btn-container">
-            <div>
-            {%- for workspaceId in common.orderedWorkspaceIds %}
-                {%- for room in workspaces[workspaceId].rooms %}
-                <div class="ws-room-label" id="{{workspaceId}}-{{room.slug}}-label">{{ room.name }}</div>
-                {%- endfor %}
-            {%- endfor %}
-            </div>
-            {# The following href is updated by JavaScript code. #}
-            <a href="#" class="ws-room-info-btn ws-cta ws-transparent-cta">i</a>
+          {%- for workspaceId in common.orderedWorkspaceIds %}
+              {%- for room in workspaces[workspaceId].rooms %}
+              <div class="ws-room-label" id="{{workspaceId}}-{{room.slug}}-label">{{ room.name }}
+                <a href="#/{{workspaceId}}/{{room.slug}}/info" class="ws-room-info-btn ws-cta ws-transparent-cta" id="{{workspaceId}}-{{room.slug}}-info-button">i</a>
+              </div>
+              {%- endfor %}
+          {%- endfor %}
         </div>
         {%- for workspaceId in common.orderedWorkspaceIds %}
             <a href="#/{{workspaceId}}" class="ws-show-more-rooms-txt" id="ws-show-more-rooms-txt-{{workspaceId}}">{{ common.moreRoomsCtaText }}</a>
