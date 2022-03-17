@@ -136,6 +136,8 @@ const showDevice = path => {
     // Find the active slide number element for updating
     const activeSlideNumber = deviceContainer.querySelector(`#swiper-${roomId}-${deviceId}-carousel .ws-carousel-active-slide`);
 
+    hideAll();
+
     // Initialize the Swiper container
     carouselSwiper = new Swiper(`#swiper-${roomId}-${deviceId}-carousel .swiper`, {
         modules: [Navigation],
@@ -148,8 +150,6 @@ const showDevice = path => {
     carouselSwiper.on('slideChange', function () {
         activeSlideNumber.innerHTML = String(this.activeIndex + 1);
     });
-
-    hideAll();
 
     // Finally, slide in the device-modal root
     setTimeout(() => {
