@@ -540,7 +540,7 @@
     "name": "Webex Desk Camera",
     "vendor": "webex",
     "url": "https://hardware.webex.com/products/cisco-webex-desk-camera",
-    "description": "Meet the picture-perfect webcam powering video conferencing at the hotdesk.",
+    "description": "Meet the picture-perfect webcam powering video conferencing at the hot desk.",
     "carouselItems": [
       {
         "filename": "ST01_Desk_Camera_comp_v020_WHITE_180ROTATION_H264.mp4",
@@ -603,7 +603,7 @@
     "name": "Webex Desk Hub",
     "vendor": "webex",
     "url": "https://hardware.webex.com/products/cisco-webex-desk-hub",
-    "description": "Make any space your own with the personalized hotdesking solution.",
+    "description": "Make any space your own with the personalized hot desking solution.",
     "carouselItems": [
       {
         "filename": "DeskHub_3qtrFront_RGB_smp.jpg",
@@ -627,7 +627,7 @@
       "Walk up to any open space in the office and authenticate in seconds with wireless pairing.",
       "Easily reserve your space for a specific time or the entire day.",
       "See your full calendar and contact directory.",
-      "Join meetings, make calls, and charge your devices from one dedicated hotdesk device.",
+      "Join meetings, make calls, and charge your devices from one dedicated hot desk device.",
       "Charge your smartphone, headset, and laptop while you work."
     ],
     "specs": [
@@ -649,7 +649,7 @@
       }
     ],
     "categoryPage": {
-      "altText" : "A professional video conferences from an open hotdesk in the company office, after authenticating via the Webex Desk Hub."
+      "altText" : "A professional video conferences from an open hot desk in the company office, after authenticating via the Webex Desk Hub."
     }
   },
   "webex-desk-mini": {
