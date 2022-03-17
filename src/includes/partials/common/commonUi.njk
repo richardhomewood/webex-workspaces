@@ -10,8 +10,11 @@
       </ul>
       <div id="ws-nav-underline" class="ws-displayNone"></div>
     </div>
-
-    <a class="ws-about-cta ws-cta ws-transparent-cta" style="opacity: 0"><span class="ws-XS">{{ common.aboutWorkspaceCtaShortText }}</span><span class="ws-S ws-M ws-L ws-XL">{{ common.aboutWorkspaceCtaText }}</span></a>
+    {# The href in the following anchor element is a temporary change while category pages are not yet ready.
+       In Phase 2, when they are ready, remove this href, and uncomment stuff in `spaces.js`.
+       For https://jira.akqa.net/browse/SWW-209.
+    #}
+    <a href="{{ common.contactUrl }}" class="ws-about-cta ws-cta ws-transparent-cta" style="opacity: 0"><span class="ws-XS">{{ common.aboutWorkspaceCtaShortText }}</span><span class="ws-S ws-M ws-L ws-XL">{{ common.aboutWorkspaceCtaText }}</span></a>
   </div>
 {% endmacro %}
 

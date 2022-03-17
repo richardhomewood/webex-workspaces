@@ -114,7 +114,7 @@ const getHotSpotsToShow = () =>{
 
 let storedSliderWidth = 0;
 const getRoomSelectorOptions = async () => {
-    
+
     const slides = Array.from(document.querySelectorAll(`#${selectedWorkspaceId}Container .swiper .swiper-slide.${classnames.roomSlide}`));
     const slideCount = slides.length;
 
@@ -232,7 +232,7 @@ export function toSelectedWorkSpace(space, room) {
             element.classList.add("ws-room-selector-mode")
         })
     }
- 
+
     // Deselect all rooms
     deselectAllRooms();
 
@@ -514,7 +514,7 @@ const setupHammer = () => {
 }
 
 const updateNav = function () {
-    
+
     const navContainer = document.querySelector(`.${classnames.workspaceNavigation}`);
     if (selectedWorkspaceId.length > 0) {
         navContainer.style["opacity"] = 1;
@@ -563,15 +563,23 @@ const updateNav = function () {
 
 const updateWorkspaceCta = function () {
     const aboutCtaElements = document.getElementsByClassName(classnames.aboutWorkspaceCta);
-    
+
     if (selectedWorkspaceId.length > 0){
-        let href = `./${selectedWorkspaceId}.html`;
-        if (selectedRoomId) {
-            href = `${href}#${selectedRoomId}`;
-        }
+
+
+        // This portion of the function will not be used for the Phase 1 launch, since the button will
+        // not link to category pages.  It remains in place for future use in Phase 2, when
+        // the category pages are linked to again.  For https://jira.akqa.net/browse/SWW-209.
+        // let href = `./${selectedWorkspaceId}.html`;
+        // if (selectedRoomId) {
+        //     href = `${href}#${selectedRoomId}`;
+        // }
+        // This is the end of the change for https://jira.akqa.net/browse/SWW-209.
 
         Array.from(aboutCtaElements).forEach((anchor) => {
-            anchor.href = href
+            // The following line also commented out for https://jira.akqa.net/browse/SWW-209.
+            // Uncomment it when this needs to link to category pages again.
+            // anchor.href = href
             anchor.enabled = true
             anchor.style["opacity"] = 1
         });
@@ -759,7 +767,7 @@ const updateBGSizes = () => {
 
                 const scaledPanOffsetX = (panOffset.x * setImageWidth)/windowWidth;
                 const panOffsetX = scaledPanOffsetX > maxXPanOffset ? maxXPanOffset : scaledPanOffsetX < minXPanOffset ? minXPanOffset : scaledPanOffsetX;
-                
+
                 const scaledPanOffsetY = (panOffset.y * setImageHeight)/windowHeight;
                 const panOffsetY = panOffset.y === 0 ? 0 : scaledPanOffsetY > maxYPanOffset ? maxYPanOffset : scaledPanOffsetY < minYPanOffset ? minYPanOffset : scaledPanOffsetY ;
 
@@ -860,7 +868,7 @@ export function closeIfClickedOutsideRoomSelector(event) {
         const target = event.target
         console.log(target)
         if (roomOptions.indexOf(target) == -1
-            && !target.classList.contains("ws-common-ui") 
+            && !target.classList.contains("ws-common-ui")
             && target.closest(".ws-common-ui") == null
         ) {
             const roomId = workspaces[selectedWorkspaceId].rooms[getSelectedRoomIndex()].slug;
