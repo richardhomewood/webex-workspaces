@@ -17,6 +17,17 @@ commonData.orderedWorkspaceIds.forEach((space) => {
     selectedRoomIndexes[space] = 0
 })
 
+// Setters 
+
+const setWorkSpaceAndRoomIds = (w, r) => {
+    selectedWorkspaceId = w
+    selectedRoomId = r
+}
+
+const setSwiperAnimationViewed = () => {
+    const sessionStorage = window.sessionStorage
+    sessionStorage.setItem('hasViewedSwiperAnimation', '1')
+}
 
 // Getters
 
@@ -31,11 +42,6 @@ const getSwiperAnimationViewed = () => {
     const sessionStorage = window.sessionStorage
     let hasViewedAnimation = sessionStorage.getItem('hasViewedSwiperAnimation') ?? "0"
     return hasViewedAnimation == "1"
-}
-
-const setSwiperAnimationViewed = () => {
-    const sessionStorage = window.sessionStorage
-    sessionStorage.setItem('hasViewedSwiperAnimation', '1')
 }
 
 let initialView;
@@ -101,8 +107,21 @@ const getBgsToHide = () => {
     return Array.from(document.querySelectorAll(bgToHideCSSSelector));
 }
 
+let outgoingRoomSelectors;
 const getOtherRoomSelectors = ()=> {
-    return Array.from(document.querySelectorAll(`.${classnames.workspaceContainer}:not(#${selectedWorkspaceId}Container):not(.${classnames.hidden})`));
+
+    if (!outgoingRoomSelectors){
+        return Array.from(document.querySelectorAll(`.${classnames.workspaceContainer}:not(#${selectedWorkspaceId}Container):not(.${classnames.hidden})`));
+    }
+
+    const filtered = outgoingRoomSelectors.filter((node) => {
+        return node.id == `${selectedWorkspaceId}Container`;
+    })
+
+    if (filtered.length > 0){
+        return Array.from(document.querySelectorAll(`.${classnames.workspaceContainer}:not(#${selectedWorkspaceId}Container):not(.${classnames.hidden})`));
+    }
+    return outgoingRoomSelectors;
 }
 
 const getHotSpotsToShow = () =>{
@@ -152,7 +171,12 @@ const getRoomSelectorOptions = async () => {
 }
 let firstRun = true;
 export function updateUi(delay = 200) {
+    const currentWorkspaceid = selectedWorkspaceId
+    const currentRoomId = selectedRoomId
     setTimeout(() => {
+        if (selectedWorkspaceId != currentWorkspaceid || currentRoomId != selectedRoomId) {
+            return
+        }
         updateWorkspaceCta();
         updateNav();
         updateRoomsSelector();
@@ -165,8 +189,7 @@ export function backToHome() {
 
     destroyHammer();
 
-    selectedRoomId = null;
-    selectedWorkspaceId = "";
+    setWorkSpaceAndRoomIds("", null);
 
     const initview = getInitView();
     const spacesview = getSpacesView();
@@ -179,7 +202,12 @@ export function backToHome() {
 
     if (roomSelectorWrap && roomSelectorWrap.classList.contains(classnames.slideIn)) {
         roomSelectorWrap.classList.remove(classnames.slideIn);
+        const currentWorkspaceid = selectedWorkspaceId
+        const currentRoomId = selectedRoomId
         setTimeout(()=>{
+            if (selectedWorkspaceId != currentWorkspaceid || currentRoomId != selectedRoomId) {
+                return
+            }
             roomSelectorWrap.style["opacity"] = 0;
             roomSelectorWrap.classList.add(classnames.hidden);
         }, 500)
@@ -202,14 +230,13 @@ export function backToHome() {
 
 export function toSelectedWorkSpace(space, room) {
 
-    selectedWorkspaceId = space;
+    setWorkSpaceAndRoomIds(space, room)
 
     const initview = getInitView();
     const spacesview = getSpacesView();
     const roomSelector = getRoomSelectorContainer();
-    const otherRoomSelectors = getOtherRoomSelectors(selectedWorkspaceId);
+    const otherRoomSelectors = getOtherRoomSelectors();
     const roomSelectorWrap = getRoomSelectorWrapper();
-
 
     destroyHammer();
 
@@ -245,7 +272,7 @@ export function toSelectedWorkSpace(space, room) {
     transitionAwayFromHomeView(initview);
 
     // if there are room selectors to hide, hide them and animate in relevant room selector
-    transitionRoomSelectors(otherRoomSelectors, roomSelectorWrap, roomSelector)
+    transitionRoomSelectors(roomSelectorWrap)
 
     //if transitioning away from home view then move home view in front of spaces view and show home view
     if (spacesview && spacesview.classList.contains(classnames.hidden)) {
@@ -306,7 +333,12 @@ const animateInHotSpots = () => {
     const hotSpotsToHide = getHotSpotsToHide()
     const hotSpotsToShow = getHotSpotsToShow()
 
+    const currentWorkspaceid = selectedWorkspaceId
+    const currentRoomId = selectedRoomId
     setTimeout(()=>{
+        if (selectedWorkspaceId != currentWorkspaceid || currentRoomId != selectedRoomId) {
+            return
+        }
         hotSpotsToShow.forEach((element, index) => {
             setTimeout(()=>{
                 if (!element.classList.contains('animated-out') && element.classList.contains(`ws-hotSpot-${selectedWorkspaceId}-${selectedRoomId}`)) {
@@ -370,7 +402,12 @@ const transitionRooms = (roomSelectorWrap)=> {
         // hide room selector
         if (roomSelectorWrap) {
             roomSelectorWrap.classList.remove(classnames.slideIn);
+            const currentWorkspaceid = selectedWorkspaceId
+            const currentRoomId = selectedRoomId
             setTimeout(()=>{
+                if (selectedWorkspaceId != currentWorkspaceid || currentRoomId != selectedRoomId) {
+                    return
+                }
                 roomSelectorWrap.style['opacity'] = 0;
                 roomSelectorWrap.classList.add(classnames.hidden);
             },500)
@@ -378,18 +415,33 @@ const transitionRooms = (roomSelectorWrap)=> {
 
         // show selected room content
 
+        const currentWorkspaceid = selectedWorkspaceId
+        const currentRoomId = selectedRoomId
         setTimeout(()=>{
+            if (selectedWorkspaceId != currentWorkspaceid || currentRoomId != selectedRoomId) {
+                return
+            }
             roomContent.classList.add(classnames.slideIn);
         }, 750);
 
     } else {
         // if there is no room selected
         roomContent.classList.remove(classnames.slideIn)
+        const currentWorkspaceid = selectedWorkspaceId
+        const currentRoomId = selectedRoomId
         setTimeout(()=>{
+            if (selectedWorkspaceId != currentWorkspaceid || currentRoomId != selectedRoomId) {
+                return
+            }
             if (roomSelectorWrap && !roomSelectorWrap.classList.contains(classnames.slideIn)) {
                 roomSelectorWrap.style['opacity'] = 0;
                 roomSelectorWrap.classList.remove(classnames.hidden);
+                const currentWorkspaceid = selectedWorkspaceId
+                const currentRoomId = selectedRoomId
                 setTimeout(()=>{
+                    if (selectedWorkspaceId != currentWorkspaceid || currentRoomId != selectedRoomId) {
+                        return
+                    }
                     roomSelectorWrap.style['opacity'] = "";
                     roomSelectorWrap.classList.add(classnames.slideIn);
                 }, 100);
@@ -429,15 +481,15 @@ const transitionAwayFromHomeView = (initview) => {
     }
 }
 
-const transitionRoomSelectors = (otherRoomSelectors, roomSelectorWrap, roomSelector)=>{
+const transitionRoomSelectors = (roomSelectorWrap)=>{
     let space = selectedWorkspaceId;
 
-    if (otherRoomSelectors.length > 0) {
+    if (getOtherRoomSelectors().length > 0) {
 
         if (roomSelectorWrap) {
             const roomSelectorWrapListener = () => {
-                roomSelector.classList.remove(classnames.hidden);
-                Array.from(roomSelector.getElementsByTagName('a')).forEach(anchor => {
+                getRoomSelectorContainer().classList.remove(classnames.hidden);
+                Array.from(getRoomSelectorContainer().getElementsByTagName('a')).forEach(anchor => {
                     anchor.tabIndex = 0;
                 });
                 roomSelectorWrap.removeEventListener('animationend', roomSelectorWrapListener);
@@ -448,14 +500,19 @@ const transitionRoomSelectors = (otherRoomSelectors, roomSelectorWrap, roomSelec
                 const wouldBeSwiper = getSwiperEl(space);
                 wouldBeSwiper.style["opacity"] = 1
 
-                setTimeout(() => {
+                const currentWorkspaceid = selectedWorkspaceId
+                const currentRoomId = selectedRoomId
+                setTimeout(()=>{
+                    if (selectedWorkspaceId != currentWorkspaceid || currentRoomId != selectedRoomId) {
+                        return
+                    }
                     roomSelectorWrap.style["opacity"] = "";
                     roomSelectorWrap.classList.add(classnames.slideIn);
                 }, 100);
             }
 
             roomSelectorWrap.addEventListener('animationend', roomSelectorWrapListener);
-            otherRoomSelectors.forEach((element) => {
+            getOtherRoomSelectors().forEach((element) => {
                 element.classList.add(classnames.hidden);
                 Array.from(element.getElementsByTagName('a')).forEach(anchor => {
                     anchor.tabIndex = -1;
@@ -834,7 +891,7 @@ const updateBGSizes = () => {
 }
 
 const deselectAllRooms = () =>{
-    const allRooms = Array.from(document.querySelectorAll(`${getSwiperContainerSelector(selectedWorkspaceId)} .${classnames.roomImage}`));
+    const allRooms = Array.from(document.querySelectorAll(`${getSwiperContainerSelector()} .${classnames.roomImage}`));
     allRooms.forEach((element) => {
         if (element.classList.contains(classnames.selected)) {
             element.classList.remove(classnames.selected);
@@ -884,7 +941,6 @@ export function closeIfClickedOutsideRoomSelector(event) {
     if (isRoomSelectorOpen) {
         const roomOptions = Array.from(document.querySelectorAll(`.ws-workspace#${selectedWorkspaceId}Container .swiper-slide`));
         const target = event.target
-        console.log(target)
         if (roomOptions.indexOf(target) == -1
             && !target.classList.contains("ws-common-ui")
             && target.closest(".ws-common-ui") == null
