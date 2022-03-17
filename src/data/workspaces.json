@@ -122,7 +122,7 @@
     "categoryPageText": "Gone are the days where the office was a permanent destination for all employees. With people now constantly coming and going, each room needs to be designed to serve a specific purpose. In addition, 97% want changes to make the office safer before they return, which only adds another layer of complexity to your office transformation.",
     "rooms": [
       {
-        "name": "Hotdesk",
+        "name": "Hot Desk",
         "slug": "hotdesk",
         "pdfFilename": "HybridWorkExperiences_EBook_2021_Hotdesk.pdf",
         "background": "hotdesk.jpg",
@@ -161,7 +161,7 @@
           }
         ],
         "roomDescription": [
-          "With most employees splitting time between the home and office, hotdesking has never been more in-demand. The key is to equip these spaces for maximum productivity, so the rotating cast of employees and visitors never skips a beat.",
+          "With most employees splitting time between the home and office, hot desking has never been more in-demand. The key is to equip these spaces for maximum productivity, so the rotating cast of employees and visitors never skips a beat.",
           "That means arming this room with devices that lets them be instantly productive, while giving them the ability to just as instantly pack up and leave."
         ]
       },

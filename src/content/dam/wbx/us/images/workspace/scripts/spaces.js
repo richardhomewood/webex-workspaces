@@ -11,6 +11,7 @@ let hasUpdatedBGs = false
 let selectedWorkspaceId = "";
 let selectedRoomId = null;
 let selectedRoomIndexes = []
+let swipers = [];
 
 commonData.orderedWorkspaceIds.forEach((space) => {
     selectedRoomIndexes[space] = 0
@@ -113,7 +114,7 @@ const getHotSpotsToShow = () =>{
 
 let storedSliderWidth = 0;
 const getRoomSelectorOptions = async () => {
-    
+
     const slides = Array.from(document.querySelectorAll(`#${selectedWorkspaceId}Container .swiper .swiper-slide.${classnames.roomSlide}`));
     const slideCount = slides.length;
 
@@ -215,8 +216,8 @@ export function toSelectedWorkSpace(space, room) {
     let roombgs = Array.from(document.querySelectorAll(`.${classnames.roomBackground}`));
     if (room) {
         selectedRoomId = room;
-        if (swipingRoomSelector) {
-            updateSelectedSlideClasses(selectedRoomIndexes[selectedWorkspaceId], swipingRoomSelector.slides)
+        if (swipers[selectedWorkspaceId]) {
+            updateSelectedSlideClasses(selectedRoomIndexes[selectedWorkspaceId], swipers[selectedWorkspaceId].slides)
         }
 
         setupHammer();
@@ -231,7 +232,7 @@ export function toSelectedWorkSpace(space, room) {
             element.classList.add("ws-room-selector-mode")
         })
     }
- 
+
     // Deselect all rooms
     deselectAllRooms();
 
@@ -513,7 +514,7 @@ const setupHammer = () => {
 }
 
 const updateNav = function () {
-    
+
     const navContainer = document.querySelector(`.${classnames.workspaceNavigation}`);
     if (selectedWorkspaceId.length > 0) {
         navContainer.style["opacity"] = 1;
@@ -562,15 +563,23 @@ const updateNav = function () {
 
 const updateWorkspaceCta = function () {
     const aboutCtaElements = document.getElementsByClassName(classnames.aboutWorkspaceCta);
-    
+
     if (selectedWorkspaceId.length > 0){
-        let href = `./${selectedWorkspaceId}.html`;
-        if (selectedRoomId) {
-            href = `${href}#${selectedRoomId}`;
-        }
+
+
+        // This portion of the function will not be used for the Phase 1 launch, since the button will
+        // not link to category pages.  It remains in place for future use in Phase 2, when
+        // the category pages are linked to again.  For https://jira.akqa.net/browse/SWW-209.
+        // let href = `./${selectedWorkspaceId}.html`;
+        // if (selectedRoomId) {
+        //     href = `${href}#${selectedRoomId}`;
+        // }
+        // This is the end of the change for https://jira.akqa.net/browse/SWW-209.
 
         Array.from(aboutCtaElements).forEach((anchor) => {
-            anchor.href = href
+            // The following line also commented out for https://jira.akqa.net/browse/SWW-209.
+            // Uncomment it when this needs to link to category pages again.
+            // anchor.href = href
             anchor.enabled = true
             anchor.style["opacity"] = 1
         });
@@ -584,15 +593,14 @@ const updateWorkspaceCta = function () {
 };
 
 
-let swipingRoomSelector;
 const updateRoomsSelector = async function () {
 
     const wouldBeSwiperSelector = `#${selectedWorkspaceId}Container .swiper`;
-    const wouldBeSwiper = document.querySelector(wouldBeSwiperSelector)
+    //const wouldBeSwiper = document.querySelector(wouldBeSwiperSelector)
 
-    if (swipingRoomSelector && swipingRoomSelector.el && swipingRoomSelector.el.parentNode && swipingRoomSelector.el.parentNode.getAttribute("id") === `${selectedWorkspaceId}Container`) {
+    if (swipers[selectedWorkspaceId] && swipers[selectedWorkspaceId].el && swipers[selectedWorkspaceId].el.parentNode && swipers[selectedWorkspaceId].el.parentNode.getAttribute("id") === `${selectedWorkspaceId}Container`) {
 
-        const {enabled : isEnabled  } = swipingRoomSelector.params;
+        const {enabled : isEnabled  } = swipers[selectedWorkspaceId].params;
         const {enabled} = await getRoomSelectorOptions();
         let updateProgress = (enabled && !isEnabled) || (!enabled && isEnabled);
         const slides = Array.from(document.querySelectorAll(`${wouldBeSwiperSelector} .swiper-slide.${classnames.roomSlide}`));
@@ -612,25 +620,21 @@ const updateRoomsSelector = async function () {
         if (updateProgress) {
             setTimeout(async () => {
                 if (enabled && !isEnabled) {
-                    swipingRoomSelector.enable();
+                    swipers[selectedWorkspaceId].enable();
                 } else if (!enabled && isEnabled) {
-                    swipingRoomSelector.disable();
+                    swipers[selectedWorkspaceId].disable();
                 }
 
-                swipingRoomSelector.setProgress(progress, 0);
+                swipers[selectedWorkspaceId].setProgress(progress, 0);
                 setTimeout(() => {
-                    swipingRoomSelector.setProgress(progress, 0);
+                    swipers[selectedWorkspaceId].setProgress(progress, 0);
                     setTimeout(() => {
-                        swipingRoomSelector.setProgress(progress, 0);
+                        swipers[selectedWorkspaceId].setProgress(progress, 0);
                     }, 1000)
                 }, 200)
             }, 500);
         }
         return;
-    } else if (swipingRoomSelector) {
-        if (wouldBeSwiper){
-            wouldBeSwiper.style["opacity"] = 0;
-        }
     }
 
     const spacesview = getSpacesView();
@@ -638,10 +642,12 @@ const updateRoomsSelector = async function () {
         return;
     }
 
-    setTimeout(async () => {
-        const options = await getRoomSelectorOptions();
-        swipingRoomSelector = new Swiper(wouldBeSwiperSelector, options);
-    }, 0)
+    if (!swipers[selectedWorkspaceId]) {
+        setTimeout(async () => {
+            const options = await getRoomSelectorOptions();
+            swipers[selectedWorkspaceId] = new Swiper(wouldBeSwiperSelector, options);
+        }, 0)
+    }
 }
 
 const slideClick = (e) => {
@@ -761,7 +767,7 @@ const updateBGSizes = () => {
 
                 const scaledPanOffsetX = (panOffset.x * setImageWidth)/windowWidth;
                 const panOffsetX = scaledPanOffsetX > maxXPanOffset ? maxXPanOffset : scaledPanOffsetX < minXPanOffset ? minXPanOffset : scaledPanOffsetX;
-                
+
                 const scaledPanOffsetY = (panOffset.y * setImageHeight)/windowHeight;
                 const panOffsetY = panOffset.y === 0 ? 0 : scaledPanOffsetY > maxYPanOffset ? maxYPanOffset : scaledPanOffsetY < minYPanOffset ? minYPanOffset : scaledPanOffsetY ;
 
@@ -849,3 +855,24 @@ const placeHotSpots = (bgImg, room, bgContainerClass, offset) => {
         hotspot.style["transform"] = `translate(calc(-50% + ${(hOffset + offset.x)}px), calc(-50% + ${(yOffset + offset.y)}px))`;
     })
 }
+
+export function closeIfClickedOutsideRoomSelector(event) {
+
+    if (selectedWorkspaceId.length == 0){
+        return
+    }
+
+    const isRoomSelectorOpen = document.querySelector(`.${classnames.selectorWrapper}:not(.${classnames.hidden})`);
+    if (isRoomSelectorOpen) {
+        const roomOptions = Array.from(document.querySelectorAll(`.ws-workspace#${selectedWorkspaceId}Container .swiper-slide`));
+        const target = event.target
+        console.log(target)
+        if (roomOptions.indexOf(target) == -1
+            && !target.classList.contains("ws-common-ui")
+            && target.closest(".ws-common-ui") == null
+        ) {
+            const roomId = workspaces[selectedWorkspaceId].rooms[getSelectedRoomIndex()].slug;
+            window.location.href = `${window.location.pathname}#/${selectedWorkspaceId}/${roomId}`;
+        }
+    }
+};

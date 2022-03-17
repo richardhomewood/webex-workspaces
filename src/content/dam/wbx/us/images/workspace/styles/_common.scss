@@ -1,7 +1,9 @@
 .ws-immersive-root,
 .ws-category-root {
   .ws-common-ui {
-    pointer-events: none;
+    &:not(.ws-common-ui) {
+      pointer-events: none;
+    }
 
     a {
       pointer-events: all;

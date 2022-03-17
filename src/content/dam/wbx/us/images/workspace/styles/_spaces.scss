@@ -105,6 +105,43 @@ $bg-body: grey;
         }
 
         &:not(.ws-default-room-bg) {
+          &::after {
+            position: absolute;
+            z-index: 2;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 50%;
+            background: linear-gradient(
+              180deg,
+              rgba(0, 0, 0, 0.3) 26.13%,
+              rgba(0, 0, 0, 0) 82.4%
+            );
+            content: ' ';
+            z-index: 1;
+            pointer-events: none;
+            transition: opacity 0.3s ease-in-out 0s;
+          }
+
+          &::before {
+            position: absolute;
+            z-index: 2;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 50%;
+            background: linear-gradient(
+              180deg,
+              rgba(0, 0, 0, 0.3) 10.05%,
+              rgba(0, 0, 0, 0) 91.34%
+            );
+            content: ' ';
+            z-index: 1;
+            pointer-events: none;
+            transition: opacity 0.3s ease-in-out 0s;
+            transform: rotate(-180deg);
+          }
+
           &.ws-room-selector-mode {
             picture {
               &::after {
@@ -389,7 +426,8 @@ $bg-body: grey;
                 }
               }
 
-              &.selected {
+              &.selected,
+              &:hover {
                 .ws-room-image {
                   border: solid 1px #fff;
                 }
@@ -406,22 +444,13 @@ $bg-body: grey;
                 box-sizing: border-box;
                 border-radius: 16px;
                 overflow: hidden;
-
-                &.selected {
-                  border: solid 3px #fff;
-                }
+                border: solid 1px transparent;
 
                 .img-ws-room-option-image {
                   width: 100%;
                   height: auto;
                   margin: 0 0 0 0;
                   padding: 0 0 0 0;
-                }
-              }
-
-              &:hover {
-                .ws-room-label {
-                  text-decoration: underline;
                 }
               }
 
@@ -547,8 +576,15 @@ $bg-body: grey;
                   height: 154px;
                   box-sizing: border-box;
                   border-radius: 16px;
+                  border: solid 3px transparent;
 
                   &.selected {
+                    border: solid 3px #fff;
+                  }
+                }
+
+                &:hover {
+                  .ws-room-image {
                     border: solid 3px #fff;
                   }
                 }
