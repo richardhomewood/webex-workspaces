@@ -30,6 +30,31 @@ $list-items-border-color: #c4c4c4;
     padding: 21px;
     overflow-x: hidden;
 
+    a.ws-modal-close {
+      background-color: white;
+      display: block;
+      width: 56px;
+      height: 56px;
+      float: right;
+      position: relative;
+      border: 1px solid black;
+      border-radius: 28px;
+      &:hover {
+        border-color: black;
+        background-color: black;
+        svg {
+          filter: invert(100%);
+        }
+      }
+
+      .ws-close-x {
+        width: 16.64px;
+        height: 16.64px;
+        position: relative;
+        transform: translate(114%, 88%);
+      }
+    }
+
     .ws-top-rule {
       clear: both;
       width: 100vw;
@@ -49,21 +74,6 @@ $list-items-border-color: #c4c4c4;
 
     .ws-download-pdf.ws-header-item {
       display: inline-block;
-    }
-
-    a.ws-modal-close {
-      background-color: white;
-      display: block;
-      width: 17px;
-      height: 17px;
-      float: right;
-      position: relative;
-      top: 2px;
-
-      .ws-close-x {
-        width: 16.64px;
-        height: 16.64px;
-      }
     }
 
     .ws-top-rule {
@@ -132,22 +142,6 @@ $list-items-border-color: #c4c4c4;
       transition: top 0.4s ease-out;
       top: 0;
     }
-
-    a.ws-modal-close {
-      background-color: white;
-      display: block;
-      width: 17px;
-      height: 17px;
-      float: right;
-      position: relative;
-      top: -11px;
-
-      .ws-close-x {
-        width: 16.64px;
-        height: 16.64px;
-      }
-    }
-
 
     .ws-device {
       .ws-device-name {
@@ -426,9 +420,9 @@ $list-items-border-color: #c4c4c4;
     width: 90%;
 
     .ws-modal-root:not(.ws-displayNone) {
-      padding: 32px 64px;
+      padding: 12px 64px 32px;
       .ws-top-rule {
-        margin: 32px -64px;
+        margin: 12px -64px 32px;
       }
     }
 
