@@ -417,7 +417,7 @@ $list-items-border-color: #c4c4c4;
 
 @media only screen and (min-width: 1280px) {
   #ws-modal-layer {
-    width: 90%;
+    width: 70%;
 
     .ws-modal-root:not(.ws-displayNone) {
       padding: 12px 64px 32px;
@@ -535,14 +535,14 @@ $list-items-border-color: #c4c4c4;
         .ws-device-specs.ws-modal-section {
           ul {
             // Make sure we only have room for 4 per row (plus 3 gutters).
-            max-width: calc((230px * 4) + (30px * 3));
+            max-width: calc((230px * 3) + (30px * 2));
 
             li {
               flex: 0 0 25%;
               max-width: 230px;
               // Set right margin on all, then remove from selected
               margin-right: 30px;
-              &:nth-child(4n+4) {
+              &:nth-child(3n+3) {
                 margin-right: 0;
               }
 
@@ -607,9 +607,9 @@ $list-items-border-color: #c4c4c4;
               flex: 0 0 calc(100%/6);
               // Use important to reset nth-child stuff at lower breakpoints
               margin-right: 30px !important;
-              &:nth-child(6n+6) {
+              &:last-child,
+              &:nth-child(5n+5) {
                 margin-right: 0 !important;
-                border-color: green;
               }
             }
           }
