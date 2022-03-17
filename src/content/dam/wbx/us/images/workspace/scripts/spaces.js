@@ -339,6 +339,12 @@ const transitionRooms = (roomSelectorWrap)=> {
             element.classList.add(classnames.hidden);
         });
 
+        // hide all room-info buttons
+        const roomInfoButtons = Array.from(document.querySelectorAll(`.${classnames.roomInfoButton}`));
+        roomInfoButtons.forEach((element) => {
+            element.classList.add(classnames.hidden);
+        });
+
         //hide all show more rooms elements
         const showMoreRoomsElements = Array.from(document.querySelectorAll(`.${classnames.showMoreRoomsText}, .${classnames.showMoreRoomsBtn}`));
         showMoreRoomsElements.forEach((element) => {
@@ -354,10 +360,8 @@ const transitionRooms = (roomSelectorWrap)=> {
         //show relevant label
         const roomlabel = document.querySelector(`.${classnames.selectedRoomLabel}#${selectedWorkspaceId}-${selectedRoomId}-label`);
         roomlabel.classList.remove(classnames.hidden);
-
-        // Set room-info button link
-        const roomInfoButton = document.querySelector(`.${classnames.roomInfoButton}`)
-        roomInfoButton.href = `#/${selectedWorkspaceId}/${selectedRoomId}/info`;
+        const roomInfoButton = document.querySelector(`.${classnames.roomInfoButton}#${selectedWorkspaceId}-${selectedRoomId}-info-button`);
+        roomInfoButton.classList.remove(classnames.hidden);
 
         // hide room selector
         if (roomSelectorWrap) {
