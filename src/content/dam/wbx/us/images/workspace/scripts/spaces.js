@@ -309,7 +309,7 @@ const animateInHotSpots = () => {
     setTimeout(()=>{
         hotSpotsToShow.forEach((element, index) => {
             setTimeout(()=>{
-                if (!element.classList.contains('animated-out')) {
+                if (!element.classList.contains('animated-out') && element.classList.contains(`ws-hotSpot-${selectedWorkspaceId}-${selectedRoomId}`)) {
                     element.classList.add(classnames.animateIn);
                     element.tabIndex = 0;
                 }
