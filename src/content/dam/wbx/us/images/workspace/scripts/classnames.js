@@ -6,6 +6,7 @@ module.exports = {
 
     // Animations
     fadeOut: 'fadeOut',
+    fadeIn: 'fadeIn',
     slideIn: 'slide-in',
     reversed: 'reversed',
     animateIn: 'animate-in',

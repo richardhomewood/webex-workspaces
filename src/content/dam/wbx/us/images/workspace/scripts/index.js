@@ -45,14 +45,12 @@ commonData.orderedWorkspaceIds.forEach((workspaceId) => {
     const {rooms} = workspaces[workspaceId];
     rooms.forEach((room) => {
         router.add(makePath([workspaceId, room.slug]), () => {
-            modals.hideAll();
             toSelectedWorkSpace(workspaceId, room.slug);
             updateUi();
         });
 
         const roomInfoPath = makePath([workspaceId, room.slug, infoPathPart]);
         router.add(roomInfoPath, () => {
-            modals.hideAll();
             toSelectedWorkSpace(workspaceId, room.slug);
             updateUi();
             modals.showRoomInfo(roomInfoPath);
