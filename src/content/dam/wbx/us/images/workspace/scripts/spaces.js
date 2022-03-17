@@ -577,6 +577,8 @@ const updateWorkspaceCta = function () {
         // This is the end of the change for https://jira.akqa.net/browse/SWW-209.
 
         Array.from(aboutCtaElements).forEach((anchor) => {
+            // The following line also commented out for https://jira.akqa.net/browse/SWW-209.
+            // Uncomment it when this needs to link to category pages again.
             // anchor.href = href
             anchor.enabled = true
             anchor.style["opacity"] = 1
