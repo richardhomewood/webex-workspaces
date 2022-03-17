@@ -285,6 +285,7 @@ const transitionBGsHotSpots = () => {
         hotSpotsToHide.forEach((element)=>{
             element.classList.remove('animate-in')
             element.classList.add('animated-out')
+            element.tabIndex = -1;
         })
     }
 
@@ -310,6 +311,7 @@ const animateInHotSpots = () => {
             setTimeout(()=>{
                 if (!element.classList.contains('animated-out')) {
                     element.classList.add(classnames.animateIn);
+                    element.tabIndex = 0;
                 }
             }, 300 * index);
 
@@ -343,6 +345,7 @@ const transitionRooms = (roomSelectorWrap)=> {
         const roomInfoButtons = Array.from(document.querySelectorAll(`.${classnames.roomInfoButton}`));
         roomInfoButtons.forEach((element) => {
             element.classList.add(classnames.hidden);
+            element.tabIndex = -1;
         });
 
         //hide all show more rooms elements
@@ -355,6 +358,7 @@ const transitionRooms = (roomSelectorWrap)=> {
         const relevantShowMoreElements = Array.from(document.querySelectorAll(`.${classnames.showMoreRoomsText}#${classnames.showMoreRoomsText}-${selectedWorkspaceId}, .${classnames.showMoreRoomsBtn}#${classnames.showMoreRoomsBtn}-${selectedWorkspaceId}`));
         relevantShowMoreElements.forEach((element) => {
             element.classList.remove(classnames.hidden);
+            element.tabIndex = 0;
         })
 
         //show relevant label
@@ -433,6 +437,9 @@ const transitionRoomSelectors = (otherRoomSelectors, roomSelectorWrap, roomSelec
         if (roomSelectorWrap) {
             const roomSelectorWrapListener = () => {
                 roomSelector.classList.remove(classnames.hidden);
+                Array.from(roomSelector.getElementsByTagName('a')).forEach(anchor => {
+                    anchor.tabIndex = 0;
+                });
                 roomSelectorWrap.removeEventListener('animationend', roomSelectorWrapListener);
                 roomSelectorWrap.style["opacity"] = 0;
                 roomSelectorWrap.classList.remove(classnames.fadeOut);
@@ -450,6 +457,9 @@ const transitionRoomSelectors = (otherRoomSelectors, roomSelectorWrap, roomSelec
             roomSelectorWrap.addEventListener('animationend', roomSelectorWrapListener);
             otherRoomSelectors.forEach((element) => {
                 element.classList.add(classnames.hidden);
+                Array.from(element.getElementsByTagName('a')).forEach(anchor => {
+                    anchor.tabIndex = -1;
+                });
             });
             roomSelectorWrap.classList.add(classnames.fadeOut);
         }
@@ -546,6 +556,7 @@ const updateNav = function () {
 
         navLinks.forEach((element) => {
             element.classList.add("ws-disabled")
+            element.tabIndex = -1;
         })
 
         return
@@ -553,6 +564,7 @@ const updateNav = function () {
         navSelector.classList.remove(classnames.hidden);
         navLinks.forEach((element) => {
             element.classList.remove("ws-disabled")
+            element.tabIndex = 0;
         })
     }
 
@@ -584,14 +596,16 @@ const updateWorkspaceCta = function () {
             // The following line also commented out for https://jira.akqa.net/browse/SWW-209.
             // Uncomment it when this needs to link to category pages again.
             // anchor.href = href
-            anchor.enabled = true
-            anchor.style["opacity"] = 1
+            anchor.enabled = true;
+            anchor.style["opacity"] = 1;
+            anchor.tabIndex = 0;
         });
 
     } else {
         Array.from(aboutCtaElements).forEach((anchor) => {
-            anchor.enabled = false
-            anchor.style["opacity"] = 0
+            anchor.enabled = false;
+            anchor.style["opacity"] = 0;
+            anchor.tabIndex = -1;
         });
     }
 };
