@@ -70,7 +70,7 @@
 {% endmacro %}
 
 {% macro hotspot(workspaceId, roomSlug, hotSpotSlug, deviceName) %}
-  <a class="ws-hotSpot" href="#/{{workspaceId}}/{{roomSlug}}/hardware/{{hotSpotSlug}}" aria-label="{{ deviceName }}" tabindex="-1"><div class="ws-hotSpot-outer"></div><div class="ws-hotSpot-inner"></div></a>
+  <a class="ws-hotSpot ws-hotSpot-{{workspaceId}}-{{roomSlug}}" href="#/{{workspaceId}}/{{roomSlug}}/hardware/{{hotSpotSlug}}" aria-label="{{ deviceName }}" tabindex="-1"><div class="ws-hotSpot-outer"></div><div class="ws-hotSpot-inner"></div></a>
 {% endmacro %}
 
 {% macro roomSelections(workspace, room, common) %}
