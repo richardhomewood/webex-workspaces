@@ -1,5 +1,7 @@
 {
-  "initialViewText": "Turn any space into a productive workspace",
+  "initialViewText": [
+    "Turn any space into a",
+    "productive workspace"],
   "initialViewCtaText": "Explore",
   "aboutWorkspaceCtaText": "Contact Sales",
   "aboutWorkspaceCtaShortText": "Contact",
