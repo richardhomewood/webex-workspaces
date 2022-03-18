@@ -289,7 +289,11 @@ export function toSelectedWorkSpace(space, room) {
 const transitionBGsHotSpots = () => {
     const bgsToDisplay = getBgsToDisplay();
     const bgsToHide = getBgsToHide();
-    const hotSpotsToHide = getHotSpotsToHide()
+
+    const hotSpotsToShow = getHotSpotsToShow()
+    const hotSpotsToHide = getHotSpotsToHide().filter((element)=>{
+        return hotSpotsToShow.indexOf(element) == -1
+    })
 
     //fade out backgrounds that are going away
     bgsToHide.forEach((element) => {
@@ -301,6 +305,7 @@ const transitionBGsHotSpots = () => {
 
             //hide hotspots
             hotSpotsToHide.forEach((element)=>{
+                element.classList.add(classnames.hidden)
                 element.classList.remove('animate-in')
             })
         }
@@ -309,7 +314,20 @@ const transitionBGsHotSpots = () => {
     });
 
     if (bgsToHide.length == 0) {
-        hotSpotsToHide.forEach((element)=>{
+        hotSpotsToHide.forEach((element, index)=>{
+            const hslistener = () => {
+                hotSpotsToHide.forEach((element, index)=>{
+                    element.classList.add(classnames.hidden)
+                    if (index == hotSpotsToHide.lastIndex){
+                        element.removeEventListener('transitionend', hslistener)
+                    }
+                })
+            }
+
+            if (index == hotSpotsToHide.lastIndex){
+                element.addEventListener('transitionend', hslistener)
+            }
+    
             element.classList.remove('animate-in')
             element.classList.add('animated-out')
             element.tabIndex = -1;
@@ -340,12 +358,13 @@ const animateInHotSpots = () => {
             return
         }
         hotSpotsToShow.forEach((element, index) => {
+            element.classList.remove(classnames.hidden);
             setTimeout(()=>{
                 if (!element.classList.contains('animated-out') && element.classList.contains(`ws-hotSpot-${selectedWorkspaceId}-${selectedRoomId}`)) {
                     element.classList.add(classnames.animateIn);
                     element.tabIndex = 0;
                 }
-            }, 300 * index);
+            }, 300 * index+1);
 
             if (index == hotSpotsToShow.length - 1){
                 hotSpotsToHide.forEach((element)=> {
