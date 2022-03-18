@@ -617,8 +617,9 @@ $bg-body: grey;
               @include ws-h3-desktop;
             }
 
-            .ws-room-info-btn {
+            .ws-room-info-btn:not(.ws-displayNone) {
               margin-left: 20px;
+              top: -13px;
             }
           }
 
