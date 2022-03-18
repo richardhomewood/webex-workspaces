@@ -157,11 +157,11 @@ $list-items-border-color: #c4c4c4;
   .ws-device-modal-root:not(.ws-displayNone) {
     // Initially positioned off-screen
     top: 0;
-    transform: translateX(100vw);
+    transform: translateY(100vw);
     transition: transform 0.3s ease-out 0s;
 
     &.slide-in {
-      transform: translateX(0vw);
+      transform: translateY(0vw);
     }
 
     .ws-device {
@@ -191,7 +191,7 @@ $list-items-border-color: #c4c4c4;
 
         .swiper {
           display: block !important;
-          height: calc(100% * (690 / 768));
+          height: calc((100vw * (690 / 768)) - 40px);
           aspect-ratio: 1.2 / 1;
           .swiper-wrapper {
             .swiper-slide {
@@ -221,6 +221,7 @@ $list-items-border-color: #c4c4c4;
           display: inline-block;
           width: 50px;
           font-size: 12px;
+          margin-right: 23px;
         }
 
         .ws-carousel-button-prev {
