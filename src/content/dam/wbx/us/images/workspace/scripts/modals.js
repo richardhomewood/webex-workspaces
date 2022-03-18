@@ -154,16 +154,25 @@ const showDevice = path => {
     hideAll();
 
     // Initialize the Swiper container
-    carouselSwiper = new Swiper(`#swiper-${roomId}-${deviceId}-carousel .swiper`, {
+    const carouselContainer = document.querySelector(`#swiper-${roomId}-${deviceId}-carousel .swiper`)
+
+    carouselSwiper = new Swiper(carouselContainer, {
         modules: [Navigation],
         speed: 500,
         navigation: {
             nextEl: `#swiper-${roomId}-${deviceId}-carousel .ws-carousel-button-next`,
             prevEl: `#swiper-${roomId}-${deviceId}-carousel .ws-carousel-button-prev`,
         },
-    });
-    carouselSwiper.on('slideChange', function () {
-        activeSlideNumber.innerHTML = String(this.activeIndex + 1);
+        on: {
+            'slideChange': (swipe)=> {
+                activeSlideNumber.innerHTML = String(swipe.activeIndex + 1);
+            },
+            'afterInit': ()=> {
+                forceRedraw(carouselContainer);
+                forceRedraw(carouselContainer);
+            }
+
+        }
     });
 
     // Finally, slide in the device-modal root
@@ -171,7 +180,7 @@ const showDevice = path => {
 
         let transitionListener = ()=>{
             forceRedraw(activeModalRoot)
-
+            
             activeModalRoot.removeEventListener("transitionend", transitionListener)
         }
         activeModalRoot.addEventListener("transitionend", transitionListener)

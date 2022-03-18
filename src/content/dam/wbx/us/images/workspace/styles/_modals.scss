@@ -190,6 +190,8 @@ $list-items-border-color: #c4c4c4;
         width: 100%;
 
         .swiper {
+          display: block !important;
+          height: calc(100% * (690 / 768));
           aspect-ratio: 1.2 / 1;
           .swiper-wrapper {
             .swiper-slide {
@@ -521,7 +523,9 @@ $list-items-border-color: #c4c4c4;
         }
 
         .ws-image-carousel {
+          height: auto;
           .swiper {
+            height: calc(100% * (1.77 / 1));
             aspect-ratio: 1.77 / 1;
           }
         }
