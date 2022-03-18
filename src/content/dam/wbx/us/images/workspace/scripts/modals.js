@@ -164,12 +164,13 @@ const showDevice = path => {
             prevEl: `#swiper-${roomId}-${deviceId}-carousel .ws-carousel-button-prev`,
         },
         on: {
-            'slideChange': (swipe)=> {
-                activeSlideNumber.innerHTML = String(swipe.activeIndex + 1);
+            'slideChange': (swiper)=> {
+                activeSlideNumber.innerHTML = String(swiper.activeIndex + 1);
             },
-            'afterInit': ()=> {
+            'afterInit': (swiper)=> {
                 forceRedraw(carouselContainer);
                 forceRedraw(carouselContainer);
+                activeSlideNumber.innerHTML = String(swiper.activeIndex + 1);
             }
 
         }
