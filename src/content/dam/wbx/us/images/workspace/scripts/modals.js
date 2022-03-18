@@ -3,6 +3,7 @@ import 'swiper/scss';
 import 'swiper/scss/navigation';
 import classnames from './classnames';
 import {removeModalPaths, splitPath} from './paths';
+import {isIOS, isSafari} from "./utils";
 
 const slideInDelayMillis = 300;
 const deviceModalSubstring = '/hardware/';
@@ -113,23 +114,25 @@ const showModalContainerForRoom = (workspaceId, roomId) => {
     return activeModalsContainer;
 };
 
-var forceRedraw = function(element){
-    var isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
-    if (!element || !isSafari) { return; }
-    var n = document.createTextNode(' ');
-    var disp = element.style.display;  // don't worry about previous display style
+const forceRedraw = function(element, callBeforeRedrawn){
+    if (!element || !isSafari(navigator.userAgent)) { return; }
+    const tempNode = document.createTextNode(' ');
+    const originalDisplayStyle = element.style.display; // don't worry about previous display style
 
-    element.appendChild(n);
+    element.appendChild(tempNode);
     element.style.display = 'none';
 
     setTimeout(function(){
-        element.style.display = disp;
-        n.parentNode.removeChild(n);
+        if (callBeforeRedrawn) {
+            callBeforeRedrawn();
+        }
+        element.style.display = originalDisplayStyle;
+        tempNode.parentNode.removeChild(tempNode);
     },20); // you can play with this timeout to make it as short as possible
 }
 
 const showDevice = path => {
-    
+
     const [workspaceId, roomId, , deviceId] = splitPath(path);
 
     const modalsContainer = showModalContainerForRoom(workspaceId, roomId);
@@ -168,7 +171,13 @@ const showDevice = path => {
                 activeSlideNumber.innerHTML = String(swiper.activeIndex + 1);
             },
             'afterInit': (swiper)=> {
-                forceRedraw(carouselContainer);
+                const setCarouselHeight = () => {
+                    if (isIOS(navigator.userAgent)) {
+                        carouselContainer.style.height = '83vw';
+                        carouselContainer.style.width = '100%';
+                    }
+                };
+                forceRedraw(carouselContainer, setCarouselHeight);
                 forceRedraw(carouselContainer);
                 activeSlideNumber.innerHTML = String(swiper.activeIndex + 1);
             }
