@@ -14,3 +14,11 @@ export function currentSizeClass() {
 export function timeout(ms){
     return new Promise(resolve => setTimeout(resolve, ms));
 }
+
+export function isSafari(userAgent) {
+    return /^((?!chrome|android).)*safari/i.test(userAgent);
+}
+
+export function isIOS(userAgent) {
+    return /iPad|iPhone|iPod/.test(userAgent);
+}
