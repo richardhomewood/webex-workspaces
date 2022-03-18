@@ -531,6 +531,9 @@ $list-items-border-color: #c4c4c4;
             height: calc(100% * (1.77 / 1));
             aspect-ratio: 1.77 / 1;
           }
+          .ws-carousel-nav {
+            top: 6px;
+          }
         }
 
         .ws-modal-sections {
@@ -588,11 +591,6 @@ $list-items-border-color: #c4c4c4;
   #ws-modal-layer {
     .ws-device-modal-root:not(.ws-displayNone) {
       .ws-device {
-
-        .ws-carousel-nav {
-          top: 6px;
-        }
-
         .ws-device-features.ws-modal-section {
           ul {
             li {
