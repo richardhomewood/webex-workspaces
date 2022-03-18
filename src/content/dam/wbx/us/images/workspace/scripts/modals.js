@@ -113,6 +113,21 @@ const showModalContainerForRoom = (workspaceId, roomId) => {
     return activeModalsContainer;
 };
 
+var forceRedraw = function(element){
+    var isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
+    if (!element || !isSafari) { return; }
+    var n = document.createTextNode(' ');
+    var disp = element.style.display;  // don't worry about previous display style
+
+    element.appendChild(n);
+    element.style.display = 'none';
+
+    setTimeout(function(){
+        element.style.display = disp;
+        n.parentNode.removeChild(n);
+    },20); // you can play with this timeout to make it as short as possible
+}
+
 const showDevice = path => {
     
     const [workspaceId, roomId, , deviceId] = splitPath(path);
@@ -139,22 +154,41 @@ const showDevice = path => {
     hideAll();
 
     // Initialize the Swiper container
-    carouselSwiper = new Swiper(`#swiper-${roomId}-${deviceId}-carousel .swiper`, {
+    const carouselContainer = document.querySelector(`#swiper-${roomId}-${deviceId}-carousel .swiper`)
+
+    carouselSwiper = new Swiper(carouselContainer, {
         modules: [Navigation],
         speed: 500,
         navigation: {
             nextEl: `#swiper-${roomId}-${deviceId}-carousel .ws-carousel-button-next`,
             prevEl: `#swiper-${roomId}-${deviceId}-carousel .ws-carousel-button-prev`,
         },
-    });
-    carouselSwiper.on('slideChange', function () {
-        activeSlideNumber.innerHTML = String(this.activeIndex + 1);
+        on: {
+            'slideChange': (swipe)=> {
+                activeSlideNumber.innerHTML = String(swipe.activeIndex + 1);
+            },
+            'afterInit': ()=> {
+                forceRedraw(carouselContainer);
+                forceRedraw(carouselContainer);
+            }
+
+        }
     });
 
     // Finally, slide in the device-modal root
     setTimeout(() => {
+
+        let transitionListener = ()=>{
+            forceRedraw(activeModalRoot)
+            
+            activeModalRoot.removeEventListener("transitionend", transitionListener)
+        }
+        activeModalRoot.addEventListener("transitionend", transitionListener)
         activeModalRoot.classList.add(classnames.slideIn);
+
     }, slideInDelayMillis);
+
+    
 };
 
 const showRoomInfo = path => {
@@ -172,12 +206,23 @@ const showRoomInfo = path => {
         return node != activeModalRoot
     }); 
 
+
+    forceRedraw(modalsContainer)
+    forceRedraw(activeModalRoot)
+
+    setTimeout(()=>{
+        forceRedraw(modalsContainer)
+        forceRedraw(activeModalRoot)
+
+        setTimeout(() => {
+            activeModalRoot.classList.add(classnames.slideIn);
+        }, slideInDelayMillis);
+    },100)
+
     hideAll();
 
     // And slide it in
-    setTimeout(() => {
-        activeModalRoot.classList.add(classnames.slideIn);
-    }, slideInDelayMillis);
+    
 };
 
 export default {

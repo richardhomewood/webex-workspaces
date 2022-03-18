@@ -28,14 +28,12 @@
           {% endif %}
         {% endfor %}
       </div>
-
-      <div class="ws-carousel-nav">
+    </div>
+    <div class="ws-carousel-nav">
         <span class="ws-carousel-slide-numbers"><span class="ws-carousel-active-slide">1</span> of {{ items.length }}</span>
         <!-- If we need navigation buttons -->
         <div class="ws-carousel-button-prev">{% icon "prev-button", "", [34] %}</div>
         <div class="ws-carousel-button-next">{% icon "next-button", "", [34] %}</div>
       </div>
-
-    </div>
   </div>
 {% endmacro %}
