@@ -427,7 +427,6 @@ $bg-body: grey;
                 }
               }
 
-              &.selected,
               &:hover {
                 .ws-room-image {
                   border: solid 1px #fff;
@@ -578,10 +577,6 @@ $bg-body: grey;
                   box-sizing: border-box;
                   border-radius: 16px;
                   border: solid 3px transparent;
-
-                  &.selected {
-                    border: solid 3px #fff;
-                  }
                 }
 
                 &:hover {
@@ -610,19 +605,6 @@ $bg-body: grey;
   .ws-immersive-root {
     .ws-room-view {
       .ws-room-content {
-        .ws-workspaces-rooms {
-          .ws-workspaces {
-            .ws-workspace:not(.ws-displayNone) {
-              .ws-room-slide {
-                &.selected {
-                  .ws-room-image {
-                    border: solid 3px #fff;
-                  }
-                }
-              }
-            }
-          }
-        }
 
         .ws-more-rooms-text {
           .ws-room-label-info-btn-container {
@@ -635,8 +617,9 @@ $bg-body: grey;
               @include ws-h3-desktop;
             }
 
-            .ws-room-info-btn {
+            .ws-room-info-btn:not(.ws-displayNone) {
               margin-left: 20px;
+              top: -13px;
             }
           }
 

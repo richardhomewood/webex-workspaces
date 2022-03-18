@@ -41,7 +41,8 @@ $list-items-border-color: #c4c4c4;
   .ws-room-modals-container {
     width: 100%;
     height: 100%;
-    overflow: auto;
+    overflow-y: auto;
+    overflow-x: hidden;
   }
 
   .ws-modal-root:not(.ws-displayNone) {
@@ -156,11 +157,11 @@ $list-items-border-color: #c4c4c4;
   .ws-device-modal-root:not(.ws-displayNone) {
     // Initially positioned off-screen
     top: 0;
-    transform: translateY(100vh);
+    transform: translateX(100vw);
     transition: transform 0.3s ease-out 0s;
 
     &.slide-in {
-      transform: translateY(0vh);
+      transform: translateX(0vw);
     }
 
     .ws-device {

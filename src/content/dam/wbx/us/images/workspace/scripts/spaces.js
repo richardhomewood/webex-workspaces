@@ -398,6 +398,7 @@ const transitionRooms = (roomSelectorWrap)=> {
         roomlabel.classList.remove(classnames.hidden);
         const roomInfoButton = document.querySelector(`.${classnames.roomInfoButton}#${selectedWorkspaceId}-${selectedRoomId}-info-button`);
         roomInfoButton.classList.remove(classnames.hidden);
+        roomInfoButton.tabIndex = 0;
 
         // hide room selector
         if (roomSelectorWrap) {
