@@ -41,7 +41,8 @@ $list-items-border-color: #c4c4c4;
   .ws-room-modals-container {
     width: 100%;
     height: 100%;
-    overflow: auto;
+    overflow-y: auto;
+    overflow-x: hidden;
   }
 
   .ws-modal-root:not(.ws-displayNone) {
