@@ -210,9 +210,10 @@ $list-items-border-color: #c4c4c4;
 
       .ws-carousel-nav {
         z-index: 1;
-        position: absolute;
-        right: 20px;
-        bottom: 12px;
+        position: relative;
+        right: 0;
+        top: -20px;
+        text-align: right;
 
         .ws-carousel-slide-numbers {
           display: inline-block;
