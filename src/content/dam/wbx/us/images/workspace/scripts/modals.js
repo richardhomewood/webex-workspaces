@@ -115,9 +115,7 @@ const showModalContainerForRoom = (workspaceId, roomId) => {
 
 var forceRedraw = function(element){
     var isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
-    
     if (!element || !isSafari) { return; }
-
     var n = document.createTextNode(' ');
     var disp = element.style.display;  // don't worry about previous display style
 
@@ -172,13 +170,7 @@ const showDevice = path => {
     setTimeout(() => {
 
         let transitionListener = ()=>{
-            //forceRedraw(deviceContainer)
-            deviceContainer.style["background-color"] = "#fff";
             forceRedraw(activeModalRoot)
-
-            setTimeout(()=>{
-                //deviceContainer.style["background-color"] = transparent;
-            },100)
 
             activeModalRoot.removeEventListener("transitionend", transitionListener)
         }
