@@ -219,10 +219,14 @@ const showDevice = path => {
 
     // Finally, slide in the device-modal root
     setTimeout(() => {
-        activeModalRoot.style.overflowY = 'hidden'; // TODO - Added here to avoid changing shared forceRedraw function
+        if (isSafari(navigator.userAgent)) {
+            activeModalRoot.style.overflowY = 'hidden'; // TODO - Added here to avoid changing shared forceRedraw function
+        }
         let transitionListener = ()=>{
             // forceRedraw(activeModalRoot) // Currently causing flickering
-            activeModalRoot.style.overflowY = ''; // TODO - Added here to avoid changing shared forceRedraw function
+            if (isSafari(navigator.userAgent)) {
+                activeModalRoot.style.overflowY = ''; // TODO - Added here to avoid changing shared forceRedraw function
+            }
             setActive(false);
             activeModalRoot.removeEventListener("transitionend", transitionListener)
         }
