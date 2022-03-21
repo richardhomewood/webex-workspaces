@@ -21,6 +21,10 @@ commonData.orderedWorkspaceIds.forEach((space) => {
 
 const setWorkSpaceAndRoomIds = (w, r) => {
     selectedWorkspaceId = w
+
+    if (selectedRoomId != r) {
+        destroyHammer();
+    }
     selectedRoomId = r
 }
 
@@ -238,8 +242,6 @@ export function toSelectedWorkSpace(space, room) {
     const otherRoomSelectors = getOtherRoomSelectors();
     const roomSelectorWrap = getRoomSelectorWrapper();
 
-    destroyHammer();
-
     let roombgs = Array.from(document.querySelectorAll(`.${classnames.roomBackground}`));
     if (room) {
         selectedRoomId = room;
@@ -379,12 +381,7 @@ const transitionRooms = (roomSelectorWrap)=> {
     //if moving from workspace landing to selected room
     const roomContent = document.querySelector(`.${classnames.selectedRoomContent}`)
     if (selectedRoomId) {
-        panOffset = {
-            x:0,
-            previousX:0,
-            y:0,
-            previousY:0
-        };
+        
         //hide all room labels
 
         const roomLabels = Array.from(document.querySelectorAll(`.${classnames.selectedRoomLabel}:not(.ws-room-selector-label)`))
@@ -562,13 +559,13 @@ const destroyHammer = ()=>{
     if (hammertime){
         hammertime.destroy();
         hammertime = null;
-        panOffset = {
-            x:0,
-            previousX:0,
-            y:0,
-            previousY:0
-        };
     }
+    panOffset = {
+        x:0,
+        previousX:0,
+        y:0,
+        previousY:0
+    };
 }
 
 const setupHammer = () => {
