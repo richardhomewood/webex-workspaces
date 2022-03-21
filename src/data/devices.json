@@ -543,24 +543,12 @@
     "description": "Meet the picture-perfect webcam powering video conferencing at the hot desk.",
     "carouselItems": [
       {
-        "filename": "ST01_Desk_Camera_comp_v020_WHITE_180ROTATION_H264.mp4",
-        "alt": "Animation of the Webex Desk Camera in platinum. A 180 view of the camera, displaying the front and sides. Privacy shutter is open and the camera is on."
+        "filename": "DeskCamera_firstimage.jpg",
+        "alt": "Three-quarters view of the Webex Desk Camera."
       },
       {
-        "filename": "ST01_Desk_Camera_front.jpg",
-        "alt": "Front view of the Webex Desk Camera in platinum."
-      },
-      {
-        "filename": "ST01_Desk_Camera_back.jpg",
-        "alt": "Back view of the Webex Desk Camera in platinum."
-      },
-      {
-        "filename": "ST01_Desk_Camera_extra.jpg",
-        "alt": "Side view of the Webex Desk Camera in platinum."
-      },
-      {
-        "filename": "ST01_Desk_Camera_mid.jpg",
-        "alt": "Three-quarters view of the Webex Desk Camera in platinum."
+        "filename": "DeskCamera_secondimage.jpg",
+        "alt": "Front view of the Webex Desk Camera."
       }
     ],
     "featuresTitle": "Features",

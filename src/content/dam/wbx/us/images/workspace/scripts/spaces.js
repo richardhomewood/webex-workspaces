@@ -20,8 +20,20 @@ commonData.orderedWorkspaceIds.forEach((space) => {
 // Setters 
 
 const setWorkSpaceAndRoomIds = (w, r) => {
-    selectedWorkspaceId = w
-    selectedRoomId = r
+
+    let update = false
+    if (selectedWorkspaceId != w){
+        selectedWorkspaceId = w;
+        update = true;
+    }
+    
+    if (selectedRoomId != r) {
+        destroyHammer();
+        selectedRoomId = r
+        update = true;
+    }
+
+    return update;
 }
 
 const setSwiperAnimationViewed = () => {
@@ -169,6 +181,7 @@ const getRoomSelectorOptions = async () => {
 
     return options;
 }
+
 let firstRun = true;
 export function updateUi(delay = 200) {
     const currentWorkspaceid = selectedWorkspaceId
@@ -230,15 +243,16 @@ export function backToHome() {
 
 export function toSelectedWorkSpace(space, room) {
 
-    setWorkSpaceAndRoomIds(space, room)
+    const update = setWorkSpaceAndRoomIds(space, room);
+    if(!update) {
+        return;
+    }
 
     const initview = getInitView();
     const spacesview = getSpacesView();
     const roomSelector = getRoomSelectorContainer();
     const otherRoomSelectors = getOtherRoomSelectors();
     const roomSelectorWrap = getRoomSelectorWrapper();
-
-    destroyHammer();
 
     let roombgs = Array.from(document.querySelectorAll(`.${classnames.roomBackground}`));
     if (room) {
@@ -379,12 +393,7 @@ const transitionRooms = (roomSelectorWrap)=> {
     //if moving from workspace landing to selected room
     const roomContent = document.querySelector(`.${classnames.selectedRoomContent}`)
     if (selectedRoomId) {
-        panOffset = {
-            x:0,
-            previousX:0,
-            y:0,
-            previousY:0
-        };
+        
         //hide all room labels
 
         const roomLabels = Array.from(document.querySelectorAll(`.${classnames.selectedRoomLabel}:not(.ws-room-selector-label)`))
@@ -562,13 +571,13 @@ const destroyHammer = ()=>{
     if (hammertime){
         hammertime.destroy();
         hammertime = null;
-        panOffset = {
-            x:0,
-            previousX:0,
-            y:0,
-            previousY:0
-        };
     }
+    panOffset = {
+        x:0,
+        previousX:0,
+        y:0,
+        previousY:0
+    };
 }
 
 const setupHammer = () => {
@@ -839,21 +848,6 @@ const updateBGSizes = () => {
 
                 bgImg.classList.add("ws-sized")
 
-                if (selectedRoomId){
-                    if(!getSwiperAnimationViewed() && (setImageWidth > windowWidth || setImageHeight > windowHeight)){
-                        const swiperAnimationView = document.getElementById('ws-swiper-indicator-animation');
-                        swiperAnimationView.classList.remove(classnames.hidden)
-                        swiperAnimationView.onclick = ()=>{
-
-                            swiperAnimationView.classList.add(classnames.hidden)
-                            setSwiperAnimationViewed();
-                            animateInHotSpots()
-                        }
-                    } else{
-                        animateInHotSpots()
-                    }
-                }
-
                 maxXPanOffset = (-(windowWidth - setImageWidth) / 2) - Math.abs(initialOffset);
                 minXPanOffset = ((windowWidth - setImageWidth) / 2) - Math.abs(initialOffset);
 
@@ -875,7 +869,9 @@ const updateBGSizes = () => {
                 defaultBgImg.style["transform"] = newTransform;
 
                 setTimeout(() => {
-                    placeHotSpots({clientWidth: setImageWidth, clientHeight: setImageHeight}, room, bgContainerClass, {x: xOffset, y: yOffset});
+                    const placedHotSpots = placeHotSpots({clientWidth: setImageWidth, clientHeight: setImageHeight}, room, bgContainerClass, {x: xOffset, y: yOffset});
+                    showSwiperAnimationOrHotspots(placedHotSpots);
+
                     hasUpdatedBGs = true
                 }, !hasUpdatedBGs ? 500 : 0);
             }
@@ -907,6 +903,40 @@ const updateBGSizes = () => {
         defaultBgImgs.forEach((element) => {
             element.style["height"] = "";
         })
+    }
+}
+
+const showSwiperAnimationOrHotspots = (placedHotSpots) => {
+
+    if (selectedRoomId){
+        if(!getSwiperAnimationViewed()) {
+
+            let areHotSpotsInView = true; 
+            const windowWidth = window.innerWidth;
+            const windowHeight = window.innerHeight;
+
+            placedHotSpots.forEach((hotspot) => {
+                let {top, left, bottom, right} = hotspot.getBoundingClientRect();
+                if(top < 0 || left < 0 || bottom > windowHeight || right > windowWidth) {
+                    areHotSpotsInView = false;
+                }
+            })
+
+            if(!areHotSpotsInView) {
+                const swiperAnimationView = document.getElementById('ws-swiper-indicator-animation');
+                swiperAnimationView.classList.remove(classnames.hidden)
+                swiperAnimationView.onclick = ()=>{
+                    swiperAnimationView.classList.add(classnames.hidden)
+                    setSwiperAnimationViewed();
+                    animateInHotSpots()
+                }
+            } else{
+                animateInHotSpots()
+            }
+            
+        } else{
+            animateInHotSpots()
+        }
     }
 }
 
@@ -949,6 +979,8 @@ const placeHotSpots = (bgImg, room, bgContainerClass, offset) => {
         hotspot.style["opacity"] = 1;
         hotspot.style["transform"] = `translate(calc(-50% + ${(hOffset + offset.x)}px), calc(-50% + ${(yOffset + offset.y)}px))`;
     })
+
+    return hotspots;
 }
 
 export function closeIfClickedOutsideRoomSelector(event) {

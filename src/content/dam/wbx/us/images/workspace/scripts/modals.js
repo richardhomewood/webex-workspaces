@@ -12,9 +12,21 @@ const mainModalLayer = document.getElementById(classnames.modalLayerId)
 
 let carouselSwiper;
 
+let active = false;
+
+const setActive = (v) => {
+    active = v
+
+    if (!active && postActive) {
+        postActive()
+        postActive = null
+    }
+}
+
+let postActive;
 const closeIfClickedOutsideOpenModal = event => {
     const openModal = document.querySelector(`.${classnames.anyModalRoot}:not(.${classnames.hidden})`);
-    if (openModal) {
+    if (openModal && !active) {
         if (!openModal.contains(event.target)) {
             if (document.URL.indexOf(deviceModalSubstring) >= 0 || document.URL.endsWith(roomInfoModalSuffix)) {
                 const roomPath = removeModalPaths(location.hash);
@@ -40,7 +52,14 @@ const enableCloseButtons = () => {
 };
 
 const hideAll = () => {
-
+    let handleActive = false;
+    let handleActiveAfterHide = false;
+    if (!active){
+        setActive(true);
+        handleActive = true
+    }
+    
+    
     if(!mainModalLayer.classList.contains("incoming")){
         setTimeout(() => {
             mainModalLayer.classList.add(classnames.fadeOut);
@@ -50,11 +69,15 @@ const hideAll = () => {
             mainModalLayer.classList.add(classnames.hidden);
             mainModalLayer.classList.remove(classnames.fadeOut);
             mainModalLayer.classList.remove(classnames.fadeIn);
+            if (handleActive){
+                setActive(false);
+            }
         }, 650)
 
         inactiveModalsContainers = Array.from(document.querySelectorAll(`.${classnames.roomInfoModalRoot}, .${classnames.deviceModalRoot}`));
 
     } else{
+        handleActiveAfterHide = true
         mainModalLayer.classList.remove("incoming");
     }
 
@@ -75,6 +98,9 @@ const hideAll = () => {
                     element.classList.remove("incoming")
                 }
             });
+            if (handleActiveAfterHide && handleActive) {
+                setActive(false);
+            }
         }, 350)
     });
 
@@ -133,6 +159,12 @@ const forceRedraw = function(element, callBeforeRedrawn){
 
 const showDevice = path => {
 
+    if (active) {
+        postActive = ()=>{showDevice(path)}
+        return
+    }
+
+    setActive(true);
     const [workspaceId, roomId, , deviceId] = splitPath(path);
 
     const modalsContainer = showModalContainerForRoom(workspaceId, roomId);
@@ -168,7 +200,7 @@ const showDevice = path => {
         },
         on: {
             'slideChange': (swiper)=> {
-                activeSlideNumber.innerHTML = String(swiper.activeIndex + 1);
+                activeSlideNumber.innerText = String(swiper.activeIndex + 1);
             },
             'afterInit': (swiper)=> {
                 const setCarouselHeight = () => {
@@ -190,19 +222,24 @@ const showDevice = path => {
 
         let transitionListener = ()=>{
             forceRedraw(activeModalRoot)
-            
+            setActive(false);
             activeModalRoot.removeEventListener("transitionend", transitionListener)
         }
         activeModalRoot.addEventListener("transitionend", transitionListener)
         activeModalRoot.classList.add(classnames.slideIn);
 
     }, slideInDelayMillis);
-
-    
 };
 
 const showRoomInfo = path => {
     
+    if (active) {
+        postActive = ()=>{showRoomInfo(path)}
+        return
+    }
+
+    setActive(true);
+
     const [workspaceId, roomId,] = splitPath(path);
 
     const modalsContainer = showModalContainerForRoom(workspaceId, roomId);
@@ -228,7 +265,8 @@ const showRoomInfo = path => {
             activeModalRoot.classList.add(classnames.slideIn);
         }, slideInDelayMillis);
     },100)
-
+    
+    setActive(false);
     hideAll();
 
     // And slide it in
