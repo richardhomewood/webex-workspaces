@@ -20,12 +20,20 @@ commonData.orderedWorkspaceIds.forEach((space) => {
 // Setters 
 
 const setWorkSpaceAndRoomIds = (w, r) => {
-    selectedWorkspaceId = w
 
+    let update = false
+    if (selectedWorkspaceId != w){
+        selectedWorkspaceId = w;
+        update = true;
+    }
+    
     if (selectedRoomId != r) {
         destroyHammer();
+        selectedRoomId = r
+        update = true;
     }
-    selectedRoomId = r
+
+    return update;
 }
 
 const setSwiperAnimationViewed = () => {
@@ -235,7 +243,10 @@ export function backToHome() {
 
 export function toSelectedWorkSpace(space, room) {
 
-    setWorkSpaceAndRoomIds(space, room)
+    const update = setWorkSpaceAndRoomIds(space, room);
+    if(!update) {
+        return;
+    }
 
     const initview = getInitView();
     const spacesview = getSpacesView();
