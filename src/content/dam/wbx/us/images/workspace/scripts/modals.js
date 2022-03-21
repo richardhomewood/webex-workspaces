@@ -168,7 +168,7 @@ const showDevice = path => {
         },
         on: {
             'slideChange': (swiper)=> {
-                activeSlideNumber.innerHTML = String(swiper.activeIndex + 1);
+                activeSlideNumber.innerText = String(swiper.activeIndex + 1);
             },
             'afterInit': (swiper)=> {
                 const setCarouselHeight = () => {
