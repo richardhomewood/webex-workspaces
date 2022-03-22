@@ -868,7 +868,7 @@ const updateBGSizes = () => {
                 const xOffset = initialOffset;
                 const yOffset = 0;
 
-                const newTransform = `translate(calc(-50% + ${xOffset}px), -50% + ${yOffset}px)`;
+                const newTransform = `translate(calc(-50% + ${xOffset}px), calc(-50% + ${yOffset}px))`;
 
                 bgImg.style["transform"] = newTransform;
                 defaultBgImg.style["transform"] = newTransform;
