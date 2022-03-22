@@ -76,13 +76,13 @@
         "background": "kitchen.jpg",
         "backgroundPosition": {
           "ws-XS": {
-            "x": 0.139
+            "x": 0.0695
           },
           "ws-S": {
-            "x": 0.05355
+            "x": 0.026775
           },
           "ws-M": {
-            "x": 0.1161
+            "x": 0
           },
           "ws-L": {
             "x": 0
@@ -206,7 +206,7 @@
         "background": "smallmeeting.jpg",
         "backgroundPosition": {
           "ws-XS": {
-            "x": 0.1207
+            "x": 0.06035
           },
           "ws-S": {
             "x": 0.03366
