@@ -868,16 +868,13 @@ const updateBGSizes = () => {
 
                 const newTransform = `translate(calc(-50% + ${xOffset}px), calc(-50% + ${yOffset}px))`;
                 const bgWrapperTransform = `translate(calc(-50% + ${panOffsetX + initialOffset}px), calc(-50% + ${panOffsetY}px))`;
-                
+            
                 bgImgWrapper.style["height"] = `${setImageHeight}px`;
                 bgImgWrapper.style["width"] = `${setImageWidth}px`;
-                bgImg.style["height"] = '100%';
-                bgImg.style["width"] = '100%';
-
-                bgImg.style["transform"] = newTransform;
-                defaultBgImg.style["transform"] = newTransform;
 
                 bgImgWrapper.style["transform"] = bgWrapperTransform;
+                bgImg.style["transform"] = newTransform;
+                defaultBgImg.style["transform"] = newTransform;
 
                 setTimeout(() => {
                     const placedHotSpots = placeHotSpots({clientWidth: setImageWidth, clientHeight: setImageHeight}, room, bgContainerClass, {x: panOffsetX + (initialOffset * 2), y: panOffsetY});
