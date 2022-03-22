@@ -152,10 +152,9 @@ $bg-body: grey;
 
           picture {
             position: absolute;
-            top: 0;
-            left: 0;
-            bottom: 0;
-            right: 0;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
 
             &::after {
               position: absolute;
@@ -197,7 +196,7 @@ $bg-body: grey;
           transform: translate(-50%, -50%);
           width: 32px;
           height: 32px;
-          transition: transform 0.5s ease-out 0s, opacity 0.1s ease-out 0.6s;
+          transition: opacity 0.1s ease-out 0.6s;
           overflow: visible;
           opacity: 0;
           z-index: 3;
@@ -605,7 +604,6 @@ $bg-body: grey;
   .ws-immersive-root {
     .ws-room-view {
       .ws-room-content {
-
         .ws-more-rooms-text {
           .ws-room-label-info-btn-container {
             display: flex;

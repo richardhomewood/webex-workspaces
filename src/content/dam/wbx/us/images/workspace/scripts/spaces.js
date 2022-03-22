@@ -825,11 +825,12 @@ const updateBGSizes = () => {
             const bgClass = `${bgContainerClass} img`;
             const bgImg = document.querySelector(bgClass);
             if (bgImg) {
+                const bgImgWrapper = bgImg.closest("picture");
                 const backgroundPos = room.backgroundPosition[sizeClass];
-                const imgWidth = bgImg.clientWidth;
-                const imgHeight = bgImg.clientHeight;
+                const imgWidth = 1920;
+                const imgHeight = 1080;
 
-                const projectedImgWidth = (windowHeight * 192) / 108;
+                const projectedImgWidth = (windowHeight * imgWidth) / imgHeight;
                 const initialOffset = (imgWidth * backgroundPos.x);
 
                 let setImageHeight, setImageWidth;
@@ -840,10 +841,14 @@ const updateBGSizes = () => {
                     newImageHeight = newImageHeight < windowHeight ? windowHeight : newImageHeight;
                     bgImg.style["height"] = `${newImageHeight}px`;
                     setImageHeight = newImageHeight;
+                    bgImgWrapper.style["height"] = `${setImageHeight}px`;
+                    bgImgWrapper.style["width"] = `${setImageWidth}px`;
                 } else{
                     bgImg.style["height"] = ""
                     setImageHeight = windowHeight;
                     setImageWidth = projectedImgWidth;
+                    bgImgWrapper.style["height"] = `${setImageHeight}px`;
+                    bgImgWrapper.style["width"] = `${setImageWidth}px`;
                 }
 
                 bgImg.classList.add("ws-sized")
@@ -860,16 +865,19 @@ const updateBGSizes = () => {
                 const scaledPanOffsetY = (panOffset.y * setImageHeight)/windowHeight;
                 const panOffsetY = panOffset.y === 0 ? 0 : scaledPanOffsetY > maxYPanOffset ? maxYPanOffset : scaledPanOffsetY < minYPanOffset ? minYPanOffset : scaledPanOffsetY ;
 
-                const xOffset = initialOffset + panOffsetX;
-                const yOffset = panOffsetY;
+                const xOffset = initialOffset;
+                const yOffset = 0;
 
-                const newTransform = `translate(calc(-50% + ${xOffset}px), calc(-50% + ${yOffset}px))`;
+                const newTransform = `translate(calc(-50% + ${xOffset}px), -50% + ${yOffset}px)`;
 
                 bgImg.style["transform"] = newTransform;
                 defaultBgImg.style["transform"] = newTransform;
 
+                const bgWrapperTransform = `translate(calc(-50% + ${panOffsetX + initialOffset}px), calc(-50% + ${panOffsetY}px))`;
+                bgImgWrapper.style["transform"] = bgWrapperTransform;
+
                 setTimeout(() => {
-                    const placedHotSpots = placeHotSpots({clientWidth: setImageWidth, clientHeight: setImageHeight}, room, bgContainerClass, {x: xOffset, y: yOffset});
+                    const placedHotSpots = placeHotSpots({clientWidth: setImageWidth, clientHeight: setImageHeight}, room, bgContainerClass, {x: panOffsetX + initialOffset, y: panOffsetY});
                     showSwiperAnimationOrHotspots(placedHotSpots);
 
                     hasUpdatedBGs = true
