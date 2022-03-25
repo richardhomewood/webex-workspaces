@@ -215,18 +215,7 @@ $modal-transform-transition: transform 0.65s
       }
 
       .ws-carousel-nav {
-        z-index: 1;
-        position: relative;
-        right: 0;
-        top: -20px;
-        text-align: right;
-
-        .ws-carousel-slide-numbers {
-          display: inline-block;
-          width: 50px;
-          font-size: 12px;
-          margin-right: 23px;
-        }
+        text-align: center;
 
         .ws-carousel-button-prev {
           margin-right: 6px;
@@ -541,7 +530,7 @@ $modal-transform-transition: transform 0.65s
             aspect-ratio: 1.77 / 1;
           }
           .ws-carousel-nav {
-            top: 6px;
+            margin-top: 6px;
           }
         }
 
