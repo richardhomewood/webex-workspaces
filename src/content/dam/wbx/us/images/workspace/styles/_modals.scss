@@ -1,4 +1,6 @@
 $list-items-border-color: #c4c4c4;
+$modal-transform-transition: transform 0.65s
+  cubic-bezier(0.403, 0.172, 0, 0.968) 0s;
 
 // All recursive children of the #ws-modal-layer
 #ws-modal-layer:before,
@@ -88,7 +90,7 @@ $list-items-border-color: #c4c4c4;
   .ws-room-info-modal-root:not(.ws-displayNone) {
     min-height: 100vh;
     transform: translateX(100vw);
-    transition: transform 0.3s ease-out 0s;
+    transition: $modal-transform-transition;
 
     &.slide-in {
       transform: translateX(0vw);
@@ -158,7 +160,7 @@ $list-items-border-color: #c4c4c4;
     // Initially positioned off-screen
     top: 0;
     transform: translateY(100vh);
-    transition: transform 0.3s ease-out 0s;
+    transition: $modal-transform-transition;
 
     &.slide-in {
       transform: translateY(0vh);
@@ -513,6 +515,12 @@ $list-items-border-color: #c4c4c4;
     }
 
     .ws-device-modal-root:not(.ws-displayNone) {
+      min-height: 100vh;
+      transform: translate(100vw, 0);
+      &.slide-in {
+        transform: translate(0vw, 0);
+      }
+
       .ws-device {
         .ws-device-name {
           margin-top: 69px;
