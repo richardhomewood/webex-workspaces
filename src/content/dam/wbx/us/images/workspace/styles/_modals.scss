@@ -340,6 +340,13 @@ $modal-transform-transition: transform 0.65s
   #ws-modal-layer {
     .ws-device-modal-root:not(.ws-displayNone) {
       .ws-device {
+        .ws-image-carousel {
+          .ws-carousel-nav {
+            .ws-carousel-slide-numbers {
+              display: none;
+            }
+          }
+        }
         .ws-device-specs.ws-modal-section {
           ul {
             // Make sure we only have room for 2 per row.
@@ -395,6 +402,14 @@ $modal-transform-transition: transform 0.65s
       .ws-device {
         .ws-device-name {
           margin-top: 80px;
+        }
+
+        .ws-image-carousel {
+          .ws-carousel-nav {
+            .ws-carousel-slide-numbers {
+              display: none;
+            }
+          }
         }
 
         .ws-device-features.ws-modal-section {
@@ -531,6 +546,10 @@ $modal-transform-transition: transform 0.65s
           }
           .ws-carousel-nav {
             margin-top: 6px;
+            text-align: right;
+            .ws-carousel-slide-numbers {
+              margin-right: 20px;
+            }
           }
         }
 
