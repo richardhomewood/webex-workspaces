@@ -141,20 +141,15 @@ const showModalContainerForRoom = (workspaceId, roomId) => {
 };
 
 const forceRedraw = function(element, callBeforeRedrawn){
+    
     if (!element || !isSafari(navigator.userAgent)) { return; }
-    const tempNode = document.createTextNode(' ');
-    const originalDisplayStyle = element.style.display; // don't worry about previous display style
+    
+    if (callBeforeRedrawn) {
+        callBeforeRedrawn();
+    }
 
-    element.appendChild(tempNode);
-    element.style.display = 'none';
-
-    setTimeout(function(){
-        if (callBeforeRedrawn) {
-            callBeforeRedrawn();
-        }
-        element.style.display = originalDisplayStyle;
-        tempNode.parentNode.removeChild(tempNode);
-    },20); // you can play with this timeout to make it as short as possible
+    let scrollH = element.scrollHeight;
+    let scrollW = element.scrollWidth
 }
 
 const showDevice = path => {
@@ -199,9 +194,6 @@ const showDevice = path => {
             prevEl: `#swiper-${roomId}-${deviceId}-carousel .ws-carousel-button-prev`,
         },
         on: {
-            'slideChange': (swiper)=> {
-                activeSlideNumber.innerText = String(swiper.activeIndex + 1);
-            },
             'afterInit': (swiper)=> {
                 const setCarouselHeight = () => {
                     if (isIOS(navigator.userAgent)) {
@@ -211,7 +203,6 @@ const showDevice = path => {
                 };
                 forceRedraw(carouselContainer, setCarouselHeight);
                 forceRedraw(carouselContainer);
-                activeSlideNumber.innerHTML = String(swiper.activeIndex + 1);
             }
 
         }

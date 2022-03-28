@@ -1,4 +1,6 @@
 $list-items-border-color: #c4c4c4;
+$modal-transform-transition: transform 0.65s
+  cubic-bezier(0.403, 0.172, 0, 0.968) 0s;
 
 // All recursive children of the #ws-modal-layer
 #ws-modal-layer:before,
@@ -88,7 +90,7 @@ $list-items-border-color: #c4c4c4;
   .ws-room-info-modal-root:not(.ws-displayNone) {
     min-height: 100vh;
     transform: translateX(100vw);
-    transition: transform 0.3s ease-out 0s;
+    transition: $modal-transform-transition;
 
     &.slide-in {
       transform: translateX(0vw);
@@ -157,11 +159,11 @@ $list-items-border-color: #c4c4c4;
   .ws-device-modal-root:not(.ws-displayNone) {
     // Initially positioned off-screen
     top: 0;
-    transform: translateY(100vw);
-    transition: transform 0.3s ease-out 0s;
+    transform: translateY(100vh);
+    transition: $modal-transform-transition;
 
     &.slide-in {
-      transform: translateY(0vw);
+      transform: translateY(0vh);
     }
 
     .ws-device {
@@ -205,25 +207,15 @@ $list-items-border-color: #c4c4c4;
                 max-height: 100%;
                 position: relative;
                 top: 50%;
-                transform: translateY(-50%);              }
+                transform: translateY(-50%);
+              }
             }
           }
         }
       }
 
       .ws-carousel-nav {
-        z-index: 1;
-        position: relative;
-        right: 0;
-        top: -20px;
-        text-align: right;
-
-        .ws-carousel-slide-numbers {
-          display: inline-block;
-          width: 50px;
-          font-size: 12px;
-          margin-right: 23px;
-        }
+        text-align: center;
 
         .ws-carousel-button-prev {
           margin-right: 6px;
@@ -512,6 +504,12 @@ $list-items-border-color: #c4c4c4;
     }
 
     .ws-device-modal-root:not(.ws-displayNone) {
+      min-height: 100vh;
+      transform: translate(100vw, 0);
+      &.slide-in {
+        transform: translate(0vw, 0);
+      }
+
       .ws-device {
         .ws-device-name {
           margin-top: 69px;
@@ -532,7 +530,7 @@ $list-items-border-color: #c4c4c4;
             aspect-ratio: 1.77 / 1;
           }
           .ws-carousel-nav {
-            top: 6px;
+            margin-top: 6px;
           }
         }
 

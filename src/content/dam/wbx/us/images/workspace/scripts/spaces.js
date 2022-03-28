@@ -825,11 +825,12 @@ const updateBGSizes = () => {
             const bgClass = `${bgContainerClass} img`;
             const bgImg = document.querySelector(bgClass);
             if (bgImg) {
+                const bgImgWrapper = bgImg.closest("picture");
                 const backgroundPos = room.backgroundPosition[sizeClass];
-                const imgWidth = bgImg.clientWidth;
-                const imgHeight = bgImg.clientHeight;
+                const imgWidth = 1920;
+                const imgHeight = 1080;
 
-                const projectedImgWidth = (windowHeight * 192) / 108;
+                const projectedImgWidth = (windowHeight * imgWidth) / imgHeight;
                 const initialOffset = (imgWidth * backgroundPos.x);
 
                 let setImageHeight, setImageWidth;
@@ -838,38 +839,45 @@ const updateBGSizes = () => {
                     setImageWidth = windowWidth + (initialOffset * 2);
                     let newImageHeight = (setImageWidth * imgHeight) / imgWidth;
                     newImageHeight = newImageHeight < windowHeight ? windowHeight : newImageHeight;
-                    bgImg.style["height"] = `${newImageHeight}px`;
                     setImageHeight = newImageHeight;
+                    
                 } else{
-                    bgImg.style["height"] = ""
-                    setImageHeight = windowHeight;
-                    setImageWidth = projectedImgWidth;
+                    setImageWidth = projectedImgWidth + (initialOffset * 2);
+
+                    let newImageHeight = (setImageWidth * imgHeight) / imgWidth;
+                    newImageHeight = newImageHeight < windowHeight ? windowHeight : newImageHeight;
+                    setImageHeight = newImageHeight;
                 }
 
                 bgImg.classList.add("ws-sized")
 
-                maxXPanOffset = (-(windowWidth - setImageWidth) / 2) - Math.abs(initialOffset);
-                minXPanOffset = ((windowWidth - setImageWidth) / 2) - Math.abs(initialOffset);
+                maxXPanOffset = (-(windowWidth - setImageWidth) / 2) - Math.abs(initialOffset * 2);
+                minXPanOffset = ((windowWidth - setImageWidth) / 2) - Math.abs(initialOffset * 2);
 
-                maxYPanOffset = (-(setImageHeight - windowHeight) / 2);
-                minYPanOffset = ((setImageHeight - windowHeight) / 2);
+                maxYPanOffset = (-(windowHeight - setImageHeight) / 2);
+                minYPanOffset = ((windowHeight - setImageHeight) / 2);
 
                 const scaledPanOffsetX = (panOffset.x * setImageWidth)/windowWidth;
                 const panOffsetX = scaledPanOffsetX > maxXPanOffset ? maxXPanOffset : scaledPanOffsetX < minXPanOffset ? minXPanOffset : scaledPanOffsetX;
 
                 const scaledPanOffsetY = (panOffset.y * setImageHeight)/windowHeight;
-                const panOffsetY = panOffset.y === 0 ? 0 : scaledPanOffsetY > maxYPanOffset ? maxYPanOffset : scaledPanOffsetY < minYPanOffset ? minYPanOffset : scaledPanOffsetY ;
+                const panOffsetY = panOffset.y === 0 ? 0 : scaledPanOffsetY > maxYPanOffset ? maxYPanOffset : scaledPanOffsetY < minYPanOffset ? minYPanOffset : scaledPanOffsetY;
 
-                const xOffset = initialOffset + panOffsetX;
-                const yOffset = panOffsetY;
+                const xOffset = initialOffset;
+                const yOffset = 0;
 
                 const newTransform = `translate(calc(-50% + ${xOffset}px), calc(-50% + ${yOffset}px))`;
+                const bgWrapperTransform = `translate(calc(-50% + ${panOffsetX + initialOffset}px), calc(-50% + ${panOffsetY}px))`;
+            
+                bgImgWrapper.style["height"] = `${setImageHeight}px`;
+                bgImgWrapper.style["width"] = `${setImageWidth}px`;
 
+                bgImgWrapper.style["transform"] = bgWrapperTransform;
                 bgImg.style["transform"] = newTransform;
                 defaultBgImg.style["transform"] = newTransform;
 
                 setTimeout(() => {
-                    const placedHotSpots = placeHotSpots({clientWidth: setImageWidth, clientHeight: setImageHeight}, room, bgContainerClass, {x: xOffset, y: yOffset});
+                    const placedHotSpots = placeHotSpots({clientWidth: setImageWidth, clientHeight: setImageHeight}, room, bgContainerClass, {x: panOffsetX + (initialOffset * 2), y: panOffsetY});
                     showSwiperAnimationOrHotspots(placedHotSpots);
 
                     hasUpdatedBGs = true
