@@ -194,6 +194,9 @@ const showDevice = path => {
             prevEl: `#swiper-${roomId}-${deviceId}-carousel .ws-carousel-button-prev`,
         },
         on: {
+            'slideChange': (swiper)=> {
+                activeSlideNumber.innerText = String(swiper.activeIndex + 1);
+            },
             'afterInit': (swiper)=> {
                 const setCarouselHeight = () => {
                     if (isIOS(navigator.userAgent)) {
@@ -203,6 +206,7 @@ const showDevice = path => {
                 };
                 forceRedraw(carouselContainer, setCarouselHeight);
                 forceRedraw(carouselContainer);
+                activeSlideNumber.innerText = String(swiper.activeIndex + 1);
             }
 
         }
