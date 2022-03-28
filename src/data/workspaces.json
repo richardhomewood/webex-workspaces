@@ -40,23 +40,23 @@
           },
           {
             "slug": "mx67c",
-            "x": 700,
+            "x": 702,
             "y": 360
           },
           {
             "slug": "mr46",
-            "x": 780,
-            "y": 337
+            "x": 782,
+            "y": 336
           },
           {
             "slug": "webex-room-navigator",
-            "x": 935,
-            "y": 583
+            "x": 937,
+            "y": 584
           },
           {
             "slug": "webex-room-kit-mini",
-            "x": 1203,
-            "y": 598
+            "x": 1205,
+            "y": 592
           },
           {
             "slug": "bo-cisco-980",
@@ -95,17 +95,17 @@
           {
             "slug": "meraki-z3c",
             "x": 404,
-            "y": 418
+            "y": 423
           },
           {
             "slug": "webex-desk-mini",
             "x": 686,
-            "y": 471
+            "y": 478
           },
           {
             "slug": "cisco-headset-730",
             "x": 870,
-            "y": 580
+            "y": 600
           }
         ],
         "roomDescription": [
@@ -147,17 +147,17 @@
           {
             "slug": "webex-desk-camera",
             "x": 602,
-            "y": 396
+            "y": 411
           },
           {
             "slug": "webex-desk-hub",
             "x": 803,
-            "y": 544
+            "y": 554
           },
           {
             "slug": "cisco-headset-730",
             "x": 854,
-            "y": 490
+            "y": 506
           }
         ],
         "roomDescription": [
@@ -191,7 +191,7 @@
           {
             "slug": "webex-board-pro-75",
             "x": 408,
-            "y": 294
+            "y": 320
           }
         ],
         "roomDescription": [
@@ -225,12 +225,12 @@
           {
             "slug": "webex-board-pro-55",
             "x": 428,
-            "y": 652
+            "y": 645
           },
           {
             "slug": "webex-room-navigator",
             "x": 886,
-            "y": 570
+            "y": 577
           }
         ],
         "roomDescription": [
@@ -271,7 +271,7 @@
           {
             "slug": "bo-cisco-980",
             "x": 702,
-            "y": 612
+            "y": 617
           }
         ],
         "roomDescription": [
