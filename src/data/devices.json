@@ -63,10 +63,7 @@
         "icon": "secure",
         "text": "Enterprise-grade security and manageability"
       }
-    ],
-    "categoryPage": {
-      "altText" : "Side view of the Bang & Olufsen Cisco 980 headset. Bang & Olufsen and Cisco logos are visible on the outside of the ear cup."
-    }
+    ]
   },
   "cisco-headset-730": {
     "id": "cisco-headset-730",
@@ -132,10 +129,7 @@
         "icon": "secure",
         "text": "Enterprise-grade security and manageability"
       }
-    ],
-    "categoryPage": {
-      "altText" : "A person wearing a Cisco Headset 730 video conferences with several colleagues while working from home on a laptop."
-    }
+    ]
   },
   "meraki-z3c": {
     "id": "meraki-z3c",
@@ -224,10 +218,7 @@
         "icon": "poe",
         "text": "PoE: 1 x PoE enabled port (802.3af, 15.5W)"
       }
-    ],
-    "categoryPage": {
-      "altText" : "Meraki Z3C Teleworker Gateway"
-    }
+    ]
   },
   "mr46": {
     "id": "mr46",
@@ -312,10 +303,7 @@
         "iconSize": [96, 28],
         "text": "PoE: 802.3at"
       }
-    ],
-    "categoryPage": {
-      "altText" : "MR46 access point"
-    }
+    ]
   },
   "ms120-8-fp": {
     "id": "ms120-8-fp",
@@ -397,10 +385,7 @@
         "iconSize": [150, 28],
         "text": "IPv4 and IPv6 ACLs"
       }
-    ],
-    "categoryPage": {
-      "altText" : "MS120-8 FP Compact Switch"
-    }
+    ]
   },
   "mx67c": {
     "id": "mx67c",
@@ -486,10 +471,7 @@
         "iconSize": [43, 28],
         "text": "Supports up to 50 users"
       }
-    ],
-    "categoryPage": {
-      "altText" : "MX67C for SD-WAN"
-    }
+    ]
   },
   "webex-board-pro-55": {
     "id": "webex-board-pro-55",
@@ -553,10 +535,7 @@
         "icon": "active-speaker",
         "text": "Speakers: Multi-channel loudspeaker system with high-quality full-range driver and separate force-cancelling woofers"
       }
-    ],
-    "categoryPage": {
-      "altText" : "Colleagues in a meeting room collaborate with other colleagues via a video meeting, using the Webex Board Pro 55."
-    }
+    ]
   },
   "webex-board-pro-75": {
     "id": "webex-board-pro-75",
@@ -620,10 +599,7 @@
         "icon": "active-speaker",
         "text": "Speakers: Multi-channel loudspeaker system with high-quality full-range driver and separate force-cancelling woofers"
       }
-    ],
-    "categoryPage": {
-      "altText" : "5 colleagues collaborate in person, digital whiteboarding with the Webex Board Pro 75. Other colleagues join by video conference."
-    }
+    ]
   },
   "webex-desk-camera": {
     "id": "webex-desk-camera",
@@ -680,10 +656,7 @@
         "icon": "adjust-microphone",
         "text": "Audio: 2 omni-directional microphones"
       }
-    ],
-    "categoryPage": {
-      "altText" : "Person at a desk in the company office collaborates with several colleagues via a video meeting, using the Webex Desk Camera."
-    }
+    ]
   },
   "webex-desk-hub": {
     "id": "webex-desk-hub",
@@ -749,10 +722,7 @@
         "icon": "adjust-microphone",
         "text": "Audio: Internal directional microphone"
       }
-    ],
-    "categoryPage": {
-      "altText" : "A professional video conferences from an open hot desk in the company office, after authenticating via the Webex Desk Hub."
-    }
+    ]
   },
   "webex-desk-mini": {
     "id": "webex-desk-mini",
@@ -828,10 +798,7 @@
         "icon": "active-speaker",
         "text": "Speakers: Single-channel loudspeaker system with a high quality 18mm tweeter and dual force-cancelling 80mm woofers"
       }
-    ],
-    "categoryPage": {
-      "altText" : "A person working from home collaborates with several colleagues via a video meeting on a Webex Desk Mini."
-    }
+    ]
   },
   "webex-desk-pro": {
     "id": "webex-desk-pro",
@@ -890,10 +857,7 @@
         "icon": "active-speaker",
         "text": "Speakers: 3 directional speakers and a subwoofer"
       }
-    ],
-    "categoryPage": {
-      "altText" : "A professional working from home collaborates with several collagues on a Webex Desk Pro, using the digital whiteboard feature."
-    }
+    ]
   },
   "webex-room-kit-mini": {
     "id": "webex-room-kit-mini",
@@ -966,10 +930,7 @@
         "icon": "active-speaker",
         "text": "Speakers: Full range speaker and two woofers"
       }
-    ],
-    "categoryPage": {
-      "altText" : "Webex Room Kit Mini, a video collaboration bar, shown from the front at a slight angle. The camera is visible at the center."
-    }
+    ]
   },
   "webex-room-navigator": {
     "id": "webex-room-navigator",
@@ -1011,9 +972,6 @@
         "icon": "back-to-fullscreen",
         "text": "Resolution: 1920x1200"
       }
-    ],
-    "categoryPage": {
-      "altText" : "Webex Room Navigator. Screen shows time, room capacity, the words &quot;Room available until 10:00,&quot; and a Book Now button."
-    }
+    ]
   }
 }
