@@ -12,10 +12,7 @@
       "Interactive audience engagement with polling, quizzes, Q&A, and more.",
       "Virtual events with up to 5,000 attendees, or multi-session events with live streaming and peer networking.",
       "Asynchronous video messaging for recording and sharing videos."
-    ],
-    "categoryPage": {
-      "altText" : "A professional in a headset sits outside, collaborating remotely via Webex on a mobile phone."
-    }
+    ]
   },
   "webex-assistant": {
     "id": "webex-assistant",
@@ -27,10 +24,7 @@
       "Start your meeting, book a room, and more using simple voice commands.",
       "Capture action items and get detailed transcripts and notes for every meeting.",
       "Control room amenities such as lighting and temperature."
-    ],
-    "categoryPage": {
-      "altText" : ""
-    }
+    ]
   },
   "webex-go": {
     "id": "webex-go",
@@ -43,9 +37,6 @@
       "Route calls over the mobile network for more reliable voice quality.",
       "Make personal mobile devices secure and compliant endpoints for your business.",
       "Centrally manage mobile devices in the same place as the rest of your collaboration solutions."
-    ],
-    "categoryPage": {
-      "altText" : ""
-    }
+    ]
   }
 }

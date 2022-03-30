@@ -1,9 +1,0 @@
-{% import "./tab-carousel.njk" as tabs %}
-{% import "./rooms-detail.njk" as roomsDetail %}
-
-{% macro render(common, workspaceId, workspaces, devicesByRoom, devices, softwareByRoom, software) %}
-  {{ tabs.render(common, workspaceId, workspaces) }}
-
-  {{ roomsDetail.render(common, workspaceId, workspaces, devicesByRoom, devices, softwareByRoom, software) }}
-
-{% endmacro %}
