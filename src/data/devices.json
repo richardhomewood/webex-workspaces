@@ -177,15 +177,15 @@
     ],
     "features": [
       {
-        "shortPhrase": "shortPhrase",
+        "shortPhrase": "Short phrase",
         "longPhrase": "Always-on VPN. An office-like experience at home with Wi-Fi that’s always connected."
       },
       {
-        "shortPhrase": "shortPhrase",
+        "shortPhrase": "Short phrase",
         "longPhrase": "VOIP telephony. Plug-and-play office telephony in a home office from PoE-enabled ports."
       },
       {
-        "shortPhrase": "shortPhrase",
+        "shortPhrase": "Short phrase",
         "longPhrase": "Network visibility. Insight into how apps are performing for remote workers with powerful end-to-end analytics."
       }
     ],
@@ -267,19 +267,19 @@
     "tagline": "Features",
     "features": [
       {
-        "shortPhrase": "shortPhrase",
+        "shortPhrase": "Short phrase",
         "longPhrase": "RF Optimization. Dual-concurrent radios with MU-MIMO support."
       },
       {
-        "shortPhrase": "shortPhrase",
+        "shortPhrase": "Short phrase",
         "longPhrase": "Layer 7 traffic shaping. Prioritize productivity apps."
       },
       {
-        "shortPhrase": "shortPhrase",
+        "shortPhrase": "Short phrase",
         "longPhrase": "Cloud management. Network-wide visibility and control."
       },
       {
-        "shortPhrase": "shortPhrase",
+        "shortPhrase": "Short phrase",
         "longPhrase": "Enterprise security. Intrusion detection and prevention system (WIDS/WIPS)."
       }
     ],
@@ -352,15 +352,15 @@
     "tagline": "Features",
     "features": [
       {
-        "shortPhrase": "shortPhrase",
+        "shortPhrase": "Short phrase",
         "longPhrase": "Layer 2 access switching ideal for small branch deployments."
       },
       {
-        "shortPhrase": "shortPhrase",
+        "shortPhrase": "Short phrase",
         "longPhrase": "Easy management and configuration through an intuitive cloud interface."
       },
       {
-        "shortPhrase": "shortPhrase",
+        "shortPhrase": "Short phrase",
         "longPhrase": "Granular network visibility and detailed event logs to help you keep track of every configuration change in your network."
       }
     ],
@@ -434,15 +434,15 @@
     "tagline": "Features",
     "features": [
       {
-        "shortPhrase": "shortPhrase",
+        "shortPhrase": "Short phrase",
         "longPhrase": "Unified threat management. Next-generation layer 7 firewall and content filtering."
       },
       {
-        "shortPhrase": "shortPhrase",
+        "shortPhrase": "Short phrase",
         "longPhrase": "Connectivity. Extension of SD-WAN fabric to hybrid clouds and Cisco Umbrella."
       },
       {
-        "shortPhrase": "shortPhrase",
+        "shortPhrase": "Short phrase",
         "longPhrase": "Advanced analytics with machine-learning. At-a-glance performance of apps across the LAN, WAN, and app server."
       }
     ],
@@ -877,10 +877,6 @@
     ],
     "tagline": "See every detail.",
     "features": [
-      {
-        "shortPhrase": "shortPhrase",
-        "longPhrase": "Combines everything you need including codec, camera, microphones, and speakers into a single device that integrates with a 4K display."
-      },
       {
         "shortPhrase": "Everything you need",
         "longPhrase": "Combines codec, camera, microphones, and speakers into a single device that integrates with a 4K display."
