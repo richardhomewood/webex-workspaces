@@ -29,8 +29,8 @@
     ],
     "webexDevicesHeadingText": "Webex Devices",
     "merakiDevicesHeadingText": "Meraki Devices",
-    "productsSectionHeadingText:": "Products",
-    "softwareSectionHeadingText:": "Software",
+    "productsSectionHeadingText": "Products",
+    "softwareSectionHeadingText": "Software",
     "watchVideoCtaText": "Watch Video"
   }
 }

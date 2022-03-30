@@ -106,53 +106,149 @@ $modal-transform-transition: transform 0.65s
 
     .ws-info-modal-room-name {
       @include ws-h1;
+      color: #181818;
     }
 
     .ws-info-modal-text {
-      color: #545454;
+      color: #767676;
       @include ws-med-body-reg;
+      p:last-child {
+        margin-bottom: 32px;
+      }
+    }
+
+    .ws-button-container {
+      margin-bottom: 70px;
+
+      #ws-watch-video-btn,
+      #ws-contact-sales-btn {
+        @include ws-button-text;
+        line-height: 52px;
+        display: block;
+        border-radius: 26px;
+      }
+
+      a {
+        margin-bottom: 20px;
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
     }
 
     .ws-info-modal-section-heading {
       @include ws-large-body-med;
+      color: #767676;
     }
 
     .ws-info-modal-vendors {
-      .ws-info-modal-vendor {
-        @include ws-large-body-med;
+      .ws-room-device-swiper {
+        overflow: visible;
+        width: 100%;
+        .swiper-wrapper {
+          align-items: stretch;
+          .swiper-slide {
+            height: auto;
+            box-sizing: border-box;
+            width: calc(100vw * (319 / 375));
+            padding: 0 14px 40px 0;
+            border-bottom: solid 1px #000;
 
-        .ws-info-modal-vendor-name {
-          color: #979797;
+            &:last-child {
+              padding: 0 0 40px 0;
+            }
 
-          // Top padding and border for between vendors at mobile and tabconst breakpoints
-          padding-top: 16px;
-          border-top: 1px solid #c4c4c4;
-        }
+            .ws-room-info-carousel-img {
+              //padding: 40px 45px;
+              width: 100%;
+              height: calc(100vw * (305 / 375));
+              border: solid 1px #00000028;
+              border-radius: 16px;
+              position: relative;
+              overflow: hidden;
+              img {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                width: auto;
+                height: auto;
+                max-height: calc(100vw * (225 / 376));
+                min-height: calc(100vw * (225 / 376));
+              }
+            }
 
-        &:first-child {
-          .ws-info-modal-vendor-name {
-            // Remove the top padding and border only for the first vendor
-            padding-top: 0;
-            border-top: none;
-          }
-        }
+            h3 {
+              @include ws-med-body-bold;
+              color: #181818;
+              margin: 22px 0 8px;
+            }
 
-        ul.ws-vendor-device-list {
-          color: black;
-          padding: 0;
-          margin-bottom: 0;
-
-          li {
-            list-style: none;
-            padding: 16px 0;
-            border-top: 1px solid #c4c4c4;
-            a {
-              text-decoration: none;
-              color: black;
+            p {
+              @include ws-med-body-reg;
+              color: #767676;
             }
           }
         }
       }
+    }
+
+    .ws-info-modal-software {
+      .ws-room-software-swiper {
+        overflow: visible;
+        width: 100%;
+        .swiper-wrapper {
+          align-items: stretch;
+          .swiper-slide {
+            height: auto;
+            box-sizing: border-box;
+            width: calc(100vw * (319 / 375));
+            padding: 0 14px 40px 0;
+            border-bottom: solid 1px #000;
+
+            &:last-child {
+              padding: 0 0 40px 0;
+            }
+
+            .ws-room-info-carousel-img {
+              width: calc(100vw * (305 / 375));
+              height: calc(100vw * (305 / 375));
+              border-radius: 50%;
+              border: none;
+              position: relative;
+              overflow: hidden;
+              img {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                width: 100%;
+                height: auto;
+                max-height: calc(100vw * (305 / 376));
+                min-height: calc(100vw * (305 / 376));
+              }
+            }
+
+            h3 {
+              @include ws-med-body-bold;
+              color: #181818;
+              margin: 22px 0 8px;
+            }
+
+            p {
+              @include ws-med-body-reg;
+              color: #767676;
+            }
+          }
+        }
+      }
+    }
+
+    .ws-room-info-tagline {
+      @include ws-h1;
+      color: #181818;
+      margin: 66px 0 24px;
     }
   }
 
@@ -387,14 +483,153 @@ $modal-transform-transition: transform 0.65s
         line-height: 26px;
         letter-spacing: -0.02em;
       }
+
+      .ws-button-container {
+        margin-top: 50px;
+        margin-bottom: 70px;
+
+        #ws-watch-video-btn,
+        #ws-contact-sales-btn {
+          @include ws-button-text;
+          line-height: 52px;
+          display: inline-block;
+          border-radius: 26px;
+        }
+
+        a {
+          margin-bottom: 0px;
+
+          &:first-child {
+            margin-right: 20px;
+          }
+        }
+      }
+
       .ws-info-modal-section-heading {
         font-size: 24px;
         line-height: 32px;
         letter-spacing: -0.02em;
-        margin-top: 100px;
+        margin-top: 120px;
+        margin-bottom: 40px;
       }
       .ws-info-modal-vendors {
-        width: 85%;
+        .ws-room-device-swiper {
+          overflow: visible;
+          width: 100%;
+          .swiper-wrapper {
+            align-items: stretch;
+            .swiper-slide {
+              height: auto;
+              box-sizing: border-box;
+              width: calc(100vw * (380 / 768)) !important;
+              padding: 0 14px 40px 0;
+              border-bottom: solid 1px #000;
+
+              &:last-child {
+                padding: 0 0 40px 0;
+              }
+
+              .ws-room-info-carousel-img {
+                //padding: 40px 45px;
+                width: 100%;
+                height: calc(100vw * (380 / 768));
+                border: solid 1px #00000028;
+                border-radius: 16px;
+                position: relative;
+                overflow: hidden;
+                img {
+                  position: absolute;
+                  top: 50%;
+                  left: 50%;
+                  transform: translate(-50%, -50%);
+                  width: auto;
+                  height: auto;
+                  max-height: calc(100vw * (225 / 768));
+                  min-height: calc(100vw * (225 / 768));
+                }
+              }
+
+              h3 {
+                @include ws-med-body-bold;
+                color: #181818;
+                margin: 22px 0 8px;
+              }
+
+              p {
+                @include ws-med-body-reg;
+                color: #767676;
+              }
+            }
+          }
+        }
+      }
+
+      .ws-info-modal-software {
+        .ws-room-software-swiper {
+          overflow: visible;
+          width: 100%;
+          .swiper-wrapper {
+            align-items: stretch;
+            .swiper-slide {
+              height: auto;
+              box-sizing: border-box;
+              width: calc(100vw * (569 / 768));
+              padding: 0 114px 40px 0;
+              border-bottom: solid 1px #000;
+              display: flex;
+
+              &:last-child {
+                padding: 0 0 40px 0;
+              }
+
+              .ws-room-info-carousel-content {
+                display: inline-block;
+                margin-left: 40px;
+              }
+
+              .ws-room-info-carousel-img {
+                display: inline-block;
+                width: calc(100vw * (210 / 768));
+                min-width: calc(100vw * (210 / 768));
+                height: calc(100vw * (210 / 768));
+                border-radius: 50%;
+                border: none;
+                position: relative;
+                overflow: hidden;
+                img {
+                  position: absolute;
+                  top: 50%;
+                  left: 50%;
+                  transform: translate(-50%, -50%);
+                  width: calc(100vw * (210 / 768));
+                  height: calc(100vw * (210 / 768));
+                  max-height: calc(100vw * (210 / 768));
+                  min-height: calc(100vw * (210 / 768));
+                }
+              }
+
+              h3 {
+                @include ws-med-body-bold;
+                color: #181818;
+                margin: 22px 0 8px;
+              }
+
+              p {
+                @include ws-med-body-reg;
+                color: #767676;
+              }
+            }
+          }
+        }
+      }
+
+      .ws-room-info-footer {
+        text-align: center;
+        .ws-room-info-tagline {
+          @include ws-h1;
+          color: #181818;
+          margin: 66px 0 24px;
+        }
       }
     }
 

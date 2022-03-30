@@ -261,6 +261,7 @@ const showRoomInfo = path => {
         forceRedraw(modalsContainer)
         forceRedraw(activeModalRoot)
 
+        // And slide it in
         setTimeout(() => {
             activeModalRoot.classList.add(classnames.slideIn);
         }, slideInDelayMillis);
@@ -269,7 +270,30 @@ const showRoomInfo = path => {
     setActive(false);
     hideAll();
 
-    // And slide it in
+    // Initialize the Swiper container
+    const carouselContainer = document.querySelector(`.ws-room-device-swiper.swiper`)
+
+    carouselSwiper = new Swiper(carouselContainer, {
+        modules: [Navigation],
+        speed: 500,
+        on: {/*
+            'slideChange': (swiper)=> {
+                activeSlideNumber.innerText = String(swiper.activeIndex + 1);
+            },
+            'afterInit': (swiper)=> {
+                const setCarouselHeight = () => {
+                    if (isIOS(navigator.userAgent)) {
+                        carouselContainer.style.height = '83vw';
+                        carouselContainer.style.width = '100%';
+                    }
+                };
+                forceRedraw(carouselContainer, setCarouselHeight);
+                forceRedraw(carouselContainer);
+                activeSlideNumber.innerText = String(swiper.activeIndex + 1);
+            }
+            */
+        }
+    });
     
 };
 

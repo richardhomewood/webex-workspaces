@@ -1,6 +1,6 @@
 {% import "../common/download-pdf.njk" as downloadPdf %}
 
-{% macro render(common, workspace, room, vendorDevicesByRoom, devices) %}
+{% macro render(common, workspace, room, devicesByRoom, devices, softwareByRoom, software) %}
   {# This div may be positioned off-screen and animated into place when the "info" CTA is clicked #}
   <div class="ws-room-info-modal-root ws-modal-root ws-displayNone">
     {{ downloadPdf.render(common, "rooms/"+room.pdfFilename, "ws-header-item") }}
@@ -8,36 +8,68 @@
     <div class="ws-top-rule"></div>
 
     <h1 class="ws-info-modal-room-name">{{ room.name }}</h1>
-
+    
     <div class="ws-info-modal-text">
       {% for paragraph in room.roomDescription %}
         <p>{{ paragraph | safe }}</p>
       {% endfor %}
     </div>
 
-    <h5 class="ws-info-modal-section-heading">{{ common.infoModal.productListHeadingText }}</h5>
-
-    <div class="ws-info-modal-vendors">
-    {# Loop over the list of all vendor IDs  #}
-    {% for vendorId in common.infoModal.deviceVendors %}
-      {# If there is a list of devices for the given vendor, display them.  Otherwise, nothing. #}
-      {% if vendorDevicesByRoom[workspace.slug][room.slug][vendorId] %}
-
-        {% set vendorHeadingKey = vendorId + "DevicesHeadingText" %}
-        <div class="ws-info-modal-vendor">
-          <div class="ws-info-modal-vendor-name">{{ common.infoModal[vendorHeadingKey] }}</div>
-          <ul class="ws-vendor-device-list">
-            {# Loop over the vendor's device IDs #}
-            {% for deviceId in vendorDevicesByRoom[workspace.slug][room.slug][vendorId] %}
-              <li><a href="{{ devices[deviceId].url }}">{{ devices[deviceId].name }}</a></li>
-            {% endfor %}
-          </ul>
-        </div>
-
-      {% endif %}
-    {% endfor %}
+    <div class="ws-button-container">
+        <a href="{{room.videoUrl}}" id="ws-watch-video-btn" class="ws-cta ws-green-cta">{{common.infoModal.watchVideoCtaText}}</a>
+        <a href="{{common.contactUrl}}" id="ws-contact-sales-btn" class="ws-cta ws-white-cta">{{common.contactSalesCtaText}}</a>
     </div>
 
+    <h5 class="ws-info-modal-section-heading">{{ common.infoModal.productsSectionHeadingText }}</h5>
+
+    <div class="ws-info-modal-vendors">
+      <div class="swiper ws-room-device-swiper">
+        <div class="swiper-wrapper">
+          {% for deviceId in devicesByRoom[workspace.slug][room.slug] %}
+            <div class="swiper-slide">
+                {% set imgSrc = devices[deviceId].carouselItems[0].filename %}
+                {% set imgAlt = devices[deviceId].carouselItems[0].alt %}
+                {% set isVideo = imgSrc.endsWith('.mp4') %}
+                {%if isVideo %}
+                  {% set imgSrc = devices[deviceId].carouselItems[1].filename %}
+                  {% set imgAlt = devices[deviceId].carouselItems[1].alt %}
+                {% endif %}
+
+                  <div class="ws-room-info-carousel-img">{% imagesync "devices/" + deviceId + "/carousel/" + imgSrc, imgAlt, "", "", true, "100vw" %}</div>
+                  <h3>{{devices[deviceId].name}}</h3>
+                  <p>{{devices[deviceId].description}}</p>
+                  <a href="{{devices[deviceId].url}}">{{common.learnMoreCtaText}}</a>
+                </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+
+    <h5 class="ws-info-modal-section-heading">{{ common.infoModal.softwareSectionHeadingText }}</h5>
+    
+    <div class="ws-info-modal-software">
+      <div class="swiper ws-room-software-swiper">
+        <div class="swiper-wrapper">
+          {% for softwareId in softwareByRoom[workspace.slug][room.slug] %}
+            <div class="swiper-slide">
+              <div class="ws-room-info-carousel-img">{% imagesync "category-page/" + softwareId + "-square.jpg", "", "", "", true, "100vw" %}</div>
+              <div class="ws-room-info-carousel-content">
+                <h3>{{software[softwareId].name}}</h3>
+                <p>{{software[softwareId].description}}</p>
+                <a href="{{software[softwareId].url}}">{{common.learnMoreCtaText}}</a>
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+
+    <div class="ws-room-info-footer">
+      <h2 class="ws-room-info-tagline">{{room.tagline}}</h2>
+      <div class="ws-button-container">
+          <a href="{{common.contactUrl}}" id="ws-contact-sales-btn" class="ws-cta ws-white-cta">{{common.contactSalesCtaText}}</a>
+      </div>
+    <div>
   </div>
 {% endmacro %}
 
