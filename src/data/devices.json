@@ -23,7 +23,7 @@
         "alt": "A front view of the Bang & Olufsen Cisco 980 headset."
       }
     ],
-    "tagLine": "Feature",
+    "tagline": "Feature",
     "features": [
       {
         "shortPhrase": "shortPhrase",
@@ -89,7 +89,7 @@
         "alt": "A front view of a Cisco Headset 730 in platinum."
       }
     ],
-    "tagLine": "Features",
+    "tagline": "Features",
     "features": [
       {
         "shortPhrase": "shortPhrase",
@@ -264,7 +264,7 @@
         "alt": "The MR46 device."
       }
     ],
-    "tagLine": "Features",
+    "tagline": "Features",
     "features": [
       {
         "shortPhrase": "shortPhrase",
@@ -349,7 +349,7 @@
         "alt": "The MS120-8 FP switch."
       }
     ],
-    "tagLine": "Features",
+    "tagline": "Features",
     "features": [
       {
         "shortPhrase": "shortPhrase",
@@ -431,7 +431,7 @@
         "alt": "The MX67C for SD-WAN appliance."
       }
     ],
-    "tagLine": "Features",
+    "tagline": "Features",
     "features": [
       {
         "shortPhrase": "shortPhrase",
@@ -489,7 +489,7 @@
         "alt": "The Webex Board Pro 55."
       }
     ],
-    "tagLine": "Features",
+    "tagline": "Features",
     "features": [
       {
         "shortPhrase": "shortPhrase",
@@ -549,7 +549,7 @@
       {"filename": "ST01_BoardPro_back.jpg", "alt": "The back of the Webex Board Pro 75."},
       {"filename": "ST01_BoardPro_mid.jpg", "alt": "Three-quarters view of the Webex Board Pro 75."}
     ],
-    "tagLine": "Features",
+    "tagline": "Features",
     "features": [
       {
         "shortPhrase": "shortPhrase",
@@ -617,7 +617,7 @@
         "alt": "Front view of the Webex Desk Camera."
       }
     ],
-    "tagLine": "Features",
+    "tagline": "Features",
     "features": [
       {
         "shortPhrase": "shortPhrase",
@@ -682,7 +682,7 @@
         "alt": "The Webex Desk Hub shows a bright homescreen with five apps visible and a headset docked on the charging station."
       }
     ],
-    "tagLine": "Features",
+    "tagline": "Features",
     "features": [
       {
         "shortPhrase": "shortPhrase",
@@ -752,7 +752,7 @@
         "alt": "The Webex Desk Mini."
       }
     ],
-    "tagLine": "Features",
+    "tagline": "Features",
     "features": [
       {
         "shortPhrase": "shortPhrase",
@@ -811,7 +811,7 @@
       {"filename": "DeskPro_Front_RGB_smp.jpg", "alt": "The front of the Webex Desk Pro. The screen shows the time of 9:54 and the date August 9, plus icons to call, whiteboard, share, and join a Webex meeting."},
       {"filename": "Webex_DeskPro_Back_RGB_smp.jpg", "alt": "The back of the Webex Desk Pro."}
     ],
-    "tagLine": "Features",
+    "tagline": "Features",
     "features": [
       {
         "shortPhrase": "shortPhrase",
@@ -879,7 +879,7 @@
         "alt": "The Webex Room Kit Mini."
       }
     ],
-    "tagLine": "Features",
+    "tagline": "Features",
     "features": [
       {
         "shortPhrase": "shortPhrase",
@@ -944,7 +944,7 @@
         "alt": "Webex Room Navigator"
       }
     ],
-    "tagLine": "Features",
+    "tagline": "Features",
     "features": [
       {
         "shortPhrase": "shortPhrase",
