@@ -28,19 +28,19 @@
         <div class="swiper-wrapper">
           {% for deviceId in devicesByRoom[workspace.slug][room.slug] %}
             <div class="swiper-slide">
-                {% set imgSrc = devices[deviceId].carouselItems[0].filename %}
-                {% set imgAlt = devices[deviceId].carouselItems[0].alt %}
-                {% set isVideo = imgSrc.endsWith('.mp4') %}
-                {%if isVideo %}
-                  {% set imgSrc = devices[deviceId].carouselItems[1].filename %}
-                  {% set imgAlt = devices[deviceId].carouselItems[1].alt %}
-                {% endif %}
+              {% set imgSrc = devices[deviceId].carouselItems[0].filename %}
+              {% set imgAlt = devices[deviceId].carouselItems[0].alt %}
+              {% set isVideo = imgSrc.endsWith('.mp4') %}
+              {%if isVideo %}
+                {% set imgSrc = devices[deviceId].carouselItems[1].filename %}
+                {% set imgAlt = devices[deviceId].carouselItems[1].alt %}
+              {% endif %}
 
-                  <div class="ws-room-info-carousel-img">{% imagesync "devices/" + deviceId + "/carousel/" + imgSrc, imgAlt, "", "", true, "100vw" %}</div>
-                  <h3>{{devices[deviceId].name}}</h3>
-                  <p>{{devices[deviceId].description}}</p>
-                  <a href="{{devices[deviceId].url}}">{{common.learnMoreCtaText}}</a>
-                </div>
+              <div class="ws-room-info-carousel-img">{% imagesync "devices/" + deviceId + "/carousel/" + imgSrc, imgAlt, "", "", true, "100vw" %}</div>
+              <h3>{{devices[deviceId].name}}</h3>
+              <p>{{devices[deviceId].description}}</p>
+              <a href="{{devices[deviceId].url}}">{{common.learnMoreCtaText}}</a>
+            </div>
           {% endfor %}
         </div>
       </div>
@@ -70,7 +70,7 @@
       <div class="ws-button-container">
           <a href="{{common.contactUrl}}" id="ws-contact-sales-btn" class="ws-cta ws-white-cta">{{common.contactSalesCtaText}}</a>
       </div>
-    <div>
+    </div>
   </div>
 {% endmacro %}
 
