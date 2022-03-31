@@ -6,20 +6,21 @@
     {{ downloadPdf.render(common, "rooms/"+room.pdfFilename, "ws-header-item") }}
     <a class="ws-room-info-modal-close ws-modal-close" aria-label="Close" href="#/{{ workspace.slug }}/{{ room.slug }}">{% icon "close-x", "ws-close-x" %}</a>
     <div class="ws-top-rule"></div>
+    <div class="ws-info-modal-header-content">
+      <h1 class="ws-info-modal-room-name">{{ room.name }}</h1>
+      <div class="ws-info-modal-content">
+        <div class="ws-info-modal-text">
+          {% for paragraph in room.roomDescription %}
+            <p>{{ paragraph | safe }}</p>
+          {% endfor %}
+        </div>
 
-    <h1 class="ws-info-modal-room-name">{{ room.name }}</h1>
-    
-    <div class="ws-info-modal-text">
-      {% for paragraph in room.roomDescription %}
-        <p>{{ paragraph | safe }}</p>
-      {% endfor %}
+        <div class="ws-button-container">
+            <a href="{{room.videoUrl}}" id="ws-watch-video-btn" class="ws-cta ws-green-cta">{{common.infoModal.watchVideoCtaText}}</a>
+            <a href="{{common.contactUrl}}" id="ws-contact-sales-btn" class="ws-cta ws-white-cta">{{common.contactSalesCtaText}}</a>
+        </div>
+      </div>
     </div>
-
-    <div class="ws-button-container">
-        <a href="{{room.videoUrl}}" id="ws-watch-video-btn" class="ws-cta ws-green-cta">{{common.infoModal.watchVideoCtaText}}</a>
-        <a href="{{common.contactUrl}}" id="ws-contact-sales-btn" class="ws-cta ws-white-cta">{{common.contactSalesCtaText}}</a>
-    </div>
-
     <h5 class="ws-info-modal-section-heading">{{ common.infoModal.productsSectionHeadingText }}</h5>
 
     <div class="ws-info-modal-vendors">
@@ -45,7 +46,7 @@
       </div>
     </div>
 
-    <h5 class="ws-info-modal-section-heading">{{ common.infoModal.softwareSectionHeadingText }}</h5>
+    <h5 class="ws-info-modal-section-heading ws-info-modal-section-heading-software">{{ common.infoModal.softwareSectionHeadingText }}</h5>
     
     <div class="ws-info-modal-software">
       <div class="swiper ws-room-software-swiper">
