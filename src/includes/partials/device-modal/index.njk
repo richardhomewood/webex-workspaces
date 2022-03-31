@@ -25,11 +25,15 @@
 
         {{ carousel.render(room.slug, deviceId, device.carouselItems) }}
 
+        <h3 class="ws-device-tagline">{{ device.tagline }}</h3>
+
         <div class="ws-modal-sections">
           {{ features.render(common, device.features) }}
 
           {{ specs.render(common, device.specs) }}
         </div>
+
+        <a class="ws-learn-more-cta ws-cta ws-white-cta" href="{{ device.url }}">{{ common.learnMoreCtaText }}</a>
 
       </div>
     {% endfor %}

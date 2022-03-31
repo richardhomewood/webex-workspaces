@@ -225,25 +225,6 @@
   letter-spacing: -0.01em;
 }
 
-@mixin ws-features-list-items {
-  font-family: 'CiscoSansTT-Regular', sans-serif;
-  font-size: 18px;
-  line-height: 26px;
-  letter-spacing: -0.02em;
-  color: #181818;
-
-  @media only screen and (min-width: 768px) and (max-width: 1215px) {
-    font-size: 16px;
-    line-height: 22px;
-    letter-spacing: unset;
-  }
-
-  @media only screen and (min-width: 1920px) {
-    font-size: 20px;
-    line-height: 27px;
-  }
-}
-
 @mixin ws-specs-list-items {
   font-family: 'CiscoSansTT-Regular', sans-serif;
   font-size: 14px;
@@ -273,5 +254,58 @@
   @media only screen and (min-width: 1366px) {
     font-size: 64px;
     line-height: 64px;
+  }
+}
+
+@mixin ws-device-tagline-text {
+  font-family: 'CiscoSansTT-Regular', sans-serif;
+  font-size: 32px;
+  line-height: 36px;
+  letter-spacing: -0.03em;
+
+  @media only screen and (min-width: 768px) {
+    font-size: 40px;
+    line-height: 44px;
+    letter-spacing: -0.04em;
+  }
+
+  @media only screen and (min-width: 1280px) {
+    font-size: 56px;
+    line-height: 64px;
+    letter-spacing: -0.04em;
+  }
+}
+
+@mixin ws-device-feature-short-phrase-text {
+  color: #181818;
+  font-family: 'CiscoSansTT-Regular', sans-serif;
+  font-size: 22px;
+  line-height: 28px;
+  letter-spacing: -0.03em;
+
+  @media only screen and (min-width: 768px) {
+    font-size: 32px;
+    line-height: 36px;
+    letter-spacing: -0.04em;
+  }
+
+  @media only screen and (min-width: 1280px) {
+    font-size: 40px;
+    line-height: 54px;
+    letter-spacing: -0.02em;
+  }
+}
+
+@mixin ws-device-feature-long-phrase-text {
+  color: #545454;
+  font-family: 'CiscoSansTT-Regular', sans-serif;
+  font-size: 15px;
+  line-height: 20px;
+  letter-spacing: -0.01em;
+
+  @media only screen and (min-width: 1280px) {
+    font-size: 20px;
+    line-height: 27px;
+    letter-spacing: -0.02em;
   }
 }
