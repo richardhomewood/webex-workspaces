@@ -5,10 +5,15 @@
   </li>
 {% endmacro %}
 
-{% macro render(common, features) %}
+{% macro render(common, features, roomId) %}
   <div class="ws-device-features ws-modal-section">
     <ul>
-      {% for item in features %}
+      {% if features|isObject %}
+        {% set roomFeatures = features[roomId] %}
+      {% else %}
+        {% set roomFeatures = features %}
+      {% endif %}
+      {% for item in roomFeatures %}
         {{ feature(item) }}
       {% endfor %}
     </ul>

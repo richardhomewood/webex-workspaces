@@ -115,6 +115,41 @@
         ],
         "tagline": "Short phrase about room",
         "videoUrl": "https://webex.com/"
+      },
+      {
+        "name": "Bedroom",
+        "slug": "bedroom",
+        "pdfFilename": "HybridWorkExperiences_EBook_2021_Bedroom.pdf",
+        "background": "bedroom.jpg",
+        "backgroundPosition": {
+          "ws-XS": {
+            "x": 0.16
+          },
+          "ws-S": {
+            "x": 0.09
+          },
+          "ws-M": {
+            "x": 0
+          },
+          "ws-L": {
+            "x": 0
+          },
+          "ws-XL": {
+            "x": 0
+          }
+        },
+        "hotSpots": [
+          {
+            "slug": "webex-desk",
+            "x": 507,
+            "y": 485
+          }
+        ],
+        "roomDescription": [
+          "We often find the need to transform the rooms in our homes, like guest bedrooms, into makeshift offices. This can cause some concerns with professionalism (think: having a bed in the background or a cluttered spare-room-storage-space). It also can make balancing work and life, that much harder as the lines continue to blur.",
+          "By coupling high-performance collaboration devices with features that help reduce fatigue, you can create a workspace that keeps you energized all day long."
+        ],
+        "videoUrl": "https://webex.com/"
       }
     ]
   },
@@ -241,6 +276,52 @@
         ],
         "roomDescription": [
           "The majority of meetings today will include remote participants, making it essential to rethink traditional conference rooms. Often the staple of an office, these spaces need to create an inclusive experience for all participants—whether in-office or remote—at the same time ensuring the people in the room feel safe in an enclosed area."
+        ],
+        "tagline": "Short phrase about room",
+        "videoUrl": "https://webex.com/"
+      },
+      {
+        "name": "Jump Room",
+        "slug": "jumpRoom",
+        "pdfFilename": "HybridWorkExperiences_EBook_2021_JumpRoom.pdf",
+        "background": "jumproom.jpg",
+        "backgroundPosition": {
+          "ws-XS": {
+            "x": 0
+          },
+          "ws-S": {
+            "x": 0
+          },
+          "ws-M": {
+            "x": 0
+          },
+          "ws-L": {
+            "x": 0
+          },
+          "ws-XL": {
+            "x": 0
+          }
+        },
+        "hotSpots": [
+          {
+            "slug": "webex-desk",
+            "x": 400,
+            "y": 340
+          },
+          {
+            "slug": "webex-room-navigator",
+            "x": 620,
+            "y": 330
+          },
+          {
+            "slug": "mr56",
+            "x": 800,
+            "y": 400
+          }
+        ],
+        "roomDescription": [
+          "A jump room is meant for times that require extreme focus, so it’s only natural that they offer both privacy as well everything you need to get work done. And with workers often dropping in spontaneously, you need a space that can be instantly productive.",
+          "With the right combination of devices and software features, you can give visitors peace of mind that the room is both clean and ready for some serious focus work."
         ],
         "tagline": "Short phrase about room",
         "videoUrl": "https://webex.com/"
