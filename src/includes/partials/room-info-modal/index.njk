@@ -41,7 +41,7 @@
                 <div class="ws-room-info-carousel-content">
                   <h3>{{devices[deviceId].name}}</h3>
                   <p>{{devices[deviceId].description}}</p>
-                  <a href="{{devices[deviceId].url}}"><span>{{common.learnMoreCtaText}}</span><span class="ws-cta-right-arrow">&nbsp;{% icon "cta-right-arrow", "", 14 %}</span></a>
+                  <a href="{{devices[deviceId].url}}"><span>{{common.learnMoreCtaText}}</span><span class="ws-cta-right-arrow">&nbsp;{% icon "cta-right-arrow-green", "", 14 %}</span></a>
                 </div>
               </div>
             {% endfor %}
@@ -54,7 +54,7 @@
     </div>
 
     <h5 class="ws-info-modal-section-heading ws-info-modal-section-heading-software">{{ common.infoModal.softwareSectionHeadingText }}</h5>
-    
+
     <div class="ws-info-modal-software">
       <div class="ws-room-software-scroller ws-room-software-scroller-{{workspace.slug}}-{{room.slug}}">
         <div class="swiper-wrapper">
@@ -64,7 +64,7 @@
               <div class="ws-room-info-carousel-content">
                 <h3>{{software[softwareId].name}}</h3>
                 <p>{{software[softwareId].description}}</p>
-                <a href="{{software[softwareId].url}}">{{common.learnMoreCtaText}}</a>
+                <a href="{{software[softwareId].url}}"><span>{{common.learnMoreCtaText}}</span><span class="ws-cta-right-arrow">&nbsp;{% icon "cta-right-arrow-green", "", 14 %}</span></a>
               </div>
             </div>
           {% endfor %}
