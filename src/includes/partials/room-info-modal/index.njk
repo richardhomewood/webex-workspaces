@@ -23,33 +23,40 @@
     </div>
     <h5 class="ws-info-modal-section-heading">{{ common.infoModal.productsSectionHeadingText }}</h5>
 
-    <div class="ws-info-modal-vendors">
-      <div class="swiper ws-room-device-swiper">
-        <div class="swiper-wrapper">
-          {% for deviceId in devicesByRoom[workspace.slug][room.slug] %}
-            <div class="swiper-slide">
-              {% set imgSrc = devices[deviceId].carouselItems[0].filename %}
-              {% set imgAlt = devices[deviceId].carouselItems[0].alt %}
-              {% set isVideo = imgSrc.endsWith('.mp4') %}
-              {%if isVideo %}
-                {% set imgSrc = devices[deviceId].carouselItems[1].filename %}
-                {% set imgAlt = devices[deviceId].carouselItems[1].alt %}
-              {% endif %}
+    <div class="ws-info-modal-devices">
+      <div class="ws-info-modal-devices-inner">
+        <div class="ws-room-device-scroller ws-room-device-scroller-{{workspace.slug}}-{{room.slug}}">
+          <div class="swiper-wrapper">
+            {% for deviceId in devicesByRoom[workspace.slug][room.slug] %}
+              <div class="swiper-slide{% if loop.index == 1 and loop.length == 1 %} ws-single{% endif %}">
+                {% set imgSrc = devices[deviceId].carouselItems[0].filename %}
+                {% set imgAlt = devices[deviceId].carouselItems[0].alt %}
+                {% set isVideo = imgSrc.endsWith('.mp4') %}
+                {%if isVideo %}
+                  {% set imgSrc = devices[deviceId].carouselItems[1].filename %}
+                  {% set imgAlt = devices[deviceId].carouselItems[1].alt %}
+                {% endif %}
 
-              <div class="ws-room-info-carousel-img">{% imagesync "devices/" + deviceId + "/carousel/" + imgSrc, imgAlt, "", "", true, "100vw" %}</div>
-              <h3>{{devices[deviceId].name}}</h3>
-              <p>{{devices[deviceId].description}}</p>
-              <a href="{{devices[deviceId].url}}">{{common.learnMoreCtaText}}</a>
-            </div>
-          {% endfor %}
+                <div class="ws-room-info-carousel-img">{% imagesync "devices/" + deviceId + "/carousel/" + imgSrc, imgAlt, "", "", true, "100vw" %}</div>
+                <div class="ws-room-info-carousel-content">
+                  <h3>{{devices[deviceId].name}}</h3>
+                  <p>{{devices[deviceId].description}}</p>
+                  <a href="{{devices[deviceId].url}}"><span>{{common.learnMoreCtaText}}</span><span class="ws-cta-right-arrow">&nbsp;{% icon "cta-right-arrow", "", 14 %}</span></a>
+                </div>
+              </div>
+            {% endfor %}
+          </div>
         </div>
+      </div>
+      <div class="ws-scroll-track-container">
+        <div class="ws-scroll-track"></div>
       </div>
     </div>
 
     <h5 class="ws-info-modal-section-heading ws-info-modal-section-heading-software">{{ common.infoModal.softwareSectionHeadingText }}</h5>
     
     <div class="ws-info-modal-software">
-      <div class="swiper ws-room-software-swiper">
+      <div class="ws-room-software-scroller ws-room-software-scroller-{{workspace.slug}}-{{room.slug}}">
         <div class="swiper-wrapper">
           {% for softwareId in softwareByRoom[workspace.slug][room.slug] %}
             <div class="swiper-slide">
@@ -62,6 +69,9 @@
             </div>
           {% endfor %}
         </div>
+      </div>
+      <div class="ws-scroll-track-container">
+        <div class="ws-scroll-track"></div>
       </div>
     </div>
 

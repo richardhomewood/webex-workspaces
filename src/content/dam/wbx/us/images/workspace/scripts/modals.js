@@ -4,6 +4,9 @@ import 'swiper/scss/navigation';
 import classnames from './classnames';
 import {removeModalPaths, splitPath} from './paths';
 import {isIOS, isSafari} from "./utils";
+import { setTimeout } from 'core-js';
+import DeviceScroller  from './modal-room-info-device-scroller';
+import SoftwareScroller  from './modal-room-info-software-scroller';
 
 const slideInDelayMillis = 300;
 const deviceModalSubstring = '/hardware/';
@@ -153,7 +156,8 @@ const forceRedraw = function(element, callBeforeRedrawn){
 }
 
 const showDevice = path => {
-
+    destroyRoomInfoScrollers();
+    
     if (active) {
         postActive = ()=>{showDevice(path)}
         return
@@ -253,7 +257,6 @@ const showRoomInfo = path => {
         return node != activeModalRoot
     }); 
 
-
     forceRedraw(modalsContainer)
     forceRedraw(activeModalRoot)
 
@@ -270,31 +273,17 @@ const showRoomInfo = path => {
     setActive(false);
     hideAll();
 
-    // Initialize the Swiper container
-    const carouselContainer = document.querySelector(`.ws-room-device-swiper.swiper`)
+    setUpRoomInfoScrollers(workspaceId, roomId);
+};
 
-    carouselSwiper = new Swiper(carouselContainer, {
-        modules: [Navigation],
-        speed: 500,
-        on: {/*
-            'slideChange': (swiper)=> {
-                activeSlideNumber.innerText = String(swiper.activeIndex + 1);
-            },
-            'afterInit': (swiper)=> {
-                const setCarouselHeight = () => {
-                    if (isIOS(navigator.userAgent)) {
-                        carouselContainer.style.height = '83vw';
-                        carouselContainer.style.width = '100%';
-                    }
-                };
-                forceRedraw(carouselContainer, setCarouselHeight);
-                forceRedraw(carouselContainer);
-                activeSlideNumber.innerText = String(swiper.activeIndex + 1);
-            }
-            */
-        }
-    });
-    
+const setUpRoomInfoScrollers = (workspaceId, roomId)=>{
+  DeviceScroller.setUpDeviceScroller(workspaceId, roomId);
+    SoftwareScroller.setUpsoftwareScroller(workspaceId, roomId);
+}
+
+const destroyRoomInfoScrollers = ()=> {
+  DeviceScroller.destroyRoomInfoDeviceScroller();
+  SoftwareScroller.destroyRoomInfosoftwareScroller();
 };
 
 export default {
