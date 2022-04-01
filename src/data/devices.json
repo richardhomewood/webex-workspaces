@@ -305,6 +305,55 @@
       }
     ]
   },
+  "mr56": {
+    "id": "mr56",
+    "name": "MR56 AP",
+    "vendor": "meraki",
+    "url": "https://meraki.cisco.com/product/wi-fi/indoor-access-points/mr56/",
+    "description": "Wi-Fi 6 with multigigabit ethernet. Ultra-high performance and efficiency for dense indoor environments with a dedicated security radio.",
+    "carouselItems": [
+      {
+        "filename": "mr56-top.jpg",
+        "alt": "The MR56 in white. The Cisco logo is visible in the lower right corner."
+      }
+    ],
+    "tagline": "Ultra-high Wi-Fi performance",
+    "features": [
+      {
+        "shortPhrase": "Location analytics",
+        "longPhrase": "Alert and manage digital operations in real time."
+      },
+      {
+        "shortPhrase": "Intelligent guest services",
+        "longPhrase": "Make workplaces work better."
+      },
+      {
+        "shortPhrase": "Wi-Fi commerce",
+        "longPhrase": "Transform venues into intelligent spaces."
+      }
+    ],
+    "specs": [
+      {
+        "icon": "device-connection",
+        "text": "Four radios: 2.4 GHz, 5 Ghz, dual-band embedded WIDS/WIPS, and Bluetooth® Low Energy"
+      },
+      {
+        "icon": "04",
+        "iconSize": [44, 28],
+        "text": "4-stream UL/DL MU-MIMO 802.11ax"
+      },
+      {
+        "icon": "2-point-5",
+        "iconSize": [52, 28],
+        "text": "One 2.5 Gbps multigigabit Ethernet port"
+      },
+      {
+        "icon": "802-point-3",
+        "iconSize": [96, 28],
+        "text": "PoE: 802.3at"
+      }
+    ]
+  },
   "ms120-8-fp": {
     "id": "ms120-8-fp",
     "name": "MS120-8 FP",
@@ -594,6 +643,61 @@
       {
         "icon": "active-speaker",
         "text": "Speakers: Multi-channel loudspeaker system with high-quality full-range driver and separate force-cancelling woofers"
+      }
+    ]
+  },
+  "webex-desk": {
+    "id": "webex-desk",
+    "name": "Webex Desk",
+    "vendor": "webex",
+    "url": "https://hardware.webex.com/products/cisco-webex-desk",
+    "description": "The all-in-one collaboration device for every desk.",
+    "carouselItems": [
+      {
+        "filename": "webex-desk.jpg",
+        "alt": "TODO"
+      }
+    ],
+    "tagline": {
+      "bedroom": "Bedroom tagline",
+      "jumpRoom": "Jump into collaboration."
+    },
+    "features": [
+      {
+        "shortPhrase": "Experience immersive collaboration",
+        "longPhrase": "Do it all with a dedicated collaboration device that doubles as a high-quality monitor."
+      },
+      {
+        "shortPhrase": "Start in seconds",
+        "longPhrase": "Pair your laptop to view and join upcoming meetings, share your screen, or focus on your work."
+      },
+      {
+        "shortPhrase": "Get creative",
+        "longPhrase": "Interactive whiteboarding lets you brainstorm or ideate on the touch display, while virtual participants can contribute on any device."
+      },
+      {
+        "shortPhrase": "Join any meeting",
+        "longPhrase": "Easily join Webex, Zoom, Microsoft, or Google meetings with just the touch of a button."
+      }
+    ],
+    "specs": [
+      {
+        "text": "Screen: 24-inch anti-glare LCD touchscreen display"
+      },
+      {
+        "text": "Resolution: 1080p (16:9)"
+      },
+      {
+        "text": "Camera: 8MP image sensors, supports up to 30 fps"
+      },
+      {
+        "text": "Field of view: 64° horizontal field of view, 50° vertical field of view"
+      },
+      {
+        "text": "Audio: 4-element microphone array"
+      },
+      {
+        "text": "Speaker: Premium full-range center speaker with passive bass radiators"
       }
     ]
   },

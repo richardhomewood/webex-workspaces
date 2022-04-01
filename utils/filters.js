@@ -8,4 +8,5 @@ module.exports = {
 
   log: (data) => console.log(`\n\n${util.inspect(data)}\n\n`),
   markdown: (content) => markdown.renderInline(content),
+  isObject: (value) => {return typeof value === 'object' && !Array.isArray(value);}
 };

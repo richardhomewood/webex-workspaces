@@ -14,6 +14,21 @@
       "Asynchronous video messaging for recording and sharing videos."
     ]
   },
+  "webex-suite": {
+    "id": "webex-suite",
+    "name": "Webex Suite",
+    "url": "https://www.webex.com/collaboration-suite.html",
+    "description": "The first purpose-built solution for hybrid work, with everything you need to collaborate—all in one economical offer.",
+    "featuresTitle": "Features",
+    "features": [
+      "Engaging video meetings with up to 1,000 participants.",
+      "A powerful cloud phone system and PSTN business phone number.",
+      "Team messaging, secure file sharing, and bi-directional whiteboarding.",
+      "Interactive audience engagement with polling, quizzes, Q&A, and more.",
+      "Virtual events with up to 5,000 attendees, or multi-session events with live streaming and peer networking.",
+      "Asynchronous video messaging for recording and sharing videos."
+    ]
+  },
   "webex-assistant": {
     "id": "webex-assistant",
     "name": "Webex Assistant",

@@ -13,6 +13,9 @@
       "mr46",
       "mx67c",
       "ms120-8-fp"
+    ],
+    "bedroom": [
+      "webex-desk"
     ]
   },
   "office": {
@@ -27,6 +30,11 @@
     "smallConferenceRoom": [
       "webex-board-pro-55",
       "webex-room-navigator"
+    ],
+    "jumpRoom": [
+      "webex-desk",
+      "webex-room-navigator",
+      "mr56"
     ]
   },
   "anywhere": {
