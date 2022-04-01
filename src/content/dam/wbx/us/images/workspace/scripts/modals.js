@@ -4,6 +4,9 @@ import 'swiper/scss/navigation';
 import classnames from './classnames';
 import {removeModalPaths, splitPath} from './paths';
 import {isIOS, isSafari} from "./utils";
+import { setTimeout } from 'core-js';
+import DeviceScroller  from './modal-room-info-device-scroller';
+import SoftwareScroller  from './modal-room-info-software-scroller';
 
 const slideInDelayMillis = 300;
 const deviceModalSubstring = '/hardware/';
@@ -153,7 +156,8 @@ const forceRedraw = function(element, callBeforeRedrawn){
 }
 
 const showDevice = path => {
-
+    destroyRoomInfoScrollers();
+    
     if (active) {
         postActive = ()=>{showDevice(path)}
         return
@@ -253,7 +257,6 @@ const showRoomInfo = path => {
         return node != activeModalRoot
     }); 
 
-
     forceRedraw(modalsContainer)
     forceRedraw(activeModalRoot)
 
@@ -261,6 +264,7 @@ const showRoomInfo = path => {
         forceRedraw(modalsContainer)
         forceRedraw(activeModalRoot)
 
+        // And slide it in
         setTimeout(() => {
             activeModalRoot.classList.add(classnames.slideIn);
         }, slideInDelayMillis);
@@ -269,8 +273,17 @@ const showRoomInfo = path => {
     setActive(false);
     hideAll();
 
-    // And slide it in
-    
+    setUpRoomInfoScrollers(workspaceId, roomId);
+};
+
+const setUpRoomInfoScrollers = (workspaceId, roomId)=>{
+  DeviceScroller.setUpDeviceScroller(workspaceId, roomId);
+    SoftwareScroller.setUpsoftwareScroller(workspaceId, roomId);
+}
+
+const destroyRoomInfoScrollers = ()=> {
+  DeviceScroller.destroyRoomInfoDeviceScroller();
+  SoftwareScroller.destroyRoomInfosoftwareScroller();
 };
 
 export default {

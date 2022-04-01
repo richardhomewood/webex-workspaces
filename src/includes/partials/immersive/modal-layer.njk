@@ -1,13 +1,13 @@
 {% import "../device-modal/index.njk" as deviceModal %}
 {% import "../room-info-modal/index.njk" as infoModal %}
 
-{% macro render(common, workspaces, devicesByRoom, vendorDevicesByRoom, devices) %}
+{% macro render(common, workspaces, devicesByRoom, devices, softwareByRoom, software) %}
   <div class="ws-displayNone" id="ws-modal-layer">
     {%- for workspaceId in common.orderedWorkspaceIds %}
       {%- for room in workspaces[workspaceId].rooms %}
         <div class="ws-room-modals-container ws-displayNone" id="{{ workspaceId }}-{{ room.slug }}-modals">
           {{ deviceModal.render(common, workspaces[workspaceId], room, devicesByRoom, devices) }}
-          {{ infoModal.render(common, workspaces[workspaceId], room, vendorDevicesByRoom, devices) }}
+          {{ infoModal.render(common, workspaces[workspaceId], room, devicesByRoom, devices, softwareByRoom, software) }}
         </div>
       {%- endfor %}
     {%- endfor %}

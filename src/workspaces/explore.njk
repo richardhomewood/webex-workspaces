@@ -13,7 +13,7 @@ permalink: workspaces/explore.html
     <link rel="stylesheet" href="{% webpack 'main.css' %}">
 
     {# This is the root element for the "immersive experience" #}
-    {{ immersive.render(common, workspaces, devicesByRoom, vendorDevicesByRoom, devices) }}
+    {{ immersive.render(common, workspaces, devicesByRoom, devices, softwareByRoom, software) }}
 
     {# The following line forces the parser to block until the stryles load. #}
     <script>/**/</script>
