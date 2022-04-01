@@ -4,7 +4,7 @@
     "name": "Bang & Olufsen Cisco 980",
     "vendor": "webex",
     "url": "https://hardware.webex.com/products/cisco-headset-980",
-    "description": "Find your focus with the new over-ear wireless headset that's designed for life and perfected for business.",
+    "description": "The new over-ear wireless headset that's designed for life and perfected for business.",
     "carouselItems": [
       {
         "filename": "Beoplay Portal 0064.jpg",
@@ -23,23 +23,23 @@
         "alt": "A front view of the Bang & Olufsen Cisco 980 headset."
       }
     ],
-    "tagline": "Feature",
+    "tagline": "Find your focus.",
     "features": [
       {
-        "shortPhrase": "shortPhrase",
-        "longPhrase": "Experience immersive sound during your meetings or while listening to music."
+        "shortPhrase": "Immersive sound",
+        "longPhrase": "Surround yourself in sound while in meetings or listening to music."
       },
       {
-        "shortPhrase": "shortPhrase",
-        "longPhrase": "Portable and wireless with up to 24-hours of battery life so you can take your meetings with you wherever you go."
+        "shortPhrase": "Take it with you",
+        "longPhrase": "Wireless, portable design with up to 24-hours of battery life."
       },
       {
-        "shortPhrase": "shortPhrase",
-        "longPhrase": "Boomless design for all day comfort."
+        "shortPhrase": "All day comfort",
+        "longPhrase": "Breathable fiber and an off-center pressure point eliminates irritation."
       },
       {
-        "shortPhrase": "shortPhrase",
-        "longPhrase": "Adaptive Active Noise Cancellation with background noise reduction helps keep audio crystal clear in any environment."
+        "shortPhrase": "Noise removal",
+        "longPhrase": "Eliminate distractions with active noise cancellation and background noise removal."
       }
     ],
     "specs": [
@@ -70,7 +70,7 @@
     "name": "Cisco Headset 730",
     "vendor": "webex",
     "url": "https://hardware.webex.com/products/cisco-headset-730",
-    "description": "Go anywhere with the award-winning, on-ear wireless headset designed for work and play.",
+    "description": "The award-winning, on-ear wireless headset with advanced noise cancellation that’s designed for work and play.",
     "carouselItems": [
       {
         "filename": "Webex_Headset730_White_3qtr_Left_RGB_smp.jpg",
@@ -89,23 +89,23 @@
         "alt": "A front view of a Cisco Headset 730 in platinum."
       }
     ],
-    "tagline": "Features",
+    "tagline": "Go anywhere and leave distractions behind.",
     "features": [
       {
-        "shortPhrase": "shortPhrase",
-        "longPhrase": "Portable and wireless with up to 20-hours of talk time so you can take your meetings with you wherever you go."
+        "shortPhrase": "Sleek design",
+        "longPhrase": "Portable and wireless with a boomless design so you can take it with you wherever you go."
       },
       {
-        "shortPhrase": "shortPhrase",
-        "longPhrase": "Boomless design for all day comfort."
+        "shortPhrase": "Plenty of talk time",
+        "longPhrase": "Up to 20 hours of talk time so you can take your meetings with you wherever you go."
       },
       {
-        "shortPhrase": "shortPhrase",
-        "longPhrase": "Easily switch between meetings and calls to your favorite focus-work playlist."
+        "shortPhrase": "Easy task switching",
+        "longPhrase": "Switch between meetings and calls to your favorite focus-work playlist and simultaneously pair with up to two devices."
       },
       {
-        "shortPhrase": "shortPhrase",
-        "longPhrase": "Active noise cancellation with background noise reduction help keep audio crystal clear in any environment."
+        "shortPhrase": "Crystal clear audio",
+        "longPhrase": "Active noise cancellation with background noise reduction helps keep your calls crystal clear in any environment."
       }
     ],
     "specs": [
@@ -177,15 +177,15 @@
     ],
     "features": [
       {
-        "shortPhrase": "shortPhrase",
+        "shortPhrase": "Short phrase",
         "longPhrase": "Always-on VPN. An office-like experience at home with Wi-Fi that’s always connected."
       },
       {
-        "shortPhrase": "shortPhrase",
+        "shortPhrase": "Short phrase",
         "longPhrase": "VOIP telephony. Plug-and-play office telephony in a home office from PoE-enabled ports."
       },
       {
-        "shortPhrase": "shortPhrase",
+        "shortPhrase": "Short phrase",
         "longPhrase": "Network visibility. Insight into how apps are performing for remote workers with powerful end-to-end analytics."
       }
     ],
@@ -267,20 +267,69 @@
     "tagline": "Features",
     "features": [
       {
-        "shortPhrase": "shortPhrase",
+        "shortPhrase": "Short phrase",
         "longPhrase": "RF Optimization. Dual-concurrent radios with MU-MIMO support."
       },
       {
-        "shortPhrase": "shortPhrase",
+        "shortPhrase": "Short phrase",
         "longPhrase": "Layer 7 traffic shaping. Prioritize productivity apps."
       },
       {
-        "shortPhrase": "shortPhrase",
+        "shortPhrase": "Short phrase",
         "longPhrase": "Cloud management. Network-wide visibility and control."
       },
       {
-        "shortPhrase": "shortPhrase",
+        "shortPhrase": "Short phrase",
         "longPhrase": "Enterprise security. Intrusion detection and prevention system (WIDS/WIPS)."
+      }
+    ],
+    "specs": [
+      {
+        "icon": "device-connection",
+        "text": "Four radios: 2.4 GHz, 5 Ghz, dual-band embedded WIDS/WIPS, and Bluetooth® Low Energy"
+      },
+      {
+        "icon": "04",
+        "iconSize": [44, 28],
+        "text": "4-stream UL/DL MU-MIMO 802.11ax"
+      },
+      {
+        "icon": "2-point-5",
+        "iconSize": [52, 28],
+        "text": "One 2.5 Gbps multigigabit Ethernet port"
+      },
+      {
+        "icon": "802-point-3",
+        "iconSize": [96, 28],
+        "text": "PoE: 802.3at"
+      }
+    ]
+  },
+  "mr56": {
+    "id": "mr56",
+    "name": "MR56 AP",
+    "vendor": "meraki",
+    "url": "https://meraki.cisco.com/product/wi-fi/indoor-access-points/mr56/",
+    "description": "Wi-Fi 6 with multigigabit ethernet. Ultra-high performance and efficiency for dense indoor environments with a dedicated security radio.",
+    "carouselItems": [
+      {
+        "filename": "mr56-top.jpg",
+        "alt": "The MR56 in white. The Cisco logo is visible in the lower right corner."
+      }
+    ],
+    "tagline": "Ultra-high Wi-Fi performance",
+    "features": [
+      {
+        "shortPhrase": "Location analytics",
+        "longPhrase": "Alert and manage digital operations in real time."
+      },
+      {
+        "shortPhrase": "Intelligent guest services",
+        "longPhrase": "Make workplaces work better."
+      },
+      {
+        "shortPhrase": "Wi-Fi commerce",
+        "longPhrase": "Transform venues into intelligent spaces."
       }
     ],
     "specs": [
@@ -352,15 +401,15 @@
     "tagline": "Features",
     "features": [
       {
-        "shortPhrase": "shortPhrase",
+        "shortPhrase": "Short phrase",
         "longPhrase": "Layer 2 access switching ideal for small branch deployments."
       },
       {
-        "shortPhrase": "shortPhrase",
+        "shortPhrase": "Short phrase",
         "longPhrase": "Easy management and configuration through an intuitive cloud interface."
       },
       {
-        "shortPhrase": "shortPhrase",
+        "shortPhrase": "Short phrase",
         "longPhrase": "Granular network visibility and detailed event logs to help you keep track of every configuration change in your network."
       }
     ],
@@ -434,15 +483,15 @@
     "tagline": "Features",
     "features": [
       {
-        "shortPhrase": "shortPhrase",
+        "shortPhrase": "Short phrase",
         "longPhrase": "Unified threat management. Next-generation layer 7 firewall and content filtering."
       },
       {
-        "shortPhrase": "shortPhrase",
+        "shortPhrase": "Short phrase",
         "longPhrase": "Connectivity. Extension of SD-WAN fabric to hybrid clouds and Cisco Umbrella."
       },
       {
-        "shortPhrase": "shortPhrase",
+        "shortPhrase": "Short phrase",
         "longPhrase": "Advanced analytics with machine-learning. At-a-glance performance of apps across the LAN, WAN, and app server."
       }
     ],
@@ -478,7 +527,7 @@
     "name": "Webex Board Pro 55",
     "vendor": "webex",
     "url": "https://hardware.webex.com/products/webex-board-pro",
-    "description": "Power hybrid teams with the all-in-one device designed for huddle spaces and small rooms.",
+    "description": "The next-generation device for collaboration, content sharing, and whiteboarding in huddle spaces and small rooms.",
     "carouselItems": [
       {
         "filename": "55 front persp.jpg",
@@ -489,23 +538,23 @@
         "alt": "The Webex Board Pro 55."
       }
     ],
-    "tagline": "Features",
+    "tagline": "Power hybrid teamwork.",
     "features": [
       {
-        "shortPhrase": "shortPhrase",
+        "shortPhrase": "Spark new ideas",
         "longPhrase": "Experience the best of both worlds with high-quality video conferencing and powerful ideation tools."
       },
       {
-        "shortPhrase": "shortPhrase",
-        "longPhrase": "Get to know everyone in the room with people focus which provides a clear view of each person in the meeting."
+        "shortPhrase": "Supercharge creativity",
+        "longPhrase": "Bring local and hybrid teams together to co-create with digital whiteboarding and content annotation."
       },
       {
-        "shortPhrase": "shortPhrase",
-        "longPhrase": "Bring local and hybrid teams together to ideate and co-create with digital whiteboarding, content annotation, and web applications."
+        "shortPhrase": "Join any meeting",
+        "longPhrase": "Easily join Webex, Zoom, Microsoft, or Google meetings and access your favorite applications with the touch of a button."
       },
       {
-        "shortPhrase": "shortPhrase",
-        "longPhrase": "Help reassure everyone in the room about their safety with people count which monitors and alerts on room capacity."
+        "shortPhrase": "Ensure safety",
+        "longPhrase": "Equip your rooms with AI-powered features including voice-enabled room controls and automated room capacity and cleaning alerts."
       }
     ],
     "specs": [
@@ -542,34 +591,30 @@
     "name": "Webex Board Pro 75",
     "vendor": "webex",
     "url": "https://hardware.webex.com/products/webex-board-pro",
-    "description": "Bring ideas to life with the all-in-one device designed for hybrid teamwork.",
+    "description": "The next-generation device for collaboration, content sharing, and whiteboarding in the ideation space.",
     "carouselItems": [
       {"filename": "Cisco_BoardPro_White_Turnaround.mp4", "alt": "Animation of the Webex Board Pro 75, displaying the front and sides. The main screen shows six apps and the time of 9:54."},
       {"filename": "ST01_BoardPro_front.jpg", "alt": "The front of the Webex Board Pro 75."},
       {"filename": "ST01_BoardPro_back.jpg", "alt": "The back of the Webex Board Pro 75."},
       {"filename": "ST01_BoardPro_mid.jpg", "alt": "Three-quarters view of the Webex Board Pro 75."}
     ],
-    "tagline": "Features",
+    "tagline": "Bring ideas to life.",
     "features": [
       {
-        "shortPhrase": "shortPhrase",
-        "longPhrase": "Bring local and hybrid teams together to ideate and co-create with digital whiteboarding and content annotation."
+        "shortPhrase": "Supercharge creativity",
+        "longPhrase": "Bring local and hybrid teams together to co-create with digital whiteboarding and content annotation."
       },
       {
-        "shortPhrase": "shortPhrase",
-        "longPhrase": "Present to your audience with wireless sharing and touch-based pinch and zoom."
+        "shortPhrase": "Capture every idea",
+        "longPhrase": "Ideate before, during, and after the meeting with whiteboards that capture and save every idea so you can easily pick up where you left off."
       },
       {
-        "shortPhrase": "shortPhrase",
-        "longPhrase": "Pick up where you left off with whiteboards that capture and save every idea."
+        "shortPhrase": "Join any meeting",
+        "longPhrase": "Easily join Webex, Zoom, Microsoft, or Google meetings and access your favorite applications with the touch of a button."
       },
       {
-        "shortPhrase": "shortPhrase",
-        "longPhrase": "Experience the best of both worlds with high-quality video conferencing and powerful ideation tools."
-      },
-      {
-        "shortPhrase": "shortPhrase",
-        "longPhrase": "Provide digital signage and intelligent alerts to keep the workplace safe."
+        "shortPhrase": "Leverage built-in intelligence",
+        "longPhrase": "Equip your spaces with AI-powered features, intelligent sensors, and voice-enabled room controls."
       }
     ],
     "specs": [
@@ -601,12 +646,67 @@
       }
     ]
   },
+  "webex-desk": {
+    "id": "webex-desk",
+    "name": "Webex Desk",
+    "vendor": "webex",
+    "url": "https://hardware.webex.com/products/cisco-webex-desk",
+    "description": "The all-in-one collaboration device for every desk.",
+    "carouselItems": [
+      {
+        "filename": "webex-desk.jpg",
+        "alt": "TODO"
+      }
+    ],
+    "tagline": {
+      "bedroom": "Bedroom tagline",
+      "jumpRoom": "Jump into collaboration."
+    },
+    "features": [
+      {
+        "shortPhrase": "Experience immersive collaboration",
+        "longPhrase": "Do it all with a dedicated collaboration device that doubles as a high-quality monitor."
+      },
+      {
+        "shortPhrase": "Start in seconds",
+        "longPhrase": "Pair your laptop to view and join upcoming meetings, share your screen, or focus on your work."
+      },
+      {
+        "shortPhrase": "Get creative",
+        "longPhrase": "Interactive whiteboarding lets you brainstorm or ideate on the touch display, while virtual participants can contribute on any device."
+      },
+      {
+        "shortPhrase": "Join any meeting",
+        "longPhrase": "Easily join Webex, Zoom, Microsoft, or Google meetings with just the touch of a button."
+      }
+    ],
+    "specs": [
+      {
+        "text": "Screen: 24-inch anti-glare LCD touchscreen display"
+      },
+      {
+        "text": "Resolution: 1080p (16:9)"
+      },
+      {
+        "text": "Camera: 8MP image sensors, supports up to 30 fps"
+      },
+      {
+        "text": "Field of view: 64° horizontal field of view, 50° vertical field of view"
+      },
+      {
+        "text": "Audio: 4-element microphone array"
+      },
+      {
+        "text": "Speaker: Premium full-range center speaker with passive bass radiators"
+      }
+    ]
+  },
   "webex-desk-camera": {
     "id": "webex-desk-camera",
     "name": "Webex Desk Camera",
     "vendor": "webex",
     "url": "https://hardware.webex.com/products/cisco-webex-desk-camera",
-    "description": "Meet the picture-perfect webcam powering video conferencing at the hot desk.",
+    "description": "The webcam that powers video conferencing at the hot desk.",
     "carouselItems": [
       {
         "filename": "DeskCamera_firstimage.jpg",
@@ -617,19 +717,23 @@
         "alt": "Front view of the Webex Desk Camera."
       }
     ],
-    "tagline": "Features",
+    "tagline": "Picture perfect.",
     "features": [
       {
-        "shortPhrase": "shortPhrase",
+        "shortPhrase": "High-quality video",
+        "longPhrase": "Replace the low-angle, low-quality laptop view with a high-quality webcam."
+      },
+      {
+        "shortPhrase": "Stunning lighting",
         "longPhrase": "Excellent video quality in all lighting conditions so you look great even when working late."
       },
       {
-        "shortPhrase": "shortPhrase",
-        "longPhrase": "Background noise reduction so you can be clearly heard when office is at its busiest."
+        "shortPhrase": "Remove distractions",
+        "longPhrase": "Background noise reduction so you can be clearly heard when the office is at its busiest."
       },
       {
-        "shortPhrase": "shortPhrase",
-        "longPhrase": "Built-in privacy shutter ensures privacy as needed."
+        "shortPhrase": "Ensure privacy",
+        "longPhrase": "Built-in privacy shutter so you always know when you're on and off camera."
       }
     ],
     "specs": [
@@ -663,7 +767,7 @@
     "name": "Webex Desk Hub",
     "vendor": "webex",
     "url": "https://hardware.webex.com/products/cisco-webex-desk-hub",
-    "description": "Make any space your own with the personalized hot desking solution.",
+    "description": "The personalized hot desking solution.",
     "carouselItems": [
       {
         "filename": "DeskHub_3qtrFront_RGB_smp.jpg",
@@ -682,27 +786,23 @@
         "alt": "The Webex Desk Hub shows a bright homescreen with five apps visible and a headset docked on the charging station."
       }
     ],
-    "tagline": "Features",
+    "tagline": "Make any space your own.",
     "features": [
       {
-        "shortPhrase": "shortPhrase",
+        "shortPhrase": "Authenticate in seconds",
         "longPhrase": "Walk up to any open space in the office and authenticate in seconds with wireless pairing."
       },
       {
-        "shortPhrase": "shortPhrase",
-        "longPhrase": "Easily reserve your space for a specific time or the entire day."
+        "shortPhrase": "Easy reservation",
+        "longPhrase": "Reserve your space for a specific time or the entire day."
       },
       {
-        "shortPhrase": "shortPhrase",
-        "longPhrase": "See your full calendar and contact directory."
+        "shortPhrase": "Personalized experience",
+        "longPhrase": "See your full calendar and contact directory, join meetings, make calls, and charge your devices from one device."
       },
       {
-        "shortPhrase": "shortPhrase",
-        "longPhrase": "Join meetings, make calls, and charge your devices from one dedicated hot desk device."
-      },
-      {
-        "shortPhrase": "shortPhrase",
-        "longPhrase": "Charge your smartphone, headset, and laptop while you work."
+        "shortPhrase": "Pairs perfectly",
+        "longPhrase": "Pair with the Webex Desk Camera for a full video conferencing solution at the hot desk."
       }
     ],
     "specs": [
@@ -729,7 +829,7 @@
     "name": "Webex Desk Mini",
     "vendor": "webex",
     "url": "https://hardware.webex.com/products/desk-mini",
-    "description": "Create an instant workspace with the portable video conferencing device that's designed for taking meetings with you to any room—even your kitchen.",
+    "description": "The portable video conferencing device that's designed for taking meetings with you to any room—even your kitchen.",
     "carouselItems": [
       {
         "filename": "Cisco_DeskMini_White_Turnaround.mp4",
@@ -752,23 +852,23 @@
         "alt": "The Webex Desk Mini."
       }
     ],
-    "tagline": "Features",
+    "tagline": "Create an instant workspace.",
     "features": [
       {
-        "shortPhrase": "shortPhrase",
-        "longPhrase": "Portable design perfect for the kitchen, bedroom, or any small workspace"
+        "shortPhrase": "Bring it with you",
+        "longPhrase": "Designed for portability, you can take it with you to any room in the house, including the kitchen, bedroom, or any small workspace."
       },
       {
-        "shortPhrase": "shortPhrase",
-        "longPhrase": "Background noise removal to eliminate distractions at home"
+        "shortPhrase": "Eliminate distractions",
+        "longPhrase": "Always appear professional with virtual backgrounds and noise removal."
       },
       {
-        "shortPhrase": "shortPhrase",
-        "longPhrase": "Join any meeting service—including Webex, Zoom, and Microsoft—with a click of a button"
+        "shortPhrase": "Get creative",
+        "longPhrase": "Interactive whiteboarding lets you brainstorm or ideate on the touch display, while virtual participants can contribute from any device."
       },
       {
-        "shortPhrase": "shortPhrase",
-        "longPhrase": "Meet, call, and co-create from a single device"
+        "shortPhrase": "Join any meeting",
+        "longPhrase": "Easily join Webex, Zoom, Microsoft, or Google meetings with the touch of a button."
       }
     ],
     "specs": [
@@ -805,29 +905,29 @@
     "name": "Webex Desk Pro",
     "vendor": "webex",
     "url": "https://hardware.webex.com/products/cisco-webex-desk-pro",
-    "description": "Upgrade your office with the most advanced all-in-one collaboration device.",
+    "description": "The most advanced collaboration workstation for the personal office.",
     "carouselItems": [
       {"filename": "DeskPro_3qtrRight_RGB_smp.jpg", "alt": "The front of the Webex Desk Pro. The screen shows the time of 9:54 and the date August 9, plus icons to call, whiteboard, share, and join a Webex meeting."},
       {"filename": "DeskPro_Front_RGB_smp.jpg", "alt": "The front of the Webex Desk Pro. The screen shows the time of 9:54 and the date August 9, plus icons to call, whiteboard, share, and join a Webex meeting."},
       {"filename": "Webex_DeskPro_Back_RGB_smp.jpg", "alt": "The back of the Webex Desk Pro."}
     ],
-    "tagline": "Features",
+    "tagline": "Upgrade your office.",
     "features": [
       {
-        "shortPhrase": "shortPhrase",
-        "longPhrase": "Collaborate, co-create, and annotate with a single, intelligent device."
+        "shortPhrase": "Experience immersive collaboration",
+        "longPhrase": "Do it all with a dedicated collaboration device that doubles as a high-quality monitor."
       },
       {
-        "shortPhrase": "shortPhrase",
-        "longPhrase": "Virtual backgrounds so you always appear professional no matter your environment."
+        "shortPhrase": "Eliminate distractions",
+        "longPhrase": "Always appear professional with virtual backgrounds and noise removal."
       },
       {
-        "shortPhrase": "shortPhrase",
-        "longPhrase": "Background noise removal to eliminate distractions at home."
+        "shortPhrase": "Get creative",
+        "longPhrase": "Interactive whiteboarding lets you brainstorm or ideate on the touch display, while virtual participants can contribute on any device."
       },
       {
-        "shortPhrase": "shortPhrase",
-        "longPhrase": "Join any meeting service—including Webex, Zoom, and Microsoft—with a click of a button."
+        "shortPhrase": "Join any meeting",
+        "longPhrase": "Easily join Webex, Zoom, Microsoft, or Google meetings with the touch of a button."
       }
     ],
     "specs": [
@@ -864,7 +964,7 @@
     "name": "Webex Room Kit Mini",
     "vendor": "webex",
     "url": "https://hardware.webex.com/products/cisco-webex-room-kit-mini",
-    "description": "See every detail with the intelligent video collaboration bar that attaches to any 4K display in your home.",
+    "description": "The intelligent video collaboration bar that attaches to any 4K display in your home.",
     "carouselItems": [
       {
         "filename": "RoomKit_Mini_3qtrRight_RGB_smp.jpg",
@@ -879,27 +979,23 @@
         "alt": "The Webex Room Kit Mini."
       }
     ],
-    "tagline": "Features",
+    "tagline": "See every detail.",
     "features": [
       {
-        "shortPhrase": "shortPhrase",
-        "longPhrase": "Combines everything you need including codec, camera, microphones, and speakers into a single device that integrates with a 4K display."
+        "shortPhrase": "Everything you need",
+        "longPhrase": "Combines codec, camera, microphones, and speakers into a single device that integrates with a 4K display."
       },
       {
-        "shortPhrase": "shortPhrase",
-        "longPhrase": "Intelligent views and wide-angle field of view allows you to move around your home office while in a meeting."
+        "shortPhrase": "Join any meeting",
+        "longPhrase": "Easily join Webex, Zoom, Microsoft, or Google meetings with just the touch of a button."
       },
       {
-        "shortPhrase": "shortPhrase",
-        "longPhrase": "Automatic noise suppression removes unwanted sounds from your meetings."
+        "shortPhrase": "Leverage built-in intelligence",
+        "longPhrase": "Intelligent views allows you to move around your home office while in a meeting and AI-noise removal keeps unwanted sounds out of your meeting."
       },
       {
-        "shortPhrase": "shortPhrase",
-        "longPhrase": "Easily control your meeting experience from a distance with the Webex Room Navigator or use Webex Assistant for a zero-touch experience."
-      },
-      {
-        "shortPhrase": "shortPhrase",
-        "longPhrase": "Join any meeting service—including Webex, Zoom, and Microsoft—with a click of a button."
+        "shortPhrase": "Stay in control",
+        "longPhrase": "Control your meeting experience from a distance with the Webex Room Navigator or use Webex Assistant for a zero-touch experience."
       }
     ],
     "specs": [
@@ -937,30 +1033,30 @@
     "name": "Webex Room Navigator",
     "vendor": "webex",
     "url": "https://hardware.webex.com/products/cisco-webex-navigator-table-version",
-    "description": "Control every aspect of your meeting with the intuitive touch panel equipped with built-in sensors and powerful APIs.",
+    "description": "The intuitive touch panel equipped with built-in sensors and powerful APIs.",
     "carouselItems": [
       {
         "filename": "Table_Navigator_angled_small.jpg",
         "alt": "Webex Room Navigator"
       }
     ],
-    "tagline": "Features",
+    "tagline": "Control every aspect of your meeting",
     "features": [
       {
-        "shortPhrase": "shortPhrase",
-        "longPhrase": "Start and end a video or audio conference, share content, and view contact lists and directories all from a single device."
+        "shortPhrase": "Take control",
+        "longPhrase": "Touchscreen or hands-free control of room reservation, temperature, lighting, and the meeting itself."
       },
       {
-        "shortPhrase": "shortPhrase",
-        "longPhrase": "Choose the right angle for you with two display orientation, including a 180 degrees rotation of the user interface when the device is tilted."
+        "shortPhrase": "Access everything",
+        "longPhrase": "View and access upcoming meetings, contact lists, and directories."
       },
       {
-        "shortPhrase": "shortPhrase",
+        "shortPhrase": "Leverage built-in intelligence",
         "longPhrase": "Stay informed on room humidity, air quality, temperature, and noise level with intelligent sensors that help maintain a safe workspace."
       },
       {
-        "shortPhrase": "shortPhrase",
-        "longPhrase": "Display custom content, such as stock price and industry news on the display when it's not being used so you can stay informed while you work from home."
+        "shortPhrase": "Stay in the know",
+        "longPhrase": "Display custom content, such as stock price and industry news, on the display when in standby mode."
       }
     ],
     "specs": [

@@ -1,13 +1,20 @@
-{% macro feature(text) %}
-  <li>{{ text }}</li>
+{% macro feature(item) %}
+  <li>
+    <div class="ws-feature-short-phrase">{{ item.shortPhrase }}</div>
+    <div class="ws-feature-long-phrase">{{ item.longPhrase }}</div>
+  </li>
 {% endmacro %}
 
-{% macro render(common, features) %}
+{% macro render(common, features, roomId) %}
   <div class="ws-device-features ws-modal-section">
-    <h6 class="ws-modal-section-heading">{{ common.deviceModal.featuresHeadingText }}</h6>
     <ul>
-      {% for text in features %}
-        {{ feature(text) }}
+      {% if features|isObject %}
+        {% set roomFeatures = features[roomId] %}
+      {% else %}
+        {% set roomFeatures = features %}
+      {% endif %}
+      {% for item in roomFeatures %}
+        {{ feature(item) }}
       {% endfor %}
     </ul>
   </div>

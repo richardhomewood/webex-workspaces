@@ -426,7 +426,7 @@ $modal-transform-transition: transform 0.65s
 
       .ws-device-intro-text {
         max-width: 640px;
-        margin: 21px auto;
+        margin: 40px auto;
         text-align: center;
         color: #545454;
         @include ws-med-body-reg;
@@ -466,6 +466,7 @@ $modal-transform-transition: transform 0.65s
       }
 
       .ws-carousel-nav {
+        margin-top: 6px;
         text-align: center;
 
         .ws-carousel-button-prev {
@@ -503,45 +504,38 @@ $modal-transform-transition: transform 0.65s
         }
       }
 
-      .ws-modal-sections {
-        display: flex;
-        flex-wrap: wrap;
-
-        .ws-modal-section {
-          margin-top: 40px;
-          flex: 0 0 100%;
-
-          h6.ws-modal-section-heading {
-            @include ws-h6;
-            margin: 0 0 40px;
-          }
-
-          ul {
-            margin-bottom: 0;
-          }
-        }
+      .ws-device-tagline {
+        @include ws-device-tagline-text;
+        text-align: center;
+        margin: 96px auto 64px;
       }
 
       .ws-device-features.ws-modal-section {
         ul {
-          border: 1px solid $list-items-border-color;
-          border-radius: 16px;
           padding: 0;
+          width: 80%;
+          margin: 64px auto;
 
           li {
-            @include ws-features-list-items;
             list-style: none;
-            margin: 40px 29px;
+            //flex: 0 0 100%;
 
-            &:not(:last-child) {
-              padding-bottom: 40px;
-              border-bottom: 1px solid $list-items-border-color;
+            .ws-feature-short-phrase {
+              @include ws-device-feature-short-phrase-text;
+              margin-bottom: 18px;
+              margin-top: 51px;
+            }
+            .ws-feature-long-phrase {
+              @include ws-device-feature-long-phrase-text;
             }
           }
         }
       }
 
       .ws-device-specs.ws-modal-section {
+        margin-top: 135px;
+        margin-bottom: 44px;
+
         ul {
           display: flex;
           flex-wrap: wrap;
@@ -598,6 +592,13 @@ $modal-transform-transition: transform 0.65s
             }
           }
         }
+
+        .ws-device-features.ws-modal-section {
+          li:not(:first-child) {
+            margin-top: 24px;
+          }
+        }
+
         .ws-device-specs.ws-modal-section {
           ul {
             // Make sure we only have room for 2 per row.
@@ -881,18 +882,34 @@ $modal-transform-transition: transform 0.65s
           }
         }
 
+        .ws-device-tagline {
+          margin-bottom: 0;
+        }
+
         .ws-device-features.ws-modal-section {
           ul {
+            margin-top: 22px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-content: space-between;
+
             li {
-              margin-left: 40px;
-              margin-right: 40px;
-              padding-left: 20px;
-              padding-right: 20px;
+              &:nth-child(2) {
+                // Line up first row
+                margin-top: 0;
+              }
+              &:nth-child(odd) {
+                margin-right: 10px;
+              }
+              &:nth-child(even) {
+                margin-left: 10px;
+              }
             }
           }
         }
 
         .ws-device-specs.ws-modal-section {
+          margin-bottom: 76px;
           ul {
             // Make sure we only have room for 3 per row.
             max-width: calc((170px * 3) + (20px * 2));
@@ -1216,10 +1233,6 @@ $modal-transform-transition: transform 0.65s
           letter-spacing: -0.04em;
         }
 
-        .ws-device-intro-text {
-          margin-top: 11px;
-        }
-
         .ws-image-carousel {
           height: auto;
           .swiper {
@@ -1227,7 +1240,6 @@ $modal-transform-transition: transform 0.65s
             aspect-ratio: 1.77 / 1;
           }
           .ws-carousel-nav {
-            margin-top: 6px;
             text-align: right;
             .ws-carousel-slide-numbers {
               margin-right: 20px;
@@ -1235,27 +1247,25 @@ $modal-transform-transition: transform 0.65s
           }
         }
 
-        .ws-modal-sections {
-          .ws-modal-section {
-            margin-top: 80px;
-
-            h6.ws-modal-section-heading {
-              margin: 0 0 40px;
-            }
-
-            ul {
-              margin-bottom: 0;
-            }
-          }
-        }
-
         .ws-device-features.ws-modal-section {
           ul {
+            margin-top: 22px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-content: space-between;
+            width: 90%;
+
             li {
-              margin-left: 71px;
-              margin-right: 71px;
-              padding-left: 0;
-              padding-right: 0;
+              &:nth-child(2) {
+                // Line up first row
+                margin-top: 0;
+              }
+              &:nth-child(odd) {
+                margin-right: 30px;
+              }
+              &:nth-child(even) {
+                margin-left: 30px;
+              }
             }
           }
         }
@@ -1292,9 +1302,9 @@ $modal-transform-transition: transform 0.65s
       .ws-device {
         .ws-device-features.ws-modal-section {
           ul {
+            width: 78%;
             li {
-              margin-left: 101px;
-              margin-right: 101px;
+              max-width: 362px;
             }
           }
         }
@@ -1875,9 +1885,8 @@ $modal-transform-transition: transform 0.65s
       .ws-device {
         .ws-device-features.ws-modal-section {
           ul {
+            width: 65%;
             li {
-              margin-left: 132px;
-              margin-right: 132px;
             }
           }
         }

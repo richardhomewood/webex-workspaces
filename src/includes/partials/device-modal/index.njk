@@ -19,20 +19,31 @@
         {% set device = devices[deviceId] %}
         <h2 class="ws-device-name">{{ device.name }}</h2>
 
-        <div class="ws-device-intro-text">{{ device.description }}</div>
+        <div class="ws-device-intro-text">{{ valueByRoom(device.description, room.slug) }}</div>
 
         <a class="ws-learn-more-cta ws-cta ws-white-cta" href="{{ device.url }}">{{ common.learnMoreCtaText }}</a>
 
         {{ carousel.render(room.slug, deviceId, device.carouselItems) }}
 
+        <h3 class="ws-device-tagline">{{ valueByRoom(device.tagline, room.slug) }}</h3>
+
         <div class="ws-modal-sections">
-          {{ features.render(common, device.features) }}
+          {{ features.render(common, device.features, room.slug) }}
 
           {{ specs.render(common, device.specs) }}
         </div>
+
+        <a class="ws-learn-more-cta ws-cta ws-white-cta" href="{{ device.url }}">{{ common.learnMoreCtaText }}</a>
 
       </div>
     {% endfor %}
   </div>
 {% endmacro %}
 
+{% macro valueByRoom(value, roomId) %}
+  {% if value|isObject %}
+    {{ value[roomId] }}
+  {% else %}
+    {{ value }}
+  {% endif %}
+{% endmacro %}
