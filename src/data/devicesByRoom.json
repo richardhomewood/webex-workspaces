@@ -35,11 +35,25 @@
       "webex-desk",
       "webex-room-navigator",
       "mr56"
+    ],
+    "lobby": [
+      "webex-desk-pro",
+      "mv-smart-cameras",
+      "mr56"
+    ],
+    "boardroom": [
+      "webex-room-panorama",
+      "webex-room-navigator"
     ]
   },
   "anywhere": {
     "cafe": [
       "bo-cisco-980"
+    ],
+    "doctorsOffice": [
+      "webex-desk-pro",
+      "cisco-ip-dect",
+      "wi-fi-phones"
     ]
   }
 }
