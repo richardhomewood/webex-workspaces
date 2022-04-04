@@ -421,7 +421,7 @@ $modal-transform-transition: transform 0.65s
       .ws-device-name {
         margin: 40px auto 0;
         text-align: center;
-        @include ws-h2;
+        @include ws-device-name-text;
       }
 
       .ws-device-intro-text {
@@ -937,7 +937,7 @@ $modal-transform-transition: transform 0.65s
 
 @media only screen and (min-width: 1280px) {
   #ws-modal-layer {
-    width: 70%;
+    width: 74.2%;
 
     .ws-modal-root:not(.ws-displayNone) {
       padding: 12px 64px 32px;
@@ -1227,10 +1227,6 @@ $modal-transform-transition: transform 0.65s
       .ws-device {
         .ws-device-name {
           margin-top: 69px;
-          font-family: 'CiscoSansTT-Medium', sans-serif;
-          font-size: 64px;
-          line-height: 64px;
-          letter-spacing: -0.04em;
         }
 
         .ws-image-carousel {
