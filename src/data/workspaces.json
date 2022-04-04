@@ -146,9 +146,10 @@
           }
         ],
         "roomDescription": [
-          "We often find the need to transform the rooms in our homes, like guest bedrooms, into makeshift offices. This can cause some concerns with professionalism (think: having a bed in the background or a cluttered spare-room-storage-space). It also can make balancing work and life, that much harder as the lines continue to blur.",
-          "By coupling high-performance collaboration devices with features that help reduce fatigue, you can create a workspace that keeps you energized all day long."
+          "We often find the need to transform the rooms in our homes, like guest bedrooms, into makeshift offices. This can cause some concerns with professionalism (think: having a bed in the background or a cluttered spare-room-storage-space). It also can make balancing work and life, that much harder.",
+          "With the right solutions, no one will be the wiser as to where you take your meetings or get your work done."
         ],
+        "tagline": "Make any space in your home the perfect place for collaboration.",
         "videoUrl": "https://webex.com/"
       }
     ]
@@ -323,7 +324,7 @@
           "A jump room is meant for times that require extreme focus, so it’s only natural that they offer both privacy as well everything you need to get work done. And with workers often dropping in spontaneously, you need a space that can be instantly productive.",
           "With the right combination of devices and software features, you can give visitors peace of mind that the room is both clean and ready for some serious focus work."
         ],
-        "tagline": "Short phrase about room",
+        "tagline": "Turn any jump space into a collaboration station.",
         "videoUrl": "https://webex.com/"
       }
     ]
