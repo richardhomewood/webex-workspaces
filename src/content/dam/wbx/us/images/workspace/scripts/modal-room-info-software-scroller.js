@@ -1,9 +1,17 @@
+import classnames from "./classnames";
 
 let softwareScroller;
+let softwareScrollContent;
+let softwareFakeScrollbar;
+let softwareFakeThumb;
 function setUpsoftwareScroller(workspaceId, roomId){
   destroyRoomInfosoftwareScroller();
   softwareScroller = document.querySelector(`.ws-room-software-scroller.ws-room-software-scroller-${workspaceId}-${roomId}`);
-  softwareScroller.scrollLeft = 0;
+  softwareScrollContent = softwareScroller.querySelector(`.swiper-wrapper`);
+  softwareScrollContent.style["left"] = 0;
+  softwareFakeScrollbar = document.querySelector(`.ws-scroll-track-container-software`);
+  softwareFakeThumb = softwareFakeScrollbar.querySelector(`.ws-scroll-track-container-software .ws-scroll-thumb`);
+  softwareFakeThumb.style["left"] = 0;
   updateRoomInfosoftwareScroller();
 
   window.addEventListener('resize', updateRoomInfosoftwareScroller);
@@ -12,7 +20,21 @@ function setUpsoftwareScroller(workspaceId, roomId){
   softwareScroller.addEventListener('touchstart', mouseDownHandler);
 }
 
-let pos = { top: 0, left: 0, x: 0, y: 0 };
+const getScrollContentWidth = () => {
+    if (!softwareScrollContent){
+        return 0
+    }
+
+    const slides = Array.from(softwareScrollContent.querySelectorAll(`.swiper-slide`));
+    let w = 0;
+    slides.forEach(element => {
+        w += element.offsetWidth
+    });
+
+    return w
+}
+
+let pos = { left: 0, x: 0, };
 const mouseDownHandler = function (e) {
   if (softwareScroller.classList.contains('ws-no-scroll')){
     return
@@ -22,13 +44,22 @@ const mouseDownHandler = function (e) {
   softwareScroller.style.userSelect = 'none';
   
   pos = {
-      left: softwareScroller.scrollLeft,
+      left: -(parseInt(softwareScrollContent.style["left"])),
       x: e.clientX,
   };
   
   const mouseMoveHandler = function (e) {
     const dx = e.clientX - pos.x;
-    softwareScroller.scrollLeft = pos.left - dx;
+
+    let w = getScrollContentWidth();
+
+    let newLeft = pos.left - dx;
+    let maxLeft = w - softwareScroller.offsetWidth
+    let minLeft = 0
+    let left = Math.min(Math.max(newLeft, minLeft) , maxLeft);
+
+    softwareScrollContent.style["left"] = -(left) + "px";
+    setThumbPosition();
   };
 
   const mouseUpHandler = function () {
@@ -47,7 +78,7 @@ const mouseDownHandler = function (e) {
 
 const destroyRoomInfosoftwareScroller = ()=>{
   if (softwareScroller) {
-    pos = { top: 0, left: 0, x: 0, y: 0 };
+    pos = { left: 0, x: 0 };
     softwareScroller.removeEventListener('mousedown',mouseDownHandler)
     softwareScroller.removeEventListener('touchstart',mouseDownHandler)
     softwareScroller = null;
@@ -55,19 +86,35 @@ const destroyRoomInfosoftwareScroller = ()=>{
 }
 
 const updateRoomInfosoftwareScroller = (e)=>{
-  if (!softwareScroller){
-    return
-  }
-
-  setTimeout(()=>{
-    if(softwareScroller.scrollWidth <= softwareScroller.offsetWidth || Math.abs(softwareScroller.scrollWidth - softwareScroller.offsetWidth) < 10) {
-      softwareScroller.classList.add('ws-no-scroll')
-    } else {
-      softwareScroller.classList.remove('ws-no-scroll')
+    if (!softwareScroller){
+      return
     }
-  }, e ? 200 : 0)
-}
-
+  
+    setTimeout(()=>{
+      const w = getScrollContentWidth();
+  
+      if(w <= softwareScroller.offsetWidth || Math.abs(w - softwareScroller.offsetWidth) < 10) {
+        softwareScroller.classList.add('ws-no-scroll');
+        softwareFakeThumb.classList.add(classnames.hidden);
+      } else {
+        softwareScroller.classList.remove('ws-no-scroll');
+        softwareFakeThumb.style["width"] = `calc(100% * (${softwareScroller.offsetWidth} / ${w})) !important;`;
+        setThumbPosition();
+        softwareFakeThumb.classList.remove(classnames.hidden);
+      }
+  
+    }, e ? 200 : 0)
+  
+  }
+  
+  const setThumbPosition = ()=>{
+      let trackWidth = softwareFakeScrollbar.offsetWidth;
+      let thunbWidth = softwareFakeThumb.offsetWidth;
+      let availableDistance = trackWidth - thunbWidth;
+      let scrollLeft = Math.abs(parseInt(softwareScrollContent.style["left"]));
+      let thumbLeft =  availableDistance * (scrollLeft / (getScrollContentWidth() - softwareScroller.offsetWidth));
+      softwareFakeThumb.style["left"] = thumbLeft + 'px';      
+  }
 
 export default {
     setUpsoftwareScroller: setUpsoftwareScroller,
