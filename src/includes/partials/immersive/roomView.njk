@@ -20,9 +20,7 @@
         <div class="ws-room-label-info-btn-container">
           {%- for workspaceId in common.orderedWorkspaceIds %}
               {%- for room in workspaces[workspaceId].rooms %}
-              <div class="ws-room-label" id="{{workspaceId}}-{{room.slug}}-label">{{ room.name }}
-                <a href="#/{{workspaceId}}/{{room.slug}}/info" class="ws-room-info-btn ws-cta ws-transparent-cta" id="{{workspaceId}}-{{room.slug}}-info-button" tabindex="-1">i</a>
-              </div>
+              <div class="ws-room-label" id="{{workspaceId}}-{{room.slug}}-label">{{ room.name }}</div>
               {%- endfor %}
           {%- endfor %}
         </div>

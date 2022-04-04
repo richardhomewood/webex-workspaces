@@ -401,13 +401,6 @@ const transitionRooms = (roomSelectorWrap)=> {
             element.classList.add(classnames.hidden);
         });
 
-        // hide all room-info buttons
-        const roomInfoButtons = Array.from(document.querySelectorAll(`.${classnames.roomInfoButton}`));
-        roomInfoButtons.forEach((element) => {
-            element.classList.add(classnames.hidden);
-            element.tabIndex = -1;
-        });
-
         //hide all show more rooms elements
         const showMoreRoomsElements = Array.from(document.querySelectorAll(`.${classnames.showMoreRoomsText}, .${classnames.showMoreRoomsBtn}`));
         showMoreRoomsElements.forEach((element) => {
@@ -424,9 +417,6 @@ const transitionRooms = (roomSelectorWrap)=> {
         //show relevant label
         const roomlabel = document.querySelector(`.${classnames.selectedRoomLabel}#${selectedWorkspaceId}-${selectedRoomId}-label`);
         roomlabel.classList.remove(classnames.hidden);
-        const roomInfoButton = document.querySelector(`.${classnames.roomInfoButton}#${selectedWorkspaceId}-${selectedRoomId}-info-button`);
-        roomInfoButton.classList.remove(classnames.hidden);
-        roomInfoButton.tabIndex = 0;
 
         // hide room selector
         if (roomSelectorWrap) {
@@ -668,20 +658,10 @@ const updateWorkspaceCta = function () {
 
     if (selectedWorkspaceId.length > 0){
 
-
-        // This portion of the function will not be used for the Phase 1 launch, since the button will
-        // not link to category pages.  It remains in place for future use in Phase 2, when
-        // the category pages are linked to again.  For https://jira.akqa.net/browse/SWW-209.
-        // let href = `./${selectedWorkspaceId}.html`;
-        // if (selectedRoomId) {
-        //     href = `${href}#${selectedRoomId}`;
-        // }
-        // This is the end of the change for https://jira.akqa.net/browse/SWW-209.
+        let href = `#/${selectedWorkspaceId}/${selectedRoomId}/info`;
 
         Array.from(aboutCtaElements).forEach((anchor) => {
-            // The following line also commented out for https://jira.akqa.net/browse/SWW-209.
-            // Uncomment it when this needs to link to category pages again.
-            // anchor.href = href
+            anchor.href = href
             anchor.enabled = true;
             anchor.style["opacity"] = 1;
             anchor.tabIndex = 0;
