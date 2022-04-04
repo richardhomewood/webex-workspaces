@@ -27,7 +27,7 @@
         text-align: center;
 
         .ws-initial-text {
-          @include ws-h4;
+          @include ws-h3;
 
           color: #ffffff;
         }
@@ -58,7 +58,7 @@
         text-align: center;
 
         .ws-initial-text {
-          @include ws-h4;
+          @include ws-h3-desktop;
           color: #ffffff;
         }
 
@@ -87,7 +87,7 @@
         text-align: center;
 
         .ws-initial-text {
-          @include ws-h1;
+          @include ws-h3-desktop;
           color: #ffffff;
         }
 
@@ -116,7 +116,7 @@
         text-align: center;
 
         .ws-initial-text {
-          @include ws-h1;
+          @include ws-h3-desktop;
           color: #ffffff;
         }
 
@@ -145,7 +145,7 @@
         text-align: center;
 
         .ws-initial-text {
-          @include ws-h2;
+          @include ws-h3-desktop;
           color: #ffffff;
         }
 
