@@ -6,11 +6,11 @@ let deviceFakeScrollbar;
 let deviceFakeThumb;
 function setUpDeviceScroller(workspaceId, roomId){
   destroyRoomInfoDeviceScroller();
-  deviceScroller = document.querySelector(`.ws-room-device-scroller.ws-room-device-scroller-${workspaceId}-${roomId}`);
+  deviceScroller = document.getElementById(`ws-room-device-scroller-${workspaceId}-${roomId}`);
   deviceScrollContent = deviceScroller.querySelector(`.swiper-wrapper`);
   deviceScrollContent.style["left"] = 0;
-  deviceFakeScrollbar = document.querySelector(`.ws-scroll-track-container-devices`);
-  deviceFakeThumb = deviceFakeScrollbar.querySelector(`.ws-scroll-track-container-devices .ws-scroll-thumb`);
+  deviceFakeScrollbar = document.getElementById(`ws-scroll-track-container-devices-${workspaceId}-${roomId}`);
+  deviceFakeThumb = deviceFakeScrollbar.querySelector('.ws-scroll-thumb');
   deviceFakeThumb.style["left"] = 0;
   updateRoomInfoDeviceScroller();
 
@@ -42,12 +42,12 @@ const mouseDownHandler = function (e) {
 
   deviceScroller.style.cursor = 'grabbing';
   deviceScroller.style.userSelect = 'none';
-  
+
   pos = {
       left: -(parseInt(deviceScrollContent.style["left"])),
       x: e.clientX,
   };
-  
+
   const mouseMoveHandler = function (e) {
     const dx = e.clientX - pos.x;
 
