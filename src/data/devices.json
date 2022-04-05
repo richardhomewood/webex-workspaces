@@ -1095,6 +1095,10 @@
     "url": "https://hardware.webex.com/products/cisco-webex-room-bar",
     "description": "The intelligent video collaboration bar that attaches to single or dual displays.",
     "carouselItems": [
+      {
+        "filename": "webex-room-bar-square.jpg",
+        "alt": "Webex Room Bar"
+      }
     ],
     "tagline": "Get a boardroom experience at home.",
     "features": [
