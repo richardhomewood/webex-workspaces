@@ -140,7 +140,7 @@
         },
         "hotSpots": [
           {
-            "slug": "webex-desk",
+            "slug": "webex-desk-mini",
             "x": 507,
             "y": 485
           }
@@ -288,10 +288,10 @@
         "background": "jumproom.jpg",
         "backgroundPosition": {
           "ws-XS": {
-            "x": 0
+            "x": 0.156
           },
           "ws-S": {
-            "x": 0
+            "x": 0.1
           },
           "ws-M": {
             "x": 0
@@ -305,12 +305,12 @@
         },
         "hotSpots": [
           {
-            "slug": "webex-desk",
+            "slug": "webex-room-navigator",
             "x": 400,
             "y": 340
           },
           {
-            "slug": "webex-room-navigator",
+            "slug": "webex-desk",
             "x": 620,
             "y": 330
           },
