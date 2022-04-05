@@ -305,12 +305,12 @@
         },
         "hotSpots": [
           {
-            "slug": "webex-desk",
+            "slug": "webex-room-navigator",
             "x": 400,
             "y": 340
           },
           {
-            "slug": "webex-room-navigator",
+            "slug": "webex-desk",
             "x": 620,
             "y": 330
           },
