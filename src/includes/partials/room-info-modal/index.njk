@@ -61,7 +61,7 @@
         <div class="swiper-wrapper">
           {% for softwareId in softwareByRoom[workspace.slug][room.slug] %}
             <div class="swiper-slide">
-              <div class="ws-room-info-carousel-img">{% imagesync "category-page/" + softwareId + "-square.jpg", "", "", "", true, "100vw" %}</div>
+              <div class="ws-room-info-carousel-img">{% imagesync "software/" + softwareId + "/room-info/" + softwareId + "-square.jpg", "", "", "", true, "100vw" %}</div>
               <div class="ws-room-info-carousel-content">
                 <h3>{{software[softwareId].name}}</h3>
                 <p>{{software[softwareId].description}}</p>
