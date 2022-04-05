@@ -33,7 +33,7 @@ $modal-transform-transition: transform 0.65s
     content: ' ';
     background-color: #00000060;
     position: absolute;
-    pointer-events: none;
+    pointer-events: all;
     top: 0;
     right: 0;
     bottom: 0;
