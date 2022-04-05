@@ -22,11 +22,6 @@ module.exports = {
     main: [
       path.resolve(__dirname, 'src/content/dam/wbx/us/images/workspace/scripts/index.js'),
       path.resolve(__dirname, 'src/content/dam/wbx/us/images/workspace/styles/index.scss')
-    ],
-    "category-page": [
-      path.resolve(__dirname, 'src/content/dam/wbx/us/images/workspace/scripts/category-page.js'),
-      path.resolve(__dirname, 'src/content/dam/wbx/us/images/workspace/styles/category-page.scss')
-
     ]
   },
   output: {
