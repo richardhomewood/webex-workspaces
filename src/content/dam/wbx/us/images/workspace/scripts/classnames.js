@@ -23,7 +23,6 @@ module.exports = {
     selectorWrapper: 'ws-workspaces-rooms',
     roomBackground: 'ws-room-bg',
     roomImage: 'ws-room-image',
-    roomInfoButton: 'ws-room-info-btn',
     roomModalsContainer: 'ws-room-modals-container',
     roomSlide: 'ws-room-slide',
     roomView: 'ws-room-view',

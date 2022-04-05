@@ -1,9 +1,17 @@
+import classnames from "./classnames";
 
 let deviceScroller;
+let deviceScrollContent;
+let deviceFakeScrollbar;
+let deviceFakeThumb;
 function setUpDeviceScroller(workspaceId, roomId){
   destroyRoomInfoDeviceScroller();
-  deviceScroller = document.querySelector(`.ws-room-device-scroller.ws-room-device-scroller-${workspaceId}-${roomId}`);
-  deviceScroller.scrollLeft = 0;
+  deviceScroller = document.getElementById(`ws-room-device-scroller-${workspaceId}-${roomId}`);
+  deviceScrollContent = deviceScroller.querySelector(`.swiper-wrapper`);
+  deviceScrollContent.style["left"] = 0;
+  deviceFakeScrollbar = document.getElementById(`ws-scroll-track-container-devices-${workspaceId}-${roomId}`);
+  deviceFakeThumb = deviceFakeScrollbar.querySelector('.ws-scroll-thumb');
+  deviceFakeThumb.style["left"] = 0;
   updateRoomInfoDeviceScroller();
 
   window.addEventListener('resize', updateRoomInfoDeviceScroller);
@@ -12,7 +20,21 @@ function setUpDeviceScroller(workspaceId, roomId){
   deviceScroller.addEventListener('touchstart', mouseDownHandler);
 }
 
-let pos = { top: 0, left: 0, x: 0, y: 0 };
+const getScrollContentWidth = () => {
+    if (!deviceScrollContent){
+        return 0
+    }
+
+    const slides = Array.from(deviceScrollContent.querySelectorAll(`.swiper-slide`));
+    let w = 0;
+    slides.forEach(element => {
+        w += element.offsetWidth
+    });
+
+    return w
+}
+
+let pos = { left: 0, x: 0, };
 const mouseDownHandler = function (e) {
   if (deviceScroller.classList.contains('ws-no-scroll')){
     return
@@ -20,15 +42,24 @@ const mouseDownHandler = function (e) {
 
   deviceScroller.style.cursor = 'grabbing';
   deviceScroller.style.userSelect = 'none';
-  
+
   pos = {
-      left: deviceScroller.scrollLeft,
+      left: -(parseInt(deviceScrollContent.style["left"])),
       x: e.clientX,
   };
-  
+
   const mouseMoveHandler = function (e) {
     const dx = e.clientX - pos.x;
-    deviceScroller.scrollLeft = pos.left - dx;
+
+    let w = getScrollContentWidth();
+
+    let newLeft = pos.left - dx;
+    let maxLeft = w - deviceScroller.offsetWidth
+    let minLeft = 0
+    let left = Math.min(Math.max(newLeft, minLeft) , maxLeft);
+
+    deviceScrollContent.style["left"] = -(left) + "px";
+    setThumbPosition();
   };
 
   const mouseUpHandler = function () {
@@ -47,7 +78,7 @@ const mouseDownHandler = function (e) {
 
 const destroyRoomInfoDeviceScroller = ()=>{
   if (deviceScroller) {
-    pos = { top: 0, left: 0, x: 0, y: 0 };
+    pos = { left: 0, x: 0 };
     deviceScroller.removeEventListener('mousedown',mouseDownHandler)
     deviceScroller.removeEventListener('touchstart',mouseDownHandler)
     deviceScroller = null;
@@ -60,12 +91,29 @@ const updateRoomInfoDeviceScroller = (e)=>{
   }
 
   setTimeout(()=>{
-    if(deviceScroller.scrollWidth <= deviceScroller.offsetWidth || Math.abs(deviceScroller.scrollWidth - deviceScroller.offsetWidth) < 10) {
-      deviceScroller.classList.add('ws-no-scroll')
+    const w = getScrollContentWidth();
+
+    if(w <= deviceScroller.offsetWidth || Math.abs(w - deviceScroller.offsetWidth) < 10) {
+      deviceScroller.classList.add('ws-no-scroll');
+      deviceFakeThumb.classList.add(classnames.hidden);
     } else {
-      deviceScroller.classList.remove('ws-no-scroll')
+      deviceScroller.classList.remove('ws-no-scroll');
+      deviceFakeThumb.style["width"] = `calc(100% * (${deviceScroller.offsetWidth} / ${w}))`;
+      setThumbPosition();
+      deviceFakeThumb.classList.remove(classnames.hidden);
     }
+
   }, e ? 200 : 0)
+
+}
+
+const setThumbPosition = ()=>{
+    let trackWidth = deviceFakeScrollbar.offsetWidth;
+    let thunbWidth = deviceFakeThumb.offsetWidth;
+    let availableDistance = trackWidth - thunbWidth;
+    let scrollLeft = Math.abs(parseInt(deviceScrollContent.style["left"]))
+    let thumbLeft =  availableDistance * (scrollLeft / (getScrollContentWidth() - deviceScroller.offsetWidth));
+    deviceFakeThumb.style["left"] = thumbLeft + 'px';
 }
 
 

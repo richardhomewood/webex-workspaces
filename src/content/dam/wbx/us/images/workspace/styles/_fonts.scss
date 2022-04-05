@@ -309,3 +309,17 @@
     letter-spacing: -0.02em;
   }
 }
+
+@mixin ws-device-name-text {
+    font-family: 'CiscoSansTT-Bold', sans-serif;
+    font-size: 34px;
+    line-height: 38px;
+    letter-spacing: -0.03em;
+
+    @media only screen and (min-width: 1280px) {
+      font-family: 'CiscoSansTT-Bold', sans-serif;
+      font-size: 64px;
+      line-height: 64px;
+      letter-spacing: -0.04em;
+    }
+}

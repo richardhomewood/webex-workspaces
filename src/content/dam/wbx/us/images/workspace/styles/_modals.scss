@@ -148,35 +148,16 @@ $modal-transform-transition: transform 0.65s
     }
 
     .ws-info-modal-devices-inner {
+      position: relative;
       .ws-room-device-scroller {
-        overflow-y: visible;
-        overflow-x: scroll;
+        position: relative;
+        overflow: visible;
         cursor: grab;
         user-select: none;
-
-        &::-webkit-scrollbar {
-          width: 1px;
-          height: 3px;
-          overflow: visible;
-        }
-
-        &::-webkit-scrollbar-track {
-          background: #c4c4c4;
-          background-color: transparent;
-        }
-
-        &::-webkit-scrollbar-thumb {
-          background: #078855;
-          height: 3px;
-        }
 
         &.ws-no-scroll {
           user-select: unset !important;
           cursor: default !important;
-
-          &::-webkit-scrollbar-thumb {
-            background: transparent;
-          }
         }
 
         & {
@@ -187,6 +168,9 @@ $modal-transform-transition: transform 0.65s
         width: 100%;
         min-width: 100%;
         .swiper-wrapper {
+          position: relative;
+          left: 0;
+          top: 0;
           align-items: stretch;
 
           .swiper-slide {
@@ -254,8 +238,11 @@ $modal-transform-transition: transform 0.65s
     }
 
     .ws-scroll-track-container {
+      position: relative;
       width: 100%;
+      height: 3px;
       transform: translate(0, -1.5px);
+
       .ws-scroll-track {
         width: 100%;
         height: 1px;
@@ -266,37 +253,20 @@ $modal-transform-transition: transform 0.65s
         top: 50%;
         transform: translate(-50%, -50%);
       }
+
+      .ws-scroll-thumb {
+        position: absolute;
+        height: 3px;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        background: #078855;
+      }
     }
 
     .ws-info-modal-software {
-      margin: 0 -21px;
-
-      .ws-scroll-track-container {
-        &::after,
-        &::before {
-          content: ' ';
-          width: 21px;
-          height: 20px;
-          background-color: #fff;
-          display: block;
-          float: right;
-          position: relative;
-          top: -3px;
-          z-index: 1;
-        }
-
-        &::before {
-          float: left;
-        }
-
-        .ws-scroll-track {
-          width: calc(100% - 42px);
-        }
-      }
-
       .ws-room-software-scroller {
-        overflow-y: visible;
-        overflow-x: scroll;
+        overflow: visible;
         width: 100%;
         padding: 0 21px;
         z-index: 0;
@@ -305,29 +275,9 @@ $modal-transform-transition: transform 0.65s
         cursor: grab;
         user-select: none;
 
-        &::-webkit-scrollbar {
-          width: 1px;
-          height: 3px;
-          overflow: visible;
-        }
-
-        &::-webkit-scrollbar-track {
-          background: #c4c4c4;
-          background-color: transparent;
-        }
-
-        &::-webkit-scrollbar-thumb {
-          background: #078855;
-          height: 3px;
-        }
-
         &.ws-no-scroll {
           user-select: unset !important;
           cursor: default !important;
-
-          &::-webkit-scrollbar-thumb {
-            background: transparent;
-          }
         }
 
         & {
@@ -336,7 +286,11 @@ $modal-transform-transition: transform 0.65s
         }
 
         .swiper-wrapper {
+          position: relative;
+          left: 0;
+          top: 0;
           align-items: stretch;
+
           .swiper-slide {
             height: auto;
             box-sizing: border-box;
@@ -421,7 +375,7 @@ $modal-transform-transition: transform 0.65s
       .ws-device-name {
         margin: 40px auto 0;
         text-align: center;
-        @include ws-h2;
+        @include ws-device-name-text;
       }
 
       .ws-device-intro-text {
@@ -674,8 +628,7 @@ $modal-transform-transition: transform 0.65s
       }
       .ws-info-modal-devices-inner {
         .ws-room-device-scroller {
-          overflow-y: visible;
-          overflow-x: scroll;
+          overflow: visible;
           width: 100%;
 
           .swiper-wrapper {
@@ -739,73 +692,32 @@ $modal-transform-transition: transform 0.65s
       }
 
       .ws-info-modal-software {
-        margin: 0 -32px;
-
-        .ws-scroll-track-container {
-          &::after,
-          &::before {
-            content: ' ';
-            width: 32px;
-            height: 20px;
-            background-color: #fff;
-            display: block;
-            float: right;
-            position: relative;
-            top: -3px;
-            z-index: 1;
-          }
-
-          &::before {
-            float: left;
-          }
-
-          .ws-scroll-track {
-            width: calc(100% - 64px);
-          }
-        }
-
         .ws-room-software-scroller {
-          overflow-y: visible;
-          overflow-x: scroll;
+          overflow: visible;
           width: 100%;
-          padding: 0 32px;
+          //padding: 0 32px;
           z-index: 0;
           position: relative;
 
           cursor: grab;
           user-select: none;
 
-          &::-webkit-scrollbar {
-            width: 1px;
-            height: 3px;
-            overflow: visible;
-          }
-
-          &::-webkit-scrollbar-track {
-            background: #c4c4c4;
-            background-color: transparent;
-          }
-
-          &::-webkit-scrollbar-thumb {
-            background: #078855;
-            height: 3px;
-          }
-
           &.ws-no-scroll {
             user-select: unset !important;
             cursor: default !important;
-
-            &::-webkit-scrollbar-thumb {
-              background: transparent;
-            }
           }
 
           & {
             -ms-overflow-style: none;
             scrollbar-width: none;
           }
+
           .swiper-wrapper {
+            position: relative;
+            left: 0;
+            top: 0;
             align-items: stretch;
+
             .swiper-slide {
               height: auto;
               box-sizing: border-box;
@@ -937,7 +849,7 @@ $modal-transform-transition: transform 0.65s
 
 @media only screen and (min-width: 1280px) {
   #ws-modal-layer {
-    width: 70%;
+    width: 74.2%;
 
     .ws-modal-root:not(.ws-displayNone) {
       padding: 12px 64px 32px;
@@ -1000,8 +912,7 @@ $modal-transform-transition: transform 0.65s
       .ws-info-modal-devices-inner {
         display: flex;
         .ws-room-device-scroller {
-          overflow-y: visible;
-          overflow-x: scroll;
+          overflow: visible;
           width: 100%;
 
           .swiper-wrapper {
@@ -1066,7 +977,9 @@ $modal-transform-transition: transform 0.65s
 
       .ws-scroll-track-container {
         width: 100%;
+        height: 3px;
         position: relative;
+        transform: translate(0, -1.5px);
 
         .ws-scroll-track {
           width: 100%;
@@ -1074,41 +987,15 @@ $modal-transform-transition: transform 0.65s
           background-color: #c4c4c4;
           overflow: visible;
           position: absolute;
-          left: 0;
+          left: 50%;
           top: 50%;
-          transform: translateY(-50%);
+          transform: translate(-50%, -50%);
         }
       }
 
       .ws-info-modal-software {
-        margin: 0 -64px;
-
-        .ws-scroll-track-container {
-          &::after,
-          &::before {
-            content: ' ';
-            width: 64px;
-            height: 20px;
-            background-color: #fff;
-            display: block;
-            float: right;
-            position: relative;
-            top: -3px;
-            z-index: 1;
-          }
-
-          &::before {
-            float: left;
-          }
-
-          .ws-scroll-track {
-            width: calc(100% - 128px);
-          }
-        }
-
         .ws-room-software-scroller {
-          overflow-y: visible;
-          overflow-x: scroll;
+          overflow: visible;
           width: 100%;
           padding: 0 64px;
           z-index: 0;
@@ -1117,29 +1004,9 @@ $modal-transform-transition: transform 0.65s
           cursor: grab;
           user-select: none;
 
-          &::-webkit-scrollbar {
-            width: 1px;
-            height: 3px;
-            overflow: visible;
-          }
-
-          &::-webkit-scrollbar-track {
-            background: #c4c4c4;
-            background-color: transparent;
-          }
-
-          &::-webkit-scrollbar-thumb {
-            background: #078855;
-            height: 3px;
-          }
-
           &.ws-no-scroll {
             user-select: unset !important;
             cursor: default !important;
-
-            &::-webkit-scrollbar-thumb {
-              background: transparent;
-            }
           }
 
           & {
@@ -1148,7 +1015,11 @@ $modal-transform-transition: transform 0.65s
           }
 
           .swiper-wrapper {
+            position: relative;
+            top: 0;
+            left: 0;
             align-items: stretch;
+
             .swiper-slide {
               height: auto;
               box-sizing: border-box;
@@ -1227,10 +1098,6 @@ $modal-transform-transition: transform 0.65s
       .ws-device {
         .ws-device-name {
           margin-top: 69px;
-          font-family: 'CiscoSansTT-Medium', sans-serif;
-          font-size: 64px;
-          line-height: 64px;
-          letter-spacing: -0.04em;
         }
 
         .ws-image-carousel {
@@ -1369,9 +1236,9 @@ $modal-transform-transition: transform 0.65s
       .ws-info-modal-devices-inner {
         display: flex;
         .ws-room-device-scroller {
-          overflow-y: visible;
-          overflow-x: scroll;
+          overflow: visible;
           width: 100%;
+
           .swiper-wrapper {
             align-items: stretch;
             .swiper-slide {
@@ -1385,7 +1252,6 @@ $modal-transform-transition: transform 0.65s
               }
 
               .ws-room-info-carousel-img {
-                //padding: 40px 45px;
                 width: 100%;
                 height: calc(100vw * (380 / 1366));
                 border: solid 1px #00000028;
@@ -1433,7 +1299,9 @@ $modal-transform-transition: transform 0.65s
       }
       .ws-scroll-track-container {
         width: 100%;
+        height: 3px;
         position: relative;
+        transform: translate(0, -1.5px);
 
         .ws-scroll-track {
           width: 100%;
@@ -1441,41 +1309,15 @@ $modal-transform-transition: transform 0.65s
           background-color: #c4c4c4;
           overflow: visible;
           position: absolute;
-          left: 0;
+          left: 50%;
           top: 50%;
-          transform: translateY(-50%);
+          transform: translate(-50%, -50%);
         }
       }
 
       .ws-info-modal-software {
-        margin: 0 -64px;
-
-        .ws-scroll-track-container {
-          &::after,
-          &::before {
-            content: ' ';
-            width: 64px;
-            height: 20px;
-            background-color: #fff;
-            display: block;
-            float: right;
-            position: relative;
-            top: -3px;
-            z-index: 1;
-          }
-
-          &::before {
-            float: left;
-          }
-
-          .ws-scroll-track {
-            width: calc(100% - 128px);
-          }
-        }
-
         .ws-room-software-scroller {
-          overflow-y: visible;
-          overflow-x: scroll;
+          overflow: visible;
           width: 100%;
           padding: 0 64px;
           z-index: 0;
@@ -1484,35 +1326,16 @@ $modal-transform-transition: transform 0.65s
           cursor: grab;
           user-select: none;
 
-          &::-webkit-scrollbar {
-            width: 1px;
-            height: 3px;
-            overflow: visible;
-          }
-
-          &::-webkit-scrollbar-track {
-            background: #c4c4c4;
-            background-color: transparent;
-          }
-
-          &::-webkit-scrollbar-thumb {
-            background: #078855;
-            height: 3px;
-          }
-
           &.ws-no-scroll {
             user-select: unset !important;
             cursor: default !important;
-
-            &::-webkit-scrollbar-thumb {
-              background: transparent;
-            }
           }
 
           & {
             -ms-overflow-style: none;
             scrollbar-width: none;
           }
+
           .swiper-wrapper {
             align-items: stretch;
             .swiper-slide {
@@ -1653,8 +1476,7 @@ $modal-transform-transition: transform 0.65s
       .ws-info-modal-devices-inner {
         display: flex;
         .ws-room-device-scroller {
-          overflow-y: visible;
-          overflow-x: scroll;
+          overflow: visible;
           width: 100%;
           .swiper-wrapper {
             align-items: stretch;
@@ -1669,7 +1491,6 @@ $modal-transform-transition: transform 0.65s
               }
 
               .ws-room-info-carousel-img {
-                //padding: 40px 45px;
                 width: 100%;
                 height: calc(100vw * (380 / 1920));
                 border: solid 1px #00000028;
@@ -1727,7 +1548,9 @@ $modal-transform-transition: transform 0.65s
 
       .ws-scroll-track-container {
         width: 100%;
+        height: 3px;
         position: relative;
+        transform: translate(0, -1.5px);
 
         .ws-scroll-track {
           width: 100%;
@@ -1735,41 +1558,15 @@ $modal-transform-transition: transform 0.65s
           background-color: #c4c4c4;
           overflow: visible;
           position: absolute;
-          left: 0;
+          left: 50%;
           top: 50%;
-          transform: translateY(-50%);
+          transform: translate(-50%, -50%);
         }
       }
 
       .ws-info-modal-software {
-        margin: 0 -72px;
-
-        .ws-scroll-track-container {
-          &::after,
-          &::before {
-            content: ' ';
-            width: 72px;
-            height: 20px;
-            background-color: #fff;
-            display: block;
-            float: right;
-            position: relative;
-            top: -3px;
-            z-index: 1;
-          }
-
-          &::before {
-            float: left;
-          }
-
-          .ws-scroll-track {
-            width: calc(100% - 144px);
-          }
-        }
-
         .ws-room-software-scroller {
-          overflow-y: visible;
-          overflow-x: scroll;
+          overflow: visible;
           width: 100%;
           padding: 0 72px;
           z-index: 0;
@@ -1778,36 +1575,20 @@ $modal-transform-transition: transform 0.65s
           cursor: grab;
           user-select: none;
 
-          &::-webkit-scrollbar {
-            width: 1px;
-            height: 3px;
-            overflow: visible;
-          }
-
-          &::-webkit-scrollbar-track {
-            background: #c4c4c4;
-            background-color: transparent;
-          }
-
-          &::-webkit-scrollbar-thumb {
-            background: #078855;
-            height: 3px;
-          }
-
           &.ws-no-scroll {
             user-select: unset !important;
             cursor: default !important;
-
-            &::-webkit-scrollbar-thumb {
-              background: transparent;
-            }
           }
 
           & {
             -ms-overflow-style: none;
             scrollbar-width: none;
           }
+
           .swiper-wrapper {
+            position: relative;
+            left: 0;
+            top: 0;
             align-items: stretch;
             .swiper-slide {
               height: auto;
