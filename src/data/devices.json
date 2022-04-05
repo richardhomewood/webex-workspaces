@@ -829,7 +829,10 @@
     "name": "Webex Desk Mini",
     "vendor": "webex",
     "url": "https://hardware.webex.com/products/desk-mini",
-    "description": "The portable video conferencing device that's designed for taking meetings with you to any room—even your kitchen.",
+    "description": {
+      "bedroom": "The portable video conferencing device that's designed for taking meetings with you to any room.",
+      "kitchen": "The portable video conferencing device that's designed for taking meetings with you to any room—even your kitchen."
+    },
     "carouselItems": [
       {
         "filename": "Cisco_DeskMini_White_Turnaround.mp4",
