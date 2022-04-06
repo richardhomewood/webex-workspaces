@@ -197,10 +197,6 @@
         "alt": "The Meraki Z3C Teleworker Gateway device."
       },
       {
-        "filename": "z3c-product-image-bottom.jpg",
-        "alt": "The Meraki Z3C Teleworker Gateway device."
-      },
-      {
         "filename": "z3c-product-image-front.jpg",
         "alt": "The Meraki Z3C Teleworker Gateway device."
       },
@@ -218,10 +214,6 @@
       },
       {
         "filename": "z3c-product-image-right.jpg",
-        "alt": "The Meraki Z3C Teleworker Gateway device."
-      },
-      {
-        "filename": "z3c-product-image-top.jpg",
         "alt": "The Meraki Z3C Teleworker Gateway device."
       }
     ],
@@ -288,10 +280,6 @@
       },
       {
         "filename": "mr46-product-image-bottom.jpg",
-        "alt": "The MR46 device."
-      },
-      {
-        "filename": "mr46-product-image-front.jpg",
         "alt": "The MR46 device."
       },
       {
@@ -428,23 +416,7 @@
         "alt": "The MS120-8 FP switch."
       },
       {
-        "filename": "ms120-8-product-image-left-angle.jpg",
-        "alt": "The MS120-8 FP switch."
-      },
-      {
-        "filename": "ms120-8-product-image-left.jpg",
-        "alt": "The MS120-8 FP switch."
-      },
-      {
-        "filename": "ms120-8-product-image-right-angle.jpg",
-        "alt": "The MS120-8 FP switch."
-      },
-      {
         "filename": "ms120-8-product-image-right.jpg",
-        "alt": "The MS120-8 FP switch."
-      },
-      {
-        "filename": "ms120-8-product-image-top.jpg",
         "alt": "The MS120-8 FP switch."
       }
     ],
@@ -1232,7 +1204,15 @@
     },
     "carouselItems": [
       {
-        "filename": "Table_Navigator_angled_small.jpg",
+        "filename": "Navigator_Wall_Front_RGB_smp.jpg",
+        "alt": "Webex Room Navigator"
+      },
+      {
+        "filename": "Navigator_Wall_3qtrRight_RGB_smp.jpg",
+        "alt": "Webex Room Navigator"
+      },
+      {
+        "filename": "Navigator_Wall_Back_RGB_smp.jpg",
         "alt": "Webex Room Navigator"
       }
     ],
