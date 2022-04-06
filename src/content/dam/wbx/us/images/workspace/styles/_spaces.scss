@@ -336,8 +336,8 @@ $bg-body: grey;
           text-decoration: none;
           pointer-events: all;
           position: relative;
-          &:hover::before {
-            border-color: white;
+          &:hover::before,
+          &:hover::after {
             background-color: white;
           }
 
