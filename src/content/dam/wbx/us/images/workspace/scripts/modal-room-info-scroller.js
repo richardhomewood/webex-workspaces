@@ -116,7 +116,7 @@ class RoomModalScroller {
       this.hammertime.destroy();
       this.hammertime = null;
     }
-    pos = { left:0, x:0 };
+    this.pos = { left:0, x:0 };
   }
 }
 
