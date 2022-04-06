@@ -1,4 +1,6 @@
 {% import "../common/download-pdf.njk" as downloadPdf %}
+{% import "../common/valueByRoom.njk" as valueByRoom %}
+
 
 {% macro render(common, workspace, room, devicesByRoom, devices, softwareByRoom, software) %}
   {# This div may be positioned off-screen and animated into place when the "info" CTA is clicked #}
@@ -29,18 +31,10 @@
           <div class="swiper-wrapper">
             {% for deviceId in devicesByRoom[workspace.slug][room.slug] %}
               <div class="swiper-slide{% if loop.index == 1 and loop.length == 1 %} ws-single{% endif %}">
-                {% set imgSrc = devices[deviceId].carouselItems[0].filename %}
-                {% set imgAlt = devices[deviceId].carouselItems[0].alt %}
-                {% set isVideo = imgSrc.endsWith('.mp4') %}
-                {%if isVideo %}
-                  {% set imgSrc = devices[deviceId].carouselItems[1].filename %}
-                  {% set imgAlt = devices[deviceId].carouselItems[1].alt %}
-                {% endif %}
-
-                <div class="ws-room-info-carousel-img">{% imagesync "devices/" + deviceId + "/carousel/" + imgSrc, imgAlt, "", "", true, "100vw" %}</div>
+                <div class="ws-room-info-carousel-img">{% imagesync "devices/" + deviceId + "/room-info/" + deviceId + "-square.jpg", imgAlt, "", "", true, "100vw" %}</div>
                 <div class="ws-room-info-carousel-content">
                   <h3>{{devices[deviceId].name}}</h3>
-                  <p>{{devices[deviceId].description}}</p>
+                  <p>{{ valueByRoom.render(devices[deviceId].description, room.slug) }}</p>
                   <a href="{{devices[deviceId].url}}"><span>{{common.learnMoreCtaText}}</span><span class="ws-cta-right-arrow">&nbsp;{% icon "cta-right-arrow-green", "", 14 %}</span></a>
                 </div>
               </div>
