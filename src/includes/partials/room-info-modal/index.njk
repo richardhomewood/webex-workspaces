@@ -1,4 +1,6 @@
 {% import "../common/download-pdf.njk" as downloadPdf %}
+{% import "../common/valueByRoom.njk" as valueByRoom %}
+
 
 {% macro render(common, workspace, room, devicesByRoom, devices, softwareByRoom, software) %}
   {# This div may be positioned off-screen and animated into place when the "info" CTA is clicked #}
@@ -40,7 +42,7 @@
                 <div class="ws-room-info-carousel-img">{% imagesync "devices/" + deviceId + "/carousel/" + imgSrc, imgAlt, "", "", true, "100vw" %}</div>
                 <div class="ws-room-info-carousel-content">
                   <h3>{{devices[deviceId].name}}</h3>
-                  <p>{{devices[deviceId].description}}</p>
+                  <p>{{ valueByRoom.render(devices[deviceId].description, room.slug) }}</p>
                   <a href="{{devices[deviceId].url}}"><span>{{common.learnMoreCtaText}}</span><span class="ws-cta-right-arrow">&nbsp;{% icon "cta-right-arrow-green", "", 14 %}</span></a>
                 </div>
               </div>
