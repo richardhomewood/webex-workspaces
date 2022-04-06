@@ -5,8 +5,7 @@ import classnames from './classnames';
 import {removeModalPaths, splitPath} from './paths';
 import {isIOS, isSafari} from "./utils";
 import { setTimeout } from 'core-js';
-import DeviceScroller  from './modal-room-info-device-scroller';
-import SoftwareScroller  from './modal-room-info-software-scroller';
+import RoomModalScroller from './modal-room-info-scroller';
 
 const slideInDelayMillis = 300;
 const deviceModalSubstring = '/hardware/';
@@ -276,14 +275,16 @@ const showRoomInfo = path => {
     setUpRoomInfoScrollers(workspaceId, roomId);
 };
 
+let roomInfoDeviceScroller;
+let roomInfoSoftwareScroller;
 const setUpRoomInfoScrollers = (workspaceId, roomId)=>{
-  DeviceScroller.setUpDeviceScroller(workspaceId, roomId);
-    SoftwareScroller.setUpsoftwareScroller(workspaceId, roomId);
+  roomInfoDeviceScroller = new RoomModalScroller(workspaceId, roomId, RoomModalScroller.Type.device);
+  roomInfoSoftwareScroller = new RoomModalScroller(workspaceId, roomId, RoomModalScroller.Type.software);
 }
 
 const destroyRoomInfoScrollers = ()=> {
-  DeviceScroller.destroyRoomInfoDeviceScroller();
-  SoftwareScroller.destroyRoomInfosoftwareScroller();
+  roomInfoDeviceScroller.destroy();
+  roomInfoSoftwareScroller.destroy();
 };
 
 export default {
