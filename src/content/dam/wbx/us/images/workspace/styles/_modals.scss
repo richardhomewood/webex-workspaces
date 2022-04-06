@@ -461,7 +461,7 @@ $modal-transform-transition: transform 0.65s
       .ws-device-tagline {
         @include ws-device-tagline-text;
         text-align: center;
-        margin: 96px auto 64px;
+        margin: 64px auto 64px;
       }
 
       .ws-device-features.ws-modal-section {
@@ -539,13 +539,6 @@ $modal-transform-transition: transform 0.65s
   #ws-modal-layer {
     .ws-device-modal-root:not(.ws-displayNone) {
       .ws-device {
-        .ws-image-carousel {
-          .ws-carousel-nav {
-            .ws-carousel-slide-numbers {
-              display: none;
-            }
-          }
-        }
 
         .ws-device-features.ws-modal-section {
           li:not(:first-child) {
@@ -784,14 +777,6 @@ $modal-transform-transition: transform 0.65s
       .ws-device {
         .ws-device-name {
           margin-top: 80px;
-        }
-
-        .ws-image-carousel {
-          .ws-carousel-nav {
-            .ws-carousel-slide-numbers {
-              display: none;
-            }
-          }
         }
 
         .ws-device-tagline {
@@ -1102,14 +1087,25 @@ $modal-transform-transition: transform 0.65s
 
         .ws-image-carousel {
           height: auto;
+          position: relative;
           .swiper {
             height: calc(100% * (1.77 / 1));
             aspect-ratio: 1.77 / 1;
           }
           .ws-carousel-nav {
-            text-align: right;
-            .ws-carousel-slide-numbers {
-              margin-right: 20px;
+            margin-top: unset;
+            position: absolute;
+            width: 100%;
+            z-index: 1;
+            // This container is 34px in height.
+            top: calc(50% - 17px);
+            .ws-carousel-button-prev {
+              float: left;
+              margin-left: 12px;
+            }
+            .ws-carousel-button-next {
+              float: right;
+              margin-right: 12px;
             }
           }
         }
