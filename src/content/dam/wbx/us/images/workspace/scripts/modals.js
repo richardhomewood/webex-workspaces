@@ -5,8 +5,7 @@ import classnames from './classnames';
 import {removeModalPaths, splitPath} from './paths';
 import {isIOS, isSafari} from "./utils";
 import { setTimeout } from 'core-js';
-import DeviceScroller  from './modal-room-info-device-scroller';
-import SoftwareScroller  from './modal-room-info-software-scroller';
+import RoomModalScroller from './modal-room-info-scroller';
 
 const slideInDelayMillis = 300;
 const deviceModalSubstring = '/hardware/';
@@ -61,13 +60,13 @@ const hideAll = () => {
         setActive(true);
         handleActive = true
     }
-    
-    
+
+
     if(!mainModalLayer.classList.contains("incoming")){
         setTimeout(() => {
             mainModalLayer.classList.add(classnames.fadeOut);
         }, 300);
-        
+
         setTimeout(()=>{
             mainModalLayer.classList.add(classnames.hidden);
             mainModalLayer.classList.remove(classnames.fadeOut);
@@ -91,7 +90,7 @@ const hideAll = () => {
     const deviceContainers = document.getElementsByClassName(classnames.deviceContainer);
 
     // Hide all the things
-    
+
     [roomModalsContainers, modalRoots, deviceContainers].forEach(elementCollection => {
         setTimeout(()=>{
             Array.from(elementCollection).forEach(element => {
@@ -117,14 +116,14 @@ const hideAll = () => {
             }
         });
     });
-    
+
     if (carouselSwiper) {
         carouselSwiper.destroy();
     }
 };
 
 
-let inactiveModalRoots = Array.from(document.querySelectorAll(`.${classnames.roomInfoModalRoot}, .${classnames.deviceModalRoot}`)); 
+let inactiveModalRoots = Array.from(document.querySelectorAll(`.${classnames.roomInfoModalRoot}, .${classnames.deviceModalRoot}`));
 let inactiveModalsContainers = Array.from(document.getElementsByClassName(classnames.roomModalsContainer));
 
 const showModalContainerForRoom = (workspaceId, roomId) => {
@@ -144,9 +143,9 @@ const showModalContainerForRoom = (workspaceId, roomId) => {
 };
 
 const forceRedraw = function(element, callBeforeRedrawn){
-    
+
     if (!element || !isSafari(navigator.userAgent)) { return; }
-    
+
     if (callBeforeRedrawn) {
         callBeforeRedrawn();
     }
@@ -157,7 +156,7 @@ const forceRedraw = function(element, callBeforeRedrawn){
 
 const showDevice = path => {
     destroyRoomInfoScrollers();
-    
+
     if (active) {
         postActive = ()=>{showDevice(path)}
         return
@@ -175,7 +174,7 @@ const showDevice = path => {
 
     inactiveModalRoots = Array.from(document.querySelectorAll(`.${classnames.roomInfoModalRoot}, .${classnames.deviceModalRoot}`)).filter((node)=> {
         return node != activeModalRoot
-    }); 
+    });
 
     // Show the single device container. Always only one match per device-modal root.
     const deviceContainer = activeModalRoot.getElementsByClassName(`${classnames.deviceContainer} ${classnames.deviceIdPrefix}${deviceId}`)[0]
@@ -236,7 +235,7 @@ const showDevice = path => {
 };
 
 const showRoomInfo = path => {
-    
+
     if (active) {
         postActive = ()=>{showRoomInfo(path)}
         return
@@ -255,7 +254,7 @@ const showRoomInfo = path => {
 
     inactiveModalRoots = Array.from(document.querySelectorAll(`.${classnames.roomInfoModalRoot}, .${classnames.deviceModalRoot}`)).filter((node)=> {
         return node != activeModalRoot
-    }); 
+    });
 
     forceRedraw(modalsContainer)
     forceRedraw(activeModalRoot)
@@ -269,21 +268,27 @@ const showRoomInfo = path => {
             activeModalRoot.classList.add(classnames.slideIn);
         }, slideInDelayMillis);
     },100)
-    
+
     setActive(false);
     hideAll();
 
     setUpRoomInfoScrollers(workspaceId, roomId);
 };
 
+let roomInfoDeviceScroller;
+let roomInfoSoftwareScroller;
 const setUpRoomInfoScrollers = (workspaceId, roomId)=>{
-  DeviceScroller.setUpDeviceScroller(workspaceId, roomId);
-    SoftwareScroller.setUpsoftwareScroller(workspaceId, roomId);
+  roomInfoDeviceScroller = new RoomModalScroller(workspaceId, roomId, RoomModalScroller.Type.device);
+  roomInfoSoftwareScroller = new RoomModalScroller(workspaceId, roomId, RoomModalScroller.Type.software);
 }
 
 const destroyRoomInfoScrollers = ()=> {
-  DeviceScroller.destroyRoomInfoDeviceScroller();
-  SoftwareScroller.destroyRoomInfosoftwareScroller();
+    if (roomInfoDeviceScroller) {
+        roomInfoDeviceScroller.destroy();
+    }
+    if (roomInfoSoftwareScroller) {
+        roomInfoSoftwareScroller.destroy();
+    }
 };
 
 export default {
