@@ -52,8 +52,9 @@ const getSelectedRoomIndex = () => {
 
 const getSwiperAnimationViewed = () => {
     const sessionStorage = window.sessionStorage
-    let hasViewedAnimation = sessionStorage.getItem('hasViewedSwiperAnimation') ?? "0"
-    return hasViewedAnimation == "1"
+    let hasViewedAnimation = sessionStorage.getItem('hasViewedSwiperAnimation');
+    if (!hasViewedAnimation){hasViewedAnimation = "0"}
+    return hasViewedAnimation == "1";
 }
 
 let initialView;
@@ -572,35 +573,35 @@ const destroyHammer = ()=>{
 
 const setupHammer = () => {
     const bgToHammer = document.querySelector(classnames.spacesBgContainer);
-        hammertime = new Hammer(bgToHammer);
-        hammertime.get('pan').set({ direction: Hammer.DIRECTION_ALL });
-        hammertime.on("panleft panright panup pandown panend panstart", function(ev) {
+    hammertime = new Hammer(bgToHammer);
+    hammertime.get('pan').set({ direction: Hammer.DIRECTION_ALL });
+    hammertime.on("panleft panright panup pandown panend panstart", function(ev) {
 
-            let tempxOffset = panOffset.previousX + ev.deltaX;
+        let tempxOffset = panOffset.previousX + ev.deltaX;
 
-            if (tempxOffset > maxXPanOffset){
-                tempxOffset = maxXPanOffset
-            } else if(tempxOffset < minXPanOffset){
-                tempxOffset = minXPanOffset
-            }
+        if (tempxOffset > maxXPanOffset){
+            tempxOffset = maxXPanOffset
+        } else if(tempxOffset < minXPanOffset){
+            tempxOffset = minXPanOffset
+        }
 
-            let tempyOffset = panOffset.previousY + ev.deltaY;
+        let tempyOffset = panOffset.previousY + ev.deltaY;
 
-            if (tempyOffset > maxYPanOffset){
-                tempyOffset = maxYPanOffset
-            } else if(tempyOffset < minYPanOffset){
-                tempyOffset = minYPanOffset
-            }
+        if (tempyOffset > maxYPanOffset){
+            tempyOffset = maxYPanOffset
+        } else if(tempyOffset < minYPanOffset){
+            tempyOffset = minYPanOffset
+        }
 
-            if (ev.type === "panend") {
-                panOffset.previousX = tempxOffset;
-                panOffset.previousY = tempyOffset;
-            }
+        if (ev.type === "panend") {
+            panOffset.previousX = tempxOffset;
+            panOffset.previousY = tempyOffset;
+        }
 
-            panOffset.x = tempxOffset;
-            panOffset.y = tempyOffset;
-            updateBGSizes();
-        });
+        panOffset.x = tempxOffset;
+        panOffset.y = tempyOffset;
+        updateBGSizes();
+    });
 }
 
 const updateNav = function () {
