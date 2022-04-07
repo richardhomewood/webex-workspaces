@@ -50,6 +50,13 @@ const getSelectedRoomIndex = () => {
     return selectedRoomIndexes[selectedWorkspaceId]
 }
 
+const hasPannedBG = ()=>{
+    return panOffset.previousX != 0 ||
+    panOffset.previousY != 0 ||
+    panOffset.x != 0 ||
+    panOffset.y != 0
+}
+
 const getSwiperAnimationViewed = () => {
     const sessionStorage = window.sessionStorage
     let hasViewedAnimation = sessionStorage.getItem('hasViewedSwiperAnimation');
@@ -898,7 +905,7 @@ const updateBGSizes = () => {
 const showSwiperAnimationOrHotspots = (placedHotSpots) => {
 
     if (selectedRoomId){
-        if(!getSwiperAnimationViewed()) {
+        if(!getSwiperAnimationViewed() && !hasPannedBG()) {
 
             let areHotSpotsInView = true; 
             const windowWidth = window.innerWidth;
