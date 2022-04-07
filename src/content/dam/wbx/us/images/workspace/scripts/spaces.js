@@ -50,10 +50,18 @@ const getSelectedRoomIndex = () => {
     return selectedRoomIndexes[selectedWorkspaceId]
 }
 
+const hasPannedBG = ()=>{
+    return panOffset.previousX != 0 ||
+    panOffset.previousY != 0 ||
+    panOffset.x != 0 ||
+    panOffset.y != 0
+}
+
 const getSwiperAnimationViewed = () => {
     const sessionStorage = window.sessionStorage
-    let hasViewedAnimation = sessionStorage.getItem('hasViewedSwiperAnimation') ?? "0"
-    return hasViewedAnimation == "1"
+    let hasViewedAnimation = sessionStorage.getItem('hasViewedSwiperAnimation');
+    if (!hasViewedAnimation){hasViewedAnimation = "0"}
+    return hasViewedAnimation == "1";
 }
 
 let initialView;
@@ -401,13 +409,6 @@ const transitionRooms = (roomSelectorWrap)=> {
             element.classList.add(classnames.hidden);
         });
 
-        // hide all room-info buttons
-        const roomInfoButtons = Array.from(document.querySelectorAll(`.${classnames.roomInfoButton}`));
-        roomInfoButtons.forEach((element) => {
-            element.classList.add(classnames.hidden);
-            element.tabIndex = -1;
-        });
-
         //hide all show more rooms elements
         const showMoreRoomsElements = Array.from(document.querySelectorAll(`.${classnames.showMoreRoomsText}, .${classnames.showMoreRoomsBtn}`));
         showMoreRoomsElements.forEach((element) => {
@@ -424,9 +425,6 @@ const transitionRooms = (roomSelectorWrap)=> {
         //show relevant label
         const roomlabel = document.querySelector(`.${classnames.selectedRoomLabel}#${selectedWorkspaceId}-${selectedRoomId}-label`);
         roomlabel.classList.remove(classnames.hidden);
-        const roomInfoButton = document.querySelector(`.${classnames.roomInfoButton}#${selectedWorkspaceId}-${selectedRoomId}-info-button`);
-        roomInfoButton.classList.remove(classnames.hidden);
-        roomInfoButton.tabIndex = 0;
 
         // hide room selector
         if (roomSelectorWrap) {
@@ -582,35 +580,35 @@ const destroyHammer = ()=>{
 
 const setupHammer = () => {
     const bgToHammer = document.querySelector(classnames.spacesBgContainer);
-        hammertime = new Hammer(bgToHammer);
-        hammertime.get('pan').set({ direction: Hammer.DIRECTION_ALL });
-        hammertime.on("panleft panright panup pandown panend panstart", function(ev) {
+    hammertime = new Hammer(bgToHammer);
+    hammertime.get('pan').set({ direction: Hammer.DIRECTION_ALL });
+    hammertime.on("panleft panright panup pandown panend panstart", function(ev) {
 
-            let tempxOffset = panOffset.previousX + ev.deltaX;
+        let tempxOffset = panOffset.previousX + ev.deltaX;
 
-            if (tempxOffset > maxXPanOffset){
-                tempxOffset = maxXPanOffset
-            } else if(tempxOffset < minXPanOffset){
-                tempxOffset = minXPanOffset
-            }
+        if (tempxOffset > maxXPanOffset){
+            tempxOffset = maxXPanOffset
+        } else if(tempxOffset < minXPanOffset){
+            tempxOffset = minXPanOffset
+        }
 
-            let tempyOffset = panOffset.previousY + ev.deltaY;
+        let tempyOffset = panOffset.previousY + ev.deltaY;
 
-            if (tempyOffset > maxYPanOffset){
-                tempyOffset = maxYPanOffset
-            } else if(tempyOffset < minYPanOffset){
-                tempyOffset = minYPanOffset
-            }
+        if (tempyOffset > maxYPanOffset){
+            tempyOffset = maxYPanOffset
+        } else if(tempyOffset < minYPanOffset){
+            tempyOffset = minYPanOffset
+        }
 
-            if (ev.type === "panend") {
-                panOffset.previousX = tempxOffset;
-                panOffset.previousY = tempyOffset;
-            }
+        if (ev.type === "panend") {
+            panOffset.previousX = tempxOffset;
+            panOffset.previousY = tempyOffset;
+        }
 
-            panOffset.x = tempxOffset;
-            panOffset.y = tempyOffset;
-            updateBGSizes();
-        });
+        panOffset.x = tempxOffset;
+        panOffset.y = tempyOffset;
+        updateBGSizes();
+    });
 }
 
 const updateNav = function () {
@@ -666,30 +664,20 @@ const updateNav = function () {
 const updateWorkspaceCta = function () {
     const aboutCtaElements = document.getElementsByClassName(classnames.aboutWorkspaceCta);
 
-    if (selectedWorkspaceId.length > 0){
+    if (selectedWorkspaceId.length > 0 && selectedRoomId){
 
-
-        // This portion of the function will not be used for the Phase 1 launch, since the button will
-        // not link to category pages.  It remains in place for future use in Phase 2, when
-        // the category pages are linked to again.  For https://jira.akqa.net/browse/SWW-209.
-        // let href = `./${selectedWorkspaceId}.html`;
-        // if (selectedRoomId) {
-        //     href = `${href}#${selectedRoomId}`;
-        // }
-        // This is the end of the change for https://jira.akqa.net/browse/SWW-209.
+        let href = `#/${selectedWorkspaceId}/${selectedRoomId}/info`;
 
         Array.from(aboutCtaElements).forEach((anchor) => {
-            // The following line also commented out for https://jira.akqa.net/browse/SWW-209.
-            // Uncomment it when this needs to link to category pages again.
-            // anchor.href = href
-            anchor.enabled = true;
+            anchor.href = href
+            anchor.style["pointer-events"] = "";
             anchor.style["opacity"] = 1;
             anchor.tabIndex = 0;
         });
 
     } else {
         Array.from(aboutCtaElements).forEach((anchor) => {
-            anchor.enabled = false;
+            anchor.style["pointer-events"] = "none";
             anchor.style["opacity"] = 0;
             anchor.tabIndex = -1;
         });
@@ -917,7 +905,7 @@ const updateBGSizes = () => {
 const showSwiperAnimationOrHotspots = (placedHotSpots) => {
 
     if (selectedRoomId){
-        if(!getSwiperAnimationViewed()) {
+        if(!getSwiperAnimationViewed() && !hasPannedBG()) {
 
             let areHotSpotsInView = true; 
             const windowWidth = window.innerWidth;

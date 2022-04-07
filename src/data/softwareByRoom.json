@@ -5,6 +5,10 @@
     ],
     "homeOffice": [
       "webex-suite"
+    ],
+    "bedroom": [
+      "webex-suite",
+      "collaboration-insights"
     ]
   },
   "office": {
@@ -12,6 +16,10 @@
     "ideationSpace": [],
     "smallConferenceRoom": [
       "webex-assistant"
+    ],
+    "jumpRoom": [
+      "room-os11",
+      "webex-suite"
     ]
   },
   "anywhere": {

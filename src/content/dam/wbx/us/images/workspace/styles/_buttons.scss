@@ -1,4 +1,4 @@
-@import "fonts";
+@import 'fonts';
 $contact-cta-hover-color: #078855;
 
 // Common button CTA styles
@@ -22,7 +22,8 @@ a.ws-cta {
   border: solid 1px white;
   background-color: transparent;
   color: white;
-  &:active, &:visited {
+  &:active,
+  &:visited {
     color: white;
   }
   &:hover {
@@ -51,7 +52,8 @@ a.ws-cta {
     }
   }
 
-  &:active, &:visited {
+  &:active,
+  &:visited {
     color: black;
   }
   &:hover {
@@ -69,7 +71,8 @@ a.ws-cta {
     border-color: white;
   }
 
-  &:active, &:visited {
+  &:active,
+  &:visited {
     color: white;
   }
   &:hover:not(.ws-contact-cta) {
@@ -78,9 +81,15 @@ a.ws-cta {
   }
 }
 
-a.ws-contact-cta:hover{
+a.ws-contact-cta:hover {
   background-color: $contact-cta-hover-color !important;
   border-color: $contact-cta-hover-color !important;
+  color: white !important;
+}
+
+a.ws-green-cta {
+  background-color: $contact-cta-hover-color !important;
+  border: solid 1px $contact-cta-hover-color !important;
   color: white !important;
 }
 

@@ -1,51 +1,32 @@
 {
+  "collaboration-insights": {
+    "id": "collaboration-insights",
+    "name": "Collaboration Insights",
+    "url": "https://www.webex.com/collaboration-insights.html",
+    "description": "Get actionable data for better time management and relationship building."
+  },
+  "room-os11": {
+    "id": "room-os11",
+    "name": "Room OS11",
+    "url": "https://help.webex.com/en-us/article/6ger7db/What's-New-in-RoomOS",
+    "description": "Experience the perfect synergy between hardware and software with the cloud-based operating system that powers hybrid work."
+  },
   "webex-suite": {
     "id": "webex-suite",
     "name": "Webex Suite",
     "url": "https://www.webex.com/collaboration-suite.html",
-    "description": "The first purpose-built solution for hybrid work, with everything you need to collaborate—all in one economical offer.",
-    "featuresTitle": "Features",
-    "features": [
-      "Engaging video meetings with up to 1,000 participants.",
-      "A powerful cloud phone system and PSTN business phone number.",
-      "Team messaging, secure file sharing, and bi-directional whiteboarding.",
-      "Interactive audience engagement with polling, quizzes, Q&A, and more.",
-      "Virtual events with up to 5,000 attendees, or multi-session events with live streaming and peer networking.",
-      "Asynchronous video messaging for recording and sharing videos."
-    ],
-    "categoryPage": {
-      "altText" : "A professional in a headset sits outside, collaborating remotely via Webex on a mobile phone."
-    }
+    "description": "The first purpose-built solution for hybrid work, with everything you need to collaborate—all in one economical offer."
   },
   "webex-assistant": {
     "id": "webex-assistant",
     "name": "Webex Assistant",
     "url": "https://www.webex.com/webex-assistant.html",
-    "description": "Meet your personal virtual assistant that helps keep everyone on time and on track.",
-    "featuresTitle": "Features",
-    "features": [
-      "Start your meeting, book a room, and more using simple voice commands.",
-      "Capture action items and get detailed transcripts and notes for every meeting.",
-      "Control room amenities such as lighting and temperature."
-    ],
-    "categoryPage": {
-      "altText" : ""
-    }
+    "description": "Meet your personal virtual assistant that helps keep everyone on time and on track."
   },
   "webex-go": {
     "id": "webex-go",
     "name": "Webex Go",
     "url": "https://www.webex.com/products/webex-go.html",
-    "description": "Eliminate the need to carry around multiple mobile devices by using your personal phone to make and receive calls with your business phone number.",
-    "featuresTitle": "Features",
-    "features": [
-      "Access powerful calling features on your business line through your personal mobile device.",
-      "Route calls over the mobile network for more reliable voice quality.",
-      "Make personal mobile devices secure and compliant endpoints for your business.",
-      "Centrally manage mobile devices in the same place as the rest of your collaboration solutions."
-    ],
-    "categoryPage": {
-      "altText" : ""
-    }
+    "description": "Eliminate the need to carry around multiple mobile devices by using your personal phone to make and receive calls with your business phone number."
   }
 }

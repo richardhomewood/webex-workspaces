@@ -6,13 +6,16 @@
       "meraki-z3c"
     ],
     "homeOffice": [
-      "webex-desk-pro",
+      "webex-desk",
       "webex-room-kit-mini",
       "webex-room-navigator",
       "bo-cisco-980",
       "mr46",
       "mx67c",
       "ms120-8-fp"
+    ],
+    "bedroom": [
+      "webex-desk-mini"
     ]
   },
   "office": {
@@ -27,11 +30,30 @@
     "smallConferenceRoom": [
       "webex-board-pro-55",
       "webex-room-navigator"
+    ],
+    "jumpRoom": [
+      "webex-desk",
+      "webex-room-navigator",
+      "mr56"
+    ],
+    "lobby": [
+      "webex-desk-pro",
+      "mv-smart-cameras",
+      "mr56"
+    ],
+    "boardroom": [
+      "webex-room-panorama",
+      "webex-room-navigator"
     ]
   },
   "anywhere": {
     "cafe": [
       "bo-cisco-980"
+    ],
+    "doctorsOffice": [
+      "webex-desk-pro",
+      "cisco-ip-dect",
+      "wi-fi-phones"
     ]
   }
 }

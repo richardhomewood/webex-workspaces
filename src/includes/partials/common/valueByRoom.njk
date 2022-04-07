@@ -1,0 +1,7 @@
+{% macro render(value, roomId) %}
+  {% if value|isObject %}
+    {{ value[roomId] }}
+  {% else %}
+    {{ value }}
+  {% endif %}
+{% endmacro %}
