@@ -74,8 +74,10 @@ $modal-transform-transition: transform 0.65s
       .ws-close-x {
         width: 16.64px;
         height: 16.64px;
-        position: relative;
-        transform: translate(114%, 88%);
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -58%);
       }
     }
 
@@ -538,7 +540,6 @@ $modal-transform-transition: transform 0.65s
   #ws-modal-layer {
     .ws-device-modal-root:not(.ws-displayNone) {
       .ws-device {
-
         .ws-device-features.ws-modal-section {
           li:not(:first-child) {
             margin-top: 24px;
@@ -1259,15 +1260,15 @@ $modal-transform-transition: transform 0.65s
               .ws-room-info-carousel-content {
                 margin-right: 35px;
 
-              h3 {
-                @include ws-med-body-bold;
-                color: #181818;
-                margin: 22px 0 8px;
-              }
+                h3 {
+                  @include ws-med-body-bold;
+                  color: #181818;
+                  margin: 22px 0 8px;
+                }
 
-              p {
-                @include ws-med-body-reg;
-                color: #767676;
+                p {
+                  @include ws-med-body-reg;
+                  color: #767676;
                 }
               }
 
