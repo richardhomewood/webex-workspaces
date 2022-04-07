@@ -208,15 +208,19 @@ $modal-transform-transition: transform 0.65s
               }
             }
 
-            h3 {
-              @include ws-med-body-bold;
-              color: #181818;
-              margin: 22px 0 8px;
-            }
+            .ws-room-info-carousel-content {
+              margin-right: 35px;
 
-            p {
-              @include ws-med-body-reg;
-              color: #767676;
+              h3 {
+                @include ws-med-body-bold;
+                color: #181818;
+                margin: 22px 0 8px;
+              }
+
+              p {
+                @include ws-med-body-reg;
+                color: #818181;
+              }
             }
 
             a {
@@ -333,7 +337,7 @@ $modal-transform-transition: transform 0.65s
 
             p {
               @include ws-med-body-reg;
-              color: #767676;
+              color: #818181;
             }
 
             a {
@@ -648,17 +652,6 @@ $modal-transform-transition: transform 0.65s
                 }
               }
 
-              h3 {
-                @include ws-med-body-bold;
-                color: #181818;
-                margin: 22px 0 8px;
-              }
-
-              p {
-                @include ws-med-body-reg;
-                color: #767676;
-              }
-
               &.ws-single {
                 width: 100% !important;
                 display: flex;
@@ -738,17 +731,6 @@ $modal-transform-transition: transform 0.65s
                   max-height: calc(100vw * (210 / 768));
                   min-height: calc(100vw * (210 / 768));
                 }
-              }
-
-              h3 {
-                @include ws-med-body-bold;
-                color: #181818;
-                margin: 22px 0 8px;
-              }
-
-              p {
-                @include ws-med-body-reg;
-                color: #767676;
               }
             }
           }
@@ -913,17 +895,6 @@ $modal-transform-transition: transform 0.65s
                 }
               }
 
-              h3 {
-                @include ws-med-body-bold;
-                color: #181818;
-                margin: 22px 0 8px;
-              }
-
-              p {
-                @include ws-med-body-reg;
-                color: #767676;
-              }
-
               &.ws-single {
                 width: 100% !important;
                 display: flex;
@@ -1021,17 +992,6 @@ $modal-transform-transition: transform 0.65s
                   max-height: calc(100vw * (210 / 1280));
                   min-height: calc(100vw * (210 / 1280));
                 }
-              }
-
-              h3 {
-                @include ws-med-body-bold;
-                color: #181818;
-                margin: 22px 0 8px;
-              }
-
-              p {
-                @include ws-med-body-reg;
-                color: #767676;
               }
             }
           }
@@ -1242,21 +1202,6 @@ $modal-transform-transition: transform 0.65s
                 }
               }
 
-              .ws-room-info-carousel-content {
-                margin-right: 35px;
-
-                h3 {
-                  @include ws-med-body-bold;
-                  color: #181818;
-                  margin: 22px 0 8px;
-                }
-
-                p {
-                  @include ws-med-body-reg;
-                  color: #767676;
-                }
-              }
-
               &.ws-single {
                 width: 100% !important;
                 display: flex;
@@ -1351,16 +1296,6 @@ $modal-transform-transition: transform 0.65s
                 }
               }
 
-              h3 {
-                @include ws-med-body-bold;
-                color: #181818;
-                margin: 22px 0 8px;
-              }
-
-              p {
-                @include ws-med-body-reg;
-                color: #767676;
-              }
             }
           }
         }
@@ -1482,17 +1417,6 @@ $modal-transform-transition: transform 0.65s
                 }
               }
 
-              h3 {
-                @include ws-med-body-bold;
-                color: #181818;
-                margin: 22px 0 8px;
-              }
-
-              p {
-                @include ws-med-body-reg;
-                color: #767676;
-              }
-
               &.ws-single {
                 width: 100% !important;
                 display: flex;
@@ -1598,17 +1522,6 @@ $modal-transform-transition: transform 0.65s
                   max-height: calc(100vw * (210 / 1920));
                   min-height: calc(100vw * (210 / 1920));
                 }
-              }
-
-              h3 {
-                @include ws-med-body-bold;
-                color: #181818;
-                margin: 22px 0 8px;
-              }
-
-              p {
-                @include ws-med-body-reg;
-                color: #767676;
               }
             }
           }
