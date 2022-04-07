@@ -163,7 +163,6 @@
   font-family: 'CiscoSansTT-Bold', sans-serif;
 
   @media only screen and (min-width: 1367px) {
-    @include ws-med-body-reg;
     font-family: 'CiscoSansTT-Bold', sans-serif;
   }
 }
@@ -175,7 +174,6 @@
   letter-spacing: -0.01em;
 
   @media only screen and (min-width: 1367px) {
-    font-family: 'CiscoSansTT-Regular', sans-serif;
     font-size: 15px;
     line-height: 26px;
     letter-spacing: -0.01em;
