@@ -1266,6 +1266,9 @@ $modal-transform-transition: transform 0.65s
                 }
               }
 
+              .ws-room-info-carousel-content {
+                margin-right: 35px;
+
               h3 {
                 @include ws-med-body-bold;
                 color: #181818;
@@ -1275,6 +1278,7 @@ $modal-transform-transition: transform 0.65s
               p {
                 @include ws-med-body-reg;
                 color: #767676;
+                }
               }
 
               &.ws-single {
