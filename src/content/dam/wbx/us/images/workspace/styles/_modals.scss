@@ -496,18 +496,19 @@ $modal-transform-transition: transform 0.65s
           flex-wrap: wrap;
           padding: 0;
           margin: 0 auto;
-          justify-content: center;
+          justify-content: flex-start;
+          align-content: space-between;
+          column-gap: 14px;
+          row-gap: 21px;
+          max-width: calc((170px * 2) + 14px);
 
           li {
             list-style: none;
             border: 1px solid $list-items-border-color;
             border-radius: 16px;
             min-height: 196px;
+            align-items: stretch;
             max-width: 170px;
-            margin-bottom: 21px;
-            &:last-child {
-              margin-right: 0;
-            }
 
             .ws-icon-holder {
               display: block;
@@ -549,19 +550,13 @@ $modal-transform-transition: transform 0.65s
         .ws-device-specs.ws-modal-section {
           ul {
             // Make sure we only have room for 2 per row.
-            max-width: calc((170px * 2) + 14px);
+            max-width: calc((170px * 2) + 16px);
+            column-gap: 16px;
+            row-gap: 40px;
 
             li {
-              // Select the left column only
-              &:nth-child(odd) {
-                // But not if they are the last child.
-                &:not(:last-child) {
-                  margin-right: 14px;
-                }
-              }
-
               // Flex to 50% minus half the margin-right value just above
-              flex: 0 0 calc(50% - 7px);
+              flex: 0 0 calc(50% - 8px);
             }
           }
         }
@@ -806,21 +801,13 @@ $modal-transform-transition: transform 0.65s
           margin-bottom: 76px;
           ul {
             // Make sure we only have room for 3 per row.
-            max-width: calc((170px * 3) + (20px * 2));
+            max-width: calc((190px * 3) + (20px * 2));
+            row-gap: 40px;
 
             li {
               // At this breakpoint, there can only be up to 2 rows of up to 3 <li> each
               flex: 0 0 33%;
-              // Select every 3rd child, starting at the first
-              // Select every 3rd child, starting at the second
-
-              &:nth-child(3n + 1),
-              &:nth-child(3n + 2) {
-                // But not if they are the last child.
-                &:not(:last-child) {
-                  margin-right: 20px;
-                }
-              }
+              max-width: 190px;
             }
           }
         }
@@ -1130,16 +1117,14 @@ $modal-transform-transition: transform 0.65s
         .ws-device-specs.ws-modal-section {
           ul {
             // Make sure we only have room for 4 per row (plus 3 gutters).
-            max-width: calc((230px * 3) + (30px * 2));
+            max-width: 100%;
+            column-gap: 16px;
+            row-gap: 40px;
 
             li {
+              box-sizing: border-box;
               flex: 0 0 25%;
-              max-width: 230px;
-              // Set right margin on all, then remove from selected
-              margin-right: 30px;
-              &:nth-child(3n + 3) {
-                margin-right: 0;
-              }
+              min-width: calc(25% - 12px);
 
               span {
                 margin-left: 24px;
@@ -1662,17 +1647,12 @@ $modal-transform-transition: transform 0.65s
 
         .ws-device-specs.ws-modal-section {
           ul {
-            // Make sure we only have room for 6 per row (plus 5 gutters).
-            max-width: calc((230px * 6) + (30px * 5));
+            max-width: calc((230px * 4) + (16px * 3));
+            column-gap: 16px;
+            row-gap: 30px;
 
             li {
-              flex: 0 0 calc(100% / 6);
-              // Use important to reset nth-child stuff at lower breakpoints
-              margin-right: 30px !important;
-              &:last-child,
-              &:nth-child(5n + 5) {
-                margin-right: 0 !important;
-              }
+              flex: 0 0 calc(25% - 12px);
             }
           }
         }
