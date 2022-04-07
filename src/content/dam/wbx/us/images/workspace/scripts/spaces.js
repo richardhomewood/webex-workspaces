@@ -664,20 +664,20 @@ const updateNav = function () {
 const updateWorkspaceCta = function () {
     const aboutCtaElements = document.getElementsByClassName(classnames.aboutWorkspaceCta);
 
-    if (selectedWorkspaceId.length > 0){
+    if (selectedWorkspaceId.length > 0 && selectedRoomId){
 
         let href = `#/${selectedWorkspaceId}/${selectedRoomId}/info`;
 
         Array.from(aboutCtaElements).forEach((anchor) => {
             anchor.href = href
-            anchor.enabled = true;
+            anchor.style["pointer-events"] = "";
             anchor.style["opacity"] = 1;
             anchor.tabIndex = 0;
         });
 
     } else {
         Array.from(aboutCtaElements).forEach((anchor) => {
-            anchor.enabled = false;
+            anchor.style["pointer-events"] = "none";
             anchor.style["opacity"] = 0;
             anchor.tabIndex = -1;
         });
