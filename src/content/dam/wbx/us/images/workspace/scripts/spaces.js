@@ -905,8 +905,6 @@ const updateBGSizes = () => {
 const showSwiperAnimationOrHotspots = (placedHotSpots) => {
 
     if (selectedRoomId){
-        console.log("hasPannedBG()", hasPannedBG())
-        console.log("getSwiperAnimationViewed()", getSwiperAnimationViewed())
         if(!getSwiperAnimationViewed() && !hasPannedBG()) {
 
             let areHotSpotsInView = true; 
