@@ -656,17 +656,6 @@ $modal-transform-transition: transform 0.65s
                 }
               }
 
-              h3 {
-                @include ws-med-body-bold;
-                color: #181818;
-                margin: 22px 0 8px;
-              }
-
-              p {
-                @include ws-med-body-reg;
-                color: #767676;
-              }
-
               &.ws-single {
                 width: 100% !important;
                 display: flex;
@@ -746,17 +735,6 @@ $modal-transform-transition: transform 0.65s
                   max-height: calc(100vw * (210 / 768));
                   min-height: calc(100vw * (210 / 768));
                 }
-              }
-
-              h3 {
-                @include ws-med-body-bold;
-                color: #181818;
-                margin: 22px 0 8px;
-              }
-
-              p {
-                @include ws-med-body-reg;
-                color: #767676;
               }
             }
           }
@@ -932,17 +910,6 @@ $modal-transform-transition: transform 0.65s
                 }
               }
 
-              h3 {
-                @include ws-med-body-bold;
-                color: #181818;
-                margin: 22px 0 8px;
-              }
-
-              p {
-                @include ws-med-body-reg;
-                color: #767676;
-              }
-
               &.ws-single {
                 width: 100% !important;
                 display: flex;
@@ -1040,17 +1007,6 @@ $modal-transform-transition: transform 0.65s
                   max-height: calc(100vw * (210 / 1280));
                   min-height: calc(100vw * (210 / 1280));
                 }
-              }
-
-              h3 {
-                @include ws-med-body-bold;
-                color: #181818;
-                margin: 22px 0 8px;
-              }
-
-              p {
-                @include ws-med-body-reg;
-                color: #767676;
               }
             }
           }
@@ -1266,17 +1222,6 @@ $modal-transform-transition: transform 0.65s
                 }
               }
 
-              h3 {
-                @include ws-med-body-bold;
-                color: #181818;
-                margin: 22px 0 8px;
-              }
-
-              p {
-                @include ws-med-body-reg;
-                color: #767676;
-              }
-
               &.ws-single {
                 width: 100% !important;
                 display: flex;
@@ -1371,16 +1316,6 @@ $modal-transform-transition: transform 0.65s
                 }
               }
 
-              h3 {
-                @include ws-med-body-bold;
-                color: #181818;
-                margin: 22px 0 8px;
-              }
-
-              p {
-                @include ws-med-body-reg;
-                color: #767676;
-              }
             }
           }
         }
@@ -1505,17 +1440,6 @@ $modal-transform-transition: transform 0.65s
                 }
               }
 
-              h3 {
-                @include ws-med-body-bold;
-                color: #181818;
-                margin: 22px 0 8px;
-              }
-
-              p {
-                @include ws-med-body-reg;
-                color: #767676;
-              }
-
               &.ws-single {
                 width: 100% !important;
                 display: flex;
@@ -1621,17 +1545,6 @@ $modal-transform-transition: transform 0.65s
                   max-height: calc(100vw * (210 / 1920));
                   min-height: calc(100vw * (210 / 1920));
                 }
-              }
-
-              h3 {
-                @include ws-med-body-bold;
-                color: #181818;
-                margin: 22px 0 8px;
-              }
-
-              p {
-                @include ws-med-body-reg;
-                color: #767676;
               }
             }
           }
