@@ -143,8 +143,7 @@ $modal-transform-transition: transform 0.65s
     }
 
     .ws-info-modal-section-heading {
-      @include ws-large-body-med;
-      color: #767676;
+      @include ws-info-modal-section-heading-text;
     }
 
     .ws-info-modal-devices-inner {
@@ -613,9 +612,6 @@ $modal-transform-transition: transform 0.65s
       }
 
       .ws-info-modal-section-heading {
-        font-size: 24px;
-        line-height: 32px;
-        letter-spacing: -0.02em;
         margin-top: 120px;
         margin-bottom: 40px;
       }
@@ -889,9 +885,6 @@ $modal-transform-transition: transform 0.65s
       }
 
       .ws-info-modal-section-heading {
-        font-size: 24px;
-        line-height: 32px;
-        letter-spacing: -0.02em;
         margin-top: 79px;
       }
       .ws-info-modal-devices-inner {
@@ -1220,9 +1213,6 @@ $modal-transform-transition: transform 0.65s
       }
 
       .ws-info-modal-section-heading {
-        font-size: 24px;
-        line-height: 32px;
-        letter-spacing: -0.02em;
         margin-top: 79px;
 
         &.ws-info-modal-section-heading-software {
@@ -1460,9 +1450,6 @@ $modal-transform-transition: transform 0.65s
       }
 
       .ws-info-modal-section-heading {
-        font-size: 24px;
-        line-height: 32px;
-        letter-spacing: -0.02em;
         margin-top: 0;
 
         &.ws-info-modal-section-heading-software {

@@ -335,3 +335,14 @@
     letter-spacing: -0.04em;
   }
 }
+
+@mixin ws-info-modal-section-heading-text {
+  font-size: 14px;
+  line-height: 40px;
+  letter-spacing: 0.02em;
+  color: #767676;
+
+  @media only screen and (min-width: 768px) {
+    font-size: 18px;
+  }
+}
