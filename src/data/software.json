@@ -1,15 +1,39 @@
 {
+  "cisco-dna-spaces": {
+    "id": "cisco-dna-spaces",
+    "name": "Cisco DNA Spaces",
+    "url": "https://www.cisco.com/c/en/us/solutions/enterprise-networks/dna-spaces/index.html",
+    "description": "Connect the data available in your physical space with key insights that can help you create a workplace that is safe, smart, and seamless."
+  },
   "collaboration-insights": {
     "id": "collaboration-insights",
     "name": "Collaboration Insights",
     "url": "https://www.webex.com/collaboration-insights.html",
     "description": "Get actionable data for better time management and relationship building."
   },
+  "control-hub": {
+    "id": "control-hub",
+    "name": "Control Hub",
+    "url": "https://www.webex.com/control-hub.html",
+    "description": "Get a single dashboard to manage every user, device, and workspace."
+  },
+  "meraki-insight": {
+    "id": "meraki-insight",
+    "name": "Meraki Insight",
+    "url": "https://meraki.cisco.com/",
+    "description": "Easily monitor the performance of the web applications and WAN links on your network and proactively identify any issues."
+  },
   "room-os11": {
     "id": "room-os11",
     "name": "Room OS11",
     "url": "https://help.webex.com/en-us/article/6ger7db/What's-New-in-RoomOS",
     "description": "Experience the perfect synergy between hardware and software with the cloud-based operating system that powers hybrid work."
+  },
+  "thousand-eyes": {
+    "id": "thousand-eyes",
+    "name": "ThousandEyes",
+    "url": "https://www.thousandeyes.com/",
+    "description": "Get visibility from switch to SaaS and everything in between—so you can deliver flawless digital experiences."
   },
   "webex-suite": {
     "id": "webex-suite",
