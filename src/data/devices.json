@@ -181,6 +181,57 @@
       }
     ]
   },
+  "cisco-mic-array": {
+    "id": "cisco-mic-array",
+    "name": "Cisco Microphone Array",
+    "vendor": "webex",
+    "url": "https://hardware.webex.com/products/cisco-microphone-array",
+    "description": "A premium table microphone array designed for spatial audio pickup, enabling an immersive boardroom experience.",
+    "carouselItems": [
+      {
+        "filename": "cisco-mic-array-square.jpg"
+      }
+    ],
+    "tagline": "Be heard in your high-stakes meetings.",
+    "features": [
+      {
+        "shortPhrase": "Experience spatial audio",
+        "longPhrase": "Capture participant voices from different directions and deliver multiple streams of high-fidelity audio."
+      },
+      {
+        "shortPhrase": "Clutter-free design",
+        "longPhrase": "Augment your boardroom table with an elegant, compact microphone array that includes hidden cabling, magnetic attachment option, and multiple cable outlets."
+      },
+      {
+        "shortPhrase": "Flexible mounting options",
+        "longPhrase": "Elegantly recessed or placed on the table, the microphones become a natural part of your boardroom environment."
+      },
+      {
+        "shortPhrase": "Easy controls",
+        "longPhrase": "An intuitive mute button and discrete LED indicator allows you to easily control and see mute status."
+      }
+    ],
+    "specs": [
+      {
+        "text": "Product compatibility: Room Panorama Series"
+      },
+      {
+        "text": "Connector: Ethernet RJ45"
+      },
+      {
+        "text": "Frequency range: 100 Hz to 16 kHz, +/- 6 dB (on axis)"
+      },
+      {
+        "text": "Signal-to-noise ratio: Minimum 70 dB"
+      },
+      {
+        "text": "Control: Using Webex Room Navigator touch controller"
+      },
+      {
+        "text": "Deployment: Ethernet, supporting audio over IP setup, allowing for enhanced flexibility"
+      }
+    ]
+  },
   "meraki-z3c": {
     "id": "meraki-z3c",
     "name": "Meraki Z3C Teleworker Gateway",
@@ -1202,6 +1253,57 @@
       {
         "icon": "active-speaker",
         "text": "Speakers: Full range speaker and two woofers"
+      }
+    ]
+  },
+  "webex-room-kit-pro": {
+    "id": "webex-room-kit-pro",
+    "name": "Webex Room Kit Pro",
+    "vendor": "webex",
+    "url": "https://hardware.webex.com/products/Cisco%20Webex%20Room%20Kit%20Pro",
+    "description": "The ultimate video collaboration kit for large rooms with multi-screen support and robust integrations.",
+    "carouselItems": [
+    ],
+    "tagline": "Keep everyone connected.",
+    "features": [
+      {
+        "shortPhrase": "Deliver high-impact meetings and presentations",
+        "longPhrase": "State-of-the-art video conferencing and 4K content sharing."
+      },
+      {
+        "shortPhrase": "Outfit your largest rooms",
+        "longPhrase": "Support up to three screens and dual content sources."
+      },
+      {
+        "shortPhrase": "Move freely",
+        "longPhrase": "Take advantage of flexible pan-tilt-zoom cameras for custom deployments and presenter tracking."
+      },
+      {
+        "shortPhrase": "Ensure safety",
+        "longPhrase": "Equip your large rooms with AI-powered features including voice-enabled room controls and automated room capacity and cleaning alerts."
+      }
+    ],
+    "specs": [
+      {
+        "icon": "camera",
+        "text": "Camera: UltraHD, 5x digital zoom, 83-degree field of view, auto-framing"
+      },
+      {
+        "text": "Field of view: 83° horizontal field of view; 51.5° vertical field of view"
+      },
+      {
+        "icon": "join-audio",
+        "text": "Audio: 8 microphones, 48V phantom powered, Euroblock connector, each with separate echo cancellers and noise reduction."
+      },
+      {
+        "icon": "active-speaker",
+        "text": "Speaker: 6-element high-performing microphone array for accurate speaker tracking and immersive audio."
+      },
+      {
+        "text": "Codec Pro: One of the most powerful and feature-rich collaboration engines available with ultimate video and audio quality"
+      },
+      {
+        "text": "Room controls: Room Navigator for intuitive conference controls, room controls, room booking and third-party workplace applications"
       }
     ]
   },
