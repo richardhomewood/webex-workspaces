@@ -326,6 +326,138 @@
         ],
         "tagline": "Turn any jump space into a collaboration station.",
         "videoUrl": "https://webex.com/"
+      },
+      {
+        "name": "Boardroom",
+        "slug": "boardroom",
+        "pdfFilename": "HybridWorkExperiences_EBook_2021_Boardroom.pdf",
+        "background": "boardroom.jpg",
+        "backgroundPosition": {
+          "ws-XS": {
+            "x": 0.156
+          },
+          "ws-S": {
+            "x": 0.1
+          },
+          "ws-M": {
+            "x": 0
+          },
+          "ws-L": {
+            "x": 0
+          },
+          "ws-XL": {
+            "x": 0
+          }
+        },
+        "hotSpots": [
+          {
+            "slug": "webex-room-panorama",
+            "x": 400,
+            "y": 332
+          },
+          {
+            "slug": "webex-room-navigator",
+            "x": 620,
+            "y": 322
+          },
+          {
+            "slug": "cisco-mic-array",
+            "x": 900,
+            "y": 250
+          }
+        ],
+        "roomDescription": [
+          "For your most important meetings, like an executive-level board meeting, you need to design a space that will leave a lasting impression. Whether in the room or remote, everyone should have a perfect view and the opportunity to hear and be heard, crystal clear.",
+          "This is where premium devices can come together to deliver the most memorable experience for your audience."
+        ],
+        "tagline": "Bring the best experience to the boardroom.",
+        "videoUrl": "https://webex.com/"
+      },
+      {
+        "name": "Lobby",
+        "slug": "lobby",
+        "pdfFilename": "HybridWorkExperiences_EBook_2021_Lobby.pdf",
+        "background": "lobby.jpg",
+        "backgroundPosition": {
+          "ws-XS": {
+            "x": 0.156
+          },
+          "ws-S": {
+            "x": 0.1
+          },
+          "ws-M": {
+            "x": 0
+          },
+          "ws-L": {
+            "x": 0
+          },
+          "ws-XL": {
+            "x": 0
+          }
+        },
+        "hotSpots": [
+          {
+            "slug": "webex-desk-pro",
+            "x": 400,
+            "y": 332
+          },
+          {
+            "slug": "mv-smart-cameras",
+            "x": 620,
+            "y": 322
+          },
+          {
+            "slug": "mr56",
+            "x": 900,
+            "y": 250
+          }
+        ],
+        "roomDescription": [
+          "Offices need to transform into purpose-built spaces designed for a new way of working, as well meet evolving guidelines and protocols. To find the right balance between productivity and safety, office buildings will need to get a whole lot smarter, starting from the moment you arrive.",
+          "As the entry point to your office, the lobby is easily one of the most critical transformations to plan. Greeting employees and visitors with the best experience will set the stage for the rest your office has to offer."
+        ],
+        "tagline": "Start greeting employees in a new way.",
+        "videoUrl": "https://webex.com/"
+      },
+      {
+        "name": "NOC",
+        "slug": "noc",
+        "pdfFilename": "HybridWorkExperiences_EBook_2021_NOCAdmin.pdf",
+        "background": "noc.jpg",
+        "backgroundPosition": {
+          "ws-XS": {
+            "x": 0.156
+          },
+          "ws-S": {
+            "x": 0.1
+          },
+          "ws-M": {
+            "x": 0
+          },
+          "ws-L": {
+            "x": 0
+          },
+          "ws-XL": {
+            "x": 0
+          }
+        },
+        "hotSpots": [
+          {
+            "slug": "webex-room-navigator",
+            "x": 400,
+            "y": 332
+          },
+          {
+            "slug": "webex-room-kit-pro",
+            "x": 620,
+            "y": 322
+          }
+        ],
+        "roomDescription": [
+          "With hybrid work, the roles of IT and facilities have become even more complex. For businesses to run smoothly, IT teams need eyes across everything, as well as access to real-time insights. The magic happens when solutions for analytics, administration, utilization, networking, and troubleshooting come together to keep everything humming."
+        ],
+        "tagline": "Get control and visibility from every angle.",
+        "videoUrl": "https://webex.com/"
       }
     ]
   },
