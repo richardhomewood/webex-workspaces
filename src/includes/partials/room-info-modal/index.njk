@@ -48,28 +48,31 @@
       </div>
     </div>
 
-    <h5 class="ws-info-modal-section-heading ws-info-modal-section-heading-software">{{ common.infoModal.softwareSectionHeadingText }}</h5>
+    {% set doShowSoftware = softwareByRoom[workspace.slug][room.slug].length > 0 %}
+    {% if doShowSoftware %}
+      <h5 class="ws-info-modal-section-heading ws-info-modal-section-heading-software">{{ common.infoModal.softwareSectionHeadingText }}</h5>
 
-    <div class="ws-info-modal-software">
-      <div class="ws-room-software-scroller" id="ws-room-software-scroller-{{workspace.slug}}-{{room.slug}}">
-        <div class="swiper-wrapper">
-          {% for softwareId in softwareByRoom[workspace.slug][room.slug] %}
-            <div class="swiper-slide">
-              <div class="ws-room-info-carousel-img">{% imagesync "software/" + softwareId + "/room-info/" + softwareId + "-square.jpg", "", "", "", true, "100vw" %}</div>
-              <div class="ws-room-info-carousel-content">
-                <h3>{{software[softwareId].name}}</h3>
-                <p>{{software[softwareId].description}}</p>
-                <a href="{{software[softwareId].url}}"><span>{{common.learnMoreCtaText}}</span><span class="ws-cta-right-arrow">&nbsp;{% icon "cta-right-arrow-green", "", 14 %}</span></a>
+      <div class="ws-info-modal-software">
+        <div class="ws-room-software-scroller" id="ws-room-software-scroller-{{workspace.slug}}-{{room.slug}}">
+          <div class="swiper-wrapper">
+            {% for softwareId in softwareByRoom[workspace.slug][room.slug] %}
+              <div class="swiper-slide">
+                <div class="ws-room-info-carousel-img">{% imagesync "software/" + softwareId + "/room-info/" + softwareId + "-square.jpg", "", "", "", true, "100vw" %}</div>
+                <div class="ws-room-info-carousel-content">
+                  <h3>{{software[softwareId].name}}</h3>
+                  <p>{{software[softwareId].description}}</p>
+                  <a href="{{software[softwareId].url}}"><span>{{common.learnMoreCtaText}}</span><span class="ws-cta-right-arrow">&nbsp;{% icon "cta-right-arrow-green", "", 14 %}</span></a>
+                </div>
               </div>
-            </div>
-          {% endfor %}
+            {% endfor %}
+          </div>
+        </div>
+        <div class="ws-scroll-track-container" id="ws-scroll-track-container-software-{{workspace.slug}}-{{room.slug}}">
+          <div class="ws-scroll-track"></div>
+          <div class="ws-scroll-thumb"></div>
         </div>
       </div>
-      <div class="ws-scroll-track-container" id="ws-scroll-track-container-software-{{workspace.slug}}-{{room.slug}}">
-        <div class="ws-scroll-track"></div>
-        <div class="ws-scroll-thumb"></div>
-      </div>
-    </div>
+    {% endif %}
 
     <div class="ws-room-info-footer">
       <h2 class="ws-room-info-tagline">{{room.tagline}}</h2>
