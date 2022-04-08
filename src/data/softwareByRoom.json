@@ -20,6 +20,12 @@
     "jumpRoom": [
       "room-os11",
       "webex-suite"
+    ],
+    "noc": [
+      "control-hub",
+      "cisco-dna-spaces",
+      "thousand-eyes",
+      "meraki-insight"
     ]
   },
   "anywhere": {
