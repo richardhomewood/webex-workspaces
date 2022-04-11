@@ -501,6 +501,52 @@
         ],
         "tagline": "Get collaboration and a cup of coffee to go.",
         "videoUrl": "https://webex.com/"
+      },
+      {
+        "name": "Doctor's Office",
+        "slug": "doctorsOffice",
+        "pdfFilename": "HybridWorkExperiences_EBook_2021_DoctorsOffice.pdf",
+        "background": "doctors-office.jpg",
+        "backgroundPosition": {
+          "ws-XS": {
+            "x": 0.04604
+          },
+          "ws-S": {
+            "x": 0.05654
+          },
+          "ws-M": {
+            "x": 0.13
+          },
+          "ws-L": {
+            "x": 0
+          },
+          "ws-XL": {
+            "x": 0
+          }
+        },
+        "hotSpots": [
+          {
+            "slug": "webex-desk-pro",
+            "x": 300,
+            "y": 400
+          },
+          {
+            "slug": "cisco-ip-dect",
+            "x": 500,
+            "y": 400
+          },
+          {
+            "slug": "wi-fi-phones",
+            "x": 700,
+            "y": 400
+          }
+        ],
+        "roomDescription": [
+          "Healthcare has transformed dramatically, with telehealth on the rise. Providing excellent virtual care is vital, but poses many challenges compared to in-person consultations. Security is more important than ever, as is an easy-to-use experience for both healthcare workers and patients.",
+          "Extending devices and collaboration solutions to the doctor’s office helps provide better, faster, and secure care for patients, anywhere."
+        ],
+        "tagline": "Deliver an exceptional, secure telehealth experience.",
+        "videoUrl": "https://webex.com/"
       }
     ]
   }
