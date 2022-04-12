@@ -516,15 +516,21 @@ $modal-transform-transition: transform 0.65s
               display: block;
               margin: 52px auto 20px;
               height: 33px;
+              position: relative;
+
+              svg.ws-icon {
+                display: block;
+                margin: 0 auto;
+                // The dimensions are set in specs.njk
+                width: unset;
+                height: unset;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+              }
             }
 
-            svg.ws-icon {
-              display: block;
-              margin: 0 auto;
-              // The dimensions are set in specs.njk
-              width: unset;
-              height: unset;
-            }
 
             span {
               display: block;
