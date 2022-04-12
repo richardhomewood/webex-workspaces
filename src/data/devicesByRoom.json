@@ -43,6 +43,11 @@
     ],
     "boardroom": [
       "webex-room-panorama",
+      "webex-room-navigator",
+      "cisco-mic-array"
+    ],
+    "noc": [
+      "webex-room-kit-pro",
       "webex-room-navigator"
     ]
   },
