@@ -72,13 +72,15 @@
     display: block;
     text-decoration: none;
     color: black;
-    &:active, &:visited {
+    &:active,
+    &:visited {
       color: black;
     }
-    border-color: white;
     &:hover {
-      border-color: black;
-      color: white;
+      span {
+        text-decoration: underline;
+      }
+      color: black;
     }
 
     .ws-download-icon {
