@@ -61,7 +61,6 @@ $modal-transform-transition: transform 0.65s
       height: 56px;
       float: right;
       position: relative;
-      border: 1px solid black;
       border-radius: 28px;
       &:hover {
         border-color: black;
@@ -72,8 +71,8 @@ $modal-transform-transition: transform 0.65s
       }
 
       .ws-close-x {
-        width: 16.64px;
-        height: 16.64px;
+        width: 18px;
+        height: 18px;
         position: absolute;
         top: 50%;
         left: 50%;
