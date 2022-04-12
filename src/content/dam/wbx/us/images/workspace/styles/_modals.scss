@@ -176,7 +176,7 @@ $modal-transform-transition: transform 0.65s
           .swiper-slide {
             height: auto;
             box-sizing: border-box;
-            width: calc(100vw * (319 / 375));
+            width: calc(100vw * (305 / 375));
             padding: 0 14px 40px 0;
 
             &:last-child {
@@ -197,8 +197,8 @@ $modal-transform-transition: transform 0.65s
                 transform: translate(-50%, -50%);
                 width: auto;
                 height: auto;
-                max-height: calc(100vw * (225 / 376));
-                min-height: calc(100vw * (225 / 376));
+                max-height: calc(100vw * (305 / 376));
+                min-height: calc(100vw * (305 / 376));
 
                 touch-action: none;
                 user-select: none;
@@ -624,7 +624,7 @@ $modal-transform-transition: transform 0.65s
             .swiper-slide {
               height: auto;
               box-sizing: border-box;
-              width: calc(100vw * (380 / 768)) !important;
+              width: calc(100vw * (220 / 768)) !important;
               padding: 0 14px 40px 0;
 
               &:last-child {
@@ -634,7 +634,7 @@ $modal-transform-transition: transform 0.65s
               .ws-room-info-carousel-img {
                 //padding: 40px 45px;
                 width: 100%;
-                height: calc(100vw * (380 / 768));
+                height: calc(100vw * (220 / 768));
                 border: solid 1px #00000028;
                 border-radius: 16px;
                 position: relative;
@@ -646,8 +646,8 @@ $modal-transform-transition: transform 0.65s
                   transform: translate(-50%, -50%);
                   width: auto;
                   height: auto;
-                  max-height: calc(100vw * (225 / 768));
-                  min-height: calc(100vw * (225 / 768));
+                  max-height: calc(100vw * (220 / 768));
+                  min-height: calc(100vw * (220 / 768));
                 }
               }
 
@@ -661,6 +661,11 @@ $modal-transform-transition: transform 0.65s
                   //padding: 40px 45px;
                   min-width: calc(100vw * (380 / 768));
                   height: calc(100vw * (380 / 768));
+
+                  img {
+                    max-height: calc(100vw * (380 / 768));
+                    min-height: calc(100vw * (380 / 768));
+                  }
                 }
               }
             }
@@ -870,7 +875,7 @@ $modal-transform-transition: transform 0.65s
             .swiper-slide {
               height: auto;
               box-sizing: border-box;
-              width: calc(100vw * (380 / 1280)) !important;
+              width: calc(100vw * (280 / 1280)) !important;
               padding: 0 14px 40px 0;
 
               &:last-child {
@@ -880,7 +885,7 @@ $modal-transform-transition: transform 0.65s
               .ws-room-info-carousel-img {
                 //padding: 40px 45px;
                 width: 100%;
-                height: calc(100vw * (380 / 1280));
+                height: calc(100vw * (280 / 1280));
                 border: solid 1px #00000028;
                 border-radius: 16px;
                 position: relative;
@@ -892,8 +897,8 @@ $modal-transform-transition: transform 0.65s
                   transform: translate(-50%, -50%);
                   width: auto;
                   height: auto;
-                  max-height: calc(100vw * (225 / 1280));
-                  min-height: calc(100vw * (225 / 1280));
+                  max-height: calc(100vw * (280 / 1280));
+                  min-height: calc(100vw * (280 / 1280));
                 }
               }
 
@@ -907,6 +912,11 @@ $modal-transform-transition: transform 0.65s
                   //padding: 40px 45px;
                   min-width: calc(100vw * (380 / 1280));
                   height: calc(100vw * (380 / 1280));
+
+                  img {
+                    max-height: calc(100vw * (380 / 1280));
+                    min-height: calc(100vw * (380 / 1280));
+                  }
                 }
               }
             }
@@ -1178,7 +1188,7 @@ $modal-transform-transition: transform 0.65s
             .swiper-slide {
               height: auto;
               box-sizing: border-box;
-              width: calc(100vw * (380 / 1366)) !important;
+              width: calc(100vw * (280 / 1366)) !important;
               padding: 0 14px 40px 0;
 
               &:last-child {
@@ -1187,7 +1197,7 @@ $modal-transform-transition: transform 0.65s
 
               .ws-room-info-carousel-img {
                 width: 100%;
-                height: calc(100vw * (380 / 1366));
+                height: calc(100vw * (280 / 1366));
                 border: solid 1px #00000028;
                 border-radius: 16px;
                 position: relative;
@@ -1199,8 +1209,8 @@ $modal-transform-transition: transform 0.65s
                   transform: translate(-50%, -50%);
                   width: auto;
                   height: auto;
-                  max-height: calc(100vw * (225 / 1366));
-                  min-height: calc(100vw * (225 / 1366));
+                  max-height: calc(100vw * (280 / 1366));
+                  min-height: calc(100vw * (280 / 1366));
                 }
               }
 
@@ -1214,6 +1224,11 @@ $modal-transform-transition: transform 0.65s
                   //padding: 40px 45px;
                   min-width: calc(100vw * (380 / 1366));
                   height: calc(100vw * (380 / 1366));
+
+                  img {
+                    max-height: calc(100vw * (380 / 1366));
+                    min-height: calc(100vw * (380 / 1366));
+                  }
                 }
               }
             }
@@ -1413,8 +1428,8 @@ $modal-transform-transition: transform 0.65s
                   transform: translate(-50%, -50%);
                   width: auto;
                   height: auto;
-                  max-height: calc(100vw * (225 / 1920));
-                  min-height: calc(100vw * (225 / 1920));
+                  max-height: calc(100vw * (380 / 1920));
+                  min-height: calc(100vw * (380 / 1920));
                 }
               }
 
@@ -1430,8 +1445,8 @@ $modal-transform-transition: transform 0.65s
                   height: calc(100vw * (524 / 1920));
 
                   img {
-                    max-height: calc(100vw * (402 / 1920));
-                    min-height: calc(100vw * (402 / 1920));
+                    max-height: calc(100vw * (524 / 1920));
+                    min-height: calc(100vw * (524 / 1920));
                   }
                 }
 
