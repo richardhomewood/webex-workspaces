@@ -391,7 +391,7 @@ $modal-transform-transition: transform 0.65s
 
       a.ws-learn-more-cta {
         display: block;
-        margin: 0 auto 37px;
+        margin: 0 auto 56px;
         padding: 21px;
         width: 130px;
       }
@@ -753,6 +753,10 @@ $modal-transform-transition: transform 0.65s
           margin-top: 80px;
         }
 
+        a.ws-learn-more-cta {
+          margin: 0 auto 40px;
+        }
+
         .ws-device-tagline {
           margin-bottom: 0;
         }
@@ -1031,6 +1035,10 @@ $modal-transform-transition: transform 0.65s
           margin-top: 69px;
         }
 
+        a.ws-learn-more-cta {
+          margin: 0 auto 40px;
+        }
+
         .ws-image-carousel {
           height: auto;
           position: relative;
@@ -1107,6 +1115,10 @@ $modal-transform-transition: transform 0.65s
   #ws-modal-layer {
     .ws-device-modal-root:not(.ws-displayNone) {
       .ws-device {
+        a.ws-learn-more-cta {
+          margin: 0 auto 56px;
+        }
+
         .ws-device-features.ws-modal-section {
           ul {
             width: 78%;
@@ -1551,6 +1563,10 @@ $modal-transform-transition: transform 0.65s
 
     .ws-device-modal-root:not(.ws-displayNone) {
       .ws-device {
+        a.ws-learn-more-cta {
+          margin: 0 auto 56px;
+        }
+
         .ws-device-features.ws-modal-section {
           ul {
             width: 65%;
