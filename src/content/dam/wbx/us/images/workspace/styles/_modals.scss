@@ -491,7 +491,7 @@ $modal-transform-transition: transform 0.65s
 
       .ws-device-specs.ws-modal-section {
         margin-top: 135px;
-        margin-bottom: 44px;
+        margin-bottom: 80px;
 
         ul {
           display: flex;
@@ -780,7 +780,7 @@ $modal-transform-transition: transform 0.65s
         }
 
         .ws-device-specs.ws-modal-section {
-          margin-bottom: 76px;
+          margin-bottom: 80px;
           ul {
             // Make sure we only have room for 3 per row.
             max-width: calc((190px * 3) + (20px * 2));
@@ -1560,6 +1560,7 @@ $modal-transform-transition: transform 0.65s
         }
 
         .ws-device-specs.ws-modal-section {
+          margin-bottom: 80px;
           ul {
             max-width: calc((230px * 4) + (16px * 3));
             column-gap: 16px;
