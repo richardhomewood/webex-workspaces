@@ -168,15 +168,19 @@
         "text": "Bluetooth® 5.1"
       },
       {
+        "icon": "join-audio",
         "text": "Premium telephony enabled by Wideband audio"
       },
       {
+        "icon": "integrations",
         "text": "Multicell and single-cell base stations and repeaters for flexible communications designed to accommodate company growth"
       },
       {
+        "icon": "back-to-fullscreen",
         "text": "High resolution display and backlit keys in the 6825 model"
       },
       {
+        "icon": "file-locked",
         "text": "Secure, closed system with encryption and device authentication will be unimpacted by neighboring Wi-Fi access points"
       }
     ]
@@ -549,6 +553,22 @@
       {
         "shortPhrase": "Smart building automation",
         "longPhrase": "Plan your workplace allocation strategy with data."
+      }
+    ],
+    "specs": [
+      {
+        "icon": "resolution",
+        "text": "Up to 4MP video resolution (model-dependent)"
+      },
+      {
+        "icon": "1TB",
+        "iconSize": [54, 26],
+        "text": "Up to 1TB solid-state storage on camera (model-dependent)"
+      },
+      {
+        "icon": "indoor-outdoor",
+        "iconSize": [71, 34],
+        "text": "Indoor and outdoor models (IP67 rated)"
       }
     ]
   },
@@ -1471,6 +1491,22 @@
       {
         "icon": "back-to-fullscreen",
         "text": "Resolution: 1920x1200"
+      },
+      {
+        "icon": "active-speaker-up",
+        "text": "Sensors: Environmental data available in Control Hub via Webex Room APIs and can be extracted to Cisco DNA Spaces or third-party analytics dashboards"
+      },
+      {
+        "icon": "call-swap",
+        "text": "Pairing: Can be connected directly to a PoE-enabled network port on the Webex video device or paired remotely via LAN"
+      },
+      {
+        "icon": "calendar-month",
+        "text": "Modes: Can be configured as a room controller or scheduling display"
+      },
+      {
+        "icon": "ucm-cloud",
+        "text": "Memory: 2GB"
       }
     ]
   },
@@ -1511,23 +1547,31 @@
     ],
     "specs": [
       {
-        "icon": "resolution",
+        "icon": "2x-display",
+        "iconSize": [ 75, 28 ],
         "text": "Screens: Two Samsung 82-inch 8K displays for video and one Samsung 65-inch 4K display for content"
       },
       {
         "icon": "back-to-fullscreen",
+        "iconSize": [ 34 ],
         "text": "Resolution: Full HD with up to 1080p60 for live video and 4Kp15 for content"
       },
       {
+        "icon": "4x-5K",
+        "iconSize": [ 83, 28 ],
         "text": "Cameras: Four 5K cameras and automatic framing for the full panoramic view"
       },
       {
+        "icon": "83-degrees",
+        "iconSize": [ 52, 28 ],
         "text": "Field of view: 83° horizontal field of view, 51.5° vertical field of view"
       },
       {
+        "icon": "join-audio",
         "text": "Audio: Intelligent table microphone array for directional audio pickup"
       },
       {
+        "icon": "active-speaker",
         "text": "Speakers: Full duplex, high-quality stereo sound"
       }
     ]
@@ -1565,21 +1609,30 @@
     ],
     "specs": [
       {
+        "icon": "bluetooth",
         "text": "Connectivity: Bluetooth® 4.2 (Webex Wireless Phone 840 model) and Bluetooth® 5.0 LE (Webex Wireless Phone 860), USB-C, 3.5 mm audio"
       },
       {
+        "icon": "humidity",
+        "iconSize": [34],
         "text": "Water, chemical, and dust resistance though IP68 (860 model) and IP65 (840 model)"
       },
       {
+        "icon": "3000",
+        "iconSize": [77, 28],
         "text": "Hot-swappable 3000 mAh battery eliminating downtime between shifts using the 860. Swappable 3040 mAh battery on the 840"
       },
       {
+        "icon": "4-way-navigation",
         "text": "Equipped with accelerometer, gyroscope, magnetometer (compass), and ALS/proximity sensors"
       },
       {
+        "icon": "glass",
         "text": "Durable glass multi-touch screen with either Dragontail™ or Gorilla™ technology"
       },
       {
+        "icon": "1-point-8",
+        "iconSize": [42, 28],
         "text": "Both models survive multiple 1.8-meter drops onto a steel plate"
       }
     ]
