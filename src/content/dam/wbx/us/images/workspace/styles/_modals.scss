@@ -816,14 +816,17 @@ $modal-transform-transition: transform 0.65s
     .ws-room-info-modal-root:not(.ws-displayNone) {
       .ws-info-modal-header-content {
         display: flex;
-        column-gap: 40px;
+        column-gap: 0px;
 
         .ws-info-modal-room-name {
+          box-sizing: border-box;
+          width: calc(100% * (5 / 12));
           font-size: 64px;
           line-height: 64px;
           letter-spacing: -0.04em;
           margin-bottom: 24px;
           flex-shrink: 5;
+          padding-right: 40px;
         }
 
         .ws-info-modal-content {
@@ -1125,7 +1128,7 @@ $modal-transform-transition: transform 0.65s
     .ws-room-info-modal-root:not(.ws-displayNone) {
       .ws-info-modal-header-content {
         display: flex;
-        column-gap: 40px;
+        column-gap: 0px;
 
         .ws-info-modal-room-name {
           font-size: 64px;
@@ -1344,7 +1347,7 @@ $modal-transform-transition: transform 0.65s
     .ws-room-info-modal-root:not(.ws-displayNone) {
       .ws-info-modal-header-content {
         display: flex;
-        column-gap: 40px;
+        column-gap: 0px;
 
         .ws-info-modal-room-name {
           font-size: 64px;
