@@ -402,10 +402,15 @@
     "url": "https://meraki.cisco.com/product/wi-fi/indoor-access-points/mr56/",
     "description": "Wi-Fi 6 with multigigabit ethernet. Ultra-high performance and efficiency for dense indoor environments with a dedicated security radio.",
     "carouselItems": [
-      {
-        "filename": "mr56-top.jpg",
-        "alt": "The MR56 in white. The Cisco logo is visible in the lower right corner."
-      }
+      { "filename": "mr56-product-image-top.jpg", "alt": "The MR56 in white. The Cisco logo is visible in the lower right corner." },
+      { "filename": "mr56-product-image-back.jpg", "alt": "The MR56 in white." },
+      { "filename": "mr56-product-image-front-angle.jpg", "alt": "The MR56 in white." },
+      { "filename": "mr56-product-image-front.jpg", "alt": "The MR56 in white." },
+      { "filename": "mr56-product-image-left-angle.jpg", "alt": "The MR56 in white." },
+      { "filename": "mr56-product-image-left.jpg", "alt": "The MR56 in white." },
+      { "filename": "mr56-product-image-right-angle.jpg", "alt": "The MR56 in white." },
+      { "filename": "mr56-product-image-right.jpg", "alt": "The MR56 in white." },
+      { "filename": "mr56-product-image-bottom.jpg", "alt": "The MR56 in white." }
     ],
     "tagline": "Ultra-high Wi-Fi performance",
     "features": [
@@ -525,10 +530,12 @@
     "url": "https://meraki.cisco.com/products/smart-cameras/models/",
     "description": "Monitor more than just security with Meraki cloud‑first smart cameras.",
     "carouselItems": [
-      {
-        "filename": "mv-smart-cameras.jpg",
-        "alt": "The MV22 smart camera mounted to the ceiling via its white base. The black camera is visible inside its clear dome covering."
-      }
+      { "filename": "mv22-product-image-front.jpg", "alt": "The MV22 smart camera mounted to the ceiling via its white base. The black camera is visible inside its clear dome covering." },
+      { "filename": "mv22-product-image-front-angle.jpg", "alt": "The MV22 smart camera mounted to the ceiling via its white base. The black camera is visible inside its clear dome covering." },
+      { "filename": "mv22-product-image-left-angle.jpg", "alt": "The MV22 smart camera mounted to the ceiling via its white base. The black camera is visible inside its clear dome covering." },
+      { "filename": "mv22-product-image-right-angle.jpg", "alt": "The MV22 smart camera mounted to the ceiling via its white base. The black camera is visible inside its clear dome covering." },
+      { "filename": "mv22-product-image-top.jpg", "alt": "The MV22 smart camera mounted to the ceiling via its white base. The black camera is visible inside its clear dome covering." },
+      { "filename": "mv22-product-image-back.jpg", "alt": "The MV22 smart camera mounted to the ceiling via its white base. The black camera is visible inside its clear dome covering." }
     ],
     "features": [
       {
@@ -767,6 +774,18 @@
     "carouselItems": [
       {
         "filename": "ST01_Desk_front.jpg",
+        "alt": "Webex Desk"
+      },
+      {
+        "filename": "ST01_Desk_mid.jpg",
+        "alt": "Webex Desk"
+      },
+      {
+        "filename": "ST01_Desk_mid2.jpg",
+        "alt": "Webex Desk"
+      },
+      {
+        "filename": "ST01_Desk_back.jpg",
         "alt": "Webex Desk"
       }
     ],
@@ -1263,6 +1282,18 @@
     "url": "https://hardware.webex.com/products/Cisco%20Webex%20Room%20Kit%20Pro",
     "description": "The ultimate video collaboration kit for large rooms with multi-screen support and robust integrations.",
     "carouselItems": [
+      {
+        "filename": "RoomKit_Pro_QuadCamera_Front_RGB_smp.jpg",
+        "alt": "Webex Room Kit Pro. Gray quad camera above Codec Pro in white with the Cisco logo visible on the front edge of the Codec Pro."
+      },
+      {
+        "filename": "RoomKit_Pro_QuadCamera_3qrtRight_RGB_smp.jpg",
+        "alt": "Webex Room Kit Pro"
+      },
+      {
+        "filename": "RoomKit_Pro_QuadCamera_Back_RGB_smp.jpg",
+        "alt": "Webex Room Kit Pro"
+      }
     ],
     "tagline": "Keep everyone connected.",
     "features": [
@@ -1451,8 +1482,12 @@
     "description": "The multi-screen, integrated room system designed for the modern C-Suite.",
     "carouselItems": [
       {
-        "filename": "webex-room-panorama-in-boardroom.jpg",
+        "filename": "products-cisco-panorama-transparent.jpg",
         "alt": "Webex Room Panorama. 1 screen on top and 2 on bottom. Bottom left screen shows room name and 3 apps (Call, Share, Meetings)."
+      },
+      {
+        "filename": "Cisco Project Workplace - Executive Meeting (Nixie) _ Panorama _ Hero.jpg",
+        "alt": "Webex Room Panorama"
       }
     ],
     "tagline": "Bring immersive video to the boardroom.",
