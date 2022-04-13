@@ -727,32 +727,58 @@
     "name": "Webex Board Pro 75",
     "vendor": "webex",
     "url": "https://hardware.webex.com/products/webex-board-pro",
-    "description": "The next-generation device for video-first collaboration, content sharing, and whiteboarding in the ideation space.  ",
+    "description": {
+      "ideationSpace": "The next-generation device for video-first collaboration, content sharing, and whiteboarding in the ideation space.",
+      "trainingRoom": "The next-generation all-in-one device for collaboration, content sharing, and whiteboarding."
+    },
     "carouselItems": [
       {"filename": "Cisco_BoardPro_White_Turnaround.mp4", "alt": "Animation of the Webex Board Pro 75, displaying the front and sides. The main screen shows six apps and the time of 9:54."},
       {"filename": "ST01_BoardPro_front.jpg", "alt": "The front of the Webex Board Pro 75."},
       {"filename": "ST01_BoardPro_back.jpg", "alt": "The back of the Webex Board Pro 75."},
       {"filename": "ST01_BoardPro_mid.jpg", "alt": "Three-quarters view of the Webex Board Pro 75."}
     ],
-    "tagline": "Bring ideas to life.",
-    "features": [
-      {
-        "shortPhrase": "Supercharge creativity",
-        "longPhrase": "Bring local and hybrid teams together to co-create with digital whiteboarding and content annotation."
-      },
-      {
-        "shortPhrase": "Capture every idea",
-        "longPhrase": "Ideate before, during, and after the meeting with whiteboards that capture and save every idea so you can easily pick up where you left off."
-      },
-      {
-        "shortPhrase": "Join any meeting",
-        "longPhrase": "Easily join Webex, Zoom, Microsoft, or Google meetings and access your favorite applications with the touch of a button."
-      },
-      {
-        "shortPhrase": "Leverage built-in intelligence",
-        "longPhrase": "Equip your spaces with AI-powered features, intelligent sensors, and voice-enabled room controls."
-      }
-    ],
+    "tagline": {
+      "ideationSpace": "Bring ideas to life.",
+      "trainingRoom": "Take your training to the next level."
+    },
+    "features": {
+      "ideationSpace": [
+        {
+          "shortPhrase": "Supercharge creativity",
+          "longPhrase": "Bring local and hybrid teams together to co-create with digital whiteboarding and content annotation."
+        },
+        {
+          "shortPhrase": "Capture every idea",
+          "longPhrase": "Ideate before, during, and after the meeting with whiteboards that capture and save every idea so you can easily pick up where you left off."
+        },
+        {
+          "shortPhrase": "Join any meeting",
+          "longPhrase": "Easily join Webex, Zoom, Microsoft, or Google meetings and access your favorite applications with the touch of a button."
+        },
+        {
+          "shortPhrase": "Leverage built-in intelligence",
+          "longPhrase": "Equip your spaces with AI-powered features, intelligent sensors, and voice-enabled room controls."
+        }
+      ],
+      "trainingRoom": [
+        {
+          "shortPhrase": "Present and inspire",
+          "longPhrase": "Present to your audience with wireless sharing and touch-based pinch and zoom."
+        },
+        {
+          "shortPhrase": "Experience interactive whiteboarding",
+          "longPhrase": "Include virtual participants in brainstorming and ideation sessions while maintaining high-quality video."
+        },
+        {
+          "shortPhrase": "Include everyone",
+          "longPhrase": "Get to know everyone in the room with people focus which provides a clear view of each person in the meeting."
+        },
+        {
+          "shortPhrase": "Leverage built-in intelligence",
+          "longPhrase": "Equip your rooms with AI-powered features, intelligent sensors, and voice-enabled room controls."
+        }
+      ]
+    },
     "specs": [
       {
         "icon": "resolution",
@@ -1315,7 +1341,10 @@
         "alt": "Webex Room Kit Pro"
       }
     ],
-    "tagline": "Keep everyone connected.",
+    "tagline": {
+      "noc": "Keep everyone connected.",
+      "trainingRoom": "Train like a pro."
+    },
     "features": [
       {
         "shortPhrase": "Deliver high-impact meetings and presentations",
@@ -1368,7 +1397,8 @@
       "homeOffice": "The intuitive touch panel equipped with built-in sensors and powerful APIs.",
       "jumpRoom": "The wall panel display that makes office navigation a breeze.",
       "noc": "The intuitive touch panel equipped with built-in sensors and powerful APIs.",
-      "smallConferenceRoom": "The intuitive touch panel equipped with built-in sensors and powerful APIs."
+      "smallConferenceRoom": "The intuitive touch panel equipped with built-in sensors and powerful APIs.",
+      "trainingRoom": "The intuitive touch panel equipped with built-in sensors and powerful APIs."
     },
     "carouselItems": [
       {
@@ -1389,7 +1419,8 @@
       "homeOffice": "Control every aspect of your meeting",
       "jumpRoom": "Find your space.",
       "noc": "Control every aspect of your meeting",
-      "smallConferenceRoom": "Control every aspect of your meeting"
+      "smallConferenceRoom": "Control every aspect of your meeting",
+      "trainingRoom": "Control every aspect of your meeting"
     },
     "features": {
       "boardroom": [
@@ -1465,6 +1496,24 @@
         }
       ],
       "smallConferenceRoom": [
+        {
+          "shortPhrase": "Take control",
+          "longPhrase": "Touchscreen or hands-free control of room reservation, temperature, lighting, and the meeting itself."
+        },
+        {
+          "shortPhrase": "Access everything",
+          "longPhrase": "View and access upcoming meetings, contact lists, and directories."
+        },
+        {
+          "shortPhrase": "Leverage built-in intelligence",
+          "longPhrase": "Stay informed on room humidity, air quality, temperature, and noise level with intelligent sensors that help maintain a safe workspace."
+        },
+        {
+          "shortPhrase": "Stay in the know",
+          "longPhrase": "Display custom content, such as stock price and industry news, on the display when in standby mode."
+        }
+      ],
+      "trainingRoom": [
         {
           "shortPhrase": "Take control",
           "longPhrase": "Touchscreen or hands-free control of room reservation, temperature, lighting, and the meeting itself."
