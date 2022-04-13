@@ -47,6 +47,12 @@
     "url": "https://www.webex.com/webex-assistant.html",
     "description": "Meet your personal virtual assistant that helps keep everyone on time and on track."
   },
+  "webex-contact-center": {
+    "id": "webex-contact-center",
+    "name": "Webex Contact Center",
+    "url": "https://www.webex.com/contact-center.html",
+    "description": "Give customers the ability to connect with your organization through any channel, and provide agents with the tools to deliver fast, efficient, and satisfying customer experiences."
+  },
   "webex-go": {
     "id": "webex-go",
     "name": "Webex Go",

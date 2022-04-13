@@ -49,6 +49,16 @@
     "noc": [
       "webex-room-kit-pro",
       "webex-room-navigator"
+    ],
+    "contactCenter": [
+      "cisco-headset-500",
+      "cisco-desk-camera",
+      "cisco-desk-phone-8851"
+    ],
+    "trainingRoom": [
+      "webex-room-kit-pro",
+      "webex-board-pro-75",
+      "webex-room-navigator"
     ]
   },
   "anywhere": {

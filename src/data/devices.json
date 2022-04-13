@@ -65,6 +65,146 @@
       }
     ]
   },
+  "cisco-desk-camera": {
+    "id": "cisco-desk-camera",
+    "name": "Cisco Desk Camera",
+    "vendor": "webex",
+    "url": "https://www.webex.com/devices/cisco-desk-camera-1080p.html",
+    "description": "The webcam that brings video calls to the contact center.",
+    "carouselItems": [
+    ],
+    "tagline": "Elevate the experience.",
+    "features": [
+      {
+        "shortPhrase": "High-quality video",
+        "longPhrase": "Replace the low-angle, low-quality laptop view with a high-quality webcam."
+      },
+      {
+        "shortPhrase": "Stunning lighting",
+        "longPhrase": "Excellent video quality in all lighting conditions so you look great even when working late."
+      },
+      {
+        "shortPhrase": "Remove distractions",
+        "longPhrase": "Background nosie reduction so you can be clearly heard when the contact center is at its busiest."
+      },
+      {
+        "shortPhrase": "Ensure privacy",
+        "longPhrase": "Built-in privacy shutter so you always know when you're on and off camera."
+      }
+    ],
+    "specs": [
+      {
+        "icon": "resolution",
+        "text": "Screen: Attaches to a laptop or monitor with USB C-to-A and USB C-to-C cables"
+      },
+      {
+        "icon": "back-to-fullscreen",
+        "text": "Resolution: Supports up to 1080p live video resolution"
+      },
+      {
+        "icon": "camera",
+        "text": "Camera: 4k Ultra HD, supports up to 60 fps"
+      },
+      {
+        "icon": "81-degrees",
+        "text": "Field of view: 81° diagonal field of view"
+      },
+      {
+        "icon": "join-audio",
+        "text": "Audio: 2 omni-directional microphones"
+      }
+    ]
+  },
+  "cisco-desk-phone-8851": {
+    "id": "cisco-desk-phone-8851",
+    "name": "Cisco Desk Phone 8851",
+    "vendor": "webex",
+    "url": "https://hardware.webex.com/products/ip-phone-8800",
+    "description": "The premium desk phone for the contact center.",
+    "carouselItems": [
+    ],
+    "tagline": "Everything agents need to excel.",
+    "features": [
+      {
+        "shortPhrase": "Hands-free connection",
+        "longPhrase": "Connect to your favorite headset with Bluetooth, AUX or USB ports."
+      },
+      {
+        "shortPhrase": "Stay focused",
+        "longPhrase": "Dynamic noise reduction quiets the busiest calling center by reducing background noise."
+      },
+      {
+        "shortPhrase": "Boost productivity",
+        "longPhrase": "Handle multiple calls using the multi-call-per-line feature and program keys to support speed dial."
+      },
+      {
+        "shortPhrase": "Intuitive design",
+        "longPhrase": "One-touch access to applications, messaging, directory and often-used calling features such as hold/resume, transfer, and conference through fixed-function keys."
+      }
+    ],
+    "specs": [
+      {
+        "text": "Smart Phone Integration"
+      },
+      {
+        "text": "10 lines supported"
+      },
+      {
+        "text": "5” high resolution (800 x 400) screen"
+      },
+      {
+        "text": "Localized language support"
+      },
+      {
+        "text": "Up to two optional Key Expansion Module with up to 56 additional line keys"
+      },
+      {
+        "text": "Flexible deployment methods: Cisco on-premises, hosted, Webex Calling, and third-party call control"
+      }
+    ]
+  },
+  "cisco-headset-500": {
+    "id": "cisco-headset-500",
+    "name": "Cisco Headset 500 Series",
+    "vendor": "webex",
+    "url": "https://hardware.webex.com/products/cisco-560-series-headsets",
+    "description": "The contact center headset with deep integrations for Cisco IP Phones.",
+    "carouselItems": [
+    ],
+    "tagline": "Arm your agents.",
+    "features": [
+      {
+        "shortPhrase": "Experience all day comfort",
+        "longPhrase": "Reduce fatigue with lightweight and ergonomic headset that’s perfect for all day wear."
+      },
+      {
+        "shortPhrase": "Vibrant audio and voice",
+        "longPhrase": "Exceptional noise isolation with unidirectional microphones that hone in on your voice, it’s designed to work great even the noisiest environments."
+      },
+      {
+        "shortPhrase": "Eliminate distractions",
+        "longPhrase": "Only your voice will be heard with the boom arm that reduces background noise in bustling contact center environments."
+      },
+      {
+        "shortPhrase": "Pairs perfectly",
+        "longPhrase": "Designed with deep integrations for Cisco IP phones and enhanced features for call centers like quick disconnect, y cables, and training modes."
+      }
+    ],
+    "specs": [
+      {
+        "text": "Wired or wireless designs"
+      },
+      {
+        "text": "A range of connectivity options wireless, RJ9/RJ11, USB-A, and 3.5MM"
+      },
+      {
+        "text": "Call controls and in call presence LED indicators"
+      },
+      {
+        "text": "Easy, intuitive user configuration experience with Cisco IP phones"
+      }
+    ]
+  },
   "cisco-headset-730": {
     "id": "cisco-headset-730",
     "name": "Cisco Headset 730",
@@ -727,32 +867,58 @@
     "name": "Webex Board Pro 75",
     "vendor": "webex",
     "url": "https://hardware.webex.com/products/webex-board-pro",
-    "description": "The next-generation device for video-first collaboration, content sharing, and whiteboarding in the ideation space.  ",
+    "description": {
+      "ideationSpace": "The next-generation device for video-first collaboration, content sharing, and whiteboarding in the ideation space.",
+      "trainingRoom": "The next-generation all-in-one device for collaboration, content sharing, and whiteboarding."
+    },
     "carouselItems": [
       {"filename": "Cisco_BoardPro_White_Turnaround.mp4", "alt": "Animation of the Webex Board Pro 75, displaying the front and sides. The main screen shows six apps and the time of 9:54."},
       {"filename": "ST01_BoardPro_front.jpg", "alt": "The front of the Webex Board Pro 75."},
       {"filename": "ST01_BoardPro_back.jpg", "alt": "The back of the Webex Board Pro 75."},
       {"filename": "ST01_BoardPro_mid.jpg", "alt": "Three-quarters view of the Webex Board Pro 75."}
     ],
-    "tagline": "Bring ideas to life.",
-    "features": [
-      {
-        "shortPhrase": "Supercharge creativity",
-        "longPhrase": "Bring local and hybrid teams together to co-create with digital whiteboarding and content annotation."
-      },
-      {
-        "shortPhrase": "Capture every idea",
-        "longPhrase": "Ideate before, during, and after the meeting with whiteboards that capture and save every idea so you can easily pick up where you left off."
-      },
-      {
-        "shortPhrase": "Join any meeting",
-        "longPhrase": "Easily join Webex, Zoom, Microsoft, or Google meetings and access your favorite applications with the touch of a button."
-      },
-      {
-        "shortPhrase": "Leverage built-in intelligence",
-        "longPhrase": "Equip your spaces with AI-powered features, intelligent sensors, and voice-enabled room controls."
-      }
-    ],
+    "tagline": {
+      "ideationSpace": "Bring ideas to life.",
+      "trainingRoom": "Take your training to the next level."
+    },
+    "features": {
+      "ideationSpace": [
+        {
+          "shortPhrase": "Supercharge creativity",
+          "longPhrase": "Bring local and hybrid teams together to co-create with digital whiteboarding and content annotation."
+        },
+        {
+          "shortPhrase": "Capture every idea",
+          "longPhrase": "Ideate before, during, and after the meeting with whiteboards that capture and save every idea so you can easily pick up where you left off."
+        },
+        {
+          "shortPhrase": "Join any meeting",
+          "longPhrase": "Easily join Webex, Zoom, Microsoft, or Google meetings and access your favorite applications with the touch of a button."
+        },
+        {
+          "shortPhrase": "Leverage built-in intelligence",
+          "longPhrase": "Equip your spaces with AI-powered features, intelligent sensors, and voice-enabled room controls."
+        }
+      ],
+      "trainingRoom": [
+        {
+          "shortPhrase": "Present and inspire",
+          "longPhrase": "Present to your audience with wireless sharing and touch-based pinch and zoom."
+        },
+        {
+          "shortPhrase": "Experience interactive whiteboarding",
+          "longPhrase": "Include virtual participants in brainstorming and ideation sessions while maintaining high-quality video."
+        },
+        {
+          "shortPhrase": "Include everyone",
+          "longPhrase": "Get to know everyone in the room with people focus which provides a clear view of each person in the meeting."
+        },
+        {
+          "shortPhrase": "Leverage built-in intelligence",
+          "longPhrase": "Equip your rooms with AI-powered features, intelligent sensors, and voice-enabled room controls."
+        }
+      ]
+    },
     "specs": [
       {
         "icon": "resolution",
@@ -1315,7 +1481,10 @@
         "alt": "Webex Room Kit Pro"
       }
     ],
-    "tagline": "Keep everyone connected.",
+    "tagline": {
+      "noc": "Keep everyone connected.",
+      "trainingRoom": "Train like a pro."
+    },
     "features": [
       {
         "shortPhrase": "Deliver high-impact meetings and presentations",
@@ -1368,7 +1537,8 @@
       "homeOffice": "The intuitive touch panel equipped with built-in sensors and powerful APIs.",
       "jumpRoom": "The wall panel display that makes office navigation a breeze.",
       "noc": "The intuitive touch panel equipped with built-in sensors and powerful APIs.",
-      "smallConferenceRoom": "The intuitive touch panel equipped with built-in sensors and powerful APIs."
+      "smallConferenceRoom": "The intuitive touch panel equipped with built-in sensors and powerful APIs.",
+      "trainingRoom": "The intuitive touch panel equipped with built-in sensors and powerful APIs."
     },
     "carouselItems": [
       {
@@ -1389,7 +1559,8 @@
       "homeOffice": "Control every aspect of your meeting",
       "jumpRoom": "Find your space.",
       "noc": "Control every aspect of your meeting",
-      "smallConferenceRoom": "Control every aspect of your meeting"
+      "smallConferenceRoom": "Control every aspect of your meeting",
+      "trainingRoom": "Control every aspect of your meeting"
     },
     "features": {
       "boardroom": [
@@ -1465,6 +1636,24 @@
         }
       ],
       "smallConferenceRoom": [
+        {
+          "shortPhrase": "Take control",
+          "longPhrase": "Touchscreen or hands-free control of room reservation, temperature, lighting, and the meeting itself."
+        },
+        {
+          "shortPhrase": "Access everything",
+          "longPhrase": "View and access upcoming meetings, contact lists, and directories."
+        },
+        {
+          "shortPhrase": "Leverage built-in intelligence",
+          "longPhrase": "Stay informed on room humidity, air quality, temperature, and noise level with intelligent sensors that help maintain a safe workspace."
+        },
+        {
+          "shortPhrase": "Stay in the know",
+          "longPhrase": "Display custom content, such as stock price and industry news, on the display when in standby mode."
+        }
+      ],
+      "trainingRoom": [
         {
           "shortPhrase": "Take control",
           "longPhrase": "Touchscreen or hands-free control of room reservation, temperature, lighting, and the meeting itself."
