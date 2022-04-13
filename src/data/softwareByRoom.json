@@ -26,6 +26,13 @@
       "cisco-dna-spaces",
       "thousand-eyes",
       "meraki-insight"
+    ],
+    "contactCenter": [
+      "webex-contact-center",
+      "webex-suite"
+    ],
+    "trainingRoom": [
+      "webex-suite"
     ]
   },
   "anywhere": {

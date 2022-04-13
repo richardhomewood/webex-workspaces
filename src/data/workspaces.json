@@ -458,6 +458,97 @@
         ],
         "tagline": "Get control and visibility from every angle.",
         "videoUrl": "https://webex.com/"
+      },
+      {
+        "name": "Contact Center",
+        "slug": "contactCenter",
+        "pdfFilename": "HybridWorkExperiences_EBook_2021_CallCenter.pdf",
+        "background": "contact-center.jpg",
+        "backgroundPosition": {
+          "ws-XS": {
+            "x": 0.156
+          },
+          "ws-S": {
+            "x": 0.1
+          },
+          "ws-M": {
+            "x": 0
+          },
+          "ws-L": {
+            "x": 0
+          },
+          "ws-XL": {
+            "x": 0
+          }
+        },
+        "hotSpots": [
+          {
+            "slug": "cisco-headset-500",
+            "x": 400,
+            "y": 332
+          },
+          {
+            "slug": "cisco-desk-camera",
+            "x": 520,
+            "y": 322
+          },
+          {
+            "slug": "cisco-desk-phone-8851",
+            "x": 620,
+            "y": 322
+          }
+        ],
+        "roomDescription": [
+          "Contact centers are typically crowded, noisy environments, causing a real problem when agents need to communicate clearly with their customers. As contact centers continue to reopen, and call volumes only get higher, new solutions will be needed to keep agents operating at their super-agent levels."
+        ],
+        "tagline": "Get the perfect devices for your contact center agents. When customer experience matters, call on the best devices for your contact center agents.",
+        "videoUrl": "https://webex.com/"
+      },
+      {
+        "name": "Training Room",
+        "slug": "trainingRoom",
+        "pdfFilename": "HybridWorkExperiences_EBook_2021_TrainingRoom.pdf",
+        "background": "training-room.jpg",
+        "backgroundPosition": {
+          "ws-XS": {
+            "x": 0.156
+          },
+          "ws-S": {
+            "x": 0.1
+          },
+          "ws-M": {
+            "x": 0
+          },
+          "ws-L": {
+            "x": 0
+          },
+          "ws-XL": {
+            "x": 0
+          }
+        },
+        "hotSpots": [
+          {
+            "slug": "webex-room-navigator",
+            "x": 400,
+            "y": 332
+          },
+          {
+            "slug": "webex-room-kit-pro",
+            "x": 520,
+            "y": 322
+          },
+          {
+            "slug": "webex-board-pro-75",
+            "x": 620,
+            "y": 322
+          }
+        ],
+        "roomDescription": [
+          "Attention and interaction are key to successful learning experiences. But today, this is harder than ever. Your training room needs to be designed to fully engage both attendees in the room, as well as those joining remotely.",
+          "With the right set of solutions, you can equip your space in a way that makes sure everyone is equally connected to the content--and to one another."
+        ],
+        "tagline": "Deliver engaging local and virtual training.",
+        "videoUrl": "https://webex.com/"
       }
     ]
   },
