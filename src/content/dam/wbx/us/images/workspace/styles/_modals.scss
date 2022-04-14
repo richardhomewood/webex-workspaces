@@ -166,20 +166,22 @@ $modal-transform-transition: transform 0.65s
 
         width: 100%;
         min-width: 100%;
+
         .swiper-wrapper {
           position: relative;
           left: 0;
           top: 0;
           align-items: stretch;
+          margin-bottom: 40px;
 
           .swiper-slide {
             height: auto;
             box-sizing: border-box;
             width: calc(100vw * (305 / 375));
-            padding: 0 14px 40px 0;
+            padding: 0 14px 0 0;
 
             &:last-child {
-              padding: 0 0 40px 0;
+              padding: 0 0 0 0;
             }
 
             .ws-room-info-carousel-img {
@@ -240,7 +242,30 @@ $modal-transform-transition: transform 0.65s
       }
     }
 
+    .swiper-scrollbar-device,
+    .swiper-scrollbar-software {
+      width: 100%;
+      height: 0.0694444444vw;
+      background-color: #c4c4c4;
+      border-radius: 10px;
+      box-sizing: border-box;
+
+      .swiper-scrollbar-drag-device,
+      .swiper-scrollbar-drag-software {
+        background-color: #078855;
+        position: relative;
+        left: 0;
+        top: 0;
+        border-radius: 10px;
+        height: 0.2083333333vw;
+        margin-top: -0.0694444444vw;
+        z-index: 2;
+        box-sizing: border-box;
+      }
+    }
+
     .ws-scroll-track-container {
+      display: none;
       position: relative;
       width: 100%;
       height: 3px;
@@ -271,7 +296,7 @@ $modal-transform-transition: transform 0.65s
       .ws-room-software-scroller {
         overflow: visible;
         width: 100%;
-        padding: 0 21px;
+        padding: 0 0;
         z-index: 0;
         position: relative;
 
@@ -531,7 +556,6 @@ $modal-transform-transition: transform 0.65s
               }
             }
 
-
             span {
               display: block;
               margin: 6px;
@@ -623,14 +647,16 @@ $modal-transform-transition: transform 0.65s
 
           .swiper-wrapper {
             align-items: stretch;
+            margin-bottom: 40px;
+
             .swiper-slide {
               height: auto;
               box-sizing: border-box;
               width: calc(100vw * (220 / 768)) !important;
-              padding: 0 14px 40px 0;
+              padding: 0 14px 0 0;
 
               &:last-child {
-                padding: 0 0 40px 0;
+                padding: 0 0 0 0;
               }
 
               .ws-room-info-carousel-img {
@@ -679,7 +705,7 @@ $modal-transform-transition: transform 0.65s
         .ws-room-software-scroller {
           overflow: visible;
           width: 100%;
-          //padding: 0 32px;
+          padding: 0 0;
           z-index: 0;
           position: relative;
 
@@ -875,14 +901,16 @@ $modal-transform-transition: transform 0.65s
 
           .swiper-wrapper {
             align-items: stretch;
+            margin-bottom: 40px;
+
             .swiper-slide {
               height: auto;
               box-sizing: border-box;
               width: calc(100vw * (280 / 1280)) !important;
-              padding: 0 14px 40px 0;
+              padding: 0 14px 0 0;
 
               &:last-child {
-                padding: 0 0 40px 0;
+                padding: 0 0 0 0;
               }
 
               .ws-room-info-carousel-img {
@@ -949,7 +977,7 @@ $modal-transform-transition: transform 0.65s
         .ws-room-software-scroller {
           overflow: visible;
           width: 100%;
-          padding: 0 64px;
+          padding: 0 0;
           z-index: 0;
           position: relative;
 
@@ -971,21 +999,24 @@ $modal-transform-transition: transform 0.65s
             top: 0;
             left: 0;
             align-items: stretch;
+            gap: 94px;
 
             .swiper-slide {
               height: auto;
               box-sizing: border-box;
               width: calc(100vw * (569 / 1280));
-              padding: 0 114px 40px 0;
+              padding: 0 40px 40px 0;
               display: flex;
 
               &:last-child {
-                padding: 0 64px 40px 0;
+                padding: 0 0 40px 0;
+                margin-right: 94px;
               }
 
               .ws-room-info-carousel-content {
                 display: inline-block;
                 margin-left: 40px;
+                width: calc(100vw * (313 / 1280));
               }
 
               .ws-room-info-carousel-img {
@@ -1192,14 +1223,16 @@ $modal-transform-transition: transform 0.65s
 
           .swiper-wrapper {
             align-items: stretch;
+            margin-bottom: 40px;
+
             .swiper-slide {
               height: auto;
               box-sizing: border-box;
               width: calc(100vw * (280 / 1366)) !important;
-              padding: 0 14px 40px 0;
+              padding: 0 14px 0 0;
 
               &:last-child {
-                padding: 0 0 40px 0;
+                padding: 0 0 0 0;
               }
 
               .ws-room-info-carousel-img {
@@ -1264,7 +1297,7 @@ $modal-transform-transition: transform 0.65s
         .ws-room-software-scroller {
           overflow: visible;
           width: 100%;
-          padding: 0 64px;
+          padding: 0 0;
           z-index: 0;
           position: relative;
 
@@ -1283,20 +1316,24 @@ $modal-transform-transition: transform 0.65s
 
           .swiper-wrapper {
             align-items: stretch;
+            gap: 94px;
+
             .swiper-slide {
               height: auto;
               box-sizing: border-box;
-              width: calc(100vw * (569 / 1366));
-              padding: 0 114px 40px 0;
+              width: calc(100vw * (582 / 1366));
+              padding: 0 40px 40px 0;
               display: flex;
 
               &:last-child {
-                padding: 0 64px 40px 0;
+                width: calc(100vw * (676 / 1366));
+                padding: 0 94px 40px 0;
               }
 
               .ws-room-info-carousel-content {
                 display: inline-block;
                 margin-left: 40px;
+                width: calc(100vw * (313 / 1366));
               }
 
               .ws-room-info-carousel-img {
@@ -1407,14 +1444,16 @@ $modal-transform-transition: transform 0.65s
           width: 100%;
           .swiper-wrapper {
             align-items: stretch;
+            margin-bottom: 90px;
+
             .swiper-slide {
               height: auto;
               box-sizing: border-box;
               width: calc(100vw * (380 / 1920)) !important;
-              padding: 0 14px 90px 0;
+              padding: 0 14px 0 0;
 
               &:last-child {
-                padding: 0 0 90px 0;
+                padding: 0 0 0 0;
               }
 
               .ws-room-info-carousel-img {
@@ -1484,7 +1523,7 @@ $modal-transform-transition: transform 0.65s
         .ws-room-software-scroller {
           overflow: visible;
           width: 100%;
-          padding: 0 72px;
+          padding: 0 0;
           z-index: 0;
           position: relative;
 
@@ -1494,6 +1533,13 @@ $modal-transform-transition: transform 0.65s
           &.ws-no-scroll {
             user-select: unset !important;
             cursor: default !important;
+            .swiper-wrapper {
+              .swiper-slide {
+                .ws-room-info-carousel-content {
+                  width: calc(100vw * (313 / 1920));
+                }
+              }
+            }
           }
 
           & {
@@ -1506,15 +1552,17 @@ $modal-transform-transition: transform 0.65s
             left: 0;
             top: 0;
             align-items: stretch;
+            gap: 70px;
+
             .swiper-slide {
               height: auto;
               box-sizing: border-box;
-              width: calc(100vw * (569 / 1920));
-              padding: 0 114px 40px 0;
+              width: calc(100vw * (611 / 1920));
+              padding: 0 0 40px 0;
               display: flex;
 
               &:last-child {
-                padding: 0 72px 40px 0;
+                padding: 0 0 40px 0;
               }
 
               .ws-room-info-carousel-content {
