@@ -343,8 +343,8 @@ $modal-transform-transition: transform 0.65s
                 transform: translate(-50%, -50%);
                 width: 100%;
                 height: auto;
-                max-height: calc(100vw * (305 / 376));
-                min-height: calc(100vw * (305 / 376));
+                max-height: calc(100vw * (305 / 375));
+                min-height: calc(100vw * (305 / 375));
                 touch-action: none;
                 user-select: none;
                 -webkit-user-drag: none;
@@ -490,6 +490,7 @@ $modal-transform-transition: transform 0.65s
         @include ws-device-tagline-text;
         text-align: center;
         margin: 64px auto 64px;
+        max-width: calc(100vw * (560 / 1280));
       }
 
       .ws-device-features.ws-modal-section {
@@ -782,6 +783,7 @@ $modal-transform-transition: transform 0.65s
 
         .ws-device-tagline {
           margin-bottom: 0;
+          max-width: calc(100vw * (340 / 768));
         }
 
         .ws-device-features.ws-modal-section {
@@ -1063,6 +1065,10 @@ $modal-transform-transition: transform 0.65s
           margin-top: 69px;
         }
 
+        .ws-device-tagline {
+          max-width: calc(100vw * (560 / 1280));
+        }
+
         a.ws-learn-more-cta {
           margin: 0 auto 40px;
         }
@@ -1162,6 +1168,10 @@ $modal-transform-transition: transform 0.65s
               max-width: 362px;
             }
           }
+        }
+
+        .ws-device-tagline {
+          max-width: calc(100vw * (560 / 1366));
         }
 
         .ws-image-carousel {
@@ -1630,6 +1640,10 @@ $modal-transform-transition: transform 0.65s
       .ws-device {
         a.ws-learn-more-cta {
           margin: 0 auto 56px;
+        }
+
+        .ws-device-tagline {
+          max-width: calc(100vw * (640 / 1920));
         }
 
         .ws-device-features.ws-modal-section {
