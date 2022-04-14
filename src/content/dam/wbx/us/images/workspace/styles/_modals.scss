@@ -769,15 +769,6 @@ $modal-transform-transition: transform 0.65s
           }
         }
       }
-
-      .ws-room-info-footer {
-        text-align: center;
-        .ws-room-info-tagline {
-          @include ws-h1;
-          color: #181818;
-          margin: 66px 0 24px;
-        }
-      }
     }
 
     .ws-device-modal-root:not(.ws-displayNone) {
@@ -1088,6 +1079,14 @@ $modal-transform-transition: transform 0.65s
           .swiper {
             height: calc(100% * (1.77 / 1));
             aspect-ratio: 1.77 / 1;
+
+            .swiper-wrapper {
+              .swiper-slide {
+                video {
+                  max-width: calc(100% - 172px);
+                }
+              }
+            }
           }
           .ws-carousel-nav {
             margin-top: unset;
@@ -1173,6 +1172,18 @@ $modal-transform-transition: transform 0.65s
 
         .ws-device-tagline {
           max-width: calc(100vw * (560 / 1366));
+        }
+
+        .ws-image-carousel {
+          .swiper {
+            .swiper-wrapper {
+              .swiper-slide {
+                video {
+                  max-width: calc(100% - 172px);
+                }
+              }
+            }
+          }
         }
       }
     }
@@ -1652,6 +1663,18 @@ $modal-transform-transition: transform 0.65s
 
             li {
               flex: 0 0 calc(25% - 12px);
+            }
+          }
+        }
+
+        .ws-image-carousel {
+          .swiper {
+            .swiper-wrapper {
+              .swiper-slide {
+                video {
+                  max-width: calc(100% - 172px);
+                }
+              }
             }
           }
         }
