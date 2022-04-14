@@ -13,7 +13,8 @@ window.addEventListener('hashchange', () => {
 });
 
 window.addEventListener('resize', () => {
-    updateUi(window.location);
+    updateUi();
+    modals.modalResize(canonicalPath(window.location));
 });
 
 window.addEventListener('load', function () {
