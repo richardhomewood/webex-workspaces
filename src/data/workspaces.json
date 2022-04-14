@@ -53,7 +53,7 @@
             "y": 584
           },
           {
-            "slug": "webex-room-kit-mini",
+            "slug": "webex-room-bar",
             "x": 1205,
             "y": 592
           },
@@ -265,7 +265,7 @@
         },
         "hotSpots": [
           {
-            "slug": "webex-board-pro-55",
+            "slug": "webex-room-bar",
             "x": 428,
             "y": 645
           },

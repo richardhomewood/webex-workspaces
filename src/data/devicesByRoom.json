@@ -7,7 +7,7 @@
     ],
     "homeOffice": [
       "webex-desk",
-      "webex-room-kit-mini",
+      "webex-room-bar",
       "webex-room-navigator",
       "bo-cisco-980",
       "mr46",
@@ -22,13 +22,13 @@
     "hotdesk": [
       "cisco-headset-730",
       "webex-desk-hub",
-      "webex-desk-camera"
+      "cisco-desk-camera-4k"
     ],
     "ideationSpace": [
       "webex-board-pro-75"
     ],
     "smallConferenceRoom": [
-      "webex-board-pro-55",
+      "webex-room-bar",
       "webex-room-navigator"
     ],
     "jumpRoom": [
@@ -52,7 +52,7 @@
     ],
     "contactCenter": [
       "cisco-headset-500",
-      "cisco-desk-camera",
+      "cisco-desk-camera-1080p",
       "cisco-desk-phone-8851"
     ],
     "trainingRoom": [
