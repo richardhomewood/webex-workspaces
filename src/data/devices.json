@@ -65,9 +65,9 @@
       }
     ]
   },
-  "cisco-desk-camera": {
-    "id": "cisco-desk-camera",
-    "name": "Cisco Desk Camera",
+  "cisco-desk-camera-1080p": {
+    "id": "cisco-desk-camera-1080p",
+    "name": "Cisco Desk Camera 1080p",
     "vendor": "webex",
     "url": "https://www.webex.com/devices/cisco-desk-camera-1080p.html",
     "description": "The webcam that brings video calls to the contact center.",
@@ -86,6 +86,56 @@
       {
         "shortPhrase": "Remove distractions",
         "longPhrase": "Background nosie reduction so you can be clearly heard when the contact center is at its busiest."
+      },
+      {
+        "shortPhrase": "Ensure privacy",
+        "longPhrase": "Built-in privacy shutter so you always know when you're on and off camera."
+      }
+    ],
+    "specs": [
+      {
+        "icon": "resolution",
+        "text": "Screen: Attaches to a laptop or monitor with USB C-to-A and USB C-to-C cables"
+      },
+      {
+        "icon": "back-to-fullscreen",
+        "text": "Resolution: Supports up to 1080p live video resolution"
+      },
+      {
+        "icon": "camera",
+        "text": "Camera: 4k Ultra HD, supports up to 60 fps"
+      },
+      {
+        "icon": "81-degrees",
+        "text": "Field of view: 81° diagonal field of view"
+      },
+      {
+        "icon": "join-audio",
+        "text": "Audio: 2 omni-directional microphones"
+      }
+    ]
+  },
+  "cisco-desk-camera-4k": {
+    "id": "cisco-desk-camera-4k",
+    "name": "Cisco Desk Camera 4k",
+    "vendor": "webex",
+    "url": "https://hardware.webex.com/products/cisco-webex-desk-camera",
+    "description": "The webcam that powers video conferencing at the hot desk.",
+    "carouselItems": [
+    ],
+    "tagline": "Picture perfect.",
+    "features": [
+      {
+        "shortPhrase": "Up to 4K Video",
+        "longPhrase": "Replace the low-angle, low-quality laptop view with a high-quality webcam."
+      },
+      {
+        "shortPhrase": "Stunning lighting",
+        "longPhrase": "Excellent video quality in all lighting conditions so you look great even when working late."
+      },
+      {
+        "shortPhrase": "Remove distractions",
+        "longPhrase": "Background noise reduction so you can be clearly heard when the office is at its busiest."
       },
       {
         "shortPhrase": "Ensure privacy",
@@ -1335,13 +1385,9 @@
     "id": "webex-room-bar",
     "name": "Webex Room Bar",
     "vendor": "webex",
-    "url": "https://hardware.webex.com/products/cisco-webex-room-bar",
+    "url": "https://www.webex.com/devices/webex-room-bar.html",
     "description": "The intelligent video collaboration bar that attaches to single or dual displays.",
     "carouselItems": [
-      {
-        "filename": "webex-room-bar-square.jpg",
-        "alt": "Webex Room Bar"
-      }
     ],
     "tagline": "Get a boardroom experience at home.",
     "features": [
