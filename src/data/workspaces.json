@@ -288,10 +288,10 @@
         "background": "jumproom.jpg",
         "backgroundPosition": {
           "ws-XS": {
-            "x": 0.156
+            "x": 0.046
           },
           "ws-S": {
-            "x": 0.1
+            "x": 0.074
           },
           "ws-M": {
             "x": 0
@@ -306,18 +306,28 @@
         "hotSpots": [
           {
             "slug": "webex-room-navigator",
-            "x": 400,
-            "y": 332
+            "x": 410,
+            "y": 331
           },
           {
             "slug": "webex-desk",
-            "x": 620,
-            "y": 322
+            "x": 682,
+            "y": 332
           },
           {
             "slug": "mr56",
-            "x": 900,
-            "y": 250
+            "x": 976,
+            "y": 290
+          },
+          {
+            "slug": "webex-room-navigator",
+            "x": 1363,
+            "y": 292
+          },
+          {
+            "slug": "webex-desk",
+            "x": 1515,
+            "y": 298
           }
         ],
         "roomDescription": [
