@@ -344,10 +344,10 @@
         "background": "boardroom.jpg",
         "backgroundPosition": {
           "ws-XS": {
-            "x": 0.156
+            "x": 0
           },
           "ws-S": {
-            "x": 0.1
+            "x": 0
           },
           "ws-M": {
             "x": 0
@@ -362,18 +362,18 @@
         "hotSpots": [
           {
             "slug": "webex-room-panorama",
-            "x": 400,
-            "y": 332
+            "x": 954,
+            "y": 198
           },
           {
             "slug": "webex-room-navigator",
-            "x": 620,
-            "y": 322
+            "x": 725,
+            "y": 610
           },
           {
             "slug": "cisco-mic-array",
-            "x": 900,
-            "y": 250
+            "x": 954,
+            "y": 750
           }
         ],
         "roomDescription": [
