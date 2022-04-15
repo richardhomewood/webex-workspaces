@@ -1515,6 +1515,11 @@ $modal-transform-transition: transform 0.65s
 
                 .ws-room-info-carousel-content {
                   max-width: 350px;
+
+                  // This padding is intended to align the left edge of this container with .ws-info-modal-content
+                  // at the top of the page.   The numbers below correspond to the widths set above for
+                  // .ws-info-modal-content and .ws-room-info-carousel-img, and the column-gap for .ws-single.
+                  padding-left: calc(100% - (100vw * ((524 + 714) / 1920)) - 60px)
                 }
               }
             }
