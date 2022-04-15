@@ -496,7 +496,6 @@ $modal-transform-transition: transform 0.65s
       .ws-device-features.ws-modal-section {
         ul {
           padding: 0;
-          width: 80%;
           margin: 64px auto;
 
           li {
@@ -788,6 +787,7 @@ $modal-transform-transition: transform 0.65s
 
         .ws-device-features.ws-modal-section {
           ul {
+            width: 83%;
             margin-top: 22px;
             display: grid;
             grid-template-columns: 1fr 1fr;
