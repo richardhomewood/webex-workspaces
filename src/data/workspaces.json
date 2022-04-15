@@ -123,13 +123,13 @@
         "background": "bedroom.jpg",
         "backgroundPosition": {
           "ws-XS": {
-            "x": 0.16
+            "x": 0.12
           },
           "ws-S": {
-            "x": 0.09
+            "x": 0.15
           },
           "ws-M": {
-            "x": 0
+            "x": 0.05
           },
           "ws-L": {
             "x": 0
@@ -141,8 +141,8 @@
         "hotSpots": [
           {
             "slug": "webex-desk-mini",
-            "x": 507,
-            "y": 476
+            "x": 325,
+            "y": 511
           }
         ],
         "roomDescription": [
