@@ -390,10 +390,10 @@
         "background": "lobby.jpg",
         "backgroundPosition": {
           "ws-XS": {
-            "x": 0.156
+            "x": -0.04
           },
           "ws-S": {
-            "x": 0.1
+            "x": -0.06
           },
           "ws-M": {
             "x": 0
@@ -408,18 +408,18 @@
         "hotSpots": [
           {
             "slug": "webex-desk-pro",
-            "x": 400,
-            "y": 332
+            "x": 1362,
+            "y": 480
           },
           {
             "slug": "mv-smart-cameras",
-            "x": 620,
-            "y": 322
+            "x": 1200,
+            "y": 292
           },
           {
             "slug": "mr56",
-            "x": 900,
-            "y": 250
+            "x": 1364,
+            "y": 292
           }
         ],
         "roomDescription": [
