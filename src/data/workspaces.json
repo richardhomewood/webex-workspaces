@@ -559,18 +559,18 @@
         "hotSpots": [
           {
             "slug": "webex-room-navigator",
-            "x": 400,
-            "y": 332
+            "x": 800,
+            "y": 625
           },
           {
             "slug": "webex-room-kit-pro",
-            "x": 520,
-            "y": 322
+            "x": 1046,
+            "y": 310
           },
           {
             "slug": "webex-board-pro-75",
-            "x": 620,
-            "y": 322
+            "x": 300,
+            "y": 694
           }
         ],
         "roomDescription": [
