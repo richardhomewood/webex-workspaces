@@ -123,13 +123,13 @@
         "background": "bedroom.jpg",
         "backgroundPosition": {
           "ws-XS": {
-            "x": 0.16
+            "x": 0.12
           },
           "ws-S": {
-            "x": 0.09
+            "x": 0.15
           },
           "ws-M": {
-            "x": 0
+            "x": 0.05
           },
           "ws-L": {
             "x": 0
@@ -141,8 +141,8 @@
         "hotSpots": [
           {
             "slug": "webex-desk-mini",
-            "x": 507,
-            "y": 476
+            "x": 325,
+            "y": 511
           }
         ],
         "roomDescription": [
@@ -266,13 +266,13 @@
         "hotSpots": [
           {
             "slug": "webex-room-bar",
-            "x": 428,
-            "y": 645
+            "x": 402,
+            "y": 598
           },
           {
             "slug": "webex-room-navigator",
-            "x": 886,
-            "y": 577
+            "x": 853,
+            "y": 515
           }
         ],
         "roomDescription": [
@@ -288,10 +288,10 @@
         "background": "jumproom.jpg",
         "backgroundPosition": {
           "ws-XS": {
-            "x": 0.156
+            "x": 0.046
           },
           "ws-S": {
-            "x": 0.1
+            "x": 0.074
           },
           "ws-M": {
             "x": 0
@@ -306,18 +306,28 @@
         "hotSpots": [
           {
             "slug": "webex-room-navigator",
-            "x": 400,
-            "y": 332
+            "x": 410,
+            "y": 331
           },
           {
             "slug": "webex-desk",
-            "x": 620,
-            "y": 322
+            "x": 682,
+            "y": 332
           },
           {
             "slug": "mr56",
-            "x": 900,
-            "y": 250
+            "x": 976,
+            "y": 290
+          },
+          {
+            "slug": "webex-room-navigator",
+            "x": 1363,
+            "y": 292
+          },
+          {
+            "slug": "webex-desk",
+            "x": 1515,
+            "y": 298
           }
         ],
         "roomDescription": [
@@ -334,10 +344,10 @@
         "background": "boardroom.jpg",
         "backgroundPosition": {
           "ws-XS": {
-            "x": 0.156
+            "x": 0
           },
           "ws-S": {
-            "x": 0.1
+            "x": 0
           },
           "ws-M": {
             "x": 0
@@ -352,18 +362,18 @@
         "hotSpots": [
           {
             "slug": "webex-room-panorama",
-            "x": 400,
-            "y": 332
+            "x": 954,
+            "y": 198
           },
           {
             "slug": "webex-room-navigator",
-            "x": 620,
-            "y": 322
+            "x": 725,
+            "y": 610
           },
           {
             "slug": "cisco-mic-array",
-            "x": 900,
-            "y": 250
+            "x": 954,
+            "y": 750
           }
         ],
         "roomDescription": [
@@ -380,10 +390,10 @@
         "background": "lobby.jpg",
         "backgroundPosition": {
           "ws-XS": {
-            "x": 0.156
+            "x": -0.04
           },
           "ws-S": {
-            "x": 0.1
+            "x": -0.06
           },
           "ws-M": {
             "x": 0
@@ -398,18 +408,18 @@
         "hotSpots": [
           {
             "slug": "webex-desk-pro",
-            "x": 400,
-            "y": 332
+            "x": 1362,
+            "y": 480
           },
           {
             "slug": "mv-smart-cameras",
-            "x": 620,
-            "y": 322
+            "x": 1200,
+            "y": 292
           },
           {
             "slug": "mr56",
-            "x": 900,
-            "y": 250
+            "x": 1364,
+            "y": 292
           }
         ],
         "roomDescription": [
@@ -426,13 +436,13 @@
         "background": "noc.jpg",
         "backgroundPosition": {
           "ws-XS": {
-            "x": 0.156
+            "x": 0
           },
           "ws-S": {
             "x": 0.1
           },
           "ws-M": {
-            "x": 0
+            "x": 0.04
           },
           "ws-L": {
             "x": 0
@@ -444,13 +454,18 @@
         "hotSpots": [
           {
             "slug": "webex-room-navigator",
-            "x": 400,
-            "y": 332
+            "x": 273,
+            "y": 580
           },
           {
             "slug": "webex-room-kit-pro",
-            "x": 620,
-            "y": 322
+            "x": 942,
+            "y": 282
+          },
+          {
+            "slug": "mv-smart-cameras",
+            "x": 936,
+            "y": 210
           }
         ],
         "roomDescription": [
@@ -466,10 +481,10 @@
         "background": "contact-center.jpg",
         "backgroundPosition": {
           "ws-XS": {
-            "x": 0.156
+            "x": 0.022
           },
           "ws-S": {
-            "x": 0.1
+            "x": 0
           },
           "ws-M": {
             "x": 0
@@ -484,18 +499,33 @@
         "hotSpots": [
           {
             "slug": "cisco-headset-500",
-            "x": 400,
-            "y": 332
+            "x": 595,
+            "y": 565
           },
           {
             "slug": "cisco-desk-camera",
-            "x": 520,
-            "y": 322
+            "x": 747,
+            "y": 460
           },
           {
             "slug": "cisco-desk-phone-8851",
-            "x": 620,
-            "y": 322
+            "x": 970,
+            "y": 590
+          },
+          {
+            "slug": "cisco-headset-500",
+            "x": 1074,
+            "y": 565
+          },
+          {
+            "slug": "cisco-desk-camera",
+            "x": 1258,
+            "y": 460
+          },
+          {
+            "slug": "cisco-desk-phone-8851",
+            "x": 1465,
+            "y": 592
           }
         ],
         "roomDescription": [
@@ -511,10 +541,10 @@
         "background": "training-room.jpg",
         "backgroundPosition": {
           "ws-XS": {
-            "x": 0.156
+            "x": 0
           },
           "ws-S": {
-            "x": 0.1
+            "x": 0
           },
           "ws-M": {
             "x": 0
@@ -529,18 +559,18 @@
         "hotSpots": [
           {
             "slug": "webex-room-navigator",
-            "x": 400,
-            "y": 332
+            "x": 800,
+            "y": 625
           },
           {
             "slug": "webex-room-kit-pro",
-            "x": 520,
-            "y": 322
+            "x": 1046,
+            "y": 310
           },
           {
             "slug": "webex-board-pro-75",
-            "x": 620,
-            "y": 322
+            "x": 300,
+            "y": 694
           }
         ],
         "roomDescription": [
@@ -600,13 +630,13 @@
         "background": "doctors-office.jpg",
         "backgroundPosition": {
           "ws-XS": {
-            "x": 0.04604
+            "x": -0.052
           },
           "ws-S": {
-            "x": 0.05654
+            "x": -0.075
           },
           "ws-M": {
-            "x": 0.13
+            "x": -0.04
           },
           "ws-L": {
             "x": 0
@@ -618,18 +648,18 @@
         "hotSpots": [
           {
             "slug": "webex-desk-pro",
-            "x": 300,
-            "y": 400
+            "x": 1696,
+            "y": 455
           },
           {
             "slug": "cisco-ip-dect",
-            "x": 500,
-            "y": 400
+            "x": 1045,
+            "y": 500
           },
           {
             "slug": "wi-fi-phones",
-            "x": 700,
-            "y": 400
+            "x": 990,
+            "y": 505
           }
         ],
         "roomDescription": [

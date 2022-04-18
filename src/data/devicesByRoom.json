@@ -48,7 +48,8 @@
     ],
     "noc": [
       "webex-room-kit-pro",
-      "webex-room-navigator"
+      "webex-room-navigator",
+      "mv-smart-cameras"
     ],
     "contactCenter": [
       "cisco-headset-500",
