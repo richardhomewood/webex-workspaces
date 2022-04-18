@@ -630,13 +630,13 @@
         "background": "doctors-office.jpg",
         "backgroundPosition": {
           "ws-XS": {
-            "x": 0.04604
+            "x": -0.052
           },
           "ws-S": {
-            "x": 0.05654
+            "x": -0.075
           },
           "ws-M": {
-            "x": 0.13
+            "x": -0.04
           },
           "ws-L": {
             "x": 0
@@ -648,18 +648,18 @@
         "hotSpots": [
           {
             "slug": "webex-desk-pro",
-            "x": 300,
-            "y": 400
+            "x": 1696,
+            "y": 455
           },
           {
             "slug": "cisco-ip-dect",
-            "x": 500,
-            "y": 400
+            "x": 1045,
+            "y": 500
           },
           {
             "slug": "wi-fi-phones",
-            "x": 700,
-            "y": 400
+            "x": 990,
+            "y": 505
           }
         ],
         "roomDescription": [
