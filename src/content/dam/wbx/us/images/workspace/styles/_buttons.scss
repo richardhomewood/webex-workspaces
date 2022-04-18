@@ -5,7 +5,6 @@ $contact-cta-hover-color: #078855;
 // Ideally, only *positioning* of buttons happens elsewhere.
 
 a.ws-cta {
-  @include ws-button-text;
   box-sizing: border-box;
   pointer-events: all;
   text-decoration: none;

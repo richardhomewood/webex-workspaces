@@ -1,5 +1,4 @@
-.ws-immersive-root,
-.ws-category-root {
+#ws-immersive-root {
   .ws-common-ui {
     &:not(.ws-common-ui) {
       pointer-events: none;
@@ -55,8 +54,7 @@
 }
 
 @media only screen and (max-width: 767px) {
-  .ws-immersive-root,
-  .ws-category-root {
+  #ws-immersive-root {
     .ws-common-ui {
       position: absolute;
       top: 20px;
@@ -86,7 +84,6 @@
             }
 
             a {
-              @include ws-small-body-reg;
               color: #fff;
               text-decoration: none;
             }
@@ -111,8 +108,7 @@
 }
 
 @media only screen and (min-width: 768px) and (max-width: 1279px) {
-  .ws-immersive-root,
-  .ws-category-root {
+  #ws-immersive-root {
     .ws-common-ui {
       position: absolute;
       top: 20px;
@@ -143,7 +139,6 @@
             }
 
             a {
-              @include ws-small-body-reg;
               color: #fff;
               text-decoration: none;
             }
@@ -164,8 +159,7 @@
 }
 
 @media only screen and (min-width: 768px) {
-  .ws-immersive-root,
-  .ws-category-root {
+  #ws-immersive-root {
     .ws-common-ui {
       position: absolute;
       top: 20px;
@@ -196,7 +190,6 @@
             }
 
             a {
-              @include ws-small-body-reg;
               color: #fff;
               text-decoration: none;
             }
@@ -208,8 +201,7 @@
 }
 
 @media only screen and (min-width: 1280px) {
-  .ws-immersive-root,
-  .ws-category-root {
+  #ws-immersive-root {
     .ws-common-ui {
       position: absolute;
       top: 23px;
@@ -243,7 +235,6 @@
             }
 
             a {
-              @include ws-small-body-reg;
               color: #fff;
               text-decoration: none;
             }
@@ -265,8 +256,7 @@
 }
 
 @media only screen and (min-width: 1366px) {
-  .ws-immersive-root,
-  .ws-category-root {
+  #ws-immersive-root {
     .ws-common-ui {
       position: absolute;
       top: 17px;
@@ -300,7 +290,6 @@
             }
 
             a {
-              @include ws-small-body-reg;
               color: #fff;
               text-decoration: none;
             }
