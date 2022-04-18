@@ -442,7 +442,7 @@
             "x": 0.1
           },
           "ws-M": {
-            "x": 0
+            "x": 0.04
           },
           "ws-L": {
             "x": 0
@@ -481,10 +481,10 @@
         "background": "contact-center.jpg",
         "backgroundPosition": {
           "ws-XS": {
-            "x": 0.156
+            "x": 0.022
           },
           "ws-S": {
-            "x": 0.1
+            "x": 0
           },
           "ws-M": {
             "x": 0
@@ -499,18 +499,33 @@
         "hotSpots": [
           {
             "slug": "cisco-headset-500",
-            "x": 400,
-            "y": 332
+            "x": 595,
+            "y": 565
           },
           {
             "slug": "cisco-desk-camera",
-            "x": 520,
-            "y": 322
+            "x": 747,
+            "y": 460
           },
           {
             "slug": "cisco-desk-phone-8851",
-            "x": 620,
-            "y": 322
+            "x": 970,
+            "y": 590
+          },
+          {
+            "slug": "cisco-headset-500",
+            "x": 1074,
+            "y": 565
+          },
+          {
+            "slug": "cisco-desk-camera",
+            "x": 1258,
+            "y": 460
+          },
+          {
+            "slug": "cisco-desk-phone-8851",
+            "x": 1465,
+            "y": 592
           }
         ],
         "roomDescription": [
