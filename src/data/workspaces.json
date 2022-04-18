@@ -266,13 +266,13 @@
         "hotSpots": [
           {
             "slug": "webex-room-bar",
-            "x": 428,
-            "y": 645
+            "x": 402,
+            "y": 598
           },
           {
             "slug": "webex-room-navigator",
-            "x": 886,
-            "y": 577
+            "x": 853,
+            "y": 515
           }
         ],
         "roomDescription": [
