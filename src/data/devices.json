@@ -180,6 +180,18 @@
     "url": "https://hardware.webex.com/products/ip-phone-8800",
     "description": "The premium desk phone for the contact center.",
     "carouselItems": [
+      {
+        "filename": "A24489x35H_AKQA_WebEx_IP_Phone8865_Front_RGB_smp.jpg",
+        "alt": "Cisco Desk Phone 8851"
+      },
+      {
+        "filename": "A24489x33G_AKQA_WebEx_IP_Phone8865_3qtrLeft_RGB_smp.jpg",
+        "alt": "Cisco Desk Phone 8851"
+      },
+      {
+        "filename": "A24489x34G_AKQA_WebEx_IP_Phone8865_3qtrRight_RGB_smp.jpg",
+        "alt": "Cisco Desk Phone 8851"
+      }
     ],
     "tagline": "Everything agents need to excel.",
     "features": [
