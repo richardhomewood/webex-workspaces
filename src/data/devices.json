@@ -1073,7 +1073,8 @@
         "text": "Screen: 24-inch anti-glare LCD touchscreen display"
       },
       {
-        "icon": "back-to-fullscreen",
+        "icon": "1080p",
+        "iconSize": [105, 30],
         "text": "Resolution: 1080p (16:9)"
       },
       {
