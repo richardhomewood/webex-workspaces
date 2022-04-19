@@ -2,7 +2,7 @@ $workspaceCount: 3;
 $individualAnimationDuration: 6s;
 $animationDuration: $workspaceCount * $individualAnimationDuration;
 
-.ws-immersive-root {
+#ws-immersive-root {
   .ws-initial-view {
     position: absolute;
     top: 0;
@@ -37,7 +37,7 @@ $animationDuration: $workspaceCount * $individualAnimationDuration;
           left: 0;
           right: 0;
           height: 100%;
-          background-color: #000;
+          background-color: black;
           opacity: 0.3;
           content: ' ';
           z-index: 1;
@@ -95,7 +95,7 @@ $animationDuration: $workspaceCount * $individualAnimationDuration;
 }
 
 @media only screen and (min-width: 521px) {
-  .ws-immersive-root {
+  #ws-immersive-root {
     .ws-initial-view {
       .ws-initial-rotating-background-image {
         .ws-rotating-background-image {
@@ -106,7 +106,7 @@ $animationDuration: $workspaceCount * $individualAnimationDuration;
 }
 
 @media only screen and (min-width: 769px) {
-  .ws-immersive-root {
+  #ws-immersive-root {
     .ws-initial-view {
       .ws-initial-rotating-background-image {
         .ws-rotating-background-image {
@@ -117,7 +117,7 @@ $animationDuration: $workspaceCount * $individualAnimationDuration;
 }
 
 @media only screen and (min-width: 1281px) {
-  .ws-immersive-root {
+  #ws-immersive-root {
     .ws-initial-view {
       .ws-initial-rotating-background-image {
         .ws-rotating-background-image {
@@ -128,7 +128,7 @@ $animationDuration: $workspaceCount * $individualAnimationDuration;
 }
 
 @media only screen and (min-width: 1367px) {
-  .ws-immersive-root {
+  #ws-immersive-root {
     .ws-initial-view {
       .ws-initial-rotating-background-image {
         .ws-rotating-background-image {

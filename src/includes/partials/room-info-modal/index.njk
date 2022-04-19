@@ -23,7 +23,7 @@
         </div>
       </div>
     </div>
-    <h5 class="ws-info-modal-section-heading">{{ common.infoModal.devicesSectionHeadingText }}</h5>
+    <h2 class="ws-info-modal-section-heading">{{ common.infoModal.devicesSectionHeadingText }}</h2>
 
     <div class="ws-info-modal-devices">
       <div class="ws-info-modal-devices-inner">
@@ -49,7 +49,7 @@
 
     {% set doShowSoftware = softwareByRoom[workspace.slug][room.slug].length > 0 %}
     {% if doShowSoftware %}
-      <h5 class="ws-info-modal-section-heading ws-info-modal-section-heading-software">{{ common.infoModal.softwareSectionHeadingText }}</h5>
+      <h2 class="ws-info-modal-section-heading ws-info-modal-section-heading-software">{{ common.infoModal.softwareSectionHeadingText }}</h2>
 
       <div class="ws-info-modal-software">
         <div class="ws-room-software-scroller" id="ws-room-software-scroller-{{workspace.slug}}-{{room.slug}}">
@@ -75,7 +75,7 @@
     <div class="ws-room-info-footer">
       <h2 class="ws-room-info-tagline">{{room.tagline}}</h2>
       <div class="ws-button-container">
-          <a href="{{common.contactUrl}}" id="ws-contact-sales-btn" class="ws-cta ws-white-cta">{{common.contactSalesCtaText}}</a>
+          <a href="{{common.contactUrl}}" class="ws-cta ws-white-cta ws-contact-sales-cta">{{common.contactSalesCtaText}}</a>
       </div>
     </div>
   </div>

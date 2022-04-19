@@ -4,7 +4,7 @@
 {% import "./modal-layer.njk" as modalLayer %}
 
 {% macro render(common, workspaces, devicesByRoom, devices, softwareByRoom, software) %}
-  <div class="ws-immersive-root">
+  <div id="ws-immersive-root">
 
     {{ modalLayer.render(common, workspaces, devicesByRoom, devices, softwareByRoom, software) }}
 

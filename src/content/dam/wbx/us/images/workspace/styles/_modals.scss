@@ -106,14 +106,12 @@ $modal-transform-transition: transform 0.65s
     }
 
     .ws-info-modal-room-name {
-      @include ws-h1;
-      color: #181818;
       margin: 0 0 12px;
+      @include ws-info-modal-room-name-font;
     }
 
     .ws-info-modal-text {
-      color: #545454;
-      @include ws-med-body-reg;
+      color: $light-grey;
       p:last-child {
         margin-bottom: 32px;
       }
@@ -123,27 +121,21 @@ $modal-transform-transition: transform 0.65s
       }
     }
 
-    .ws-button-container {
-      margin-bottom: 70px;
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
+    .ws-info-modal-content {
+      .ws-button-container {
+        margin-bottom: 70px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
 
-      #ws-watch-video-btn,
-      #ws-contact-sales-btn {
-        @include ws-button-text;
-        line-height: 52px;
-        display: block;
-        border-radius: 26px;
-      }
-
-      a {
-        margin: 0 0 0 0;
+        a {
+          margin: 0 0 0 0;
+        }
       }
     }
 
     .ws-info-modal-section-heading {
-      @include ws-info-modal-section-heading-text;
+      @include ws-info-modal-section-heading-font;
     }
 
     .ws-info-modal-devices-inner {
@@ -212,28 +204,27 @@ $modal-transform-transition: transform 0.65s
               margin-right: 35px;
 
               h3 {
-                @include ws-med-body-bold;
-                color: #181818;
+                @include ws-info-modal-device-name-font;
                 margin: 22px 0 8px;
               }
 
               p {
-                @include ws-med-body-reg;
-                color: #545454;
+                @include ws-info-modal-item-description-font;
               }
-            }
 
-            a {
-              color: #078855;
-              text-decoration: none;
-              @include ws-button-text;
+              a {
+                @include ws-cta-font;
+                color: #078855;
+                text-decoration: none;
 
-              .ws-cta-right-arrow {
-                width: 14px;
-                height: 14px;
-                svg {
+                .ws-cta-right-arrow {
                   width: 14px;
                   height: 14px;
+                  svg {
+                    width: 14px;
+                    height: 14px;
+                    margin-bottom: 2px;
+                  }
                 }
               }
             }
@@ -353,20 +344,18 @@ $modal-transform-transition: transform 0.65s
             }
 
             h3 {
-              @include ws-med-body-bold;
-              color: #181818;
+              @include ws-info-modal-software-name-font;
               margin: 22px 0 8px;
             }
 
             p {
-              @include ws-med-body-reg;
-              color: #545454;
+              @include ws-info-modal-item-description-font;
             }
 
             a {
+              @include ws-cta-font;
               color: #078855;
               text-decoration: none;
-              @include ws-button-text;
 
               .ws-cta-right-arrow {
                 width: 14px;
@@ -382,10 +371,20 @@ $modal-transform-transition: transform 0.65s
       }
     }
 
-    .ws-room-info-tagline {
-      @include ws-h1;
-      color: #181818;
-      margin: 66px 0 24px;
+    .ws-room-info-footer {
+      .ws-room-info-tagline {
+        @include ws-info-modal-tagline-font;
+        margin: 66px auto 24px;
+        text-align: center;
+      }
+    }
+    .ws-button-container {
+      .ws-cta {
+        line-height: 52px;
+        display: block;
+        border-radius: 26px;
+        margin: 0 auto;
+      }
     }
   }
 
@@ -401,23 +400,21 @@ $modal-transform-transition: transform 0.65s
 
     .ws-device {
       .ws-device-name {
+        @include ws-modal-title-font;
         margin: 40px auto 0;
         text-align: center;
-        @include ws-device-name-text;
       }
 
       .ws-device-intro-text {
+        @include ws-device-intro-text-font;
         max-width: 640px;
         margin: 40px auto;
         text-align: center;
-        color: #545454;
-        @include ws-med-body-reg;
-      }
+       }
 
       a.ws-learn-more-cta {
         display: block;
         margin: 0 auto 56px;
-        padding: 21px;
         width: 130px;
       }
 
@@ -487,7 +484,7 @@ $modal-transform-transition: transform 0.65s
       }
 
       .ws-device-tagline {
-        @include ws-device-tagline-text;
+        @include ws-device-tagline-font;
         text-align: center;
         margin: 64px auto 64px;
         max-width: calc(100vw * (560 / 1280));
@@ -503,12 +500,12 @@ $modal-transform-transition: transform 0.65s
             //flex: 0 0 100%;
 
             .ws-feature-short-phrase {
-              @include ws-device-feature-short-phrase-text;
+              @include ws-device-feature-short-phrase-font;
               margin-bottom: 18px;
               margin-top: 51px;
             }
             .ws-feature-long-phrase {
-              @include ws-device-feature-long-phrase-text;
+              @include ws-device-feature-long-phrase-font;
             }
           }
         }
@@ -530,6 +527,7 @@ $modal-transform-transition: transform 0.65s
           max-width: calc((170px * 2) + 14px);
 
           li {
+            @include ws-tech-spec-font;
             list-style: none;
             border: 1px solid $list-items-border-color;
             border-radius: 16px;
@@ -560,7 +558,6 @@ $modal-transform-transition: transform 0.65s
               display: block;
               margin: 6px;
               text-align: center;
-              @include ws-specs-list-items;
             }
           }
         }
@@ -613,26 +610,24 @@ $modal-transform-transition: transform 0.65s
 
       .ws-info-modal-text {
         width: 90%;
-        font-size: 18px;
-        line-height: 26px;
-        letter-spacing: -0.02em;
       }
 
-      .ws-button-container {
-        margin-top: 50px;
-        margin-bottom: 70px;
-        flex-direction: row;
+      .ws-info-modal-content {
+        .ws-button-container {
+          margin-top: 50px;
+          margin-bottom: 70px;
+          flex-direction: row;
 
-        #ws-watch-video-btn,
-        #ws-contact-sales-btn {
-          @include ws-button-text;
-          line-height: 52px;
-          display: inline-block;
-          border-radius: 26px;
-        }
+          #ws-watch-video-btn,
+          #ws-contact-sales-btn {
+            line-height: 52px;
+            display: inline-block;
+            border-radius: 26px;
+          }
 
-        a {
-          margin: 0 0 0 0;
+          a {
+            margin: 0 0 0 0;
+          }
         }
       }
 
@@ -768,6 +763,18 @@ $modal-transform-transition: transform 0.65s
           }
         }
       }
+
+      .ws-room-info-footer {
+        .ws-room-info-tagline {
+          width: 75%;
+        }
+
+        .ws-button-container {
+          .ws-contact-sales-cta {
+            width: fit-content;
+          }
+        }
+      }
     }
 
     .ws-device-modal-root:not(.ws-displayNone) {
@@ -844,11 +851,7 @@ $modal-transform-transition: transform 0.65s
         column-gap: 0px;
 
         .ws-info-modal-room-name {
-          box-sizing: border-box;
           width: calc(100% * (5 / 12));
-          font-size: 64px;
-          line-height: 64px;
-          letter-spacing: -0.04em;
           margin-bottom: 24px;
           flex-shrink: 5;
           padding-right: 40px;
@@ -858,9 +861,6 @@ $modal-transform-transition: transform 0.65s
           width: calc(100vw * (478 / 1280));
 
           .ws-info-modal-text {
-            font-size: 18px;
-            line-height: 26px;
-            letter-spacing: -0.02em;
           }
 
           .ws-button-container {
@@ -870,7 +870,6 @@ $modal-transform-transition: transform 0.65s
 
             #ws-watch-video-btn,
             #ws-contact-sales-btn {
-              @include ws-button-text;
               line-height: 52px;
               display: inline-block;
               border-radius: 26px;
@@ -1040,14 +1039,12 @@ $modal-transform-transition: transform 0.65s
       .ws-room-info-footer {
         text-align: center;
         .ws-room-info-tagline {
-          @include ws-h1;
-          color: #181818;
           margin: 66px 0 24px;
         }
 
         .ws-button-container {
-          a#ws-contact-sales-btn {
-            display: inline-block;
+          .ws-contact-sales-cta {
+            width: fit-content;
           }
         }
       }
@@ -1194,9 +1191,6 @@ $modal-transform-transition: transform 0.65s
         column-gap: 0px;
 
         .ws-info-modal-room-name {
-          font-size: 64px;
-          line-height: 64px;
-          letter-spacing: -0.04em;
           margin-bottom: 24px;
           flex-shrink: 5;
         }
@@ -1205,9 +1199,6 @@ $modal-transform-transition: transform 0.65s
           width: calc(100vw * (478 / 1366));
 
           .ws-info-modal-text {
-            font-size: 18px;
-            line-height: 26px;
-            letter-spacing: -0.02em;
           }
 
           .ws-button-container {
@@ -1216,7 +1207,6 @@ $modal-transform-transition: transform 0.65s
 
             #ws-watch-video-btn,
             #ws-contact-sales-btn {
-              @include ws-button-text;
               line-height: 52px;
               display: inline-block;
               border-radius: 26px;
@@ -1385,8 +1375,6 @@ $modal-transform-transition: transform 0.65s
       .ws-room-info-footer {
         text-align: center;
         .ws-room-info-tagline {
-          @include ws-h1;
-          color: #181818;
           margin: 140px 0 24px;
         }
 
@@ -1415,9 +1403,6 @@ $modal-transform-transition: transform 0.65s
         column-gap: 0px;
 
         .ws-info-modal-room-name {
-          font-size: 64px;
-          line-height: 64px;
-          letter-spacing: -0.04em;
           margin-bottom: 24px;
           flex-shrink: 0;
           flex-grow: 5;
@@ -1427,9 +1412,6 @@ $modal-transform-transition: transform 0.65s
           width: calc(100vw * (714 / 1920));
 
           .ws-info-modal-text {
-            font-size: 18px;
-            line-height: 26px;
-            letter-spacing: -0.02em;
           }
 
           .ws-button-container {
@@ -1438,7 +1420,6 @@ $modal-transform-transition: transform 0.65s
 
             #ws-watch-video-btn,
             #ws-contact-sales-btn {
-              @include ws-button-text;
               line-height: 52px;
               display: inline-block;
               border-radius: 26px;
@@ -1624,11 +1605,6 @@ $modal-transform-transition: transform 0.65s
       .ws-room-info-footer {
         text-align: center;
         .ws-room-info-tagline {
-          font-family: 'CiscoSansTT-Regular', sans-serif;
-          font-size: 56px;
-          line-height: 64px;
-          letter-spacing: -0.04em;
-          color: #000;
           margin: 140px auto 24px;
           width: calc(100vw * (600 / 1920));
         }

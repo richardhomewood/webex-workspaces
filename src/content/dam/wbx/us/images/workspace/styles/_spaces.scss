@@ -17,8 +17,7 @@ $bg-body: grey;
     transform: translate(-50%, -50%);
 
     div:not(.ws-swiper-indicator-arrow) {
-      @include ws-button-text;
-      color: #fff;
+      color: white;
       padding: 0 16px;
     }
 
@@ -44,7 +43,7 @@ $bg-body: grey;
   }
 }
 
-.ws-immersive-root {
+#ws-immersive-root {
   height: 100%;
   min-height: 100%;
   position: fixed;
@@ -53,9 +52,10 @@ $bg-body: grey;
   top: 0;
 
   margin: 0;
-  font-family: 'CiscoSansTT-Regular', sans-serif;
   overflow-x: hidden;
   background-color: $bg-body;
+
+  @include ws-body-font;
 
   .ws-room-view {
     position: absolute;
@@ -165,7 +165,7 @@ $bg-body: grey;
               right: 0;
               height: 100%;
               min-width: 200vw;
-              background-color: #000;
+              background-color: black;
               opacity: 0.15;
               content: ' ';
               z-index: 1;
@@ -212,7 +212,7 @@ $bg-body: grey;
             height: 36px;
             border-radius: 18px;
             content: ' ';
-            background-color: #000;
+            background-color: black;
             opacity: 0;
             transition: opacity 0.2s ease-in-out 0s;
             z-index: 0;
@@ -244,7 +244,7 @@ $bg-body: grey;
             width: 12px;
             height: 12px;
             border-radius: 6px;
-            background-color: #fff;
+            background-color: white;
             transition: opacity 0.2s ease-out 0s, width 0.2s ease-out 0s,
               height 0.2s ease-out 0s, border-radius 0.2s ease-out 0s;
           }
@@ -267,7 +267,7 @@ $bg-body: grey;
             .ws-hotSpot-outer {
               width: 32px;
               height: 32px;
-              border-color: #fff;
+              border-color: white;
               border-radius: 16px;
             }
 
@@ -310,19 +310,18 @@ $bg-body: grey;
           margin: 0 20px 11px;
           text-align: center;
 
-          .ws-room-label:not(.ws-displayNone) {
-            @include ws-h2;
+          .ws-room-label {
             text-align: center;
-            color: #fff;
+            @include ws-modal-title-font;
+            color: white;
           }
         }
 
         .ws-show-more-rooms-txt:not(.ws-displayNone) {
-          @include ws-small-body-reg;
           text-align: center;
           text-decoration: none;
           display: block;
-          color: #fff;
+          color: white;
           margin-bottom: 28px;
           pointer-events: all;
         }
@@ -345,7 +344,7 @@ $bg-body: grey;
             content: ' ';
             position: absolute;
             display: block;
-            background-color: #000;
+            background-color: black;
             width: 13px;
             height: 1.5px;
             top: 50%;
@@ -358,7 +357,7 @@ $bg-body: grey;
             content: ' ';
             position: absolute;
             display: block;
-            background-color: #000;
+            background-color: black;
             width: 1.5px;
             height: 13px;
             left: 50%;
@@ -396,8 +395,8 @@ $bg-body: grey;
           opacity: 0;
           display: block;
           text-align: center;
-          color: #fff;
-          @include ws-med-body-reg;
+          @include ws-cta-font;
+          color: white;
           transition: opacity 0.5s linear 0.3s;
         }
 
@@ -430,7 +429,7 @@ $bg-body: grey;
 
               &:hover {
                 .ws-room-image {
-                  border: solid 1px #fff;
+                  border: solid 1px white;
                 }
               }
 
@@ -459,8 +458,7 @@ $bg-body: grey;
                 width: 283px;
                 margin: auto auto;
                 text-align: center;
-                @include ws-small-body-reg;
-                color: #fff;
+                color: white;
               }
             }
           }
@@ -471,7 +469,7 @@ $bg-body: grey;
 }
 
 @media only screen and (min-width: 1280px) {
-  .ws-immersive-root {
+  #ws-immersive-root {
     .ws-room-view {
       position: absolute;
       top: 0;
@@ -511,7 +509,7 @@ $bg-body: grey;
             pointer-events: none;
 
             .ws-room-label {
-              @include ws-h3-desktop;
+              //@include ws-h3-desktop;
             }
           }
 
@@ -532,24 +530,6 @@ $bg-body: grey;
           left: 0;
           right: 0;
           transition: bottom 0.5s ease-out, opacity 0.5s linear;
-
-          &.slide-in {
-            bottom: 35px;
-            opacity: 1;
-
-            .ws-select-room-text {
-              opacity: 1;
-            }
-          }
-
-          .ws-select-room-text {
-            opacity: 0;
-            display: block;
-            text-align: center;
-            color: #fff;
-            @include ws-med-body-reg;
-            transition: opacity 0.5s linear 0.3s;
-          }
 
           .ws-workspaces {
             &::-webkit-scrollbar {
@@ -578,7 +558,7 @@ $bg-body: grey;
 
                 &:hover {
                   .ws-room-image {
-                    border: solid 3px #fff;
+                    border: solid 3px white;
                   }
                 }
 
@@ -586,8 +566,7 @@ $bg-body: grey;
                   width: 100%;
                   margin: auto auto;
                   text-align: center;
-                  @include ws-small-body-reg;
-                  color: #fff;
+                  color: white;
                 }
               }
             }
@@ -599,7 +578,7 @@ $bg-body: grey;
 }
 
 @media only screen and (min-width: 1366px) {
-  .ws-immersive-root {
+  #ws-immersive-root {
     .ws-room-view {
       .ws-room-content {
         .ws-more-rooms-text {
@@ -610,13 +589,12 @@ $bg-body: grey;
             margin-bottom: 15px;
 
             .ws-room-label {
-              @include ws-h3-desktop;
+              //@include ws-h3-desktop;
             }
           }
 
           .ws-show-more-rooms-txt:not(.ws-displayNone) {
             margin-bottom: 20px;
-            @include ws-med-body-reg;
           }
         }
       }
