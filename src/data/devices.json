@@ -1091,6 +1091,7 @@
       },
       {
         "icon": "64-degrees",
+        "iconSize": [62, 27],
         "text": "Field of view: 64° horizontal field of view, 50° vertical field of view"
       },
       {
