@@ -1079,7 +1079,7 @@ $modal-transform-transition: transform 0.65s
 
             .swiper-wrapper {
               .swiper-slide {
-                video {
+                video, img {
                   max-width: calc(100% - 172px);
                 }
               }
@@ -1169,18 +1169,6 @@ $modal-transform-transition: transform 0.65s
 
         .ws-device-tagline {
           max-width: calc(100vw * (560 / 1366));
-        }
-
-        .ws-image-carousel {
-          .swiper {
-            .swiper-wrapper {
-              .swiper-slide {
-                video {
-                  max-width: calc(100% - 172px);
-                }
-              }
-            }
-          }
         }
       }
     }
@@ -1644,18 +1632,6 @@ $modal-transform-transition: transform 0.65s
 
             li {
               flex: 0 0 calc(25% - 12px);
-            }
-          }
-        }
-
-        .ws-image-carousel {
-          .swiper {
-            .swiper-wrapper {
-              .swiper-slide {
-                video {
-                  max-width: calc(100% - 172px);
-                }
-              }
             }
           }
         }
