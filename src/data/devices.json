@@ -122,6 +122,14 @@
     "url": "https://hardware.webex.com/products/cisco-webex-desk-camera",
     "description": "The webcam that powers video conferencing at the hot desk.",
     "carouselItems": [
+      {
+        "filename": "DeskCamera_firstimage.jpg",
+        "alt": "Three-quarters view of the Webex Desk Camera."
+      },
+      {
+        "filename": "DeskCamera_secondimage.jpg",
+        "alt": "Front view of the Webex Desk Camera."
+      }
     ],
     "tagline": "Picture perfect.",
     "features": [
@@ -1092,67 +1100,6 @@
       {
         "icon": "active-speaker",
         "text": "Speaker: Premium full-range center speaker with passive bass radiators"
-      }
-    ]
-  },
-  "webex-desk-camera": {
-    "id": "webex-desk-camera",
-    "name": "Webex Desk Camera",
-    "vendor": "webex",
-    "url": "https://hardware.webex.com/products/cisco-webex-desk-camera",
-    "description": "The webcam that powers video conferencing at the hot desk.",
-    "carouselItems": [
-      {
-        "filename": "DeskCamera_firstimage.jpg",
-        "alt": "Three-quarters view of the Webex Desk Camera."
-      },
-      {
-        "filename": "DeskCamera_secondimage.jpg",
-        "alt": "Front view of the Webex Desk Camera."
-      }
-    ],
-    "tagline": "Picture perfect.",
-    "features": [
-      {
-        "shortPhrase": "Up to 4K Video",
-        "longPhrase": "Replace the low-angle, low-quality laptop view with a high-quality webcam."
-      },
-      {
-        "shortPhrase": "Stunning lighting",
-        "longPhrase": "Excellent video quality in all lighting conditions so you look great even when working late."
-      },
-      {
-        "shortPhrase": "Remove distractions",
-        "longPhrase": "Background noise reduction so you can be clearly heard when the office is at its busiest."
-      },
-      {
-        "shortPhrase": "Ensure privacy",
-        "longPhrase": "Built-in privacy shutter so you always know when you're on and off camera."
-      }
-    ],
-    "specs": [
-      {
-        "icon": "sources-and-media-usb",
-        "text": "Screen: Attaches to a laptop or monitor with USB C-to-A and USB C-to-C cables"
-      },
-      {
-        "icon": "1080p",
-        "iconSize": [105, 33],
-        "text": "Resolution: Supports up to 1080p live video resolution"
-      },
-      {
-        "icon": "4k",
-        "iconSize": [43, 28],
-        "text": "Camera: 4k Ultra HD, supports up to 60 fps"
-      },
-      {
-        "icon": "81-degrees",
-        "iconSize": [59, 28],
-        "text": "Field of view: 81° diagonal field of view"
-      },
-      {
-        "icon": "adjust-microphone",
-        "text": "Audio: 2 omni-directional microphones"
       }
     ]
   },
