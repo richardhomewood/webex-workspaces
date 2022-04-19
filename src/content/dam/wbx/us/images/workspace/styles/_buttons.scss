@@ -5,6 +5,7 @@ $contact-cta-hover-color: #078855;
 // Ideally, only *positioning* of buttons happens elsewhere.
 
 a.ws-cta {
+  @include ws-cta-font;
   box-sizing: border-box;
   pointer-events: all;
   text-decoration: none;
@@ -13,7 +14,7 @@ a.ws-cta {
   padding: 0 21px;
   span {
     display: inline-block;
-    margin: 20px auto;
+    margin: 5px auto;
   }
 }
 
@@ -92,8 +93,15 @@ a.ws-green-cta {
   color: white !important;
 }
 
+a.ws-learn-more-cta {
+  padding: 17px 0;
+}
+
 @media only screen and (min-width: 768px) {
   a.ws-cta {
     border-radius: 28px;
+    span {
+      margin: 17px auto;
+    }
   }
 }

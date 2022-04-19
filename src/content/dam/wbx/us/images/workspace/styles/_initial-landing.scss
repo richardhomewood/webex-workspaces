@@ -1,11 +1,34 @@
 #ws-immersive-root {
   .ws-initial-view {
     opacity: 1;
+    width: 100%;
+
     &.explored {
       @include fadeOut(0.3s);
 
       &.reversed {
         animation-direction: reverse;
+      }
+    }
+
+    .ws-initial-content {
+      position: absolute;
+      z-index: 1;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      margin: auto;
+      text-align: center;
+
+      .ws-initial-text {
+        @include ws-initial-text-font;
+        color: white;
+      }
+
+      .ws-initial-cta {
+        padding: 17px 22px;
+        margin-top: 31px;
+        display: inline-block;
       }
     }
   }
@@ -14,28 +37,8 @@
 @media only screen and (max-width: 520px) {
   #ws-immersive-root {
     .ws-initial-view {
-      width: 100%;
-
       .ws-initial-content {
-        position: absolute;
-        z-index: 1;
-        left: 50%;
-        top: 50%;
-        transform: translate(-50%, -50%);
-        width: calc(100vw - 80px);
-        margin: auto auto;
-        text-align: center;
-
-        .ws-initial-text {
-          color: #ffffff;
-        }
-
-        .ws-initial-cta {
-          padding: 21px 22px;
-          box-sizing: border-box;
-          margin-top: 31px;
-          display: inline-block;
-        }
+        width: calc(100vw - 40px);
       }
     }
   }
@@ -44,25 +47,11 @@
 @media only screen and (min-width: 521px) and (max-width: 768px) {
   #ws-immersive-root {
     .ws-initial-view {
-      width: 100%;
       .ws-initial-content {
-        position: absolute;
-        z-index: 1;
-        left: 50%;
-        top: 50%;
-        transform: translate(-50%, -50%);
         width: calc(100vw - 128px);
-        margin: auto auto;
-        text-align: center;
-
-        .ws-initial-text {
-          color: #ffffff;
-        }
 
         .ws-initial-cta {
-          padding: 21px 22px;
           margin-top: 38px;
-          display: inline-block;
         }
       }
     }
@@ -72,25 +61,11 @@
 @media only screen and (min-width: 769px) and (max-width: 1279px) {
   #ws-immersive-root {
     .ws-initial-view {
-      width: 100%;
       .ws-initial-content {
-        position: absolute;
-        z-index: 1;
-        left: 50%;
-        top: 50%;
-        transform: translate(-50%, -50%);
         width: calc(100vw - 128px);
-        margin: auto auto;
-        text-align: center;
-
-        .ws-initial-text {
-          color: #ffffff;
-        }
 
         .ws-initial-cta {
-          padding: 21px 22px;
           margin-top: 38px;
-          display: inline-block;
         }
       }
     }
@@ -100,25 +75,11 @@
 @media only screen and (min-width: 1280px) and (max-width: 1366px) {
   #ws-immersive-root {
     .ws-initial-view {
-      width: 100%;
       .ws-initial-content {
-        position: absolute;
-        z-index: 1;
-        left: 50%;
-        top: 50%;
-        transform: translate(-50%, -50%);
         width: calc(100vw - 440px);
-        margin: auto auto;
-        text-align: center;
-
-        .ws-initial-text {
-          color: #ffffff;
-        }
 
         .ws-initial-cta {
-          padding: 21px 22px;
           margin-top: 30px;
-          display: inline-block;
         }
       }
     }
@@ -128,25 +89,11 @@
 @media only screen and (min-width: 1367px) {
   #ws-immersive-root {
     .ws-initial-view {
-      width: 100%;
       .ws-initial-content {
-        position: absolute;
-        z-index: 1;
-        left: 50%;
-        top: 50%;
-        transform: translate(-50%, -50%);
         width: calc(100vw - 544px);
-        margin: auto auto;
-        text-align: center;
-
-        .ws-initial-text {
-          color: #ffffff;
-        }
 
         .ws-initial-cta {
-          padding: 21px 22px;
           margin-top: 30px;
-          display: inline-block;
         }
       }
     }
@@ -156,25 +103,11 @@
 @media only screen and (min-width: 1920px) {
   #ws-immersive-root {
     .ws-initial-view {
-      width: 100%;
       .ws-initial-content {
-        position: absolute;
-        z-index: 1;
-        left: 50%;
-        top: 50%;
-        transform: translate(-50%, -50%);
         width: calc(100vw - 770px);
-        margin: auto auto;
-        text-align: center;
-
-        .ws-initial-text {
-          color: #ffffff;
-        }
 
         .ws-initial-cta {
-          padding: 21px 22px;
           margin-top: 55px;
-          display: inline-block;
         }
       }
     }

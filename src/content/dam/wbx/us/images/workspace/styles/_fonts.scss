@@ -22,3 +22,160 @@
     url(../fonts/CiscoSansTT-Bold.woff2) format('woff2');
 }
 
+@mixin ws-body-font {
+  font-family: CiscoSansTT, sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 20px;
+  letter-spacing: -0.02em;
+  color: black;
+}
+
+@mixin ws-cta-font {
+  font-size: 15px;
+}
+
+@mixin ws-tech-spec-font {
+  font-size: 14px;
+  color: $grey;
+}
+
+
+// Note that these h1-h4 fonts do NOT correspond to HTML heading elements.
+// They are so-named based on the style names in the source Figma design.
+// https://www.figma.com/file/UlpJQ30I9TZSejU2OSjP2b/Webex-Hybrid-Work-Experience-Pitch?node-id=2116%3A69371
+@mixin ws-h1-font {
+  font-weight: 500;
+  font-size: 64px;
+  line-height: 1;
+  letter-spacing: -0.04em;
+}
+
+@mixin ws-h2-font {
+  font-weight: 500;
+  font-size: 56px;
+  line-height: 1;
+  letter-spacing: -0.04em;
+}
+
+@mixin ws-h3-font {
+  font-weight: 500;
+  font-size: 32px;
+  line-height: 1;
+  letter-spacing: -0.03em;
+}
+
+@mixin ws-h4-font {
+  font-size: 20px;
+  line-height: 28px;
+}
+
+@mixin ws-initial-text-font {
+  @include ws-h3-font;
+
+  @media only screen and (min-width: 768px) {
+    @include ws-h2-font;
+  }
+
+  @media only screen and (min-width: 1920px) {
+    @include ws-h1-font;
+  }
+}
+
+@mixin ws-device-intro-text-font {
+  @include ws-body-font;
+  color: $grey;
+
+  @media only screen and (min-width: 1366px) {
+    @include ws-h4-font;
+  }
+}
+
+@mixin ws-device-tagline-font {
+  @include ws-h3-font;
+
+  @media only screen and (min-width: 1280px) {
+    @include ws-h2-font;
+  }
+}
+
+@mixin ws-device-feature-short-phrase-font {
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: -0.04em;
+  color: $dark-grey-1;
+
+  @media only screen and (min-width: 1280px) {
+    @include ws-h3-font;
+  }
+}
+
+@mixin ws-device-feature-long-phrase-font {
+  @include ws-h4-font;
+  color: $dark-grey-2;
+}
+
+@mixin ws-modal-title-font {
+  @include ws-h3-font;
+
+  @media only screen and (min-width: 1280px) {
+    @include ws-h2-font;
+  }
+
+  @media only screen and (min-width: 1920px) {
+    @include ws-h1-font;
+  }
+}
+
+@mixin ws-info-modal-room-name-font {
+  color: $dark-grey-2;
+  @include ws-modal-title-font
+}
+
+@mixin ws-info-modal-section-heading-font {
+  @include ws-h4-font;
+  font-weight: 400;
+  color: $grey;
+}
+
+@mixin ws-info-modal-device-name-font {
+  @include ws-h4-font;
+  color: $dark-grey-2;
+  font-weight: 400;
+
+  @media only screen and (min-width: 1920px) {
+    font-size: 24px;
+  }
+}
+
+@mixin ws-info-modal-software-name-font {
+  @include ws-h4-font;
+  color: $dark-grey-2;
+  font-weight: 400;
+
+  @media only screen and (min-width: 1280px) {
+    font-size: 24px;
+  }
+}
+
+@mixin ws-info-modal-item-description-font {
+  font-size: 15px;
+  line-height: 20px;
+  letter-spacing: -0.02em;
+  color: $light-grey;
+
+  @media only screen and (min-width: 1280px) {
+    font-size: 18px;
+    line-height: 24px;
+  }
+}
+
+@mixin ws-info-modal-tagline-font {
+  @include ws-h3-font;
+  color: $dark-grey-2;
+
+  @media only screen and (min-width: 1280px) {
+    @include ws-h2-font;
+  }
+}

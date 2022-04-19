@@ -17,6 +17,7 @@
         pointer-events: none;
         li {
           pointer-events: none;
+          @include ws-cta-font;
 
           a {
             pointer-events: all;
@@ -38,7 +39,7 @@
         width: 0;
         height: 1px;
         min-height: 1px;
-        background-color: #fff;
+        background-color: white;
         transition: left 0.3s linear 0s, width 0.3s linear 0s;
       }
     }
@@ -84,7 +85,7 @@
             }
 
             a {
-              color: #fff;
+              color: white;
               text-decoration: none;
             }
           }
@@ -98,10 +99,6 @@
         right: 20px;
         width: auto;
         height: 32px;
-
-        span {
-          margin: 8px auto;
-        }
       }
     }
   }
@@ -139,7 +136,7 @@
             }
 
             a {
-              color: #fff;
+              color: white;
               text-decoration: none;
             }
           }
@@ -190,7 +187,7 @@
             }
 
             a {
-              color: #fff;
+              color: white;
               text-decoration: none;
             }
           }
@@ -235,7 +232,7 @@
             }
 
             a {
-              color: #fff;
+              color: white;
               text-decoration: none;
             }
           }
@@ -290,7 +287,7 @@
             }
 
             a {
-              color: #fff;
+              color: white;
               text-decoration: none;
             }
           }
