@@ -122,6 +122,14 @@
     "url": "https://hardware.webex.com/products/cisco-webex-desk-camera",
     "description": "The webcam that powers video conferencing at the hot desk.",
     "carouselItems": [
+      {
+        "filename": "DeskCamera_firstimage.jpg",
+        "alt": "Three-quarters view of the Webex Desk Camera."
+      },
+      {
+        "filename": "DeskCamera_secondimage.jpg",
+        "alt": "Front view of the Webex Desk Camera."
+      }
     ],
     "tagline": "Picture perfect.",
     "features": [
@@ -172,6 +180,18 @@
     "url": "https://hardware.webex.com/products/ip-phone-8800",
     "description": "The premium desk phone for the contact center.",
     "carouselItems": [
+      {
+        "filename": "A24489x35H_AKQA_WebEx_IP_Phone8865_Front_RGB_smp.jpg",
+        "alt": "Cisco Desk Phone 8851"
+      },
+      {
+        "filename": "A24489x33G_AKQA_WebEx_IP_Phone8865_3qtrLeft_RGB_smp.jpg",
+        "alt": "Cisco Desk Phone 8851"
+      },
+      {
+        "filename": "A24489x34G_AKQA_WebEx_IP_Phone8865_3qtrRight_RGB_smp.jpg",
+        "alt": "Cisco Desk Phone 8851"
+      }
     ],
     "tagline": "Everything agents need to excel.",
     "features": [
@@ -1073,7 +1093,8 @@
         "text": "Screen: 24-inch anti-glare LCD touchscreen display"
       },
       {
-        "icon": "back-to-fullscreen",
+        "icon": "1080p",
+        "iconSize": [105, 30],
         "text": "Resolution: 1080p (16:9)"
       },
       {
@@ -1082,6 +1103,7 @@
       },
       {
         "icon": "64-degrees",
+        "iconSize": [62, 27],
         "text": "Field of view: 64° horizontal field of view, 50° vertical field of view"
       },
       {
@@ -1091,67 +1113,6 @@
       {
         "icon": "active-speaker",
         "text": "Speaker: Premium full-range center speaker with passive bass radiators"
-      }
-    ]
-  },
-  "webex-desk-camera": {
-    "id": "webex-desk-camera",
-    "name": "Webex Desk Camera",
-    "vendor": "webex",
-    "url": "https://hardware.webex.com/products/cisco-webex-desk-camera",
-    "description": "The webcam that powers video conferencing at the hot desk.",
-    "carouselItems": [
-      {
-        "filename": "DeskCamera_firstimage.jpg",
-        "alt": "Three-quarters view of the Webex Desk Camera."
-      },
-      {
-        "filename": "DeskCamera_secondimage.jpg",
-        "alt": "Front view of the Webex Desk Camera."
-      }
-    ],
-    "tagline": "Picture perfect.",
-    "features": [
-      {
-        "shortPhrase": "Up to 4K Video",
-        "longPhrase": "Replace the low-angle, low-quality laptop view with a high-quality webcam."
-      },
-      {
-        "shortPhrase": "Stunning lighting",
-        "longPhrase": "Excellent video quality in all lighting conditions so you look great even when working late."
-      },
-      {
-        "shortPhrase": "Remove distractions",
-        "longPhrase": "Background noise reduction so you can be clearly heard when the office is at its busiest."
-      },
-      {
-        "shortPhrase": "Ensure privacy",
-        "longPhrase": "Built-in privacy shutter so you always know when you're on and off camera."
-      }
-    ],
-    "specs": [
-      {
-        "icon": "sources-and-media-usb",
-        "text": "Screen: Attaches to a laptop or monitor with USB C-to-A and USB C-to-C cables"
-      },
-      {
-        "icon": "1080p",
-        "iconSize": [105, 33],
-        "text": "Resolution: Supports up to 1080p live video resolution"
-      },
-      {
-        "icon": "4k",
-        "iconSize": [43, 28],
-        "text": "Camera: 4k Ultra HD, supports up to 60 fps"
-      },
-      {
-        "icon": "81-degrees",
-        "iconSize": [59, 28],
-        "text": "Field of view: 81° diagonal field of view"
-      },
-      {
-        "icon": "adjust-microphone",
-        "text": "Audio: 2 omni-directional microphones"
       }
     ]
   },
@@ -1573,41 +1534,19 @@
       }
     ]
   },
-  "webex-room-navigator": {
-    "id": "webex-room-navigator",
+  "webex-room-navigator-table": {
+    "id": "webex-room-navigator-table",
     "name": "Webex Room Navigator",
     "vendor": "webex",
     "url": "https://hardware.webex.com/products/cisco-webex-navigator-table-version",
-    "description": {
-      "boardroom": "The intuitive touch panel equipped with built-in sensors and powerful APIs.",
-      "homeOffice": "The intuitive touch panel equipped with built-in sensors and powerful APIs.",
-      "jumpRoom": "The wall panel display that makes office navigation a breeze.",
-      "noc": "The intuitive touch panel equipped with built-in sensors and powerful APIs.",
-      "smallConferenceRoom": "The intuitive touch panel equipped with built-in sensors and powerful APIs.",
-      "trainingRoom": "The intuitive touch panel equipped with built-in sensors and powerful APIs."
-    },
+    "description": "The intuitive touch panel equipped with built-in sensors and powerful APIs.",
     "carouselItems": [
       {
-        "filename": "Navigator_Wall_Front_RGB_smp.jpg",
-        "alt": "Webex Room Navigator"
-      },
-      {
-        "filename": "Navigator_Wall_3qtrRight_RGB_smp.jpg",
-        "alt": "Webex Room Navigator"
-      },
-      {
-        "filename": "Navigator_Wall_Back_RGB_smp.jpg",
+        "filename": "Table_Navigator_angled_small.jpg",
         "alt": "Webex Room Navigator"
       }
     ],
-    "tagline": {
-      "boardroom": "Control every aspect of your meeting",
-      "homeOffice": "Control every aspect of your meeting",
-      "jumpRoom": "Find your space.",
-      "noc": "Control every aspect of your meeting",
-      "smallConferenceRoom": "Control every aspect of your meeting",
-      "trainingRoom": "Control every aspect of your meeting"
-    },
+    "tagline": "Control every aspect of your meeting",
     "features": {
       "boardroom": [
         {
@@ -1645,24 +1584,6 @@
           "longPhrase": "Display custom content, such as stock price and industry news, on the display when in standby mode."
         }
       ],
-      "jumpRoom": [
-        {
-          "shortPhrase": "Know your way",
-          "longPhrase": "Quickly identify available rooms from a distance with 360° LED indicators."
-        },
-        {
-          "shortPhrase": "No knock entry",
-          "longPhrase": "You'll never have to wonder if you're in the right place with the name of the meeting and reserved time displayed on the device."
-        },
-        {
-          "shortPhrase": "Stay informed",
-          "longPhrase": "Display custom content for internal communications, wayfinding, and branding purposes."
-        },
-        {
-          "shortPhrase": "Choose your tools",
-          "longPhrase": "Leverage the native Webex experience or switch to your preferred workspace applications."
-        }
-      ],
       "noc": [
         {
           "shortPhrase": "Take control",
@@ -1697,6 +1618,80 @@
         {
           "shortPhrase": "Stay in the know",
           "longPhrase": "Display custom content, such as stock price and industry news, on the display when in standby mode."
+        }
+      ]
+    },
+    "specs": [
+      {
+        "icon": "resolution",
+        "text": "Screen: 10.1-inch LCD touchscreen"
+      },
+      {
+        "icon": "back-to-fullscreen",
+        "text": "Resolution: 1920x1200"
+      },
+      {
+        "icon": "active-speaker-up",
+        "text": "Sensors: Environmental data available in Control Hub via Webex Room APIs and can be extracted to Cisco DNA Spaces or third-party analytics dashboards"
+      },
+      {
+        "icon": "call-swap",
+        "text": "Pairing: Can be connected directly to a PoE-enabled network port on the Webex video device or paired remotely via LAN"
+      },
+      {
+        "icon": "calendar-month",
+        "text": "Modes: Can be configured as a room controller or scheduling display"
+      },
+      {
+        "icon": "ucm-cloud",
+        "text": "Memory: 2GB"
+      }
+    ]
+  },
+  "webex-room-navigator-wall": {
+    "id": "webex-room-navigator-wall",
+    "name": "Webex Room Navigator",
+    "vendor": "webex",
+    "url": "https://hardware.webex.com/products/cisco-webex-room-navigator",
+    "description": {
+      "jumpRoom": "The wall panel display that makes office navigation a breeze.",
+      "trainingRoom": "The intuitive touch panel equipped with built-in sensors and powerful APIs."
+    },
+    "carouselItems": [
+      {
+        "filename": "Navigator_Wall_Front_RGB_smp.jpg",
+        "alt": "Webex Room Navigator"
+      },
+      {
+        "filename": "Navigator_Wall_3qtrRight_RGB_smp.jpg",
+        "alt": "Webex Room Navigator"
+      },
+      {
+        "filename": "Navigator_Wall_Back_RGB_smp.jpg",
+        "alt": "Webex Room Navigator"
+      }
+    ],
+    "tagline": {
+      "jumpRoom": "Find your space.",
+      "trainingRoom": "Control every aspect of your meeting"
+    },
+    "features": {
+      "jumpRoom": [
+        {
+          "shortPhrase": "Know your way",
+          "longPhrase": "Quickly identify available rooms from a distance with 360° LED indicators."
+        },
+        {
+          "shortPhrase": "No knock entry",
+          "longPhrase": "You'll never have to wonder if you're in the right place with the name of the meeting and reserved time displayed on the device."
+        },
+        {
+          "shortPhrase": "Stay informed",
+          "longPhrase": "Display custom content for internal communications, wayfinding, and branding purposes."
+        },
+        {
+          "shortPhrase": "Choose your tools",
+          "longPhrase": "Leverage the native Webex experience or switch to your preferred workspace applications."
         }
       ],
       "trainingRoom": [

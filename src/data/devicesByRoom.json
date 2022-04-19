@@ -8,7 +8,7 @@
     "homeOffice": [
       "webex-desk",
       "webex-room-bar",
-      "webex-room-navigator",
+      "webex-room-navigator-table",
       "bo-cisco-980",
       "mr46",
       "mx67c",
@@ -29,11 +29,11 @@
     ],
     "smallConferenceRoom": [
       "webex-room-bar",
-      "webex-room-navigator"
+      "webex-room-navigator-table"
     ],
     "jumpRoom": [
       "webex-desk",
-      "webex-room-navigator",
+      "webex-room-navigator-wall",
       "mr56"
     ],
     "lobby": [
@@ -43,13 +43,12 @@
     ],
     "boardroom": [
       "webex-room-panorama",
-      "webex-room-navigator",
+      "webex-room-navigator-table",
       "cisco-mic-array"
     ],
     "noc": [
       "webex-room-kit-pro",
-      "webex-room-navigator",
-      "mv-smart-cameras"
+      "webex-room-navigator-table"
     ],
     "contactCenter": [
       "cisco-headset-500",
@@ -59,7 +58,7 @@
     "trainingRoom": [
       "webex-room-kit-pro",
       "webex-board-pro-75",
-      "webex-room-navigator"
+      "webex-room-navigator-wall"
     ]
   },
   "anywhere": {

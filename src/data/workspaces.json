@@ -48,7 +48,7 @@
             "y": 336
           },
           {
-            "slug": "webex-room-navigator",
+            "slug": "webex-room-navigator-table",
             "x": 937,
             "y": 584
           },
@@ -183,7 +183,7 @@
         },
         "hotSpots": [
           {
-            "slug": "webex-desk-camera",
+            "slug": "cisco-desk-camera-4k",
             "x": 602,
             "y": 411
           },
@@ -270,7 +270,7 @@
             "y": 598
           },
           {
-            "slug": "webex-room-navigator",
+            "slug": "webex-room-navigator-table",
             "x": 853,
             "y": 515
           }
@@ -305,7 +305,7 @@
         },
         "hotSpots": [
           {
-            "slug": "webex-room-navigator",
+            "slug": "webex-room-navigator-wall",
             "x": 410,
             "y": 331
           },
@@ -318,16 +318,6 @@
             "slug": "mr56",
             "x": 976,
             "y": 290
-          },
-          {
-            "slug": "webex-room-navigator",
-            "x": 1363,
-            "y": 292
-          },
-          {
-            "slug": "webex-desk",
-            "x": 1515,
-            "y": 298
           }
         ],
         "roomDescription": [
@@ -366,7 +356,7 @@
             "y": 198
           },
           {
-            "slug": "webex-room-navigator",
+            "slug": "webex-room-navigator-table",
             "x": 725,
             "y": 610
           },
@@ -453,7 +443,7 @@
         },
         "hotSpots": [
           {
-            "slug": "webex-room-navigator",
+            "slug": "webex-room-navigator-table",
             "x": 273,
             "y": 580
           },
@@ -461,11 +451,6 @@
             "slug": "webex-room-kit-pro",
             "x": 942,
             "y": 282
-          },
-          {
-            "slug": "mv-smart-cameras",
-            "x": 936,
-            "y": 210
           }
         ],
         "roomDescription": [
@@ -503,7 +488,7 @@
             "y": 565
           },
           {
-            "slug": "cisco-desk-camera",
+            "slug": "cisco-desk-camera-1080p",
             "x": 747,
             "y": 460
           },
@@ -511,21 +496,6 @@
             "slug": "cisco-desk-phone-8851",
             "x": 970,
             "y": 590
-          },
-          {
-            "slug": "cisco-headset-500",
-            "x": 1074,
-            "y": 565
-          },
-          {
-            "slug": "cisco-desk-camera",
-            "x": 1258,
-            "y": 460
-          },
-          {
-            "slug": "cisco-desk-phone-8851",
-            "x": 1465,
-            "y": 592
           }
         ],
         "roomDescription": [
@@ -558,7 +528,7 @@
         },
         "hotSpots": [
           {
-            "slug": "webex-room-navigator",
+            "slug": "webex-room-navigator-wall",
             "x": 800,
             "y": 625
           },
