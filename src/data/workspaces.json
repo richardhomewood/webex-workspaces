@@ -48,7 +48,7 @@
             "y": 336
           },
           {
-            "slug": "webex-room-navigator",
+            "slug": "webex-room-navigator-table",
             "x": 937,
             "y": 584
           },
@@ -270,7 +270,7 @@
             "y": 598
           },
           {
-            "slug": "webex-room-navigator",
+            "slug": "webex-room-navigator-table",
             "x": 853,
             "y": 515
           }
@@ -305,7 +305,7 @@
         },
         "hotSpots": [
           {
-            "slug": "webex-room-navigator",
+            "slug": "webex-room-navigator-wall",
             "x": 410,
             "y": 331
           },
@@ -356,7 +356,7 @@
             "y": 198
           },
           {
-            "slug": "webex-room-navigator",
+            "slug": "webex-room-navigator-table",
             "x": 725,
             "y": 610
           },
@@ -443,7 +443,7 @@
         },
         "hotSpots": [
           {
-            "slug": "webex-room-navigator",
+            "slug": "webex-room-navigator-table",
             "x": 273,
             "y": 580
           },
@@ -528,7 +528,7 @@
         },
         "hotSpots": [
           {
-            "slug": "webex-room-navigator",
+            "slug": "webex-room-navigator-wall",
             "x": 800,
             "y": 625
           },

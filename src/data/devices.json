@@ -1522,41 +1522,19 @@
       }
     ]
   },
-  "webex-room-navigator": {
-    "id": "webex-room-navigator",
+  "webex-room-navigator-table": {
+    "id": "webex-room-navigator-table",
     "name": "Webex Room Navigator",
     "vendor": "webex",
     "url": "https://hardware.webex.com/products/cisco-webex-navigator-table-version",
-    "description": {
-      "boardroom": "The intuitive touch panel equipped with built-in sensors and powerful APIs.",
-      "homeOffice": "The intuitive touch panel equipped with built-in sensors and powerful APIs.",
-      "jumpRoom": "The wall panel display that makes office navigation a breeze.",
-      "noc": "The intuitive touch panel equipped with built-in sensors and powerful APIs.",
-      "smallConferenceRoom": "The intuitive touch panel equipped with built-in sensors and powerful APIs.",
-      "trainingRoom": "The intuitive touch panel equipped with built-in sensors and powerful APIs."
-    },
+    "description": "The intuitive touch panel equipped with built-in sensors and powerful APIs.",
     "carouselItems": [
       {
-        "filename": "Navigator_Wall_Front_RGB_smp.jpg",
-        "alt": "Webex Room Navigator"
-      },
-      {
-        "filename": "Navigator_Wall_3qtrRight_RGB_smp.jpg",
-        "alt": "Webex Room Navigator"
-      },
-      {
-        "filename": "Navigator_Wall_Back_RGB_smp.jpg",
+        "filename": "Table_Navigator_angled_small.jpg",
         "alt": "Webex Room Navigator"
       }
     ],
-    "tagline": {
-      "boardroom": "Control every aspect of your meeting",
-      "homeOffice": "Control every aspect of your meeting",
-      "jumpRoom": "Find your space.",
-      "noc": "Control every aspect of your meeting",
-      "smallConferenceRoom": "Control every aspect of your meeting",
-      "trainingRoom": "Control every aspect of your meeting"
-    },
+    "tagline": "Control every aspect of your meeting",
     "features": {
       "boardroom": [
         {
@@ -1594,24 +1572,6 @@
           "longPhrase": "Display custom content, such as stock price and industry news, on the display when in standby mode."
         }
       ],
-      "jumpRoom": [
-        {
-          "shortPhrase": "Know your way",
-          "longPhrase": "Quickly identify available rooms from a distance with 360° LED indicators."
-        },
-        {
-          "shortPhrase": "No knock entry",
-          "longPhrase": "You'll never have to wonder if you're in the right place with the name of the meeting and reserved time displayed on the device."
-        },
-        {
-          "shortPhrase": "Stay informed",
-          "longPhrase": "Display custom content for internal communications, wayfinding, and branding purposes."
-        },
-        {
-          "shortPhrase": "Choose your tools",
-          "longPhrase": "Leverage the native Webex experience or switch to your preferred workspace applications."
-        }
-      ],
       "noc": [
         {
           "shortPhrase": "Take control",
@@ -1646,6 +1606,80 @@
         {
           "shortPhrase": "Stay in the know",
           "longPhrase": "Display custom content, such as stock price and industry news, on the display when in standby mode."
+        }
+      ]
+    },
+    "specs": [
+      {
+        "icon": "resolution",
+        "text": "Screen: 10.1-inch LCD touchscreen"
+      },
+      {
+        "icon": "back-to-fullscreen",
+        "text": "Resolution: 1920x1200"
+      },
+      {
+        "icon": "active-speaker-up",
+        "text": "Sensors: Environmental data available in Control Hub via Webex Room APIs and can be extracted to Cisco DNA Spaces or third-party analytics dashboards"
+      },
+      {
+        "icon": "call-swap",
+        "text": "Pairing: Can be connected directly to a PoE-enabled network port on the Webex video device or paired remotely via LAN"
+      },
+      {
+        "icon": "calendar-month",
+        "text": "Modes: Can be configured as a room controller or scheduling display"
+      },
+      {
+        "icon": "ucm-cloud",
+        "text": "Memory: 2GB"
+      }
+    ]
+  },
+  "webex-room-navigator-wall": {
+    "id": "webex-room-navigator-wall",
+    "name": "Webex Room Navigator",
+    "vendor": "webex",
+    "url": "https://hardware.webex.com/products/cisco-webex-room-navigator",
+    "description": {
+      "jumpRoom": "The wall panel display that makes office navigation a breeze.",
+      "trainingRoom": "The intuitive touch panel equipped with built-in sensors and powerful APIs."
+    },
+    "carouselItems": [
+      {
+        "filename": "Navigator_Wall_Front_RGB_smp.jpg",
+        "alt": "Webex Room Navigator"
+      },
+      {
+        "filename": "Navigator_Wall_3qtrRight_RGB_smp.jpg",
+        "alt": "Webex Room Navigator"
+      },
+      {
+        "filename": "Navigator_Wall_Back_RGB_smp.jpg",
+        "alt": "Webex Room Navigator"
+      }
+    ],
+    "tagline": {
+      "jumpRoom": "Find your space.",
+      "trainingRoom": "Control every aspect of your meeting"
+    },
+    "features": {
+      "jumpRoom": [
+        {
+          "shortPhrase": "Know your way",
+          "longPhrase": "Quickly identify available rooms from a distance with 360° LED indicators."
+        },
+        {
+          "shortPhrase": "No knock entry",
+          "longPhrase": "You'll never have to wonder if you're in the right place with the name of the meeting and reserved time displayed on the device."
+        },
+        {
+          "shortPhrase": "Stay informed",
+          "longPhrase": "Display custom content for internal communications, wayfinding, and branding purposes."
+        },
+        {
+          "shortPhrase": "Choose your tools",
+          "longPhrase": "Leverage the native Webex experience or switch to your preferred workspace applications."
         }
       ],
       "trainingRoom": [
