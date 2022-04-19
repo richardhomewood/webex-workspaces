@@ -214,21 +214,29 @@
     ],
     "specs": [
       {
+        "icon": "paired-handset",
         "text": "Smart Phone Integration"
       },
       {
+        "icon": "10-Lines",
+        "iconSize": [110, 32],
         "text": "10 lines supported"
       },
       {
+        "icon": "back-to-fullscreen",
         "text": "5” high resolution (800 x 400) screen"
       },
       {
+        "icon": "commenting",
         "text": "Localized language support"
       },
       {
+        "icon": "56-Lines",
+        "iconSize": [110, 32],
         "text": "Up to two optional Key Expansion Module with up to 56 additional line keys"
       },
       {
+        "icon": "call-swap",
         "text": "Flexible deployment methods: Cisco on-premises, hosted, Webex Calling, and third-party call control"
       }
     ]
@@ -262,15 +270,19 @@
     ],
     "specs": [
       {
+        "icon": "wifi",
         "text": "Wired or wireless designs"
       },
       {
+        "icon": "usb",
         "text": "A range of connectivity options wireless, RJ9/RJ11, USB-A, and 3.5MM"
       },
       {
+        "icon": "display",
         "text": "Call controls and in call presence LED indicators"
       },
       {
+        "icon": "multiple-devices",
         "text": "Easy, intuitive user configuration experience with Cisco IP phones"
       }
     ]
@@ -427,21 +439,28 @@
     ],
     "specs": [
       {
+        "icon": "call-swap",
         "text": "Product compatibility: Room Panorama Series"
       },
       {
+        "icon": "rj45",
+        "iconSize": [72, 32],
         "text": "Connector: Ethernet RJ45"
       },
       {
+        "icon": "signal-100",
         "text": "Frequency range: 100 Hz to 16 kHz, +/- 6 dB (on axis)"
       },
       {
+        "icon": "alert-muted",
         "text": "Signal-to-noise ratio: Minimum 70 dB"
       },
       {
+        "icon": "pairing",
         "text": "Control: Using Webex Room Navigator touch controller"
       },
       {
+        "icon": "active-speaker",
         "text": "Deployment: Ethernet, supporting audio over IP setup, allowing for enhanced flexibility"
       }
     ]
@@ -848,7 +867,7 @@
         "text": "WAN: 2 GbE (one WAN/LAN use); one Cat 6 modem; one USB (cellular failover)"
       },
       {
-        "icon": "sources-and-media-usb",
+        "icon": "usb",
         "text": "LAN: 4 GbE (one for WAN or LAN use)"
       },
       {
@@ -1516,6 +1535,8 @@
         "text": "Camera: UltraHD, 5x digital zoom, 83-degree field of view, auto-framing"
       },
       {
+        "icon": "83-degrees",
+        "iconSize": [ 52, 28 ],
         "text": "Field of view: 83° horizontal field of view; 51.5° vertical field of view"
       },
       {
@@ -1527,9 +1548,11 @@
         "text": "Speaker: 6-element high-performing microphone array for accurate speaker tracking and immersive audio."
       },
       {
+        "icon": "setup-assistant",
         "text": "Codec Pro: One of the most powerful and feature-rich collaboration engines available with ultimate video and audio quality"
       },
       {
+        "icon": "media-player",
         "text": "Room controls: Room Navigator for intuitive conference controls, room controls, room booking and third-party workplace applications"
       }
     ]
