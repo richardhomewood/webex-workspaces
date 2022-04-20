@@ -1,8 +1,8 @@
 ---
 applications:
-  - name: webex-workspaces
+  - name: webex-workspaces-((branch))
     routes:
-      - route: webex-workspaces.us-south.cf.appdomain.cloud
+      - route: webex-workspaces-((branch)).us-south.cf.appdomain.cloud
     memory: 512M
     buildpacks:
       - https://github.com/cloudfoundry/staticfile-buildpack
