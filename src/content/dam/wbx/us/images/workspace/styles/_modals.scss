@@ -84,8 +84,7 @@ $modal-transform-transition: transform 0.65s
       clear: both;
       width: 100vw;
       height: 0;
-      margin-right: -21px;
-      margin-left: -21px;
+      margin: 15px -21px 40px;
     }
   }
 
@@ -337,8 +336,6 @@ $modal-transform-transition: transform 0.65s
         line-height: 52px;
         display: block;
         border-radius: 26px;
-        margin-right: auto;
-        margin-left: auto;
       }
     }
   }
@@ -354,10 +351,11 @@ $modal-transform-transition: transform 0.65s
     }
 
     .ws-device {
+      margin-bottom: 120px;
+
       .ws-device-name {
         @include ws-modal-title-font;
-        margin-right: auto;
-        margin-left: auto;
+        margin: 0 auto 24px;
         text-align: center;
       }
 
@@ -371,8 +369,7 @@ $modal-transform-transition: transform 0.65s
 
       a.ws-learn-more-cta {
         display: block;
-        margin-right: auto;
-        margin-left: auto;
+        margin: 24px auto;
         width: 130px;
       }
 
@@ -443,9 +440,8 @@ $modal-transform-transition: transform 0.65s
       .ws-device-tagline {
         @include ws-device-tagline-font;
         text-align: center;
-        margin-right: auto;
-        margin-left: auto;
-        max-width: calc(100vw * (560 / 1280));
+        margin: 56px auto 80px;
+        max-width: 274px;
       }
 
       .ws-device-features.ws-modal-section {
@@ -460,6 +456,7 @@ $modal-transform-transition: transform 0.65s
 
             .ws-feature-short-phrase {
               @include ws-device-feature-short-phrase-font;
+              margin: 56px 0 24px;
             }
             .ws-feature-long-phrase {
               @include ws-device-feature-long-phrase-font;
@@ -469,13 +466,13 @@ $modal-transform-transition: transform 0.65s
       }
 
       .ws-device-specs.ws-modal-section {
+        margin: 80px 0 56px;
 
         ul {
           display: flex;
           flex-wrap: wrap;
           padding: 0;
-          margin-right: auto;
-          margin-left: auto;
+          margin: 0 auto;
           justify-content: center;
           align-content: space-between;
           column-gap: 14px;
@@ -490,18 +487,18 @@ $modal-transform-transition: transform 0.65s
             min-height: 196px;
             align-items: stretch;
             max-width: 170px;
+            // Flex to 50% minus half the column-gap value just above
+            flex: 0 0 calc(50% - 7px);
 
             .ws-icon-holder {
               display: block;
-              margin-right: auto;
-              margin-left: auto;
+              margin: 40px auto 14px;
               height: 33px;
               position: relative;
 
               svg.ws-icon {
                 display: block;
-                margin-right: auto;
-                margin-left: auto;
+                margin: 0 auto;
                 // The dimensions are set in specs.njk
                 width: unset;
                 height: unset;
@@ -514,8 +511,7 @@ $modal-transform-transition: transform 0.65s
 
             span {
               display: block;
-              margin-right: 6px;
-              margin-left: 6px;
+              margin: 6px;
               text-align: center;
             }
           }
@@ -525,35 +521,12 @@ $modal-transform-transition: transform 0.65s
   }
 }
 
-@media only screen and (max-width: 767px) {
-  #ws-modal-layer {
-    .ws-device-modal-root:not(.ws-displayNone) {
-      .ws-device {
-        .ws-device-specs.ws-modal-section {
-          ul {
-            // Make sure we only have room for 2 per row.
-            max-width: calc((170px * 2) + 16px);
-            column-gap: 16px;
-            row-gap: 40px;
-
-            li {
-              // Flex to 50% minus half the margin-right value just above
-              flex: 0 0 calc(50% - 8px);
-            }
-          }
-        }
-      }
-    }
-  }
-}
-
-@media only screen and (min-width: 768px) and (max-width: 1279px) {
+@media only screen and (min-width: 768px) {
   #ws-modal-layer {
     .ws-modal-root:not(.ws-displayNone) {
       padding: 32px;
       .ws-top-rule {
-        margin-right: -32px;
-        margin-left: -32px;
+        margin: 30px -32px 80px;
       }
     }
 
@@ -665,8 +638,17 @@ $modal-transform-transition: transform 0.65s
 
     .ws-device-modal-root:not(.ws-displayNone) {
       .ws-device {
+        .ws-device-name {
+          margin-bottom: 40px;
+        }
+
+        a.ws-learn-more-cta {
+          margin-top: 32px;
+          margin-bottom: 40px;
+        }
+
         .ws-device-tagline {
-          max-width: calc(100vw * (340 / 768));
+          max-width: 340px;
         }
 
         .ws-device-features.ws-modal-section {
@@ -691,9 +673,10 @@ $modal-transform-transition: transform 0.65s
         }
 
         .ws-device-specs.ws-modal-section {
+          margin: 120px 0 80px;
           ul {
             // Make sure we only have room for 3 per row.
-            max-width: calc((190px * 3) + (20px * 2));
+            max-width: calc((190px * 3) + (14px * 2));
             row-gap: 40px;
 
             li {
@@ -715,8 +698,7 @@ $modal-transform-transition: transform 0.65s
     .ws-modal-root:not(.ws-displayNone) {
       padding: 12px 64px 32px;
       .ws-top-rule {
-        margin-right: -64px;
-        margin-left: -64px;
+        margin: 12px -64px 64px;
       }
     }
 
@@ -847,7 +829,7 @@ $modal-transform-transition: transform 0.65s
 
       .ws-device {
         .ws-device-tagline {
-          max-width: calc(100vw * (560 / 1280));
+          max-width: 560px
         }
 
         .ws-image-carousel {
@@ -905,6 +887,7 @@ $modal-transform-transition: transform 0.65s
         }
 
         .ws-device-specs.ws-modal-section {
+          margin: 120px 0 80px;
           ul {
             // Make sure we only have room for 4 per row (plus 3 gutters).
             max-width: 100%;
@@ -932,6 +915,9 @@ $modal-transform-transition: transform 0.65s
   #ws-modal-layer {
     .ws-device-modal-root:not(.ws-displayNone) {
       .ws-device {
+        a.ws-learn-more-cta {
+          margin-bottom: 56px;
+        }
         .ws-device-features.ws-modal-section {
           ul {
             width: 78%;
@@ -939,10 +925,6 @@ $modal-transform-transition: transform 0.65s
               max-width: 362px;
             }
           }
-        }
-
-        .ws-device-tagline {
-          max-width: calc(100vw * (560 / 1366));
         }
       }
     }
@@ -1067,8 +1049,7 @@ $modal-transform-transition: transform 0.65s
     .ws-modal-root:not(.ws-displayNone) {
       padding: 32px 72px;
       .ws-top-rule {
-        margin-right: -72px;
-        margin-left: -72px;
+        margin: 32px -72px 75px;
       }
     }
 
@@ -1206,12 +1187,17 @@ $modal-transform-transition: transform 0.65s
     .ws-device-modal-root:not(.ws-displayNone) {
       .ws-device {
         .ws-device-tagline {
-          max-width: calc(100vw * (640 / 1920));
+          max-width: 640px;
         }
 
         .ws-device-features.ws-modal-section {
           ul {
             width: 65%;
+            li {
+              .ws-feature-short-phrase {
+                margin-top: 80px;
+              }
+            }
           }
         }
 
