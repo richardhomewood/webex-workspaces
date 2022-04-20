@@ -106,31 +106,18 @@ $modal-transform-transition: transform 0.65s
     }
 
     .ws-info-modal-room-name {
-      margin: 0 0 12px;
       @include ws-info-modal-room-name-font;
     }
 
     .ws-info-modal-text {
       color: $light-grey;
-      p:last-child {
-        margin-bottom: 32px;
-      }
-
-      p:first-child {
-        margin-top: 0;
-      }
     }
 
     .ws-info-modal-content {
       .ws-button-container {
-        margin-bottom: 70px;
         display: flex;
         flex-direction: column;
         gap: 10px;
-
-        a {
-          margin: 0 0 0 0;
-        }
       }
     }
 
@@ -164,16 +151,15 @@ $modal-transform-transition: transform 0.65s
           left: 0;
           top: 0;
           align-items: stretch;
-          margin-bottom: 40px;
 
           .swiper-slide {
             height: auto;
             box-sizing: border-box;
             width: calc(100vw * (305 / 375));
-            padding: 0 14px 0 0;
+            padding-right:14px;
 
             &:last-child {
-              padding: 0 0 0 0;
+              padding-right: 0;
             }
 
             .ws-room-info-carousel-img {
@@ -205,7 +191,6 @@ $modal-transform-transition: transform 0.65s
 
               h3 {
                 @include ws-info-modal-device-name-font;
-                margin: 22px 0 8px;
               }
 
               p {
@@ -223,7 +208,6 @@ $modal-transform-transition: transform 0.65s
                   svg {
                     width: 14px;
                     height: 14px;
-                    margin-bottom: 2px;
                   }
                 }
               }
@@ -255,53 +239,22 @@ $modal-transform-transition: transform 0.65s
       }
     }
 
-    .ws-scroll-track-container {
-      display: none;
-      position: relative;
-      width: 100%;
-      height: 3px;
-      transform: translate(0, -1.5px);
-
-      .ws-scroll-track {
-        width: 100%;
-        height: 1px;
-        background-color: #c4c4c4;
-        overflow: visible;
-        position: absolute;
-        left: 50%;
-        top: 50%;
-        transform: translate(-50%, -50%);
-      }
-
-      .ws-scroll-thumb {
-        position: absolute;
-        height: 3px;
-        left: 0;
-        top: 50%;
-        transform: translateY(-50%);
-        background: #078855;
-      }
-    }
-
     .ws-info-modal-software {
       .ws-room-software-scroller {
         overflow: visible;
         width: 100%;
-        padding: 0 0;
+        padding: 0;
         z-index: 0;
         position: relative;
 
         cursor: grab;
         user-select: none;
+        -ms-overflow-style: none;
+        scrollbar-width: none;
 
         &.ws-no-scroll {
           user-select: unset !important;
           cursor: default !important;
-        }
-
-        & {
-          -ms-overflow-style: none;
-          scrollbar-width: none;
         }
 
         .swiper-wrapper {
@@ -345,7 +298,6 @@ $modal-transform-transition: transform 0.65s
 
             h3 {
               @include ws-info-modal-software-name-font;
-              margin: 22px 0 8px;
             }
 
             p {
@@ -374,7 +326,8 @@ $modal-transform-transition: transform 0.65s
     .ws-room-info-footer {
       .ws-room-info-tagline {
         @include ws-info-modal-tagline-font;
-        margin: 66px auto 24px;
+        margin-right: auto;
+        margin-left: auto;
         text-align: center;
       }
     }
@@ -383,7 +336,6 @@ $modal-transform-transition: transform 0.65s
         line-height: 52px;
         display: block;
         border-radius: 26px;
-        margin: 0 auto;
       }
     }
   }
@@ -399,22 +351,25 @@ $modal-transform-transition: transform 0.65s
     }
 
     .ws-device {
+      margin-bottom: 120px;
+
       .ws-device-name {
         @include ws-modal-title-font;
-        margin: 40px auto 0;
+        margin: 0 auto 24px;
         text-align: center;
       }
 
       .ws-device-intro-text {
         @include ws-device-intro-text-font;
         max-width: 640px;
-        margin: 40px auto;
+        margin-right: auto;
+        margin-left: auto;
         text-align: center;
        }
 
       a.ws-learn-more-cta {
         display: block;
-        margin: 0 auto 56px;
+        margin: 24px auto;
         width: 130px;
       }
 
@@ -445,7 +400,6 @@ $modal-transform-transition: transform 0.65s
       }
 
       .ws-carousel-nav {
-        margin-top: 6px;
         text-align: center;
 
         .ws-carousel-button-prev {
@@ -486,14 +440,15 @@ $modal-transform-transition: transform 0.65s
       .ws-device-tagline {
         @include ws-device-tagline-font;
         text-align: center;
-        margin: 64px auto 64px;
-        max-width: calc(100vw * (560 / 1280));
+        margin: 56px auto 80px;
+        max-width: 274px;
       }
 
       .ws-device-features.ws-modal-section {
         ul {
           padding: 0;
-          margin: 64px auto;
+          margin-right: auto;
+          margin-left: auto;
 
           li {
             list-style: none;
@@ -501,8 +456,7 @@ $modal-transform-transition: transform 0.65s
 
             .ws-feature-short-phrase {
               @include ws-device-feature-short-phrase-font;
-              margin-bottom: 18px;
-              margin-top: 51px;
+              margin: 56px 0 24px;
             }
             .ws-feature-long-phrase {
               @include ws-device-feature-long-phrase-font;
@@ -512,8 +466,7 @@ $modal-transform-transition: transform 0.65s
       }
 
       .ws-device-specs.ws-modal-section {
-        margin-top: 135px;
-        margin-bottom: 80px;
+        margin: 80px 0 56px;
 
         ul {
           display: flex;
@@ -534,10 +487,12 @@ $modal-transform-transition: transform 0.65s
             min-height: 196px;
             align-items: stretch;
             max-width: 170px;
+            // Flex to 50% minus half the column-gap value just above
+            flex: 0 0 calc(50% - 7px);
 
             .ws-icon-holder {
               display: block;
-              margin: 52px auto 20px;
+              margin: 40px auto 14px;
               height: 33px;
               position: relative;
 
@@ -566,35 +521,7 @@ $modal-transform-transition: transform 0.65s
   }
 }
 
-@media only screen and (max-width: 767px) {
-  #ws-modal-layer {
-    .ws-device-modal-root:not(.ws-displayNone) {
-      .ws-device {
-        .ws-device-features.ws-modal-section {
-          li:not(:first-child) {
-            margin-top: 24px;
-          }
-        }
-
-        .ws-device-specs.ws-modal-section {
-          ul {
-            // Make sure we only have room for 2 per row.
-            max-width: calc((170px * 2) + 16px);
-            column-gap: 16px;
-            row-gap: 40px;
-
-            li {
-              // Flex to 50% minus half the margin-right value just above
-              flex: 0 0 calc(50% - 8px);
-            }
-          }
-        }
-      }
-    }
-  }
-}
-
-@media only screen and (min-width: 768px) and (max-width: 1279px) {
+@media only screen and (min-width: 768px) {
   #ws-modal-layer {
     .ws-modal-root:not(.ws-displayNone) {
       padding: 32px;
@@ -604,18 +531,12 @@ $modal-transform-transition: transform 0.65s
     }
 
     .ws-room-info-modal-root:not(.ws-displayNone) {
-      .ws-info-modal-room-name {
-        margin-bottom: 20px;
-      }
-
       .ws-info-modal-text {
         width: 90%;
       }
 
       .ws-info-modal-content {
         .ws-button-container {
-          margin-top: 50px;
-          margin-bottom: 70px;
           flex-direction: row;
 
           #ws-watch-video-btn,
@@ -624,17 +545,9 @@ $modal-transform-transition: transform 0.65s
             display: inline-block;
             border-radius: 26px;
           }
-
-          a {
-            margin: 0 0 0 0;
-          }
         }
       }
 
-      .ws-info-modal-section-heading {
-        margin-top: 120px;
-        margin-bottom: 40px;
-      }
       .ws-info-modal-devices-inner {
         .ws-room-device-scroller {
           overflow: visible;
@@ -642,33 +555,13 @@ $modal-transform-transition: transform 0.65s
 
           .swiper-wrapper {
             align-items: stretch;
-            margin-bottom: 40px;
 
             .swiper-slide {
-              height: auto;
-              box-sizing: border-box;
               width: calc(100vw * (220 / 768)) !important;
-              padding: 0 14px 0 0;
-
-              &:last-child {
-                padding: 0 0 0 0;
-              }
 
               .ws-room-info-carousel-img {
-                //padding: 40px 45px;
-                width: 100%;
                 height: calc(100vw * (220 / 768));
-                border: solid 1px #00000028;
-                border-radius: 16px;
-                position: relative;
-                overflow: hidden;
                 img {
-                  position: absolute;
-                  top: 50%;
-                  left: 50%;
-                  transform: translate(-50%, -50%);
-                  width: auto;
-                  height: auto;
                   max-height: calc(100vw * (220 / 768));
                   min-height: calc(100vw * (220 / 768));
                 }
@@ -681,7 +574,6 @@ $modal-transform-transition: transform 0.65s
                 align-items: flex-end;
 
                 .ws-room-info-carousel-img {
-                  //padding: 40px 45px;
                   min-width: calc(100vw * (380 / 768));
                   height: calc(100vw * (380 / 768));
 
@@ -698,34 +590,9 @@ $modal-transform-transition: transform 0.65s
 
       .ws-info-modal-software {
         .ws-room-software-scroller {
-          overflow: visible;
-          width: 100%;
-          padding: 0 0;
-          z-index: 0;
-          position: relative;
-
-          cursor: grab;
-          user-select: none;
-
-          &.ws-no-scroll {
-            user-select: unset !important;
-            cursor: default !important;
-          }
-
-          & {
-            -ms-overflow-style: none;
-            scrollbar-width: none;
-          }
-
           .swiper-wrapper {
-            position: relative;
-            left: 0;
-            top: 0;
-            align-items: stretch;
 
             .swiper-slide {
-              height: auto;
-              box-sizing: border-box;
               width: calc(100vw * (569 / 768));
               padding: 0 114px 40px 0;
               display: flex;
@@ -744,15 +611,7 @@ $modal-transform-transition: transform 0.65s
                 width: calc(100vw * (210 / 768));
                 min-width: calc(100vw * (210 / 768));
                 height: calc(100vw * (210 / 768));
-                border-radius: 50%;
-                border: none;
-                position: relative;
-                overflow: hidden;
                 img {
-                  position: absolute;
-                  top: 50%;
-                  left: 50%;
-                  transform: translate(-50%, -50%);
                   width: calc(100vw * (210 / 768));
                   height: calc(100vw * (210 / 768));
                   max-height: calc(100vw * (210 / 768));
@@ -780,22 +639,21 @@ $modal-transform-transition: transform 0.65s
     .ws-device-modal-root:not(.ws-displayNone) {
       .ws-device {
         .ws-device-name {
-          margin-top: 80px;
+          margin-bottom: 40px;
         }
 
         a.ws-learn-more-cta {
-          margin: 0 auto 40px;
+          margin-top: 32px;
+          margin-bottom: 40px;
         }
 
         .ws-device-tagline {
-          margin-bottom: 0;
-          max-width: calc(100vw * (340 / 768));
+          max-width: 340px;
         }
 
         .ws-device-features.ws-modal-section {
           ul {
             width: 83%;
-            margin-top: 22px;
             display: grid;
             grid-template-columns: 1fr 1fr;
             align-content: space-between;
@@ -803,7 +661,6 @@ $modal-transform-transition: transform 0.65s
             li {
               &:nth-child(2) {
                 // Line up first row
-                margin-top: 0;
               }
               &:nth-child(odd) {
                 margin-right: 10px;
@@ -816,10 +673,10 @@ $modal-transform-transition: transform 0.65s
         }
 
         .ws-device-specs.ws-modal-section {
-          margin-bottom: 80px;
+          margin: 120px 0 80px;
           ul {
             // Make sure we only have room for 3 per row.
-            max-width: calc((190px * 3) + (20px * 2));
+            max-width: calc((190px * 3) + (14px * 2));
             row-gap: 40px;
 
             li {
@@ -848,11 +705,10 @@ $modal-transform-transition: transform 0.65s
     .ws-room-info-modal-root:not(.ws-displayNone) {
       .ws-info-modal-header-content {
         display: flex;
-        column-gap: 0px;
+        column-gap: 0;
 
         .ws-info-modal-room-name {
           width: calc(100% * (5 / 12));
-          margin-bottom: 24px;
           flex-shrink: 5;
           padding-right: 40px;
         }
@@ -860,12 +716,7 @@ $modal-transform-transition: transform 0.65s
         .ws-info-modal-content {
           width: calc(100vw * (478 / 1280));
 
-          .ws-info-modal-text {
-          }
-
           .ws-button-container {
-            margin-top: 0;
-            margin-bottom: 80px;
             flex-direction: row;
 
             #ws-watch-video-btn,
@@ -874,17 +725,10 @@ $modal-transform-transition: transform 0.65s
               display: inline-block;
               border-radius: 26px;
             }
-
-            a {
-              margin: 0 0 0 0;
-            }
           }
         }
       }
 
-      .ws-info-modal-section-heading {
-        margin-top: 79px;
-      }
       .ws-info-modal-devices-inner {
         display: flex;
         .ws-room-device-scroller {
@@ -893,33 +737,13 @@ $modal-transform-transition: transform 0.65s
 
           .swiper-wrapper {
             align-items: stretch;
-            margin-bottom: 40px;
 
             .swiper-slide {
-              height: auto;
-              box-sizing: border-box;
               width: calc(100vw * (280 / 1280)) !important;
-              padding: 0 14px 0 0;
-
-              &:last-child {
-                padding: 0 0 0 0;
-              }
 
               .ws-room-info-carousel-img {
-                //padding: 40px 45px;
-                width: 100%;
                 height: calc(100vw * (280 / 1280));
-                border: solid 1px #00000028;
-                border-radius: 16px;
-                position: relative;
-                overflow: hidden;
                 img {
-                  position: absolute;
-                  top: 50%;
-                  left: 50%;
-                  transform: translate(-50%, -50%);
-                  width: auto;
-                  height: auto;
                   max-height: calc(100vw * (280 / 1280));
                   min-height: calc(100vw * (280 / 1280));
                 }
@@ -932,7 +756,6 @@ $modal-transform-transition: transform 0.65s
                 align-items: flex-end;
 
                 .ws-room-info-carousel-img {
-                  //padding: 40px 45px;
                   min-width: calc(100vw * (380 / 1280));
                   height: calc(100vw * (380 / 1280));
 
@@ -947,55 +770,12 @@ $modal-transform-transition: transform 0.65s
         }
       }
 
-      .ws-scroll-track-container {
-        width: 100%;
-        height: 3px;
-        position: relative;
-        transform: translate(0, -1.5px);
-
-        .ws-scroll-track {
-          width: 100%;
-          height: 1px;
-          background-color: #c4c4c4;
-          overflow: visible;
-          position: absolute;
-          left: 50%;
-          top: 50%;
-          transform: translate(-50%, -50%);
-        }
-      }
-
       .ws-info-modal-software {
         .ws-room-software-scroller {
-          overflow: visible;
-          width: 100%;
-          padding: 0 0;
-          z-index: 0;
-          position: relative;
-
-          cursor: grab;
-          user-select: none;
-
-          &.ws-no-scroll {
-            user-select: unset !important;
-            cursor: default !important;
-          }
-
-          & {
-            -ms-overflow-style: none;
-            scrollbar-width: none;
-          }
-
           .swiper-wrapper {
-            position: relative;
-            top: 0;
-            left: 0;
-            align-items: stretch;
             gap: 94px;
 
             .swiper-slide {
-              height: auto;
-              box-sizing: border-box;
               width: calc(100vw * (569 / 1280));
               padding: 0 40px 40px 0;
               display: flex;
@@ -1012,19 +792,10 @@ $modal-transform-transition: transform 0.65s
               }
 
               .ws-room-info-carousel-img {
-                display: inline-block;
                 width: calc(100vw * (210 / 1280));
                 min-width: calc(100vw * (210 / 1280));
                 height: calc(100vw * (210 / 1280));
-                border-radius: 50%;
-                border: none;
-                position: relative;
-                overflow: hidden;
                 img {
-                  position: absolute;
-                  top: 50%;
-                  left: 50%;
-                  transform: translate(-50%, -50%);
                   width: calc(100vw * (210 / 1280));
                   height: calc(100vw * (210 / 1280));
                   max-height: calc(100vw * (210 / 1280));
@@ -1039,7 +810,6 @@ $modal-transform-transition: transform 0.65s
       .ws-room-info-footer {
         text-align: center;
         .ws-room-info-tagline {
-          margin: 66px 0 24px;
         }
 
         .ws-button-container {
@@ -1058,16 +828,8 @@ $modal-transform-transition: transform 0.65s
       }
 
       .ws-device {
-        .ws-device-name {
-          margin-top: 69px;
-        }
-
         .ws-device-tagline {
-          max-width: calc(100vw * (560 / 1280));
-        }
-
-        a.ws-learn-more-cta {
-          margin: 0 auto 40px;
+          max-width: 560px
         }
 
         .ws-image-carousel {
@@ -1105,7 +867,6 @@ $modal-transform-transition: transform 0.65s
 
         .ws-device-features.ws-modal-section {
           ul {
-            margin-top: 22px;
             display: grid;
             grid-template-columns: 1fr 1fr;
             align-content: space-between;
@@ -1114,7 +875,6 @@ $modal-transform-transition: transform 0.65s
             li {
               &:nth-child(2) {
                 // Line up first row
-                margin-top: 0;
               }
               &:nth-child(odd) {
                 margin-right: 30px;
@@ -1127,6 +887,7 @@ $modal-transform-transition: transform 0.65s
         }
 
         .ws-device-specs.ws-modal-section {
+          margin: 120px 0 80px;
           ul {
             // Make sure we only have room for 4 per row (plus 3 gutters).
             max-width: 100%;
@@ -1155,9 +916,8 @@ $modal-transform-transition: transform 0.65s
     .ws-device-modal-root:not(.ws-displayNone) {
       .ws-device {
         a.ws-learn-more-cta {
-          margin: 0 auto 56px;
+          margin-bottom: 56px;
         }
-
         .ws-device-features.ws-modal-section {
           ul {
             width: 78%;
@@ -1165,10 +925,6 @@ $modal-transform-transition: transform 0.65s
               max-width: 362px;
             }
           }
-        }
-
-        .ws-device-tagline {
-          max-width: calc(100vw * (560 / 1366));
         }
       }
     }
@@ -1179,19 +935,13 @@ $modal-transform-transition: transform 0.65s
         column-gap: 0px;
 
         .ws-info-modal-room-name {
-          margin-bottom: 24px;
           flex-shrink: 5;
         }
 
         .ws-info-modal-content {
           width: calc(100vw * (478 / 1366));
 
-          .ws-info-modal-text {
-          }
-
           .ws-button-container {
-            margin-top: 0;
-            margin-bottom: 80px;
 
             #ws-watch-video-btn,
             #ws-contact-sales-btn {
@@ -1199,21 +949,10 @@ $modal-transform-transition: transform 0.65s
               display: inline-block;
               border-radius: 26px;
             }
-
-            a {
-              margin: 0 0 0 0;
-            }
           }
         }
       }
 
-      .ws-info-modal-section-heading {
-        margin-top: 79px;
-
-        &.ws-info-modal-section-heading-software {
-          margin-top: 157px;
-        }
-      }
       .ws-info-modal-devices-inner {
         display: flex;
         .ws-room-device-scroller {
@@ -1222,32 +961,13 @@ $modal-transform-transition: transform 0.65s
 
           .swiper-wrapper {
             align-items: stretch;
-            margin-bottom: 40px;
 
             .swiper-slide {
-              height: auto;
-              box-sizing: border-box;
               width: calc(100vw * (280 / 1366)) !important;
-              padding: 0 14px 0 0;
-
-              &:last-child {
-                padding: 0 0 0 0;
-              }
 
               .ws-room-info-carousel-img {
-                width: 100%;
                 height: calc(100vw * (280 / 1366));
-                border: solid 1px #00000028;
-                border-radius: 16px;
-                position: relative;
-                overflow: hidden;
                 img {
-                  position: absolute;
-                  top: 50%;
-                  left: 50%;
-                  transform: translate(-50%, -50%);
-                  width: auto;
-                  height: auto;
                   max-height: calc(100vw * (280 / 1366));
                   min-height: calc(100vw * (280 / 1366));
                 }
@@ -1260,7 +980,6 @@ $modal-transform-transition: transform 0.65s
                 align-items: flex-end;
 
                 .ws-room-info-carousel-img {
-                  //padding: 40px 45px;
                   min-width: calc(100vw * (380 / 1366));
                   height: calc(100vw * (380 / 1366));
 
@@ -1274,55 +993,16 @@ $modal-transform-transition: transform 0.65s
           }
         }
       }
-      .ws-scroll-track-container {
-        width: 100%;
-        height: 3px;
-        position: relative;
-        transform: translate(0, -1.5px);
-
-        .ws-scroll-track {
-          width: 100%;
-          height: 1px;
-          background-color: #c4c4c4;
-          overflow: visible;
-          position: absolute;
-          left: 50%;
-          top: 50%;
-          transform: translate(-50%, -50%);
-        }
-      }
-
       .ws-info-modal-software {
         .ws-room-software-scroller {
-          overflow: visible;
-          width: 100%;
-          padding: 0 0;
-          z-index: 0;
-          position: relative;
-
-          cursor: grab;
-          user-select: none;
-
-          &.ws-no-scroll {
-            user-select: unset !important;
-            cursor: default !important;
-          }
-
-          & {
-            -ms-overflow-style: none;
-            scrollbar-width: none;
-          }
 
           .swiper-wrapper {
             align-items: stretch;
             gap: 94px;
 
             .swiper-slide {
-              height: auto;
-              box-sizing: border-box;
               width: calc(100vw * (582 / 1366));
               padding: 0 40px 40px 0;
-              display: flex;
 
               &:last-child {
                 width: calc(100vw * (676 / 1366));
@@ -1330,25 +1010,14 @@ $modal-transform-transition: transform 0.65s
               }
 
               .ws-room-info-carousel-content {
-                display: inline-block;
-                margin-left: 40px;
                 width: calc(100vw * (313 / 1366));
               }
 
               .ws-room-info-carousel-img {
-                display: inline-block;
                 width: calc(100vw * (210 / 1366));
                 min-width: calc(100vw * (210 / 1366));
                 height: calc(100vw * (210 / 1366));
-                border-radius: 50%;
-                border: none;
-                position: relative;
-                overflow: hidden;
                 img {
-                  position: absolute;
-                  top: 50%;
-                  left: 50%;
-                  transform: translate(-50%, -50%);
                   width: calc(100vw * (210 / 1366));
                   height: calc(100vw * (210 / 1366));
                   max-height: calc(100vw * (210 / 1366));
@@ -1363,7 +1032,6 @@ $modal-transform-transition: transform 0.65s
       .ws-room-info-footer {
         text-align: center;
         .ws-room-info-tagline {
-          margin: 140px 0 24px;
         }
 
         .ws-button-container {
@@ -1391,7 +1059,6 @@ $modal-transform-transition: transform 0.65s
         column-gap: 0px;
 
         .ws-info-modal-room-name {
-          margin-bottom: 24px;
           flex-shrink: 0;
           flex-grow: 5;
         }
@@ -1399,12 +1066,7 @@ $modal-transform-transition: transform 0.65s
         .ws-info-modal-content {
           width: calc(100vw * (714 / 1920));
 
-          .ws-info-modal-text {
-          }
-
           .ws-button-container {
-            margin-top: 0;
-            margin-bottom: 85px;
 
             #ws-watch-video-btn,
             #ws-contact-sales-btn {
@@ -1412,21 +1074,10 @@ $modal-transform-transition: transform 0.65s
               display: inline-block;
               border-radius: 26px;
             }
-
-            a {
-              margin: 0 0 0 0;
-            }
           }
         }
       }
 
-      .ws-info-modal-section-heading {
-        margin-top: 0;
-
-        &.ws-info-modal-section-heading-software {
-          margin-top: 105px;
-        }
-      }
       .ws-info-modal-devices-inner {
         display: flex;
         .ws-room-device-scroller {
@@ -1434,32 +1085,13 @@ $modal-transform-transition: transform 0.65s
           width: 100%;
           .swiper-wrapper {
             align-items: stretch;
-            margin-bottom: 90px;
 
             .swiper-slide {
-              height: auto;
-              box-sizing: border-box;
               width: calc(100vw * (380 / 1920)) !important;
-              padding: 0 14px 0 0;
-
-              &:last-child {
-                padding: 0 0 0 0;
-              }
 
               .ws-room-info-carousel-img {
-                width: 100%;
                 height: calc(100vw * (380 / 1920));
-                border: solid 1px #00000028;
-                border-radius: 16px;
-                position: relative;
-                overflow: hidden;
                 img {
-                  position: absolute;
-                  top: 50%;
-                  left: 50%;
-                  transform: translate(-50%, -50%);
-                  width: auto;
-                  height: auto;
                   max-height: calc(100vw * (380 / 1920));
                   min-height: calc(100vw * (380 / 1920));
                 }
@@ -1496,38 +1128,10 @@ $modal-transform-transition: transform 0.65s
         }
       }
 
-      .ws-scroll-track-container {
-        width: 100%;
-        height: 3px;
-        position: relative;
-        transform: translate(0, -1.5px);
-
-        .ws-scroll-track {
-          width: 100%;
-          height: 1px;
-          background-color: #c4c4c4;
-          overflow: visible;
-          position: absolute;
-          left: 50%;
-          top: 50%;
-          transform: translate(-50%, -50%);
-        }
-      }
-
       .ws-info-modal-software {
         .ws-room-software-scroller {
-          overflow: visible;
-          width: 100%;
-          padding: 0 0;
-          z-index: 0;
-          position: relative;
-
-          cursor: grab;
-          user-select: none;
 
           &.ws-no-scroll {
-            user-select: unset !important;
-            cursor: default !important;
             .swiper-wrapper {
               .swiper-slide {
                 .ws-room-info-carousel-content {
@@ -1537,48 +1141,22 @@ $modal-transform-transition: transform 0.65s
             }
           }
 
-          & {
-            -ms-overflow-style: none;
-            scrollbar-width: none;
-          }
-
           .swiper-wrapper {
-            position: relative;
-            left: 0;
-            top: 0;
-            align-items: stretch;
             gap: 70px;
 
             .swiper-slide {
-              height: auto;
-              box-sizing: border-box;
               width: calc(100vw * (611 / 1920));
               padding: 0 0 40px 0;
-              display: flex;
 
               &:last-child {
                 padding: 0 0 40px 0;
               }
 
-              .ws-room-info-carousel-content {
-                display: inline-block;
-                margin-left: 40px;
-              }
-
               .ws-room-info-carousel-img {
-                display: inline-block;
                 width: calc(100vw * (210 / 1920));
                 min-width: calc(100vw * (210 / 1920));
                 height: calc(100vw * (210 / 1920));
-                border-radius: 50%;
-                border: none;
-                position: relative;
-                overflow: hidden;
                 img {
-                  position: absolute;
-                  top: 50%;
-                  left: 50%;
-                  transform: translate(-50%, -50%);
                   width: calc(100vw * (210 / 1920));
                   height: calc(100vw * (210 / 1920));
                   max-height: calc(100vw * (210 / 1920));
@@ -1593,7 +1171,8 @@ $modal-transform-transition: transform 0.65s
       .ws-room-info-footer {
         text-align: center;
         .ws-room-info-tagline {
-          margin: 140px auto 24px;
+          margin-right: auto;
+          margin-left: auto;
           width: calc(100vw * (600 / 1920));
         }
 
@@ -1607,24 +1186,22 @@ $modal-transform-transition: transform 0.65s
 
     .ws-device-modal-root:not(.ws-displayNone) {
       .ws-device {
-        a.ws-learn-more-cta {
-          margin: 0 auto 56px;
-        }
-
         .ws-device-tagline {
-          max-width: calc(100vw * (640 / 1920));
+          max-width: 640px;
         }
 
         .ws-device-features.ws-modal-section {
           ul {
             width: 65%;
             li {
+              .ws-feature-short-phrase {
+                margin-top: 80px;
+              }
             }
           }
         }
 
         .ws-device-specs.ws-modal-section {
-          margin-bottom: 80px;
           ul {
             max-width: calc((230px * 4) + (16px * 3));
             column-gap: 16px;
